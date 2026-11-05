@@ -38,7 +38,7 @@
         "evidence/yolo-pipeline/verification.json",
         "evidence/yolo-pipeline/original-image.txt"
       ],
-      "report_evidence": "B03\n정지 사진 실행\n웹캠 추후 확인"
+      "report_evidence": "B02\n정지 사진 실행\n웹캠 추후 확인"
     },
     {
       "id": "4",
@@ -48,9 +48,11 @@
       "evidence": [
         "YOLOv5/changedetection.py",
         "YOLOv5/detect.py",
-        "evidence/screenshots/changedetection-vscode.png"
+        "evidence/screenshots/changedetection-vscode.png",
+        "evidence/screenshots/changedetection-upload-vscode.png",
+        "evidence/screenshots/detect-hook-vscode.png"
       ],
-      "report_evidence": "B02\n검출기 추가 소스"
+      "report_evidence": "B03\n출현 비교와 전송\n추론 루프 연결"
     },
     {
       "id": "5",
@@ -83,7 +85,7 @@
         "evidence/screenshots/yolo-native-detail.png",
         "evidence/yolo-pipeline/android-sync.json"
       ],
-      "report_evidence": "B06\nAndroid 목록\n상세 화면"
+      "report_evidence": "B07\nAndroid 목록\n상세 화면"
     },
     {
       "id": "8",
@@ -122,5 +124,15 @@
     "source_switched": false,
     "last_attempt_result": "HTTP 412 console not yet started",
     "preflight": "docs/deployment-preflight.json"
+  },
+  "report_state": {
+    "submission_ready": false,
+    "label": "진행본",
+    "unfinished_requirement_ids": [
+      "3",
+      "8",
+      "9",
+      "10"
+    ]
   }
 }

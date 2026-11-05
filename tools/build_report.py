@@ -80,6 +80,15 @@ def main():
     set_text(paragraphs[2],'학번 : 2020105671');set_text(paragraphs[3],'이름 : 하대진')
     department=deepcopy(paragraphs[3]);set_text(department,'학과 : 컴퓨터공학과')
     body.replace(paragraphs[4],department)
+    set_text(paragraphs[5],'진행본  웹캠 실측과 클라우드 검증 후 최종 확정')
+    draft_run=paragraphs[5].find('w:r',NS)
+    draft_props=draft_run.find('w:rPr',NS)
+    if draft_props is None:
+        draft_props=etree.Element(q('rPr'));draft_run.insert(0,draft_props)
+    for tag in ('sz','szCs'):
+        node=draft_props.find('w:'+tag,NS)
+        if node is None:node=etree.SubElement(draft_props,q(tag))
+        node.set(q('val'),'18')
     table=body.find('w:tbl',NS);rows=table.findall('w:tr',NS)
     requirements=json.loads((ROOT/'docs/assessment-requirements.json').read_text(encoding='utf-8'))
     labels={'complete':'완료','partial':'부분','pending':'대기','deferred':'미정'}
@@ -108,15 +117,25 @@ def main():
     heading(appendix,'B01 제출 폴더 구조와 GitHub 업로드')
     paragraph(appendix,'공통평가 01과 별도인 저장소에서 PhotoBlogServer, PhotoViewer, YOLOv5 폴더와 보고서 파일을 확인했다.',9.5)
     picture(appendix,ROOT/'evidence/screenshots/github-folder-structure.jpg',5.3)
-    heading(appendix,'B03 원본 검출기 실행 결과')
+    heading(appendix,'B02 원본 검출기 실행 결과')
     paragraph(appendix,'Ultralytics v7.0 원본 detect.py의 SHA256을 대조한 뒤 CPU로 실행했다. bus.jpg에서 사람 4명과 버스 1대를 검출했다.',9.5)
     picture(appendix,ROOT/'evidence/yolo-pipeline/original-image/bus.jpg',2.7)
 
-    new_page(appendix,'B02 검출기 코드 수정')
+    new_page(appendix,'B03 검출기 코드 수정')
     paragraph(appendix,'ChangeDetection은 프레임마다 객체 종류별 존재 여부를 비교한다. 0에서 1로 바뀐 종류가 있으면 검출 상자를 표시한 사진을 320 x 240 JPEG로 저장하고 게시글을 등록한다. 인증은 서버의 DRF Token 방식에 맞췄다.')
     picture(appendix,ROOT/'evidence/screenshots/changedetection-vscode.png',6.25)
-    paragraph(appendix,'추가 소스  YOLOv5/changedetection.py  |  연결 위치  YOLOv5/detect.py',9)
+    paragraph(appendix,'추가 소스는 YOLOv5/changedetection.py이고 추론 루프의 연결 위치는 YOLOv5/detect.py다.',9)
     paragraph(appendix,'첫 검출, 같은 장면, 빈 화면, 재등장 순서로 실제 추론을 실행했다. 게시글은 첫 검출과 재등장에서 1개씩, 총 2개가 등록됐다. 같은 장면과 빈 화면은 전송하지 않았다.')
+
+    new_page(appendix,'B03 사진 저장과 HTTP 등록')
+    paragraph(appendix,'검출 상자가 표시된 프레임을 JPEG로 저장한 뒤 제목과 본문, 이미지 파일을 multipart 요청으로 전송한다. 서버의 HTTP 201 응답과 게시글 ID를 확인한 경우에만 등록 성공으로 처리한다.')
+    picture(appendix,ROOT/'evidence/screenshots/changedetection-upload-vscode.png',6.25)
+    paragraph(appendix,'YOLOv5/changedetection.py의 send 함수다. 인증값은 비공개 환경변수로 전달하며 이 캡처에는 실제 인증값이 없다.',9)
+
+    new_page(appendix,'B03 추론 루프 연결')
+    paragraph(appendix,'검출한 객체 종류의 존재 여부를 detected_current에 기록한다. 검출 상자를 그린 프레임을 changes.add에 전달하고, 등록이 완료되면 게시글 ID를 출력한다.')
+    picture(appendix,ROOT/'evidence/screenshots/detect-hook-vscode.png',6.25)
+    paragraph(appendix,'YOLOv5/detect.py의 프레임별 검출 결과 처리 부분이다. 실제 실행 기록은 evidence/yolo-pipeline/server-registration.txt에 있다.',9)
 
     new_page(appendix,'B04 로컬 서버 API 확인')
     paragraph(appendix,'http://127.0.0.1:8020/api_root/ 에서 API 루트의 HTTP 200 응답을 확인했다.',9.5)
@@ -128,16 +147,17 @@ def main():
     paragraph(appendix,'http://127.0.0.1:8020/ 에서 실제 검출 사진 2개와 제목을 확인했다. 전송한 JPEG와 서버가 저장한 JPEG, HTTP로 다시 조회한 JPEG의 SHA256이 일치했다.')
     picture(appendix,ROOT/'evidence/screenshots/local-list.jpg',6.25)
     paragraph(appendix,'이미지 SHA256  8008025bfc271eeb39dd8b00e8f64bdf5f2e74df8e665df41871f22d3c878cfe',8)
-    heading(appendix,'B07 자동 검증 결과')
+    heading(appendix,'B06 자동 검증 결과')
     for text in ['WSL Django 검사와 마이그레이션 일관성 검사 통과',
-                 'Django 테스트 148개 통과', '실제 HTTP API 테스트 15개 통과',
+                 'Django 전체 테스트 148개 통과', '전체 148개 중 HTTP 사례 15개를 별도 엔진으로 재실행해 통과',
                  '객체 출현과 전송 로직 단위 테스트 8개 통과',
-                 'Windows Android 단위 테스트 38개 및 Lint 통과',
+                 'Windows Android 단위 테스트 38개 통과',
+                 'Android Lint 오류 0개와 경고 7개를 확인했고 빌드 검사 통과',
                  'Android 에뮬레이터의 YOLO 게시글 목록과 상세 화면 검증 1개 통과']:
         paragraph(appendix,text,10)
     paragraph(appendix,'원본 결과 기록은 evidence/content/server, evidence/edge-tests, evidence/content/android, evidence/yolo-pipeline에 보관했다.',9)
 
-    new_page(appendix,'B06 Android 모바일 화면 확인')
+    new_page(appendix,'B07 Android 모바일 화면 확인')
     paragraph(appendix,'별도로 설치한 사진 블로그 02 앱에서 WSL 서버에 등록된 검출 사진을 조회했다. 이미지 바이트의 SHA256을 확인하고 실제 목록과 상세 화면을 캡처했다.')
     pair=appendix.add_table(rows=1,cols=2)
     for cell,name in zip(pair.rows[0].cells,['yolo-native-list.png','yolo-native-detail.png']):

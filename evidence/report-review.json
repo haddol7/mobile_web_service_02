@@ -1,0 +1,236 @@
+{
+  "reviewed_utc": "2026-11-05T10:56:13.414994+00:00",
+  "report_sha256": "42bd697b352472df691e89d1e0e69da18c2d33d2ab0c26d20af4fedba8bd1e1c",
+  "checks": [
+    {
+      "check": "requirement_columns_preserved",
+      "pass": true
+    },
+    {
+      "check": "assessor_grading_column_blank",
+      "pass": true
+    },
+    {
+      "check": "student_identity",
+      "pass": true
+    },
+    {
+      "check": "draft_status_visible",
+      "pass": true
+    },
+    {
+      "check": "status_1",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/github-folder-structure.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/github-upload.json",
+      "pass": true
+    },
+    {
+      "check": "caption_1",
+      "pass": true
+    },
+    {
+      "check": "status_2",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/github-folder-structure.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/github-upload.json",
+      "pass": true
+    },
+    {
+      "check": "caption_2",
+      "pass": true
+    },
+    {
+      "check": "status_3",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/original-image.txt",
+      "pass": true
+    },
+    {
+      "check": "caption_3",
+      "pass": true
+    },
+    {
+      "check": "status_4",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_YOLOv5/changedetection.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_YOLOv5/detect.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/changedetection-vscode.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/changedetection-upload-vscode.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/detect-hook-vscode.png",
+      "pass": true
+    },
+    {
+      "check": "caption_4",
+      "pass": true
+    },
+    {
+      "check": "status_5",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/local-api-root.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/local-api-posts.jpg",
+      "pass": true
+    },
+    {
+      "check": "caption_5",
+      "pass": true
+    },
+    {
+      "check": "status_6",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/local-list.jpg",
+      "pass": true
+    },
+    {
+      "check": "caption_6",
+      "pass": true
+    },
+    {
+      "check": "status_7",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/yolo-native-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/yolo-native-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/android-sync.json",
+      "pass": true
+    },
+    {
+      "check": "caption_7",
+      "pass": true
+    },
+    {
+      "check": "status_8",
+      "pass": true
+    },
+    {
+      "check": "status_9",
+      "pass": true
+    },
+    {
+      "check": "status_10",
+      "pass": true
+    },
+    {
+      "check": "unfinished_work_not_marked_complete",
+      "pass": true
+    },
+    {
+      "check": "all_ten_figures_embedded_without_reencoding",
+      "pass": true
+    },
+    {
+      "check": "no_external_image_relationships",
+      "pass": true
+    },
+    {
+      "check": "section_geometry_preserved",
+      "pass": true
+    },
+    {
+      "check": "opaque_template_parts_preserved",
+      "pass": true
+    },
+    {
+      "check": "actual_wsl_backend_validation",
+      "pass": true
+    },
+    {
+      "check": "backend_sources_still_match_verification",
+      "pass": true
+    },
+    {
+      "check": "django_148_actual_log",
+      "pass": true
+    },
+    {
+      "check": "http_15_actual_rerun",
+      "pass": true
+    },
+    {
+      "check": "edge_8_actual_wsl_test",
+      "pass": true
+    },
+    {
+      "check": "android_38_jvm_tests",
+      "pass": true
+    },
+    {
+      "check": "android_build_sources_match",
+      "pass": true
+    },
+    {
+      "check": "lint_warning_count_disclosed",
+      "pass": true
+    },
+    {
+      "check": "actual_yolo_http_pipeline",
+      "pass": true
+    },
+    {
+      "check": "native_yolo_photo_proof",
+      "pass": true
+    }
+  ],
+  "integrity_pass": true,
+  "submission_ready": false,
+  "complete_assessment_ids": [
+    "1",
+    "2",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "unfinished_assessment_ids": [
+    "3",
+    "8",
+    "9",
+    "10"
+  ],
+  "http_cases_are_subset_of_full_suite": true,
+  "embedded_figures": 10
+}
