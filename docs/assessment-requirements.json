@@ -36,7 +36,10 @@
       "status": "partial",
       "evidence": [
         "evidence/yolo-pipeline/verification.json",
-        "evidence/yolo-pipeline/original-image.txt"
+        "evidence/yolo-pipeline/original-image.txt",
+        "evidence/video-flow/verification.json",
+        "evidence/environment/wsl-runtime.json",
+        "evidence/environment/windows-camera.json"
       ],
       "report_evidence": "B02\n정지 사진 실행\n웹캠 추후 확인"
     },
@@ -83,9 +86,13 @@
       "evidence": [
         "evidence/screenshots/yolo-native-list.png",
         "evidence/screenshots/yolo-native-detail.png",
-        "evidence/yolo-pipeline/android-sync.json"
+        "evidence/yolo-pipeline/android-sync.json",
+        "evidence/mobile-flow/verification.json",
+        "evidence/mobile-flow/server-http.json",
+        "evidence/mobile-flow/yolo-mobile-web-list.png",
+        "evidence/mobile-flow/yolo-mobile-web-detail.png"
       ],
-      "report_evidence": "B07\nAndroid 목록\n상세 화면"
+      "report_evidence": "B07\nAndroid 앱과\n모바일 웹"
     },
     {
       "id": "8",
@@ -134,5 +141,11 @@
       "9",
       "10"
     ]
+  },
+  "local_verification": {
+    "runtime": "evidence/environment/wsl-runtime.json",
+    "actual_video": "evidence/video-flow/verification.json",
+    "native_and_mobile_web": "evidence/mobile-flow/verification.json",
+    "production_verified": false
   }
 }

@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-11-05T11:31:33.662873+00:00",
+  "source_sha256": {
+    "tools/check_environment.py": "af2e4894f906a563522b9ae29cbf408afceefe395004cc336be141a46fb80c3a",
+    "tools/verify_video_flow.py": "412dde0eaa93f1657214ad7f4f141043741ebf6442f0df8dceb9715cbb5b84e0",
+    "tools/verify_cloud_pipeline.py": "e1c26c7a3073a646c16363b96470adf191d3d92177306c9bd0eb23715c83d295",
+    "tools/serve_verified_fixture.py": "8ed5f07817a46db8d3b0add1d081318066d7b91c89d9db41149c1018860a6de9",
+    "tools/verify-mobile-flow.ps1": "d55d187ac27677d9312892e89253e643208e93b1055bff70c5432d4832621cbd"
+  },
+  "runtime_record": "evidence/environment/wsl-runtime.json",
+  "video_record": "evidence/video-flow/verification.json",
+  "mobile_record": "evidence/mobile-flow/verification.json",
+  "production_verified": false,
+  "note": "Hashes bind the exercised verification tools to the retained WSL and Windows Android records."
+}

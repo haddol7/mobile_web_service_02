@@ -40,7 +40,8 @@ with ZipFile(report) as z:
         'changedetection-upload-vscode.png','detect-hook-vscode.png','local-api-root.jpg','local-api-posts.jpg',
         'local-list.jpg','yolo-native-list.png','yolo-native-detail.png']]
     expected.append(root/'evidence/yolo-pipeline/original-image/bus.jpg')
-    check('all_ten_figures_embedded_without_reencoding',images=={digest(path) for path in expected} and len(images)==10)
+    expected.extend(root/'evidence/mobile-flow'/name for name in ['yolo-mobile-web-list.png','yolo-mobile-web-detail.png'])
+    check('all_twelve_figures_embedded_without_reencoding',images=={digest(path) for path in expected} and len(images)==12)
     rel=etree.fromstring(z.read('word/_rels/document.xml.rels'))
     check('no_external_image_relationships',all(node.get('TargetMode')!='External' for node in rel if node.get('Type','').endswith('/image')))
     ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'}
@@ -67,6 +68,22 @@ pipeline=record('evidence/yolo-pipeline/verification.json')
 check('actual_yolo_http_pipeline',pipeline['pass'] and len(pipeline['real_pipeline']['uploads'])==2 and not pipeline['webcam_tested'])
 check('native_yolo_photo_proof',sync['list_visible'] and sync['detail_visible'] and sync['image_sha256']==pipeline['real_pipeline']['uploads'][0]['image_sha256']
       and 'OK (1 test)' in (root/'evidence/yolo-pipeline/android-sync-test.txt').read_text(encoding='utf-8'))
+runtime=record('evidence/environment/wsl-runtime.json')
+check('runtime_dependency_and_cpu_checks',runtime['pass'] and runtime['environment']=='WSL Ubuntu' and runtime['pip_check_exit_code']==0 and runtime['torch_cpu_tensor_ok'])
+video=record('evidence/video-flow/verification.json')
+check('actual_video_appearance_and_auth_failure',video['pass'] and video['frames']==30 and len(video['uploaded_posts'])==2
+      and video['persistent_frames_suppressed'] and video['reappearance_uploaded'] and video['invalid_auth_rejected_and_frame_retained']
+      and video['rejected_upload_did_not_change_posts'] and not video['webcam_tested'])
+protocol=record(video['cloud_protocol_record'])
+check('local_cloud_verifier_not_claimed_as_production',protocol['pass'] and protocol['existing_posts_preserved']
+      and protocol['existing_photos_preserved'] and not protocol['production_verified'] and not protocol['source_transition_verified'])
+mobile=record('evidence/mobile-flow/verification.json')
+check('repeatable_native_and_mobile_web_flow',mobile['native_test_pass'] and mobile['web_captured']
+      and mobile['image_sha256']==sync['image_sha256'] and all(digest(root/'evidence/mobile-flow'/item['file'])==item['sha256'] for item in mobile['screenshots']))
+traffic=record('evidence/mobile-flow/server-http.json')['requests']
+check('actual_mobile_web_http_responses',all(any(item['path']==path and item['status']==200 for item in traffic) for path in ['/', '/post/2/']))
+bindings=record('evidence/verification-tools.json')
+check('exercised_verification_tools_preserved',all(digest(root/name)==value for name,value in bindings['source_sha256'].items()))
 summary={'reviewed_utc':datetime.now(timezone.utc).isoformat(),'report_sha256':digest(report),'checks':checks,
          'integrity_pass':all(item['pass'] for item in checks),'submission_ready':False,
          'complete_assessment_ids':[item['id'] for item in requirements['requirements'] if item['status']=='complete'],

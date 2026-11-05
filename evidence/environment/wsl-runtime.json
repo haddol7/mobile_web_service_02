@@ -1,0 +1,24 @@
+{
+  "verified_utc": "2026-11-05T11:17:37.770350+00:00",
+  "environment": "WSL Ubuntu",
+  "python": "3.12.15",
+  "virtualenv": "/home/daeha/.venvs/mobile_web_service_02",
+  "source_tree": "/mnt/c/Users/1/mobile_web_service/common02",
+  "packages": {
+    "torch": "2.6.0+cpu",
+    "torchvision": "0.21.0+cpu",
+    "numpy": "1.26.4",
+    "opencv-python": "4.10.0.84",
+    "Django": "6.1.1",
+    "djangorestframework": "3.18.1",
+    "pillow": "12.3.0",
+    "requests": "2.32.4"
+  },
+  "opencv_imported": true,
+  "torch_cpu_tensor_ok": true,
+  "weights_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+  "video_devices": [],
+  "pip_check_exit_code": 0,
+  "pip_check_output": "No broken requirements found.",
+  "pass": true
+}

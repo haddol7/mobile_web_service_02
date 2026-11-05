@@ -44,6 +44,8 @@ $PY tools/run_edge.py --source 0 --device cpu --server http://127.0.0.1:8020
 PY=$HOME/.venvs/mobile_web_service_02/bin/python
 (cd YOLOv5 && $PY -m unittest discover -s tests -p test_changedetection.py -v)
 $PY tools/verify_yolo_pipeline.py
+$PY tools/verify_video_flow.py
+$PY tools/check_environment.py
 (cd PhotoBlogServer && $PY tools/verify_content.py)
 ```
 
@@ -51,9 +53,21 @@ $PY tools/verify_yolo_pipeline.py
 
 Windows Android 검증은 `PhotoViewer/tools/verify-android.ps1`로 빌드, JVM 단위 테스트, Lint를 실행한다. `YoloSyncTest`는 특정 검출 게시글의 이미지 해시를 확인하고 실제 앱의 목록과 상세 화면을 캡처한다.
 
+빌드 후 Windows에서 다음 명령으로 검증용 WSL 서버 실행, 앱 설치, 실제 게시글 조회와 이미지 해시 검사, 모바일 웹 캡처를 함께 수행한다. 작업이 끝나면 이 명령이 실행한 서버는 종료된다. Android 에뮬레이터가 실행 중이어야 하며 Chrome 최초 실행 동의는 사용자가 직접 완료해야 한다.
+
+```powershell
+./tools/verify-mobile-flow.ps1 -CaptureWeb
+```
+
+`verify_video_flow.py`는 30프레임의 실제 영상 입력에서 중복 전송 억제와 재등장 시 전송을 검증한다. 인증 실패 시 게시글이 추가되지 않고 사진이 로컬에 남는지도 검사한다. 임시 DB를 사용하므로 기존 검증 게시글이나 운영 게시글에 영향을 주지 않는다. 클라우드 검사 도구의 HTTP 등록과 기존 데이터 보존 절차도 이 임시 서버에서 확인하며 운영 검증으로 집계하지 않는다.
+
+`check_environment.py`는 WSL 전용 가상환경, CPU 연산, OpenCV, 공식 모델 파일 해시와 pip 의존성을 확인한다. 검증 기록은 각각 `evidence/video-flow`, `evidence/mobile-flow`, `evidence/environment`에 저장한다.
+
+`tools/verify_cloud_pipeline.py`는 지정된 PythonAnywhere API에 검출 사진을 등록하고 기존 게시글과 사진의 바이트가 유지되는지 확인하는 도구다. 사용자에게서 별도로 제공받은 앱 API 인증 설정만 사용한다. 비공개 WSL 홈의 `~/.config/mobile-web-service/common02/edge-auth.json`에 `base_url`, `username`, `token` 설정이 필요하며 현재는 이 설정이 없다. 설정 없이는 업로드를 시도하지 않는다. PythonAnywhere 배포 API 인증과 블로그의 게시글 등록 인증은 별개다.
+
 ## 진행 현황
 
-로컬 YOLO 추론과 Django 등록을 검증했다. Android 빌드와 단위 테스트 38개, Lint가 통과했고 에뮬레이터에서 실제 검출 게시글의 목록과 상세 표시를 확인해 캡처했다. Django 테스트 148개와 HTTP 테스트 15개, Edge 단위 테스트 8개가 통과했다. 웹캠 실측과 PythonAnywhere의 02 운영 확인, 보고서 최종 검토를 이어서 진행한다. 평가용 추가 편의 기능은 기본 동작을 마친 뒤 별도로 선정한다.
+로컬 YOLO 추론과 Django 등록을 검증했다. Android 빌드와 단위 테스트 38개, Lint 오류 0개와 경고 7개를 확인했고 에뮬레이터에서 앱과 모바일 웹의 목록 및 상세 화면을 캡처했다. Django 테스트 148개와 Edge 단위 테스트 8개가 통과했다. HTTP 15개는 전체 148개 중 별도 엔진으로 재실행한 사례다. 실제 영상 30프레임에서도 첫 출현과 재등장에서만 총 2개가 등록됐고 인증 실패 처리도 확인했다. 웹캠 실측과 PythonAnywhere의 02 운영 확인은 남아 있다. 평가용 추가 편의 기능은 기본 동작을 마친 뒤 별도로 선정한다.
 
 PythonAnywhere 전환은 2026년 11월 5일 승인을 받았다. 현재 운영 서버의 핵심 API, 모델, 마이그레이션 16개 파일이 후보와 동일하다. 기존 DB와 미디어를 공유하고 별도 릴리스 및 백업을 만드는 방식이다. 현재는 콘솔 API의 HTTP 412 응답으로 배포 시작 전 단계에서 멈춰 있으며 기존 운영 소스가 유지되고 있다.
 

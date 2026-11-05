@@ -1,7 +1,8 @@
 {
-  "report_sha256": "42bd697b352472df691e89d1e0e69da18c2d33d2ab0c26d20af4fedba8bd1e1c",
+  "report_sha256": "109c0a951f8cc80f5bdcfd3a70ea15f125ba2c01e99b45f8cfee44ef05016737",
   "renderer": "documents skill renderer with Microsoft Word PDF conversion",
-  "pages": 9,
+  "pages": 11,
+  "embedded_figures": 12,
   "all_pages_visually_checked": true,
   "template_requirement_columns_preserved": true,
   "submission_ready": false

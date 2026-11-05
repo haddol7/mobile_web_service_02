@@ -1,0 +1,8 @@
+{
+  "server": "http:\/\/10.0.2.2:42063\/",
+  "post_id": 2,
+  "image_sha256": "8008025bfc271eeb39dd8b00e8f64bdf5f2e74df8e665df41871f22d3c878cfe",
+  "list_visible": true,
+  "detail_visible": true,
+  "read_only": true
+}

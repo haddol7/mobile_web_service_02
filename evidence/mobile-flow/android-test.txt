@@ -1,0 +1,7 @@
+
+com.haddol7.photoviewer.ui.YoloSyncTest:.
+Test results for InstrumentationTestRunner=.
+Time: 5.841
+
+OK (1 test)
+

@@ -112,7 +112,7 @@ def main():
 
     appendix=Document();heading(appendix,'구현 및 검증 결과')
     paragraph(appendix,'YOLOv5가 객체를 검출한 사진을 Django REST API로 등록하고 Android 앱에서 확인했다. 이전 프레임에 없던 객체 종류가 나타날 때 등록하며, 같은 장면이 이어지는 동안에는 중복 전송하지 않는다.')
-    paragraph(appendix,'서버와 검출기는 WSL Ubuntu에서 실행하고 Android 앱은 Windows의 에뮬레이터에서 확인했다. 웹캠은 연결 후 검증할 예정이며, 아래 검출 결과는 공식 샘플 정지 사진으로 확인한 내용이다.')
+    paragraph(appendix,'서버와 검출기는 WSL Ubuntu에서 실행하고 Android 앱과 모바일 웹은 Windows의 Android 에뮬레이터에서 확인했다. 공식 샘플 사진과 이 사진으로 만든 영상으로 검증했으며, 웹캠은 연결 후 별도로 확인한다.')
     paragraph(appendix,'GitHub 저장소  https://github.com/haddol7/mobile_web_service_02',9)
     heading(appendix,'B01 제출 폴더 구조와 GitHub 업로드')
     paragraph(appendix,'공통평가 01과 별도인 저장소에서 PhotoBlogServer, PhotoViewer, YOLOv5 폴더와 보고서 파일을 확인했다.',9.5)
@@ -164,6 +164,30 @@ def main():
         p=cell.paragraphs[0];p.alignment=WD_ALIGN_PARAGRAPH.CENTER
         p.add_run().add_picture(str(ROOT/'evidence/screenshots'/name),width=Inches(2.75))
     paragraph(appendix,'왼쪽은 목록 화면, 오른쪽은 상세 화면이다. 접속 주소는 http://10.0.2.2:8020/ 이다.',9)
+
+    new_page(appendix,'B07 Android 모바일 웹 화면 확인')
+    paragraph(appendix,'Android Chrome에서 같은 검출 게시글의 목록과 상세 화면을 확인했다. 목록에는 검출 사진 2개가 함께 보이며 상세 화면에는 제목, 사진과 검출 내용이 표시된다.')
+    pair=appendix.add_table(rows=1,cols=2)
+    for cell,name in zip(pair.rows[0].cells,['yolo-mobile-web-list.png','yolo-mobile-web-detail.png']):
+        p=cell.paragraphs[0];p.alignment=WD_ALIGN_PARAGRAPH.CENTER
+        p.add_run().add_picture(str(ROOT/'evidence/mobile-flow'/name),width=Inches(2.75))
+    paragraph(appendix,'왼쪽은 목록 화면, 오른쪽은 상세 화면이다. 주소창의 10.0.2.2는 에뮬레이터에서 WSL 검증 서버에 접속하는 주소다. 이 검증은 로컬 서버를 대상으로 했다.',9)
+    paragraph(appendix,'앱의 이미지 해시 검사와 화면 확인 1개도 다시 통과했다. 실행 기록과 HTTP 응답은 evidence/mobile-flow에 보관했다.',9)
+
+    new_page(appendix,'B08 영상 입력과 오류 처리 검증')
+    paragraph(appendix,'공식 bus.jpg와 빈 프레임을 조합한 30프레임 영상을 실제 YOLOv5에 입력했다. 초당 5프레임이며, 검출된 사진은 별도 검증 DB의 Django 서버로 전송했다.')
+    for text in ['첫 6프레임은 빈 화면으로 게시글이 등록되지 않았다.',
+                 '다음 12프레임에는 사람과 버스가 계속 나타났고 첫 검출에서만 게시글 1개가 등록됐다.',
+                 '다음 6프레임은 빈 화면으로 게시글이 추가되지 않았다.',
+                 '마지막 6프레임에 사람과 버스가 다시 나타나 게시글 1개가 추가됐다.']:
+        paragraph(appendix,text)
+    paragraph(appendix,'영상 실행으로 등록된 사진은 총 2개이며 모두 320 x 240 JPEG였다. 잘못된 검증용 인증값으로 보낸 요청은 서버가 거부했고 게시글 목록은 유지됐다. 전송에 실패한 사진은 로컬에 남아 있는 것을 확인했다.')
+    paragraph(appendix,'클라우드 검사 도구도 이 격리 서버에서 실행해 기존 게시글과 사진의 보존, 신규 등록과 조회를 확인했다. 이는 검사 도구의 로컬 검증이며 PythonAnywhere 운영 검증은 별도 항목으로 남겨 두었다.')
+    paragraph(appendix,'실행 기록  evidence/video-flow/verification.json 및 detector-output.txt',9)
+    heading(appendix,'WSL 실행 환경 확인')
+    paragraph(appendix,'전용 가상환경의 Python 3.12.15에서 OpenCV 로딩과 PyTorch CPU 연산을 확인했다. pip check에서 패키지 의존성 충돌이 없었고 공식 사전 학습 가중치의 SHA256도 일치했다.')
+    paragraph(appendix,'환경 기록  evidence/environment/wsl-runtime.json 및 wsl-installed.txt',9)
+    paragraph(appendix,'실물 웹캠은 연결되지 않아 영상 입력 검증으로 웹캠 항목을 완료 처리하지 않았다. PythonAnywhere의 02 전환과 운영 캡처, 기본 기능 후 선정할 추가 편의 기능도 완료 항목에 포함하지 않았다.')
 
     memory=BytesIO();appendix.save(memory)
     with ZipFile(memory) as archive:added={name:archive.read(name) for name in archive.namelist()}

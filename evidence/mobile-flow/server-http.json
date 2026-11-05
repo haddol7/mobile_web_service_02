@@ -1,0 +1,111 @@
+{
+  "finished_utc": "2026-11-05T11:30:36.802221+00:00",
+  "environment": "WSL Ubuntu",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/bd7b44e57f4444c288f4450786340687.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/post-contents/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/bd7b44e57f4444c288f4450786340687.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/9151083a65c04b3781ae7f60d557b308.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/posts/2/content/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/bd7b44e57f4444c288f4450786340687.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/bd7b44e57f4444c288f4450786340687.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/05/9151083a65c04b3781ae7f60d557b308.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/post/2/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/content.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/detail.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/stage.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/pipeline.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/rules.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/ocr-policy.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/content/labels.mjs",
+      "status": 200
+    }
+  ]
+}

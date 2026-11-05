@@ -1,0 +1,28 @@
+{
+  "verified_utc": "2026-11-05T11:30:36.2649679Z",
+  "environment": "Windows Android with WSL Django",
+  "server": "http://10.0.2.2:42063/",
+  "native_test_pass": true,
+  "native_tests": 1,
+  "web_captured": true,
+  "post_id": 2,
+  "image_sha256": "8008025bfc271eeb39dd8b00e8f64bdf5f2e74df8e665df41871f22d3c878cfe",
+  "screenshots": [
+    {
+      "file": "yolo-mobile-web-detail.png",
+      "sha256": "fa7acdb3fbde800d1837b0ad44b7ae4f56c617879dda3c9923804275cce92daf"
+    },
+    {
+      "file": "yolo-mobile-web-list.png",
+      "sha256": "c6ff6f350fe3ca22112ea52dd87f0d9c5cf475b188c9ca15d5b9f16d3c07e1a7"
+    },
+    {
+      "file": "yolo-native-detail.png",
+      "sha256": "fda5ce6e6931f888834c02b9d93bf9bd26240ada45b62ea44fc866dae31a0f44"
+    },
+    {
+      "file": "yolo-native-list.png",
+      "sha256": "2fa480a81b17cc3e7ae804cdb4b1237dfa7635199d9a341da612bafdb437dfb3"
+    }
+  ]
+}

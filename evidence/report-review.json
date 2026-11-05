@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-05T10:56:13.414994+00:00",
-  "report_sha256": "42bd697b352472df691e89d1e0e69da18c2d33d2ab0c26d20af4fedba8bd1e1c",
+  "reviewed_utc": "2026-11-05T11:31:34.798652+00:00",
+  "report_sha256": "109c0a951f8cc80f5bdcfd3a70ea15f125ba2c01e99b45f8cfee44ef05016737",
   "checks": [
     {
       "check": "requirement_columns_preserved",
@@ -60,6 +60,18 @@
     },
     {
       "check": "evidence_exists_evidence/yolo-pipeline/original-image.txt",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/video-flow/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/environment/wsl-runtime.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/environment/windows-camera.json",
       "pass": true
     },
     {
@@ -139,6 +151,22 @@
       "pass": true
     },
     {
+      "check": "evidence_exists_evidence/mobile-flow/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/mobile-flow/server-http.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/mobile-flow/yolo-mobile-web-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/mobile-flow/yolo-mobile-web-detail.png",
+      "pass": true
+    },
+    {
       "check": "caption_7",
       "pass": true
     },
@@ -159,7 +187,7 @@
       "pass": true
     },
     {
-      "check": "all_ten_figures_embedded_without_reencoding",
+      "check": "all_twelve_figures_embedded_without_reencoding",
       "pass": true
     },
     {
@@ -213,6 +241,30 @@
     {
       "check": "native_yolo_photo_proof",
       "pass": true
+    },
+    {
+      "check": "runtime_dependency_and_cpu_checks",
+      "pass": true
+    },
+    {
+      "check": "actual_video_appearance_and_auth_failure",
+      "pass": true
+    },
+    {
+      "check": "local_cloud_verifier_not_claimed_as_production",
+      "pass": true
+    },
+    {
+      "check": "repeatable_native_and_mobile_web_flow",
+      "pass": true
+    },
+    {
+      "check": "actual_mobile_web_http_responses",
+      "pass": true
+    },
+    {
+      "check": "exercised_verification_tools_preserved",
+      "pass": true
     }
   ],
   "integrity_pass": true,
@@ -232,5 +284,5 @@
     "10"
   ],
   "http_cases_are_subset_of_full_suite": true,
-  "embedded_figures": 10
+  "embedded_figures": 12
 }
