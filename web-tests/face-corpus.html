@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>공개 사진 얼굴 탐지 검증</title>
+<style>body{font:16px/1.6 system-ui;max-width:1100px;margin:32px auto;padding:16px;background:#f6f5ef;color:#243b34}button{font:inherit;padding:12px}article{background:white;margin:20px 0;padding:16px;border:1px solid #bbb}canvas{max-width:100%;height:auto}pre{white-space:pre-wrap;overflow-wrap:anywhere}.fail{color:#a00}</style>
+<h1>공개 사진 얼굴 탐지 검증</h1>
+<p>다운로드한 16장을 현재 모바일웹과 같은 worker·모델로 순차 처리합니다. 서버 게시나 모델 학습은 하지 않습니다. 정답 좌표 43개는 dlib의 예제 XML에서 가져옵니다. 표본 결과를 전체 사진의 정확도로 일반화하지 않습니다.</p>
+<button id="run">16장 검사 시작</button><p id="status" role="status">아직 실행하지 않았습니다.</p>
+<p>빨간 사각형은 정답 좌표, 사진의 모자이크는 실제 탐지 결과입니다. 주석 얼굴과 가림 영역의 IoU 0.3 이상을 일대일로 대응시키며, 정답 좌표를 80% 이상 덮었는지도 별도로 기록합니다. 좌표 주석이 없는 사진은 개수·육안 검토용입니다.</p>
+<section id="cards"></section><h2>실행 기록</h2><pre id="record">미실행</pre>
+<script type="module" src="./face-corpus.mjs"></script></html>

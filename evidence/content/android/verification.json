@@ -1,0 +1,423 @@
+{
+  "schemaVersion": 1,
+  "runId": "20261105-101742-a779d940",
+  "generatedAtUtc": "2026-11-05T10:17:42.5239929Z",
+  "scope": "Windows Android build/device verification only; not PythonAnywhere deployment verification",
+  "mode": "BuildOnly",
+  "status": "passed",
+  "pythonAnywhereDeploymentVerified": false,
+  "notes": [
+    "RunDevice uses a provisioned isolated local publisher and creates photos, not accounts. Existing records are not deleted.",
+    "Start isolated WSL Django separately. This script never starts/stops an emulator.",
+    "BuildOnly does not verify device rendering, server synchronization, or cloud deployment.",
+    "Only current-run screenshot hashes in this JSON are verification evidence; older PNG files are not re-verified."
+  ],
+  "environment": {
+    "powershell": "7.6.5",
+    "os": "Microsoft Windows NT 10.0.26200.0",
+    "javaHome": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\android-studio\\jbr",
+    "sdkRoot": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\Sdk",
+    "javaVersion": "25.0.3",
+    "platforms": [
+      "android-36"
+    ],
+    "buildTools": [
+      "36.1.0"
+    ],
+    "adbVersion": "1.0.41",
+    "gradleVersion": "9.6.0"
+  },
+  "source": {
+    "sha256": "6e5c2c1e2b613678e435c93d0405ad9ae5806b141ff175977132c2e24fddce56",
+    "filesCount": 56,
+    "files": [
+      {
+        "path": "app/build.gradle.kts",
+        "bytes": 1035,
+        "sha256": "a4a7f4f99915ff3ee7350378debf14f7226dd71684ee34dce3e43463a77ad7cc"
+      },
+      {
+        "path": "app/src/androidTest/AndroidManifest.xml",
+        "bytes": 406,
+        "sha256": "d765de278b410ae8500174d614e133deb008f6f61257c370b3ece73c3c380aea"
+      },
+      {
+        "path": "app/src/androidTest/assets/dog.jpg",
+        "bytes": 83281,
+        "sha256": "d4cb12ea8a768582562e1f1c0c930ea6fc4757f5b66551b986b41498efd75ca1"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/brick.png",
+        "bytes": 248369,
+        "sha256": "e3b850946f0bd7cf9e4e6ee230240677bbd7c7a1e93523f97d7bb0b454a5aeb3"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/foliage-crop.png",
+        "bytes": 1011420,
+        "sha256": "08b82a53f59dcc0fa81758bb0d6651b0cf31beadcf769121fb04cbe1af56a5b9"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/fruit-crop.png",
+        "bytes": 437393,
+        "sha256": "06c27e4c3e7286835ef904a5ae05aee6b094021e27a7af6908626ea5d86ae725"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/fur.png",
+        "bytes": 754906,
+        "sha256": "562520e264bcc9dc599be17fda6bde54cafad44a211668fdcf90128b10be55af"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/grass-large.png",
+        "bytes": 3085788,
+        "sha256": "12a28a08d684b9283a8c6078d17d1a22699950052165e1c9d26191ab9bdb0b57"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/grass.png",
+        "bytes": 436694,
+        "sha256": "d51d6fee73461ad2f462c2565cb2268d3d69068c0848f71671fe72854b8a04fa"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/printed-page.png",
+        "bytes": 13454,
+        "sha256": "eb9d13e67bae688b4747e85ba6f3711e92c14869f60e775a33f5578b3227847b"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/sources.json",
+        "bytes": 1136,
+        "sha256": "f793e7dc88d02972c7340472fc624ab2837f18c6836dc221688a910dde64a2df"
+      },
+      {
+        "path": "app/src/androidTest/assets/portrait.jpg",
+        "bytes": 61306,
+        "sha256": "a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130"
+      },
+      {
+        "path": "app/src/androidTest/assets/SOURCES.txt",
+        "bytes": 1211,
+        "sha256": "061289243af3d64de2ee41170884b378d88cb00f29579b619c2fcae60dc6da88"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/content/ContentDeviceTest.java",
+        "bytes": 12669,
+        "sha256": "5d688a57fd7df069dfa85388f19e9ce08b2967cd44e86505fb7ee3003c0e5b24"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/content/RecognitionQualityTest.java",
+        "bytes": 2090,
+        "sha256": "8e2137463c74e8e6053f2e5be716ab30ba2bab8d2569b99033f406ac5cef5295"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/CloudSyncTest.java",
+        "bytes": 3960,
+        "sha256": "8d380dc0644fe32f5281a2f1ce97556893f85087ea290bb293a7c6984d9d564c"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/ContentUiTest.java",
+        "bytes": 14825,
+        "sha256": "fee0d3ce9124bc76dd062f31bee07dece3b7cf953e082bd2be37844b326ce78e"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/YoloSyncTest.java",
+        "bytes": 5067,
+        "sha256": "46b4704e7d40d6f1e973d4d456561639b33f204f74c080614b38f816776b0637"
+      },
+      {
+        "path": "app/src/main/AndroidManifest.xml",
+        "bytes": 982,
+        "sha256": "b714f9795e8052068cb6e50adb497a17f3136c0e2d029af2a5d2f704db3f1935"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/ComposerState.java",
+        "bytes": 6721,
+        "sha256": "0755d387ba33203632a1b236754920302ca3fdf9cd5cfdce8192d924d4b78a68"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/GenerationGate.java",
+        "bytes": 411,
+        "sha256": "25c67e842c01ccf53939df9e3f06b9ccb839031158cd914f79ec871eccfa090e"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/MosaicDraft.java",
+        "bytes": 3059,
+        "sha256": "2d1cb6606f1b0917e1e06c7556e92866a9ee31b79b4d671d57ee4f3d07885f4a"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/OcrPage.java",
+        "bytes": 2452,
+        "sha256": "440379f894abe5d31ba3111f64c21d0bac0716e7029d1fc7c24d295507d44c5c"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/OcrPolicy.java",
+        "bytes": 2668,
+        "sha256": "4d59732bc20c52840596049d224dd50253ef8febfe102f8a85aabfc1215836d8"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/PhotoCanvas.java",
+        "bytes": 7717,
+        "sha256": "95f52850ebf6d3491aabd567154687a5b60e90ac4d2988e3d3e124923b6e469d"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/PhotoPipeline.java",
+        "bytes": 5582,
+        "sha256": "37485ebfc3d6eaa7e9d7738fc489e5429ed8a7a552bd6929f7d46dd767f2b5aa"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/ThemeMapper.java",
+        "bytes": 5069,
+        "sha256": "d67f66f0381e4607b687f631cdc84bf5f67f8700ec9afb6252e24201aa1e2823"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/content/VisionEngine.java",
+        "bytes": 10548,
+        "sha256": "49565a5957659b01a29e2abc4a73b23b82ee9c892d21d5b13a318e0de2d1e41d"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/data/HttpException.java",
+        "bytes": 632,
+        "sha256": "f9273d6e7b712c0ca833ecc7eb86054606e1edb0a0f7c6c57fd3f3fe2430eaa8"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/data/JsonCodec.java",
+        "bytes": 1774,
+        "sha256": "d2061e98f5d47ffb2798fa66cd11abc735e695ae9d8c067c4f3919a43e621653"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/data/MultipartBody.java",
+        "bytes": 3167,
+        "sha256": "214b5d55baf157d623f4f7644a6294e8bc7a9e0446f3b7e89ced1c7e1c3656df"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/data/PhotoRepository.java",
+        "bytes": 17779,
+        "sha256": "78adfea57c8d27ea2a4abe93e61bd42e1e8609bb8b74d78e8225bbe643ef57ad"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/MainActivity.java",
+        "bytes": 56375,
+        "sha256": "c6fe97b854cbc34a5a5fd4e2155a3b9e95dbb1de4bf31e1a543abbf9ce99e0f2"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/model/PhotoPost.java",
+        "bytes": 501,
+        "sha256": "589753bc9959fa5084603bdb180a50c709d64f937b1dac7e2c127960fa72cb4c"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/model/SessionInfo.java",
+        "bytes": 728,
+        "sha256": "45364e91ef7330aca19b192b08f0bad37c9ff1bcb83b78f81a88c9df219329b1"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/ChipFlow.java",
+        "bytes": 1290,
+        "sha256": "860dbafb2912c4ee7cc8358c997798681da00b554229ca9f1bb97482d5070caf"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/RequestScope.java",
+        "bytes": 499,
+        "sha256": "b19e251f3c5623f41a340ae542554d12b99176536ae511dba69168a94ae7009c"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/UiKit.java",
+        "bytes": 3338,
+        "sha256": "d27f392d6071ddf908be44b5b236685538fb2f0c98711a4712de6d204ef8470c"
+      },
+      {
+        "path": "app/src/main/res/drawable/ic_photo_blog.xml",
+        "bytes": 596,
+        "sha256": "8adde8393d02de09ee1df7dabea6911c90f75e174687a25c0a724da6c8d601d8"
+      },
+      {
+        "path": "app/src/main/res/values/strings.xml",
+        "bytes": 219,
+        "sha256": "49561c1f3342fd3779e053665c1213b165b02093cc584f980362ff3c0d2b1853"
+      },
+      {
+        "path": "app/src/main/res/values/styles.xml",
+        "bytes": 535,
+        "sha256": "2b5072a83719687bb8c1d11fedb83a51c45594ce2809e265149016dec7255e37"
+      },
+      {
+        "path": "app/src/main/res/xml/data_extraction_rules.xml",
+        "bytes": 630,
+        "sha256": "eda9dddce1e895de1efd716fe75e244187bf8f91a3bb7444c6ea1731e51c74a8"
+      },
+      {
+        "path": "app/src/main/res/xml/network_security_config.xml",
+        "bytes": 402,
+        "sha256": "073ac2ac23d6c6206291944d55093ad6f22a3eb4bbc16a1795905b19db171a5e"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/content/ContentRulesTest.java",
+        "bytes": 4184,
+        "sha256": "f6ed7e0e04c1ece69396b20399d713ad0deff9f092026223918427279399008a"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/content/OcrPolicyTest.java",
+        "bytes": 2908,
+        "sha256": "5087f97fc009a57356a1bfb7846e2a55ebb25ee3ffe98390c44212bea58fa734"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/data/MultipartBodyTest.java",
+        "bytes": 2205,
+        "sha256": "a2c8255152a9b9fdba3154bafe423c8381b333e2f2ee2dc3f28b95cc6f329c4c"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/data/RepositoryPolicyTest.java",
+        "bytes": 2083,
+        "sha256": "e6ec5e04e0f0f9ab97ff21252e5f55e825d9052576e9cb09b3fffdb23764a6de"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/ui/RequestScopeTest.java",
+        "bytes": 787,
+        "sha256": "cf2f7d38311dd97c216dbe1a3a512a0e3141b38b86138126d77c05b134e0107e"
+      },
+      {
+        "path": "build.gradle.kts",
+        "bytes": 74,
+        "sha256": "786a6aef9d41e1075240be92fad07fb11f25717c0253245646957542649034f3"
+      },
+      {
+        "path": "gradle.properties",
+        "bytes": 76,
+        "sha256": "fdcda40a82e36d5031ec21ee8685e7275cf30d5bb916927893a6687b70b5006c"
+      },
+      {
+        "path": "gradle/wrapper/gradle-wrapper.jar",
+        "bytes": 48462,
+        "sha256": "497c8c2a7e5031f6aa847f88104aa80a93532ec32ee17bdb8d1d2f67a194a9c7"
+      },
+      {
+        "path": "gradle/wrapper/gradle-wrapper.properties",
+        "bytes": 282,
+        "sha256": "c1e78d28bc24d611b1450aaefc1273bde6a9d97f2b6df734653f05216f9a5c87"
+      },
+      {
+        "path": "gradlew",
+        "bytes": 8656,
+        "sha256": "a5a5c199ba02189ae8c46a334223371a20599d9c298ef65e7540ede4a3f72d59"
+      },
+      {
+        "path": "gradlew.bat",
+        "bytes": 2848,
+        "sha256": "d539676c48b596afda64c963ec8f7ee56c7b3fe7e3b81d1dbe2d1a1e3dd9e9f8"
+      },
+      {
+        "path": "settings.gradle.kts",
+        "bytes": 284,
+        "sha256": "855061b28d071866732aa4001c2f9b00ed137e7b048d3a98c86f1fad05dbdc10"
+      },
+      {
+        "path": "tools/verify-android.ps1",
+        "bytes": 20793,
+        "sha256": "721e4c2557e82384bb8d1755eaa9737d45f516202b8862300978b4f5f2e99363"
+      }
+    ]
+  },
+  "sourceStable": true,
+  "build": {
+    "passed": true,
+    "gradleLog": "evidence/private/androidVerification/20261105-101742-a779d940/gradle.log",
+    "apks": [
+      {
+        "path": "PhotoViewer/app/build/outputs/apk/debug/app-debug.apk",
+        "bytes": 129803779,
+        "sha256": "c7bdd488d163e4ac9372abef98ca478212ceac6c9ab2bbcb3b24b87b35878649"
+      },
+      {
+        "path": "PhotoViewer/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
+        "bytes": 6217740,
+        "sha256": "362e2055707189f975dff9b2bb3fc06c7f75fba15f98db2ddbc4f23922a01e41"
+      }
+    ]
+  },
+  "unitTests": {
+    "passed": true,
+    "tests": 38,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "suites": [
+      {
+        "name": "com.haddol7.photoviewer.content.ContentRulesTest",
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.haddol7.photoviewer.content.OcrPolicyTest",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.haddol7.photoviewer.data.MultipartBodyTest",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.haddol7.photoviewer.data.RepositoryPolicyTest",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "name": "com.haddol7.photoviewer.ui.RequestScopeTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "lint": {
+    "passed": true,
+    "errors": 0,
+    "warnings": 7,
+    "issues": [
+      {
+        "id": "OldTargetApi",
+        "severity": "Warning"
+      },
+      {
+        "id": "GradleDependency",
+        "severity": "Warning"
+      },
+      {
+        "id": "DrawAllocation",
+        "severity": "Warning"
+      },
+      {
+        "id": "UnusedResources",
+        "severity": "Warning"
+      },
+      {
+        "id": "UnusedResources",
+        "severity": "Warning"
+      },
+      {
+        "id": "SetTextI18n",
+        "severity": "Warning"
+      },
+      {
+        "id": "SetTextI18n",
+        "severity": "Warning"
+      }
+    ]
+  },
+  "device": {
+    "requested": false,
+    "status": "not_run",
+    "serial": null,
+    "server": null,
+    "diagnostic": null,
+    "tests": 0,
+    "classes": [],
+    "screenshots": []
+  },
+  "failure": null
+}

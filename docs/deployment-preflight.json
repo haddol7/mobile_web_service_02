@@ -1,0 +1,115 @@
+{
+  "checked_utc": "2026-11-05T10:20:11.239398+00:00",
+  "read_only": true,
+  "domain": "daejinha.pythonanywhere.com",
+  "current_source": "/home/daejinha/common01-auto/releases/20261020144652d2d706/PhotoBlogServer",
+  "candidate_source": "/mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer",
+  "comparisons": [
+    {
+      "path": "blog/models.py",
+      "identical": true,
+      "local_sha256": "8e346d1693ab2ce6b195cbdec87b31d9886f4307eb457a65cd7e55feb1526180",
+      "remote_sha256": "8e346d1693ab2ce6b195cbdec87b31d9886f4307eb457a65cd7e55feb1526180"
+    },
+    {
+      "path": "blog/services.py",
+      "identical": true,
+      "local_sha256": "56cf6365778e3c8e666ebaefc2626576f66ee3cadf42c99d3eec538254263023",
+      "remote_sha256": "56cf6365778e3c8e666ebaefc2626576f66ee3cadf42c99d3eec538254263023"
+    },
+    {
+      "path": "blog/serializers.py",
+      "identical": true,
+      "local_sha256": "bf7633c40b3dae8bdf9dc9776dcf4c9dbab798a5a0c56023a29a778cf7705e98",
+      "remote_sha256": "bf7633c40b3dae8bdf9dc9776dcf4c9dbab798a5a0c56023a29a778cf7705e98"
+    },
+    {
+      "path": "blog/permissions.py",
+      "identical": true,
+      "local_sha256": "537745508a28577536aded407a5607e83bbfae5708af230f20f04032653e1d3e",
+      "remote_sha256": "537745508a28577536aded407a5607e83bbfae5708af230f20f04032653e1d3e"
+    },
+    {
+      "path": "blog/ownership.py",
+      "identical": true,
+      "local_sha256": "d611d90008602614d411e819005870ab62520f43917e96c73455057cca53e0f7",
+      "remote_sha256": "d611d90008602614d411e819005870ab62520f43917e96c73455057cca53e0f7"
+    },
+    {
+      "path": "blog/views.py",
+      "identical": true,
+      "local_sha256": "ed79c2f02b98744480031abc4e2b813d093776cc246c1c08804cf16f31feae69",
+      "remote_sha256": "ed79c2f02b98744480031abc4e2b813d093776cc246c1c08804cf16f31feae69"
+    },
+    {
+      "path": "blog/api_v1.py",
+      "identical": true,
+      "local_sha256": "2740234742a00a92523c092308575e0413a29b0c94f73ceb351ab8621c5342f4",
+      "remote_sha256": "2740234742a00a92523c092308575e0413a29b0c94f73ceb351ab8621c5342f4"
+    },
+    {
+      "path": "blog/api_v1_urls.py",
+      "identical": true,
+      "local_sha256": "f092c6fb16c105a6f375a0e6a398d6b2e739a90bce021eb3681c640851de0fbf",
+      "remote_sha256": "f092c6fb16c105a6f375a0e6a398d6b2e739a90bce021eb3681c640851de0fbf"
+    },
+    {
+      "path": "blog/urls.py",
+      "identical": true,
+      "local_sha256": "bf34b0f2b197478f0af7eefb331e628a4985d4389cb67833f953903ddc4e9c79",
+      "remote_sha256": "bf34b0f2b197478f0af7eefb331e628a4985d4389cb67833f953903ddc4e9c79"
+    },
+    {
+      "path": "photoblog/urls.py",
+      "identical": true,
+      "local_sha256": "81d6977033e01927e0f2bdac92d98e43cf35728c64a124dbb601d6921744a1ca",
+      "remote_sha256": "81d6977033e01927e0f2bdac92d98e43cf35728c64a124dbb601d6921744a1ca"
+    },
+    {
+      "path": "requirements.txt",
+      "identical": true,
+      "local_sha256": "07ddcc3503d840443b96583912b50be9b254c3f3dba69390f89d4df5033c4495",
+      "remote_sha256": "07ddcc3503d840443b96583912b50be9b254c3f3dba69390f89d4df5033c4495"
+    },
+    {
+      "path": "blog/migrations/0001_initial.py",
+      "identical": true,
+      "local_sha256": "f63e4db5301bebf337aa9d59515099d39b43ef5fbca2291b575cac421333ee9b",
+      "remote_sha256": "f63e4db5301bebf337aa9d59515099d39b43ef5fbca2291b575cac421333ee9b"
+    },
+    {
+      "path": "blog/migrations/0002_gallery_decorlayout.py",
+      "identical": true,
+      "local_sha256": "a2a36fcaacc5903bfca32bea3326ceb971b38571cd0239eef88680cb0bf75fa0",
+      "remote_sha256": "a2a36fcaacc5903bfca32bea3326ceb971b38571cd0239eef88680cb0bf75fa0"
+    },
+    {
+      "path": "blog/migrations/0003_photocontent_phototag_phototextline.py",
+      "identical": true,
+      "local_sha256": "0b8354c8e03352c17e4f7732811f56526708430647cd3ef29f17c3518d92a860",
+      "remote_sha256": "0b8354c8e03352c17e4f7732811f56526708430647cd3ef29f17c3518d92a860"
+    },
+    {
+      "path": "blog/migrations/0004_remove_photo_studio.py",
+      "identical": true,
+      "local_sha256": "228adefcf878cbfcdbe53b605f99b0bb8d192fa41c6745ab3a396e70c4ab42a8",
+      "remote_sha256": "228adefcf878cbfcdbe53b605f99b0bb8d192fa41c6745ab3a396e70c4ab42a8"
+    },
+    {
+      "path": "blog/migrations/__init__.py",
+      "identical": true,
+      "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "migrations_identical": true,
+  "requirements_identical": true,
+  "proposed_storage": {
+    "database": "/home/daejinha/common01-auto/shared/db.sqlite3",
+    "media": "/home/daejinha/common01-auto/shared/media",
+    "preserve": true
+  },
+  "proposed_activation": "Use an immutable release of assessment 02 source in the existing webapp after approval. Keep existing shared DB and media. Back up DB and WSGI, verify migrations and original image hashes, then switch source and reload. Restore routing if public verification fails.",
+  "production_changed": false,
+  "approval_required": true
+}

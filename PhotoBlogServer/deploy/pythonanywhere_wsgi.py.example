@@ -1,0 +1,21 @@
+"""Copy manually into the approved PythonAnywhere Web-tab WSGI file only."""
+from pathlib import Path
+import sys
+
+
+# Replace both absolute paths AFTER approving the existing Lab03 app transition.
+# PROJECT_ROOT must contain common01's manage.py and photoblog/settings.py.
+PROJECT_ROOT = Path("/home/REPLACE_USERNAME/REPLACE_APPROVED_REPOSITORY/common01/PhotoBlogServer")
+PRIVATE_CONFIG = Path("/home/REPLACE_USERNAME/.config/common01/production.json")
+if "REPLACE_" in str(PROJECT_ROOT) or "REPLACE_" in str(PRIVATE_CONFIG):
+    raise RuntimeError("Set the approved Common Assessment project and private configuration paths.")
+sys.path.insert(0, str(PROJECT_ROOT))
+from deploy.production import load_environment
+
+
+# A Bash export alone does not configure PythonAnywhere's web worker process.
+# Fail closed before importing Django; no development secret/debug fallback here.
+load_environment(PRIVATE_CONFIG, PROJECT_ROOT)
+from django.core.wsgi import get_wsgi_application
+
+application = get_wsgi_application()

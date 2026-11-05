@@ -1,0 +1,48 @@
+{
+  "verified_utc": "2026-11-05T10:09:19.208123+00:00",
+  "environment": "WSL Ubuntu",
+  "python": "/home/daeha/.venvs/mobile_web_service_02/bin/python",
+  "original_detect_sha256": "ba0175be184bd03632590b3d71b059f2e2df21569392bb9c5e18ff76292f9e60",
+  "modified_detect_sha256": "8fc5d335c24b769da991c090d4cce189e12f12df6af1db5c7ca078a7fc9238ee",
+  "weights_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+  "baseline": {
+    "source": "official bus.jpg",
+    "person": 4,
+    "bus": 1
+  },
+  "real_pipeline": {
+    "input_frames": [
+      "bus",
+      "bus",
+      "empty",
+      "bus"
+    ],
+    "uploads": [
+      {
+        "id": 2,
+        "title": "YOLO: person, bus",
+        "image_sha256": "8008025bfc271eeb39dd8b00e8f64bdf5f2e74df8e665df41871f22d3c878cfe",
+        "size": [
+          320,
+          240
+        ]
+      },
+      {
+        "id": 1,
+        "title": "YOLO: person, bus",
+        "image_sha256": "8008025bfc271eeb39dd8b00e8f64bdf5f2e74df8e665df41871f22d3c878cfe",
+        "size": [
+          320,
+          240
+        ]
+      }
+    ],
+    "persistent_frame_skipped": true,
+    "empty_frame_skipped": true,
+    "reappearance_uploaded": true,
+    "api_shape": "seven-field array",
+    "public_image_bytes_match": true
+  },
+  "webcam_tested": false,
+  "pass": true
+}

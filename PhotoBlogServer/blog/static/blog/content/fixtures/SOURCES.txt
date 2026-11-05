@@ -1,0 +1,15 @@
+portrait.jpg
+Source: https://storage.googleapis.com/download.tensorflow.org/example_images/grace_hopper.jpg
+Google TensorFlow public example image (Grace Hopper, public-domain US Navy photograph).
+Downloaded: 2026-10-20 Asia/Seoul
+SHA256: a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130
+Used only for device face-detection/actual-pixel tests. No identity recognition feature is implemented.
+
+dog.jpg
+Source mirror: https://storage.googleapis.com/download.tensorflow.org/example_images/YellowLabradorLooking_new.jpg
+Original: https://commons.wikimedia.org/wiki/File:YellowLabradorLooking_new.jpg
+Original photograph: Elf (2004); derivative image: Djmirko (2008).
+License: CC BY-SA 3.0, https://creativecommons.org/licenses/by-sa/3.0/
+Image bytes unchanged; renamed to dog.jpg for the test asset.
+SHA256: d4cb12ea8a768582562e1f1c0c930ea6fc4757f5b66551b986b41498efd75ca1
+Purpose: actual automatic animal-theme classification, with no manual selection or model training.

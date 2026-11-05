@@ -1,0 +1,66 @@
+ACTUAL WSL SUBPROCESS OUTPUT: http-api-engine
+Run started UTC: 2026-11-05T10:20:37.675668+00:00
+WSL: Ubuntu
+Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
+Command: /home/daeha/.venvs/mobile_web_service_02/bin/python api_test_engine.py
+Credential-like values are redacted if present; no terminal screenshot is fabricated.
+
+Found 15 test(s).
+Operations to perform:
+  Synchronize unmigrated apps: messages, rest_framework, staticfiles
+  Apply all migrations: admin, auth, authtoken, blog, contenttypes, sessions
+Synchronizing apps without migrations:
+  Creating tables...
+    Running deferred SQL...
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying admin.0002_logentry_remove_auto_add... OK
+  Applying admin.0003_logentry_add_action_flag_choices... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying auth.0007_alter_validators_add_error_messages... OK
+  Applying auth.0008_alter_user_username_max_length... OK
+  Applying auth.0009_alter_user_last_name_max_length... OK
+  Applying auth.0010_alter_group_name_max_length... OK
+  Applying auth.0011_update_proxy_permissions... OK
+  Applying auth.0012_alter_user_first_name_max_length... OK
+  Applying authtoken.0001_initial... OK
+  Applying authtoken.0002_auto_20160226_1747... OK
+  Applying authtoken.0003_tokenproxy... OK
+  Applying authtoken.0004_alter_tokenproxy_options... OK
+  Applying blog.0001_initial... OK
+  Applying blog.0002_gallery_decorlayout... OK
+  Applying blog.0003_photocontent_phototag_phototextline... OK
+  Applying blog.0004_remove_photo_studio... OK
+  Applying sessions.0001_initial... OK
+System check identified no issues (0 silenced).
+Creating test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+test_real_anonymous_request_is_rejected_without_persisting (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_anonymous_request_is_rejected_without_persisting) ... ok
+test_real_binary_multipart_builder_preserves_image_bytes (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_binary_multipart_builder_preserves_image_bytes) ... ok
+test_real_head_and_options_contract (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_head_and_options_contract) ... ok
+test_real_invalid_credentials_do_not_produce_token (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_invalid_credentials_do_not_produce_token) ... ok
+test_real_invalid_multipart_image_is_rejected (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_invalid_multipart_image_is_rejected) ... ok
+test_real_malformed_authorization_header_is_rejected (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_malformed_authorization_header_is_rejected) ... ok
+test_real_malformed_multipart_without_boundary_is_rejected (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_malformed_multipart_without_boundary_is_rejected) ... ok
+test_real_multipart_request_persists_row_and_serves_identical_photo (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_multipart_request_persists_row_and_serves_identical_photo) ... ok
+test_real_owner_boundary_update_delete_and_media_cleanup (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_owner_boundary_update_delete_and_media_cleanup) ... ok
+test_real_truncated_jpeg_multipart_is_rejected_without_db_or_media_write (blog.tests.test_http_engine.RealHTTPAPIEngineTests.test_real_truncated_jpeg_multipart_is_rejected_without_db_or_media_write) ... ok
+test_actual_owner_upload_reader_denial_and_public_seven_field_sync (blog.tests.test_single_owner_http.SingleOwnerHTTPTests.test_actual_owner_upload_reader_denial_and_public_seven_field_sync) ... ok
+test_actual_retired_routes_and_session_capability (blog.tests.test_single_owner_http.SingleOwnerHTTPTests.test_actual_retired_routes_and_session_capability) ... ok
+test_actual_mismatched_image_is_not_saved (blog.tests.test_content_http.ContentRealHTTPTests.test_actual_mismatched_image_is_not_saved) ... ok
+test_actual_stale_write_returns_409_and_legacy_array_remains (blog.tests.test_content_http.ContentRealHTTPTests.test_actual_stale_write_returns_409_and_legacy_array_remains) ... ok
+test_actual_upload_public_file_search_correction_and_exclusion (blog.tests.test_content_http.ContentRealHTTPTests.test_actual_upload_public_file_search_correction_and_exclusion) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 8.096s
+
+OK
+Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...
+
+Exit code: 0

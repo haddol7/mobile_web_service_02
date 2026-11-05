@@ -1,0 +1,39 @@
+{
+  "sources": [
+    {
+      "name": "grass",
+      "url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/grass.png"
+    },
+    {
+      "name": "brick",
+      "url": "https://raw.githubusercontent.com/scikit-image/scikit-image/v0.19.3/skimage/data/brick.png"
+    },
+    {
+      "name": "printed-page",
+      "url": "https://raw.githubusercontent.com/tesseract-ocr/test/main/testing/phototest.tif"
+    }
+  ],
+  "derived": [
+    {
+      "name": "fur",
+      "source": "../public-face-corpus/opencv-baboon.jpg",
+      "transform": "none, PNG encoding"
+    },
+    {
+      "name": "fruit-crop",
+      "source": "../public-face-corpus/opencv-fruits.jpg",
+      "transform": "bottom 70%, removes printed bag"
+    },
+    {
+      "name": "grass-large",
+      "source": "grass.png",
+      "transform": "resize to 1600 x 1600, PNG"
+    },
+    {
+      "name": "foliage-crop",
+      "source": "../public-face-corpus/opencv-building.jpg",
+      "transform": "crop x0 y350 w250 h125; resize 1000 x500; no sign or writing"
+    }
+  ],
+  "purpose": "OCR regression evaluation only; no training or production fixtures"
+}

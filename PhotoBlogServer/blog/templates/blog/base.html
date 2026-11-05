@@ -1,0 +1,89 @@
+{% load static %}
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}사진 블로그{% endblock %} · Common 02</title>
+  <style>
+    :root { color-scheme: light; --ink:#24372f; --paper:#f7f6ee; --accent:#276650; --line:#d8dfd2; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.6 system-ui,sans-serif; }
+    a { color:var(--accent); }
+    header { background:#fff; border-bottom:1px solid var(--line); }
+    nav { max-width:1080px; margin:auto; padding:20px 28px; display:flex; align-items:center; gap:20px; flex-wrap:wrap; }
+    .brand { margin-right:auto; font-size:22px; font-weight:800; text-decoration:none; }
+    main { max-width:1080px; margin:40px auto; padding:0 28px; }
+    h1,h2 { line-height:1.2; }
+    .eyebrow { color:#758478; font-size:12px; font-weight:700; letter-spacing:.13em; }
+    .cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:24px; }
+    article,.panel { background:white; border:1px solid var(--line); border-radius:16px; padding:24px; }
+    .cards article { padding:0; overflow:hidden; }
+    .cards .copy { padding:20px; }
+    .cards img { width:100%; height:240px; object-fit:cover; display:block; }
+    .hero-image { max-height:700px; width:100%; object-fit:contain; border-radius:10px; background:#f1f3eb; }
+    .muted { color:#718076; font-size:14px; }
+    .button,button { display:inline-block; border:0; border-radius:8px; padding:10px 18px; background:var(--accent); color:white; font:inherit; cursor:pointer; text-decoration:none; }
+    button.secondary,.button.secondary { background:#e7ede4; color:var(--ink); }
+    nav form,.inline-form { display:inline; margin:0; }
+    .form-panel { max-width:740px; margin:auto; }
+    label { display:block; font-weight:600; margin:20px 0 6px; }
+    input:not([type=checkbox]),textarea { width:100%; padding:12px; border:1px solid #b6c5b8; border-radius:8px; background:white; font:inherit; }
+    textarea { min-height:170px; resize:vertical; }
+    input[type=file] { padding:14px; background:#f5f7f0; }
+    .search-panel { margin:24px 0; padding:22px; }
+    .search-fields { display:grid; grid-template-columns:minmax(0,2fr) minmax(130px,1fr) minmax(120px,1fr) auto; gap:16px; align-items:end; }
+    .search-field { min-width:0; }
+    .search-field label { margin:0 0 6px; font-size:14px; }
+    .search-field select { width:100%; height:49px; padding:8px 10px; border:1px solid #b6c5b8; border-radius:8px; background:white; font:inherit; color:var(--ink); }
+    .search-actions { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .search-actions button,.search-actions a { white-space:nowrap; }
+    @media(max-width:760px) { .search-fields { grid-template-columns:1fr 1fr; } .search-field:first-child,.search-actions { grid-column:1/-1; } nav { padding:16px;gap:12px; } main { padding:0 16px;margin:24px auto; } }
+    .errorlist { color:#a43431; padding-left:22px; }
+    .helptext { display:block; color:#718076; font-size:13px; margin:4px 0; }
+    .actions { margin:24px 0 0; display:flex; gap:12px; flex-wrap:wrap; }
+    pre { padding:20px; overflow:auto; border-radius:10px; background:#20362b; color:#ebf5e4; }
+    footer { max-width:1080px; margin:64px auto 24px; padding:0 28px; color:#718076; font-size:13px; }
+    .site-nav{min-height:64px;padding:10px 20px;gap:12px;flex-wrap:nowrap}
+    .site-nav .brand{font-size:21px;white-space:nowrap}
+    .site-nav .nav-browse{font-size:14px;white-space:nowrap}
+    .site-nav .nav-post,.site-nav .nav-login{min-height:42px;padding:8px 13px;font-size:14px;white-space:nowrap}
+    .site-nav .nav-signup{font-size:13px;white-space:nowrap}
+    .account-menu{position:relative;font-size:13px;flex-shrink:0}
+    .account-menu summary{cursor:pointer;list-style:none;min-height:42px;padding:10px 6px;color:#53685b}
+    .account-menu summary::-webkit-details-marker{display:none}
+    .account-popover{position:absolute;z-index:30;right:0;top:100%;width:190px;padding:14px;border:1px solid var(--line);border-radius:12px;background:white;box-shadow:0 8px 24px #24372f18}
+    .account-popover p{margin:0 0 10px;overflow-wrap:anywhere}
+    .account-popover button{width:100%;font-size:13px}
+    .auth-panel{max-width:460px;padding:24px}
+    .auth-panel h1{font-size:26px;margin:0 0 8px}
+    .auth-panel>.muted{margin:0 0 20px}
+    .auth-field{margin:12px 0}
+    .auth-field label{margin:0 0 4px;font-size:13px}
+    .auth-field input{min-height:44px;padding:9px 11px;font-size:16px}
+    .auth-panel .auth-actions{margin-top:16px;display:block}
+    .auth-actions button{min-height:44px;width:100%;padding:8px 12px;font-size:15px}
+    .auth-help{margin:12px 0;font-size:12px;color:#637469}
+    .auth-help summary{cursor:pointer;min-height:32px}
+    .auth-help ul{padding-left:20px}
+    .auth-switch{font-size:13px;margin:12px 0 0}
+    @media(max-width:760px){.site-nav{min-height:60px;padding:8px 14px;gap:10px}.site-nav .brand{font-size:20px}.site-nav .nav-browse{display:none}main{margin:16px auto;padding:0 12px}footer{margin:28px auto 16px;padding:0 16px;font-size:11px}.auth-panel{padding:20px}.auth-panel .eyebrow{display:none}.auth-panel h1{font-size:24px}.auth-panel>.muted{font-size:13px;margin-bottom:14px}}
+    @media(max-width:360px){.site-nav{gap:6px;padding:8px 10px}.site-nav .brand{font-size:18px}.site-nav .nav-post,.site-nav .nav-login{font-size:13px;padding:8px 10px}.site-nav .nav-signup{font-size:12px}}
+  </style>
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <header><nav class="site-nav" aria-label="주 메뉴">
+    <a class="brand" href="{% url 'post_list' %}">사진 블로그</a>
+    {% if user.is_authenticated %}
+      {% if is_blog_owner %}<a class="button nav-post" href="{% url 'post_new' %}">사진 게시</a>{% endif %}
+      <details class="account-menu"><summary aria-label="계정 메뉴">계정 ▾</summary><div class="account-popover"><p>{{ user.username }}</p><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="secondary" type="submit">로그아웃</button></form></div></details>
+    {% else %}
+      <a class="button nav-login" href="{% url 'login' %}">로그인</a>
+    {% endif %}
+  </nav></header>
+  <main>{% block content %}{% endblock %}</main>
+  <footer>사진과 이야기를 함께 · 사진 블로그</footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

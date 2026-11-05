@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="layout_status">%1$s · 서버 버전 %2$d · 장식 %3$d/%4$d</string>
+    <string name="selected_photo">선택한 사진: %1$s</string>
+</resources>

@@ -1,0 +1,10 @@
+ACTUAL WSL SUBPROCESS OUTPUT: coverage-json
+Run started UTC: 2026-11-05T10:20:37.675668+00:00
+WSL: Ubuntu
+Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
+Command: /home/daeha/.venvs/mobile_web_service_02/bin/python -m coverage json -o htmlcov/coverage.json
+Credential-like values are redacted if present; no terminal screenshot is fabricated.
+
+Wrote JSON report to htmlcov/coverage.json
+
+Exit code: 0

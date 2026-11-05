@@ -1,0 +1,5 @@
+{% extends 'blog/base.html' %}{% load static %}
+{% block title %}모바일웹 실제 인식 검증{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'blog/content/content.css' %}">{% endblock %}
+{% block content %}<section class="panel"><h1>모바일웹 실제 인식 검증</h1><p>개발 환경에서 공개 예제 사진·생성 문구로 실제 브라우저 모델과 픽셀을 검사합니다. 사용자 사진을 외부로 전송하지 않습니다.</p><button type="button" id="run-vision-check">실제 인식 검사 시작</button><p id="probe-status" role="status">대기</p><ol id="probe-results"></ol><canvas id="probe-photo" style="max-width:100%" aria-label="검증용 모자이크 사진"></canvas><pre id="probe-record"></pre></section>{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/content/probe.mjs' %}?v=face-confirm-5"></script><script type="module" src="{% static 'blog/content/face-probe.mjs' %}?v=face-confirm-5"></script>{% endblock %}

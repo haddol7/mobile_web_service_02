@@ -1,0 +1,107 @@
+{% extends 'blog/base.html' %}
+{% block extra_head %}
+  <style>
+    .hero-secret-trigger { padding:0; border:0; border-radius:4px; background:transparent; color:inherit; font:inherit; line-height:inherit; text-align:inherit; }
+    .hero-secret-trigger:focus-visible { outline:3px solid var(--accent); outline-offset:7px; }
+    .hero-secret { position:relative; max-width:440px; margin:24px 0; padding:24px; border:1px solid #d5dfcf; border-radius:16px; background:#fffdf5; box-shadow:0 8px 24px #24372f0c; }
+    .hero-secret:not([hidden]) { animation:secret-appear .35s ease-out; }
+    .hero-secret-camera { display:block; margin-bottom:10px; font-size:34px; }
+    .hero-secret h2 { margin:0 0 10px; font-size:21px; }
+    .hero-secret p { margin:0 0 18px; color:#627264; }
+    .hero-secret-sparkle { position:absolute; top:24px; right:28px; color:#b18a30; font-size:25px; }
+    @keyframes secret-appear { from { opacity:0; transform:translateY(8px) rotate(-1deg); } to { opacity:1; transform:none; } }
+    @media(prefers-reduced-motion:reduce) { .hero-secret:not([hidden]) { animation:none; } }
+    .feed-intro h1{font-size:30px;margin:0 0 8px}.feed-intro>p{margin:0;font-size:14px}
+    .feed-search{margin:18px 0;padding:0;border:0;background:transparent}
+    .search-primary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+    .search-primary input{min-width:0;min-height:44px;padding:9px 12px;font-size:16px}
+    .search-primary button{padding:8px 16px;min-height:44px;font-size:14px}
+    .search-input-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+    .search-filter{margin-top:6px;font-size:13px}
+    .search-filter summary{cursor:pointer;min-height:34px;padding:6px 0;color:#53685b;list-style:none}
+    .search-filter summary::-webkit-details-marker{display:none}
+    .search-filter summary::after{content:' ＋';font-weight:600}.search-filter[open] summary::after{content:' −'}
+    .search-filter-fields{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;padding:12px;background:white;border:1px solid var(--line);border-radius:12px}
+    .search-filter-fields .search-field label{font-size:12px;margin:0 0 4px}
+    .search-filter-fields input,.search-filter-fields select{min-width:0;width:100%;height:44px;padding:8px;font-size:16px}
+    .search-filter-fields .search-actions{grid-column:1/-1;font-size:13px}
+    .search-filter-fields .search-actions button{min-height:40px;padding:6px 12px}
+    .search-feedback{margin:0 0 12px;font-size:13px;color:#637469}
+    .search-feedback a{margin-left:8px}
+    .post-grid{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:18px}
+    .post-grid article{min-width:0;border-radius:12px}
+    .post-grid>.panel{grid-column:1/-1}
+    .post-grid .post-thumbnail{display:block;overflow:hidden;background:#e9eee7}
+    .post-grid img{width:100%;height:auto;min-height:0;aspect-ratio:16/10;object-fit:cover}
+    .post-grid .copy{padding:14px}
+    .post-grid .copy h2{font-size:18px;line-height:1.4;margin:0 0 8px}
+    .post-grid h2 a{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;overflow-wrap:anywhere;text-decoration:none;min-height:2.8em}
+    .post-card-meta{display:flex;align-items:center;gap:6px;font-size:11px;line-height:1.5;color:#718076;min-width:0}
+    .post-card-author{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;flex:1}
+    .post-card-meta time{white-space:nowrap;flex-shrink:0}
+    .post-grid .post-card-tags{font-size:11px;line-height:1.4;margin:4px 0 0;color:#637469;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+    @media(max-width:760px){.feed-intro h1{font-size:24px;margin-bottom:6px}.feed-intro>p{font-size:13px}.feed-search{margin:14px 0 10px}.post-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.post-grid .copy{padding:9px 10px}.post-grid .copy h2{font-size:14px;line-height:1.4;margin:0 0 6px}.post-card-meta,.post-grid .post-card-tags{font-size:10px}}
+    @media(max-width:360px){.post-grid{gap:8px}.post-grid .copy{padding:8px}.post-card-meta{gap:4px}}
+  </style>
+{% endblock %}
+{% block content %}
+  <div class="feed-intro"><h1><button type="button" class="hero-secret-trigger" id="hero-secret-trigger" aria-controls="hero-secret" aria-expanded="false">사진과 이야기를 함께</button></h1><p class="muted">사진 속 문구와 테마로 기록을 찾아보세요.</p></div>
+  <section class="hero-secret" id="hero-secret" role="status" aria-live="polite" hidden>
+    <span class="hero-secret-sparkle" aria-hidden="true">✦</span>
+    <span class="hero-secret-camera" aria-hidden="true">📸</span>
+    <h2>찰칵! 숨은 한 장을 찾았어요.</h2>
+    <p>평범한 하루에도, 남겨두고 싶은 순간이 있어요.<br>오늘의 이야기도 한 장 남겨볼까요?</p>
+    <button type="button" class="secondary" id="hero-secret-close">다시 숨기기</button>
+  </section>
+  <form method="get" class="feed-search" role="search">
+    {{ search_form.non_field_errors }}
+    <label class="search-input-label" for="id_q">사진 속 글자 검색</label><div class="search-primary">{{ search_form.q }}<button type="submit">검색</button></div>{{ search_form.q.errors }}
+    <details class="search-filter" {% if search_form.theme.value or search_form.tag.value or search_form.errors %}open{% endif %}><summary>테마·태그 필터{% if search_form.theme.value or search_form.tag.value %} · 적용 중{% endif %}</summary><div class="search-filter-fields"><div class="search-field"><label for="id_theme">테마</label>{{ search_form.theme }}{{ search_form.theme.errors }}</div><div class="search-field"><label for="id_tag">태그</label>{{ search_form.tag }}{{ search_form.tag.errors }}</div><div class="search-actions"><button type="submit">필터 적용</button><a href="{% url 'post_list' %}">조건 해제</a></div></div></details>
+  </form>
+  {% if search_query %}<p class="search-feedback">검색: <strong>{{ search_query }}</strong><a href="{% url 'post_list' %}">조건 해제</a></p>{% endif %}
+  <div class="cards post-grid" aria-label="사진 게시글 목록">
+    {% for post in posts %}
+      <article>
+        <a class="post-thumbnail" href="{% url 'post_detail' post.pk %}{% if search_query %}?q={{ search_query|urlencode }}{% endif %}"><img src="{{ post.image.url }}" alt="{{ post.title }}" loading="lazy"></a>
+        <div class="copy">
+          <h2><a href="{% url 'post_detail' post.pk %}{% if search_query %}?q={{ search_query|urlencode }}{% endif %}" title="{{ post.title }}">{{ post.title }}</a></h2>
+          <div class="post-card-meta"><span class="post-card-author">{{ post.author.username }}</span><time datetime="{{ post.published_date|date:'c' }}">{{ post.published_date|date:'m.d' }}</time></div>
+          <p class="post-card-tags">{{ post.theme_name }}{% for tag in post.content.tags.all %} · #{{ tag.display }}{% endfor %}</p>
+        </div>
+      </article>
+    {% empty %}
+      <section class="panel"><h2>{% if search_query %}일치하는 사진이 없어요.{% else %}첫 사진을 기다리고 있어요.{% endif %}</h2><p>검색 조건을 바꾸거나 새 사진과 이야기를 남겨보세요.</p></section>
+    {% endfor %}
+  </div>
+  <div class="actions">
+    {% if page_obj.has_previous %}<a class="button secondary" href="?{{ query_string }}&amp;page={{ page_obj.previous_page_number }}">이전</a>{% endif %}
+    {% if page_obj.has_next %}<a class="button secondary" href="?{{ query_string }}&amp;page={{ page_obj.next_page_number }}">다음</a>{% endif %}
+  </div>
+{% endblock %}
+{% block scripts %}
+  <script>
+    (() => {
+      const trigger = document.getElementById('hero-secret-trigger');
+      const secret = document.getElementById('hero-secret');
+      const close = document.getElementById('hero-secret-close');
+      let taps = 0;
+      let lastTap = 0;
+      trigger.addEventListener('click', () => {
+        if (!secret.hidden) return;
+        const now = performance.now();
+        taps = now - lastTap > 4000 ? 1 : taps + 1;
+        lastTap = now;
+        if (taps < 5) return;
+        taps = 0;
+        secret.hidden = false;
+        trigger.setAttribute('aria-expanded', 'true');
+      });
+      close.addEventListener('click', () => {
+        secret.hidden = true;
+        taps = 0;
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      });
+    })();
+  </script>
+{% endblock %}

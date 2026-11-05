@@ -1,0 +1,78 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{% if editing %}사진 글 수정{% else %}새 사진 게시{% endif %}{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'blog/content/content.css' %}?v=mobile-pages-3">{% endblock %}
+{% block content %}
+  <section class="panel form-panel content-composer" id="content-composer">
+    <p class="eyebrow">PHOTO BLOG / {% if editing %}EDIT{% else %}UPLOAD{% endif %}</p>
+    <h1>{% if editing %}사진 글 수정{% else %}새 사진 게시{% endif %}</h1>
+    <p class="muted">얼굴은 가리고, 분류와 문구는 확인하고 올려요.</p>
+    <form method="post" enctype="multipart/form-data" id="photo-form">
+      {% csrf_token %}{{ form.non_field_errors }}
+      <div id="story-fields"><label for="id_title">제목</label>{{ form.title }}{{ form.title.errors }}<label for="id_text">사진 이야기</label>{{ form.text }}{{ form.text.errors }}</div>
+      <div class="basic-image"><label for="id_image">사진</label>{{ form.image }}{{ form.image.errors }}<p class="muted">JPEG · PNG · WebP / 최대 5 MiB</p></div>
+      <div id="photo-tools" hidden>
+        <div class="composer-steps" aria-label="사진 작성 단계"><button type="button" data-step="photo">1 사진 선택</button><button type="button" data-step="mosaic">2 얼굴 확인</button><button type="button" data-step="review">3 확인·게시</button></div>
+        <div id="work-status" class="work-status" role="status" aria-live="polite">사진을 선택해주세요.</div>
+        <button id="cancel-analysis" type="button" class="secondary" hidden>분석 중단 · 직접 확인</button>
+        <section data-pane="photo" class="composer-pane picker-editor">
+          <div class="picker-heading"><a href="{% url 'post_list' %}">취소</a><h2>사진 선택</h2><span>1 / 3</span></div><p id="picker-status" class="muted" role="status" aria-live="polite" hidden></p>
+          <div class="photo-picker"><span class="picker-symbol" aria-hidden="true">＋</span><h2>어떤 순간을 남길까요?</h2><p>사진은 이 브라우저에서 먼저 처리합니다.<br>게시할 때 가린 사본만 서버로 보냅니다.</p>
+          <label for="photo-input" class="button picker-label">사진 보관함에서 선택</label><input type="file" id="photo-input" accept="image/*" class="visually-hidden">
+          <label for="camera-input" class="button secondary picker-label">새 사진 촬영</label><input type="file" id="camera-input" accept="image/*" capture="environment" class="visually-hidden"></div>
+          <div class="picker-footer"><p class="muted">원본은 보존하고 가린 사본만 게시해요.</p><details><summary>사진 형식·처리 안내</summary><p class="muted">JPEG · PNG · WebP / 게시 사본 최대 5 MiB. 처음에는 인식 도구 준비에 잠시 걸릴 수 있어요. 브라우저에서 읽을 수 있는 사진을 JPEG 사본으로 만듭니다.</p></details><button type="button" id="picker-stop" class="secondary" hidden>분석 중단</button></div>
+        </section>
+        <section data-pane="mosaic" class="composer-pane mosaic-editor" aria-labelledby="mosaic-title" hidden>
+          <div class="editor-heading"><button type="button" data-step="photo" class="secondary editor-header-action">사진 변경</button><h2 id="mosaic-title">얼굴 가리기</h2><button type="button" id="editor-more" class="secondary editor-header-action" aria-controls="editor-more-panel" aria-expanded="false">더보기</button></div>
+          <p id="face-note" class="muted" role="status" aria-live="polite">누락된 얼굴은 직접 가려주세요.</p>
+          <canvas id="mosaic-stage" class="photo-stage" aria-label="얼굴 가림 영역 편집 사진" tabindex="0"></canvas>
+          <div class="editor-dock" role="group" aria-label="모자이크 편집 도구">
+            <div class="editor-mode-bar">
+              <div class="tool-row" role="group" aria-label="사진 편집 방식"><button type="button" data-mode="pan" class="secondary" aria-label="사진 이동" aria-pressed="true">이동</button><button type="button" data-mode="select" class="secondary" aria-label="영역 선택" aria-pressed="false">선택</button><button type="button" data-mode="add" class="secondary" aria-label="드래그로 가리기" aria-pressed="false">직접 가리기</button></div>
+              <button type="button" id="undo-mosaic" class="secondary editor-icon" aria-label="실행 취소" title="실행 취소"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 4 10l5 5M4 10h9a6 6 0 0 1 0 12"/></svg></button>
+            </div>
+            <div class="editor-context"><div class="strength-control"><label id="strength-label" for="mosaic-strength">전체 강도</label><select id="mosaic-strength" aria-label="모자이크 강도"><option value="1">약</option><option value="2" selected>중</option><option value="3">강</option></select></div><div id="selection-actions" class="selection-actions" hidden><button type="button" id="toggle-region" class="secondary" disabled>가림 해제</button><button type="button" id="remove-region" class="secondary" aria-label="선택 영역 삭제" disabled>삭제</button></div></div>
+            <div class="editor-zoom"><label for="photo-zoom">확대</label><input id="photo-zoom" aria-label="사진 확대" type="range" min="1" max="8" step="0.1" value="1"><output id="photo-zoom-value" for="photo-zoom">1.0×</output><button type="button" id="reset-view" class="secondary" aria-label="전체 사진">맞춤</button></div>
+            <button type="button" id="apply-mosaic" aria-label="얼굴 확인 완료 · 게시 사본 만들기">다음</button>
+          </div>
+          <section id="editor-more-panel" class="editor-more-panel" role="dialog" aria-modal="false" aria-labelledby="editor-more-title" hidden>
+            <div class="more-panel-heading"><h3 id="editor-more-title">편집 옵션</h3><button type="button" id="editor-more-close" class="secondary editor-icon" aria-label="편집 옵션 닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+            <label for="region-list">가림 영역 선택</label><select id="region-list"><option value="-1">전체 영역</option></select>
+            <div class="tool-row more-panel-actions"><button type="button" id="add-region" class="secondary" aria-label="가림 영역 추가">영역 추가</button><button type="button" id="reset-mosaic" class="secondary">초기화</button><button type="button" id="redetect" class="secondary" aria-label="얼굴 다시 찾기">다시 찾기</button></div>
+            <fieldset id="region-position"><legend>위치·크기 조절</legend><div class="region-ranges">{% for name in 'xywh' %}<label>{{ name }} <input type="number" inputmode="decimal" data-coordinate="{{ name }}" min="0" max="100" step="0.1" disabled></label>{% endfor %}</div></fieldset>
+            <p class="muted more-panel-note">가림 영역을 선택하면 위치와 크기를 조절할 수 있어요.</p>
+          </section>
+        </section>
+        <section data-pane="review" class="composer-pane review-editor" aria-labelledby="review-title" hidden>
+          <div class="review-header"><div class="editor-heading"><button type="button" id="back-to-mosaic" class="secondary editor-header-action">얼굴 편집</button><h2 id="review-title">게시 전 확인</h2><button type="button" id="review-cancel" class="secondary editor-header-action" hidden>분석 중단</button><span id="review-header-spacer" aria-hidden="true"></span></div><p id="review-status" class="muted" role="status" aria-live="polite" hidden></p></div>
+          <div class="review-tabs" role="tablist" aria-label="게시 내용 확인"><button type="button" id="tab-story" role="tab" data-review-tab="story" aria-controls="panel-story" aria-selected="true">글 작성</button><button type="button" id="tab-tags" role="tab" data-review-tab="tags" aria-controls="panel-tags" aria-selected="false" tabindex="-1">태그 <span id="tag-count">0</span></button><button type="button" id="tab-text" role="tab" data-review-tab="text" aria-controls="panel-text" aria-selected="false" tabindex="-1">검색 문구 <span id="line-count">0</span></button></div>
+          <div class="review-workspace">
+            <div class="review-photo"><canvas id="review-stage" class="photo-stage review-stage" aria-label="최종 공개 사본과 선택한 문구 위치" tabindex="0"></canvas><button type="button" id="review-reset" class="secondary">전체 사진</button></div>
+            <div class="review-panels">
+              <section id="panel-story" role="tabpanel" aria-labelledby="tab-story" data-review-panel="story"><div id="review-story-slot"></div><p class="review-hint">태그와 검색 문구는 옆 탭에서 확인하세요.</p></section>
+              <section id="panel-tags" role="tabpanel" aria-labelledby="tab-tags" data-review-panel="tags" hidden>
+                <div class="tag-review-options">
+                <div class="review-section-heading"><h3>대표 테마</h3><button type="button" id="rerun-labels" class="secondary text-action">다시 추천</button></div><div id="theme-options" class="choice-chips" role="group" aria-label="대표 테마"></div><p id="theme-note" class="review-hint"></p>
+                <div class="review-section-heading"><h3>태그</h3><span class="review-hint">최대 10개 · 눌러 선택</span></div><div id="tag-options" class="choice-chips" role="group" aria-label="사진 태그"></div>
+                </div><div class="tag-entry"><label class="visually-hidden" for="photo-tags">새 태그 입력</label><input id="photo-tags" placeholder="직접 태그 추가" maxlength="330" enterkeyhint="done" autocomplete="off"><button type="button" id="add-tag" class="secondary">추가</button></div><p id="tag-message" class="review-hint" role="status" aria-live="polite">추천 태그를 누르거나 직접 추가하세요.</p>
+              </section>
+              <section id="panel-text" role="tabpanel" aria-labelledby="tab-text" data-review-panel="text" hidden>
+                <div class="ocr-toolbar"><label class="check-label"><input type="checkbox" id="skip-ocr"> 검색 안 함</label><button type="button" id="rerun-ocr" class="secondary text-action">다시 읽기</button></div>
+                <div class="ocr-list-heading"><p id="ocr-note" class="review-hint" role="status"></p><div class="ocr-batch"><button type="button" id="include-lines" class="secondary text-action">모두 포함</button><button type="button" id="exclude-lines" class="secondary text-action">모두 제외</button></div></div>
+                <div id="ocr-lines" class="ocr-compact-list" role="group" aria-label="인식 문구 목록"></div>
+                <div id="ocr-correction" class="ocr-correction" hidden><label for="ocr-text"><span id="ocr-selected-label">선택한 문구 교정</span><span id="ocr-selection-state" class="review-hint"></span></label><input id="ocr-text" type="text" maxlength="200" aria-label="선택한 인식 문구 교정" enterkeyhint="done"><p class="review-hint">체크한 문구만 검색에 포함돼요. 사진의 글자는 지워지지 않아요.</p></div>
+                <details id="previous-lines" hidden><summary>이전 교정 메모 · 게시 안 됨</summary><p></p></details>
+              </section>
+            </div>
+          </div>
+          <div class="review-footer"><p id="review-summary" class="review-hint"></p><button type="submit" id="publish-photo">{% if editing %}수정 저장{% else %}게시하기{% endif %}</button><section id="save-result" hidden role="status"></section></div>
+        </section>
+      </div>
+      <div class="actions basic-actions"><button type="submit">게시글 저장</button><a class="button secondary" href="{% url 'post_list' %}">취소</a></div>
+    </form>
+    <noscript><p>자동 얼굴 가리기·추천·글자 인식에는 JavaScript가 필요합니다. 위 기본 업로드 폼은 사용할 수 있습니다.</p></noscript>
+  </section>
+  {{ composer_config|json_script:'composer-config' }}
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/content/composer.mjs' %}?v=ocr-page-2"></script>{% endblock %}
+

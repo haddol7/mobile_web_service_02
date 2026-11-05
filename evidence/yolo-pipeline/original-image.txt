@@ -1,0 +1,13 @@
+Command: /home/daeha/.venvs/mobile_web_service_02/bin/python /mnt/c/Users/1/mobile_web_service/common02/YOLOv5/baseline/detect.py --weights /mnt/c/Users/1/mobile_web_service/common02/YOLOv5/yolov5s.pt --data /mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/coco128.yaml --source /mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/images/bus.jpg --device cpu --project /mnt/c/Users/1/mobile_web_service/common02/evidence/yolo-pipeline --name original-image --exist-ok --save-txt --save-conf
+
+baseline/detect: weights=['/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/yolov5s.pt'], source=/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/images/bus.jpg, data=/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=cpu, view_img=False, save_txt=True, save_conf=True, save_crop=False, nosave=False, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=/mnt/c/Users/1/mobile_web_service/common02/evidence/yolo-pipeline, name=original-image, exist_ok=True, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1
+YOLOv5 🚀 2026-11-5 Python-3.12.15 torch-2.6.0+cpu CPU
+
+Fusing layers... 
+YOLOv5s summary: 213 layers, 7225885 parameters, 0 gradients, 16.4 GFLOPs
+image 1/1 /mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/images/bus.jpg: 640x480 4 persons, 1 bus, 60.7ms
+Speed: 0.9ms pre-process, 60.7ms inference, 4.0ms NMS per image at shape (1, 3, 640, 640)
+Results saved to /mnt/c/Users/1/mobile_web_service/common02/evidence/yolo-pipeline/original-image
+1 labels saved to /mnt/c/Users/1/mobile_web_service/common02/evidence/yolo-pipeline/original-image/labels
+
+Exit code: 0

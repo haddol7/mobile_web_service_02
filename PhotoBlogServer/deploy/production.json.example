@@ -1,0 +1,5 @@
+{
+  "DJANGO_DEBUG": "false",
+  "DJANGO_SECRET_KEY": "REPLACE_WITH_A_PRIVATE_RANDOM_SECRET_DO_NOT_COMMIT_IT",
+  "DJANGO_ALLOWED_HOSTS": "daejinha.pythonanywhere.com"
+}

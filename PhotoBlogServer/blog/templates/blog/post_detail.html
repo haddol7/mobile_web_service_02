@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ post.title }}{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'blog/content/content.css' %}?v=mobile-pages-3">{% endblock %}
+{% block content %}
+  <article class="post-detail">
+    <h1>{{ post.title }}</h1>
+    <div class="detail-toolbar"><p class="muted">{{ post.author.username }} · {{ post.published_date|date:'Y.m.d' }}</p>{% if can_manage_post %}<a class="button secondary" href="{% url 'post_edit' post.pk %}">수정</a>{% endif %}</div>
+    <div id="photo-detail-viewer" class="photo-detail-viewer" hidden><p id="detail-view-status" role="status" aria-live="polite"></p><canvas class="photo-stage" id="detail-stage" aria-label="사진 속 문구 위치 확인" tabindex="0"></canvas><button type="button" id="detail-reset" class="secondary">전체 사진 보기</button><div id="matched-locations" class="line-locations"></div></div>
+    <img class="hero-image" id="detail-photo" src="{{ post.image.url }}" alt="{{ post.title }}">
+    <div>{{ post.text|linebreaks }}</div>
+    <p>{{ theme_name }}{% for tag in photo_content.tags %} · #{{ tag.display }}{% endfor %}</p>
+    {% if can_manage_post %}
+      <div class="actions">
+        <a class="button secondary" href="{% url 'post_edit' post.pk %}">수정</a>
+        <form method="post" action="{% url 'post_delete' post.pk %}">{% csrf_token %}<button class="secondary" type="submit">삭제</button></form>
+      </div>
+    {% endif %}
+  </article>
+  {{ detail_config|json_script:'detail-config' }}
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/content/detail.mjs' %}?v=matched-only-1"></script>{% endblock %}
+

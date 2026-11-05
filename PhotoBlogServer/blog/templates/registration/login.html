@@ -1,0 +1,8 @@
+{% extends 'blog/base.html' %}
+{% block title %}로그인{% endblock %}
+{% block content %}
+  <section class="panel form-panel auth-panel">
+    <h1>로그인</h1><p class="muted">운영자 계정으로 로그인하세요. 방문자는 로그인 없이 사진을 볼 수 있습니다.</p>
+    <form method="post">{% csrf_token %}{{ form.non_field_errors }}{% for field in form %}<div class="auth-field"><label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}{{ field.errors }}</div>{% endfor %}<input type="hidden" name="next" value="{{ next }}"><div class="actions auth-actions"><button type="submit">로그인</button></div></form>
+  </section>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block title %}API 응답 확인{% endblock %}
+{% block content %}
+  <p class="eyebrow">PHOTO BLOG / API VALIDATION</p><h1>API 응답 확인</h1>
+  <p>GET <a href="/api_root/Post/?format=json">/api_root/Post/?format=json</a></p>
+  <button id="load" type="button">JSON 응답 새로고침</button>
+  <pre id="response" aria-live="polite">응답을 기다리는 중…</pre>
+  <script>
+    async function load() {
+      const panel = document.getElementById('response');
+      try {
+        const response = await fetch('/api_root/Post/', {headers:{Accept:'application/json'}});
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const data = await response.json();
+        panel.textContent = JSON.stringify(data, null, 2);
+      } catch (error) { panel.textContent = error.message; }
+    }
+    document.getElementById('load').addEventListener('click', load);
+    load();
+  </script>
+{% endblock %}

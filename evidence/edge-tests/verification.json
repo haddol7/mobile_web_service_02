@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-11-05T10:30:34.635892+00:00",
+  "environment": "WSL Ubuntu",
+  "command": [
+    "/home/daeha/.venvs/mobile_web_service_02/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_changedetection.py",
+    "-v"
+  ],
+  "source_sha256": {
+    "YOLOv5/changedetection.py": "f19b6e20b963e84e03e833fbdb6dc0388715aae70ab3dcb13497d5d77df0699c",
+    "YOLOv5/detect.py": "8fc5d335c24b769da991c090d4cce189e12f12df6af1db5c7ca078a7fc9238ee",
+    "YOLOv5/tests/test_changedetection.py": "59bf818b40102a6ce197f774b32422499d4f099d08a68f4cfdb02ce2f8c4bc10",
+    "tools/run_edge.py": "454d8678e2cb9b13972b8fff72df2a00c30c546a7a1abc3b558ebc5eab75e91e"
+  },
+  "source_stable": true,
+  "tests": 8,
+  "exit_code": 0,
+  "pass": true
+}
