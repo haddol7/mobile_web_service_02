@@ -1,9 +1,9 @@
 {
-  "files": 386,
-  "bytes": 84212131,
+  "files": 389,
+  "bytes": 84390228,
   "credential_scan_pass": true,
   "private_runtime_files_excluded": true,
   "upstream_detector_bytes_preserved": true,
-  "embedded_report_figures": 7,
+  "embedded_report_figures": 8,
   "pass": true
 }

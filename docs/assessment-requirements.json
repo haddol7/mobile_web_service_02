@@ -11,17 +11,23 @@
       "id": "1",
       "requirement": "폴더 구조",
       "original": "- ROOT\n- PhotoBlogServer[Dir]\n: Django Server\n- PhotoViewer[Dir] \n: Android Client\n- YOLOv5[Dir] \n: Edge Client\n-모바일/웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx[File]\n\n제출 : 탐색기, 파인더 또는 Git레포지토리 폴더 구조 캡처 화면\n주의 : “공동평가 01”과 다른 레포지토리로 제출",
-      "status": "partial",
-      "evidence": [],
-      "report_evidence": "폴더 구성\n캡처 준비"
+      "status": "complete",
+      "evidence": [
+        "evidence/screenshots/github-folder-structure.jpg",
+        "evidence/github-upload.json"
+      ],
+      "report_evidence": "B01\nGitHub 폴더 구조"
     },
     {
       "id": "2",
       "requirement": "Github 레파지토리 push",
       "original": "아래 평가 항목에 대하여 구현 혹은 테스트를 완료하고, 캡처 이미지를 제공된 MS-Word 파일로 정리하여 Github URL을 제출 한다.\n\n제출 : URL",
-      "status": "pending",
-      "evidence": [],
-      "report_evidence": "별도 저장소\n생성 완료"
+      "status": "complete",
+      "evidence": [
+        "evidence/screenshots/github-folder-structure.jpg",
+        "evidence/github-upload.json"
+      ],
+      "report_evidence": "B01\n별도 저장소 업로드"
     },
     {
       "id": "3",
