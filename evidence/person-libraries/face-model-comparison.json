@@ -1,0 +1,104 @@
+{
+  "verified_utc": "2026-11-07T23:32:09.505159+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "models": {
+    "buffalo_s": [
+      {
+        "registered": true,
+        "sampled_frames": 7,
+        "detected_faces": 7,
+        "accepted_candidates": 0,
+        "correct_candidates": 0,
+        "wrong_candidates": 0,
+        "unresolved": 7,
+        "frames_with_yolo_person_tracks": 4,
+        "faces_associated_to_one_yolo_track": 4,
+        "minimum_similarity": 0.4535849094390869,
+        "maximum_similarity": 0.5306688547134399,
+        "elapsed_seconds_including_startup": 4.670472601
+      },
+      {
+        "registered": true,
+        "sampled_frames": 7,
+        "detected_faces": 8,
+        "accepted_candidates": 0,
+        "correct_candidates": 0,
+        "wrong_candidates": 0,
+        "unresolved": 8,
+        "frames_with_yolo_person_tracks": 5,
+        "faces_associated_to_one_yolo_track": 6,
+        "minimum_similarity": 0.05505238100886345,
+        "maximum_similarity": 0.5293091535568237,
+        "elapsed_seconds_including_startup": 4.481460456999997
+      },
+      {
+        "registered": false,
+        "sampled_frames": 7,
+        "detected_faces": 7,
+        "accepted_candidates": 0,
+        "correct_candidates": 0,
+        "wrong_candidates": 0,
+        "unresolved": 7,
+        "frames_with_yolo_person_tracks": 3,
+        "faces_associated_to_one_yolo_track": 3,
+        "minimum_similarity": 0.05676195025444031,
+        "maximum_similarity": 0.12737241387367249,
+        "elapsed_seconds_including_startup": 4.534339585999987
+      }
+    ],
+    "buffalo_l": [
+      {
+        "registered": true,
+        "sampled_frames": 7,
+        "detected_faces": 7,
+        "accepted_candidates": 5,
+        "correct_candidates": 5,
+        "wrong_candidates": 0,
+        "unresolved": 2,
+        "minimum_similarity": 0.5364909172058105,
+        "maximum_similarity": 0.5875507593154907,
+        "faces_associated_to_one_yolo_track": 4
+      },
+      {
+        "registered": true,
+        "sampled_frames": 7,
+        "detected_faces": 8,
+        "accepted_candidates": 1,
+        "correct_candidates": 1,
+        "wrong_candidates": 0,
+        "unresolved": 7,
+        "minimum_similarity": 0.08218637108802795,
+        "maximum_similarity": 0.5984809398651123,
+        "faces_associated_to_one_yolo_track": 6
+      },
+      {
+        "registered": false,
+        "sampled_frames": 7,
+        "detected_faces": 7,
+        "accepted_candidates": 0,
+        "correct_candidates": 0,
+        "wrong_candidates": 0,
+        "unresolved": 7,
+        "minimum_similarity": 0.020198816433548927,
+        "maximum_similarity": 0.05891503766179085,
+        "faces_associated_to_one_yolo_track": 3
+      }
+    ]
+  },
+  "same_reference_images_and_query_samples": true,
+  "threshold_unchanged": 0.55,
+  "margin_unchanged": 0.08,
+  "face_detection_mode": "InsightFace 2.1 Auto: 128 and 640 inputs",
+  "buffalo_l_exploratory_smoke_matches_expected": true,
+  "independent_query_clips": 3,
+  "statistical_accuracy_established": false,
+  "used_for_model_selection_not_final_holdout": true,
+  "training_performed": false,
+  "automatic_confirmation_enabled": false,
+  "production_verified": false,
+  "source_sha256": {
+    "YOLOv5/person_tracking.py": "330785b4bb017a1de3428e8eb707818666b9da3fb020db2c024ee89eea7b7c27",
+    "YOLOv5/detect.py": "240b6409862829e486801ec10d5f56b43b583a12c80e1371d7a25aa903ab5a35",
+    "tools/compare_pretrained_faces.py": "f450e8a5f364da2e08267d315ad5bb75f5352e923e1488308dea8ab877e38967"
+  }
+}

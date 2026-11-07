@@ -1,0 +1,14 @@
+{
+  "verified_utc": "2026-11-07T23:31:55.962578+00:00",
+  "environment": "WSL Ubuntu",
+  "command": "python -m unittest discover -s tests -v",
+  "working_directory": "YOLOv5",
+  "tests": 19,
+  "exit_code": 0,
+  "pass": true,
+  "source_sha256": {
+    "YOLOv5/person_tracking.py": "330785b4bb017a1de3428e8eb707818666b9da3fb020db2c024ee89eea7b7c27",
+    "YOLOv5/tests/test_person_tracking.py": "f8239cd421b5a2bdd976084b33b90300797d46c41a43fb2b1333b24132f31d2b",
+    "YOLOv5/tests/test_changedetection.py": "59bf818b40102a6ce197f774b32422499d4f099d08a68f4cfdb02ce2f8c4bc10"
+  }
+}

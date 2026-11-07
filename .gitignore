@@ -22,5 +22,6 @@ dist/
 *.log
 .local/
 evidence/private/
+evidence/person-libraries/upload-flow/detected*/
 docs/reference/*.pdf
 ~$*

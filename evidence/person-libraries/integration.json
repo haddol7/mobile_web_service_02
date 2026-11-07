@@ -1,0 +1,114 @@
+{
+  "verified_utc": "2026-11-07T23:30:55.541352+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "libraries": [
+    "norfair==2.3.0",
+    "supervision==0.31.5",
+    "insightface==2.1",
+    "motmetrics==1.4.0"
+  ],
+  "weights_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+  "tracking": [
+    {
+      "sequence": "TUD-Campus",
+      "split": "calibration",
+      "frames": 71,
+      "frames_with_tracks": 69,
+      "track_ids": 22,
+      "line_crossings": 5,
+      "elapsed_seconds_including_startup": 8.186782571999998,
+      "diagnostic_iou_0_5": {
+        "idf1": 0.6394736842105263,
+        "num_switches": 5,
+        "num_false_positives": 121,
+        "num_misses": 79,
+        "num_objects": 359,
+        "num_predictions": 401
+      },
+      "official_mot_leaderboard_score": false,
+      "passage_accuracy_measured": false,
+      "output_video_fully_decoded": true
+    },
+    {
+      "sequence": "TUD-Stadtmitte",
+      "split": "holdout",
+      "frames": 179,
+      "frames_with_tracks": 177,
+      "track_ids": 19,
+      "line_crossings": 2,
+      "elapsed_seconds_including_startup": 14.320611266,
+      "diagnostic_iou_0_5": {
+        "idf1": 0.7248134328358209,
+        "num_switches": 8,
+        "num_false_positives": 41,
+        "num_misses": 209,
+        "num_objects": 1156,
+        "num_predictions": 988
+      },
+      "official_mot_leaderboard_score": false,
+      "passage_accuracy_measured": false,
+      "output_video_fully_decoded": true
+    }
+  ],
+  "face_smoke": [
+    {
+      "registered": true,
+      "sampled_frames": 7,
+      "detected_faces": 7,
+      "accepted_candidates": 0,
+      "correct_candidates": 0,
+      "wrong_candidates": 0,
+      "unresolved": 7,
+      "frames_with_yolo_person_tracks": 4,
+      "faces_associated_to_one_yolo_track": 4,
+      "minimum_similarity": 0.4535849094390869,
+      "maximum_similarity": 0.5306688547134399,
+      "elapsed_seconds_including_startup": 4.670472601
+    },
+    {
+      "registered": true,
+      "sampled_frames": 7,
+      "detected_faces": 8,
+      "accepted_candidates": 0,
+      "correct_candidates": 0,
+      "wrong_candidates": 0,
+      "unresolved": 8,
+      "frames_with_yolo_person_tracks": 5,
+      "faces_associated_to_one_yolo_track": 6,
+      "minimum_similarity": 0.05505238100886345,
+      "maximum_similarity": 0.5293091535568237,
+      "elapsed_seconds_including_startup": 4.481460456999997
+    },
+    {
+      "registered": false,
+      "sampled_frames": 7,
+      "detected_faces": 7,
+      "accepted_candidates": 0,
+      "correct_candidates": 0,
+      "wrong_candidates": 0,
+      "unresolved": 7,
+      "frames_with_yolo_person_tracks": 3,
+      "faces_associated_to_one_yolo_track": 3,
+      "minimum_similarity": 0.05676195025444031,
+      "maximum_similarity": 0.12737241387367249,
+      "elapsed_seconds_including_startup": 4.534339585999987
+    }
+  ],
+  "face_smoke_matches_expected": false,
+  "face_threshold": 0.55,
+  "face_margin": 0.08,
+  "face_detection_mode": "InsightFace 2.1 Auto: 128 and 640 inputs",
+  "face_sample_protocol": "2 registered labels, 1 unknown label; 7 frames per query from a different source video ID; exploratory smoke only",
+  "independent_face_query_clips": 3,
+  "statistical_face_accuracy_established": false,
+  "automatic_identity_confirmation_enabled": false,
+  "model_training_performed": false,
+  "django_upload_enabled": false,
+  "production_verified": false,
+  "pipeline_executed": true,
+  "source_sha256": {
+    "YOLOv5/detect.py": "240b6409862829e486801ec10d5f56b43b583a12c80e1371d7a25aa903ab5a35",
+    "YOLOv5/person_tracking.py": "330785b4bb017a1de3428e8eb707818666b9da3fb020db2c024ee89eea7b7c27",
+    "tools/verify_person_libraries.py": "f7b78ac8937b170e6c7875d56f97b76d268476ca8f91793e80eff1bc802d696b"
+  }
+}

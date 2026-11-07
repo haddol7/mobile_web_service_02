@@ -27,6 +27,8 @@ Usage - formats:
 """
 
 import argparse
+import hashlib
+import json
 import os
 import platform
 import sys
@@ -80,7 +82,15 @@ def run(
         dnn=False,  # use OpenCV DNN for ONNX inference
         vid_stride=1,  # video frame-rate stride
         server=None,  # assessed Django server; omit to run detection without uploading
+        person_tracking=False,  # optional library-based person analysis after YOLOv5
+        count_line=None,  # normalized x1 y1 x2 y2; direction depends on endpoint order
+        face_references=None,  # explicit reference manifest; comparison candidates only
+        face_stride=10,
+        face_model='buffalo_s',
+        face_model_root='~/.insightface',
 ):
+    if (count_line is not None or face_references) and not person_tracking:
+        raise ValueError('Use --person-tracking with counting or face references')
     source = str(source)
     save_img = not nosave and not source.endswith('.txt')  # save inference images
     is_file = Path(source).suffix[1:] in (IMG_FORMATS + VID_FORMATS)
@@ -115,6 +125,14 @@ def run(
     # Run inference
     model.warmup(imgsz=(1 if pt or model.triton else bs, 3, *imgsz))  # warmup
     changes = ChangeDetection(names, base_url=server) if server else None
+    person_engines = {}
+    reference_library = None
+    if person_tracking:
+        from person_tracking import FaceReferences, PersonTracker
+        if face_references:
+            reference_library = FaceReferences(face_references, model=face_model, root=face_model_root)
+            LOGGER.info(f'Face reference registration: {reference_library.registration}')
+        (save_dir / 'person-analysis').mkdir(exist_ok=True)
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     for path, im, im0s, vid_cap, s in dataset:
         with dt[0]:
@@ -151,6 +169,7 @@ def run(
             s += '%gx%g ' % im.shape[2:]  # print string
             gn = torch.tensor(im0.shape)[[1, 0, 1, 0]]  # normalization gain whwh
             imc = im0.copy() if save_crop else im0  # for save_crop
+            analysis_frame = im0.copy() if person_tracking else None
             annotator = Annotator(im0, line_width=line_thickness, example=str(names))
             detected_current = [0] * len(names)
             if len(det):
@@ -174,12 +193,28 @@ def run(
                     if save_img or save_crop or view_img or changes:  # Add bbox to uploaded image too
                         c = int(cls)  # integer class
                         label = None if hide_labels else (names[c] if hide_conf else f'{names[c]} {conf:.2f}')
-                        annotator.box_label(xyxy, label, color=colors(c, True))
+                        if not person_tracking or c != 0:
+                            annotator.box_label(xyxy, label, color=colors(c, True))
                     if save_crop:
                         save_one_box(xyxy, imc, file=save_dir / 'crops' / names[c] / f'{p.stem}.jpg', BGR=True)
 
             # Stream results
             im0 = annotator.result()
+            if person_tracking:
+                source_key = f'{i}:{p}'
+                if source_key not in person_engines:
+                    person_engines[source_key] = PersonTracker(line=count_line,
+                        face_references=reference_library, face_stride=face_stride)
+                fps = vid_cap.get(cv2.CAP_PROP_FPS) if vid_cap else 0
+                seconds = (max(0, frame - 1) * vid_stride / fps) if fps > 0 else None
+                overlay, record = person_engines[source_key].process(analysis_frame,
+                    det.detach().cpu().numpy(), frame_index=frame, video_seconds=seconds,
+                    annotation_frame=im0)
+                # Keep assessed object annotations; library overlays are added from raw-image analysis.
+                im0 = overlay
+                log_name = hashlib.sha256(source_key.encode()).hexdigest()[:16] + '.jsonl'
+                with (save_dir / 'person-analysis' / log_name).open('a', encoding='utf-8') as log:
+                    log.write(json.dumps(record) + '\n')
             if changes:
                 try:
                     uploaded = changes.add(names, detected_current, save_dir, im0, stream_id=str(i))
@@ -258,6 +293,12 @@ def parse_opt():
     parser.add_argument('--dnn', action='store_true', help='use OpenCV DNN for ONNX inference')
     parser.add_argument('--vid-stride', type=int, default=1, help='video frame-rate stride')
     parser.add_argument('--server', type=str, help='Django HTTP(S) base URL; credentials come from private environment variables')
+    parser.add_argument('--person-tracking', action='store_true', help='Apply Norfair tracking and Supervision overlays to YOLOv5 person boxes')
+    parser.add_argument('--count-line', nargs=4, type=float, help='Normalized line endpoints x1 y1 x2 y2')
+    parser.add_argument('--face-references', type=str, help='Explicit face reference JSON; outputs candidates, not confirmed identities')
+    parser.add_argument('--face-stride', type=int, default=10, help='Compare faces every N source frames')
+    parser.add_argument('--face-model', choices=['buffalo_s', 'buffalo_l'], default='buffalo_s')
+    parser.add_argument('--face-model-root', default='~/.insightface', help='Local pretrained model cache')
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(vars(opt))

@@ -1,0 +1,54 @@
+{
+  "verified_utc": "2026-11-07T23:31:07.611600+00:00",
+  "environment": "WSL Ubuntu",
+  "input": "locally generated video using official bus.jpg and blank frames",
+  "frames": 30,
+  "fps": 5,
+  "phases": [
+    [
+      "empty",
+      6
+    ],
+    [
+      "bus",
+      12
+    ],
+    [
+      "empty",
+      6
+    ],
+    [
+      "bus",
+      6
+    ]
+  ],
+  "uploaded_posts": [
+    {
+      "post_id": 2,
+      "image_sha256": "063f69498980fdde47f09541ea860ef1289651d2de2fc7ac1b16b95a945c9000",
+      "size": [
+        320,
+        240
+      ]
+    },
+    {
+      "post_id": 1,
+      "image_sha256": "268c25fb0abfa44a2bd98c13727eee9288c0a021e6030e2cc72e582bf27848b3",
+      "size": [
+        320,
+        240
+      ]
+    }
+  ],
+  "persistent_frames_suppressed": true,
+  "reappearance_uploaded": true,
+  "invalid_auth_rejected_and_frame_retained": true,
+  "rejected_upload_did_not_change_posts": true,
+  "cloud_verifier_tested_against_isolated_local_server": true,
+  "cloud_protocol_record": "evidence/person-libraries/upload-flow/cloud-protocol-simulation/20261107T233104265335Z/verification.json",
+  "webcam_tested": false,
+  "pass": true,
+  "person_tracking_enabled": true,
+  "library_frames_processed": 30,
+  "detector_output_directory": "evidence/person-libraries/upload-flow/detected-20261107T233059137218"
+}

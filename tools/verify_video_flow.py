@@ -1,5 +1,6 @@
 """Verify real video inference, duplicate suppression and rejected authentication in an isolated WSL DB."""
 from datetime import datetime, timezone
+import argparse
 import hashlib
 import json
 import os
@@ -23,6 +24,12 @@ class Quiet(WSGIRequestHandler):
     def log_message(self,*_):pass
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--person-tracking',action='store_true',help='Also verify the optional library hook with actual Django uploads')
+    args=parser.parse_args()
+    global OUT
+    if args.person_tracking:
+        OUT=ROOT/'evidence/person-libraries/upload-flow'
     if platform.system()!='Linux' or not os.environ.get('WSL_DISTRO_NAME'):
         raise SystemExit('Run inside the WSL project virtual environment.')
     OUT.mkdir(parents=True,exist_ok=True)
@@ -56,8 +63,11 @@ def main():
         thread=Thread(target=server.serve_forever,daemon=True);thread.start()
         origin=f'http://127.0.0.1:{server.server_port}'
         try:
+            run_name=('detected-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%f')) if args.person_tracking else 'detected'
             command=[sys.executable,str(ROOT/'tools/run_edge.py'),'--source',str(video),'--device','cpu',
-                     '--server',origin,'--project',str(OUT),'--name','detected','--exist-ok','--nosave']
+                     '--server',origin,'--project',str(OUT),'--name',run_name,'--exist-ok','--nosave']
+            if args.person_tracking:
+                command+=['--person-tracking','--count-line','0.5','0','0.5','1']
             env=dict(os.environ,YOLO_API_TOKEN=token)
             result=subprocess.run(command,cwd=ROOT,capture_output=True,text=True,env=env,timeout=180)
             output=re.sub(r'\x1b\[[0-9;]*m','',result.stdout+result.stderr)
@@ -65,6 +75,16 @@ def main():
             assert result.returncode==0,'Video inference failed'
             response=requests.get(origin+'/api_root/Post/',timeout=15);assert response.status_code==200
             posts=response.json();assert len(posts)==2,f'Expected two appearance uploads, got {len(posts)}'
+            library_frames=None
+            if args.person_tracking:
+                logs=list((OUT/run_name/'person-analysis').glob('*.jsonl'))
+                assert len(logs)==1
+                library_rows=[json.loads(line) for line in logs[0].read_text().splitlines()]
+                # --exist-ok permits old image captures; use this run's session for append-only analysis logs.
+                session=library_rows[-1]['session_id']
+                current_rows=[row for row in library_rows if row['session_id']==session]
+                assert len(current_rows)==30 and any(row['tracks'] for row in current_rows)
+                library_frames=len(current_rows)
             captures=[]
             for row in posts:
                 assert row['title']=='YOLO: person, bus'
@@ -93,6 +113,8 @@ def main():
                     'cloud_verifier_tested_against_isolated_local_server':True,
                     'cloud_protocol_record':str((protocol_out/'verification.json').relative_to(ROOT)),
                     'webcam_tested':False,'pass':True}
+            record.update(person_tracking_enabled=args.person_tracking,library_frames_processed=library_frames,
+                          detector_output_directory=str((OUT/run_name).relative_to(ROOT)))
             (OUT/'verification.json').write_text(json.dumps(record,indent=2),encoding='utf-8')
             print(json.dumps(record,indent=2))
         finally:

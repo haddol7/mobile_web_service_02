@@ -1,0 +1,19 @@
+{
+  "verified_utc": "2026-11-07T23:26:22.131223+00:00",
+  "origin": "http://127.0.0.1:46253",
+  "environment": "isolated WSL simulation",
+  "production_verified": false,
+  "source_transition_verified": false,
+  "existing_posts_preserved": true,
+  "existing_photos_preserved": true,
+  "existing_count": 2,
+  "new_post": {
+    "id": 3,
+    "title": "YOLO: person, bus",
+    "image_sha256": "3e67204a050fe43331737e214935368bc4c956081df37312e6d3475c21ad4591"
+  },
+  "api_root_status": 200,
+  "blog_status": 200,
+  "detail_status": 200,
+  "pass": true
+}

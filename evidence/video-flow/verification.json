@@ -1,5 +1,5 @@
 {
-  "verified_utc": "2026-11-05T11:28:00.324131+00:00",
+  "verified_utc": "2026-11-07T23:26:22.134582+00:00",
   "environment": "WSL Ubuntu",
   "input": "locally generated video using official bus.jpg and blank frames",
   "frames": 30,
@@ -45,7 +45,9 @@
   "invalid_auth_rejected_and_frame_retained": true,
   "rejected_upload_did_not_change_posts": true,
   "cloud_verifier_tested_against_isolated_local_server": true,
-  "cloud_protocol_record": "evidence/video-flow/cloud-protocol-simulation/20261105T112756664885Z/verification.json",
+  "cloud_protocol_record": "evidence/video-flow/cloud-protocol-simulation/20261107T232618779229Z/verification.json",
   "webcam_tested": false,
-  "pass": true
+  "pass": true,
+  "person_tracking_enabled": false,
+  "library_frames_processed": null
 }

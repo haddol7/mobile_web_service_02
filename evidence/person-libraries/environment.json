@@ -1,0 +1,55 @@
+{
+  "verified_utc": "2026-11-07T23:19:35.902492+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "packages": {
+    "norfair": "2.3.0",
+    "supervision": "0.31.5",
+    "insightface": "2.1",
+    "onnxruntime": "1.31.1",
+    "onnx": "1.23.2",
+    "opencv-python": "4.10.0.84",
+    "numpy": "1.26.4"
+  },
+  "face_model": "buffalo_s",
+  "model_files": [
+    {
+      "name": "1k3d68.onnx",
+      "bytes": 143607619,
+      "sha256": "df5c06b8a0c12e422b2ed8947b8869faa4105387f199c477af038aa01f9a45cc"
+    },
+    {
+      "name": "2d106det.onnx",
+      "bytes": 5030888,
+      "sha256": "f001b856447c413801ef5c42091ed0cd516fcd21f2d6b79635b1e733a7109dbf"
+    },
+    {
+      "name": "det_500m.onnx",
+      "bytes": 2524817,
+      "sha256": "5e4447f50245bbd7966bd6c0fa52938c61474a04ec7def48753668a9d8b4ea3a"
+    },
+    {
+      "name": "genderage.onnx",
+      "bytes": 1322532,
+      "sha256": "4fde69b1c810857b88c64a335084f1c3fe8f01246c9a191b48c7bb756d6652fb"
+    },
+    {
+      "name": "w600k_mbf.onnx",
+      "bytes": 13616099,
+      "sha256": "9cc6e4a75f0e2bf0b1aed94578f144d15175f357bdc05e815e5c4a02b319eb4f"
+    }
+  ],
+  "providers": {
+    "detection": [
+      "CPUExecutionProvider"
+    ],
+    "recognition": [
+      "CPUExecutionProvider"
+    ]
+  },
+  "models_loaded": true,
+  "training_performed": false,
+  "source": "https://github.com/deepinsight/insightface/releases/tag/model-zoo",
+  "model_terms": "InsightFace supplied pretrained models: non-commercial research",
+  "identity_accuracy_measured": false,
+  "production_changed": false
+}
