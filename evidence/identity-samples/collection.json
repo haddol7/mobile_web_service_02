@@ -1,0 +1,67 @@
+{
+  "collected_utc": "2026-11-07T22:41:18.301466+00:00",
+  "environment": "WSL Ubuntu",
+  "dataset": "Celeb-reID-light official query/gallery only",
+  "source": "https://github.com/Huang-3/Celeb-reID",
+  "download": {
+    "url": "https://1drv.ms/u/c/08410a5868373edb/EdU4rBSX7-RGsal6Gh11V98BP7pi_pusChrlBLoNJIw7eg?e=EbeSTm&download=1",
+    "bytes": 83206157,
+    "sha256": "2a1f63acf116e60dee1d7cee0d91ec87268309fac0e383d0da9270e56d829727",
+    "reused": true
+  },
+  "oracle_stored_privately": true,
+  "identities": 100,
+  "gallery_images": 934,
+  "query_images": 887,
+  "decoded_test_images": 1821,
+  "exact_cross_split_duplicate_images": 0,
+  "eligible_query_images": 887,
+  "training_images_extracted": 0,
+  "real_capture_dates_available": false,
+  "real_visit_counts_available": false,
+  "blind_model_filenames": true,
+  "model": {
+    "name": "osnet_ain_x1_0",
+    "training_dataset": "MSMT17; no project training or Celeb-reID training",
+    "architecture_commit": "f8cd150fdf77e8d9e1ed143b7f308c2c609ded50",
+    "architecture_sources": {
+      "osnet_ain.py": {
+        "url": "https://raw.githubusercontent.com/KaiyangZhou/deep-person-reid/f8cd150fdf77e8d9e1ed143b7f308c2c609ded50/torchreid/models/osnet_ain.py",
+        "sha256": "a43b495866a4b1645cd134a30c3011592e8c6826ba4781955a135588cf46cd25"
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/KaiyangZhou/deep-person-reid/f8cd150fdf77e8d9e1ed143b7f308c2c609ded50/LICENSE",
+        "sha256": "3ac8ce2a83d170cb1c7c84152e0c1faca1f187794303514383960d2441716247"
+      }
+    },
+    "checkpoint_revision": "a5c5cc037c24235cda3b21085b93ad77c9616224",
+    "checkpoint": {
+      "url": "https://huggingface.co/kaiyangzhou/osnet/resolve/a5c5cc037c24235cda3b21085b93ad77c9616224/osnet_ain_x1_0_msmt17_256x128_amsgrad_ep50_lr0.0015_coslr_b64_fb10_softmax_labsmth_flip_jitter.pth",
+      "bytes": 17293009,
+      "sha256": "8a07e8da38946f7cee37f4561617bf8b6d2fe8f3a4027852893ea092e46d919f",
+      "reused": false
+    },
+    "checkpoint_path": "evidence/private/identity-samples/model-source/osnet_ain_x1_0_msmt17_256x128_amsgrad_ep50_lr0.0015_coslr_b64_fb10_softmax_labsmth_flip_jitter.pth",
+    "expected_checkpoint_sha256": "8a07e8da38946f7cee37f4561617bf8b6d2fe8f3a4027852893ea092e46d919f",
+    "preprocessing": {
+      "height": 256,
+      "width": 128,
+      "mean": [
+        0.485,
+        0.456,
+        0.406
+      ],
+      "std": [
+        0.229,
+        0.224,
+        0.225
+      ]
+    }
+  },
+  "license_notice": "Research only; do not distribute dataset. Raw images, labels and per-image descriptors stay local.",
+  "collection_pass": true,
+  "identity_matching_accuracy_measured": false,
+  "source_sha256": {
+    "tools/collect_identity_samples.py": "a184d4f253aba02ebf75d81117bd0f5110cc10f80b939c211eab867c6d64fadd"
+  }
+}

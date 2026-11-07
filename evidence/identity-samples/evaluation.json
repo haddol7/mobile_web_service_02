@@ -1,0 +1,82 @@
+{
+  "verified_utc": "2026-11-07T22:44:45.121681+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "dataset": "Celeb-reID-light official test query/gallery",
+  "identities": 100,
+  "query_images": 887,
+  "gallery_images": 934,
+  "no_model_training_performed": true,
+  "inference_receives_ground_truth_identity": false,
+  "pretrained_model": "osnet_ain_x1_0",
+  "checkpoint_sha256": "8a07e8da38946f7cee37f4561617bf8b6d2fe8f3a4027852893ea092e46d919f",
+  "encoding": {
+    "images": 1821,
+    "dimension": 512,
+    "seconds": 112.09641953399999,
+    "feature_weight_keys_loaded": 550,
+    "unloaded_non_classifier_keys": []
+  },
+  "closed_set": {
+    "identity_top1_accuracy": 0.09582863585118377,
+    "image_top5_hit_rate": 0.2547914317925592,
+    "image_mean_average_precision": 0.052235844874556916
+  },
+  "protocol": {
+    "seed": "assessment02-identity-split-v1",
+    "calibration_identities": 40,
+    "holdout_identities": 60,
+    "calibration_registered": 30,
+    "calibration_unknown": 10,
+    "holdout_registered": 45,
+    "holdout_unknown": 15,
+    "calibration_target_link_precision": 0.99,
+    "calibration_target_unknown_false_accept_rate": 0.01,
+    "minimum_holdout_correct_link_coverage_for_experimental_gate": 0.5,
+    "threshold_selected_without_holdout_labels": true,
+    "similarity_threshold": 0.7200000000000003,
+    "margin_threshold": 0.095
+  },
+  "calibration": {
+    "queries": 354,
+    "known_queries": 260,
+    "unknown_queries": 94,
+    "accepted": 5,
+    "correct_links": 5,
+    "wrong_links": 0,
+    "rejected_or_unresolved": 349,
+    "unknown_false_links": 0,
+    "link_precision": 1.0,
+    "known_correct_link_coverage": 0.019230769230769232,
+    "unknown_false_accept_rate": 0.0
+  },
+  "holdout": {
+    "queries": 533,
+    "known_queries": 397,
+    "unknown_queries": 136,
+    "accepted": 22,
+    "correct_links": 10,
+    "wrong_links": 12,
+    "rejected_or_unresolved": 511,
+    "unknown_false_links": 7,
+    "link_precision": 0.45454545454545453,
+    "known_correct_link_coverage": 0.02518891687657431,
+    "unknown_false_accept_rate": 0.051470588235294115
+  },
+  "isolated_database": {
+    "rows_after_first_import": 533,
+    "rows_after_duplicate_replay": 533,
+    "foreign_keys_valid": true,
+    "automatic_matches_stored_as_candidates": true,
+    "contains_real_capture_dates": false,
+    "counting_unit": "independent query photos, not real visits",
+    "production_django_integration_tested": false
+  },
+  "pipeline_executed": true,
+  "experimental_auto_link_gate_pass": false,
+  "real_cross_day_visit_accuracy_measured": false,
+  "rag_tested": false,
+  "production_deployed": false,
+  "source_sha256": {
+    "tools/evaluate_identity_samples.py": "12abad3847fd05eef71882d7e5153b3e5ae8ac9856f7bec1149eeac5237ea84b"
+  }
+}
