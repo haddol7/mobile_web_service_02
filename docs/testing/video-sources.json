@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "purpose": "Local evaluation fixtures for proposed person tracking and passage counting; not model training.",
+  "storage": "evidence/private/tracking-samples",
+  "license": {
+    "name": "CC BY-NC-SA 3.0 as stated by MOTChallenge; original sequence conditions may additionally apply",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "notice_source": "https://motchallenge.net/data/MOT15/",
+    "redistribute_media_in_repository": false,
+    "attribution": "MOTChallenge and the original sequence creators listed on the dataset pages. PETS09: Ferryman et al. 2009; TUD: Andriluka et al. 2008/2010; MOT17: MOTChallenge benchmark authors and sequence sources."
+  },
+  "datasets": {
+    "MOT15": {
+      "page": "https://motchallenge.net/data/MOT15/",
+      "labels_url": "https://motchallenge.net/data/MOT15Labels.zip",
+      "gt_format": "mot15"
+    },
+    "MOT17": {
+      "page": "https://motchallenge.net/data/MOT17/",
+      "labels_url": "https://motchallenge.net/data/MOT17Labels.zip",
+      "gt_format": "mot17"
+    }
+  },
+  "sequences": [
+    {"id":"PETS09-S2L1","dataset":"MOT15","split":"calibration","frames":795,"fps":7,"width":768,"height":576,"conditions":["fixed camera","multiple pedestrians","crossing paths","partial occlusion"],"original_source":"http://www.cvg.rdg.ac.uk/PETS2009/"},
+    {"id":"TUD-Campus","dataset":"MOT15","split":"calibration","frames":71,"fps":25,"width":640,"height":480,"conditions":["short diagnostic clip","side-view pedestrians","overlap"],"original_source":"https://motchallenge.net/data/MOT15/"},
+    {"id":"TUD-Stadtmitte","dataset":"MOT15","split":"holdout","frames":179,"fps":25,"width":640,"height":480,"conditions":["fixed street camera","side-view pedestrians","crossing and occlusion"],"original_source":"https://motchallenge.net/data/MOT15/"},
+    {"id":"MOT17-02-SDP","dataset":"MOT17","split":"calibration","frames":600,"fps":30,"width":1920,"height":1080,"conditions":["public square","dense pedestrians","small distant persons"],"original_source":"https://motchallenge.net/data/MOT17/"},
+    {"id":"MOT17-04-SDP","dataset":"MOT17","split":"holdout","frames":1050,"fps":30,"width":1920,"height":1080,"conditions":["night","fixed elevated viewpoint","dense pedestrians"],"original_source":"https://motchallenge.net/data/MOT17/"},
+    {"id":"MOT17-09-SDP","dataset":"MOT17","split":"holdout","frames":525,"fps":30,"width":1920,"height":1080,"conditions":["low viewpoint","partial occlusion","large nearby pedestrians"],"original_source":"https://motchallenge.net/data/MOT17/"},
+    {"id":"MOT17-05-SDP","dataset":"MOT17","split":"moving_camera_control","frames":837,"fps":14,"width":640,"height":480,"conditions":["moving camera","camera-motion negative control for fixed-line counts"],"original_source":"https://motchallenge.net/data/MOT17/"}
+  ],
+  "selection_rules": [
+    "The raw sequence video is model input. Ground-truth overlay videos must never be model input.",
+    "DPM, FRCNN and SDP variants of one MOT17 sequence share footage; only SDP is selected.",
+    "MOT15 Venice-2 and ADL-Rundle-6 overlap MOT17 sequences; they are not separate evaluation fixtures here.",
+    "Calibration and holdout are separated by source sequence. Cropped or degraded copies retain their parent's split.",
+    "Benchmark IDs are sequence-local and do not establish identity across days or different sequences.",
+    "These datasets supply boxes and tracking identities, not clothing labels, calendar capture dates or ground-truth passage events for our chosen line."
+  ]
+}

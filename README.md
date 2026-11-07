@@ -63,11 +63,13 @@ Windows Android 검증은 `PhotoViewer/tools/verify-android.ps1`로 빌드, JVM 
 
 `check_environment.py`는 WSL 전용 가상환경, CPU 연산, OpenCV, 공식 모델 파일 해시와 pip 의존성을 확인한다. 검증 기록은 각각 `evidence/video-flow`, `evidence/mobile-flow`, `evidence/environment`에 저장한다.
 
+추가 인물 추적과 기록 질의를 위한 공개 보행자 영상 7개와 공식 정답 자료를 수집했다. 수집 내역과 검증 방법은 [인물 추적 검증 준비](docs/testing/README.md)에 정리했다. 원본 영상은 로컬의 `evidence/private/tracking-samples`에 보관하며 Git과 운영 서버 업로드 대상에서 제외한다. 이 자료의 수집과 디코딩 확인을 새 추적 기능의 성능 검증으로 집계하지 않는다.
+
 `tools/verify_cloud_pipeline.py`는 지정된 PythonAnywhere API에 검출 사진을 등록하고 기존 게시글과 사진의 바이트가 유지되는지 확인하는 도구다. 사용자에게서 별도로 제공받은 앱 API 인증 설정만 사용한다. 비공개 WSL 홈의 `~/.config/mobile-web-service/common02/edge-auth.json`에 `base_url`, `username`, `token` 설정이 필요하며 현재는 이 설정이 없다. 설정 없이는 업로드를 시도하지 않는다. PythonAnywhere 배포 API 인증과 블로그의 게시글 등록 인증은 별개다.
 
 ## 진행 현황
 
-로컬 YOLO 추론과 Django 등록을 검증했다. Android 빌드와 단위 테스트 38개, Lint 오류 0개와 경고 7개를 확인했고 에뮬레이터에서 앱과 모바일 웹의 목록 및 상세 화면을 캡처했다. Django 테스트 148개와 Edge 단위 테스트 8개가 통과했다. HTTP 15개는 전체 148개 중 별도 엔진으로 재실행한 사례다. 실제 영상 30프레임에서도 첫 출현과 재등장에서만 총 2개가 등록됐고 인증 실패 처리도 확인했다. 웹캠 실측과 PythonAnywhere의 02 운영 확인은 남아 있다. 평가용 추가 편의 기능은 기본 동작을 마친 뒤 별도로 선정한다.
+로컬 YOLO 추론과 Django 등록을 검증했다. Android 빌드와 단위 테스트 38개, Lint 오류 0개와 경고 7개를 확인했고 에뮬레이터에서 앱과 모바일 웹의 목록 및 상세 화면을 캡처했다. Django 테스트 148개와 Edge 단위 테스트 8개가 통과했다. HTTP 15개는 전체 148개 중 별도 엔진으로 재실행한 사례다. 실제 영상 30프레임에서도 첫 출현과 재등장에서만 총 2개가 등록됐고 인증 실패 처리도 확인했다. 웹캠 실측과 PythonAnywhere의 02 운영 확인은 남아 있다. 추가 기능은 인물 추적과 특징 기록, 기록에 근거한 질의응답 방향으로 정했으며 구현과 성능 검증을 준비하고 있다. 현재 Word 진행본은 11월 5일 기본 검증 기준이며 이후 테스트 자료와 계획은 docs/testing에 정리한다.
 
 PythonAnywhere 전환은 2026년 11월 5일 승인을 받았다. 현재 운영 서버의 핵심 API, 모델, 마이그레이션 16개 파일이 후보와 동일하다. 기존 DB와 미디어를 공유하고 별도 릴리스 및 백업을 만드는 방식이다. 현재는 콘솔 API의 HTTP 412 응답으로 배포 시작 전 단계에서 멈춰 있으며 기존 운영 소스가 유지되고 있다.
 

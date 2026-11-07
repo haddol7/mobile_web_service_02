@@ -1,0 +1,74 @@
+{
+  "reviewed_utc": "2026-11-07T22:11:32.653163+00:00",
+  "environment": "WSL fixture verification and visual preview review",
+  "video_hashes_and_ground_truth_hashes_verified": true,
+  "all_frames_decoded": 4057,
+  "visually_reviewed_reference_frames": 21,
+  "previews": [
+    {
+      "sequence": "PETS09-S2L1",
+      "preview_sha256": "1061e2da1b4e3d82c5ec10bdadc9bc5b145dc322bb0f850c6cef5f3968abb3c2",
+      "reviewed_frames": [
+        1,
+        397,
+        795
+      ]
+    },
+    {
+      "sequence": "TUD-Campus",
+      "preview_sha256": "054618948f9667307426e634f3f7b50d419fca5925b7dfc74527bcc0f9b24334",
+      "reviewed_frames": [
+        1,
+        35,
+        71
+      ]
+    },
+    {
+      "sequence": "TUD-Stadtmitte",
+      "preview_sha256": "03c4c439df4ad933b2e594f2dcbe76077244c5ffa15fa662df24a13e99aea485",
+      "reviewed_frames": [
+        1,
+        89,
+        179
+      ]
+    },
+    {
+      "sequence": "MOT17-02-SDP",
+      "preview_sha256": "99bdb12a66b7a0eb796ec930f0e53db299473ec00e286ae46a83b1cd3215e19a",
+      "reviewed_frames": [
+        1,
+        300,
+        600
+      ]
+    },
+    {
+      "sequence": "MOT17-04-SDP",
+      "preview_sha256": "491c46ed6e3665a8af6385e35928bf9e354b6ee0232b476655e4976f0cc62369",
+      "reviewed_frames": [
+        1,
+        525,
+        1050
+      ]
+    },
+    {
+      "sequence": "MOT17-09-SDP",
+      "preview_sha256": "3437f5f0ac1fa7b553aacb383b23b091c097ec4f89970de62f4aa988f4b1ffde",
+      "reviewed_frames": [
+        1,
+        262,
+        525
+      ]
+    },
+    {
+      "sequence": "MOT17-05-SDP",
+      "preview_sha256": "055e0daae9314d3a3e6767fed7e3df6463553da5f4c7a725e1199189f3899a5d",
+      "reviewed_frames": [
+        1,
+        418,
+        837
+      ]
+    }
+  ],
+  "pass": true,
+  "scope": "Collection, decode and selected-frame reference alignment only; no tracking, passage, re-identification or RAG accuracy claim."
+}

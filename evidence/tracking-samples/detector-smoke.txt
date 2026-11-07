@@ -1,0 +1,81 @@
+detect: weights=['/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/yolov5s.pt'], source=/mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4, data=/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=cpu, view_img=False, save_txt=True, save_conf=True, save_crop=False, nosave=True, classes=[0], agnostic_nms=False, augment=False, visualize=False, update=False, project=/mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/smoke, name=TUD-Campus, exist_ok=True, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1, server=None
+YOLOv5 🚀 2026-11-5 Python-3.12.15 torch-2.6.0+cpu CPU
+
+Fusing layers... 
+YOLOv5s summary: 213 layers, 7225885 parameters, 0 gradients, 16.4 GFLOPs
+video 1/1 (1/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 59.7ms
+video 1/1 (2/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 49.2ms
+video 1/1 (3/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 48.9ms
+video 1/1 (4/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 46.6ms
+video 1/1 (5/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 51.0ms
+video 1/1 (6/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 50.2ms
+video 1/1 (7/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 43.0ms
+video 1/1 (8/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 51.1ms
+video 1/1 (9/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 53.4ms
+video 1/1 (10/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 43.8ms
+video 1/1 (11/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 44.8ms
+video 1/1 (12/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.1ms
+video 1/1 (13/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.3ms
+video 1/1 (14/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 44.3ms
+video 1/1 (15/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 43.3ms
+video 1/1 (16/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 48.5ms
+video 1/1 (17/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 45.7ms
+video 1/1 (18/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 46.6ms
+video 1/1 (19/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 46.3ms
+video 1/1 (20/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 43.3ms
+video 1/1 (21/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 42.2ms
+video 1/1 (22/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 43.4ms
+video 1/1 (23/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 42.1ms
+video 1/1 (24/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 44.4ms
+video 1/1 (25/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 41.7ms
+video 1/1 (26/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 42.2ms
+video 1/1 (27/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 10 persons, 42.2ms
+video 1/1 (28/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 45.0ms
+video 1/1 (29/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 48.4ms
+video 1/1 (30/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 51.2ms
+video 1/1 (31/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 45.1ms
+video 1/1 (32/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 45.6ms
+video 1/1 (33/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 42.0ms
+video 1/1 (34/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.1ms
+video 1/1 (35/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 4 persons, 43.1ms
+video 1/1 (36/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 4 persons, 46.1ms
+video 1/1 (37/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 4 persons, 45.1ms
+video 1/1 (38/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 3 persons, 43.2ms
+video 1/1 (39/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 4 persons, 44.4ms
+video 1/1 (40/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 47.8ms
+video 1/1 (41/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 44.5ms
+video 1/1 (42/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 41.7ms
+video 1/1 (43/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 44.6ms
+video 1/1 (44/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 45.9ms
+video 1/1 (45/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 41.7ms
+video 1/1 (46/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.7ms
+video 1/1 (47/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 43.9ms
+video 1/1 (48/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 42.0ms
+video 1/1 (49/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.9ms
+video 1/1 (50/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 44.6ms
+video 1/1 (51/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 45.4ms
+video 1/1 (52/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 44.8ms
+video 1/1 (53/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 43.5ms
+video 1/1 (54/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 9 persons, 45.2ms
+video 1/1 (55/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 47.7ms
+video 1/1 (56/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 52.4ms
+video 1/1 (57/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 46.7ms
+video 1/1 (58/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 44.6ms
+video 1/1 (59/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 42.6ms
+video 1/1 (60/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 41.3ms
+video 1/1 (61/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 43.3ms
+video 1/1 (62/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 45.2ms
+video 1/1 (63/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 48.3ms
+video 1/1 (64/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 51.4ms
+video 1/1 (65/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 8 persons, 42.9ms
+video 1/1 (66/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 7 persons, 42.4ms
+video 1/1 (67/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 47.1ms
+video 1/1 (68/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 45.0ms
+video 1/1 (69/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 45.7ms
+video 1/1 (70/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 5 persons, 44.6ms
+video 1/1 (71/71) /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/TUD-Campus/raw.mp4: 480x640 6 persons, 51.9ms
+Speed: 0.4ms pre-process, 45.5ms inference, 0.6ms NMS per image at shape (1, 3, 640, 640)
+Results saved to /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/smoke/TUD-Campus
+71 labels saved to /mnt/c/Users/1/mobile_web_service/common02/evidence/private/tracking-samples/smoke/TUD-Campus/labels
+
+Exit code: 0

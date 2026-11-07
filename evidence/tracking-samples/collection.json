@@ -1,0 +1,457 @@
+{
+  "collected_utc": "2026-11-07T22:07:55.642869+00:00",
+  "environment": "WSL Ubuntu",
+  "catalog_sha256": "c893249c8ddc61b4f483a8ad3826ca72f53f62d3126adb7c0ec585dc191f3bb5",
+  "license": {
+    "name": "CC BY-NC-SA 3.0 as stated by MOTChallenge; original sequence conditions may additionally apply",
+    "url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+    "notice_source": "https://motchallenge.net/data/MOT15/",
+    "redistribute_media_in_repository": false,
+    "attribution": "MOTChallenge and the original sequence creators listed on the dataset pages. PETS09: Ferryman et al. 2009; TUD: Andriluka et al. 2008/2010; MOT17: MOTChallenge benchmark authors and sequence sources."
+  },
+  "annotation_archives": {
+    "MOT15": {
+      "url": "https://motchallenge.net/data/MOT15Labels.zip",
+      "bytes": 1534073,
+      "sha256": "b48ee31a720a3dae558df4303b82924bd862067138bc5376e1c86aadb82f782a",
+      "reused": false
+    },
+    "MOT17": {
+      "url": "https://motchallenge.net/data/MOT17Labels.zip",
+      "bytes": 10107022,
+      "sha256": "0aa79322e91583369f42f17c4d79a0b145380d8732487bba59272048dc82b2b9",
+      "reused": false
+    }
+  },
+  "sequences": [
+    {
+      "id": "PETS09-S2L1",
+      "dataset": "MOT15",
+      "split": "calibration",
+      "conditions": [
+        "fixed camera",
+        "multiple pedestrians",
+        "crossing paths",
+        "partial occlusion"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/PETS09-S2L1-raw.mp4",
+        "bytes": 21357352,
+        "sha256": "e03a8d3ae953c640a2eb26bdeff8502111e8c5ac11e529f4dc67931dd548557e",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/PETS09-S2L1/raw.mp4"
+      },
+      "decoded_frames": 795,
+      "declared_frames": 795,
+      "fps": 7.0,
+      "duration_seconds": 113.57142857142857,
+      "decoded_size": [
+        768,
+        576
+      ],
+      "gt_coordinate_size": [
+        768,
+        576
+      ],
+      "coordinate_scale": [
+        1.0,
+        1.0
+      ],
+      "pedestrian_rows": 4476,
+      "ignored_gt_rows": 174,
+      "sequence_local_pedestrian_ids": 19,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/PETS09-S2L1/gt.txt",
+        "sha256": "9759f51a2429b17e1f4dfdd76cf9731ca02097069298914b51d35bb9045baf1d"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/PETS09-S2L1/pedestrians.json",
+        "sha256": "84b71ac9022d5659cb355a0787653d8e1b23a783317b3b12a2f41fdaefef62bc"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/PETS09-S2L1/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          397,
+          795
+        ],
+        "preview_sha256": "1061e2da1b4e3d82c5ec10bdadc9bc5b145dc322bb0f850c6cef5f3968abb3c2",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "TUD-Campus",
+      "dataset": "MOT15",
+      "split": "calibration",
+      "conditions": [
+        "short diagnostic clip",
+        "side-view pedestrians",
+        "overlap"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/TUD-Campus-raw.mp4",
+        "bytes": 936958,
+        "sha256": "95590324a7fcd27c6a5babf7e69f763be5709f788ac1a32c986a4431aee14eae",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/TUD-Campus/raw.mp4"
+      },
+      "decoded_frames": 71,
+      "declared_frames": 71,
+      "fps": 25.0,
+      "duration_seconds": 2.84,
+      "decoded_size": [
+        640,
+        480
+      ],
+      "gt_coordinate_size": [
+        640,
+        480
+      ],
+      "coordinate_scale": [
+        1.0,
+        1.0
+      ],
+      "pedestrian_rows": 359,
+      "ignored_gt_rows": 0,
+      "sequence_local_pedestrian_ids": 8,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/TUD-Campus/gt.txt",
+        "sha256": "6ea5c56dffa72db2d286bf3c4593465583bfe43e9ecaa110001ccce2c4d10e39"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/TUD-Campus/pedestrians.json",
+        "sha256": "c25dea4b054bc30f1e8d1dee0f324110889843487a055be385c6b39451d4b144"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/TUD-Campus/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          35,
+          71
+        ],
+        "preview_sha256": "054618948f9667307426e634f3f7b50d419fca5925b7dfc74527bcc0f9b24334",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "TUD-Stadtmitte",
+      "dataset": "MOT15",
+      "split": "holdout",
+      "conditions": [
+        "fixed street camera",
+        "side-view pedestrians",
+        "crossing and occlusion"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/TUD-Stadtmitte-raw.mp4",
+        "bytes": 1870025,
+        "sha256": "057efff329eb73f3434649f9b21b37d0d3ca7de8f194524140161e2d13a6ae33",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/TUD-Stadtmitte/raw.mp4"
+      },
+      "decoded_frames": 179,
+      "declared_frames": 179,
+      "fps": 25.0,
+      "duration_seconds": 7.16,
+      "decoded_size": [
+        640,
+        480
+      ],
+      "gt_coordinate_size": [
+        640,
+        480
+      ],
+      "coordinate_scale": [
+        1.0,
+        1.0
+      ],
+      "pedestrian_rows": 1156,
+      "ignored_gt_rows": 0,
+      "sequence_local_pedestrian_ids": 10,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/TUD-Stadtmitte/gt.txt",
+        "sha256": "009b3ef8df68c963fd8104350083fd6bc9798b6b435858b99dbd1385cfbde873"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/TUD-Stadtmitte/pedestrians.json",
+        "sha256": "d2f3551a454b0d5c69272b5d7de7ef6ed95ef901f4f4a07957a2d3523a120275"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/TUD-Stadtmitte/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          89,
+          179
+        ],
+        "preview_sha256": "03c4c439df4ad933b2e594f2dcbe76077244c5ffa15fa662df24a13e99aea485",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "MOT17-02-SDP",
+      "dataset": "MOT17",
+      "split": "calibration",
+      "conditions": [
+        "public square",
+        "dense pedestrians",
+        "small distant persons"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/MOT17-02-SDP-raw.mp4",
+        "bytes": 14780307,
+        "sha256": "d560bc50e1942d5c7335c937c8ac513aa87bb41ea51ae21fa02f661151d5a066",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/MOT17-02-SDP/raw.mp4"
+      },
+      "decoded_frames": 600,
+      "declared_frames": 600,
+      "fps": 30.0,
+      "duration_seconds": 20.0,
+      "decoded_size": [
+        960,
+        540
+      ],
+      "gt_coordinate_size": [
+        1920,
+        1080
+      ],
+      "coordinate_scale": [
+        0.5,
+        0.5
+      ],
+      "pedestrian_rows": 18581,
+      "ignored_gt_rows": 11422,
+      "sequence_local_pedestrian_ids": 62,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-02-SDP/gt.txt",
+        "sha256": "2e3ecb488da8886d3200d402b2b08890c6d2879923839444e9b74fa43a551440"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-02-SDP/pedestrians.json",
+        "sha256": "b2535ada1447a9e211a6eb61826c0b330ef6f77274a506121eca25ea8c4c0e96"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/MOT17-02-SDP/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          300,
+          600
+        ],
+        "preview_sha256": "99bdb12a66b7a0eb796ec930f0e53db299473ec00e286ae46a83b1cd3215e19a",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "MOT17-04-SDP",
+      "dataset": "MOT17",
+      "split": "holdout",
+      "conditions": [
+        "night",
+        "fixed elevated viewpoint",
+        "dense pedestrians"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/MOT17-04-SDP-raw.mp4",
+        "bytes": 14745062,
+        "sha256": "ab0d2fc03bce5e112abe9a173de7a2d70b39875c0af3eca49d6160c6e317e495",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/MOT17-04-SDP/raw.mp4"
+      },
+      "decoded_frames": 1050,
+      "declared_frames": 1050,
+      "fps": 30.0,
+      "duration_seconds": 35.0,
+      "decoded_size": [
+        960,
+        540
+      ],
+      "gt_coordinate_size": [
+        1920,
+        1080
+      ],
+      "coordinate_scale": [
+        0.5,
+        0.5
+      ],
+      "pedestrian_rows": 47557,
+      "ignored_gt_rows": 60448,
+      "sequence_local_pedestrian_ids": 83,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-04-SDP/gt.txt",
+        "sha256": "f8cfbe36ef38a2e1857d7ebfe7d754b2355a3ffb9e1f9cedea435e86e4fbc948"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-04-SDP/pedestrians.json",
+        "sha256": "0da01feb2ff717446b7c21f2e23ee9beb856acbe2dbd0bac4a2309dc709d3bd5"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/MOT17-04-SDP/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          525,
+          1050
+        ],
+        "preview_sha256": "491c46ed6e3665a8af6385e35928bf9e354b6ee0232b476655e4976f0cc62369",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "MOT17-09-SDP",
+      "dataset": "MOT17",
+      "split": "holdout",
+      "conditions": [
+        "low viewpoint",
+        "partial occlusion",
+        "large nearby pedestrians"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/MOT17-09-SDP-raw.mp4",
+        "bytes": 15326116,
+        "sha256": "44472faa5643b173fa9b0d4837d3018cd1f5c4a3f13ab4bc9f865cf552022f9d",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/MOT17-09-SDP/raw.mp4"
+      },
+      "decoded_frames": 525,
+      "declared_frames": 525,
+      "fps": 30.0,
+      "duration_seconds": 17.5,
+      "decoded_size": [
+        960,
+        540
+      ],
+      "gt_coordinate_size": [
+        1920,
+        1080
+      ],
+      "coordinate_scale": [
+        0.5,
+        0.5
+      ],
+      "pedestrian_rows": 5325,
+      "ignored_gt_rows": 5086,
+      "sequence_local_pedestrian_ids": 26,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-09-SDP/gt.txt",
+        "sha256": "592f0d5b519c03b35bb1578c33d726460f63abb91ea0c515f87e8d6d76be001d"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-09-SDP/pedestrians.json",
+        "sha256": "411a7556271c299fed24679fcdf06448226e2017b6a81576bfb45051ea70e5a4"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/MOT17-09-SDP/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          262,
+          525
+        ],
+        "preview_sha256": "3437f5f0ac1fa7b553aacb383b23b091c097ec4f89970de62f4aa988f4b1ffde",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    },
+    {
+      "id": "MOT17-05-SDP",
+      "dataset": "MOT17",
+      "split": "moving_camera_control",
+      "conditions": [
+        "moving camera",
+        "camera-motion negative control for fixed-line counts"
+      ],
+      "video": {
+        "url": "https://motchallenge.net/sequenceVideos/MOT17-05-SDP-raw.mp4",
+        "bytes": 17951387,
+        "sha256": "29267a1a080b26ea195ba606b9c5331ad05e3db90a1eed8ed22455b0c34c00de",
+        "reused": false,
+        "path": "evidence/private/tracking-samples/MOT17-05-SDP/raw.mp4"
+      },
+      "decoded_frames": 837,
+      "declared_frames": 837,
+      "fps": 14.0,
+      "duration_seconds": 59.785714285714285,
+      "decoded_size": [
+        640,
+        480
+      ],
+      "gt_coordinate_size": [
+        640,
+        480
+      ],
+      "coordinate_scale": [
+        1.0,
+        1.0
+      ],
+      "pedestrian_rows": 6917,
+      "ignored_gt_rows": 1096,
+      "sequence_local_pedestrian_ids": 133,
+      "ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-05-SDP/gt.txt",
+        "sha256": "ed74c54176b21b38cb690eda79a4755cf16e4c4a9ca2f019b0ba8904636174f5"
+      },
+      "normalized_ground_truth": {
+        "path": "evidence/private/tracking-samples/MOT17-05-SDP/pedestrians.json",
+        "sha256": "ea0f5da3ff4ecb93c1d67754df24b5c36c12f9d9da4bde9245bec296939e746c"
+      },
+      "alignment_preview": "evidence/private/tracking-samples/MOT17-05-SDP/alignment-review.jpg",
+      "frame_count_and_metadata_checks_pass": true,
+      "visual_alignment_review": {
+        "pass": true,
+        "frames": [
+          1,
+          418,
+          837
+        ],
+        "preview_sha256": "055e0daae9314d3a3e6767fed7e3df6463553da5f4c7a725e1199189f3899a5d",
+        "scope": "Manual review of first, middle and last raw/reference image pairs; all frames separately decoded by collection tool."
+      },
+      "cross_day_identity_ground_truth": false,
+      "clothing_ground_truth": false,
+      "passage_events_for_chosen_line_ground_truth": false
+    }
+  ],
+  "total_videos": 7,
+  "total_frames": 4057,
+  "total_duration_seconds": 255.85714285714286,
+  "total_raw_video_bytes": 86967207,
+  "tracking_accuracy_measured": false,
+  "reidentification_accuracy_measured": false,
+  "rag_accuracy_measured": false,
+  "webcam_tested": false,
+  "collection_and_decode_pass": true,
+  "visual_review_complete": true,
+  "reviewed_utc": "2026-11-07T22:11:32.653163+00:00",
+  "source_sha256": {
+    "tools/collect_tracking_samples.py": "6c1e8f8dd7d8a92d7af23b2bd31eb464558f49153190364ba31dd2f239187c4b"
+  },
+  "total_reference_pedestrian_boxes": 84371,
+  "sum_sequence_local_pedestrian_ids": 341
+}
