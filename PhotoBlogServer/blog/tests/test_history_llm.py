@@ -15,6 +15,12 @@ from photoblog.llm_config import load_llm_config
                    HISTORY_LLM_MODEL="gpt-4o-mini")
 class HistoryLLMTests(SimpleTestCase):
     def setUp(self):
+        # Response-validation cases use isolated counters; daily limits have dedicated tests.
+        self.limit_folder = tempfile.TemporaryDirectory()
+        self.addCleanup(self.limit_folder.cleanup)
+        limits = override_settings(SECURITY_STATE_ROOT=self.limit_folder.name, HISTORY_LLM_DAILY_LIMIT=50)
+        limits.enable()
+        self.addCleanup(limits.disable)
         self.retrieved = {"facts": {"passages": 2, "unknown_date_frames": 1},
             "interpretation": {"profile": None}, "evidence": [{"id": "frame-a", "source": "test",
                 "observed_at": None, "video_seconds": 2.5, "time_basis": "unknown_recording_date",

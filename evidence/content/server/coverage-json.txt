@@ -1,5 +1,5 @@
 ACTUAL WSL SUBPROCESS OUTPUT: coverage-json
-Run started UTC: 2026-11-09T19:39:58.618362+00:00
+Run started UTC: 2026-11-09T19:51:58.384087+00:00
 WSL: Ubuntu
 Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
 Command: /home/daeha/.venvs/mobile_web_service_02/bin/python -m coverage json -o htmlcov/coverage.json

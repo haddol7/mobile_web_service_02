@@ -18,7 +18,7 @@ ADDED = {"blog/auth_limits.py", "blog/request_limits.py", "blog/templates/regist
          "blog/tests/test_request_limits.py", "tools/verify_security.py"}
 ALLOWED = ADDED | {"blog/history_embeddings.py", "blog/history_llm.py", "blog/history_api.py", "blog/api_v1_urls.py",
     "blog/static/blog/chat.mjs", "blog/templates/blog/chat.html", "photoblog/settings.py", "deploy/production.py", "tools/verify_baseline.py",
-    "blog/tests/test_chat.py", "blog/tests/test_configuration.py", "blog/tests/test_embeddings.py"}
+    "blog/tests/test_chat.py", "blog/tests/test_configuration.py", "blog/tests/test_embeddings.py", "blog/tests/test_history_llm.py"}
 OUT = WORKSPACE / "evidence/security"
 
 
@@ -58,7 +58,7 @@ def verify_remote(api, active, release, new):
     assert response.status_code == 200
     usage = response.json()
     assert usage["timezone"] == "Asia/Seoul" and usage["login"]["trusted_platform_ip"] is True
-    assert usage["daily"]["generation"]["limit"] == 50 and usage["daily"]["embedding"]["limit"] == 100
+    assert usage["daily"]["generation"]["limit"] == 3 and usage["daily"]["embedding"]["limit"] == 100
     assert usage["login"]["pair_failures"] == 5 and usage["login"]["ip_failures"] == 20
     anonymous = requests.get(origin+"/api/v1/history/usage/", timeout=(5,20), allow_redirects=False)
     assert anonymous.status_code in (401,403)

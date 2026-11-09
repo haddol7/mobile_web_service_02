@@ -1,5 +1,5 @@
 ACTUAL WSL SUBPROCESS OUTPUT: tests-coverage
-Run started UTC: 2026-11-09T19:39:58.618362+00:00
+Run started UTC: 2026-11-09T19:51:58.384087+00:00
 WSL: Ubuntu
 Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
 Command: /home/daeha/.venvs/mobile_web_service_02/bin/python -m coverage run manage.py test --verbosity 2
@@ -322,7 +322,7 @@ test_wsgi_example_fails_without_path_replacement (deploy.test_production.Product
 test_wsgi_loads_real_application_with_private_production_values (deploy.test_production.ProductionPreparationTests.test_wsgi_loads_real_application_with_private_production_values) ... ok
 
 ----------------------------------------------------------------------
-Ran 277 tests in 39.902s
+Ran 277 tests in 40.019s
 
 OK
 Destroying test database for alias 'default' ('file:memorydb_default?mode=memory&cache=shared')...

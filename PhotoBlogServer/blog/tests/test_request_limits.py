@@ -24,7 +24,7 @@ class IsolatedLimits:
         self.config = override_settings(SECURITY_STATE_ROOT=self.folder.name,
             TRUST_PYTHONANYWHERE_REAL_IP=False, LOGIN_PAIR_FAILURE_LIMIT=5,
             LOGIN_IP_FAILURE_LIMIT=20, LOGIN_FAILURE_WINDOW_SECONDS=900,
-            HISTORY_LLM_DAILY_LIMIT=50, HISTORY_EMBEDDING_DAILY_LIMIT=100)
+            HISTORY_LLM_DAILY_LIMIT=3, HISTORY_EMBEDDING_DAILY_LIMIT=100)
         self.config.enable()
         self.addCleanup(self.config.disable)
 
@@ -201,7 +201,7 @@ class LoginProtectionTests(IsolatedLimits, TestCase):
         for _ in range(2):
             response = api.get("/api/v1/history/usage/")
             self.assertEqual(response.status_code, 200)
-            self.assertEqual(response.json()["daily"]["generation"], {"limit":50,"used":1,"remaining":49})
+            self.assertEqual(response.json()["daily"]["generation"], {"limit":3,"used":1,"remaining":2})
             self.assertEqual(response["Cache-Control"], "private, no-store")
 
 
@@ -210,12 +210,13 @@ class LoginProtectionTests(IsolatedLimits, TestCase):
 class PaidTransportLimitTests(IsolatedLimits, SimpleTestCase):
     def test_generation_limit_prevents_transport_and_failures_still_count(self):
         retrieved = {"facts":{}, "interpretation":{}, "evidence":[]}
-        with override_settings(HISTORY_LLM_DAILY_LIMIT=1), patch("blog.history_llm.urlopen", side_effect=TimeoutError) as transport:
-            self.assertEqual(generate("설명", retrieved)["status"], "unavailable")
+        with patch("blog.history_llm.urlopen", side_effect=TimeoutError) as transport:
+            for _ in range(3):
+                self.assertEqual(generate("설명", retrieved)["status"], "unavailable")
             result = generate("다시 설명", retrieved)
             self.assertEqual(result["status"], "daily_limit")
-            self.assertEqual(result["used"], 1)
-            transport.assert_called_once()
+            self.assertEqual(result["used"], 3)
+            self.assertEqual(transport.call_count, 3)
 
     def test_embedding_limit_prevents_transport_and_failures_still_count(self):
         with override_settings(HISTORY_EMBEDDING_DAILY_LIMIT=1), patch("blog.history_embeddings.urlopen", side_effect=TimeoutError) as transport:
