@@ -204,6 +204,15 @@ class HistoryEmbeddingDocuments(HistoryAPI):
             return Response({"detail": "의미 검색 색인에 사용할 기록을 준비하지 못했습니다."}, status=503)
 
 
+class HistoryUsage(HistoryAPI):
+    def get(self, request):
+        from .request_limits import usage_status, LimitStoreUnavailable
+        try:
+            return Response(usage_status())
+        except LimitStoreUnavailable:
+            return Response({"detail": "사용량을 확인하지 못했습니다. 잠시 후 다시 시도해주세요."}, status=503)
+
+
 class HistoryQuestion(HistoryAPI):
     def post(self, request):
         class Question(StrictSerializer):

@@ -1,6 +1,6 @@
 {
-  "report_sha256": "8800b495f81b5171d45cc7b5c3c1a1ec1dcd86b2962d9a3b262881a02af4acc7",
-  "qa_directory": "evidence/private/report-reassessment-20261110/render-3",
+  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb",
+  "qa_directory": "evidence/private/security-20261110/render-2",
   "pages": 27,
   "renderer": "Bundled render_docx.py and Poppler with Microsoft Word PDF conversion",
   "template_requirement_columns_preserved": true,
@@ -8,7 +8,7 @@
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_visually_checked": true,
-  "review_method": "All 27 render-2 PNGs inspected at original size by the editorial reviewer; root also inspected changed sections. Final render-3 has 26 byte-identical page PNGs; only page 24 changed and root visually reinspected that final page. Technical reviewer checked source claims and all 28 embedded original image hashes.",
+  "review_method": "All 27 pages compared against the previously fully reviewed report render. Pages 9 and 27 changed and were visually inspected at original size; the other 25 page PNGs are byte-identical to that reviewed render. All 28 original embedded images and source template structures preserved.",
   "page_hashes": [
     {
       "page": 1,
@@ -44,7 +44,7 @@
     },
     {
       "page": 9,
-      "sha256": "ae3fabd5389effca616afc2e86e8c6114d2bbaf5c506f04455d7b62594da1bcb"
+      "sha256": "d21855fcbec78b760046c3f643a7ca801f6ed689fd43bb91f2509c1305eea44b"
     },
     {
       "page": 10,
@@ -116,12 +116,12 @@
     },
     {
       "page": 27,
-      "sha256": "bac9ca7aab1d89610cc33be210acd2beafbaa9654848728e4519bc5c7414b81f"
+      "sha256": "4e96101977bdd605c9ca0c1299d5844e24b3d96ffb24deb5b3a456eae180e2ed"
     }
   ],
   "embedded_figures": 28,
   "remaining_assessment_ids": [],
   "submission_ready": true,
   "new_paid_api_calls": 0,
-  "verified_utc": "2026-11-09T17:45:39.455006+00:00"
+  "verified_utc": "2026-11-09T19:47:03.198290+00:00"
 }

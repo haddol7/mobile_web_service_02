@@ -68,6 +68,22 @@ class ChatTests(TestCase):
             llm.assert_called_once()
         self.assertEqual(len(chat_store.read_chat(self.owner.pk,self.chat)["turns"]),1)
 
+    @override_settings(HISTORY_LLM_PROVIDER="openai", HISTORY_LLM_API_KEY="isolated-test-key",
+                       HISTORY_LLM_MODEL="test-model", HISTORY_LLM_DAILY_LIMIT=0)
+    def test_quota_answer_is_saved_and_replay_stays_available_without_calls(self):
+        key=str(uuid4())
+        first=self.ask(request_id=key,generate=True)
+        self.assertEqual(first.status_code,200)
+        self.assertEqual(first.json()["llm"]["status"],"daily_limit")
+        self.assertEqual(first.json()["mode"],"records")
+        replay=self.ask(request_id=key,generate=True)
+        self.assertEqual(replay.status_code,200)
+        self.assertTrue(replay.json()["replayed"])
+        saved=chat_store.read_chat(self.owner.pk,self.chat)
+        self.assertEqual(saved["turns"][0]["state"],"complete")
+        self.assertEqual(saved["turns"][0]["result"]["llm"]["status"],"daily_limit")
+        self.transport.assert_not_called();self.llm_transport.assert_not_called()
+
     def test_pending_or_changed_requests_cannot_reinvoke_a_provider(self):
         key=str(uuid4());data={"question":"대기 질문","date_basis":"processed","profile":"","start":"","end":"","include_candidates":False,"generate":False,"semantic":False,"cache_only":False,"session":""}
         chat_store.reserve(self.owner.pk,self.chat,key,"대기 질문",data)

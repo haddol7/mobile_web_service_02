@@ -7,6 +7,7 @@ from . import chat_api
 
 
 urlpatterns = [
+    path("history/usage/", history_api.HistoryUsage.as_view(), name="history_usage"),
     path("history/conversations/", chat_api.Conversations.as_view(), name="chat_conversations"),
     path("history/conversations/<uuid:conversation_id>/", chat_api.ConversationDetail.as_view(), name="chat_conversation"),
     path("history/embedding-documents/", history_api.HistoryEmbeddingDocuments.as_view(), name="history_embedding_documents"),

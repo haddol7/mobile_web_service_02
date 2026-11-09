@@ -31,6 +31,7 @@ MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
+    "blog.auth_limits.LoginLimitMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
@@ -78,6 +79,22 @@ HISTORY_LLM_MODEL = _history_llm["model"]
 HISTORY_EMBEDDING_API_KEY = os.environ.get("HISTORY_EMBEDDING_API_KEY", _history_llm["api_key"] if _history_llm["provider"] == "openai" else "")
 HISTORY_EMBEDDING_INDEX = Path(os.environ.get("HISTORY_EMBEDDING_INDEX", HISTORY_MEDIA_ROOT / ".semantic-index.json"))
 HISTORY_CHAT_ROOT = os.environ.get("HISTORY_CHAT_ROOT", "")
+SECURITY_STATE_ROOT = os.environ.get("SECURITY_STATE_ROOT", "")
+TRUST_PYTHONANYWHERE_REAL_IP = os.environ.get("DJANGO_TRUST_X_REAL_IP", "false").lower() == "true"
+LOGIN_PAIR_FAILURE_LIMIT = 5
+LOGIN_IP_FAILURE_LIMIT = 20
+LOGIN_FAILURE_WINDOW_SECONDS = 15 * 60
+
+
+def daily_limit(name, default):
+    value = os.environ.get(name, str(default))
+    if not value.isascii() or not value.isdigit() or not 0 <= int(value) <= 10000:
+        raise ImproperlyConfigured(name + " must be an integer between 0 and 10000.")
+    return int(value)
+
+
+HISTORY_LLM_DAILY_LIMIT = daily_limit("HISTORY_LLM_DAILY_LIMIT", 50)
+HISTORY_EMBEDDING_DAILY_LIMIT = daily_limit("HISTORY_EMBEDDING_DAILY_LIMIT", 100)
 del _history_llm
 # Limit text/form overhead separately from photo bytes. Photo validation enforces 5 MiB.
 DATA_UPLOAD_MAX_MEMORY_SIZE = 6 * 1024 * 1024

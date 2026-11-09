@@ -33,6 +33,11 @@ def response(vectors):
 @override_settings(HISTORY_EMBEDDING_API_KEY="isolated-embedding-key")
 class EmbeddingClientTests(SimpleTestCase):
     def setUp(self):
+        self.limit_folder = tempfile.TemporaryDirectory()
+        self.addCleanup(self.limit_folder.cleanup)
+        limits = override_settings(SECURITY_STATE_ROOT=self.limit_folder.name)
+        limits.enable()
+        self.addCleanup(limits.disable)
         self.transport = patch("blog.history_embeddings.urlopen").start()
         self.addCleanup(patch.stopall)
         self.transport.side_effect = AssertionError("Tests must never call a paid API.")
@@ -207,6 +212,26 @@ class EmbeddingRetrievalTests(TestCase):
         self.assertEqual(result["retrieval"]["status"], "ranked")
         self.assertTrue(result["retrieval"]["query_cache_hit"])
         self.assertEqual(result["retrieval"]["api_requests"], 0)
+        self.transport.assert_not_called()
+
+    @override_settings(HISTORY_EMBEDDING_DAILY_LIMIT=0)
+    def test_cached_search_still_works_at_zero_daily_quota(self):
+        result = retrieve({"semantic": True, "date_basis": "processed"}, "비행기를 타러 떠나는 장면")
+        self.assertEqual(result["retrieval"]["status"], "ranked")
+        self.assertTrue(result["retrieval"]["query_cache_hit"])
+        self.transport.assert_not_called()
+
+    @override_settings(HISTORY_EMBEDDING_DAILY_LIMIT=0)
+    def test_quota_returns_record_answer_and_skips_both_paid_transports(self):
+        with patch("blog.history_api.generate") as llm:
+            response = self.api.post("/api/v1/history/ask/", {
+                "question":"새로운 검색", "date_basis":"processed", "semantic":True, "generate":True}, format="json")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json()["retrieval"]["status"], "daily_limit")
+        self.assertEqual(response.json()["retrieval"]["api_requests"], 0)
+        self.assertEqual(response.json()["mode"], "records")
+        self.assertEqual(response.json()["facts"]["source_count"], 3)
+        llm.assert_not_called()
         self.transport.assert_not_called()
 
     def test_date_profile_and_session_filters_cannot_be_bypassed_by_semantic_similarity(self):

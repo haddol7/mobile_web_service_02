@@ -1,0 +1,10 @@
+{
+  "pass": false,
+  "production_verified": false,
+  "phase": "not_activated",
+  "release": "20261109193809d98402",
+  "failure_type": "DeploymentError",
+  "production_files_changed": false,
+  "paid_api_calls": 0,
+  "checked_utc": "2026-11-09T19:38:13.452819+00:00"
+}

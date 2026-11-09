@@ -77,5 +77,7 @@ def load_environment(config_path, project_root):
         # Do not attach parser errors, which can contain confidential input values.
         raise ValueError("Cannot load valid private production configuration.") from None
     os.environ.update(values)
+    # This loader is restricted to the approved PythonAnywhere production host.
+    os.environ.setdefault("DJANGO_TRUST_X_REAL_IP", "true")
     os.environ["DJANGO_SETTINGS_MODULE"] = "photoblog.settings"
     return project_root

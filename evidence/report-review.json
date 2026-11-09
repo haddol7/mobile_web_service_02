@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-09T17:45:38.743702+00:00",
-  "report_sha256": "8800b495f81b5171d45cc7b5c3c1a1ec1dcd86b2962d9a3b262881a02af4acc7",
+  "reviewed_utc": "2026-11-09T19:47:02.949822+00:00",
+  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb",
   "checks": [
     {
       "check": "source_requirement_columns_preserved",
@@ -355,7 +355,7 @@
       "pass": true
     },
     {
-      "check": "Django_250",
+      "check": "Django_full_suite",
       "pass": true
     },
     {

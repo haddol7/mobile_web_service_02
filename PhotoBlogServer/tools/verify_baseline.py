@@ -17,7 +17,7 @@ EVIDENCE_ROOT = SERVER_ROOT.parent / "evidence" / "baseline"
 def source_hashes():
     files = [SERVER_ROOT / "requirements.txt", SERVER_ROOT / ".coveragerc"]
     files.extend(SERVER_ROOT.glob("*.py"))
-    for package in ("blog", "photoblog", "tools"):
+    for package in ("blog", "photoblog", "tools", "deploy"):
         files.extend(path for path in (SERVER_ROOT / package).rglob("*") if path.is_file() and path.suffix in (".py", ".html", ".mjs", ".css", ".js", ".json", ".wasm", ".tflite", ".gz", ".txt"))
     return {
         str(path.relative_to(SERVER_ROOT)): hashlib.sha256(path.read_bytes()).hexdigest()

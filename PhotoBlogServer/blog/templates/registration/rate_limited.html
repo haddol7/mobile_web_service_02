@@ -1,0 +1,9 @@
+{% extends 'blog/base.html' %}
+{% block title %}로그인 대기{% endblock %}
+{% block content %}
+  <section class="panel form-panel auth-panel">
+    <h1>잠시 후 다시 로그인해주세요</h1>
+    <p role="alert">{{ message }}</p>
+    <div class="actions"><a class="button" href="{{ retry_url }}">로그인 화면으로</a></div>
+  </section>
+{% endblock %}

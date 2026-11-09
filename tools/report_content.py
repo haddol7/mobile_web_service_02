@@ -1,5 +1,6 @@
 """Evidence-backed report prose and embedded figures for Common Assessment 02."""
 import json
+import re
 from pathlib import Path
 from docx import Document
 from docx.shared import Inches, Pt, RGBColor
@@ -112,6 +113,8 @@ def data_table(doc, headers, rows, widths=None):
 
 def build_appendix():
     FIGURES.clear()
+    test_log = (ROOT / "evidence/content/server/tests-coverage.txt").read_text(encoding="utf-8")
+    server_tests = int(re.search(r"Ran (\d+) tests", test_log).group(1))
     doc = Document()
     section(doc, "구현 및 검증 결과", False)
     text(doc, "YOLOv5가 객체 출현을 감지하면 Django 서버에 사진을 등록하고 Android와 웹에서 확인하는 감시 시스템을 구현했다. 기존 객체 출현 비교와 Post API를 유지하고 사람 추적 및 얼굴 후보 비교, 인물별 이력과 근거 기록 질문을 추가했다.")
@@ -158,7 +161,7 @@ def build_appendix():
     figure(doc, "evidence/screenshots/local-list.jpg", 6.1, "그림 B05 로컬 기본 사진 목록에서 검출 결과 확인")
     section(doc, "B06 자동 검증 결과", False)
     data_table(doc, ["구분", "검증 결과", "환경"], [
-        ["Django 전체", "250개 통과", "WSL Ubuntu"], ["실제 HTTP 엔진", "전체 중 15개 별도 재실행 통과", "WSL Ubuntu"],
+        ["Django 전체", f"{server_tests}개 통과", "WSL Ubuntu"], ["실제 HTTP 엔진", "전체 중 15개 별도 재실행 통과", "WSL Ubuntu"],
         ["Edge 단위", "30개 통과", "WSL Ubuntu"], ["웹 단위", "76개 통과", "Windows Node"],
         ["Android JVM", "40개 통과", "Windows"], ["Android Lint", "오류 0개, 경고 9개", "Windows"]], [1.3, 3.15, 1.45])
 
@@ -293,7 +296,7 @@ def build_appendix():
 
     section(doc, "B18 실행 환경과 검증 근거")
     data_table(doc, ["항목", "결과", "evidence 하위 기록"], [
-        ["WSL 서버", "Django 250개, HTTP 15개 통과", "content/server/verification.json"],
+        ["WSL 서버", f"Django {server_tests}개, HTTP 15개 통과", "content/server/verification.json"],
         ["WSL Edge", "추적과 얼굴 및 전송 30개 통과", "history/report-edge-tests.txt"],
         ["웹", "단위 검사 76개 통과", "mobile-web/unit-verification.json"],
         ["Android", "JVM 40개, Lint 오류 0개", "content/android/verification.json"],
@@ -301,9 +304,10 @@ def build_appendix():
         ["운영 검색 색인", "문서 40개, 고정 예제 3개 확인", "history/chokepoint-people-embedding-cloud.json"],
         ["운영 대화 복원", "별도 접속에서 2개 질의 복원", "ui-audit/chat-cloud.json"],
         ["운영 박스 표시", "원본 보존과 비인증 접근 차단", "ui-audit/detection-boxes-deployment.json"]], [1.05, 2.3, 2.55])
-    text(doc, "HTTP 엔진의 15개 사례는 Django 전체 250개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
+    text(doc, f"HTTP 엔진의 15개 사례는 Django 전체 {server_tests}개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
     text(doc, "노트북 WSL에서도 환경 파일 615개와 등록 사진 34명 73장을 검사했다. 동봉 영상 240프레임, Django 250개 및 이전 도구 단위 테스트 9개를 확인했고 로컬 API와 사진 목록은 HTTP 200을 반환했다.", 9)
-    text(doc, "검사 명령  서버 python PhotoBlogServer/tools/verify_content.py\nEdge는 YOLOv5에서 python -m unittest discover -s tests -v\n웹 node tools/verify-mobile-web.mjs, Android PhotoViewer/tools/verify-android.ps1", 9)
+    text(doc, "검사 명령  서버 python PhotoBlogServer/tools/verify_security.py\nEdge는 YOLOv5에서 python -m unittest discover -s tests -v\n웹 node tools/verify-mobile-web.mjs, Android PhotoViewer/tools/verify-android.ps1", 9)
+    text(doc, "운영 보호의 로컬 검증과 적용 상태는 docs/security-controls.md, evidence/security/deployment.json에 정리했다.", 9)
     text(doc, "무료 PythonAnywhere는 Django API와 DB, 관측 이력 및 텍스트 검색을 제공한다. YOLOv5와 얼굴 비교는 Edge CPU에서 실행하고 사진 및 메타데이터를 서버로 전송한다. LLM 설명 생성은 별도 외부 API를 사용한다.")
     text(doc, "주요 출처", 11, True)
     for line in ["YOLOv5  https://github.com/ultralytics/yolov5/tree/v7.0",
@@ -313,5 +317,6 @@ def build_appendix():
                  "HDTF 원출처와 원본 영상 목록  https://github.com/MRzzm/HDTF",
                  "DVIDS 영상별 원본 URL  docs/testing/PUBLIC_FIGURE_EXPANSION.md",
                  "모델과 자료의 이용 조건  docs/testing/licenses 및 docs/upstream"]:
-        text(doc, line, 9)
+        paragraph = text(doc, line, 9)
+        paragraph.paragraph_format.space_after = Pt(2)
     return doc

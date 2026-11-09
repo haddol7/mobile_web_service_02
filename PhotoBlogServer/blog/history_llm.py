@@ -5,6 +5,7 @@ from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 from django.conf import settings
+from .request_limits import consume_api, DailyLimit, LimitStoreUnavailable
 
 
 def supported_quantities(text, context):
@@ -86,6 +87,7 @@ def generate(question, retrieved):
         headers = {"x-goog-api-key": key, "Content-Type": "application/json"}
     try:
         request = Request(endpoint, data=json.dumps(body).encode(), headers=headers, method="POST")
+        consume_api("generation")
         with urlopen(request, timeout=8) as response:
             raw = response.read(65537)
         if len(raw) > 65536:
@@ -113,6 +115,8 @@ def generate(question, retrieved):
         if key in text:
             raise ValueError
         return {"status": "generated", "text": text, "evidence_ids": list(dict.fromkeys(cites))}
-    except (HTTPError, URLError, TimeoutError, ValueError, KeyError, IndexError, TypeError, OSError):
+    except DailyLimit as error:
+        return {**error.data, "text": None, "evidence_ids": []}
+    except (LimitStoreUnavailable, HTTPError, URLError, TimeoutError, ValueError, KeyError, IndexError, TypeError, OSError):
         # Provider errors, credentials and response bodies never enter a response or log.
         return {"status": "unavailable", "text": None, "evidence_ids": []}

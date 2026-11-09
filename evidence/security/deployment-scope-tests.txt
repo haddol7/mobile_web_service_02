@@ -1,0 +1,8 @@
+test_existing_file_deletion_is_rejected (test_security_patch.SecurityPatchScopeTests.test_existing_file_deletion_is_rejected) ... ok
+test_models_dependencies_migrations_and_unapproved_additions_are_rejected (test_security_patch.SecurityPatchScopeTests.test_models_dependencies_migrations_and_unapproved_additions_are_rejected) ... ok
+test_only_reviewed_security_files_can_change (test_security_patch.SecurityPatchScopeTests.test_only_reviewed_security_files_can_change) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

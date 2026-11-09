@@ -1,0 +1,32 @@
+{
+  "verified_utc": "2026-11-09T19:46:14.551605+00:00",
+  "scope": "Login protection and daily AI request limits",
+  "environment": "WSL Ubuntu",
+  "local_verified": true,
+  "production_verified": false,
+  "django_tests": 277,
+  "added_cases": 27,
+  "http_engine_subset": 15,
+  "web_tests": 76,
+  "deployment_scope_tests": 3,
+  "paid_api_calls": 0,
+  "model_credentials_disabled_during_tests": true,
+  "source_changed_during_validation": false,
+  "login": {
+    "same_ip_account_failures": 5,
+    "same_ip_failures": 20,
+    "wait_seconds": 900
+  },
+  "daily": {
+    "generation": 50,
+    "embedding": 100,
+    "timezone": "Asia/Seoul",
+    "failed_attempts_counted": true,
+    "cache_hits_counted": false
+  },
+  "source_files_verified": 157,
+  "django_schema_changed": false,
+  "dependencies_changed": false,
+  "deployment_record": "evidence/security/deployment.json",
+  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb"
+}

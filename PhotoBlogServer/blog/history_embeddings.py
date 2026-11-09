@@ -15,6 +15,7 @@ from urllib.request import Request, urlopen
 
 from django.conf import settings
 from django.utils import timezone as django_timezone
+from .request_limits import consume_api, DailyLimit, LimitStoreUnavailable
 
 MAX_DOCUMENTS = 512
 MAX_BATCH = 64
@@ -96,6 +97,12 @@ def embed_texts(texts, *, approved=False):
                        "encoding_format": "float", "input": texts}, ensure_ascii=False).encode()
     request = Request("https://api.openai.com/v1/embeddings", data=body,
                       headers={"Authorization": "Bearer " + key, "Content-Type": "application/json"}, method="POST")
+    try:
+        consume_api("embedding")
+    except DailyLimit:
+        raise
+    except LimitStoreUnavailable:
+        raise EmbeddingError("Embedding usage could not be verified.") from None
     try:
         # One attempt only. A timeout is never silently retried at the user's expense.
         with urlopen(request, timeout=20) as response:
@@ -298,5 +305,7 @@ def rank(question, frames, *, allow_api=True):
                 "matches": [{"session_id": key, "similarity": round(cosine, 6),
                              "title_match": round(lexical, 6), "rank_score": round(score, 6)}
                             for score, key, cosine, lexical in selected]}
+    except DailyLimit as error:
+        return {**base, **error.data, "api_requests": 0}
     except EmbeddingError as error:
         return {**base, "api_requests": error.api_requests}

@@ -1,0 +1,29 @@
+{
+  "phase": "prepared",
+  "release": "202611091942193ec656",
+  "manifest": "dist/pythonanywhere-auto-202611091942193ec656.json",
+  "package_sha256": "ead2fd7f9b8878f23944414558f6174080d9da1159ab8a889a2bf33e660295c2",
+  "cloud_deployed": false,
+  "paid_api_calls": 0,
+  "last_known_parent": "20261108222304c3b06f",
+  "changed_files": [
+    "blog/api_v1_urls.py",
+    "blog/auth_limits.py",
+    "blog/history_api.py",
+    "blog/history_embeddings.py",
+    "blog/history_llm.py",
+    "blog/request_limits.py",
+    "blog/static/blog/chat.mjs",
+    "blog/templates/blog/chat.html",
+    "blog/templates/registration/rate_limited.html",
+    "blog/tests/test_chat.py",
+    "blog/tests/test_configuration.py",
+    "blog/tests/test_embeddings.py",
+    "blog/tests/test_request_limits.py",
+    "deploy/production.py",
+    "photoblog/settings.py",
+    "tools/verify_baseline.py",
+    "tools/verify_security.py"
+  ],
+  "checked_utc": "2026-11-09T19:42:23.749703+00:00"
+}

@@ -48,3 +48,12 @@ class ProductionConfigurationUnitTests(SimpleTestCase):
             destination=Path(directory)/"private-history"
             config=self.load_settings(HISTORY_MEDIA_ROOT=str(destination))
             self.assertEqual(config["HISTORY_MEDIA_ROOT"],destination)
+
+    def test_daily_limits_have_bounded_defaults_and_allow_emergency_stop(self):
+        config = self.load_settings(HISTORY_LLM_DAILY_LIMIT="50", HISTORY_EMBEDDING_DAILY_LIMIT="100")
+        self.assertEqual(config["HISTORY_LLM_DAILY_LIMIT"], 50)
+        self.assertEqual(config["HISTORY_EMBEDDING_DAILY_LIMIT"], 100)
+        self.assertEqual(self.load_settings(HISTORY_LLM_DAILY_LIMIT="0")["HISTORY_LLM_DAILY_LIMIT"], 0)
+        for invalid in ("-1", "unlimited", "10001", "", "５０"):
+            with self.subTest(invalid=invalid), self.assertRaises(ImproperlyConfigured):
+                self.load_settings(HISTORY_LLM_DAILY_LIMIT=invalid)
