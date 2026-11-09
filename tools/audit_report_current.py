@@ -61,6 +61,10 @@ def main():
     check("no_api_keys_in_text", not re.search(r"sk-[A-Za-z0-9_-]{16,}|Authorization:\s*(Token|Bearer)\s+[A-Za-z0-9]{20,}", body))
     check("evaluator_access_procedure", all(s in body for s in ("운영자 계정은 daejinha", "/accounts/login/?next=/", "운영 화면 접속과 확인 방법")))
     check("face_method_explained", all(s in body for s in ("다섯 기준점", "112 x 112", "4배", "최고 점수", "자동 확정은 하지 않는다", "개발 인물 18명", "개별 변경의 기여도")))
+    check("face_datasets_and_source_split_explained", all(s in body for s in ("ChokePoint 출입 시연과 별개", "VoxCeleb2 공개 미러", "원본 영상 ID 단위로 분리", "mortal9826/VoxCeleb2-test-data", "PUBLIC_FIGURE_EXPANSION.md")))
+    check("webcam_actual_command_disclosed", camera["actual_helper_command"] in body)
+    check("retry_evidence_cross_reference", "B08" in doc.tables[0].cell(12,6).text)
+    check("process_approval_prose_removed", "승인된 배치" not in body)
     check("cloud_photo_browser_evidence", all((ROOT/path).is_file() for path in (
         "evidence/private/report-fixes-20261109/production-post-list.jpg", "evidence/private/report-fixes-20261109/production-post-detail.jpg")))
     build_appendix()

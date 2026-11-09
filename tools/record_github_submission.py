@@ -18,7 +18,9 @@ def git(*args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--final", action="store_true")
+    output = parser.add_mutually_exclusive_group()
+    output.add_argument("--final", action="store_true")
+    output.add_argument("--public-snapshot", action="store_true")
     args = parser.parse_args()
     commit = git("rev-parse","HEAD")
     remote = git("ls-remote","origin","refs/heads/main").split()[0]
@@ -38,7 +40,13 @@ def main():
              "report_path":REPORT.name,"report_sha256":digest,"remote_report_bytes":len(actual),
              "verification_method":"git ls-remote, committed source byte comparison and public raw DOCX SHA256",
              "paid_api_calls":0}
-    target = ROOT/("evidence/private/submission-final-20261110/remote-final-verification.json" if args.final else "evidence/github-upload.json")
+    if args.public_snapshot:
+        proof["record_scope"] = "immutable_report_snapshot"
+        proof["report_commit"] = commit
+        proof["note"] = "Report and source snapshot verified at this commit. Later commits may add verification records without changing these report bytes."
+        target = ROOT/"evidence/github-final-report.json"
+    else:
+        target = ROOT/("evidence/private/submission-final-20261110/remote-final-verification.json" if args.final else "evidence/github-upload.json")
     target.write_text(json.dumps(proof,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     print(json.dumps(proof,ensure_ascii=False))
 

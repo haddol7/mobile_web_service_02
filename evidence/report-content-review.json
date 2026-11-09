@@ -15,28 +15,29 @@
         "evidence/ui-audit/cloud/mobile-web-detail.png"
       ],
       "severity": "high",
-      "physical_page": 13,
+      "physical_page": 16,
       "id": "R01",
       "action": "보관된 브라우저 캡처를 삽입해 평가표 9번과 직접 대응시킬 것",
       "section": "B09",
       "status": "resolved",
       "physical_pages": [
         14,
-        15
+        15,
+        16
       ],
       "resolution": "Current production browser list and post 8 detail captured and embedded as B09 3 and B09 4"
     },
     {
       "finding": "얼굴 비교 개선 전후 결과는 있으나 개선 원인과 후보 결정 규칙 설명이 부족함",
       "severity": "medium",
-      "physical_page": 18,
+      "physical_page": 21,
       "id": "R02",
       "action": "등록 얼굴 선택과 특징 비교 및 후보 보류 기준을 짧게 설명할 것",
       "section": "B13",
       "status": "resolved",
       "physical_pages": [
-        20,
-        21
+        21,
+        22
       ],
       "resolution": "Reference selection, aligned original and flipped features, person-level scoring, fixed thresholds and candidate-only status explained against source"
     },
@@ -58,9 +59,9 @@
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "1bc7180bbdc5ff9aea22a95e2b8bda5a901c743d61234b2de04c72bde0156b01",
+  "report_sha256": "8800b495f81b5171d45cc7b5c3c1a1ec1dcd86b2962d9a3b262881a02af4acc7",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-09T17:08:03.308727+00:00",
+  "reviewed_utc": "2026-11-09T17:45:39.455006+00:00",
   "remaining_work": [],
   "submission_ready": true,
   "webcam_evidence_verified": true

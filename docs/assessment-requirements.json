@@ -212,7 +212,7 @@
       "name": "인물 추적과 관측 기록 전송",
       "description": "몸 추적, 얼굴 후보 비교, 선 통과 기록, 중복 방지와 재전송",
       "status": "complete",
-      "report_evidence": "B11 B12 B17\n등록과 실제 분석\n검출 박스"
+      "report_evidence": "B08 B11 B12 B17\n전송과 실제 분석\n등록과 검출 박스"
     },
     {
       "id": "10-2",

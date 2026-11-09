@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-09T17:07:18.149669+00:00",
-  "report_sha256": "1bc7180bbdc5ff9aea22a95e2b8bda5a901c743d61234b2de04c72bde0156b01",
+  "reviewed_utc": "2026-11-09T17:45:38.743702+00:00",
+  "report_sha256": "8800b495f81b5171d45cc7b5c3c1a1ec1dcd86b2962d9a3b262881a02af4acc7",
   "checks": [
     {
       "check": "source_requirement_columns_preserved",
@@ -300,6 +300,22 @@
     },
     {
       "check": "face_method_explained",
+      "pass": true
+    },
+    {
+      "check": "face_datasets_and_source_split_explained",
+      "pass": true
+    },
+    {
+      "check": "webcam_actual_command_disclosed",
+      "pass": true
+    },
+    {
+      "check": "retry_evidence_cross_reference",
+      "pass": true
+    },
+    {
+      "check": "process_approval_prose_removed",
       "pass": true
     },
     {

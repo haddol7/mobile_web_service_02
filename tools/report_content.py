@@ -36,14 +36,22 @@ def section(doc, title, new_page=True):
     paragraph.paragraph_format.keep_with_next = True
 
 
-def figure(doc, path, width, caption=None):
+def figure(doc, path, width, caption=None, crop_bottom=0):
     full = ROOT / path
     assert full.is_file(), path
     FIGURES.append(path)
     paragraph = doc.add_paragraph()
     paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
     paragraph.paragraph_format.space_after = Pt(4)
-    paragraph.add_run().add_picture(str(full), width=Inches(width))
+    picture = paragraph.add_run().add_picture(str(full), width=Inches(width))
+    if crop_bottom:
+        # Crop only the blank lower viewport in Word; preserve the original screenshot bytes.
+        assert 0 < crop_bottom < 1
+        crop = OxmlElement("a:srcRect")
+        crop.set("b", str(round(crop_bottom * 100000)))
+        fill = picture._inline.graphic.graphicData.pic.blipFill
+        fill.insert(1, crop)
+        picture.height = round(picture.height * (1 - crop_bottom))
     if caption:
         paragraph.paragraph_format.keep_with_next = True
         text(doc, caption, 9)
@@ -113,6 +121,7 @@ def build_appendix():
     section(doc, "운영 화면 접속과 확인 방법", False)
     text(doc, "운영자 계정은 daejinha다. 아래 로그인 주소에서 사용자 이름과 계정 비밀번호를 입력하면 관측 기록으로 이동한다. 관측 사진과 인물 이력은 운영자 로그인 후 확인한다.")
     text(doc, "로그인  https://daejinha.pythonanywhere.com/accounts/login/?next=/", 9)
+    text(doc, "운영 화면을 직접 확인하려면 평가자에게 계정 비밀번호를 비공개로 전달한다. 공개 저장소에는 비밀번호와 API 키를 포함하지 않는다.", 9)
     text(doc, "관측 기록에서 날짜와 인물을 선택하고 사진을 열어 검출 박스를 확인한다. 인물 확인에서는 등록 얼굴과 영상 속 얼굴 및 발견 이력을 비교한다. AI 질문에서는 인물과 기간을 선택한 뒤 질문을 보내 근거 사진이 포함된 답변과 대화 기록을 확인한다.")
     text(doc, "AI 질문의 보내기는 외부 유료 API를 사용한다. 기본 API는 /api_root/에서, YOLO 검출 사진의 기본 목록은 /photos/에서 확인할 수 있다.", 9)
 
@@ -179,14 +188,20 @@ def build_appendix():
     text(doc, "카메라 입력 형식을 MJPEG로 지정해 기본 YUYV 형식의 녹색 깨짐을 해결했다. 보조 스크립트는 입력 형식을 설정하고 원본 검출기가 화면에 표시한 프레임을 저장한다. 640 x 480 실시간 화면에서 사람 검출 상자와 person 0.71 라벨을 확인했다.")
     figure(doc, "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png", 4.0, "그림 B08 1 실제 노트북 웹캠을 입력으로 실행한 원본 YOLOv5 사람 검출 화면")
     text(doc, "WSL Ubuntu 24.04.2 LTS, Python 3.12.3과 PyTorch 2.6.0 CPU에서 실행했다. 선택한 추론 프레임은 101번이며 사람 점수는 0.708044다. 검출값 파일 124개를 저장하고 정상 종료했다. 녹화 영상의 분석 결과와 구분한 실제 카메라 실행이다.")
-    text(doc, "실행 경로  tools/run_edge.py --baseline --source 0 --device cpu --view-img --nosave --save-txt --save-conf", 9)
+    text(doc, "실제 실행 명령은 다음과 같다. 보조 스크립트 보관본은 evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py다.", 9)
+    text(doc, record("evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json")["actual_helper_command"], 9)
+    text(doc, "보조 스크립트가 호출한 원본 실행기  tools/run_edge.py --baseline --source 0 --device cpu --view-img --nosave --save-txt --save-conf", 9)
     text(doc, "근거 기록  evidence/notebook-20261110/02_웹캠_증빙의 웹캠_검증.json, 선택_프레임_검출값.txt, webcam-retake.log", 9)
-    text(doc, "같은 노트북에서 환경 검사 파일 615개와 등록 사진 34명 73장을 읽었고, 동봉 영상은 240프레임을 분석했다. WSL Django 전체 250개와 이전 도구 단위 테스트 9개가 통과했으며 로컬 API 및 사진 목록의 HTTP 200 응답을 확인했다.")
 
-    section(doc, "B09 PythonAnywhere API와 모바일 동기화")
+    section(doc, "B09 PythonAnywhere API 응답")
     text(doc, "https://daejinha.pythonanywhere.com/api_root/ 에서 기본 API의 HTTP 200을 확인했다. 실제 YOLO 클라이언트가 운영 서버에 등록한 게시글과 사진을 Android 앱에서 다시 조회했다.")
-    pair(doc, ["evidence/ui-audit/cloud/api-root-browser.png", "evidence/ui-audit/cloud/yolo-native-detail.png"],
-         ["그림 B09 1 주소창이 포함된 운영 API 응답", "그림 B09 2 운영 검출 사진의 Android 상세"], (2.5, 2.5))
+    figure(doc, "evidence/ui-audit/cloud/api-root-browser.png", 6.0,
+           "그림 B09 1 운영 API 응답 확대 화면 하단의 빈 영역만 생략", crop_bottom=.69)
+    text(doc, "GET /api_root/의 HTTP 200 OK와 JSON의 Post 링크에 전체 운영 도메인이 표시된다. 그림은 11월 8일 운영 검증 때 저장한 원본 캡처의 응답 부분을 확대해 배치했다.", 9)
+
+    section(doc, "B09 PythonAnywhere Android 동기화")
+    figure(doc, "evidence/ui-audit/cloud/yolo-native-detail.png", 2.5,
+           "그림 B09 2 운영 검출 사진의 Android 상세")
     text(doc, "운영 등록 과정에서 기존 게시글 3개와 사진 바이트를 보존했다. 새 YOLO 검출 게시글 id 8의 사진 해시를 운영 API와 Android에서 대조했다. 기본 연동 증빙은 11월 8일의 실제 운영 검사다.", 9)
 
     section(doc, "B09 PythonAnywhere 브라우저 목록과 검출 사진")
@@ -229,11 +244,12 @@ def build_appendix():
         ["최고 유사도 기준", "0.55 이상", "0.29 이상"],
         ["다른 인물 2위와의 점수 차이", "0.08 이상", "0.10 이상"]], [2.6, 1.65, 1.65])
     text(doc, "최고 점수와 다른 인물 2위와의 점수 차이가 두 기준을 모두 만족해야 후보를 연결한다. 기준에 못 미치면 미확인으로 남기며 자동 확정은 하지 않는다. 몸 추적 번호와 얼굴 후보는 구분해 저장한다.")
-    text(doc, "설정은 개발 인물 18명으로 정한 뒤 고정하고, 겹치지 않는 인물 24명으로 최종 비교했다. 다음 결과는 등록 얼굴 선택, 특징 결합과 임계값을 함께 바꾼 실험이며 개별 변경의 기여도를 분리한 결과는 아니다.")
+    text(doc, "앞의 ChokePoint 출입 시연과 별개로 VoxCeleb2 공개 미러에서 얼굴 비교용 자료를 구성했다. 설정은 개발 인물 18명으로 정한 뒤 고정하고, 이들과 겹치지 않는 인물 24명으로 최종 비교했다. 등록과 질의는 원본 영상 ID 단위로 분리했다. 다음 결과는 등록 얼굴 선택, 특징 결합과 임계값을 함께 바꾼 실험이며 개별 변경의 기여도를 분리한 결과는 아니다.")
     text(doc, "구현 근거  YOLOv5/face_features.py, YOLOv5/person_tracking.py, YOLOv5/face_policy.json", 9)
 
     section(doc, "B13 얼굴 후보 비교 개선 검증")
-    text(doc, "임계값 개발에 사용한 인물과 겹치지 않는 24명으로 비교했다. 등록 인물 12명과 미등록 인물 12명의 영상 48개에서 원본 576프레임을 추출했다. 원본, 밝기 35%와 64픽셀 저해상도 조건은 같은 프레임에서 파생한 조건이다.")
+    text(doc, "VoxCeleb2의 별도 평가 인물 24명 중 등록 인물 12명과 미등록 인물 12명을 비교했다. 질의 영상 48개에서 원본 576프레임을 추출했다. 등록 사진은 등록 인물별 첫 원본 영상에서 선택하고 질의는 다른 원본 영상 두 개씩을 사용했다. 원본, 밝기 35%와 64픽셀 저해상도 조건은 같은 프레임에서 파생한 조건이다.")
+    text(doc, "자료 출처와 구성  docs/testing/face-video-sources.md, docs/testing/person-libraries.md\n평가 결과  evidence/person-libraries/face-improvement-evaluation.json", 9)
     face = record("evidence/person-libraries/face-improvement-evaluation.json")
     rows = []
     for key, label in [("original", "원본"), ("low_light_35_percent", "밝기 35%"), ("low_resolution_64px", "64픽셀")]:
@@ -245,7 +261,7 @@ def build_appendix():
 
     section(doc, "B14 근거 기록 검색과 임베딩")
     text(doc, "인물과 날짜 조건으로 DB 기록을 먼저 제한한 뒤 영상 설명과 인물 및 날짜 메타데이터를 임베딩으로 비교한다. text-embedding-3-small의 512차원 벡터와 제목 일치를 함께 사용해 관련 영상 최대 5개를 선택한다. 검색된 기록의 집계와 근거 사진을 답변에 연결한다.")
-    text(doc, "현재 색인은 분석 실행 40개의 문서다. 최초 31개 문서와 고정 질문 3개, 추가 영상 문서 4개, 재분석 문서 5개를 승인된 배치 세 번으로 구성했다. 기존 벡터는 재사용하며 사진과 얼굴 특징은 텍스트 임베딩 입력과 구분해 보관한다.")
+    text(doc, "현재 색인은 분석 실행 40개의 문서다. 최초 31개 문서와 고정 질문 3개, 추가 영상 문서 4개, 재분석 문서 5개를 세 차례 배치로 구성했다. 기존 벡터는 재사용하며 사진과 얼굴 특징은 텍스트 임베딩 입력과 구분해 보관한다.")
     protocol = record("docs/testing/embedding-protocol.json")
     cloud = record("evidence/history/chokepoint-people-embedding-cloud.json")
     questions = {row["id"]: row["question"] for row in protocol["queries"]}
@@ -260,6 +276,7 @@ def build_appendix():
     pair(doc, ["evidence/private/ui-audit/person-answer-production.png", "evidence/private/ui-audit/chat-production.png"],
          ["그림 B15 1 실제 운영 LLM 답변 검증 화면", "그림 B15 2 운영 대화 저장과 후속 질문 화면"], (2.3, 2.3))
     text(doc, "왼쪽은 실제 생성 검증 시점의 화면이며 오른쪽은 개편된 채팅 화면이다. 대화 저장 검증에는 캐시와 DB 조회를 사용했다. 실제 생성과 대화 복원 검증은 각각의 실행 기록으로 구분했다.", 9)
+    text(doc, "공개 인물 영상은 DVIDS와 HDTF 자료를 사용했다. 영상별 원본 URL과 확인된 날짜는 docs/testing/PUBLIC_FIGURE_EXPANSION.md와 docs/testing/face-video-sources.md에 정리했다. 이 자료는 촬영 영상의 동일인 후보 비교용이며 실제 방문 기록을 뜻하지 않는다.", 9)
 
     section(doc, "B16 Android와 모바일 웹의 감시 메뉴")
     text(doc, "주 메뉴는 관측 기록, 인물 확인, AI 질문이다. 관측 기록에서 전체 집계와 날짜별 사진을 함께 보고 인물 화면에서 등록 얼굴 및 발견 장면을 비교한다. 작은 화면에서도 사진 목록을 두 열로 배치하고 상세 창의 확인 버튼이 보이도록 구성했다.")
@@ -285,13 +302,16 @@ def build_appendix():
         ["운영 대화 복원", "별도 접속에서 2개 질의 복원", "ui-audit/chat-cloud.json"],
         ["운영 박스 표시", "원본 보존과 비인증 접근 차단", "ui-audit/detection-boxes-deployment.json"]], [1.05, 2.3, 2.55])
     text(doc, "HTTP 엔진의 15개 사례는 Django 전체 250개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
-    text(doc, "서버 검사 명령은 python PhotoBlogServer/tools/verify_content.py, Edge 검사는 YOLOv5에서 python -m unittest discover -s tests -v다. 웹은 node tools/verify-mobile-web.mjs, Android는 PhotoViewer/tools/verify-android.ps1로 확인했다.", 9)
+    text(doc, "노트북 WSL에서도 환경 파일 615개와 등록 사진 34명 73장을 검사했다. 동봉 영상 240프레임, Django 250개 및 이전 도구 단위 테스트 9개를 확인했고 로컬 API와 사진 목록은 HTTP 200을 반환했다.", 9)
+    text(doc, "검사 명령  서버 python PhotoBlogServer/tools/verify_content.py\nEdge는 YOLOv5에서 python -m unittest discover -s tests -v\n웹 node tools/verify-mobile-web.mjs, Android PhotoViewer/tools/verify-android.ps1", 9)
     text(doc, "무료 PythonAnywhere는 Django API와 DB, 관측 이력 및 텍스트 검색을 제공한다. YOLOv5와 얼굴 비교는 Edge CPU에서 실행하고 사진 및 메타데이터를 서버로 전송한다. LLM 설명 생성은 별도 외부 API를 사용한다.")
-    text(doc, "사전 학습 모델은 공식 YOLOv5 v7.0과 InsightFace Buffalo L이다. ChokePoint 공식 자료의 체크섬과 등록 ID를 확인했다. 같은 원본의 재분석은 별도 실행으로 보존하며 원본 영상 수와 구분한다.")
     text(doc, "주요 출처", 11, True)
     for line in ["YOLOv5  https://github.com/ultralytics/yolov5/tree/v7.0",
                  "InsightFace  https://github.com/deepinsight/insightface",
                  "ChokePoint  https://zenodo.org/records/815657",
+                 "VoxCeleb2 공개 미러  https://huggingface.co/datasets/mortal9826/VoxCeleb2-test-data",
+                 "HDTF 원출처와 원본 영상 목록  https://github.com/MRzzm/HDTF",
+                 "DVIDS 영상별 원본 URL  docs/testing/PUBLIC_FIGURE_EXPANSION.md",
                  "모델과 자료의 이용 조건  docs/testing/licenses 및 docs/upstream"]:
         text(doc, line, 9)
     return doc

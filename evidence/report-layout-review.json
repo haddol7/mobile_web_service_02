@@ -1,14 +1,14 @@
 {
-  "report_sha256": "1bc7180bbdc5ff9aea22a95e2b8bda5a901c743d61234b2de04c72bde0156b01",
-  "qa_directory": "evidence/private/submission-final-20261110/render-final",
-  "pages": 26,
+  "report_sha256": "8800b495f81b5171d45cc7b5c3c1a1ec1dcd86b2962d9a3b262881a02af4acc7",
+  "qa_directory": "evidence/private/report-reassessment-20261110/render-3",
+  "pages": 27,
   "renderer": "Bundled render_docx.py and Poppler with Microsoft Word PDF conversion",
   "template_requirement_columns_preserved": true,
   "opaque_template_parts_preserved": true,
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_visually_checked": true,
-  "review_method": "Cover and pages 13 through 26 inspected; pages 2 through 12 matched earlier visually inspected PNGs byte-for-byte. Final cover changes reinspected and remaining pages compared with the reviewed render.",
+  "review_method": "All 27 render-2 PNGs inspected at original size by the editorial reviewer; root also inspected changed sections. Final render-3 has 26 byte-identical page PNGs; only page 24 changed and root visually reinspected that final page. Technical reviewer checked source claims and all 28 embedded original image hashes.",
   "page_hashes": [
     {
       "page": 1,
@@ -16,7 +16,7 @@
     },
     {
       "page": 2,
-      "sha256": "e693b30f98130a8883e85b9cd4353cb101c11269a3fdb79c08700f40667f062b"
+      "sha256": "eb11ede7b6c3fbadf0edb459d65abd26ee2c4e91b8faab7f854c2a0dbe9e4dd1"
     },
     {
       "page": 3,
@@ -60,64 +60,68 @@
     },
     {
       "page": 13,
-      "sha256": "9cde207412c39f5acf3faba232f53b619b473836d73b41d931ac7f45fc8e5157"
+      "sha256": "b3b154b03880dec8082f2c7b1f757fa846ca260a8ad2828f4c18086d25d58472"
     },
     {
       "page": 14,
-      "sha256": "8b0e6fb1a425a9898f66af735fb33c08f0cccc44bcd3f3b07cde00d693eec1a4"
+      "sha256": "ee0b5e188b3ba0d6fe2924d827b0f0b3ff0fe8388efa7444aa597c43a4141a42"
     },
     {
       "page": 15,
-      "sha256": "d75f652eb1f4b2d9a1bf7970a305c45fdf3b9eece83d73e792f6a58a9c3288c3"
+      "sha256": "4769f94ffbf881f1e4dcc85bacb646d14f0b0e1c3782998697d4dc26a146c15a"
     },
     {
       "page": 16,
-      "sha256": "d896bead54bf6595b0340e64e4ed10dad481919925bdfe001195f7c9eac78c84"
+      "sha256": "5ca88bf0bd89c5d40711eb986ff5fd825fb4f701b500f5b4e1a0776e6d4569f7"
     },
     {
       "page": 17,
-      "sha256": "7ec95cac368d5acfb99ce7c62a10b8140644b196b345f6a1e7c0d97f4b5d8306"
+      "sha256": "1156071ed531c73b5caa03fb1ab2ff095e732e7863fa08fe9b24fd12b0ee54d0"
     },
     {
       "page": 18,
-      "sha256": "8e09e49e1090dd8386ad50c2634f52c63c8aa47fe215fc2526e75647d57cd34e"
+      "sha256": "a720f8067873247c154b8da348beb88fc29f3e85ac121f2b1018ffbd160fa2ee"
     },
     {
       "page": 19,
-      "sha256": "e4d508439cd43a3b731fc84861faff521b3426ad728ae30fae969f82665044c1"
+      "sha256": "cad99614919fa430985752d43b204d227fd4321c514ed42755aa6e7c73843893"
     },
     {
       "page": 20,
-      "sha256": "19f882cdeaece9706b6db1e209f7218011c091fe18a482709ea6e2f911d3779d"
+      "sha256": "5e5765939e432238495b21c6d119012517504ab40ca532fd0e23cdfb2dc34a3b"
     },
     {
       "page": 21,
-      "sha256": "7e6a966a988213c228d0bc7af897becd768f4f046adb9015f9d354ea4ece527a"
+      "sha256": "9e85496165339b7efd04dc0ab3d2f2b323583ed5b220505ccc2db8a68e56cb00"
     },
     {
       "page": 22,
-      "sha256": "5f3fa0efc6b971a74848213af70e2a75de199e6256c63fff126db958552b920d"
+      "sha256": "fa978be95b046e818c353e9fa3472ad702573668ce8f51e61d578b9d268d83fc"
     },
     {
       "page": 23,
-      "sha256": "ab721d49c6a15d38cf0c7df6027b50dcb0e8929b38140f354b0417bc0632f7df"
+      "sha256": "f030fa082401c7dc3c2bd60776a37ddd722c2f4d0a0331af779d0a1800c84055"
     },
     {
       "page": 24,
-      "sha256": "bc9575ae9cdda6d439bcbc74cc19e43a3cb8b95561a2e1202d89b43d26df8299"
+      "sha256": "1844402aca64b14fda21917e40e3d516bff23dcc11425a710e15791b3656ce0b"
     },
     {
       "page": 25,
-      "sha256": "1d7ccb5214c1fe28ea6d986bc11f5ecb69eac34c643aba41ab0e9aba861c30ec"
+      "sha256": "5923518b5af10db7d2a35504e6d850d444ce7d2c1743d5d881e90b38182c9711"
     },
     {
       "page": 26,
-      "sha256": "eced03145f178027811062775926c900042c2735952bf49071e594399fd9a59a"
+      "sha256": "c86484fa6c25b77f659def667d46e728ddb1bd77f40ace131418b389a79f0613"
+    },
+    {
+      "page": 27,
+      "sha256": "bac9ca7aab1d89610cc33be210acd2beafbaa9654848728e4519bc5c7414b81f"
     }
   ],
   "embedded_figures": 28,
   "remaining_assessment_ids": [],
   "submission_ready": true,
   "new_paid_api_calls": 0,
-  "verified_utc": "2026-11-09T17:08:03.308727+00:00"
+  "verified_utc": "2026-11-09T17:45:39.455006+00:00"
 }

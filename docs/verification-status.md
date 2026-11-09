@@ -31,4 +31,4 @@ Edge 인물 추적과 관측 기록 전송, Server 인물 이력과 근거 기�
 
 ## 제출
 
-필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. 실제 소스 및 보고서 업로드 결과는 evidence/github-upload.json에서 확인한다.
+필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json은 최초 소스와 보고서의 푸시 검증 기록이다. 최신 보고서의 고정 커밋과 SHA256은 evidence/github-final-report.json에서 확인한다. 이 기록은 해당 커밋의 보고서 원본을 검증하며 이후 검증 기록만 추가한 커밋과 구분한다.
