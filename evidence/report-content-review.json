@@ -58,12 +58,10 @@
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "c3103d197e4d4171772d7f68e97fef1f1dce37ea3f6b28c56a1c661ec720a11e",
+  "report_sha256": "1bc7180bbdc5ff9aea22a95e2b8bda5a901c743d61234b2de04c72bde0156b01",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-09T17:05:07.061461+00:00",
-  "remaining_work": [
-    "최신 소스와 보고서 GitHub 반영"
-  ],
-  "submission_ready": false,
+  "reviewed_utc": "2026-11-09T17:08:03.308727+00:00",
+  "remaining_work": [],
+  "submission_ready": true,
   "webcam_evidence_verified": true
 }

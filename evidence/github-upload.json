@@ -1,7 +1,13 @@
 {
-  "verified_utc": "2026-11-05T10:39:29.510470+00:00",
+  "verified_utc": "2026-11-09T17:07:16.139791+00:00",
   "repository": "https://github.com/haddol7/mobile_web_service_02",
-  "commit": "ac4d926ebf02dad511e5d0870fabe7c0d7bf83ac",
-  "public_browser_checked": true,
-  "screenshot": "evidence/screenshots/github-folder-structure.jpg"
+  "commit": "cc13ceacda45d8ae764eff0b3768f771bfa85135",
+  "remote_head": "cc13ceacda45d8ae764eff0b3768f771bfa85135",
+  "remote_head_matches_commit": true,
+  "latest_source_and_report_verified": true,
+  "report_path": "모바일웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx",
+  "report_sha256": "c3103d197e4d4171772d7f68e97fef1f1dce37ea3f6b28c56a1c661ec720a11e",
+  "remote_report_bytes": 5556304,
+  "verification_method": "git ls-remote, committed source byte comparison and public raw DOCX SHA256",
+  "paid_api_calls": 0
 }

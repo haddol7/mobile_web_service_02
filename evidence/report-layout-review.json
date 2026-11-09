@@ -1,6 +1,6 @@
 {
-  "report_sha256": "c3103d197e4d4171772d7f68e97fef1f1dce37ea3f6b28c56a1c661ec720a11e",
-  "qa_directory": "evidence/private/submission-final-20261110/render-3",
+  "report_sha256": "1bc7180bbdc5ff9aea22a95e2b8bda5a901c743d61234b2de04c72bde0156b01",
+  "qa_directory": "evidence/private/submission-final-20261110/render-final",
   "pages": 26,
   "renderer": "Bundled render_docx.py and Poppler with Microsoft Word PDF conversion",
   "template_requirement_columns_preserved": true,
@@ -12,7 +12,7 @@
   "page_hashes": [
     {
       "page": 1,
-      "sha256": "27630077988aa49e85f9c3eaae63a725f2c41277ec30ebc8d88dc1a02c8fc798"
+      "sha256": "1320a237dd51fc8bc5314f44461a862613c88aef7dfcab41cde9ace79f26bee6"
     },
     {
       "page": 2,
@@ -116,10 +116,8 @@
     }
   ],
   "embedded_figures": 28,
-  "remaining_assessment_ids": [
-    "2"
-  ],
-  "submission_ready": false,
+  "remaining_assessment_ids": [],
+  "submission_ready": true,
   "new_paid_api_calls": 0,
-  "verified_utc": "2026-11-09T17:05:07.061461+00:00"
+  "verified_utc": "2026-11-09T17:08:03.308727+00:00"
 }
