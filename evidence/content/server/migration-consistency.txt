@@ -1,5 +1,5 @@
 ACTUAL WSL SUBPROCESS OUTPUT: migration-consistency
-Run started UTC: 2026-11-05T10:20:37.675668+00:00
+Run started UTC: 2026-11-08T22:21:59.814286+00:00
 WSL: Ubuntu
 Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
 Command: /home/daeha/.venvs/mobile_web_service_02/bin/python manage.py makemigrations --check --dry-run

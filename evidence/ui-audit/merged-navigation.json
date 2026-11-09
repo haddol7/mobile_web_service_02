@@ -1,0 +1,79 @@
+{
+  "verified_utc": "2026-11-08T18:36:07.1295570Z",
+  "pass": true,
+  "production_verified": true,
+  "release": "202611081833550ba3b7",
+  "primary_tabs": [
+    "관측 기록",
+    "인물 확인",
+    "AI 질문"
+  ],
+  "merged_record_paths": [
+    "/",
+    "/detections/",
+    "/history/"
+  ],
+  "questions_path": "/questions/",
+  "summary_scope": "all stored observations",
+  "timeline_scope": "selected person and dates",
+  "primary_question_navigation_verified": true,
+  "django_wsl_tests": 204,
+  "real_http_tests": 15,
+  "web_unit_tests": 72,
+  "android_windows_unit_tests": 40,
+  "native_device_sizes": [
+    {
+      "size": "small",
+      "pass": true,
+      "composer_flow_pass": true
+    },
+    {
+      "size": "regular",
+      "pass": true,
+      "composer_flow_pass": true
+    }
+  ],
+  "final_web_device_sizes": [
+    {
+      "size": "small",
+      "pass": true,
+      "fixture": "evidence/private/ui-audit/20261108T183251264120"
+    },
+    {
+      "size": "regular",
+      "pass": true,
+      "fixture": "evidence/private/ui-audit/20261108T183342980798"
+    }
+  ],
+  "small_screen_two_complete_cards_verified": true,
+  "keyboard_submit_button_edges_verified": true,
+  "horizontal_overflow": false,
+  "production_browser_summary": {
+    "sampled_frames": 210,
+    "sessions": 31,
+    "pending_tracks": 25
+  },
+  "production_browser_question": {
+    "passages": 6,
+    "observed_tracks": 107,
+    "llm_generation_requested": false,
+    "pass": true,
+    "evidence_photos": 12
+  },
+  "database_schema_or_dependencies_changed": false,
+  "existing_accounts_posts_media_preserved": true,
+  "screenshots": [
+    {
+      "sha256": "e4816209d3e30863c7fb20e197f5c0e54626cf713995fcfa69b5dddd2d82a49d",
+      "path": "evidence/private/ui-audit/merged-records-production.png"
+    },
+    {
+      "sha256": "ce6cf26cf348a6ee30a224fb2e1e046f637e96aa8aa08dc3e821101bf677ba90",
+      "path": "evidence/private/ui-audit/merged-ai-production.png"
+    },
+    {
+      "sha256": "6d2384e342a1a754e64b854354849001ae3926fa2363fe16b43bccf9c6a8f549",
+      "path": "evidence/private/ui-audit/merged-answer-production.png"
+    }
+  ]
+}

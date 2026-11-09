@@ -1,0 +1,147 @@
+{
+  "audited_utc": "2026-11-08T02:59:01.162516+00:00",
+  "environment": "WSL Ubuntu",
+  "data_and_scoring_consistency_pass": true,
+  "protocol_unchanged": true,
+  "old_three_identity_ids_excluded": true,
+  "different_reference_query_source_ids": true,
+  "known_people_intended": 12,
+  "known_people_successfully_enrolled": 11,
+  "registration_failures": [
+    {
+      "identity": "id00926",
+      "valid_reference_images": 0,
+      "rejected_reference_images": 3,
+      "enrollable": false
+    }
+  ],
+  "registration_rejection_diagnosis": [
+    {
+      "file": "validation-007-0.jpg",
+      "detected_faces": 2,
+      "faces": [
+        {
+          "bbox": [
+            62.25682830810547,
+            4.067643165588379,
+            170.48519897460938,
+            155.95892333984375
+          ],
+          "score": 0.8631942272186279
+        },
+        {
+          "bbox": [
+            16.686132431030273,
+            12.651261329650879,
+            28.089475631713867,
+            28.24408531188965
+          ],
+          "score": 0.670286238193512
+        }
+      ]
+    },
+    {
+      "file": "validation-007-50.jpg",
+      "detected_faces": 2,
+      "faces": [
+        {
+          "bbox": [
+            60.37950897216797,
+            -8.832925796508789,
+            163.36575317382812,
+            147.76171875
+          ],
+          "score": 0.8451189398765564
+        },
+        {
+          "bbox": [
+            4.500844478607178,
+            35.831626892089844,
+            16.443185806274414,
+            51.82658386230469
+          ],
+          "score": 0.6326795816421509
+        }
+      ]
+    },
+    {
+      "file": "validation-007-99.jpg",
+      "detected_faces": 2,
+      "faces": [
+        {
+          "bbox": [
+            50.14314651489258,
+            -1.3811930418014526,
+            166.93389892578125,
+            159.4019012451172
+          ],
+          "score": 0.8588326573371887
+        },
+        {
+          "bbox": [
+            17.205286026000977,
+            19.526674270629883,
+            28.992572784423828,
+            35.041255950927734
+          ],
+          "score": 0.5985679626464844
+        }
+      ]
+    }
+  ],
+  "enrollment_adjusted_metrics": {
+    "original": {
+      "intended_known_frames": 288,
+      "successfully_enrolled_known_frames": 264,
+      "frames_of_unenrollable_people": 24,
+      "correct_candidates": 78,
+      "recall_for_successfully_enrolled_people": 0.29545454545454547,
+      "recall_including_enrollment_failures": 0.2708333333333333,
+      "enrolled_unresolved_frames": 186,
+      "unresolved_below_similarity_threshold": 186,
+      "unresolved_below_profile_margin": 5,
+      "unresolved_failing_both": 5,
+      "top_similarity_min": 0.1216248869895935,
+      "top_similarity_median": 0.4893699288368225,
+      "top_similarity_max": 0.8221753835678101
+    },
+    "low_light_35_percent": {
+      "intended_known_frames": 288,
+      "successfully_enrolled_known_frames": 264,
+      "frames_of_unenrollable_people": 24,
+      "correct_candidates": 70,
+      "recall_for_successfully_enrolled_people": 0.26515151515151514,
+      "recall_including_enrollment_failures": 0.24305555555555555,
+      "enrolled_unresolved_frames": 194,
+      "unresolved_below_similarity_threshold": 194,
+      "unresolved_below_profile_margin": 4,
+      "unresolved_failing_both": 4,
+      "top_similarity_min": 0.1276678442955017,
+      "top_similarity_median": 0.4846373498439789,
+      "top_similarity_max": 0.8183117508888245
+    },
+    "low_resolution_64px": {
+      "intended_known_frames": 288,
+      "successfully_enrolled_known_frames": 264,
+      "frames_of_unenrollable_people": 24,
+      "correct_candidates": 61,
+      "recall_for_successfully_enrolled_people": 0.23106060606060605,
+      "recall_including_enrollment_failures": 0.21180555555555555,
+      "enrolled_unresolved_frames": 203,
+      "unresolved_below_similarity_threshold": 203,
+      "unresolved_below_profile_margin": 4,
+      "unresolved_failing_both": 4,
+      "top_similarity_min": 0.1230824813246727,
+      "top_similarity_median": 0.48438560962677,
+      "top_similarity_max": 0.8130069971084595
+    }
+  },
+  "independent_people": 18,
+  "query_clips": 36,
+  "distinct_sampled_frames": 432,
+  "frame_conditions_are_independent_people": false,
+  "source_hashes_current": true,
+  "yolo_body_tracking_retested_in_this_accuracy_batch": false,
+  "capture_dates_or_cross_day_identity_proven": false,
+  "production_verified": false
+}

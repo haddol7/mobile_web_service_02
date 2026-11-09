@@ -1,0 +1,21 @@
+{
+  "frozen_utc": "2026-11-08T02:52:00.215208+00:00",
+  "reference_frames_per_video": 3,
+  "reference_indices": "first, middle, last",
+  "query_frames_per_video": 12,
+  "query_indices": "uniform including first and last",
+  "threshold": 0.55,
+  "profile_margin": 0.08,
+  "model": "buffalo_l",
+  "primary_face_policy": "largest detected face with min side 20px, independently in each transformed image",
+  "conditions": [
+    "original",
+    "low_light_35_percent",
+    "low_resolution_64px"
+  ],
+  "threshold_adjustment_allowed": false,
+  "known_identities": 12,
+  "unknown_identities": 6,
+  "query_clips": 36,
+  "original_and_synthetic_conditions_are_not_independent_samples": true
+}

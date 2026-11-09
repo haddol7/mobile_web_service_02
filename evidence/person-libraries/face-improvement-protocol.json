@@ -1,0 +1,19 @@
+{
+  "frozen_utc": "2026-11-08T10:20:02.933759+00:00",
+  "policy_sha256": "f6ba55d6598f515bb82cba0841aa5eb1767a11d995cb5df431258485bc54f69a",
+  "known_identities": 12,
+  "unknown_identities": 12,
+  "query_frames_per_clip": 12,
+  "conditions": [
+    "original",
+    "low_light_35_percent",
+    "low_resolution_64px"
+  ],
+  "adoption_criteria": {
+    "original_recall_gain_min": 0.1,
+    "candidate_precision_min": 0.99,
+    "unknown_false_accept_rate_max": 0.01
+  },
+  "policy_selection_from_holdout_allowed": false,
+  "model_training_allowed": false
+}

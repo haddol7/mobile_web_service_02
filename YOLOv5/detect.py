@@ -27,6 +27,7 @@ Usage - formats:
 """
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 import os
@@ -86,9 +87,18 @@ def run(
         count_line=None,  # normalized x1 y1 x2 y2; direction depends on endpoint order
         face_references=None,  # explicit reference manifest; comparison candidates only
         face_stride=10,
-        face_model='buffalo_s',
+        face_model='buffalo_l',
         face_model_root='~/.insightface',
+        face_legacy=False,
+        person_history=False,
+        history_source_label=None,
+        recording_start=None,
+        history_interval=10,
 ):
+    if person_history:
+        person_tracking = True
+        if not server:
+            raise ValueError('Use --server with --person-history')
     if (count_line is not None or face_references) and not person_tracking:
         raise ValueError('Use --person-tracking with counting or face references')
     source = str(source)
@@ -126,15 +136,19 @@ def run(
     model.warmup(imgsz=(1 if pt or model.triton else bs, 3, *imgsz))  # warmup
     changes = ChangeDetection(names, base_url=server) if server else None
     person_engines = {}
+    history_senders = {}
     reference_library = None
     if person_tracking:
         from person_tracking import FaceReferences, PersonTracker
         if face_references:
-            reference_library = FaceReferences(face_references, model=face_model, root=face_model_root)
+            reference_library = FaceReferences(face_references, model=face_model, root=face_model_root,
+                **({"threshold":.55,"margin":.08,"embedding_mode":"single","legacy_registration":True} if face_legacy else {}))
             LOGGER.info(f'Face reference registration: {reference_library.registration}')
+            LOGGER.info(f'Face matching policy: {reference_library.policy["version"]}')
         (save_dir / 'person-analysis').mkdir(exist_ok=True)
     seen, windows, dt = 0, [], (Profile(), Profile(), Profile())
     for path, im, im0s, vid_cap, s in dataset:
+        received_at = datetime.now(timezone.utc).isoformat()
         with dt[0]:
             im = torch.from_numpy(im).to(model.device)
             im = im.half() if model.fp16 else im.float()  # uint8 to fp16/32
@@ -205,8 +219,15 @@ def run(
                 if source_key not in person_engines:
                     person_engines[source_key] = PersonTracker(line=count_line,
                         face_references=reference_library, face_stride=face_stride)
+                    if person_history:
+                        from history_sender import HistorySender, HistoryUploadError
+                        history_senders[source_key] = HistorySender(changes, person_engines[source_key],
+                            save_dir, source_label=history_source_label or ('camera-' + str(i) if webcam else p.name),
+                            source_kind='live' if webcam else 'video', recording_started_at=recording_start,
+                            interval=history_interval)
                 fps = vid_cap.get(cv2.CAP_PROP_FPS) if vid_cap else 0
-                seconds = (max(0, frame - 1) * vid_stride / fps) if fps > 0 else None
+                source_position = vid_cap.get(cv2.CAP_PROP_POS_FRAMES) if vid_cap else 0
+                seconds = max(0, source_position-1) / fps if fps > 0 else None
                 overlay, record = person_engines[source_key].process(analysis_frame,
                     det.detach().cpu().numpy(), frame_index=frame, video_seconds=seconds,
                     annotation_frame=im0)
@@ -215,6 +236,7 @@ def run(
                 log_name = hashlib.sha256(source_key.encode()).hexdigest()[:16] + '.jsonl'
                 with (save_dir / 'person-analysis' / log_name).open('a', encoding='utf-8') as log:
                     log.write(json.dumps(record) + '\n')
+            uploaded = None
             if changes:
                 try:
                     uploaded = changes.add(names, detected_current, save_dir, im0, stream_id=str(i))
@@ -223,6 +245,14 @@ def run(
                 except (UploadError, RequestException):
                     # A failed request must not expose credentials or claim registration succeeded.
                     LOGGER.error('Django upload failed; detected frame retained locally. Check server connectivity and access.')
+            if person_history:
+                try:
+                    # Keep evidence readable; overlays remain on the assessed detection post/video.
+                    history_senders[source_key].consider(record, analysis_frame,
+                        post_id=uploaded['post_id'] if uploaded else None,
+                        captured_at=received_at if webcam else None)
+                except (HistoryUploadError, RequestException):
+                    LOGGER.error('History upload failed; pending observations remain in the local outbox.')
             if view_img:
                 if platform.system() == 'Linux' and p not in windows:
                     windows.append(p)
@@ -297,8 +327,13 @@ def parse_opt():
     parser.add_argument('--count-line', nargs=4, type=float, help='Normalized line endpoints x1 y1 x2 y2')
     parser.add_argument('--face-references', type=str, help='Explicit face reference JSON; outputs candidates, not confirmed identities')
     parser.add_argument('--face-stride', type=int, default=10, help='Compare faces every N source frames')
-    parser.add_argument('--face-model', choices=['buffalo_s', 'buffalo_l'], default='buffalo_s')
+    parser.add_argument('--face-model', choices=['buffalo_s', 'buffalo_l'], default='buffalo_l')
     parser.add_argument('--face-model-root', default='~/.insightface', help='Local pretrained model cache')
+    parser.add_argument('--face-legacy', action='store_true', help='Use the previous 0.55/0.08 single-embedding matching thresholds')
+    parser.add_argument('--person-history', action='store_true', help='Persist sampled person history using the authenticated server')
+    parser.add_argument('--history-source-label', help='Camera or video display name, excluding private source paths')
+    parser.add_argument('--recording-start', help='Known video recording start with timezone; omitted means unknown capture date')
+    parser.add_argument('--history-interval', type=float, default=10, help='Periodic observation interval in video seconds, plus new tracks, candidates and crossings')
     opt = parser.parse_args()
     opt.imgsz *= 2 if len(opt.imgsz) == 1 else 1  # expand
     print_args(vars(opt))

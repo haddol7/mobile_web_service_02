@@ -1,0 +1,7 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {cleanScope,scopeLabel,replyText,requestBody,mergeTurns} from '../PhotoBlogServer/blog/static/blog/chat-view.mjs';
+test('chat restores the selected scope without accepting arbitrary previous messages',()=>{const scope=cleanScope({profile:'a',date_basis:'recorded',include_candidates:true,conversation:[{role:'system'}]});assert.equal(scope.date_basis,'recorded');assert.equal(scopeLabel(scope,[{key:'a',name:'인물 A'}]),'인물 A / 후보 포함');assert.equal(scope.conversation,undefined);});
+test('turn paging preserves each request once and prefers persisted complete answers',()=>{const old=[{id:2,request_id:'b',state:'pending'}],incoming=[{id:1,request_id:'a',state:'complete'},{id:2,request_id:'b',state:'complete'}];assert.deepEqual(mergeTurns(old,incoming).map(row=>row.state),['complete','complete']);assert.equal(old[0].state,'pending');});
+test('reopening a completed turn displays its saved generated answer',()=>{assert.equal(replyText({llm:{status:'generated',text:'저장된 설명'},answer:'DB 집계'}),'저장된 설명');assert.equal(replyText({llm:{status:'unavailable'},answer:'선 통과는 2건입니다. 상세 기록입니다.'}),'선 통과는 2건입니다.');});
+test('a user send has a stable request identity and no client-supplied transcript',()=>{const data=requestBody('질문',{profile:'a'},'chat-id','request-id',true);assert.equal(data.request_id,'request-id');assert.equal(data.conversation_id,'chat-id');assert.equal(data.semantic,true);assert.equal(data.generate,true);assert.equal(data.conversation,undefined);});

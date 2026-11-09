@@ -138,6 +138,42 @@ public final class PhotoRepository {
         if (response.status < 200 || response.status >= 300) throw error(response);
         return response.bytes;
     }
+    public JSONObject historyOverview() throws IOException {
+        return jsonObject(api("GET","api/v1/history/overview/",null,null,false));
+    }
+    public JSONObject historyProfiles() throws IOException {
+        return jsonObject(api("GET","api/v1/history/profiles/",null,null,false));
+    }
+    public JSONObject historyFrames(String profile,String start,String end,boolean candidates,int page) throws IOException {
+        String path="api/v1/history/frames/?limit=12&page="+page+"&profile="+encode(profile)
+                +"&start="+encode(start)+"&end="+encode(end)+"&include_candidates="+candidates;
+        return jsonObject(api("GET",path,null,null,false));
+    }
+    public JSONObject historySessions(String profile,String start,String end,boolean candidates,int page) throws IOException {
+        String path="api/v1/history/sessions/?date_basis=processed&page="+page+"&profile="+encode(profile)
+                +"&start="+encode(start)+"&end="+encode(end)+"&include_candidates="+candidates;
+        return jsonObject(api("GET",path,null,null,false));
+    }
+    public JSONObject historyPerson(String key) throws IOException {
+        return jsonObject(api("GET","api/v1/history/people/"+encode(key)+"/",null,null,false));
+    }
+    public JSONObject historyQuestion(JSONObject question) throws IOException {
+        ensureCsrf();
+        return jsonObject(api("POST","api/v1/history/ask/",utf8(question.toString()),"application/json",true));
+    }
+    public JSONObject conversations(int offset)throws IOException{return jsonObject(api("GET","api/v1/history/conversations/?offset="+offset,null,null,false));}
+    public JSONObject createConversation()throws IOException{ensureCsrf();return jsonObject(api("POST","api/v1/history/conversations/",utf8("{}"),"application/json",true));}
+    public JSONObject conversation(String id,Long before)throws IOException{
+        String safe;try{safe=java.util.UUID.fromString(id).toString();}catch(IllegalArgumentException error){throw new IOException("대화 번호가 올바르지 않습니다.");}
+        return jsonObject(api("GET","api/v1/history/conversations/"+safe+"/"+(before==null?"":"?before="+before),null,null,false));
+    }
+    public JSONObject reviewTrack(long id,long revision,String profile) throws IOException {
+        requireId(id);ensureCsrf();
+        try {
+            JSONObject value=new JSONObject().put("revision",revision).put("profile",profile==null?JSONObject.NULL:profile);
+            return jsonObject(api("PATCH","api/v1/history/tracks/"+id+"/",utf8(value.toString()),"application/json",true));
+        } catch(JSONException error){throw invalidJson(error);}
+    }
     /** Diagnostic text is deliberately separate from the JSONArray synchronization API. */
     public String captureRequest(String diagnosticBaseUrl) throws IOException {
         URI target;

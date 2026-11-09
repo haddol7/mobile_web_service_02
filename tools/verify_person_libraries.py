@@ -28,7 +28,8 @@ def run_detector(source, name, *, faces=None):
                '--device','cpu','--classes','0','--person-tracking',
                '--project',str(PRIVATE),'--name',name]
     if faces:
-        command += ['--face-references',str(faces),'--face-stride','1']
+        # Keep the original small-model benchmark reproducible after selecting Buffalo L.
+        command += ['--face-references',str(faces),'--face-stride','1','--face-model','buffalo_s']
     else:
         command += ['--count-line','0.5','0','0.5','1']
     started = time.perf_counter()

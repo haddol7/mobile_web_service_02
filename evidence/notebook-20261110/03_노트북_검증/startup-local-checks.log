@@ -1,0 +1,16 @@
+System check identified no issues (0 silenced).
+No changes detected
+test_assessed_webcam_uses_unchanged_baseline_and_real_index (test_runtime.TransferTests.test_assessed_webcam_uses_unchanged_baseline_and_real_index) ... ok
+test_current_source_and_yolo_weight_are_included (test_runtime.TransferTests.test_current_source_and_yolo_weight_are_included) ... ok
+test_face_sdk_root_resolves_to_packaged_models_directory (test_runtime.TransferTests.test_face_sdk_root_resolves_to_packaged_models_directory) ... ok
+test_live_monitor_upload_is_explicit (test_runtime.TransferTests.test_live_monitor_upload_is_explicit) ... ok
+test_manifest_detects_tampering_and_escape (test_runtime.TransferTests.test_manifest_detects_tampering_and_escape) ... ok
+test_missing_camera_is_not_replaced_by_a_video (test_runtime.TransferTests.test_missing_camera_is_not_replaced_by_a_video) ... ok
+test_sample_has_no_server_or_history_upload (test_runtime.TransferTests.test_sample_has_no_server_or_history_upload) ... ok
+test_secrets_caches_and_database_are_excluded (test_runtime.TransferTests.test_secrets_caches_and_database_are_excluded) ... ok
+test_webcam_rejects_recorded_video (test_runtime.TransferTests.test_webcam_rejects_recorded_video) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK

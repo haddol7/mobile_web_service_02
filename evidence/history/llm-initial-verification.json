@@ -1,0 +1,75 @@
+{
+  "verified_utc": "2026-11-08T19:43:09.005541+09:00",
+  "environment": "WSL Ubuntu",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "actual_llm_generation_verified": false,
+  "production_verified": false,
+  "key_in_source_tree": false,
+  "media_sent_to_provider": false,
+  "canonical_db_answer_preserved": true,
+  "calls": [
+    {
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "http_status": 200
+    },
+    {
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "http_status": 200
+    }
+  ],
+  "cases": [
+    {
+      "question": "선 통과는 몇 건이며, 서로 다른 사람 수로 볼 수 있어?",
+      "http_status": 200,
+      "mode": "rag",
+      "llm_status": "generated",
+      "answer": "선 통과는 6건이며, 서로 다른 사람 수는 1명으로 볼 수 있습니다.",
+      "facts": {
+        "sampled_frames": 37,
+        "observed_tracks": 23,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 1,
+        "confirmed_profiles": 0,
+        "passages": 6,
+        "direction_in": 5,
+        "direction_out": 1,
+        "unknown_date_frames": 37,
+        "dates": [],
+        "timezone": "Asia/Seoul"
+      },
+      "citation_count": 12,
+      "pass": false
+    },
+    {
+      "question": "촬영 날짜를 알 수 있는 기록이 있어? 모르면 모른다고 해줘.",
+      "http_status": 200,
+      "mode": "records",
+      "llm_status": "unavailable",
+      "answer": null,
+      "facts": {
+        "sampled_frames": 37,
+        "observed_tracks": 23,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 1,
+        "confirmed_profiles": 0,
+        "passages": 6,
+        "direction_in": 5,
+        "direction_out": 1,
+        "unknown_date_frames": 37,
+        "dates": [],
+        "timezone": "Asia/Seoul"
+      },
+      "citation_count": 0,
+      "pass": false
+    }
+  ],
+  "source_sha256": {
+    "PhotoBlogServer/blog/history_llm.py": "b3a325028b935446db622f29edc3bd2df8ea045c9832fd2d7d5f231d7b824100",
+    "PhotoBlogServer/photoblog/llm_config.py": "6d572d4467a0b92d4874dbcaa383cb48738a9407a2de87930a68c8ebb91d2307",
+    "PhotoBlogServer/photoblog/settings.py": "739f8c78e91285b65cec20f6a90a4a519add5821e3ec1102588c5ddd59ac3088",
+    "tools/verify_history_llm.py": "dd57d76e77ebb60a0b5e4e7833c9571505faff4cb75d1924c93726668f7d31be"
+  },
+  "pass": false,
+  "manual_review": "Initial candidate rejected: passage and candidate counts cannot establish the number of distinct people. Guard and prompt corrected before acceptance."
+}

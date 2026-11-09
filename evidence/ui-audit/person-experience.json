@@ -1,0 +1,55 @@
+{
+  "mobile_screen_sizes": [
+    "small",
+    "regular"
+  ],
+  "stored_observation_images": 83,
+  "paid_llm_calls_in_this_task": 2,
+  "llm_answer_internal_ids_absent": true,
+  "edge_unit_tests": 30,
+  "base_release": "20261108160518be71af",
+  "assessment_extra_feature_count": 2,
+  "analysis_dates_separate": true,
+  "selected_profile": "showcase-v2-a",
+  "screenshots": [
+    {
+      "path": "evidence/private/ui-audit/people-production.png",
+      "sha256": "9b3201a5a6954bd7265d3a1ed88813f762cabfbbeee149e8399a94effc0d2e48"
+    },
+    {
+      "path": "evidence/private/ui-audit/person-production.png",
+      "sha256": "e4ae2f640e9d4e6d09f71cf004b90f6a499eda67ce30d4c6281c1bf4620ac925"
+    },
+    {
+      "path": "evidence/private/ui-audit/person-comparison-production.png",
+      "sha256": "153be83e49413b280b94667326dea19e7f5f8298a3eec114312d3e70f835907c"
+    },
+    {
+      "path": "evidence/private/ui-audit/person-answer-production.png",
+      "sha256": "bc9d3038df203bedaa295db3cf8eb1e212da642fa699addc8d5836a2424ae534"
+    }
+  ],
+  "dataset_confirmation_labelled": true,
+  "llm_did_not_describe_positions_as_durations": true,
+  "new_enrolled_profiles": 3,
+  "answer_evidence_video_count": 2,
+  "native_confirmation_save_tested": true,
+  "django_tests": 198,
+  "actual_inference_frames": 251,
+  "question": "어떤 영상에서 발견됐어?",
+  "android_unit_tests": 40,
+  "captured_dates_invented": false,
+  "production_verified": true,
+  "new_unknown_identity_videos": 2,
+  "pass": true,
+  "question_waits_for_profile_initialization": true,
+  "verified_utc": "2026-11-08T16:30:01.2138068Z",
+  "release": "20261108162427b12e30",
+  "word_report_updated_in_this_task": false,
+  "new_sampled_images": 46,
+  "live_answer": "영상 1과 영상 2에서 발견되었습니다. 두 영상 모두 인물 A와 관련이 있으며, 각각 5초와 4초 위치에서 관측되었습니다. 확인된 프로필 종류는 1개이며, 총 2개의 출처가 있습니다.",
+  "actual_llm_generation_verified": true,
+  "new_real_query_videos": 8,
+  "web_unit_tests": 72,
+  "native_is_webview": false
+}

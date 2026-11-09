@@ -1,0 +1,214 @@
+{
+  "verified_utc": "2026-11-08T18:59:55.082671+00:00",
+  "production_verified": true,
+  "environment": "WSL against PythonAnywhere",
+  "index_documents": 31,
+  "pass": false,
+  "quality_scope": "three fixed metadata-retrieval questions, not an accuracy benchmark",
+  "paid_embedding_requests_for_build": 1,
+  "paid_api_requests_during_verification": 0,
+  "backup_verified": true,
+  "index_sha256": "982da9520ebae42453609a762d212b01f7ac0b7b3ca93e68424037baa9a16a18",
+  "cases": [
+    {
+      "id": "departure",
+      "question": "비행기를 타러 떠나는 장면을 찾아줘",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 1,
+        "query_cache_hit": true,
+        "session_ids": [
+          "be1d358e-95ff-517d-8622-63dd2aa49509"
+        ],
+        "matches": [
+          {
+            "session_id": "be1d358e-95ff-517d-8622-63dd2aa49509",
+            "similarity": 0.356105
+          }
+        ]
+      },
+      "sources": [
+        "[모델검증] 보행자 영상 / 촬영일 미상"
+      ],
+      "expected_source_retrieved": false,
+      "facts": {
+        "sampled_frames": 33,
+        "observed_tracks": 22,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 0,
+        "confirmed_profiles": 0,
+        "passages": 5,
+        "direction_in": 4,
+        "direction_out": 1,
+        "unknown_date_frames": 33,
+        "dates": [
+          "2026-11-08"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 1,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "793a1ef085155289ba4c4ef715a9ff00a444e51cb8caad37fee5f95ea52ec620"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    },
+    {
+      "id": "press",
+      "question": "기자들에게 국정 현안을 설명하는 영상",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "session_ids": [
+          "4d38275f-2e1b-513b-a348-91dd22fa4051",
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "48c9f3d5-a4d6-526e-b4e4-cbf1b2ebbf9f",
+          "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+          "a146746f-cf5d-5235-b503-776da23c41d4"
+        ],
+        "matches": [
+          {
+            "session_id": "4d38275f-2e1b-513b-a348-91dd22fa4051",
+            "similarity": 0.466339
+          },
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.435835
+          },
+          {
+            "session_id": "48c9f3d5-a4d6-526e-b4e4-cbf1b2ebbf9f",
+            "similarity": 0.428561
+          },
+          {
+            "session_id": "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+            "similarity": 0.419163
+          },
+          {
+            "session_id": "a146746f-cf5d-5235-b503-776da23c41d4",
+            "similarity": 0.407653
+          }
+        ]
+      },
+      "sources": [
+        "트럼프 / 2018-10-11 정부 회의",
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "트럼프 / 2020-03-11 대국민 연설",
+        "오바마 / 2015-02-19 국제회의 발언",
+        "오바마 / 2014-09-05 나토 기자회견"
+      ],
+      "expected_source_retrieved": true,
+      "facts": {
+        "sampled_frames": 29,
+        "observed_tracks": 18,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 6,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 29,
+        "dates": [
+          "2026-11-09"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 5,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "fc228e36bc4c53ba15cd5a3ce490f7986df9b278f31f284820b9c4e460d9ce51",
+        "f9ad67668223c1111ecd397facd80fa09d1212e4abb01d71e1f6e7ed91eda872",
+        "36476a002763ab446a7c9a11f1310c08680434adba3a4ca14ecc578db1344858",
+        "f7460a956bff8eccb1228e9514cfefed5542c086b13c65ea32efed40e23dbd12",
+        "d5e6a74c53954de6ac52578309614a97f236ff59ccdbe2fa624e1cfa55d2975b"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    },
+    {
+      "id": "security",
+      "question": "여러 나라가 모여 안보 문제를 논의하는 영상",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "session_ids": [
+          "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+          "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+          "16c8e6ea-cbc4-567f-868d-30a60b948300",
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "a10d0ef6-152d-56b5-9aba-4c80dd1bb63d"
+        ],
+        "matches": [
+          {
+            "session_id": "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+            "similarity": 0.445429
+          },
+          {
+            "session_id": "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+            "similarity": 0.427647
+          },
+          {
+            "session_id": "16c8e6ea-cbc4-567f-868d-30a60b948300",
+            "similarity": 0.423003
+          },
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.412814
+          },
+          {
+            "session_id": "a10d0ef6-152d-56b5-9aba-4c80dd1bb63d",
+            "similarity": 0.395827
+          }
+        ]
+      },
+      "sources": [
+        "오바마 / 2015-02-19 국제회의 발언",
+        "오바마 / 2014-09-26 보건안보 회의",
+        "오바마 / 2016-04-01 핵안보 정상회의",
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "오바마 / 2013-04-18 보스턴 방문"
+      ],
+      "expected_source_retrieved": true,
+      "facts": {
+        "sampled_frames": 29,
+        "observed_tracks": 23,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 6,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 29,
+        "dates": [
+          "2026-11-09"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 5,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "f7460a956bff8eccb1228e9514cfefed5542c086b13c65ea32efed40e23dbd12",
+        "c04900c1ec7d76946437dc8658cab8039953010f310c5baa7ab1bc7dfdd7da07",
+        "ddc7b7d1054525418618ed8e9321043afd890dd5fb9d9ea7e25a924139393c84",
+        "f9ad67668223c1111ecd397facd80fa09d1212e4abb01d71e1f6e7ed91eda872",
+        "c25501b86309d4ac98cca2a8d02c9252ee7e6bc14d44b30bc12780b17cb13daa"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    }
+  ]
+}

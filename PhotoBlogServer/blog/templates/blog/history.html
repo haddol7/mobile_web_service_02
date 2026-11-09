@@ -1,0 +1,75 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{% block title %}{% if question_page %}AI 질문{% else %}관측 기록{% endif %}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'blog/history.css' %}?v=boxes-1">
+{% endblock %}
+{% block content %}
+{% if question_page %}<div class="question-shell">{% endif %}
+<section class="history-page {% if question_page %}question-workspace{% endif %}">
+  <div class="history-heading">{% if question_page %}<a href="{% url 'dashboard' %}" class="question-back">관측 기록</a>{% endif %}<h1>{% if question_page %}AI 질문{% else %}관측 기록{% endif %}</h1><details class="question-panel" id="question-panel" hidden><summary aria-controls="history-question-dialog">질문</summary></details></div>
+  {% if not question_page %}
+  <p class="muted page-purpose">전체 현황을 보고 날짜별 발견 장면을 확인하세요.</p>
+  <div class="observation-summary" aria-label="전체 저장 기록 집계">
+    <div><span>영상 실행</span><strong>{{ monitor.facts.sessions }}<small>개</small></strong></div>
+    <div><span>저장 사진</span><strong>{{ monitor.facts.sampled_frames }}<small>장</small></strong></div>
+    <a href="{% url 'people' %}"><span>확인 대기</span><strong>{{ monitor.facts.pending_tracks }}<small>개</small></strong></a>
+  </div>
+  <p class="observation-received">마지막 분석 {{ monitor.last_received_label|default:'기록 없음' }} <span>전체 저장 기록 기준</span></p>
+  {% endif %}
+  {% if question_page %}<p class="muted">인물과 기간을 고른 뒤 물어보세요. 저장된 기록과 근거 사진으로 답변합니다.</p>{% endif %}
+  <form id="history-filter" class="history-filters">
+    <select name="profile" aria-label="인물 프로필"><option value="">전체 추적 기록</option></select>
+    {% if question_page %}<button type="submit">조회</button>{% endif %}
+    <details><summary>조회 조건</summary><div class="filter-options">
+      <label>시간 기준<select name="date_basis"><option value="processed">분석일</option><option value="recorded">원본 촬영일</option></select></label>
+      <label>시작일<input type="date" name="start"></label><label>종료일<input type="date" name="end"></label>
+      <label class="check"><input type="checkbox" name="include_candidates">미확인 후보 포함</label>
+      <p class="muted">분석일은 영상을 처리한 날짜입니다. 원본 촬영일이 없는 영상은 촬영일 조회에서 제외됩니다.</p>
+      <button type="button" id="history-clear" class="secondary">조건 해제</button>
+      {% if not question_page %}<button type="submit">적용</button>{% endif %}
+    </div></details>
+  </form>
+  {% if not question_page %}<nav id="history-days" class="history-days" aria-label="관측 날짜 선택"></nav>{% endif %}
+  <p id="history-status" class="muted" role="status" aria-live="polite">기록을 불러오고 있습니다.</p>
+  <p class="detection-legend" aria-label="검출 박스 색상 안내"><span class="body-box">사람</span><span class="candidate-box">얼굴 후보</span><span class="confirmed-box">확인된 얼굴</span></p>
+  <div id="history-grid" class="history-grid"></div>
+  <div class="history-paging"><button id="history-prev" class="secondary">이전</button><span id="history-page-number"></span><button id="history-next" class="secondary">다음</button></div>
+  <details class="history-note"><summary>기록과 수치 읽는 방법</summary><p>상단 집계는 전체 저장 기록 기준이며 조회 조건은 아래 장면 목록에 적용됩니다. 영상 실행과 추적 수는 실제 사람 수나 방문 횟수와 다릅니다. 추적 번호는 실행마다 달라질 수 있고 얼굴 후보는 확인된 인물과 구분합니다. 가까운 시점의 연속 사진은 묶어 보여줍니다. 원본 촬영일이 없는 자료는 분석일로 조회할 수 있습니다.</p>{% if monitor.demo_mode %}<p>공개 영상 시연 자료는 실제 얼굴 모델로 분석했습니다. 분석 시각은 원본 촬영 시각과 구분합니다.</p>{% endif %}</details>
+</section>
+{% if question_page %}<section id="history-question-dialog" class="history-dialog question-inline" aria-labelledby="question-title">{% else %}<dialog id="history-question-dialog" class="history-dialog" aria-labelledby="question-title">{% endif %}
+  <div class="detail-heading"><strong id="question-title">기록에 질문하기</strong>{% if not question_page %}<button type="button" class="secondary" data-close="history-question-dialog">닫기</button>{% endif %}</div>
+  <form id="history-question">
+    <p class="muted">현재 조회 조건의 기록에서 답변합니다.</p>
+    <label for="question">확인하고 싶은 내용</label>
+    <input id="question" name="question" maxlength="400" placeholder="언제 나타났어?" enterkeyhint="send" required>
+    <div class="suggestions"><button type="button" data-question="어떤 영상에서 발견됐어?">발견된 영상</button><button type="button" data-question="확인된 기록을 알려줘">확인 이력</button><button type="button" data-question="몇 번 통과했어?">선 통과</button></div>
+    <label class="check" id="ai-choice" hidden><input type="checkbox" name="generate">AI 설명 추가</label>
+    <label class="check"><input type="checkbox" name="semantic">의미 검색</label>
+    <details class="api-use-note"><summary>API 사용 안내</summary><p>의미 검색은 저장된 영상 설명을 임베딩으로 비교합니다. 새 질문의 임베딩과 AI 설명 생성에는 API 사용료가 발생할 수 있습니다. 선택하지 않으면 조건 조회만 사용합니다.</p></details>
+    <div class="dialog-actions"><button type="submit" disabled>질문하기</button></div>
+  </form>
+{% if question_page %}</section>{% else %}</dialog>{% endif %}
+{% if question_page %}</div>{% endif %}
+<dialog id="history-answer-dialog" class="history-dialog" aria-labelledby="answer-title">
+  <div class="detail-heading"><strong id="answer-title">기록 기반 답변</strong><button type="button" class="secondary" data-close="history-answer-dialog">닫기</button></div>
+  <section id="history-answer" class="history-answer" hidden aria-label="기록 조회 답변"></section>
+  <div class="dialog-actions"><button type="button" id="ask-again" class="secondary">다른 질문</button><button type="button" data-close="history-answer-dialog">확인 완료</button></div>
+</dialog>
+<dialog id="history-detail" aria-label="관측 기록 확인">
+  <div class="detail-heading"><strong>기록 확인</strong><button type="button" id="detail-close" class="secondary">닫기</button></div>
+  <div class="scene-navigation" id="scene-navigation" hidden><button type="button" id="scene-prev" class="secondary">이전 사진</button><span id="scene-position"></span><button type="button" id="scene-next" class="secondary">다음 사진</button></div>
+  <img id="detail-image" alt="추적 기록의 확인 사진">
+  <p id="detail-time" class="muted"></p>
+  <div class="detail-controls">
+    <label>추적 번호<select id="detail-track"></select></label>
+    <p id="detail-candidate" class="muted"></p>
+    <label>확인할 인물<select id="detail-profile"></select></label>
+    <div class="review-actions"><button id="detail-confirm">확인 저장</button><button id="detail-rename" class="secondary">프로필 이름</button></div>
+    <p id="detail-status" class="muted" role="status"></p>
+  </div>
+</dialog>
+{% csrf_token %}
+{{ history_config|json_script:"history-config" }}
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/history.mjs' %}?v=boxes-1"></script>{% endblock %}

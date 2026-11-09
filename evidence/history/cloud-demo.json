@@ -1,0 +1,227 @@
+{
+  "historical_import_only": true,
+  "superseded_by": "evidence/history/cloud-face-repair.json",
+  "verified_utc": "2026-11-08T14:28:57.171360+00:00",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "actual_model_records_added": 37,
+  "labelled_simulation_records_added": 16,
+  "simulation_sessions": 8,
+  "confirmed_simulation_tracks": 6,
+  "production_verified": true,
+  "existing_posts_and_photos_preserved": true,
+  "unknown_dates_preserved": true,
+  "duplicate_replay_did_not_add_records": true,
+  "facts": {
+    "observed_tracks": 31,
+    "pending_tracks": 1,
+    "confirmed_tracks": 6,
+    "sampled_frames": 53,
+    "passages": 22,
+    "profiles": 5,
+    "sessions": 10,
+    "detection_posts": 4,
+    "unknown_date_frames": 37
+  },
+  "profiles": [
+    {
+      "key": "sample-v1-reference-001",
+      "name": "[검증] 등록 인물 1",
+      "confirmed_tracks": 0,
+      "candidate_tracks": 1,
+      "last_observed_at": null
+    },
+    {
+      "key": "sample-v1-reference-002",
+      "name": "[검증] 등록 인물 2",
+      "confirmed_tracks": 0,
+      "candidate_tracks": 0,
+      "last_observed_at": null
+    },
+    {
+      "key": "demo-v1-person-a",
+      "name": "[시연] 인물 A",
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "last_observed_at": "2026-11-07T07:42:00+00:00"
+    },
+    {
+      "key": "demo-v1-person-b",
+      "name": "[시연] 인물 B",
+      "confirmed_tracks": 2,
+      "candidate_tracks": 0,
+      "last_observed_at": "2026-11-07T02:17:00+00:00"
+    },
+    {
+      "key": "demo-v1-person-c",
+      "name": "[시연] 인물 C",
+      "confirmed_tracks": 1,
+      "candidate_tracks": 0,
+      "last_observed_at": "2026-11-08T00:27:00+00:00"
+    }
+  ],
+  "questions": [
+    {
+      "request": {
+        "question": "언제 나타났고 몇 번 통과했어?"
+      },
+      "facts": {
+        "sampled_frames": 53,
+        "observed_tracks": 31,
+        "confirmed_tracks": 6,
+        "candidate_tracks": 1,
+        "confirmed_profiles": 3,
+        "passages": 22,
+        "direction_in": 13,
+        "direction_out": 9,
+        "unknown_date_frames": 37,
+        "dates": [
+          "2026-11-05",
+          "2026-11-06",
+          "2026-11-07",
+          "2026-11-08"
+        ],
+        "timezone": "Asia/Seoul"
+      },
+      "evidence_ids": [
+        "2bd556ac02a5ecebb7da28f31dd0da80a6402268980dde99aba34669d005aff0",
+        "a6637bf3b78abfcc32b4096d86c1defced5a924fe106c9f9be8722afa465ccb1",
+        "8b2b23caea1ebc20d2254e9aede57cf7835aae47c1d0b772e403395d296ed2f2",
+        "f53b119bda6cc854d6e4cfa5568674f7be530e6d5c9e17aa78d675b7871897a6",
+        "f5955a4b6193ddbca5f6732428edf5e488321f5567e38c35e4d16c6b985cdc7b",
+        "a3a1cc8ca17c3b145655fd07bb0c1d71103ea3b781bdba23bd790d55c1bc00f4",
+        "790b81aa5339977656107cdc60516b5b3dafd24254ea63291cc902e9e93320d4",
+        "c672fdf8f4138fb2fadaf0d8afa86ed8ae124b603245e57d744769145c8c9a3c",
+        "e702dce51f2b8be3ee3a362edf196f1123d3ab5c204514038a182dccb8aa9472",
+        "072e9be2b8c27243e4b31f47a873d220a9516610839be2f302918c049693bfd5",
+        "0e00699f29251c755f261ac89c15fd437d5ee6b22798e309922628c1b44669f1",
+        "91b091713bed4b4e804ae59956dc37237bc86793baf123268944d2997c7d0f51"
+      ]
+    },
+    {
+      "request": {
+        "question": "몇 번 통과했어?",
+        "profile": "demo-v1-person-a"
+      },
+      "facts": {
+        "sampled_frames": 6,
+        "observed_tracks": 3,
+        "confirmed_tracks": 3,
+        "candidate_tracks": 0,
+        "confirmed_profiles": 1,
+        "passages": 6,
+        "direction_in": 3,
+        "direction_out": 3,
+        "unknown_date_frames": 0,
+        "dates": [
+          "2026-11-05",
+          "2026-11-06",
+          "2026-11-07"
+        ],
+        "timezone": "Asia/Seoul"
+      },
+      "evidence_ids": [
+        "f5955a4b6193ddbca5f6732428edf5e488321f5567e38c35e4d16c6b985cdc7b",
+        "a3a1cc8ca17c3b145655fd07bb0c1d71103ea3b781bdba23bd790d55c1bc00f4",
+        "0e00699f29251c755f261ac89c15fd437d5ee6b22798e309922628c1b44669f1",
+        "91b091713bed4b4e804ae59956dc37237bc86793baf123268944d2997c7d0f51",
+        "6603eb6111f0748ffa1d4207bd8cc7f5c6794b2c7547c773474580d1b4d6bf87",
+        "fedec6d39124920447a1d21f57b54f7f56dbf7f788ade8c9e120db03e89631a3"
+      ]
+    },
+    {
+      "request": {
+        "question": "어제 몇 번 통과했어?",
+        "start": "2026-11-07",
+        "end": "2026-11-07"
+      },
+      "facts": {
+        "sampled_frames": 4,
+        "observed_tracks": 2,
+        "confirmed_tracks": 2,
+        "candidate_tracks": 0,
+        "confirmed_profiles": 2,
+        "passages": 4,
+        "direction_in": 2,
+        "direction_out": 2,
+        "unknown_date_frames": 0,
+        "dates": [
+          "2026-11-07"
+        ],
+        "timezone": "Asia/Seoul"
+      },
+      "evidence_ids": [
+        "f5955a4b6193ddbca5f6732428edf5e488321f5567e38c35e4d16c6b985cdc7b",
+        "a3a1cc8ca17c3b145655fd07bb0c1d71103ea3b781bdba23bd790d55c1bc00f4",
+        "790b81aa5339977656107cdc60516b5b3dafd24254ea63291cc902e9e93320d4",
+        "c672fdf8f4138fb2fadaf0d8afa86ed8ae124b603245e57d744769145c8c9a3c"
+      ]
+    },
+    {
+      "request": {
+        "question": "기록을 확인해줘",
+        "start": "2026-11-09",
+        "end": "2026-11-09"
+      },
+      "facts": {
+        "sampled_frames": 0,
+        "observed_tracks": 0,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 0,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 0,
+        "dates": [],
+        "timezone": "Asia/Seoul"
+      },
+      "evidence_ids": []
+    }
+  ],
+  "private_images_verified": [
+    {
+      "frame_id": "ae778af9d73abf71006892772752b678f64f29c58fb6c278de3f05043f2d2c94",
+      "sha256": "546312895470c780a917d89965d11b29823ccfc95a6085ffee0b7ae54a51d3d9",
+      "anonymous_denied": true
+    },
+    {
+      "frame_id": "2bd556ac02a5ecebb7da28f31dd0da80a6402268980dde99aba34669d005aff0",
+      "sha256": "4e431b5398abdc0d5e3dce04df589819dccabf3a865443b0b0fbf301fcf306d3",
+      "anonymous_denied": true
+    }
+  ],
+  "paid_llm_calls": 1,
+  "pass": true,
+  "llm_verification": {
+    "verified_utc": "2026-11-08T14:29:56.607797+00:00",
+    "request": {
+      "question": "[시연] 인물 A의 촬영 날짜와 선 통과 건수를 알려줘. 시연 데이터라는 점도 밝혀줘.",
+      "profile": "demo-v1-person-a",
+      "generate": true
+    },
+    "status": "generated",
+    "facts": {
+      "sampled_frames": 6,
+      "observed_tracks": 3,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "confirmed_profiles": 1,
+      "passages": 6,
+      "direction_in": 3,
+      "direction_out": 3,
+      "unknown_date_frames": 0,
+      "dates": [
+        "2026-11-05",
+        "2026-11-06",
+        "2026-11-07"
+      ],
+      "timezone": "Asia/Seoul"
+    },
+    "text": "인물 A의 촬영 날짜는 2026-11-05, 2026-11-06, 2026-11-07이며, 선 통과 건수는 6건입니다. 이 데이터는 시연 데이터입니다.",
+    "evidence_ids": [
+      "f5955a4b6193ddbca5f6732428edf5e488321f5567e38c35e4d16c6b985cdc7b",
+      "a3a1cc8ca17c3b145655fd07bb0c1d71103ea3b781bdba23bd790d55c1bc00f4",
+      "0e00699f29251c755f261ac89c15fd437d5ee6b22798e309922628c1b44669f1"
+    ]
+  }
+}

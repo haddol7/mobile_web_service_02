@@ -1,0 +1,51 @@
+{
+  "new_index_documents": 4,
+  "verified_utc": "2026-11-08T20:23:44.9579804Z",
+  "face_detections_including_repeats": 934,
+  "new_recordings": 4,
+  "pass": true,
+  "new_observation_images": 60,
+  "ui_verified": [
+    "four new source labels on observation list",
+    "35 sessions and 270 images",
+    "actual new entry photo visible",
+    "new people remain unconfirmed"
+  ],
+  "original_frames_available": 7488,
+  "embedding_tokens": 586,
+  "current_facts": {
+    "observed_tracks": 171,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 270,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 35,
+    "detection_posts": 0,
+    "unknown_date_frames": 270
+  },
+  "actual_llm_api_calls": 0,
+  "total_index_documents": 35,
+  "actual_embedding_api_calls": 1,
+  "frames_analyzed": 501,
+  "environment": "WSL actual local models and PythonAnywhere API plus production browser",
+  "origin": "https://daejinha.pythonanywhere.com/",
+  "existing_chats_preserved": true,
+  "verification_paid_api_calls": 0,
+  "existing_posts_preserved": true,
+  "model_training_performed": false,
+  "screenshots": [
+    {
+      "path": "evidence/private/cctv-walking/expanded/production-overview.png",
+      "sha256": "f5438540a201e1a86e812c50aa9ce3009eaaa5108ca1c2d21e2531b84ad370f0"
+    },
+    {
+      "path": "evidence/private/cctv-walking/expanded/production-detail.png",
+      "sha256": "9d5c1d10bde0bf4f18368ca6a6ec98e039411b8e35336bd53cd4143d9ab349dd"
+    },
+    {
+      "path": "evidence/private/cctv-walking/expanded/source-review.jpg",
+      "sha256": "fe4cf170e9aa14f1969894402060900992c3d80181aa656db305ee398398f0b0"
+    }
+  ]
+}

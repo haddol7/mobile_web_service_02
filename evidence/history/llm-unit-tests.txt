@@ -1,0 +1,8 @@
+.........
+----------------------------------------------------------------------
+Ran 181 tests in 31.194s
+
+OK
+Destroying test database for alias 'default'...
+Found 181 test(s).
+System check identified no issues (0 silenced).

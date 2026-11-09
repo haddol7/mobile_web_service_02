@@ -1,0 +1,51 @@
+{
+  "actual_llm_api_calls": 0,
+  "android_lint_errors": 0,
+  "android_ui": [
+    {
+      "fixture": "evidence/private/ui-audit/20261108T195010069534",
+      "composer_flow_pass": true,
+      "size": "small",
+      "pass": true,
+      "capture_files": 70
+    },
+    {
+      "fixture": "evidence/private/ui-audit/20261108T195236596067",
+      "composer_flow_pass": true,
+      "size": "regular",
+      "pass": true,
+      "capture_files": 70
+    }
+  ],
+  "android_lint_warnings": 9,
+  "screenshots": [
+    {
+      "sha256": "a5930b7a541979dc7d2ba4bd920dc23f7d71dd941328b6cad5f531e8ca019d8c",
+      "path": "evidence/private/ui-audit/chat-production.png"
+    },
+    {
+      "sha256": "a9042943366e54e8684bd8b7d98186bd6cba640bb4861c241eb8ff8746883f9b",
+      "path": "evidence/private/ui-audit/chat-production-history.png"
+    },
+    {
+      "sha256": "e7d74d6b07cc821788a87984ac4d5bf700ab3e4850944a4ad2c78d6d9722350a",
+      "path": "evidence/private/ui-audit/chat-production-new.png"
+    },
+    {
+      "sha256": "810922a82fa928ced8462ec76b69bc52e6db657a10b8d9845cf5a67e2fe54e23",
+      "path": "evidence/private/ui-audit/chat-production-restored.png"
+    }
+  ],
+  "verified_utc": "2026-11-08T19:55:26.5593039Z",
+  "android_jvm_tests": 40,
+  "production_replay_verified": true,
+  "production_chat_restore_verified": true,
+  "actual_embedding_api_calls": 0,
+  "server_tests": 244,
+  "server_environment": "WSL Ubuntu",
+  "url": "https://daejinha.pythonanywhere.com/questions/",
+  "pass": true,
+  "model_validation_scope": "Deterministic local responses and cache-only production retrieval; no real provider generation test",
+  "release": "20261108194952368451",
+  "web_unit_tests": 76
+}

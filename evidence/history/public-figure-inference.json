@@ -1,0 +1,109 @@
+{
+  "verified_utc": "2026-11-08T17:35:12.599930+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "profiles": [
+    {
+      "id": "showcase-v2-a",
+      "name": "인물 A"
+    },
+    {
+      "id": "showcase-v2-b",
+      "name": "인물 B"
+    },
+    {
+      "id": "showcase-v2-c",
+      "name": "인물 C"
+    },
+    {
+      "id": "public-trump",
+      "name": "도널드 트럼프"
+    },
+    {
+      "id": "public-obama",
+      "name": "버락 오바마"
+    }
+  ],
+  "cases": [
+    {
+      "case": "trump-speech",
+      "name": "트럼프 / 공개 연설",
+      "expected": "public-trump",
+      "start": 8,
+      "seconds": 9,
+      "source_reference": "DVIDS/506134",
+      "source_url": "https://www.dvidshub.net/video/506134/president-trump-talks-troops-afghanistan-sas-ball",
+      "source_path": "evidence/private/public-figure-demo/trump-ball.mp4",
+      "path": "evidence/private/public-figure-demo/trump-speech.mp4",
+      "sha256": "5f3197667041a9d6ccb15639a6cc7997b1abf26c467d42e0daf491af965184b3",
+      "clip_frames": 270,
+      "sampling_stride": 3,
+      "log": "evidence/private/public-figure-demo/trump-speech/person-analysis/6bb6e6d2b7fadb2a.jsonl",
+      "frames_analyzed": 90,
+      "face_detections": 627,
+      "expected_linked_candidates": 70,
+      "other_profile_candidates": 0
+    },
+    {
+      "case": "trump-airbase-walk",
+      "name": "트럼프 / 공군기지 이동",
+      "expected": "public-trump",
+      "start": 228,
+      "seconds": 12,
+      "source_reference": "DVIDS/512302",
+      "source_url": "https://www.dvidshub.net/video/512302/president-trump-arriving-langley-air-force-base",
+      "source_path": "evidence/private/public-figure-demo/trump-arrival.mp4",
+      "path": "evidence/private/public-figure-demo/trump-airbase-walk.mp4",
+      "sha256": "1aedc7813942ba08d6975204f766757a9f6de5d6280a6d4101c0d82221033c0d",
+      "clip_frames": 360,
+      "sampling_stride": 6,
+      "log": "evidence/private/public-figure-demo/trump-airbase-walk/person-analysis/c7ccdb47c3156f99.jsonl",
+      "frames_analyzed": 60,
+      "face_detections": 375,
+      "expected_linked_candidates": 26,
+      "other_profile_candidates": 0
+    },
+    {
+      "case": "obama-clip44",
+      "name": "오바마 / 공개 연설 구간 44",
+      "expected": "public-obama",
+      "start": 0,
+      "seconds": 9,
+      "source_reference": "HDTF/WDA_BarackObama",
+      "source_url": "https://huggingface.co/datasets/saeed-5959/hdtf",
+      "source_path": "evidence/private/hf-video-candidates/BarackObama_044.mp4",
+      "path": "evidence/private/public-figure-demo/obama-clip44.mp4",
+      "sha256": "551aee886631fd8cc0f39aa7ae9f8682c79978d21a3d2b602826285ed70a27a4",
+      "clip_frames": 225,
+      "sampling_stride": 6,
+      "log": "evidence/private/public-figure-demo/obama-clip44/person-analysis/c15865ce1cfb1020.jsonl",
+      "frames_analyzed": 37,
+      "face_detections": 37,
+      "expected_linked_candidates": 35,
+      "other_profile_candidates": 0
+    },
+    {
+      "case": "obama-independent-recording",
+      "name": "오바마 / 별도 공개 영상",
+      "expected": "public-obama",
+      "start": 10,
+      "seconds": 12,
+      "source_reference": "DVIDS/358042",
+      "source_url": "https://www.dvidshub.net/video/358042/president-obama-remarks-ebola-outbreak",
+      "source_path": "evidence/private/public-figure-demo/obama-address.mp4",
+      "path": "evidence/private/public-figure-demo/obama-independent-recording.mp4",
+      "sha256": "6bb07f468d2818876ed0a70c81282579477ca9eb3c53c3bb4760eaa628a80bd4",
+      "clip_frames": 360,
+      "sampling_stride": 3,
+      "log": "evidence/private/public-figure-demo/obama-independent-recording/person-analysis/82476000dfaf4e20.jsonl",
+      "frames_analyzed": 120,
+      "face_detections": 120,
+      "expected_linked_candidates": 118,
+      "other_profile_candidates": 0
+    }
+  ],
+  "capture_times_known": false,
+  "obama_hdtf_clips_may_share_original_recording": true,
+  "automatic_confirmation": false,
+  "training_performed": false,
+  "pass": true
+}

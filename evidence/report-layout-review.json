@@ -1,9 +1,125 @@
 {
-  "report_sha256": "109c0a951f8cc80f5bdcfd3a70ea15f125ba2c01e99b45f8cfee44ef05016737",
-  "renderer": "documents skill renderer with Microsoft Word PDF conversion",
-  "pages": 11,
-  "embedded_figures": 12,
-  "all_pages_visually_checked": true,
+  "report_sha256": "c3103d197e4d4171772d7f68e97fef1f1dce37ea3f6b28c56a1c661ec720a11e",
+  "qa_directory": "evidence/private/submission-final-20261110/render-3",
+  "pages": 26,
+  "renderer": "Bundled render_docx.py and Poppler with Microsoft Word PDF conversion",
   "template_requirement_columns_preserved": true,
-  "submission_ready": false
+  "opaque_template_parts_preserved": true,
+  "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
+  "layout_clean": true,
+  "all_pages_visually_checked": true,
+  "review_method": "Cover and pages 13 through 26 inspected; pages 2 through 12 matched earlier visually inspected PNGs byte-for-byte. Final cover changes reinspected and remaining pages compared with the reviewed render.",
+  "page_hashes": [
+    {
+      "page": 1,
+      "sha256": "27630077988aa49e85f9c3eaae63a725f2c41277ec30ebc8d88dc1a02c8fc798"
+    },
+    {
+      "page": 2,
+      "sha256": "e693b30f98130a8883e85b9cd4353cb101c11269a3fdb79c08700f40667f062b"
+    },
+    {
+      "page": 3,
+      "sha256": "dd55171bba74a0fd4baed3c9881af0b33b93cd3d8cc0be5af0b0fef402fba826"
+    },
+    {
+      "page": 4,
+      "sha256": "dfcde94d63fc88301e4be812a7c5572033628df5b6fa6fdc2fbd9eff6e6a1dcb"
+    },
+    {
+      "page": 5,
+      "sha256": "69f106dfe7ddac0c8461ef6d09c356d31f9daeabfe24b8d69f3f07b758a0d9ae"
+    },
+    {
+      "page": 6,
+      "sha256": "6fc4be66778b021dad48b282f98372cd9f93c57efcf2f1516358e64b5e6f96ac"
+    },
+    {
+      "page": 7,
+      "sha256": "ac080a32f3d245767a3306f07a82ed09ea7476626327ccde7682b5d7433fc834"
+    },
+    {
+      "page": 8,
+      "sha256": "65bd401168f435d0ebd469a8537706a57a4f54b3715bb859f06d84498c30efac"
+    },
+    {
+      "page": 9,
+      "sha256": "ae3fabd5389effca616afc2e86e8c6114d2bbaf5c506f04455d7b62594da1bcb"
+    },
+    {
+      "page": 10,
+      "sha256": "05fd1d26746986395bb58e0e581b215a95cf6c16eea11bef82c95ee674221a11"
+    },
+    {
+      "page": 11,
+      "sha256": "9894ba8bc8a4b5dbb39b8e79f6ac7412d98b04749cfbb8422427844bb88501fd"
+    },
+    {
+      "page": 12,
+      "sha256": "4314a97d8441da762f26170d812fb622e978f7eda37810c887d86db66926acc1"
+    },
+    {
+      "page": 13,
+      "sha256": "9cde207412c39f5acf3faba232f53b619b473836d73b41d931ac7f45fc8e5157"
+    },
+    {
+      "page": 14,
+      "sha256": "8b0e6fb1a425a9898f66af735fb33c08f0cccc44bcd3f3b07cde00d693eec1a4"
+    },
+    {
+      "page": 15,
+      "sha256": "d75f652eb1f4b2d9a1bf7970a305c45fdf3b9eece83d73e792f6a58a9c3288c3"
+    },
+    {
+      "page": 16,
+      "sha256": "d896bead54bf6595b0340e64e4ed10dad481919925bdfe001195f7c9eac78c84"
+    },
+    {
+      "page": 17,
+      "sha256": "7ec95cac368d5acfb99ce7c62a10b8140644b196b345f6a1e7c0d97f4b5d8306"
+    },
+    {
+      "page": 18,
+      "sha256": "8e09e49e1090dd8386ad50c2634f52c63c8aa47fe215fc2526e75647d57cd34e"
+    },
+    {
+      "page": 19,
+      "sha256": "e4d508439cd43a3b731fc84861faff521b3426ad728ae30fae969f82665044c1"
+    },
+    {
+      "page": 20,
+      "sha256": "19f882cdeaece9706b6db1e209f7218011c091fe18a482709ea6e2f911d3779d"
+    },
+    {
+      "page": 21,
+      "sha256": "7e6a966a988213c228d0bc7af897becd768f4f046adb9015f9d354ea4ece527a"
+    },
+    {
+      "page": 22,
+      "sha256": "5f3fa0efc6b971a74848213af70e2a75de199e6256c63fff126db958552b920d"
+    },
+    {
+      "page": 23,
+      "sha256": "ab721d49c6a15d38cf0c7df6027b50dcb0e8929b38140f354b0417bc0632f7df"
+    },
+    {
+      "page": 24,
+      "sha256": "bc9575ae9cdda6d439bcbc74cc19e43a3cb8b95561a2e1202d89b43d26df8299"
+    },
+    {
+      "page": 25,
+      "sha256": "1d7ccb5214c1fe28ea6d986bc11f5ecb69eac34c643aba41ab0e9aba861c30ec"
+    },
+    {
+      "page": 26,
+      "sha256": "eced03145f178027811062775926c900042c2735952bf49071e594399fd9a59a"
+    }
+  ],
+  "embedded_figures": 28,
+  "remaining_assessment_ids": [
+    "2"
+  ],
+  "submission_ready": false,
+  "new_paid_api_calls": 0,
+  "verified_utc": "2026-11-09T17:05:07.061461+00:00"
 }

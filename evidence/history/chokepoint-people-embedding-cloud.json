@@ -1,0 +1,165 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T22:07:37.579138+00:00",
+  "environment": "WSL against PythonAnywhere",
+  "production_verified": true,
+  "index_documents": 40,
+  "new_documents": 5,
+  "previous_vectors_reused": 35,
+  "actual_embedding_api_calls": 1,
+  "actual_llm_api_calls": 0,
+  "verification_paid_api_calls": 0,
+  "usage": {
+    "prompt_tokens": 1681,
+    "total_tokens": 1681
+  },
+  "index_sha256": "5d8e645ab2c1ea30ea00b35a68afc8da5d26ba9448919c1ebee95beac7a6fbf2",
+  "previous_index_backed_up": true,
+  "private_query_cache_preserved": true,
+  "checks": [
+    {
+      "id": "departure",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 1,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "8509a9d9-4456-5476-aa3b-c8e9ac6c33e0"
+        ],
+        "matches": [
+          {
+            "session_id": "8509a9d9-4456-5476-aa3b-c8e9ac6c33e0",
+            "similarity": 0.213029,
+            "title_match": 1.0,
+            "rank_score": 0.409772
+          }
+        ]
+      },
+      "sources": [
+        "트럼프 / 2017-11-07 일본 출국"
+      ]
+    },
+    {
+      "id": "press",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "a146746f-cf5d-5235-b503-776da23c41d4",
+          "0b31f7ad-62bf-52ba-ac8b-020af6d58a7a",
+          "b330ffc7-f0bc-50e8-a696-503b79373e40",
+          "4d38275f-2e1b-513b-a348-91dd22fa4051"
+        ],
+        "matches": [
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.435835,
+            "title_match": 1.0,
+            "rank_score": 0.576876
+          },
+          {
+            "session_id": "a146746f-cf5d-5235-b503-776da23c41d4",
+            "similarity": 0.407653,
+            "title_match": 1.0,
+            "rank_score": 0.55574
+          },
+          {
+            "session_id": "0b31f7ad-62bf-52ba-ac8b-020af6d58a7a",
+            "similarity": 0.401823,
+            "title_match": 1.0,
+            "rank_score": 0.551367
+          },
+          {
+            "session_id": "b330ffc7-f0bc-50e8-a696-503b79373e40",
+            "similarity": 0.392936,
+            "title_match": 1.0,
+            "rank_score": 0.544702
+          },
+          {
+            "session_id": "4d38275f-2e1b-513b-a348-91dd22fa4051",
+            "similarity": 0.466339,
+            "title_match": 0.0,
+            "rank_score": 0.349755
+          }
+        ]
+      },
+      "sources": [
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "오바마 / 2014-09-05 나토 기자회견",
+        "트럼프 / 2020-07-10 현장 브리핑",
+        "트럼프 / 2020-01-08 백악관 브리핑",
+        "트럼프 / 2018-10-11 정부 회의"
+      ]
+    },
+    {
+      "id": "security",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+          "16c8e6ea-cbc4-567f-868d-30a60b948300",
+          "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "a146746f-cf5d-5235-b503-776da23c41d4"
+        ],
+        "matches": [
+          {
+            "session_id": "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+            "similarity": 0.427647,
+            "title_match": 1.0,
+            "rank_score": 0.570735
+          },
+          {
+            "session_id": "16c8e6ea-cbc4-567f-868d-30a60b948300",
+            "similarity": 0.423003,
+            "title_match": 1.0,
+            "rank_score": 0.567252
+          },
+          {
+            "session_id": "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+            "similarity": 0.445429,
+            "title_match": 0.5,
+            "rank_score": 0.459072
+          },
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.412814,
+            "title_match": 0.5,
+            "rank_score": 0.434611
+          },
+          {
+            "session_id": "a146746f-cf5d-5235-b503-776da23c41d4",
+            "similarity": 0.369525,
+            "title_match": 0.5,
+            "rank_score": 0.402144
+          }
+        ]
+      },
+      "sources": [
+        "오바마 / 2014-09-26 보건안보 회의",
+        "오바마 / 2016-04-01 핵안보 정상회의",
+        "오바마 / 2015-02-19 국제회의 발언",
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "오바마 / 2014-09-05 나토 기자회견"
+      ]
+    }
+  ],
+  "photos_or_face_features_sent_to_api": false,
+  "licence_retained_with_derivatives": true
+}

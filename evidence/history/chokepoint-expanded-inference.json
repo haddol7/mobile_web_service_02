@@ -1,0 +1,71 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T20:19:45.596531+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "cases": [
+    {
+      "camera": "P1E_S2_C2",
+      "video_sha256": "4d63a796fb462f772a0894f057185fc9b3fbde890d746d2c328c203a317407a2",
+      "frames_analyzed": 169,
+      "faces_detected": 92,
+      "linked_faces": 38,
+      "candidate_faces": 0,
+      "distinct_body_tracks": 16,
+      "video_stride": 14,
+      "log": "evidence/private/cctv-walking/expanded/P1E_S2_C2/analysis/person-analysis/833960f55884e2b1.jsonl",
+      "references_compared": 5,
+      "no_training": true,
+      "capture_date_known": false,
+      "verified_utc": "2026-11-08T20:06:33.936402+00:00"
+    },
+    {
+      "camera": "P1L_S1_C1",
+      "video_sha256": "bd6fe6d972481898409453a9dafeea9e7c3ff61df8bd3e000979e6a423bb8b3d",
+      "frames_analyzed": 177,
+      "faces_detected": 152,
+      "linked_faces": 49,
+      "candidate_faces": 0,
+      "distinct_body_tracks": 20,
+      "video_stride": 20,
+      "log": "evidence/private/cctv-walking/expanded/P1L_S1_C1/analysis/person-analysis/60317a60bbe215c1.jsonl",
+      "references_compared": 5,
+      "no_training": true,
+      "capture_date_known": false,
+      "verified_utc": "2026-11-08T20:08:17.616625+00:00"
+    },
+    {
+      "camera": "P2E_S5_C2",
+      "video_sha256": "0fb9cd05970092df98657a866442104b9016a0b878c1b83d648d750c14612917",
+      "frames_analyzed": 80,
+      "faces_detected": 337,
+      "linked_faces": 211,
+      "candidate_faces": 0,
+      "distinct_body_tracks": 23,
+      "video_stride": 10,
+      "log": "evidence/private/cctv-walking/expanded/P2E_S5_C2/analysis/person-analysis/241ae84ccaa6d10f.jsonl",
+      "references_compared": 5,
+      "no_training": true,
+      "capture_date_known": false,
+      "verified_utc": "2026-11-08T20:18:04.965578+00:00"
+    },
+    {
+      "camera": "P2L_S5_C2",
+      "video_sha256": "b63586a28270cd2e8a160fadd02778934196ae9b73452e9779592c95efccbc0f",
+      "frames_analyzed": 75,
+      "faces_detected": 353,
+      "linked_faces": 229,
+      "candidate_faces": 0,
+      "distinct_body_tracks": 26,
+      "video_stride": 10,
+      "log": "evidence/private/cctv-walking/expanded/P2L_S5_C2/analysis/person-analysis/449e0b387a27753c.jsonl",
+      "references_compared": 5,
+      "no_training": true,
+      "capture_date_known": false,
+      "verified_utc": "2026-11-08T20:19:45.571875+00:00"
+    }
+  ],
+  "frames_analyzed": 501,
+  "faces_detected": 934,
+  "actual_embedding_api_calls": 0,
+  "actual_llm_api_calls": 0
+}

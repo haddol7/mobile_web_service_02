@@ -1,0 +1,8 @@
+
+com.haddol7.photoviewer.ui.CloudSyncTest:.
+Test results for InstrumentationTestRunner=.
+Time: 12.351
+
+OK (1 test)
+
+

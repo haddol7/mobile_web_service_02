@@ -1,412 +1,466 @@
 TAP version 13
-# Subtest: paper rotation abstains on blank and colored texture images
-ok 1 - paper rotation abstains on blank and colored texture images
+# Subtest: chat restores the selected scope without accepting arbitrary previous messages
+ok 1 - chat restores the selected scope without accepting arbitrary previous messages
   ---
-  duration_ms: 2.8574
+  duration_ms: 0.7821
+  type: 'test'
+  ...
+# Subtest: turn paging preserves each request once and prefers persisted complete answers
+ok 2 - turn paging preserves each request once and prefers persisted complete answers
+  ---
+  duration_ms: 1.0643
+  type: 'test'
+  ...
+# Subtest: reopening a completed turn displays its saved generated answer
+ok 3 - reopening a completed turn displays its saved generated answer
+  ---
+  duration_ms: 0.257
+  type: 'test'
+  ...
+# Subtest: a user send has a stable request identity and no client-supplied transcript
+ok 4 - a user send has a stable request identity and no client-supplied transcript
+  ---
+  duration_ms: 0.5586
+  type: 'test'
+  ...
+# Subtest: paper rotation abstains on blank and colored texture images
+ok 5 - paper rotation abstains on blank and colored texture images
+  ---
+  duration_ms: 2.4909
   type: 'test'
   ...
 # Subtest: text-line projection estimates slope without knowing the written words
-ok 2 - text-line projection estimates slope without knowing the written words
+ok 6 - text-line projection estimates slope without knowing the written words
   ---
-  duration_ms: 3.9981
+  duration_ms: 4.3818
   type: 'test'
   ...
 # Subtest: document rectangles map to unchanged original photo coordinates
-ok 3 - document rectangles map to unchanged original photo coordinates
+ok 7 - document rectangles map to unchanged original photo coordinates
   ---
-  duration_ms: 0.9843
+  duration_ms: 0.6148
   type: 'test'
   ...
 # Subtest: document fallback keeps supported long handwriting for review rather than auto search
-ok 4 - document fallback keeps supported long handwriting for review rather than auto search
+ok 8 - document fallback keeps supported long handwriting for review rather than auto search
   ---
-  duration_ms: 4.4449
+  duration_ms: 4.1706
   type: 'test'
   ...
 # Subtest: document fallback rejects fragments and disagreement despite paper detection
-ok 5 - document fallback rejects fragments and disagreement despite paper detection
+ok 9 - document fallback rejects fragments and disagreement despite paper detection
   ---
-  duration_ms: 0.2478
+  duration_ms: 0.2789
   type: 'test'
   ...
 # Subtest: OCR rejects texture fragments, symbol-only guesses and nonfinite scores
-ok 6 - OCR rejects texture fragments, symbol-only guesses and nonfinite scores
+ok 10 - OCR rejects texture fragments, symbol-only guesses and nonfinite scores
   ---
-  duration_ms: 0.908
+  duration_ms: 0.7947
   type: 'test'
   ...
 # Subtest: OCR does not trust a good line average that hides mostly weak words
-ok 7 - OCR does not trust a good line average that hides mostly weak words
+ok 11 - OCR does not trust a good line average that hides mostly weak words
   ---
-  duration_ms: 0.1176
+  duration_ms: 0.1205
   type: 'test'
   ...
 # Subtest: unconfirmed OCR candidates cannot enter search automatically
-ok 8 - unconfirmed OCR candidates cannot enter search automatically
+ok 12 - unconfirmed OCR candidates cannot enter search automatically
   ---
-  duration_ms: 0.4642
+  duration_ms: 0.4899
   type: 'test'
   ...
 # Subtest: short Korean signs, Latin signs and numbers survive matching second recognition
-ok 9 - short Korean signs, Latin signs and numbers survive matching second recognition
+ok 13 - short Korean signs, Latin signs and numbers survive matching second recognition
   ---
-  duration_ms: 0.2468
+  duration_ms: 0.2355
   type: 'test'
   ...
 # Subtest: OCR confirmation ignores formatting but rejects unstable and merged text
-ok 10 - OCR confirmation ignores formatting but rejects unstable and merged text
+ok 14 - OCR confirmation ignores formatting but rejects unstable and merged text
   ---
-  duration_ms: 0.1872
+  duration_ms: 0.2133
   type: 'test'
   ...
 # Subtest: plausible but less certain matching OCR stays unchecked and out of the packet
-ok 11 - plausible but less certain matching OCR stays unchecked and out of the packet
+ok 15 - plausible but less certain matching OCR stays unchecked and out of the packet
   ---
-  duration_ms: 0.136
+  duration_ms: 0.1716
   type: 'test'
   ...
 # Subtest: OCR confirmation crop padding stays inside the public photo
-ok 12 - OCR confirmation crop padding stays inside the public photo
+ok 16 - OCR confirmation crop padding stays inside the public photo
   ---
-  duration_ms: 0.1233
+  duration_ms: 0.1759
   type: 'test'
   ...
 # Subtest: OCR bounds expensive confirmation by confidence without losing reading order
-ok 13 - OCR bounds expensive confirmation by confidence without losing reading order
+ok 17 - OCR bounds expensive confirmation by confidence without losing reading order
   ---
-  duration_ms: 0.2417
+  duration_ms: 0.2834
   type: 'test'
   ...
 # Subtest: captured Android grass false positives fail independent crop confirmation
-ok 14 - captured Android grass false positives fail independent crop confirmation
+ok 18 - captured Android grass false positives fail independent crop confirmation
   ---
-  duration_ms: 0.9488
+  duration_ms: 1.2043
   type: 'test'
   ...
 # Subtest: official Labrador class produces animal and Korean dog tag
-ok 15 - official Labrador class produces animal and Korean dog tag
+ok 19 - official Labrador class produces animal and Korean dog tag
   ---
-  duration_ms: 0.22
+  duration_ms: 0.2332
   type: 'test'
   ...
 # Subtest: food label selects food without inferring a trip or emotion
-ok 16 - food label selects food without inferring a trip or emotion
+ok 20 - food label selects food without inferring a trip or emotion
   ---
-  duration_ms: 0.0731
+  duration_ms: 0.0576
   type: 'test'
   ...
 # Subtest: unknown labels and weak evidence abstain
-ok 17 - unknown labels and weak evidence abstain
+ok 21 - unknown labels and weak evidence abstain
   ---
-  duration_ms: 0.0525
+  duration_ms: 0.0455
   type: 'test'
   ...
 # Subtest: close competing themes abstain and retain alternatives
-ok 18 - close competing themes abstain and retain alternatives
-  ---
-  duration_ms: 0.0496
-  type: 'test'
-  ...
-# Subtest: disjoint dog breeds combine as animal while duplicated classes never inflate mass
-ok 19 - disjoint dog breeds combine as animal while duplicated classes never inflate mass
-  ---
-  duration_ms: 0.066
-  type: 'test'
-  ...
-# Subtest: invalid model scores cannot create a recommendation
-ok 20 - invalid model scores cannot create a recommendation
-  ---
-  duration_ms: 0.034
-  type: 'test'
-  ...
-# Subtest: normalized Unicode tags deduplicate and preserve display
-ok 21 - normalized Unicode tags deduplicate and preserve display
-  ---
-  duration_ms: 1.0463
-  type: 'test'
-  ...
-# Subtest: tag code point boundary includes emoji and rejects excessive count
-ok 22 - tag code point boundary includes emoji and rejects excessive count
-  ---
-  duration_ms: 0.2549
-  type: 'test'
-  ...
-# Subtest: normalization matches server common casefold and whitespace examples
-ok 23 - normalization matches server common casefold and whitespace examples
-  ---
-  duration_ms: 0.0523
-  type: 'test'
-  ...
-# Subtest: manual regions can be undone and cannot escape normalized bounds
-ok 24 - manual regions can be undone and cannot escape normalized bounds
-  ---
-  duration_ms: 0.1824
-  type: 'test'
-  ...
-# Subtest: face re-detection preserves manual masks
-ok 25 - face re-detection preserves manual masks
-  ---
-  duration_ms: 0.0891
-  type: 'test'
-  ...
-# Subtest: toggle and strength edits can be undone without changing old snapshots
-ok 26 - toggle and strength edits can be undone without changing old snapshots
-  ---
-  duration_ms: 0.1131
-  type: 'test'
-  ...
-# Subtest: checkpoint reset restores entry masks and itself can be undone
-ok 27 - checkpoint reset restores entry masks and itself can be undone
-  ---
-  duration_ms: 0.12
-  type: 'test'
-  ...
-# Subtest: excess masks and nonfinite rectangles are rejected
-ok 28 - excess masks and nonfinite rectangles are rejected
-  ---
-  duration_ms: 0.0865
-  type: 'test'
-  ...
-# Subtest: new image or search generation rejects late callbacks
-ok 29 - new image or search generation rejects late callbacks
-  ---
-  duration_ms: 0.0427
-  type: 'test'
-  ...
-# Subtest: packet excludes unchecked OCR completely
-ok 30 - packet excludes unchecked OCR completely
-  ---
-  duration_ms: 0.129
-  type: 'test'
-  ...
-# Subtest: skipped OCR sends no lines and unclassified stays different from other
-ok 31 - skipped OCR sends no lines and unclassified stays different from other
-  ---
-  duration_ms: 0.0858
-  type: 'test'
-  ...
-# Subtest: owner correction retains expected revision while create omits it
-ok 32 - owner correction retains expected revision while create omits it
-  ---
-  duration_ms: 0.0546
-  type: 'test'
-  ...
-# Subtest: empty or excessive selected OCR is rejected instead of silently truncated
-ok 33 - empty or excessive selected OCR is rejected instead of silently truncated
-  ---
-  duration_ms: 0.781
-  type: 'test'
-  ...
-# Subtest: OCR output drops invalid boxes and retains finite clockwise coordinates
-ok 34 - OCR output drops invalid boxes and retains finite clockwise coordinates
-  ---
-  duration_ms: 0.1204
-  type: 'test'
-  ...
-# Subtest: detected masks pad and clamp at all photo edges
-ok 35 - detected masks pad and clamp at all photo edges
-  ---
-  duration_ms: 0.462
-  type: 'test'
-  ...
-# Subtest: multi-scale scans cover every photo edge with a bounded inference budget
-ok 36 - multi-scale scans cover every photo edge with a bounded inference budget
-  ---
-  duration_ms: 0.2607
-  type: 'test'
-  ...
-# Subtest: overlap gives a face on a tile boundary an uncropped second view
-ok 37 - overlap gives a face on a tile boundary an uncropped second view
-  ---
-  duration_ms: 0.0539
-  type: 'test'
-  ...
-# Subtest: invalid scan dimensions are rejected and tiny photos need only one pass
-ok 38 - invalid scan dimensions are rejected and tiny photos need only one pass
-  ---
-  duration_ms: 0.0756
-  type: 'test'
-  ...
-# Subtest: crop detection projects back to the original photo before normalization
-ok 39 - crop detection projects back to the original photo before normalization
-  ---
-  duration_ms: 0.1129
-  type: 'test'
-  ...
-# Subtest: projected detections clamp image edges and reject invalid boxes
-ok 40 - projected detections clamp image edges and reject invalid boxes
-  ---
-  duration_ms: 0.0506
-  type: 'test'
-  ...
-# Subtest: duplicate suppression keeps the strongest localized box without expanding into its surroundings
-ok 41 - duplicate suppression keeps the strongest localized box without expanding into its surroundings
-  ---
-  duration_ms: 0.1869
-  type: 'test'
-  ...
-# Subtest: nearby different faces remain separate even when rectangles touch
-ok 42 - nearby different faces remain separate even when rectangles touch
-  ---
-  duration_ms: 0.0449
-  type: 'test'
-  ...
-# Subtest: low confidence cannot add a face and the region limit remains bounded
-ok 43 - low confidence cannot add a face and the region limit remains bounded
-  ---
-  duration_ms: 0.6818
-  type: 'test'
-  ...
-# Subtest: small-face clusters get a bounded, in-bounds refinement pass
-ok 44 - small-face clusters get a bounded, in-bounds refinement pass
-  ---
-  duration_ms: 0.198
-  type: 'test'
-  ...
-# Subtest: empty detections and close-up faces do not trigger unnecessary refinement
-ok 45 - empty detections and close-up faces do not trigger unnecessary refinement
-  ---
-  duration_ms: 0.0446
-  type: 'test'
-  ...
-# Subtest: a smaller duplicate inside the same face is suppressed
-ok 46 - a smaller duplicate inside the same face is suppressed
-  ---
-  duration_ms: 0.052
-  type: 'test'
-  ...
-# Subtest: proposal suppression retains alternate scales until confirmation
-ok 47 - proposal suppression retains alternate scales until confirmation
-  ---
-  duration_ms: 0.0338
-  type: 'test'
-  ...
-# Subtest: confirmation crops use two context sizes and remain inside image boundaries
-ok 48 - confirmation crops use two context sizes and remain inside image boundaries
-  ---
-  duration_ms: 0.0708
-  type: 'test'
-  ...
-# Subtest: tiny confirmation crops retain sufficient context
-ok 49 - tiny confirmation crops retain sufficient context
-  ---
-  duration_ms: 0.0254
-  type: 'test'
-  ...
-# Subtest: weak repeated background evidence cannot confirm a face
-ok 50 - weak repeated background evidence cannot confirm a face
-  ---
-  duration_ms: 0.0818
-  type: 'test'
-  ...
-# Subtest: confirmation projects the refined location instead of retaining the inflated proposal
-ok 51 - confirmation projects the refined location instead of retaining the inflated proposal
-  ---
-  duration_ms: 0.0377
-  type: 'test'
-  ...
-# Subtest: a confident neighboring face cannot confirm an unrelated proposal
-ok 52 - a confident neighboring face cannot confirm an unrelated proposal
-  ---
-  duration_ms: 0.0282
-  type: 'test'
-  ...
-# Subtest: confirmation ignores invalid boxes and selects the strongest matching evidence
-ok 53 - confirmation ignores invalid boxes and selects the strongest matching evidence
+ok 22 - close competing themes abstain and retain alternatives
   ---
   duration_ms: 0.0473
   type: 'test'
   ...
-# Subtest: editor follows the visible Safari viewport without fractional overflow
-ok 54 - editor follows the visible Safari viewport without fractional overflow
+# Subtest: disjoint dog breeds combine as animal while duplicated classes never inflate mass
+ok 23 - disjoint dog breeds combine as animal while duplicated classes never inflate mass
   ---
-  duration_ms: 0.0577
+  duration_ms: 0.0656
+  type: 'test'
+  ...
+# Subtest: invalid model scores cannot create a recommendation
+ok 24 - invalid model scores cannot create a recommendation
+  ---
+  duration_ms: 0.0359
+  type: 'test'
+  ...
+# Subtest: normalized Unicode tags deduplicate and preserve display
+ok 25 - normalized Unicode tags deduplicate and preserve display
+  ---
+  duration_ms: 0.7371
+  type: 'test'
+  ...
+# Subtest: tag code point boundary includes emoji and rejects excessive count
+ok 26 - tag code point boundary includes emoji and rejects excessive count
+  ---
+  duration_ms: 0.2572
+  type: 'test'
+  ...
+# Subtest: normalization matches server common casefold and whitespace examples
+ok 27 - normalization matches server common casefold and whitespace examples
+  ---
+  duration_ms: 0.0494
+  type: 'test'
+  ...
+# Subtest: manual regions can be undone and cannot escape normalized bounds
+ok 28 - manual regions can be undone and cannot escape normalized bounds
+  ---
+  duration_ms: 0.2112
+  type: 'test'
+  ...
+# Subtest: face re-detection preserves manual masks
+ok 29 - face re-detection preserves manual masks
+  ---
+  duration_ms: 0.0946
+  type: 'test'
+  ...
+# Subtest: toggle and strength edits can be undone without changing old snapshots
+ok 30 - toggle and strength edits can be undone without changing old snapshots
+  ---
+  duration_ms: 0.1337
+  type: 'test'
+  ...
+# Subtest: checkpoint reset restores entry masks and itself can be undone
+ok 31 - checkpoint reset restores entry masks and itself can be undone
+  ---
+  duration_ms: 0.1353
+  type: 'test'
+  ...
+# Subtest: excess masks and nonfinite rectangles are rejected
+ok 32 - excess masks and nonfinite rectangles are rejected
+  ---
+  duration_ms: 0.0879
+  type: 'test'
+  ...
+# Subtest: new image or search generation rejects late callbacks
+ok 33 - new image or search generation rejects late callbacks
+  ---
+  duration_ms: 0.0463
+  type: 'test'
+  ...
+# Subtest: packet excludes unchecked OCR completely
+ok 34 - packet excludes unchecked OCR completely
+  ---
+  duration_ms: 0.1372
+  type: 'test'
+  ...
+# Subtest: skipped OCR sends no lines and unclassified stays different from other
+ok 35 - skipped OCR sends no lines and unclassified stays different from other
+  ---
+  duration_ms: 0.0809
+  type: 'test'
+  ...
+# Subtest: owner correction retains expected revision while create omits it
+ok 36 - owner correction retains expected revision while create omits it
+  ---
+  duration_ms: 0.0547
+  type: 'test'
+  ...
+# Subtest: empty or excessive selected OCR is rejected instead of silently truncated
+ok 37 - empty or excessive selected OCR is rejected instead of silently truncated
+  ---
+  duration_ms: 1.014
+  type: 'test'
+  ...
+# Subtest: OCR output drops invalid boxes and retains finite clockwise coordinates
+ok 38 - OCR output drops invalid boxes and retains finite clockwise coordinates
+  ---
+  duration_ms: 0.1277
+  type: 'test'
+  ...
+# Subtest: detected masks pad and clamp at all photo edges
+ok 39 - detected masks pad and clamp at all photo edges
+  ---
+  duration_ms: 0.4709
+  type: 'test'
+  ...
+# Subtest: multi-scale scans cover every photo edge with a bounded inference budget
+ok 40 - multi-scale scans cover every photo edge with a bounded inference budget
+  ---
+  duration_ms: 0.2703
+  type: 'test'
+  ...
+# Subtest: overlap gives a face on a tile boundary an uncropped second view
+ok 41 - overlap gives a face on a tile boundary an uncropped second view
+  ---
+  duration_ms: 0.0618
+  type: 'test'
+  ...
+# Subtest: invalid scan dimensions are rejected and tiny photos need only one pass
+ok 42 - invalid scan dimensions are rejected and tiny photos need only one pass
+  ---
+  duration_ms: 0.0702
+  type: 'test'
+  ...
+# Subtest: crop detection projects back to the original photo before normalization
+ok 43 - crop detection projects back to the original photo before normalization
+  ---
+  duration_ms: 0.1227
+  type: 'test'
+  ...
+# Subtest: projected detections clamp image edges and reject invalid boxes
+ok 44 - projected detections clamp image edges and reject invalid boxes
+  ---
+  duration_ms: 0.0493
+  type: 'test'
+  ...
+# Subtest: duplicate suppression keeps the strongest localized box without expanding into its surroundings
+ok 45 - duplicate suppression keeps the strongest localized box without expanding into its surroundings
+  ---
+  duration_ms: 0.218
+  type: 'test'
+  ...
+# Subtest: nearby different faces remain separate even when rectangles touch
+ok 46 - nearby different faces remain separate even when rectangles touch
+  ---
+  duration_ms: 0.0554
+  type: 'test'
+  ...
+# Subtest: low confidence cannot add a face and the region limit remains bounded
+ok 47 - low confidence cannot add a face and the region limit remains bounded
+  ---
+  duration_ms: 0.6937
+  type: 'test'
+  ...
+# Subtest: small-face clusters get a bounded, in-bounds refinement pass
+ok 48 - small-face clusters get a bounded, in-bounds refinement pass
+  ---
+  duration_ms: 0.187
+  type: 'test'
+  ...
+# Subtest: empty detections and close-up faces do not trigger unnecessary refinement
+ok 49 - empty detections and close-up faces do not trigger unnecessary refinement
+  ---
+  duration_ms: 0.047
+  type: 'test'
+  ...
+# Subtest: a smaller duplicate inside the same face is suppressed
+ok 50 - a smaller duplicate inside the same face is suppressed
+  ---
+  duration_ms: 0.0558
+  type: 'test'
+  ...
+# Subtest: proposal suppression retains alternate scales until confirmation
+ok 51 - proposal suppression retains alternate scales until confirmation
+  ---
+  duration_ms: 0.037
+  type: 'test'
+  ...
+# Subtest: confirmation crops use two context sizes and remain inside image boundaries
+ok 52 - confirmation crops use two context sizes and remain inside image boundaries
+  ---
+  duration_ms: 0.0871
+  type: 'test'
+  ...
+# Subtest: tiny confirmation crops retain sufficient context
+ok 53 - tiny confirmation crops retain sufficient context
+  ---
+  duration_ms: 0.0357
+  type: 'test'
+  ...
+# Subtest: weak repeated background evidence cannot confirm a face
+ok 54 - weak repeated background evidence cannot confirm a face
+  ---
+  duration_ms: 0.0974
+  type: 'test'
+  ...
+# Subtest: confirmation projects the refined location instead of retaining the inflated proposal
+ok 55 - confirmation projects the refined location instead of retaining the inflated proposal
+  ---
+  duration_ms: 0.0441
+  type: 'test'
+  ...
+# Subtest: a confident neighboring face cannot confirm an unrelated proposal
+ok 56 - a confident neighboring face cannot confirm an unrelated proposal
+  ---
+  duration_ms: 0.0308
+  type: 'test'
+  ...
+# Subtest: confirmation ignores invalid boxes and selects the strongest matching evidence
+ok 57 - confirmation ignores invalid boxes and selects the strongest matching evidence
+  ---
+  duration_ms: 0.0431
+  type: 'test'
+  ...
+# Subtest: editor follows the visible Safari viewport without fractional overflow
+ok 58 - editor follows the visible Safari viewport without fractional overflow
+  ---
+  duration_ms: 0.0553
   type: 'test'
   ...
 # Subtest: page magnification does not shrink the editor to a tiny zoomed viewport
-ok 55 - page magnification does not shrink the editor to a tiny zoomed viewport
+ok 59 - page magnification does not shrink the editor to a tiny zoomed viewport
   ---
-  duration_ms: 0.0256
+  duration_ms: 0.0267
   type: 'test'
   ...
 # Subtest: missing or invalid visual viewport values fall back safely
-ok 56 - missing or invalid visual viewport values fall back safely
+ok 60 - missing or invalid visual viewport values fall back safely
   ---
-  duration_ms: 0.0406
+  duration_ms: 0.0409
   type: 'test'
   ...
 # Subtest: empty or invalid coordinate entry does not silently move a mask to zero
-ok 57 - empty or invalid coordinate entry does not silently move a mask to zero
+ok 61 - empty or invalid coordinate entry does not silently move a mask to zero
   ---
-  duration_ms: 0.0678
+  duration_ms: 0.0751
   type: 'test'
   ...
 # Subtest: position entry respects the existing mask size at both image edges
-ok 58 - position entry respects the existing mask size at both image edges
+ok 62 - position entry respects the existing mask size at both image edges
   ---
-  duration_ms: 0.043
+  duration_ms: 0.0533
   type: 'test'
   ...
 # Subtest: size entry cannot create an empty mask or extend beyond the photo
-ok 59 - size entry cannot create an empty mask or extend beyond the photo
+ok 63 - size entry cannot create an empty mask or extend beyond the photo
   ---
-  duration_ms: 0.0412
+  duration_ms: 0.039
   type: 'test'
   ...
 # Subtest: decimal percentage editing retains subpixel-normalized placement without mutating a mask
-ok 60 - decimal percentage editing retains subpixel-normalized placement without mutating a mask
+ok 64 - decimal percentage editing retains subpixel-normalized placement without mutating a mask
   ---
-  duration_ms: 0.0345
+  duration_ms: 0.0348
   type: 'test'
   ...
 # Subtest: adding custom tags merges normalized duplicates without losing selected display
-ok 61 - adding custom tags merges normalized duplicates without losing selected display
+ok 65 - adding custom tags merges normalized duplicates without losing selected display
   ---
-  duration_ms: 0.0634
+  duration_ms: 0.0784
   type: 'test'
   ...
 # Subtest: a selected recommended tag can be removed and selected again
-ok 62 - a selected recommended tag can be removed and selected again
+ok 66 - a selected recommended tag can be removed and selected again
   ---
-  duration_ms: 0.1284
+  duration_ms: 0.1359
   type: 'test'
   ...
 # Subtest: adding an eleventh tag or malformed tag fails without discarding previous selections
-ok 63 - adding an eleventh tag or malformed tag fails without discarding previous selections
+ok 67 - adding an eleventh tag or malformed tag fails without discarding previous selections
   ---
-  duration_ms: 0.1243
+  duration_ms: 0.1337
   type: 'test'
   ...
 # Subtest: recommended choices deduplicate against custom tags without selecting new recommendations
-ok 64 - recommended choices deduplicate against custom tags without selecting new recommendations
+ok 68 - recommended choices deduplicate against custom tags without selecting new recommendations
   ---
-  duration_ms: 0.0613
+  duration_ms: 0.0687
   type: 'test'
   ...
 # Subtest: bulk OCR exclusion keeps corrections, identity, and source coordinates for restoration
-ok 65 - bulk OCR exclusion keeps corrections, identity, and source coordinates for restoration
+ok 69 - bulk OCR exclusion keeps corrections, identity, and source coordinates for restoration
   ---
-  duration_ms: 0.0934
+  duration_ms: 0.2169
   type: 'test'
   ...
 # Subtest: bulk inclusion caps at 100 while retaining overflow lines to choose later
-ok 66 - bulk inclusion caps at 100 while retaining overflow lines to choose later
+ok 70 - bulk inclusion caps at 100 while retaining overflow lines to choose later
   ---
-  duration_ms: 0.4359
+  duration_ms: 0.4759
   type: 'test'
   ...
 # Subtest: chip tags and compact OCR selection produce the same validated server packet
-ok 67 - chip tags and compact OCR selection produce the same validated server packet
+ok 71 - chip tags and compact OCR selection produce the same validated server packet
   ---
-  duration_ms: 0.1743
+  duration_ms: 0.1639
   type: 'test'
   ...
-1..67
-# tests 67
+# Subtest: scene grouping retains every frame without joining sessions or time windows
+ok 72 - scene grouping retains every frame without joining sessions or time windows
+  ---
+  duration_ms: 0.8965
+  type: 'test'
+  ...
+# Subtest: representative favors a recorded passage and all neighbors remain accessible
+ok 73 - representative favors a recorded passage and all neighbors remain accessible
+  ---
+  duration_ms: 0.1269
+  type: 'test'
+  ...
+# Subtest: frames without a time are not silently merged
+ok 74 - frames without a time are not silently merged
+  ---
+  duration_ms: 0.0753
+  type: 'test'
+  ...
+# Subtest: brief answer keeps the first complete sentence and leaves canonical text available
+ok 75 - brief answer keeps the first complete sentence and leaves canonical text available
+  ---
+  duration_ms: 0.0784
+  type: 'test'
+  ...
+# Subtest: operator review updates the shared track in every frame without changing other tracks
+ok 76 - operator review updates the shared track in every frame without changing other tracks
+  ---
+  duration_ms: 0.1643
+  type: 'test'
+  ...
+1..76
+# tests 76
 # suites 0
-# pass 67
+# pass 76
 # fail 0
 # cancelled 0
 # skipped 0
 # todo 0
-# duration_ms 105.6005
+# duration_ms 118.0854

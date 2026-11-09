@@ -1,0 +1,32 @@
+{
+  "api_calls": 0,
+  "real_http_tests": 15,
+  "files": [
+    {
+      "sha256": "aadb740017fc6677d61f937fb5db05643aa4865071e7c94ef8b6c831d9be0759",
+      "path": "evidence/private/detection-boxes/production-list.jpg"
+    },
+    {
+      "sha256": "63e22f724807193df076022a6497ac3b9becb076118fee02e377c36569969df4",
+      "path": "evidence/private/detection-boxes/production-detail.jpg"
+    },
+    {
+      "sha256": "82fc186370db43e32b26f9d7a8429a6b9fc138bb9b5a8c0c615a08994ff60493",
+      "path": "evidence/private/detection-boxes/production-annotated.jpg"
+    },
+    {
+      "sha256": "0519e053cf1034230e169127ec7fe475617ba27d25edeb92219f8a8da741a9c9",
+      "path": "evidence/private/detection-boxes/preview.jpg"
+    }
+  ],
+  "windows_web_tests": 76,
+  "release": "20261108222304c3b06f",
+  "verified_utc": "2026-11-08T22:24:25.3706780Z",
+  "original_media_preserved": true,
+  "django_tests": 250,
+  "pass": true,
+  "android_fixture": "evidence/private/ui-audit/20261108T221731926915",
+  "production_browser_verified": true,
+  "environment": "WSL backend, Windows Android WebView, PythonAnywhere production browser",
+  "android_small_webview_tests": 1
+}

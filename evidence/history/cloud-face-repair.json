@@ -1,0 +1,54 @@
+{
+  "pass": true,
+  "actual_frames_restored": 37,
+  "synthetic_frames_removed": 16,
+  "synthetic_sessions_removed": 8,
+  "synthetic_profiles_removed": 3,
+  "actual_track_reviews_preserved": true,
+  "posts_accounts_and_public_media_preserved": true,
+  "database_backup_created": true,
+  "old_private_images_retained": true,
+  "unknown_recording_dates_preserved": true,
+  "verified_utc": "2026-11-08T14:46:33.818161+00:00",
+  "environment": "PythonAnywhere via WSL official API client",
+  "production_verified": true,
+  "origin": "https://daejinha.pythonanywhere.com",
+  "release": "20261108140157857e4a",
+  "facts": {
+    "observed_tracks": 23,
+    "pending_tracks": 1,
+    "confirmed_tracks": 0,
+    "sampled_frames": 37,
+    "passages": 6,
+    "profiles": 2,
+    "sessions": 2,
+    "detection_posts": 4,
+    "unknown_date_frames": 37
+  },
+  "clean_image_hashes_verified": 37,
+  "anonymous_image_access_denied": true,
+  "face_previews": [
+    {
+      "id": "554f1553aee8e68d3a722c2453b3315ae9321926ffbeaf9c404486558c87d3e6",
+      "frame_index": 2,
+      "image_url": "/api/v1/history/images/554f1553aee8e68d3a722c2453b3315ae9321926ffbeaf9c404486558c87d3e6/"
+    },
+    {
+      "id": "a431cb40bc721784280fc7decf2a5ed1ad1104e08c29bce9db68a5f17823f827",
+      "frame_index": 3,
+      "image_url": "/api/v1/history/images/a431cb40bc721784280fc7decf2a5ed1ad1104e08c29bce9db68a5f17823f827/"
+    },
+    {
+      "id": "3d5dae288afde719e9632bd21b68300c128d26a14fe566817332d8e810b38a0e",
+      "frame_index": 4,
+      "image_url": "/api/v1/history/images/3d5dae288afde719e9632bd21b68300c128d26a14fe566817332d8e810b38a0e/"
+    },
+    {
+      "id": "b16ccb9aabf90926dac5a9f3e72e899124f6fcc75a747dce58c71c94b562191b",
+      "frame_index": 6,
+      "image_url": "/api/v1/history/images/b16ccb9aabf90926dac5a9f3e72e899124f6fcc75a747dce58c71c94b562191b/"
+    }
+  ],
+  "supersedes": "evidence/history/cloud-demo.json",
+  "edge_upload_uses_original_frame": true
+}

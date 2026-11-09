@@ -1,0 +1,107 @@
+{
+  "scope": "Notebook setup and local verification",
+  "date_kst": "2026-11-10",
+  "host": {
+    "windows_build": "26200.8037",
+    "architecture": "x64",
+    "cpu": "Intel Core i7-14650HX",
+    "android_sdk": "android-36",
+    "android_build_tools": "36.1.0",
+    "apk_signature": "APK Signature Scheme v2 verified",
+    "android_device_run": "not performed"
+  },
+  "wsl": {
+    "distribution": "Ubuntu",
+    "release": "24.04.2 LTS",
+    "wsl_version": "2.4.13.0",
+    "kernel": "5.15.167.4-microsoft-standard-WSL2",
+    "python": "3.12.3",
+    "venv": "~/.venvs/mobile_web_service_02",
+    "source": "/mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02"
+  },
+  "setup": {
+    "launcher": ".\\laptop\\Start-Laptop.ps1 -Action Setup -Distribution Ubuntu",
+    "launcher_result": "sudo password required for apt-get update",
+    "user_install_commands": [
+      "python3 -m venv \"$HOME/.venvs/mobile_web_service_02\"",
+      "PYTHON_EXECUTABLE=python3 bash tools/setup_edge.sh",
+      "\"$HOME/.venvs/mobile_web_service_02/bin/python\" -m pip install -r YOLOv5/requirements-person.txt",
+      "\"$HOME/.venvs/mobile_web_service_02/bin/python\" -m pip check"
+    ],
+    "pip_check": "No broken requirements found.",
+    "opencv_qt_xcb_missing_libraries": 0
+  },
+  "verify": {
+    "command": ".\\laptop\\Start-Laptop.ps1 -Action Verify -Distribution Ubuntu",
+    "pass": true,
+    "verified_files": 615,
+    "profiles": 34,
+    "reference_images": 73,
+    "evidence": "verification.json"
+  },
+  "baseline_image": {
+    "command": "\"$HOME/.venvs/mobile_web_service_02/bin/python\" tools/run_edge.py --baseline --source \"$PWD/YOLOv5/data/images/bus.jpg\" --device cpu --project \"$PWD/.local/laptop/runs\" --name baseline-bus",
+    "people": 4,
+    "buses": 1,
+    "output": "runs/baseline-bus/bus.jpg",
+    "log": "startup-baseline.log"
+  },
+  "video_sample": {
+    "command": "env -u DISPLAY -u WAYLAND_DISPLAY OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 timeout 240s bash laptop/run.sh Sample",
+    "frames_processed": 240,
+    "accepted_gallery_images": 73,
+    "output": "runs/sample/walking.mp4",
+    "log": "startup-sample.log"
+  },
+  "django": {
+    "commands": [
+      "python PhotoBlogServer/manage.py check",
+      "python PhotoBlogServer/manage.py makemigrations --check --dry-run",
+      "python -m unittest discover -s laptop -p 'test_*.py' -v",
+      "cd PhotoBlogServer && python manage.py test --noinput"
+    ],
+    "venv_tests_passed": 9,
+    "django_tests_passed": 250,
+    "initial_failure": "HISTORY_MEDIA_ROOT in the test environment overrode the default path being tested. Full rerun passed after unsetting it.",
+    "logs": [
+      "startup-local-checks.log",
+      "startup-django-tests.log",
+      "startup-django-retest.log"
+    ]
+  },
+  "local_http": {
+    "commands": [
+      "python PhotoBlogServer/manage.py migrate --noinput",
+      "python PhotoBlogServer/manage.py runserver 127.0.0.1:8020 --noreload"
+    ],
+    "sqlite_db": "db.sqlite3",
+    "routes": {
+      "/api_root/": 200,
+      "/api_root/Post/": 200,
+      "/photos/": 200
+    },
+    "log": "startup-http.log"
+  },
+  "webcam": {
+    "command": "bash laptop/run.sh Webcam 0",
+    "windows_usb_camera": "ACER HD User Facing (0408:403D)",
+    "usbipd_win_installed": false,
+    "kernel_media_support": false,
+    "kernel_usbip_vhci": true,
+    "video0_present": false,
+    "actual_camera_frames": 0,
+    "log": "startup-webcam.log"
+  },
+  "git_readonly_compare": {
+    "remote_main": "262418c9e16187042755770f7c6ba1d2e3489373",
+    "remote_files": 475,
+    "identical_files": 296,
+    "raw_byte_differences": 78,
+    "remote_only_files": 101,
+    "bundle_only_files": 241,
+    "report_differs": true,
+    "submitted": false
+  },
+  "production_requests": 0,
+  "paid_api_calls": 0
+}

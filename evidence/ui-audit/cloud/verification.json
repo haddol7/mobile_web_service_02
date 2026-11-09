@@ -1,0 +1,49 @@
+{
+  "verified_utc": "2026-11-08T14:12:35.1558191Z",
+  "environment": "Windows Android emulator and actual Chrome against PythonAnywhere",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "production_verified": true,
+  "native_tests": 2,
+  "native_test_pass": true,
+  "native_read_only": true,
+  "posts": 4,
+  "images_hash_checked": 4,
+  "images_rendered": 4,
+  "yolo_post_id": 8,
+  "yolo_image_sha256": "3e67204a050fe43331737e214935368bc4c956081df37312e6d3475c21ad4591",
+  "browser_pages": [
+    "/",
+    "/detections/",
+    "/post/8/",
+    "/api_root/"
+  ],
+  "screenshots": [
+    {
+      "file": "content-cloud-sync.png",
+      "sha256": "89b9a9802a0f54346683ea635843893ab01a77a4dda95f743ce476e06f449a8e"
+    },
+    {
+      "file": "yolo-native-detail.png",
+      "sha256": "c87ccaa9737ee50ef51a300a78a9f9294e77328fbdb73730bd5b67051f6cea08"
+    },
+    {
+      "file": "mobile-web-dashboard.png",
+      "sha256": "ca3a3a71dd0e1d872948b87e51c689bdc6e3ec6b75cff04d08e3c484784c967a"
+    },
+    {
+      "file": "mobile-web-list.png",
+      "sha256": "d65ba3529399ddc830a889b81069a9d2c9ad08de7441f84d97d663dcd60d4218"
+    },
+    {
+      "file": "mobile-web-detail.png",
+      "sha256": "4c10cc0bf024d7ad123372a9f86f2757d8da09f8e33c62c2026782158ac33f7f"
+    },
+    {
+      "file": "api-root-browser.png",
+      "sha256": "adb2fbab87f7d292ed720093417c1e1faeb969eb142b4e68bd0dd9315e2bcb61"
+    }
+  ],
+  "pass": true,
+  "release": "20261108140157857e4a",
+  "visual_review_completed": true
+}

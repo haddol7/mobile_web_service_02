@@ -1,0 +1,19 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T20:14:39.145827+00:00",
+  "existing_documents": 31,
+  "existing_index_current": true,
+  "facts": {
+    "observed_tracks": 107,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 210,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 31,
+    "detection_posts": 0,
+    "unknown_date_frames": 210
+  },
+  "actual_embedding_api_calls": 0,
+  "actual_llm_api_calls": 0
+}

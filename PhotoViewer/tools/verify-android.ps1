@@ -150,7 +150,7 @@ function Get-SdkRoot {
             if (Test-Path -LiteralPath $value -PathType Container) { return [IO.Path]::GetFullPath($value) }
         }
     }
-    foreach ($candidate in @($env:ANDROID_HOME, $env:ANDROID_SDK_ROOT, (Join-Path $env:LOCALAPPDATA 'Android\Sdk'))) {
+    foreach ($candidate in @($env:ANDROID_HOME, $env:ANDROID_SDK_ROOT, (Join-Path $env:LOCALAPPDATA 'Android\Sdk'), (Join-Path $env:LOCALAPPDATA 'Programs\Android\Sdk'))) {
         if ($candidate -and (Test-Path -LiteralPath $candidate -PathType Container)) { return [IO.Path]::GetFullPath($candidate) }
     }
     throw 'Android SDK was not found. Configure Android Studio/local.properties first.'
@@ -218,6 +218,8 @@ try {
     $taskJavaHome = $env:JAVA_HOME
     $studioJbr = Join-Path $env:ProgramFiles 'Android\Android Studio\jbr'
     if (Test-Path -LiteralPath (Join-Path $studioJbr 'bin\java.exe') -PathType Leaf) { $taskJavaHome = $studioJbr }
+    $userStudioJbr = Join-Path $env:LOCALAPPDATA 'Programs\Android\android-studio\jbr'
+    if ((-not $taskJavaHome -or -not (Test-Path -LiteralPath (Join-Path $taskJavaHome 'bin\java.exe') -PathType Leaf)) -and (Test-Path -LiteralPath (Join-Path $userStudioJbr 'bin\java.exe') -PathType Leaf)) { $taskJavaHome = $userStudioJbr }
     if (-not $taskJavaHome -or -not (Test-Path -LiteralPath (Join-Path $taskJavaHome 'bin\java.exe') -PathType Leaf)) { throw 'JDK was not found. Configure JAVA_HOME or install Android Studio.' }
     $env:JAVA_HOME = $taskJavaHome
     $taskSdk = Get-SdkRoot

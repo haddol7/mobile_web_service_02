@@ -1,40 +1,40 @@
-detect: weights=['/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/yolov5s.pt'], source=/tmp/assessment02-video-zh795tgd/presence.avi, data=/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=cpu, view_img=False, save_txt=False, save_conf=False, save_crop=False, nosave=True, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=/mnt/c/Users/1/mobile_web_service/common02/evidence/person-libraries/upload-flow, name=detected-20261107T233059137218, exist_ok=True, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1, server=http://127.0.0.1:46795, person_tracking=True, count_line=[0.5, 0.0, 0.5, 1.0], face_references=None, face_stride=10, face_model=buffalo_s, face_model_root=~/.insightface
+detect: weights=['/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/yolov5s.pt'], source=/tmp/assessment02-video-p_krjb3x/presence.avi, data=/mnt/c/Users/1/mobile_web_service/common02/YOLOv5/data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=cpu, view_img=False, save_txt=False, save_conf=False, save_crop=False, nosave=True, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=/mnt/c/Users/1/mobile_web_service/common02/evidence/person-libraries/upload-flow, name=detected-20261107T234652646882, exist_ok=True, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1, server=http://127.0.0.1:33675, person_tracking=True, count_line=[0.5, 0.0, 0.5, 1.0], face_references=None, face_stride=10, face_model=buffalo_l, face_model_root=~/.insightface
 YOLOv5 🚀 2026-11-5 Python-3.12.15 torch-2.6.0+cpu CPU
 
 Fusing layers... 
 YOLOv5s summary: 213 layers, 7225885 parameters, 0 gradients, 16.4 GFLOPs
-video 1/1 (1/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 58.0ms
-video 1/1 (2/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 47.3ms
-video 1/1 (3/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 47.6ms
-video 1/1 (4/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 43.4ms
-video 1/1 (5/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 47.9ms
-video 1/1 (6/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 48.7ms
+video 1/1 (1/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 62.1ms
+video 1/1 (2/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 48.9ms
+video 1/1 (3/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 45.5ms
+video 1/1 (4/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 49.1ms
+video 1/1 (5/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 42.6ms
+video 1/1 (6/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 46.8ms
 Django post 1 registered: person, bus
-video 1/1 (7/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 42.0ms
-video 1/1 (8/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.6ms
-video 1/1 (9/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.0ms
-video 1/1 (10/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 45.5ms
-video 1/1 (11/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 45.6ms
-video 1/1 (12/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 43.0ms
-video 1/1 (13/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 44.4ms
-video 1/1 (14/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 43.5ms
-video 1/1 (15/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 49.1ms
-video 1/1 (16/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.1ms
-video 1/1 (17/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 47.3ms
-video 1/1 (18/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 45.1ms
-video 1/1 (19/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 44.5ms
-video 1/1 (20/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 42.8ms
-video 1/1 (21/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 44.4ms
-video 1/1 (22/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 44.5ms
-video 1/1 (23/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 43.2ms
-video 1/1 (24/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 (no detections), 48.9ms
+video 1/1 (7/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 45.5ms
+video 1/1 (8/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 47.3ms
+video 1/1 (9/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 45.7ms
+video 1/1 (10/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 46.0ms
+video 1/1 (11/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 42.7ms
+video 1/1 (12/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 46.1ms
+video 1/1 (13/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 41.7ms
+video 1/1 (14/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 45.5ms
+video 1/1 (15/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 41.3ms
+video 1/1 (16/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 41.7ms
+video 1/1 (17/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 42.4ms
+video 1/1 (18/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 35.7ms
+video 1/1 (19/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 39.6ms
+video 1/1 (20/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 41.3ms
+video 1/1 (21/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 40.8ms
+video 1/1 (22/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 41.9ms
+video 1/1 (23/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 43.8ms
+video 1/1 (24/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 (no detections), 48.1ms
 Django post 2 registered: person, bus
-video 1/1 (25/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 48.5ms
-video 1/1 (26/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.0ms
-video 1/1 (27/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.2ms
-video 1/1 (28/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 46.2ms
-video 1/1 (29/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 45.3ms
-video 1/1 (30/30) /tmp/assessment02-video-zh795tgd/presence.avi: 640x480 4 persons, 1 bus, 50.2ms
-Speed: 0.3ms pre-process, 46.3ms inference, 0.7ms NMS per image at shape (1, 3, 640, 640)
+video 1/1 (25/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 40.1ms
+video 1/1 (26/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 40.4ms
+video 1/1 (27/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 40.3ms
+video 1/1 (28/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 41.0ms
+video 1/1 (29/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 41.3ms
+video 1/1 (30/30) /tmp/assessment02-video-p_krjb3x/presence.avi: 640x480 4 persons, 1 bus, 37.8ms
+Speed: 0.3ms pre-process, 43.8ms inference, 0.6ms NMS per image at shape (1, 3, 640, 640)
 
 Exit code: 0

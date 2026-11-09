@@ -6,8 +6,14 @@ router = DefaultRouter()
 router.register("Post", views.PostViewSet)
 
 urlpatterns = [
+    path("", views.dashboard, name="dashboard"),
+    path("people/", views.people_page, name="people"),
+    path("people/<str:profile_key>/", views.person_detail, name="person_detail"),
+    path("questions/", views.question_page, name="questions"),
+    path("history/", views.history_page, name="history"),
     path("dev/content-check/", views.content_check, name="content_check"),
-    path("", views.post_list, name="post_list"),
+    path("detections/", views.history_page, name="detections"),
+    path("photos/", views.post_list, name="post_list"),
     path("post/new/", views.post_new, name="post_new"),
     path("post/<int:pk>/", views.post_detail, name="post_detail"),
     path("post/<int:pk>/edit/", views.post_edit, name="post_edit"),

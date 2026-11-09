@@ -14,9 +14,11 @@ import cv2
 import numpy as np
 from norfair import Detection, Tracker
 import supervision as sv
+from face_features import (LEGACY_POLICY, load_policy, verify_policy_model, reference_face,
+                           eligible_faces, feature, rank_references)
 
 
-def create_face_app(model='buffalo_s', root='~/.insightface'):
+def create_face_app(model='buffalo_l', root='~/.insightface'):
     import onnxruntime as ort
     from insightface.app import FaceAnalysis
 
@@ -35,16 +37,28 @@ def create_face_app(model='buffalo_s', root='~/.insightface'):
 
 class FaceReferences:
     """Use the SDK's pretrained embeddings for explicitly supplied references."""
-    def __init__(self, manifest, *, model='buffalo_s', root='~/.insightface',
-                 threshold=0.55, margin=0.08):
+    def __init__(self, manifest, *, model='buffalo_l', root='~/.insightface',
+                 threshold=None, margin=None, embedding_mode=None, legacy_registration=False):
+        explicit=threshold is not None and margin is not None and embedding_mode is not None
+        policy=dict(LEGACY_POLICY) if explicit else load_policy(model)
+        threshold=policy["threshold"] if threshold is None else threshold
+        margin=policy["margin"] if margin is None else margin
+        embedding_mode=policy["embedding_mode"] if embedding_mode is None else embedding_mode
         if not 0 <= threshold <= 1 or not 0 <= margin <= 1:
             raise ValueError('Invalid experimental face thresholds')
+        if embedding_mode not in {"single","flip_mean"}:
+            raise ValueError("Unsupported embedding mode")
         manifest = Path(manifest).resolve()
         content = json.loads(manifest.read_text(encoding='utf-8'))
         if content.get('schema_version') != 1 or not content.get('profiles'):
             raise ValueError('Expected schema_version 1 and nonempty profiles')
         self.app = create_face_app(model, root)
+        verify_policy_model(self.app,policy)
+        self.model = model
+        self.profile_labels = {}
         self.threshold, self.margin = threshold, margin
+        self.embedding_mode=embedding_mode
+        self.policy={**policy,"threshold":threshold,"margin":margin,"embedding_mode":embedding_mode}
         self.references = {}
         self.rejected_references = []
         for profile in content['profiles']:
@@ -52,34 +66,34 @@ class FaceReferences:
             if not isinstance(identity, str) or not identity or identity in self.references:
                 raise ValueError('Reference IDs must be unique nonempty strings')
             vectors = []
-            for filename in profile['images']:
+            for entry in profile['images']:
+                if isinstance(entry,str):
+                    filename,target=entry,None
+                elif isinstance(entry,dict) and set(entry)<= {"image","target"} and "image" in entry:
+                    filename,target=entry["image"],entry.get("target")
+                else:
+                    raise ValueError("Invalid reference image entry")
                 image = cv2.imread(str(manifest.parent / filename))
                 if image is None:
                     raise ValueError('Reference image could not be read')
                 faces = self.app.get(image)
-                if len(faces) != 1:
+                selected=(faces[0] if len(faces)==1 else None) if legacy_registration else reference_face(faces,image.shape,target)
+                if selected is None:
                     self.rejected_references.append({'profile_id':identity,'image':filename,
-                        'reason':'no_face' if not faces else 'multiple_faces'})
+                        'reason':'no_face' if not faces else 'multiple_or_unselected_faces'})
                     continue
-                vector = np.asarray(faces[0].normed_embedding, dtype=np.float32)
-                if not np.isfinite(vector).all() or np.linalg.norm(vector) < 0.99:
-                    raise ValueError('Reference feature is invalid')
+                vector=feature(self.app,selected,image,embedding_mode)
                 vectors.append(vector)
             if not vectors:
                 raise ValueError('Each profile requires at least one reference image')
             self.references[identity] = np.stack(vectors)
+            self.profile_labels[identity] = str(profile.get("name") or identity)
         self.registration = {'profiles':len(self.references),
                              'accepted_images':sum(len(value) for value in self.references.values()),
                              'rejected_images':len(self.rejected_references)}
 
     def match_embedding(self, vector):
-        vector = np.asarray(vector, dtype=np.float32)
-        norm = np.linalg.norm(vector)
-        if not np.isfinite(vector).all() or norm == 0:
-            raise ValueError('Invalid face feature')
-        vector = vector / norm
-        ranked = sorted(((float((samples @ vector).max()), identity)
-                         for identity, samples in self.references.items()), reverse=True)
+        ranked=rank_references(self.references,vector)
         score, identity = ranked[0]
         gap = score - ranked[1][0] if len(ranked) > 1 else score + 1.0
         accepted = score >= self.threshold and gap >= self.margin
@@ -89,12 +103,10 @@ class FaceReferences:
 
     def analyze(self, frame):
         records = []
-        for face in self.app.get(frame):
+        for face in eligible_faces(self.app.get(frame)):
             box = np.asarray(face.bbox, dtype=float)
-            if min(box[2] - box[0], box[3] - box[1]) < 20:
-                continue
             records.append({'bbox': box.tolist(), 'detection_score': float(face.det_score),
-                            **self.match_embedding(face.normed_embedding)})
+                            **self.match_embedding(feature(self.app,face,frame,self.embedding_mode))})
         return records
 
 
@@ -187,7 +199,7 @@ class PersonTracker:
         if self.zone is not None:
             output = self.line_annotator.annotate(frame=output, line_counter=self.zone)
         record = {'session_id': self.session_id, 'frame_index': int(frame_index),
-                  'video_seconds': video_seconds,
+                  'video_seconds': video_seconds, 'image_size': [int(frame.shape[1]), int(frame.shape[0])],
                   'processed_at_utc': datetime.now(timezone.utc).isoformat(),
                   'tracks': [{'track_id': int(identity), 'bbox': box.tolist()}
                              for identity, box in zip(ids, xyxy)],

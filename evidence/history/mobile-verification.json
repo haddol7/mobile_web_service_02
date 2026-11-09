@@ -1,0 +1,36 @@
+{
+  "production_verified": false,
+  "actual_native_and_webview": true,
+  "grounded_question_evidence_verified": true,
+  "actual_llm_generation_verified": true,
+  "horizontal_overflow": false,
+  "tests": 2,
+  "pass": true,
+  "first_viewport_multiple_cards": true,
+  "environment": "Windows Android API35 emulator with WSL Django",
+  "verified_utc": "2026-11-08T10:46:27.6237330Z",
+  "device": "emulator-5554",
+  "screenshots": [
+    {
+      "path": "evidence/private/history/20261108T102103712731/screenshots/history-native-list.png",
+      "sha256": "3556c97a5ebc7de2e2c242b4931f9db7525392fac5a55b9b0d9da716844d2caf"
+    },
+    {
+      "path": "evidence/private/history/20261108T102103712731/screenshots/history-native-question.png",
+      "sha256": "ee05040bcb2894c26801fac78b067f512640f02269777493281d44230e308fde"
+    },
+    {
+      "path": "evidence/private/history/20261108T102103712731/screenshots/history-mobile-web-list.png",
+      "sha256": "fe673b7458fd0288f8570a22c2a24d6428bc699c7a4590fce20a59a65a55a9ca"
+    },
+    {
+      "path": "evidence/private/history/20261108T102103712731/screenshots/history-mobile-web-detail.png",
+      "sha256": "b1795d0a5c63395795b0761a2a3e5f4f6502c1665bf25e55612b871e4aa1a506"
+    },
+    {
+      "path": "evidence/private/history/20261108T102103712731/screenshots/history-mobile-web-question.png",
+      "sha256": "5ed99e483acc9dabc0197f61c9efbe25ca1439e5873534865e255b29f34d429c"
+    }
+  ],
+  "detail_controls_fit": true
+}

@@ -1,0 +1,14 @@
+{
+  "started_utc": "2026-11-07T23:46:59.107492+00:00",
+  "origin": "http://127.0.0.1:33675",
+  "baseline": {
+    "2": {
+      "record_sha256": "4b09b9b1416dda8e47d594758b084f3367e173464025faf45c5e3010771a1f82",
+      "image_sha256": "063f69498980fdde47f09541ea860ef1289651d2de2fc7ac1b16b95a945c9000"
+    },
+    "1": {
+      "record_sha256": "e4e1d058406d2fe1186d4cd942fa3ebfde32f8ad70aa350b2e0c61f890124f98",
+      "image_sha256": "268c25fb0abfa44a2bd98c13727eee9288c0a021e6030e2cc72e582bf27848b3"
+    }
+  }
+}

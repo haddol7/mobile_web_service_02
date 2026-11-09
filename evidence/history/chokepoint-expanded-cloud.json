@@ -1,0 +1,400 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T20:20:55.014161+00:00",
+  "environment": "WSL against PythonAnywhere",
+  "production_verified": true,
+  "new_recordings": 4,
+  "selected_observation_images": 60,
+  "newly_created_images": 60,
+  "previous_facts": {
+    "observed_tracks": 107,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 210,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 31,
+    "detection_posts": 0,
+    "unknown_date_frames": 210
+  },
+  "current_facts": {
+    "observed_tracks": 171,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 270,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 35,
+    "detection_posts": 0,
+    "unknown_date_frames": 270
+  },
+  "cases": [
+    {
+      "camera": "P1E_S2_C2",
+      "session": "389f718334ff5bfaafa8a0e787ca4beb",
+      "label": "출입구 1 / 입장 보행 / 구간 2",
+      "selected_frames": 14,
+      "selection": "time-spread linked-face scenes when available; not an accuracy sample",
+      "full_inference_candidate_faces": 0,
+      "published_frames_have_registered_candidates": false,
+      "mapping": [
+        {
+          "analyzed_frame_index": 16,
+          "replay_seconds": 7.433333333333334,
+          "original_image": "00000524.jpg"
+        },
+        {
+          "analyzed_frame_index": 29,
+          "replay_seconds": 13.5,
+          "original_image": "00000845.jpg"
+        },
+        {
+          "analyzed_frame_index": 35,
+          "replay_seconds": 16.3,
+          "original_image": "00001014.jpg"
+        },
+        {
+          "analyzed_frame_index": 47,
+          "replay_seconds": 21.9,
+          "original_image": "00001351.jpg"
+        },
+        {
+          "analyzed_frame_index": 64,
+          "replay_seconds": 29.833333333333332,
+          "original_image": "00001850.jpg"
+        },
+        {
+          "analyzed_frame_index": 65,
+          "replay_seconds": 30.3,
+          "original_image": "00001864.jpg"
+        },
+        {
+          "analyzed_frame_index": 105,
+          "replay_seconds": 48.96666666666667,
+          "original_image": "00002703.jpg"
+        },
+        {
+          "analyzed_frame_index": 129,
+          "replay_seconds": 60.166666666666664,
+          "original_image": "00003476.jpg"
+        },
+        {
+          "analyzed_frame_index": 135,
+          "replay_seconds": 62.96666666666667,
+          "original_image": "00003631.jpg"
+        },
+        {
+          "analyzed_frame_index": 136,
+          "replay_seconds": 63.43333333333333,
+          "original_image": "00003645.jpg"
+        },
+        {
+          "analyzed_frame_index": 143,
+          "replay_seconds": 66.7,
+          "original_image": "00003799.jpg"
+        },
+        {
+          "analyzed_frame_index": 150,
+          "replay_seconds": 69.96666666666667,
+          "original_image": "00003974.jpg"
+        },
+        {
+          "analyzed_frame_index": 155,
+          "replay_seconds": 72.3,
+          "original_image": "00004088.jpg"
+        },
+        {
+          "analyzed_frame_index": 168,
+          "replay_seconds": 78.36666666666666,
+          "original_image": "00004375.jpg"
+        }
+      ],
+      "cloud_samples": 14,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "d36d044df08137c63689e9a68a27a3a3fa7951a5c4b0d46c29d315bd32579d6b",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P1L_S1_C1",
+      "session": "1771366061a0579d8d1c803b15b37831",
+      "label": "출입구 1 / 퇴장 보행 / 구간 1",
+      "selected_frames": 14,
+      "selection": "time-spread linked-face scenes when available; not an accuracy sample",
+      "full_inference_candidate_faces": 0,
+      "published_frames_have_registered_candidates": false,
+      "mapping": [
+        {
+          "analyzed_frame_index": 7,
+          "replay_seconds": 4.633333333333334,
+          "original_image": "00000139.jpg"
+        },
+        {
+          "analyzed_frame_index": 24,
+          "replay_seconds": 15.966666666666667,
+          "original_image": "00000541.jpg"
+        },
+        {
+          "analyzed_frame_index": 30,
+          "replay_seconds": 19.966666666666665,
+          "original_image": "00000698.jpg"
+        },
+        {
+          "analyzed_frame_index": 38,
+          "replay_seconds": 25.3,
+          "original_image": "00000870.jpg"
+        },
+        {
+          "analyzed_frame_index": 45,
+          "replay_seconds": 29.966666666666665,
+          "original_image": "00001039.jpg"
+        },
+        {
+          "analyzed_frame_index": 51,
+          "replay_seconds": 33.96666666666667,
+          "original_image": "00001203.jpg"
+        },
+        {
+          "analyzed_frame_index": 78,
+          "replay_seconds": 51.96666666666667,
+          "original_image": "00002052.jpg"
+        },
+        {
+          "analyzed_frame_index": 99,
+          "replay_seconds": 65.96666666666667,
+          "original_image": "00002774.jpg"
+        },
+        {
+          "analyzed_frame_index": 120,
+          "replay_seconds": 79.96666666666667,
+          "original_image": "00003470.jpg"
+        },
+        {
+          "analyzed_frame_index": 127,
+          "replay_seconds": 84.63333333333334,
+          "original_image": "00003647.jpg"
+        },
+        {
+          "analyzed_frame_index": 148,
+          "replay_seconds": 98.63333333333334,
+          "original_image": "00004883.jpg"
+        },
+        {
+          "analyzed_frame_index": 160,
+          "replay_seconds": 106.63333333333334,
+          "original_image": "00005243.jpg"
+        },
+        {
+          "analyzed_frame_index": 162,
+          "replay_seconds": 107.96666666666667,
+          "original_image": "00005283.jpg"
+        },
+        {
+          "analyzed_frame_index": 177,
+          "replay_seconds": 117.96666666666667,
+          "original_image": "00005732.jpg"
+        }
+      ],
+      "cloud_samples": 14,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "c85294b664086a86bf4d7e4ebbdf67e0774336b59a094d7d839172757d46bbd7",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P2E_S5_C2",
+      "session": "4236ddeb92a35d68a40feceee4cef53c",
+      "label": "출입구 2 / 혼잡 입장 / 구간 5",
+      "selected_frames": 16,
+      "selection": "time-spread linked-face scenes when available; not an accuracy sample",
+      "full_inference_candidate_faces": 0,
+      "published_frames_have_registered_candidates": false,
+      "mapping": [
+        {
+          "analyzed_frame_index": 13,
+          "replay_seconds": 4.3,
+          "original_image": "00000165.jpg"
+        },
+        {
+          "analyzed_frame_index": 20,
+          "replay_seconds": 6.633333333333334,
+          "original_image": "00000235.jpg"
+        },
+        {
+          "analyzed_frame_index": 22,
+          "replay_seconds": 7.3,
+          "original_image": "00000255.jpg"
+        },
+        {
+          "analyzed_frame_index": 28,
+          "replay_seconds": 9.3,
+          "original_image": "00000315.jpg"
+        },
+        {
+          "analyzed_frame_index": 32,
+          "replay_seconds": 10.633333333333333,
+          "original_image": "00000355.jpg"
+        },
+        {
+          "analyzed_frame_index": 35,
+          "replay_seconds": 11.633333333333333,
+          "original_image": "00000385.jpg"
+        },
+        {
+          "analyzed_frame_index": 41,
+          "replay_seconds": 13.633333333333333,
+          "original_image": "00000445.jpg"
+        },
+        {
+          "analyzed_frame_index": 42,
+          "replay_seconds": 13.966666666666667,
+          "original_image": "00000455.jpg"
+        },
+        {
+          "analyzed_frame_index": 50,
+          "replay_seconds": 16.633333333333333,
+          "original_image": "00000535.jpg"
+        },
+        {
+          "analyzed_frame_index": 51,
+          "replay_seconds": 16.966666666666665,
+          "original_image": "00000545.jpg"
+        },
+        {
+          "analyzed_frame_index": 57,
+          "replay_seconds": 18.966666666666665,
+          "original_image": "00000605.jpg"
+        },
+        {
+          "analyzed_frame_index": 60,
+          "replay_seconds": 19.966666666666665,
+          "original_image": "00000635.jpg"
+        },
+        {
+          "analyzed_frame_index": 64,
+          "replay_seconds": 21.3,
+          "original_image": "00000675.jpg"
+        },
+        {
+          "analyzed_frame_index": 70,
+          "replay_seconds": 23.3,
+          "original_image": "00000735.jpg"
+        },
+        {
+          "analyzed_frame_index": 72,
+          "replay_seconds": 23.966666666666665,
+          "original_image": "00000755.jpg"
+        },
+        {
+          "analyzed_frame_index": 79,
+          "replay_seconds": 26.3,
+          "original_image": "00000825.jpg"
+        }
+      ],
+      "cloud_samples": 16,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "88cdc772bbb0b497bf0f401fc0cf61332c32fc1977856199cbc9de5f60a6882c",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P2L_S5_C2",
+      "session": "3a7647d8e9825ac48523cdacb2358350",
+      "label": "출입구 2 / 혼잡 퇴장 / 구간 5",
+      "selected_frames": 16,
+      "selection": "time-spread linked-face scenes when available; not an accuracy sample",
+      "full_inference_candidate_faces": 0,
+      "published_frames_have_registered_candidates": false,
+      "mapping": [
+        {
+          "analyzed_frame_index": 14,
+          "replay_seconds": 4.633333333333334,
+          "original_image": "00000897.jpg"
+        },
+        {
+          "analyzed_frame_index": 21,
+          "replay_seconds": 6.966666666666667,
+          "original_image": "00000967.jpg"
+        },
+        {
+          "analyzed_frame_index": 23,
+          "replay_seconds": 7.633333333333334,
+          "original_image": "00000987.jpg"
+        },
+        {
+          "analyzed_frame_index": 27,
+          "replay_seconds": 8.966666666666667,
+          "original_image": "00001027.jpg"
+        },
+        {
+          "analyzed_frame_index": 31,
+          "replay_seconds": 10.3,
+          "original_image": "00001067.jpg"
+        },
+        {
+          "analyzed_frame_index": 34,
+          "replay_seconds": 11.3,
+          "original_image": "00001097.jpg"
+        },
+        {
+          "analyzed_frame_index": 40,
+          "replay_seconds": 13.3,
+          "original_image": "00001157.jpg"
+        },
+        {
+          "analyzed_frame_index": 41,
+          "replay_seconds": 13.633333333333333,
+          "original_image": "00001167.jpg"
+        },
+        {
+          "analyzed_frame_index": 47,
+          "replay_seconds": 15.633333333333333,
+          "original_image": "00001227.jpg"
+        },
+        {
+          "analyzed_frame_index": 48,
+          "replay_seconds": 15.966666666666667,
+          "original_image": "00001237.jpg"
+        },
+        {
+          "analyzed_frame_index": 54,
+          "replay_seconds": 17.966666666666665,
+          "original_image": "00001297.jpg"
+        },
+        {
+          "analyzed_frame_index": 57,
+          "replay_seconds": 18.966666666666665,
+          "original_image": "00001327.jpg"
+        },
+        {
+          "analyzed_frame_index": 61,
+          "replay_seconds": 20.3,
+          "original_image": "00001367.jpg"
+        },
+        {
+          "analyzed_frame_index": 65,
+          "replay_seconds": 21.633333333333333,
+          "original_image": "00001407.jpg"
+        },
+        {
+          "analyzed_frame_index": 67,
+          "replay_seconds": 22.3,
+          "original_image": "00001427.jpg"
+        },
+        {
+          "analyzed_frame_index": 74,
+          "replay_seconds": 24.633333333333333,
+          "original_image": "00001497.jpg"
+        }
+      ],
+      "cloud_samples": 16,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "18909b740dd52147878a66ccfc7cc4bc51182a47634523cf86644d29eeb82ea7",
+      "anonymous_image_denied": true
+    }
+  ],
+  "existing_posts_preserved": true,
+  "existing_chats_preserved": true,
+  "duplicate_replay_created_new_frame": false,
+  "original_capture_dates_invented": false,
+  "identities_automatically_confirmed": false,
+  "actual_embedding_api_calls": 0,
+  "actual_llm_api_calls": 0
+}

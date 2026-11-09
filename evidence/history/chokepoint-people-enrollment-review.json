@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "profiles": 29,
+  "stills": 58,
+  "sha256": "71177521c611fd4a7489dcbb0029f1525299a3b6c4a938fdd1dad05cfbe459a4",
+  "path": "evidence/private/cctv-walking/people/enrollment-review.jpg",
+  "purpose": "All enrollment portrait pairs with official source subject IDs; not query input",
+  "visually_reviewed_all_portrait_pairs": true,
+  "real_names_inferred": false
+}

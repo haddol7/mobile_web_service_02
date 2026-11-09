@@ -1,9 +1,9 @@
 {
-  "reviewed_utc": "2026-11-05T11:31:34.798652+00:00",
-  "report_sha256": "109c0a951f8cc80f5bdcfd3a70ea15f125ba2c01e99b45f8cfee44ef05016737",
+  "reviewed_utc": "2026-11-09T17:03:20.758271+00:00",
+  "report_sha256": "c3103d197e4d4171772d7f68e97fef1f1dce37ea3f6b28c56a1c661ec720a11e",
   "checks": [
     {
-      "check": "requirement_columns_preserved",
+      "check": "source_requirement_columns_preserved",
       "pass": true
     },
     {
@@ -11,11 +11,7 @@
       "pass": true
     },
     {
-      "check": "student_identity",
-      "pass": true
-    },
-    {
-      "check": "draft_status_visible",
+      "check": "identity_and_date",
       "pass": true
     },
     {
@@ -31,10 +27,6 @@
       "pass": true
     },
     {
-      "check": "caption_1",
-      "pass": true
-    },
-    {
       "check": "status_2",
       "pass": true
     },
@@ -44,10 +36,6 @@
     },
     {
       "check": "evidence_exists_evidence/github-upload.json",
-      "pass": true
-    },
-    {
-      "check": "caption_2",
       "pass": true
     },
     {
@@ -75,7 +63,23 @@
       "pass": true
     },
     {
-      "check": "caption_3",
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/webcam-retake.log",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/선택_프레임_검출값.txt",
       "pass": true
     },
     {
@@ -103,10 +107,6 @@
       "pass": true
     },
     {
-      "check": "caption_4",
-      "pass": true
-    },
-    {
       "check": "status_5",
       "pass": true
     },
@@ -119,19 +119,11 @@
       "pass": true
     },
     {
-      "check": "caption_5",
-      "pass": true
-    },
-    {
       "check": "status_6",
       "pass": true
     },
     {
       "check": "evidence_exists_evidence/screenshots/local-list.jpg",
-      "pass": true
-    },
-    {
-      "check": "caption_6",
       "pass": true
     },
     {
@@ -167,11 +159,19 @@
       "pass": true
     },
     {
-      "check": "caption_7",
+      "check": "status_8",
       "pass": true
     },
     {
-      "check": "status_8",
+      "check": "evidence_exists_evidence/cloud/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/deployment.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/api-root-browser.png",
       "pass": true
     },
     {
@@ -179,19 +179,143 @@
       "pass": true
     },
     {
+      "check": "evidence_exists_evidence/cloud/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/mobile-web-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/mobile-web-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/content-cloud-sync.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/private/report-fixes-20261109/production-post-list.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/private/report-fixes-20261109/production-post-detail.jpg",
+      "pass": true
+    },
+    {
       "check": "status_10",
       "pass": true
     },
     {
-      "check": "unfinished_work_not_marked_complete",
+      "check": "evidence_exists_evidence/history/verification.json",
       "pass": true
     },
     {
-      "check": "all_twelve_figures_embedded_without_reencoding",
+      "check": "evidence_exists_evidence/history/llm-verification.json",
       "pass": true
     },
     {
-      "check": "no_external_image_relationships",
+      "check": "evidence_exists_evidence/ui-audit/person-experience.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/chat-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-summary.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-embedding-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/detection-boxes-ui.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/detection-boxes-deployment.json",
+      "pass": true
+    },
+    {
+      "check": "two_extensions",
+      "pass": true
+    },
+    {
+      "check": "extension_rows",
+      "pass": true
+    },
+    {
+      "check": "remaining_requirements_honest",
+      "pass": true
+    },
+    {
+      "check": "actual_notebook_webcam",
+      "pass": true
+    },
+    {
+      "check": "unchanged_detector_for_webcam",
+      "pass": true
+    },
+    {
+      "check": "trusted_webcam_weights",
+      "pass": true
+    },
+    {
+      "check": "notebook_full_tests",
+      "pass": true
+    },
+    {
+      "check": "all_evidence_sections",
+      "pass": true
+    },
+    {
+      "check": "obsolete_progress_prose_removed",
+      "pass": true
+    },
+    {
+      "check": "authored_prose_symbols",
+      "pass": true
+    },
+    {
+      "check": "no_api_keys_in_text",
+      "pass": true
+    },
+    {
+      "check": "evaluator_access_procedure",
+      "pass": true
+    },
+    {
+      "check": "face_method_explained",
+      "pass": true
+    },
+    {
+      "check": "cloud_photo_browser_evidence",
+      "pass": true
+    },
+    {
+      "check": "webcam_capture_embedded",
+      "pass": true
+    },
+    {
+      "check": "cloud_photo_browser_images_in_report",
+      "pass": true
+    },
+    {
+      "check": "all_figures_embedded_without_reencoding",
+      "pass": true
+    },
+    {
+      "check": "images_are_internal",
       "pass": true
     },
     {
@@ -203,86 +327,79 @@
       "pass": true
     },
     {
-      "check": "actual_wsl_backend_validation",
+      "check": "actual_WSL_validation",
       "pass": true
     },
     {
-      "check": "backend_sources_still_match_verification",
+      "check": "backend_hashes_current",
       "pass": true
     },
     {
-      "check": "django_148_actual_log",
+      "check": "Django_250",
       "pass": true
     },
     {
-      "check": "http_15_actual_rerun",
+      "check": "HTTP_15_subset",
       "pass": true
     },
     {
-      "check": "edge_8_actual_wsl_test",
+      "check": "Edge_30",
       "pass": true
     },
     {
-      "check": "android_38_jvm_tests",
+      "check": "Android_40",
       "pass": true
     },
     {
-      "check": "android_build_sources_match",
+      "check": "lint_counts",
       "pass": true
     },
     {
-      "check": "lint_warning_count_disclosed",
+      "check": "Android_sources_current",
       "pass": true
     },
     {
-      "check": "actual_yolo_http_pipeline",
+      "check": "web_76",
       "pass": true
     },
     {
-      "check": "native_yolo_photo_proof",
+      "check": "production_people",
       "pass": true
     },
     {
-      "check": "runtime_dependency_and_cpu_checks",
+      "check": "production_embeddings",
       "pass": true
     },
     {
-      "check": "actual_video_appearance_and_auth_failure",
+      "check": "actual_generation_proof",
       "pass": true
     },
     {
-      "check": "local_cloud_verifier_not_claimed_as_production",
+      "check": "production_chat_restore",
       "pass": true
     },
     {
-      "check": "repeatable_native_and_mobile_web_flow",
-      "pass": true
-    },
-    {
-      "check": "actual_mobile_web_http_responses",
-      "pass": true
-    },
-    {
-      "check": "exercised_verification_tools_preserved",
+      "check": "production_boxes",
       "pass": true
     }
   ],
   "integrity_pass": true,
-  "submission_ready": false,
+  "embedded_figures": 28,
   "complete_assessment_ids": [
     "1",
-    "2",
+    "3",
     "4",
     "5",
     "6",
-    "7"
-  ],
-  "unfinished_assessment_ids": [
-    "3",
+    "7",
     "8",
     "9",
     "10"
   ],
+  "unfinished_assessment_ids": [
+    "2"
+  ],
+  "submission_ready": false,
   "http_cases_are_subset_of_full_suite": true,
-  "embedded_figures": 12
+  "new_paid_api_calls_in_report_refresh": 0
 }

@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-11-09T00:44:22.028469+00:00",
+  "archive_sha256": "f0a06c264c73ccb7cad80fd212e551e04e86a4f5218c6c347878d8c65e719d2c",
+  "environment": "WSL Ubuntu; Windows PowerShell launcher",
+  "relocated_path_contains_spaces": true,
+  "manifest_files": 615,
+  "portable_gallery_profiles": 34,
+  "portable_reference_images": 73,
+  "django_check": true,
+  "original_yolo_actual_inference": {
+    "person": 4,
+    "bus": 1
+  },
+  "actual_tracking_video_frames": 12,
+  "new_paid_api_calls": 0,
+  "production_requests": 0,
+  "notebook_hardware_tested": false,
+  "actual_camera_tested": false,
+  "fresh_dependency_install_tested": false,
+  "pass": true
+}

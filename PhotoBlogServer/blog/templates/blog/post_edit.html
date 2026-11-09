@@ -1,15 +1,15 @@
 {% extends 'blog/base.html' %}
 {% load static %}
-{% block title %}{% if editing %}사진 글 수정{% else %}새 사진 게시{% endif %}{% endblock %}
+{% block title %}{% if editing %}기록 수정{% else %}증거 기록 추가{% endif %}{% endblock %}
 {% block extra_head %}<link rel="stylesheet" href="{% static 'blog/content/content.css' %}?v=mobile-pages-3">{% endblock %}
 {% block content %}
   <section class="panel form-panel content-composer" id="content-composer">
-    <p class="eyebrow">PHOTO BLOG / {% if editing %}EDIT{% else %}UPLOAD{% endif %}</p>
-    <h1>{% if editing %}사진 글 수정{% else %}새 사진 게시{% endif %}</h1>
+    <p class="eyebrow">DETECTION RECORD / {% if editing %}EDIT{% else %}UPLOAD{% endif %}</p>
+    <h1>{% if editing %}기록 수정{% else %}증거 기록 추가{% endif %}</h1>
     <p class="muted">얼굴은 가리고, 분류와 문구는 확인하고 올려요.</p>
     <form method="post" enctype="multipart/form-data" id="photo-form">
       {% csrf_token %}{{ form.non_field_errors }}
-      <div id="story-fields"><label for="id_title">제목</label>{{ form.title }}{{ form.title.errors }}<label for="id_text">사진 이야기</label>{{ form.text }}{{ form.text.errors }}</div>
+      <div id="story-fields"><label for="id_title">제목</label>{{ form.title }}{{ form.title.errors }}<label for="id_text">기록 설명</label>{{ form.text }}{{ form.text.errors }}</div>
       <div class="basic-image"><label for="id_image">사진</label>{{ form.image }}{{ form.image.errors }}<p class="muted">JPEG · PNG · WebP / 최대 5 MiB</p></div>
       <div id="photo-tools" hidden>
         <div class="composer-steps" aria-label="사진 작성 단계"><button type="button" data-step="photo">1 사진 선택</button><button type="button" data-step="mosaic">2 얼굴 확인</button><button type="button" data-step="review">3 확인·게시</button></div>
@@ -68,11 +68,11 @@
           <div class="review-footer"><p id="review-summary" class="review-hint"></p><button type="submit" id="publish-photo">{% if editing %}수정 저장{% else %}게시하기{% endif %}</button><section id="save-result" hidden role="status"></section></div>
         </section>
       </div>
-      <div class="actions basic-actions"><button type="submit">게시글 저장</button><a class="button secondary" href="{% url 'post_list' %}">취소</a></div>
+      <div class="actions basic-actions"><button type="submit">기록 저장</button><a class="button secondary" href="{% url 'post_list' %}">취소</a></div>
     </form>
     <noscript><p>자동 얼굴 가리기·추천·글자 인식에는 JavaScript가 필요합니다. 위 기본 업로드 폼은 사용할 수 있습니다.</p></noscript>
   </section>
   {{ composer_config|json_script:'composer-config' }}
 {% endblock %}
-{% block scripts %}<script type="module" src="{% static 'blog/content/composer.mjs' %}?v=ocr-page-2"></script>{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/content/composer.mjs' %}?v=monitor-1"></script>{% endblock %}
 

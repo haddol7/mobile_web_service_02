@@ -1,0 +1,63 @@
+{
+  "verified_utc": "2026-11-08T14:46:39.012953+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "runs": [
+    {
+      "input": "pedestrian",
+      "frames_analyzed": 71,
+      "crossings_in_local_log": 5,
+      "face_candidates_in_local_log": 0,
+      "pending_packets_after_replay": 0
+    },
+    {
+      "input": "face",
+      "frames_analyzed": 7,
+      "crossings_in_local_log": 1,
+      "face_candidates_in_local_log": 7,
+      "pending_packets_after_replay": 0
+    }
+  ],
+  "sessions": 2,
+  "frames_stored": 37,
+  "tracks_stored": 23,
+  "passages_stored": 6,
+  "candidate_tracks": 1,
+  "automatic_confirmation_enabled": false,
+  "unknown_capture_dates_preserved": true,
+  "response_loss_after_commit_injected": true,
+  "idempotent_replays_received": 1,
+  "private_snapshot_auth_verified": true,
+  "manual_review_and_revision_verified": true,
+  "canonical_question_counts_match_db": true,
+  "question_evidence_verified": true,
+  "required_post_api_seven_fields_preserved": true,
+  "posts_uploaded": 18,
+  "actual_llm_generation_verified": false,
+  "production_verified": false,
+  "raw_history_snapshot_verified": true,
+  "face_policy": {
+    "schema_version": 1,
+    "version": "candidate-2",
+    "model": "buffalo_l",
+    "threshold": 0.29,
+    "margin": 0.1,
+    "embedding_mode": "flip_mean",
+    "reference_min_size": 20,
+    "reference_dominance_area_ratio": 4,
+    "recognizer_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+    "automatic_confirmation_enabled": false,
+    "calibration_record": "evidence/person-libraries/face-policy-calibration.json",
+    "calibration_record_sha256": "85df586f2bc36b7724958ea27534897d809dd901b5be349c1d81b9def0f7b84d",
+    "calibration_only_no_final_evaluation": true
+  },
+  "fixture": "evidence/private/history/20261108T144615171861",
+  "pass": true,
+  "source_sha256": {
+    "PhotoBlogServer/blog/history_api.py": "099ddf30176da71089f5102cf32ab703dc28b06ea0cf305a21255b142b1980a2",
+    "PhotoBlogServer/blog/history_llm.py": "ef0ebea793813d7292c127fca0db7aae4a9399dc26f771f1fa775e678302b888",
+    "PhotoBlogServer/blog/history_queries.py": "157babeaaf619c4514954c8cb518d822d44d6b27d500dc966588d4b6f43d5994",
+    "PhotoBlogServer/blog/history_serializers.py": "4a50f2a3a688c3354b540642232a652ba687830b681fe8c054cd8245cc539f8a",
+    "PhotoBlogServer/blog/history_services.py": "a13d088aa0f5c0e4969fe3bea876661ca52299700a9c14d4f3c07786e0c48bed",
+    "YOLOv5/history_sender.py": "3bfddcf6cb14ac592252d231e2e4f1fc32359a524f38f9c526fd4e32d5b60328"
+  }
+}

@@ -80,7 +80,7 @@ class TrackingIntegrationTests(unittest.TestCase):
 class FaceCandidateTests(unittest.TestCase):
     def test_bad_reference_is_reported_and_valid_reference_retained(self):
         fake=SimpleNamespace(get=lambda image:[] if int(image[0,0,0])==0 else [
-            SimpleNamespace(normed_embedding=np.array([1,0,0],np.float32))])
+            SimpleNamespace(bbox=np.array([2,2,30,30]),normed_embedding=np.array([1,0,0],np.float32))])
         import cv2
         with tempfile.TemporaryDirectory() as temporary:
             folder=Path(temporary)
@@ -90,7 +90,7 @@ class FaceCandidateTests(unittest.TestCase):
             manifest.write_text(json.dumps({'schema_version':1,'profiles':[
                 {'id':'a','images':['bad.png','good.png']}]}))
             with patch('person_tracking.create_face_app',return_value=fake):
-                matcher=FaceReferences(manifest)
+                matcher=FaceReferences(manifest,threshold=.55,margin=.08,embedding_mode="single")
             self.assertEqual(matcher.registration,{'profiles':1,'accepted_images':1,'rejected_images':1})
             self.assertEqual(matcher.rejected_references[0]['reason'],'no_face')
 

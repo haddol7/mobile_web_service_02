@@ -19,6 +19,7 @@
 *.avi
 *.data
 *.json
+!face_policy.json
 *.cfg
 !setup.cfg
 !cfg/yolov3*.cfg

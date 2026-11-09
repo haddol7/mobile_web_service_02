@@ -1,0 +1,661 @@
+{
+  "collected_utc": "2026-11-08T17:47:38.174304+00:00",
+  "environment": "WSL Ubuntu",
+  "clips": [
+    {
+      "person": "public-trump",
+      "source_id": "563342",
+      "source_reference": "DVIDS/563342",
+      "source_url": "https://www.dvidshub.net/video/563342/president-trump-japan-departure-broll-highlights",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1711/DOD_105052577/DOD_105052577-1024x576-1769k.mp4",
+      "title": "President Trump Japan Departure (Broll - Highlights)",
+      "capture_day_as_published": "2017-11-07",
+      "declared_bytes": 79736875,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/563342.mp4",
+      "sha256": "db88b139c9611a35e1f0453b69df0da94faed9c4f856700b285c49e4fb46d24a",
+      "frames": 10007,
+      "fps": 29.97002997002997,
+      "seconds": 333.90023333333335,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/563342-15.jpg"
+        },
+        {
+          "second": 83.47505833333334,
+          "path": "evidence/private/public-figure-expanded/563342-83.jpg"
+        },
+        {
+          "second": 166.95011666666667,
+          "path": "evidence/private/public-figure-expanded/563342-167.jpg"
+        },
+        {
+          "second": 250.42517500000002,
+          "path": "evidence/private/public-figure-expanded/563342-250.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "508029",
+      "source_reference": "DVIDS/508029",
+      "source_url": "https://www.dvidshub.net/video/508029/swearing-secretary-state-rex-tillerson",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1702/DOD_104046390/DOD_104046390-1024x576-1769k.mp4",
+      "title": "Swearing In of Secretary of State Rex Tillerson",
+      "capture_day_as_published": "2017-02-01",
+      "declared_bytes": 117974818,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/508029.mp4",
+      "sha256": "d148470857cc1b29ff89a19260466d3af5a65e1ef398eae03cc6b907a44c3e8c",
+      "frames": 14869,
+      "fps": 29.97002997002997,
+      "seconds": 496.12896666666666,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/508029-15.jpg"
+        },
+        {
+          "second": 124.03224166666666,
+          "path": "evidence/private/public-figure-expanded/508029-124.jpg"
+        },
+        {
+          "second": 248.06448333333333,
+          "path": "evidence/private/public-figure-expanded/508029-248.jpg"
+        },
+        {
+          "second": 372.096725,
+          "path": "evidence/private/public-figure-expanded/508029-372.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "742724",
+      "source_reference": "DVIDS/742724",
+      "source_url": "https://www.dvidshub.net/video/742724/president-trump-will-address-nation",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/2003/DOD_107724108/DOD_107724108-1024x576-1769k.mp4",
+      "title": "President Trump Will Address the Nation",
+      "capture_day_as_published": "2020-03-11",
+      "declared_bytes": 136021962,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/742724.mp4",
+      "sha256": "586375cf93b799d8be6eb37b43394e4ecac4aaff9159ba4a87b20c8051bac409",
+      "frames": 17123,
+      "fps": 29.97002997002997,
+      "seconds": 571.3374333333334,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/742724-15.jpg"
+        },
+        {
+          "second": 142.83435833333334,
+          "path": "evidence/private/public-figure-expanded/742724-143.jpg"
+        },
+        {
+          "second": 285.6687166666667,
+          "path": "evidence/private/public-figure-expanded/742724-286.jpg"
+        },
+        {
+          "second": 428.503075,
+          "path": "evidence/private/public-figure-expanded/742724-429.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "733563",
+      "source_reference": "DVIDS/733563",
+      "source_url": "https://www.dvidshub.net/video/733563/president-trump-remarks-media",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/2001/DOD_107575029/DOD_107575029-1024x576-1769k.mp4",
+      "title": "President Trump Remarks to the Media",
+      "capture_day_as_published": "2020-01-08",
+      "declared_bytes": 138058688,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/733563.mp4",
+      "sha256": "a35e98732fcc3fca7cb092ff0b6578c6e6727b71527573cf5acd49d0d14c1bcb",
+      "frames": 17454,
+      "fps": 29.97002997002997,
+      "seconds": 582.3818,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/733563-15.jpg"
+        },
+        {
+          "second": 145.59545,
+          "path": "evidence/private/public-figure-expanded/733563-146.jpg"
+        },
+        {
+          "second": 291.1909,
+          "path": "evidence/private/public-figure-expanded/733563-291.jpg"
+        },
+        {
+          "second": 436.78634999999997,
+          "path": "evidence/private/public-figure-expanded/733563-437.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "632165",
+      "source_reference": "DVIDS/632165",
+      "source_url": "https://www.dvidshub.net/video/632165/president-trump-delivers-remarks-interagency-task-force-monitor-and-combat-trafficking-persons-annual-meeting",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1810/DOD_106112000/DOD_106112000-1024x576-1769k.mp4",
+      "title": "President Trump Delivers Remarks at the Interagency Task Force to Monitor and Combat Trafficking in Persons Annual Meeting",
+      "capture_day_as_published": "2018-10-11",
+      "declared_bytes": 141729170,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/632165.mp4",
+      "sha256": "33531041e1fc309705acf5873e082f6ab623740ea17063af45dc1ffc229ea63a",
+      "frames": 17887,
+      "fps": 29.97002997002997,
+      "seconds": 596.8295666666667,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/632165-15.jpg"
+        },
+        {
+          "second": 149.20739166666667,
+          "path": "evidence/private/public-figure-expanded/632165-149.jpg"
+        },
+        {
+          "second": 298.41478333333333,
+          "path": "evidence/private/public-figure-expanded/632165-298.jpg"
+        },
+        {
+          "second": 447.62217499999997,
+          "path": "evidence/private/public-figure-expanded/632165-448.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "526302",
+      "source_reference": "DVIDS/526302",
+      "source_url": "https://www.dvidshub.net/video/526302/president-trump-delivers-remarks-with-israeli-prime-minister-netanyahu",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1705/DOD_104394876/DOD_104394876-1024x576-1769k.mp4",
+      "title": "President Trump Delivers Remarks with Israeli Prime Minister Netanyahu",
+      "capture_day_as_published": "2017-05-22",
+      "declared_bytes": 168288279,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/526302.mp4",
+      "sha256": "c751618637a2eae864573ec0eefa36fe5a6970e2bf29512c1e2ebf8cff7e4c08",
+      "frames": 21238,
+      "fps": 29.97002997002997,
+      "seconds": 708.6412666666666,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/526302-15.jpg"
+        },
+        {
+          "second": 177.16031666666666,
+          "path": "evidence/private/public-figure-expanded/526302-177.jpg"
+        },
+        {
+          "second": 354.3206333333333,
+          "path": "evidence/private/public-figure-expanded/526302-354.jpg"
+        },
+        {
+          "second": 531.48095,
+          "path": "evidence/private/public-figure-expanded/526302-531.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "628029",
+      "source_reference": "DVIDS/628029",
+      "source_url": "https://www.dvidshub.net/video/628029/president-trump-remarks-and-signing-ceremony",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1809/DOD_106058043/DOD_106058043-1024x576-1769k.mp4",
+      "title": "President Trump Remarks and Signing Ceremony",
+      "capture_day_as_published": "2018-09-21",
+      "declared_bytes": 290320311,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/628029.mp4",
+      "sha256": "f3498f00d70de6cf2610c70ff4341602e02059cac17f4a7b5547ea27a4d29403",
+      "frames": 36559,
+      "fps": 29.97002997002997,
+      "seconds": 1219.8519666666666,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/628029-15.jpg"
+        },
+        {
+          "second": 304.96299166666665,
+          "path": "evidence/private/public-figure-expanded/628029-305.jpg"
+        },
+        {
+          "second": 609.9259833333333,
+          "path": "evidence/private/public-figure-expanded/628029-610.jpg"
+        },
+        {
+          "second": 914.888975,
+          "path": "evidence/private/public-figure-expanded/628029-915.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "493194",
+      "source_reference": "DVIDS/493194",
+      "source_url": "https://www.dvidshub.net/video/493194/arabic-president-obama-addresses-us-commitment-nato-white-house",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1611/DOD_103854873/DOD_103854873.mp4",
+      "title": "Arabic: President Obama Addresses U.S. Commitment to NATO from the White House",
+      "capture_day_as_published": "2016-11-14",
+      "declared_bytes": 32535018,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/493194.mp4",
+      "sha256": "7f5ae888d8f75baf74dda1f2ca661efbd9186b194260467de0293dbb7f3d7fdd",
+      "frames": 1422,
+      "fps": 29.97002997002997,
+      "seconds": 47.4474,
+      "decoded_size": [
+        854,
+        480
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 11.86185,
+          "path": "evidence/private/public-figure-expanded/493194-12.jpg"
+        },
+        {
+          "second": 23.7237,
+          "path": "evidence/private/public-figure-expanded/493194-24.jpg"
+        },
+        {
+          "second": 35.58555,
+          "path": "evidence/private/public-figure-expanded/493194-36.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "287224",
+      "source_reference": "DVIDS/287224",
+      "source_url": "https://www.dvidshub.net/video/287224/president-obama-visits-boston",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1304/DOD_100789564/DOD_100789564-720x406-800k.mp4",
+      "title": "President Obama Visits Boston",
+      "capture_day_as_published": "2013-04-18",
+      "declared_bytes": 71915770,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/287224.mp4",
+      "sha256": "e94ce4edd265ce07f60bd4200b2aec8f1f3c4b371d4b66c23b157233af9cf01c",
+      "frames": 19601,
+      "fps": 29.97002997002997,
+      "seconds": 654.0200333333333,
+      "decoded_size": [
+        720,
+        406
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/287224-15.jpg"
+        },
+        {
+          "second": 163.50500833333334,
+          "path": "evidence/private/public-figure-expanded/287224-164.jpg"
+        },
+        {
+          "second": 327.0100166666667,
+          "path": "evidence/private/public-figure-expanded/287224-327.jpg"
+        },
+        {
+          "second": 490.51502500000004,
+          "path": "evidence/private/public-figure-expanded/287224-491.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "362956",
+      "source_reference": "DVIDS/362956",
+      "source_url": "https://www.dvidshub.net/video/362956/president-obama-global-health-security-agenda-summit",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1409/DOD_101970934/DOD_101970934-1024x576-1769k.mp4",
+      "title": "President Obama - Global Health Security Agenda Summit",
+      "capture_day_as_published": "2014-09-26",
+      "declared_bytes": 145609887,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/362956.mp4",
+      "sha256": "fd9090eacd80956bf07772f78467da37294d585cd926a6beaa0cc8e384365066",
+      "frames": 18324,
+      "fps": 29.97002997002997,
+      "seconds": 611.4108,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/362956-15.jpg"
+        },
+        {
+          "second": 152.8527,
+          "path": "evidence/private/public-figure-expanded/362956-153.jpg"
+        },
+        {
+          "second": 305.7054,
+          "path": "evidence/private/public-figure-expanded/362956-306.jpg"
+        },
+        {
+          "second": 458.55809999999997,
+          "path": "evidence/private/public-figure-expanded/362956-459.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-trump",
+      "source_id": "759368",
+      "source_reference": "DVIDS/759368",
+      "source_url": "https://www.dvidshub.net/video/759368/president-trump-receives-briefing-southcom-enhanced-counternarcotics-operations",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/2007/DOD_107892732/DOD_107892732-1024x576-1769k.mp4",
+      "title": "President Trump Receives a Briefing on SOUTHCOM Enhanced Counternarcotics Operations",
+      "capture_day_as_published": "2020-07-10",
+      "declared_bytes": 478344319,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/759368.mp4",
+      "sha256": "d3624bc5478fcc64a395d00c857737b20113363f5df00c0b083b0f81545c4983",
+      "frames": 60251,
+      "fps": 29.97002997002997,
+      "seconds": 2010.3750333333335,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/759368-15.jpg"
+        },
+        {
+          "second": 502.59375833333337,
+          "path": "evidence/private/public-figure-expanded/759368-503.jpg"
+        },
+        {
+          "second": 1005.1875166666667,
+          "path": "evidence/private/public-figure-expanded/759368-1005.jpg"
+        },
+        {
+          "second": 1507.781275,
+          "path": "evidence/private/public-figure-expanded/759368-1508.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "456872",
+      "source_reference": "DVIDS/456872",
+      "source_url": "https://www.dvidshub.net/video/456872/president-obama-remarks-nuclear-security-summit",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1604/DOD_103172453/DOD_103172453-1024x576-1769k.mp4",
+      "title": "President Obama remarks at the Nuclear Security Summit",
+      "capture_day_as_published": "2016-04-01",
+      "declared_bytes": 146407154,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/456872.mp4",
+      "sha256": "acdb4f9763ac959e08cf22421e45440313c929e6f87b5c0e017c3bf4d10cb502",
+      "frames": 18505,
+      "fps": 29.97002997002997,
+      "seconds": 617.4501666666666,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/456872-15.jpg"
+        },
+        {
+          "second": 154.36254166666666,
+          "path": "evidence/private/public-figure-expanded/456872-154.jpg"
+        },
+        {
+          "second": 308.7250833333333,
+          "path": "evidence/private/public-figure-expanded/456872-309.jpg"
+        },
+        {
+          "second": 463.087625,
+          "path": "evidence/private/public-figure-expanded/456872-463.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "413783",
+      "source_reference": "DVIDS/413783",
+      "source_url": "https://www.dvidshub.net/video/413783/president-barack-obamas-statement-press",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1507/DOD_102571223/DOD_102571223-1024x576-1769k.mp4",
+      "title": "President Barack Obama's Statement to Press",
+      "capture_day_as_published": "2015-07-06",
+      "declared_bytes": 278764623,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/413783.mp4",
+      "sha256": "6d3c41e669e93cadeef38f860c388b5051e642fcc18a4afe9df8105b1a5c840b",
+      "frames": 35082,
+      "fps": 29.97002997002997,
+      "seconds": 1170.5694,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/413783-15.jpg"
+        },
+        {
+          "second": 292.64235,
+          "path": "evidence/private/public-figure-expanded/413783-293.jpg"
+        },
+        {
+          "second": 585.2847,
+          "path": "evidence/private/public-figure-expanded/413783-585.jpg"
+        },
+        {
+          "second": 877.92705,
+          "path": "evidence/private/public-figure-expanded/413783-878.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "324601",
+      "source_reference": "DVIDS/324601",
+      "source_url": "https://www.dvidshub.net/video/324601/president-obama-palais-des-beaux-arts",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1403/DOD_101196007/DOD_101196007-720x406-800k.mp4",
+      "title": "President Obama at the Palais Des Beaux Arts",
+      "capture_day_as_published": "2014-03-26",
+      "declared_bytes": 287717785,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/324601.mp4",
+      "sha256": "f2afef1334cd4a3d070e7449287ef7ee4af77d9fa09f5e674aac1272a21d4a3d",
+      "frames": 76410,
+      "fps": 29.97002997002997,
+      "seconds": 2549.547,
+      "decoded_size": [
+        720,
+        406
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/324601-15.jpg"
+        },
+        {
+          "second": 637.38675,
+          "path": "evidence/private/public-figure-expanded/324601-637.jpg"
+        },
+        {
+          "second": 1274.7735,
+          "path": "evidence/private/public-figure-expanded/324601-1275.jpg"
+        },
+        {
+          "second": 1912.16025,
+          "path": "evidence/private/public-figure-expanded/324601-1912.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "391729",
+      "source_reference": "DVIDS/391729",
+      "source_url": "https://www.dvidshub.net/video/391729/president-obama-remarks-white-house-summit-countering-violent-extremism-arabic-audio",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1502/DOD_102247264/DOD_102247264-1024x576-1769k.mp4",
+      "title": "President Obama Remarks at the White House Summit on Countering Violent Extremism, Arabic Audio",
+      "capture_day_as_published": "2015-02-19",
+      "declared_bytes": 305592187,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/391729.mp4",
+      "sha256": "f266bb223769d7eb47d58f1a82abf2c603b5adf35a1c5191c421e926cbf39e4a",
+      "frames": 38451,
+      "fps": 29.97002997002997,
+      "seconds": 1282.9817,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/391729-15.jpg"
+        },
+        {
+          "second": 320.745425,
+          "path": "evidence/private/public-figure-expanded/391729-321.jpg"
+        },
+        {
+          "second": 641.49085,
+          "path": "evidence/private/public-figure-expanded/391729-641.jpg"
+        },
+        {
+          "second": 962.236275,
+          "path": "evidence/private/public-figure-expanded/391729-962.jpg"
+        }
+      ]
+    },
+    {
+      "person": "public-obama",
+      "source_id": "359270",
+      "source_reference": "DVIDS/359270",
+      "source_url": "https://www.dvidshub.net/video/359270/president-obama-press-conference-nato-wales-summit",
+      "media_url": "https://d34w7g4gy10iej.cloudfront.net/video/1409/DOD_101929391/DOD_101929391-1024x576-1769k.mp4",
+      "title": "President Obama Press Conference from NATO Wales Summit",
+      "capture_day_as_published": "2014-09-05",
+      "declared_bytes": 372098512,
+      "status": "eligible",
+      "license": "Public domain; DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright",
+      "path": "evidence/private/public-figure-expanded/359270.mp4",
+      "sha256": "113460628917356c6d01ba5d3e7e95d00ab290c16f2a6064af7a9e75b911ef10",
+      "frames": 46822,
+      "fps": 29.97002997002997,
+      "seconds": 1562.2940666666666,
+      "decoded_size": [
+        1024,
+        576
+      ],
+      "full_decode_pass": true,
+      "previews": [
+        {
+          "second": 15,
+          "path": "evidence/private/public-figure-expanded/359270-15.jpg"
+        },
+        {
+          "second": 390.57351666666665,
+          "path": "evidence/private/public-figure-expanded/359270-391.jpg"
+        },
+        {
+          "second": 781.1470333333333,
+          "path": "evidence/private/public-figure-expanded/359270-781.jpg"
+        },
+        {
+          "second": 1171.72055,
+          "path": "evidence/private/public-figure-expanded/359270-1172.jpg"
+        }
+      ]
+    }
+  ],
+  "media_in_git": false,
+  "pass": true,
+  "target_per_person": 8
+}

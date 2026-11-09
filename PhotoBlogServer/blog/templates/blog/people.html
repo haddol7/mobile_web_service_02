@@ -1,0 +1,11 @@
+{% extends 'blog/base.html' %}
+{% block title %}인물 확인{% endblock %}
+{% block content %}
+<section class="workspace-heading"><div><p class="section-kicker">등록 얼굴과 발견 이력</p><h1>인물 확인</h1><p>얼굴을 선택해 발견 이력을 봅니다.</p></div><a class="text-link" href="{% url 'detections' %}">모든 관측 기록</a></section>
+{% if monitor.demo_mode %}<p class="source-notice">공개 영상 시연 / 분석일 기준</p>{% endif %}
+<div class="identity-grid">
+{% for person in monitor.visible_profiles %}<a class="identity-card" href="{{ person.detail_url }}">
+<div class="identity-photo">{% if person.portrait_url %}<img src="{{ person.portrait_url }}" alt="{{ person.name }} {% if person.reference_available %}등록 얼굴{% else %}관측 사진{% endif %}" loading="lazy">{% else %}<span>얼굴 사진 없음</span>{% endif %}<span class="photo-caption">{% if person.reference_available %}등록 얼굴{% else %}관측 사진{% endif %}</span></div>
+<div class="identity-copy"><div class="identity-title"><h2>{{ person.name }}</h2><span class="state-chip {% if person.candidate_tracks %}pending{% endif %}">{{ person.status }}</span></div><p class="identity-count">{% if person.active %}영상 <strong>{{ person.source_count }}</strong>개에서 발견{% else %}등록 완료, 발견 대기{% endif %}</p><p class="muted">확인 {{ person.confirmed_tracks }}개 / 후보 {{ person.candidate_tracks }}개</p><div class="identity-bottom"><span>{% if person.active %}최근 분석 {{ person.last_analysis_label }}{% else %}아직 발견된 장면이 없습니다.{% endif %}</span><strong>{% if person.active %}발견 이력 보기{% else %}등록 얼굴 보기{% endif %}</strong></div></div></a>{% empty %}<div class="monitor-empty"><strong>등록된 인물이 없습니다.</strong><p>등록 얼굴이 포함된 분석 기록이 들어오면 표시됩니다.</p></div>{% endfor %}
+</div>
+{% endblock %}

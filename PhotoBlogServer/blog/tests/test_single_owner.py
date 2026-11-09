@@ -38,7 +38,7 @@ class SingleOwnerTests(TemporaryMediaMixin, TestCase):
         me=self.client.get('/api/v1/auth/me/').json()
         self.assertTrue(me['can_publish'])
         self.assertNotIn('gallery_id',me)
-        self.assertContains(self.client.get('/'),'사진 게시')
+        self.assertContains(self.client.get('/'),'사진 추가')
         self.client.force_login(self.other)
         self.assertFalse(self.client.get('/api/v1/auth/me/').json()['can_publish'])
         self.assertNotContains(self.client.get('/'),'href="/post/new/"')
@@ -67,7 +67,8 @@ class SingleOwnerTests(TemporaryMediaMixin, TestCase):
     def test_public_reading_and_required_seven_field_array_remain(self):
         result=self.client.get('/api_root/Post/').json()
         self.assertEqual(set(result[0]),{'id','author','title','text','created_date','published_date','image'})
-        self.assertContains(self.client.get('/'),'기존 사진')
+        self.assertNotContains(self.client.get('/'),'기존 사진')
+        self.assertContains(self.client.get('/photos/'),'기존 사진')
         self.assertEqual(self.client.get(f'/post/{self.post.pk}/').status_code,200)
         self.assertEqual(self.client.get(f'/api/v1/posts/{self.post.pk}/content/').status_code,200)
 

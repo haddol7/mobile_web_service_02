@@ -22,26 +22,31 @@
       "id": "2",
       "requirement": "Github 레파지토리 push",
       "original": "아래 평가 항목에 대하여 구현 혹은 테스트를 완료하고, 캡처 이미지를 제공된 MS-Word 파일로 정리하여 Github URL을 제출 한다.\n\n제출 : URL",
-      "status": "complete",
+      "status": "partial",
       "evidence": [
         "evidence/screenshots/github-folder-structure.jpg",
         "evidence/github-upload.json"
       ],
-      "report_evidence": "B01\n별도 저장소 업로드"
+      "report_evidence": "B01\n별도 저장소\n소스와 보고서"
     },
     {
       "id": "3",
       "requirement": "YOLOv5 설치 및 실행",
       "original": "강의 자료 [6페이지] \n\n제출 : 1. 변경 없는 기본 상태의 “detect.py”실행\n2. 화면 객체 인식 완료된 화면 캡처",
-      "status": "partial",
+      "status": "complete",
       "evidence": [
         "evidence/yolo-pipeline/verification.json",
         "evidence/yolo-pipeline/original-image.txt",
         "evidence/video-flow/verification.json",
         "evidence/environment/wsl-runtime.json",
-        "evidence/environment/windows-camera.json"
+        "evidence/environment/windows-camera.json",
+        "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+        "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+        "evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py",
+        "evidence/notebook-20261110/02_웹캠_증빙/webcam-retake.log",
+        "evidence/notebook-20261110/02_웹캠_증빙/선택_프레임_검출값.txt"
       ],
-      "report_evidence": "B02\n정지 사진 실행\n웹캠 추후 확인"
+      "report_evidence": "B02 B08\n원본 검출과\n실시간 웹캠"
     },
     {
       "id": "4",
@@ -98,25 +103,62 @@
       "id": "8",
       "requirement": "Pythonanywhere 클라우드상 동작",
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (Pythonanywhere) (api_root)",
-      "status": "pending",
-      "evidence": [],
-      "report_evidence": "02 전환 대기"
+      "status": "complete",
+      "evidence": [
+        "evidence/cloud/verification.json",
+        "evidence/ui-audit/deployment.json",
+        "evidence/ui-audit/cloud/api-root-browser.png"
+      ],
+      "report_evidence": "B09\n운영 API 200"
     },
     {
       "id": "9",
       "requirement": "Pythonanywhere 클라우드상 동작",
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (Pythonanywhere) (목록 및 이미지)",
-      "status": "pending",
-      "evidence": [],
-      "report_evidence": "02 전환 대기"
+      "status": "complete",
+      "evidence": [
+        "evidence/cloud/verification.json",
+        "evidence/ui-audit/cloud/verification.json",
+        "evidence/ui-audit/cloud/mobile-web-list.png",
+        "evidence/ui-audit/cloud/mobile-web-detail.png",
+        "evidence/ui-audit/cloud/content-cloud-sync.png",
+        "evidence/private/report-fixes-20261109/production-post-list.jpg",
+        "evidence/private/report-fixes-20261109/production-post-detail.jpg"
+      ],
+      "report_evidence": "B09\n운영 브라우저\n목록과 검출 사진"
     },
     {
       "id": "10",
       "requirement": "기타 기획 되지 않은 편의 기능 [최대 2개]",
       "original": "제출 : 해당 기능 정의, 설명 및 동작 증빙 화면 캡처\n(서버/클라이언트 각각 구현이 필요한 경우 별도 요구사항으로 등록 함)",
-      "status": "deferred",
-      "evidence": [],
-      "report_evidence": "기본 검증 후\n최대 2개 선정"
+      "status": "complete",
+      "evidence": [
+        "evidence/history/verification.json",
+        "evidence/history/llm-verification.json",
+        "evidence/ui-audit/person-experience.json",
+        "evidence/ui-audit/chat-cloud.json",
+        "evidence/history/chokepoint-people-summary.json",
+        "evidence/history/chokepoint-people-cloud.json",
+        "evidence/history/chokepoint-people-embedding-cloud.json",
+        "evidence/ui-audit/detection-boxes-ui.json",
+        "evidence/ui-audit/detection-boxes-deployment.json"
+      ],
+      "report_evidence": "B10부터 B17\n추적과 전송\n이력과 AI 질의",
+      "implementation_items": [
+        {
+          "role": "Edge Client",
+          "name": "사람 추적과 관측 기록 전송",
+          "local_verified": true
+        },
+        {
+          "role": "Server",
+          "name": "인물 이력 관리와 근거 기록 질의",
+          "local_verified": true,
+          "actual_llm_generation_verified": true,
+          "production_runtime_verified": true,
+          "production_history_records_present": true
+        }
+      ]
     }
   ],
   "constraints": {
@@ -124,22 +166,29 @@
     "camera_connected": false,
     "extra_features_max": 2,
     "llm_feature_required": false,
-    "training_required": false
+    "training_required": false,
+    "camera_verified_on_notebook": true,
+    "camera_verification": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json"
   },
   "deployment": {
     "user_approved_date": "2026-11-05",
-    "source_switched": false,
-    "last_attempt_result": "HTTP 412 console not yet started",
-    "preflight": "docs/deployment-preflight.json"
+    "source_switched": true,
+    "last_attempt_result": "activated_and_verified",
+    "release": "20261108222304c3b06f",
+    "verified_date": "2026-11-09",
+    "preflight": "docs/deployment-preflight.json",
+    "compatibility": "evidence/ui-audit/migration-compatibility.json",
+    "verification": "evidence/ui-audit/detection-boxes-deployment.json"
   },
   "report_state": {
     "submission_ready": false,
-    "label": "진행본",
+    "label": "웹캠 검증 반영",
+    "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [
-      "3",
-      "8",
-      "9",
-      "10"
+      "2"
+    ],
+    "remaining_work": [
+      "최신 소스와 보고서 GitHub 반영"
     ]
   },
   "local_verification": {
@@ -147,5 +196,35 @@
     "actual_video": "evidence/video-flow/verification.json",
     "native_and_mobile_web": "evidence/mobile-flow/verification.json",
     "production_verified": false
-  }
+  },
+  "ui_audit": {
+    "verification": "evidence/ui-audit/summary.json",
+    "before_after_screenshots": 176,
+    "composer_screenshots": 16,
+    "screen_sizes": [
+      "regular",
+      "small"
+    ],
+    "local_device_flow_tests": 6,
+    "cloud_device_tests": 2,
+    "cloud_verification": "evidence/ui-audit/cloud/verification.json"
+  },
+  "extra_requirements": [
+    {
+      "id": "10-1",
+      "role": "Edge Client",
+      "name": "인물 추적과 관측 기록 전송",
+      "description": "몸 추적, 얼굴 후보 비교, 선 통과 기록, 중복 방지와 재전송",
+      "status": "complete",
+      "report_evidence": "B11 B12 B17\n등록과 실제 분석\n검출 박스"
+    },
+    {
+      "id": "10-2",
+      "role": "Server",
+      "name": "인물 이력과 근거 기록 질의",
+      "description": "날짜와 인물별 이력, 확인 상태, 의미 검색과 LLM 답변, 대화 복원",
+      "status": "complete",
+      "report_evidence": "B10 B13부터 B16\n운영 조회와 질문\nAndroid 확인"
+    }
+  ]
 }

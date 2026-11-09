@@ -43,7 +43,7 @@ class MobileWebTests(TemporaryMediaMixin, TestCase):
         self.assertEqual(self.client.get(f'/post/{self.post.pk}/edit/').status_code,403)
 
     def test_search_context_reaches_detail_and_matching_original_line(self):
-        response=self.client.get('/',{'q':'바다라멘 cafe'})
+        response=self.client.get('/photos/',{'q':'바다라멘 cafe'})
         self.assertContains(response,f'/post/{self.post.pk}/?q=')
         detail=self.client.get(f'/post/{self.post.pk}/',{'q':'바다라멘 CAFE'})
         config=self.config(detail,'detail-config')

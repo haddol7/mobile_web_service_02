@@ -5,6 +5,7 @@ __pycache__/
 htmlcov/
 staticfiles/
 media/
+private_tracking/
 .env
 .env.*
 !.env.example
@@ -14,14 +15,19 @@ node_modules/
 build/
 local.properties
 runs/
+history-outbox/
 dist/
 *.pt
 *.onnx
 *.apk
 *.keystore
 *.log
+!evidence/notebook-20261110/**/*.log
 .local/
 evidence/private/
+laptop/models/
+laptop/data/
+laptop/MANIFEST.json
 evidence/person-libraries/upload-flow/detected*/
 docs/reference/*.pdf
 ~$*

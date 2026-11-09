@@ -1,0 +1,152 @@
+{
+  "verified_utc": "2026-11-08T16:26:31.404106+00:00",
+  "environment": "WSL against PythonAnywhere",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "release": "20261108162427b12e30",
+  "base_release": "20261108160518be71af",
+  "frontend_overlay": true,
+  "package": "dist/pythonanywhere-auto-20261108162427b12e30.zip",
+  "package_sha256": "241d5223b38d47afd2ee052eac53d6f598e75bb0346f2b54264efb7ffc1c972b",
+  "package_files": 146,
+  "package_phase": "activated_and_verified",
+  "scanned_files": 624,
+  "key_in_source_tree": false,
+  "key_in_package": false,
+  "app_token_in_source_tree": false,
+  "deployment_token_in_source_tree": false,
+  "cloud_deployed": true,
+  "production_verified": true,
+  "source_transition_verified": true,
+  "console_ready": true,
+  "probes": [
+    {
+      "path": "/static/blog/ui.css",
+      "status": 200,
+      "sha256": "182cf59aa329d37bd8f7b4873d5e8c0c306d2832088df76c01ddfdaee15f60e1",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/monitoring.css",
+      "status": 200,
+      "sha256": "a309ccbcc52bf445f82abaa7b25973e0387f30d662faa28cf3e3e99de2eadde6",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/people.css",
+      "status": 200,
+      "sha256": "9bd492e393e5ace5517c7fe2594bd9b7df40f4ffa42903f9d828490a4e8ea9e0",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/person.mjs",
+      "status": 200,
+      "sha256": "81f32d18eecbf2e6ff17eb8b59adf7cefad564f7047aafc74dd6fae6215e974e",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/history.css",
+      "status": 200,
+      "sha256": "40867ed5925ec9260f7f16fcd77d4ac50d71d6214c6adbd8c07c9b2bbe4f833d",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/history.mjs",
+      "status": 200,
+      "sha256": "bf02d86cd3451100fae48e2db929f0819227acf3885584a53f2489ba30473629",
+      "matches_local": true
+    },
+    {
+      "path": "/static/blog/history-view.mjs",
+      "status": 200,
+      "sha256": "8601d76265e4f6c30deb69b2d3f0a3989acf541e2dcf88bb00b9e59e6414e5ca",
+      "matches_local": true
+    },
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/photos/",
+      "status": 200
+    },
+    {
+      "path": "/accounts/login/",
+      "status": 200
+    },
+    {
+      "path": "/api_root/",
+      "status": 200
+    },
+    {
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "path": "/detections/",
+      "status": 302,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/history/",
+      "status": 302,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/people/",
+      "status": 302,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/people/showcase-v2-a/",
+      "status": 302,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/questions/",
+      "status": 302,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/frames/",
+      "status": 401,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/overview/",
+      "status": 401,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/sessions/",
+      "status": 401,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/people/showcase-v2-a/",
+      "status": 401,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/references/showcase-v2-a/",
+      "status": 401,
+      "anonymous_access_denied": true
+    },
+    {
+      "path": "/api/v1/history/overview/",
+      "status": 200,
+      "owner_authenticated": true,
+      "facts": {
+        "observed_tracks": 30,
+        "pending_tracks": 4,
+        "confirmed_tracks": 3,
+        "sampled_frames": 83,
+        "passages": 6,
+        "profiles": 5,
+        "sessions": 10,
+        "detection_posts": 0,
+        "unknown_date_frames": 83
+      }
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,94 @@
+{
+  "verified_utc": "2026-11-08T16:51:07.850083+00:00",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "session": "72fdf0e7a2b6504db50cac7b25ef33fa",
+  "actual_frames_added": 14,
+  "source": "https://arma.sourceforge.net/chokepoint/",
+  "source_camera": "P1E_S1_C1",
+  "source_credit": "NICTA; Wong, Chen, Mau, Sanderson, Lovell. CVPR Workshops 2011.",
+  "derived_media_notice": "Reconstructed from the first 1200 available original images. Clip seconds are replay positions, not original capture times. JPEG compression applied.",
+  "original_frame_mapping": [
+    {
+      "analyzed_frame_index": 20,
+      "derived_video_seconds": 6.633333333333334,
+      "original_image": "00000211.jpg"
+    },
+    {
+      "analyzed_frame_index": 28,
+      "derived_video_seconds": 9.3,
+      "original_image": "00000291.jpg"
+    },
+    {
+      "analyzed_frame_index": 40,
+      "derived_video_seconds": 13.3,
+      "original_image": "00000520.jpg"
+    },
+    {
+      "analyzed_frame_index": 47,
+      "derived_video_seconds": 15.633333333333333,
+      "original_image": "00000648.jpg"
+    },
+    {
+      "analyzed_frame_index": 49,
+      "derived_video_seconds": 16.3,
+      "original_image": "00000668.jpg"
+    },
+    {
+      "analyzed_frame_index": 58,
+      "derived_video_seconds": 19.3,
+      "original_image": "00000851.jpg"
+    },
+    {
+      "analyzed_frame_index": 62,
+      "derived_video_seconds": 20.633333333333333,
+      "original_image": "00000979.jpg"
+    },
+    {
+      "analyzed_frame_index": 74,
+      "derived_video_seconds": 24.633333333333333,
+      "original_image": "00001171.jpg"
+    },
+    {
+      "analyzed_frame_index": 81,
+      "derived_video_seconds": 26.966666666666665,
+      "original_image": "00001330.jpg"
+    },
+    {
+      "analyzed_frame_index": 90,
+      "derived_video_seconds": 29.966666666666665,
+      "original_image": "00001491.jpg"
+    },
+    {
+      "analyzed_frame_index": 99,
+      "derived_video_seconds": 32.96666666666667,
+      "original_image": "00001650.jpg"
+    },
+    {
+      "analyzed_frame_index": 106,
+      "derived_video_seconds": 35.3,
+      "original_image": "00001786.jpg"
+    },
+    {
+      "analyzed_frame_index": 109,
+      "derived_video_seconds": 36.3,
+      "original_image": "00001816.jpg"
+    },
+    {
+      "analyzed_frame_index": 118,
+      "derived_video_seconds": 39.3,
+      "original_image": "00001965.jpg"
+    }
+  ],
+  "original_capture_date_unknown": true,
+  "strangers_left_unassigned": true,
+  "existing_public_posts_preserved": true,
+  "dates": [
+    {
+      "date_key": "2026-11-09",
+      "date_label": "2026년 11월 9일",
+      "session_count": 1,
+      "sample_count": 14
+    }
+  ],
+  "pass": true
+}

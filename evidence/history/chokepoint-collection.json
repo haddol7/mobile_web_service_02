@@ -1,0 +1,38 @@
+{
+  "collected_utc": "2026-11-08T16:50:07.598429+00:00",
+  "environment": "WSL Ubuntu",
+  "assets": [
+    {
+      "file": "groundtruth.tar.xz",
+      "url": "https://zenodo.org/records/815657/files/groundtruth.tar.xz?download=1",
+      "bytes": 456396,
+      "md5": "5c9d4d38a1c614905fe48da48ecdf06c"
+    },
+    {
+      "file": "P1E_S1.tar.xz",
+      "url": "https://zenodo.org/records/815657/files/P1E_S1.tar.xz?download=1",
+      "bytes": 385315324,
+      "md5": "195191772856c1a62650a1d47e897b2a"
+    }
+  ],
+  "sequences": {
+    "P1E_S1_C1": 2292,
+    "P1E_S1_C2": 2292
+  },
+  "previews": [
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C1-150.jpg",
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C1-250.jpg",
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C1-400.jpg",
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C2-150.jpg",
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C2-250.jpg",
+    "evidence/private/cctv-walking/chokepoint/P1E_S1_C2-400.jpg"
+  ],
+  "fps": 30,
+  "source": "https://arma.sourceforge.net/chokepoint/",
+  "download": "https://zenodo.org/records/815657",
+  "license": "Research use with acknowledgement; see official ChokePoint licence",
+  "attribution": "Wong, Chen, Mau, Sanderson, Lovell. CVPR Workshops 2011, doi:10.1109/CVPRW.2011.5981881",
+  "capture_dates_known": false,
+  "media_in_git": false,
+  "pass": true
+}

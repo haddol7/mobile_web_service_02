@@ -1,0 +1,641 @@
+{
+  "verified_utc": "2026-11-08T02:57:21.595472+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "face_module": "Production FaceReferences.analyze and match_embedding with actual InsightFace ONNX models",
+  "yolo_pipeline_rerun_for_this_batch": false,
+  "protocol": {
+    "frozen_utc": "2026-11-08T02:52:00.215208+00:00",
+    "reference_frames_per_video": 3,
+    "reference_indices": "first, middle, last",
+    "query_frames_per_video": 12,
+    "query_indices": "uniform including first and last",
+    "threshold": 0.55,
+    "profile_margin": 0.08,
+    "model": "buffalo_l",
+    "primary_face_policy": "largest detected face with min side 20px, independently in each transformed image",
+    "conditions": [
+      "original",
+      "low_light_35_percent",
+      "low_resolution_64px"
+    ],
+    "threshold_adjustment_allowed": false,
+    "known_identities": 12,
+    "unknown_identities": 6,
+    "query_clips": 36,
+    "original_and_synthetic_conditions_are_not_independent_samples": true
+  },
+  "collection": "evidence/person-libraries/expanded-face-collection.json",
+  "registration": [
+    {
+      "identity": "id00154",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00419",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00562",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00812",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00817",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00866",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id00926",
+      "valid_reference_images": 0,
+      "rejected_reference_images": 3,
+      "enrollable": false
+    },
+    {
+      "identity": "id01000",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id01041",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id01066",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id01106",
+      "valid_reference_images": 3,
+      "rejected_reference_images": 0,
+      "enrollable": true
+    },
+    {
+      "identity": "id01224",
+      "valid_reference_images": 2,
+      "rejected_reference_images": 1,
+      "enrollable": true
+    }
+  ],
+  "accepted_registration": {
+    "profiles": 11,
+    "accepted_images": 32,
+    "rejected_images": 1
+  },
+  "query_clips": 36,
+  "source_frames_sampled": 432,
+  "frame_conditions_processed": 1296,
+  "threshold_unchanged": true,
+  "exact_reference_decoded_frame_overlap": 0,
+  "conditions": {
+    "original": {
+      "known_frames": 288,
+      "correct_candidates": 78,
+      "wrong_known_candidates": 0,
+      "known_unresolved": 210,
+      "known_no_face": 0,
+      "known_correct_per_sampled_frame": 0.2708333333333333,
+      "known_identity_macro_recall": 0.2708333333333333,
+      "unknown_frames": 144,
+      "unknown_false_candidates": 0,
+      "unknown_unresolved": 144,
+      "unknown_no_face": 0,
+      "unknown_false_candidates_per_sampled_frame": 0.0,
+      "accepted_candidate_precision": 1.0,
+      "known_clips": 24,
+      "known_clips_with_any_correct_candidate": 11,
+      "known_clips_with_any_wrong_candidate": 0,
+      "unknown_clips": 12,
+      "unknown_clips_with_any_false_candidate": 0,
+      "mean_face_analysis_seconds": 0.22627090659027846
+    },
+    "low_light_35_percent": {
+      "known_frames": 288,
+      "correct_candidates": 70,
+      "wrong_known_candidates": 0,
+      "known_unresolved": 218,
+      "known_no_face": 0,
+      "known_correct_per_sampled_frame": 0.24305555555555555,
+      "known_identity_macro_recall": 0.24305555555555555,
+      "unknown_frames": 144,
+      "unknown_false_candidates": 0,
+      "unknown_unresolved": 144,
+      "unknown_no_face": 0,
+      "unknown_false_candidates_per_sampled_frame": 0.0,
+      "accepted_candidate_precision": 1.0,
+      "known_clips": 24,
+      "known_clips_with_any_correct_candidate": 10,
+      "known_clips_with_any_wrong_candidate": 0,
+      "unknown_clips": 12,
+      "unknown_clips_with_any_false_candidate": 0,
+      "mean_face_analysis_seconds": 0.224697108101851
+    },
+    "low_resolution_64px": {
+      "known_frames": 288,
+      "correct_candidates": 61,
+      "wrong_known_candidates": 0,
+      "known_unresolved": 227,
+      "known_no_face": 0,
+      "known_correct_per_sampled_frame": 0.21180555555555555,
+      "known_identity_macro_recall": 0.21180555555555555,
+      "unknown_frames": 144,
+      "unknown_false_candidates": 0,
+      "unknown_unresolved": 144,
+      "unknown_no_face": 0,
+      "unknown_false_candidates_per_sampled_frame": 0.0,
+      "accepted_candidate_precision": 1.0,
+      "known_clips": 24,
+      "known_clips_with_any_correct_candidate": 11,
+      "known_clips_with_any_wrong_candidate": 0,
+      "unknown_clips": 12,
+      "unknown_clips_with_any_false_candidate": 0,
+      "mean_face_analysis_seconds": 0.22394894028009288
+    }
+  },
+  "per_identity": [
+    {
+      "identity": "id00154",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00419",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 16,
+          "wrong_candidate": 0,
+          "unresolved": 8,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 12,
+          "wrong_candidate": 0,
+          "unresolved": 12,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 12,
+          "wrong_candidate": 0,
+          "unresolved": 12,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00562",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00812",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 14,
+          "wrong_candidate": 0,
+          "unresolved": 10,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 13,
+          "wrong_candidate": 0,
+          "unresolved": 11,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 8,
+          "wrong_candidate": 0,
+          "unresolved": 16,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00817",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 12,
+          "wrong_candidate": 0,
+          "unresolved": 12,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 10,
+          "wrong_candidate": 0,
+          "unresolved": 14,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 7,
+          "wrong_candidate": 0,
+          "unresolved": 17,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00866",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 13,
+          "wrong_candidate": 0,
+          "unresolved": 11,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 12,
+          "wrong_candidate": 0,
+          "unresolved": 12,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 13,
+          "wrong_candidate": 0,
+          "unresolved": 11,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id00926",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01000",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01041",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 2,
+          "wrong_candidate": 0,
+          "unresolved": 22,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 2,
+          "wrong_candidate": 0,
+          "unresolved": 22,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 4,
+          "wrong_candidate": 0,
+          "unresolved": 20,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01066",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01106",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 21,
+          "wrong_candidate": 0,
+          "unresolved": 3,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 21,
+          "wrong_candidate": 0,
+          "unresolved": 3,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 17,
+          "wrong_candidate": 0,
+          "unresolved": 7,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01224",
+      "enrolled": true,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01228",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01298",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01333",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01437",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01460",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    },
+    {
+      "identity": "id01509",
+      "enrolled": false,
+      "conditions": {
+        "original": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_light_35_percent": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        },
+        "low_resolution_64px": {
+          "correct_candidate": 0,
+          "wrong_candidate": 0,
+          "unresolved": 24,
+          "no_face": 0
+        }
+      }
+    }
+  ],
+  "elapsed_seconds": 302.31697857899997,
+  "private_directory": "evidence/private/face-validation/20261108T025200213110",
+  "source_review_images": [
+    "evidence/private/face-validation/20261108T025200213110/source-review-1.png",
+    "evidence/private/face-validation/20261108T025200213110/source-review-2.png",
+    "evidence/private/face-validation/20261108T025200213110/source-review-3.png"
+  ],
+  "chart": "evidence/person-libraries/expanded-face-results.png",
+  "chart_sha256": "d24c57d96386bef785005ab374687bec37ebcef3f68e9c2a4831e47c23f0171c",
+  "training_performed": false,
+  "automatic_confirmation_enabled": false,
+  "production_verified": false,
+  "different_recording_dates_proven": false,
+  "pretrained_model_training_identity_overlap_unknown": true,
+  "limitations": [
+    "Different source-video IDs do not alone prove distinct original recordings.",
+    "Twelve frames within each clip are correlated; frame conditions are not independent people.",
+    "Low light and low resolution are controlled transformations, not new recorded videos.",
+    "Dataset labels, rather than independent manual identity annotations, supply the expected identities."
+  ],
+  "execution_pass": true,
+  "source_sha256": {
+    "tools/verify_face_generalization.py": "bc4e42ada1c3d4d89e25cea354941f0e48d81075ea5472c7ca3dba78fe7a09b5",
+    "tools/collect_face_validation.py": "5886d2ca5bafd940cff17217d44bfff9934a50076a20419a9eaf2f3a37c6c192",
+    "YOLOv5/person_tracking.py": "bb74e9a44894081383e1949fcbcac4331983443d45c9c0e91436f31fb5e008e1"
+  },
+  "chart_renderer": {
+    "path": "tools/plot_face_validation.py",
+    "sha256": "67fd392d959b8aca50ba6bcfd69cafbc52ceaff4a33b6b5952ffd31cf4ff316e"
+  }
+}

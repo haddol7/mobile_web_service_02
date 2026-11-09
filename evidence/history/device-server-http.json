@@ -1,0 +1,579 @@
+{
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/post-contents/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/38d8e79e42e344dd92af4aa802a1176f.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d2d9bd81976c47c4ac7ecc6ed27a424b.jpg",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/login/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ad8aa9df97a9465a8a1b1adf8d450fd4.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/8b74d7c8352b4e7bb6b7083e67cc0a0a.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/46f605db21104f669fcdfc77aa1bf910.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/74fae86872584e5da30f7cc2b09471ea.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/444b14d7bc144f83b26f685362720214.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/346634ede284497b8758d60f060b84a8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/44ca74510e1b416e89c05b11647b499c.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ea19444a38374a6583204714ada3d9e7.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/c54f268962f84bc68eef637f2d61f725.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/740832e309e4430cab401ac811039e83.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/2da6f4d339b345cab44fa78c629291fb.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/7de92f1a07fb44a889bf37ca3ace4632.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/1ea4fc83a8224f17a8812e66d0452f3b.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d6d3098945144794ad79f59e0c557ae3.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/30c6362527364bdb9a1dc24b16e79059.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/0b2a46a87b19404499cf2a0abf9591e8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/history/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/history.css",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/static/blog/history.mjs",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/profiles/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/frames/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/499494b924e0640571224f9348be0cd23d8173e15bc1e5072c43c999a8d2f637/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/11c8f635e3e92974fd7b38b88e5af7ad0967c2edb0ce1286525fecdf5f615067/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/71ec070372bc5a8e1cce90cadb7edf3b4b7d6845a40c77d690e36813d9e8bd39/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/862c4177c1ad2737684602902728eeb05295d98f852d353646fa8bbd1fcad757/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/a450a6847f018cbe5a0f0376e65bf2982da29db763efe2e5b38b5ed7a3fe0da1/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/09174c84e134a0261995ca4e116839570630153a71f7f1b69a79c7379ea62012/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/730242e3caad7307a23e0cfc01a48518214b6408362af46bc4e4ad0dffd01dbc/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/44f477382a1cf7544d00bd3cc156a85503bb56994d28a32f5f5e21cdddcdc042/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/bd4029227329353ed03e83aa27c8d2691e0b5679c3883e4923ab81071c5759fa/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/15cbf4b7608872882c08a45bfff3dbade6468dc1993b6f8ae7ba6c474c38211b/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/0e76d0bd16e70d6cd60b1de59785043d4f05dd771a2ba5e67c2d882163360f34/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/29231e761f4f73a2ea2c58293cda4f5837c548383bf9775b271d94f4fd640f03/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/862c4177c1ad2737684602902728eeb05295d98f852d353646fa8bbd1fcad757/",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/history/ask/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/post-contents/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/38d8e79e42e344dd92af4aa802a1176f.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d2d9bd81976c47c4ac7ecc6ed27a424b.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ad8aa9df97a9465a8a1b1adf8d450fd4.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/8b74d7c8352b4e7bb6b7083e67cc0a0a.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/46f605db21104f669fcdfc77aa1bf910.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/74fae86872584e5da30f7cc2b09471ea.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/346634ede284497b8758d60f060b84a8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/444b14d7bc144f83b26f685362720214.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ea19444a38374a6583204714ada3d9e7.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/44ca74510e1b416e89c05b11647b499c.jpg",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/accounts/login/",
+      "status": 302
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/c54f268962f84bc68eef637f2d61f725.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/740832e309e4430cab401ac811039e83.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/2da6f4d339b345cab44fa78c629291fb.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/7de92f1a07fb44a889bf37ca3ace4632.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/1ea4fc83a8224f17a8812e66d0452f3b.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/post-contents/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d6d3098945144794ad79f59e0c557ae3.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/0b2a46a87b19404499cf2a0abf9591e8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d2d9bd81976c47c4ac7ecc6ed27a424b.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/30c6362527364bdb9a1dc24b16e79059.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ad8aa9df97a9465a8a1b1adf8d450fd4.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/38d8e79e42e344dd92af4aa802a1176f.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/frames/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/8b74d7c8352b4e7bb6b7083e67cc0a0a.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/46f605db21104f669fcdfc77aa1bf910.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/profiles/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/74fae86872584e5da30f7cc2b09471ea.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/444b14d7bc144f83b26f685362720214.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/346634ede284497b8758d60f060b84a8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/44ca74510e1b416e89c05b11647b499c.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/c54f268962f84bc68eef637f2d61f725.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/ea19444a38374a6583204714ada3d9e7.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/740832e309e4430cab401ac811039e83.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/2da6f4d339b345cab44fa78c629291fb.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/7de92f1a07fb44a889bf37ca3ace4632.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/1ea4fc83a8224f17a8812e66d0452f3b.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/d6d3098945144794ad79f59e0c557ae3.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/0b2a46a87b19404499cf2a0abf9591e8.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/862c4177c1ad2737684602902728eeb05295d98f852d353646fa8bbd1fcad757/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/30c6362527364bdb9a1dc24b16e79059.jpg",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/11c8f635e3e92974fd7b38b88e5af7ad0967c2edb0ce1286525fecdf5f615067/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/499494b924e0640571224f9348be0cd23d8173e15bc1e5072c43c999a8d2f637/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/71ec070372bc5a8e1cce90cadb7edf3b4b7d6845a40c77d690e36813d9e8bd39/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/09174c84e134a0261995ca4e116839570630153a71f7f1b69a79c7379ea62012/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/730242e3caad7307a23e0cfc01a48518214b6408362af46bc4e4ad0dffd01dbc/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/a450a6847f018cbe5a0f0376e65bf2982da29db763efe2e5b38b5ed7a3fe0da1/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/bd4029227329353ed03e83aa27c8d2691e0b5679c3883e4923ab81071c5759fa/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/0e76d0bd16e70d6cd60b1de59785043d4f05dd771a2ba5e67c2d882163360f34/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/15cbf4b7608872882c08a45bfff3dbade6468dc1993b6f8ae7ba6c474c38211b/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/29231e761f4f73a2ea2c58293cda4f5837c548383bf9775b271d94f4fd640f03/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/44f477382a1cf7544d00bd3cc156a85503bb56994d28a32f5f5e21cdddcdc042/",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/history/ask/",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/history/ask/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/862c4177c1ad2737684602902728eeb05295d98f852d353646fa8bbd1fcad757/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/11c8f635e3e92974fd7b38b88e5af7ad0967c2edb0ce1286525fecdf5f615067/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/499494b924e0640571224f9348be0cd23d8173e15bc1e5072c43c999a8d2f637/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/71ec070372bc5a8e1cce90cadb7edf3b4b7d6845a40c77d690e36813d9e8bd39/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/09174c84e134a0261995ca4e116839570630153a71f7f1b69a79c7379ea62012/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/a450a6847f018cbe5a0f0376e65bf2982da29db763efe2e5b38b5ed7a3fe0da1/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/730242e3caad7307a23e0cfc01a48518214b6408362af46bc4e4ad0dffd01dbc/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/bd4029227329353ed03e83aa27c8d2691e0b5679c3883e4923ab81071c5759fa/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/15cbf4b7608872882c08a45bfff3dbade6468dc1993b6f8ae7ba6c474c38211b/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/history/images/0e76d0bd16e70d6cd60b1de59785043d4f05dd771a2ba5e67c2d882163360f34/",
+      "status": 200
+    }
+  ]
+}

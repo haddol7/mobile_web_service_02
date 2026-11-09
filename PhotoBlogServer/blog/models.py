@@ -104,3 +104,88 @@ class PhotoTextLine(models.Model):
         ordering = ("position", "id")
         constraints = [models.UniqueConstraint(fields=("content", "line_id"), name="unique_photo_text_line")]
 
+
+def history_storage():
+    from django.core.files.storage import FileSystemStorage
+    return FileSystemStorage(location=settings.HISTORY_MEDIA_ROOT)
+
+
+def history_upload_path(instance, filename):
+    return f"{instance.session_id}/{uuid4().hex}.jpg"
+
+
+def reference_upload_path(instance, filename):
+    return f"references/{uuid4().hex}.jpg"
+
+
+class PersonProfile(models.Model):
+    key = models.CharField(max_length=64, primary_key=True)
+    display_name = models.CharField(max_length=80)
+    created_at = models.DateTimeField(auto_now_add=True)
+    reference_image = models.ImageField(storage=history_storage, upload_to=reference_upload_path, blank=True)
+
+
+class TrackingSession(models.Model):
+    id = models.UUIDField(primary_key=True)
+    source_label = models.CharField(max_length=80)
+    source_kind = models.CharField(max_length=8, choices=[("video", "영상"), ("live", "실시간")])
+    recording_started_at = models.DateTimeField(null=True)
+    configuration = models.JSONField()
+    configuration_sha256 = models.CharField(max_length=64)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class TrackingFrame(models.Model):
+    id = models.CharField(max_length=64, primary_key=True)
+    session = models.ForeignKey(TrackingSession, on_delete=models.CASCADE, related_name="frames")
+    frame_index = models.PositiveBigIntegerField()
+    video_seconds = models.FloatField(null=True)
+    observed_at = models.DateTimeField(null=True, db_index=True)
+    processed_at = models.DateTimeField()
+    payload_sha256 = models.CharField(max_length=64)
+    image = models.ImageField(storage=history_storage, upload_to=history_upload_path, blank=True)
+    post = models.ForeignKey(Post, null=True, on_delete=models.SET_NULL)
+    unassigned_faces = models.JSONField(default=list)
+    image_size = models.JSONField(default=list)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=("session", "frame_index"), name="unique_tracking_frame")]
+        ordering = ("-processed_at", "id")
+
+
+class PersonTrack(models.Model):
+    session = models.ForeignKey(TrackingSession, on_delete=models.CASCADE, related_name="tracks")
+    track_id = models.PositiveBigIntegerField()
+    first_frame = models.PositiveBigIntegerField()
+    last_frame = models.PositiveBigIntegerField()
+    candidate = models.ForeignKey(PersonProfile, null=True, on_delete=models.SET_NULL, related_name="candidate_tracks")
+    similarity = models.FloatField(null=True)
+    candidate_frame = models.ForeignKey(TrackingFrame, null=True, on_delete=models.SET_NULL, related_name="+")
+    confirmed = models.ForeignKey(PersonProfile, null=True, on_delete=models.SET_NULL, related_name="confirmed_tracks")
+    reviewed_at = models.DateTimeField(null=True)
+    revision = models.PositiveBigIntegerField(default=1)
+    review_basis = models.CharField(max_length=16, default="", blank=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=("session", "track_id"), name="unique_session_track")]
+
+
+class PersonObservation(models.Model):
+    frame = models.ForeignKey(TrackingFrame, on_delete=models.CASCADE, related_name="observations")
+    track = models.ForeignKey(PersonTrack, on_delete=models.CASCADE, related_name="observations")
+    bbox = models.JSONField()
+    candidate = models.ForeignKey(PersonProfile, null=True, on_delete=models.SET_NULL)
+    similarity = models.FloatField(null=True)
+    margin = models.FloatField(null=True)
+    face_bbox = models.JSONField(null=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=("frame", "track"), name="unique_frame_track")]
+
+
+class PassageEvent(models.Model):
+    id = models.CharField(max_length=64, primary_key=True)
+    frame = models.ForeignKey(TrackingFrame, on_delete=models.CASCADE, related_name="passages")
+    track = models.ForeignKey(PersonTrack, on_delete=models.CASCADE, related_name="passages")
+    direction = models.CharField(max_length=3, choices=[("in", "방향 1"), ("out", "방향 2")])
+

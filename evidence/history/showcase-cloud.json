@@ -1,0 +1,62 @@
+{
+  "verified_utc": "2026-11-08T16:09:57.202975+00:00",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "production_verified": true,
+  "actual_video_sessions_added": 8,
+  "real_sampled_images_added": 46,
+  "enrolled_profiles": 3,
+  "unknown_identity_videos": 2,
+  "capture_dates_preserved_unknown": true,
+  "existing_public_posts_preserved": true,
+  "dataset_confirmation_explicit": true,
+  "all_profiles_have_two_distinct_source_videos": true,
+  "question_facts": {
+    "sampled_frames": 9,
+    "observed_tracks": 2,
+    "confirmed_tracks": 2,
+    "candidate_tracks": 0,
+    "confirmed_profiles": 1,
+    "passages": 0,
+    "direction_in": 0,
+    "direction_out": 0,
+    "unknown_date_frames": 9,
+    "dates": [
+      "2026-11-09"
+    ],
+    "date_basis": "processed",
+    "timezone": "Asia/Seoul",
+    "source_count": 2,
+    "dataset_confirmed_tracks": 2
+  },
+  "question_evidence_ids": [
+    "cded18da04a0202111cb680deea6795de20fe637e64628c6e3112a53ef551478",
+    "52d1f82ce51bebfa23d7160e37e5ab7a79a726900edf8f533bcf0efdd51e6822"
+  ],
+  "profiles": [
+    {
+      "key": "showcase-v2-a",
+      "name": "인물 A",
+      "source_count": 2,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 0,
+      "reference_available": true
+    },
+    {
+      "key": "showcase-v2-b",
+      "name": "인물 B",
+      "source_count": 2,
+      "confirmed_tracks": 1,
+      "candidate_tracks": 1,
+      "reference_available": true
+    },
+    {
+      "key": "showcase-v2-c",
+      "name": "인물 C",
+      "source_count": 2,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 2,
+      "reference_available": true
+    }
+  ],
+  "pass": true
+}

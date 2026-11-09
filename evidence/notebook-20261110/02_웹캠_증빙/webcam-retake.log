@@ -1,0 +1,137 @@
+Capture output: /mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/.local/laptop/runs/webcam-mjpeg-20261109-164001
+[34m[1mbaseline/detect: [0mweights=['/mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/YOLOv5/yolov5s.pt'], source=0, data=/mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/YOLOv5/data/coco128.yaml, imgsz=[640, 640], conf_thres=0.25, iou_thres=0.45, max_det=1000, device=cpu, view_img=True, save_txt=True, save_conf=True, save_crop=False, nosave=True, classes=None, agnostic_nms=False, augment=False, visualize=False, update=False, project=/mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/.local/laptop/runs, name=webcam-mjpeg-20261109-164001, exist_ok=False, line_thickness=3, hide_labels=False, hide_conf=False, half=False, dnn=False, vid_stride=1
+YOLOv5 🚀 2026-11-5 Python-3.12.3 torch-2.6.0+cpu CPU
+
+Fusing layers... 
+YOLOv5s summary: 213 layers, 7225885 parameters, 0 gradients, 16.4 GFLOPs
+Physical camera /dev/video0 negotiated MJPG via V4L2
+1/1: 0...  Success (inf frames 640x480 at 30.00 FPS)
+
+0: 480x640 1 person, 92.8ms
+0: 480x640 1 person, 96.3ms
+0: 480x640 1 person, 88.1ms
+0: 480x640 1 person, 81.5ms
+0: 480x640 1 person, 94.0ms
+0: 480x640 1 person, 84.0ms
+0: 480x640 1 person, 89.0ms
+0: 480x640 1 person, 83.1ms
+0: 480x640 1 person, 82.0ms
+0: 480x640 1 person, 71.7ms
+0: 480x640 1 person, 72.8ms
+0: 480x640 1 person, 79.6ms
+0: 480x640 1 person, 76.2ms
+0: 480x640 2 persons, 72.1ms
+0: 480x640 1 person, 81.1ms
+0: 480x640 1 person, 75.9ms
+0: 480x640 1 person, 75.0ms
+0: 480x640 1 person, 71.1ms
+0: 480x640 1 person, 81.2ms
+0: 480x640 1 person, 80.4ms
+0: 480x640 1 person, 78.6ms
+0: 480x640 1 person, 72.1ms
+0: 480x640 1 person, 79.0ms
+0: 480x640 1 person, 73.7ms
+0: 480x640 1 person, 73.0ms
+0: 480x640 1 person, 72.1ms
+0: 480x640 1 person, 72.3ms
+0: 480x640 1 person, 74.9ms
+0: 480x640 1 person, 72.8ms
+0: 480x640 1 person, 74.3ms
+0: 480x640 1 person, 77.4ms
+0: 480x640 1 person, 78.5ms
+0: 480x640 1 person, 77.5ms
+0: 480x640 1 person, 72.5ms
+0: 480x640 1 person, 79.3ms
+0: 480x640 1 person, 80.1ms
+0: 480x640 1 person, 77.1ms
+0: 480x640 1 person, 78.7ms
+0: 480x640 1 person, 75.1ms
+0: 480x640 1 person, 77.7ms
+0: 480x640 1 person, 77.7ms
+0: 480x640 1 person, 79.1ms
+0: 480x640 1 person, 77.1ms
+0: 480x640 1 person, 76.6ms
+0: 480x640 1 person, 77.8ms
+0: 480x640 1 person, 74.6ms
+0: 480x640 1 person, 73.3ms
+0: 480x640 1 person, 75.7ms
+0: 480x640 1 person, 78.6ms
+0: 480x640 1 person, 73.1ms
+0: 480x640 1 person, 74.0ms
+0: 480x640 1 person, 73.1ms
+0: 480x640 1 person, 72.3ms
+0: 480x640 1 person, 73.5ms
+0: 480x640 1 person, 74.4ms
+0: 480x640 1 person, 75.0ms
+0: 480x640 1 person, 75.1ms
+0: 480x640 1 person, 75.5ms
+0: 480x640 1 person, 80.0ms
+0: 480x640 1 person, 74.8ms
+0: 480x640 1 person, 78.3ms
+0: 480x640 1 person, 73.5ms
+0: 480x640 1 person, 75.2ms
+0: 480x640 1 person, 73.6ms
+0: 480x640 1 person, 73.3ms
+0: 480x640 1 person, 72.7ms
+0: 480x640 1 person, 73.2ms
+0: 480x640 1 person, 81.1ms
+0: 480x640 1 person, 74.7ms
+0: 480x640 1 person, 75.6ms
+0: 480x640 1 person, 73.0ms
+0: 480x640 1 person, 75.4ms
+0: 480x640 1 person, 74.3ms
+0: 480x640 1 person, 73.4ms
+0: 480x640 1 person, 73.4ms
+0: 480x640 1 person, 73.7ms
+0: 480x640 1 person, 82.0ms
+0: 480x640 1 person, 80.6ms
+0: 480x640 1 person, 78.0ms
+0: 480x640 1 person, 78.0ms
+0: 480x640 1 person, 74.7ms
+0: 480x640 1 person, 77.2ms
+0: 480x640 1 person, 80.3ms
+0: 480x640 1 person, 77.9ms
+0: 480x640 1 person, 81.6ms
+0: 480x640 1 person, 74.3ms
+0: 480x640 1 person, 78.8ms
+0: 480x640 1 person, 74.1ms
+0: 480x640 1 person, 73.8ms
+0: 480x640 1 person, 76.2ms
+0: 480x640 1 person, 73.8ms
+0: 480x640 1 person, 74.3ms
+0: 480x640 1 person, 74.3ms
+0: 480x640 1 person, 72.6ms
+0: 480x640 1 person, 73.7ms
+0: 480x640 1 person, 78.2ms
+0: 480x640 1 person, 72.2ms
+0: 480x640 1 person, 76.1ms
+0: 480x640 1 person, 73.2ms
+0: 480x640 1 person, 74.0ms
+0: 480x640 1 person, 77.5ms
+0: 480x640 1 person, 1 bottle, 75.4ms
+0: 480x640 1 person, 72.5ms
+0: 480x640 1 person, 70.2ms
+0: 480x640 1 person, 74.0ms
+0: 480x640 1 person, 72.3ms
+0: 480x640 1 person, 76.6ms
+0: 480x640 1 person, 91.1ms
+0: 480x640 1 person, 76.1ms
+0: 480x640 1 person, 78.3ms
+0: 480x640 1 person, 79.4ms
+0: 480x640 1 person, 75.0ms
+0: 480x640 1 person, 75.6ms
+0: 480x640 1 person, 1 tie, 74.0ms
+0: 480x640 1 person, 76.2ms
+0: 480x640 1 person, 74.1ms
+0: 480x640 1 person, 1 tie, 72.4ms
+0: 480x640 1 person, 76.5ms
+0: 480x640 1 person, 77.7ms
+0: 480x640 1 person, 77.1ms
+0: 480x640 1 person, 78.0ms
+0: 480x640 1 person, 76.7ms
+0: 480x640 1 person, 1 tie, 82.4ms
+0: 480x640 1 person, 85.3ms
+Speed: 0.3ms pre-process, 76.8ms inference, 0.5ms NMS per image at shape (1, 3, 640, 640)
+Results saved to [1m/mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/.local/laptop/runs/webcam-mjpeg-20261109-164001[0m
+124 labels saved to /mnt/c/Users/haddo/바탕 화면/common02-laptop-20261109-final/mobile_web_service/common02/.local/laptop/runs/webcam-mjpeg-20261109-164001/labels
+{"source": 0, "device": "/dev/video0", "camera_format": "MJPG", "width": 640, "height": 480, "frame_index": 101, "labels_file": "labels/0_101.txt", "green_fraction": 0.0, "max_confidence": 0.708044, "class_ids": [0, 39], "capture": "Unmodified frame passed to the original YOLO display"}

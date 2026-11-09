@@ -1,0 +1,26 @@
+{
+  "verified_utc": "2026-11-08T10:48:12.491086+00:00",
+  "backend_environment": "WSL Ubuntu",
+  "device_environment": "Windows Android API35 emulator",
+  "django_tests": 181,
+  "django_tests_pass": true,
+  "android_unit_tests": 38,
+  "android_device_tests": 2,
+  "actual_llm_cases": 3,
+  "actual_llm_cases_pass": true,
+  "actual_native_and_web_llm_verified": true,
+  "private_key_mode": "0o600",
+  "key_in_source_tree": false,
+  "scanned_files": 538,
+  "leaked_paths": [],
+  "production_verified": false,
+  "source_sha256": {
+    "PhotoBlogServer/blog/history_llm.py": "ef0ebea793813d7292c127fca0db7aae4a9399dc26f771f1fa775e678302b888",
+    "PhotoBlogServer/photoblog/llm_config.py": "6d572d4467a0b92d4874dbcaa383cb48738a9407a2de87930a68c8ebb91d2307",
+    "PhotoBlogServer/photoblog/settings.py": "739f8c78e91285b65cec20f6a90a4a519add5821e3ec1102588c5ddd59ac3088",
+    "PhotoBlogServer/blog/tests/test_history_llm.py": "2d645e04438fa9f57d1e7405da502052406309f2ce95e7e3a5fd111e2d8d435c",
+    "PhotoViewer/app/src/main/java/com/haddol7/photoviewer/MainActivity.java": "ae43d3f0c7f1236e49a142ea4b75498faa3901e31e8b26c30f01bef714eefc59",
+    "PhotoViewer/app/src/androidTest/java/com/haddol7/photoviewer/ui/HistorySyncTest.java": "4a4d200f9840ca7fe47bf844b3876ee31ea4315613ad086a4c2c351e0fa907f5"
+  },
+  "pass": true
+}

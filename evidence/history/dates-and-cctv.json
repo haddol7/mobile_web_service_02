@@ -1,0 +1,53 @@
+{
+  "verified_utc": "2026-11-08T16:56:21.884117+00:00",
+  "pass": true,
+  "release": "202611081651566fecdc",
+  "production_verified": true,
+  "day_selection_in_browser_verified": "2026-11-08 / two session cards",
+  "daily_counts": [
+    {
+      "date_key": "2026-11-09",
+      "date_label": "2026년 11월 9일",
+      "session_count": 9,
+      "sample_count": 60
+    },
+    {
+      "date_key": "2026-11-08",
+      "date_label": "2026년 11월 8일",
+      "session_count": 2,
+      "sample_count": 37
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "evidence/private/ui-audit/calendar-production.png",
+      "sha256": "1d6c14ab6d76c94fd982daae7de650d284ad78af0cc0dfaa316f327793d28e72"
+    },
+    {
+      "path": "evidence/private/ui-audit/calendar-day-production.png",
+      "sha256": "e5e87ca5be9325129ba4db40254e8ff3beb907d22b347eb3d373a1caa7e99753"
+    },
+    {
+      "path": "evidence/private/ui-audit/cctv-walking-production.png",
+      "sha256": "8d33c649e45e2915e2a00623a35a58771a6f8636705e77538e01da2fa931d33b"
+    }
+  ],
+  "actual_inference_frames": 120,
+  "face_detection_occurrences_not_person_count": 84,
+  "cloud_observation_images_added": 14,
+  "source": "https://arma.sourceforge.net/chokepoint/",
+  "camera_inference_tested": "P1E_S1_C1",
+  "cross_day_identity_accuracy_claimed": false,
+  "capture_dates_invented": false,
+  "backend_environment": "WSL Ubuntu",
+  "django_tests": 203,
+  "real_http_tests": 15,
+  "web_unit_tests": 72,
+  "android_unit_tests": 40,
+  "android_capture_sizes": [
+    "small",
+    "regular"
+  ],
+  "android_lint_errors": 0,
+  "android_lint_warnings": 10
+}

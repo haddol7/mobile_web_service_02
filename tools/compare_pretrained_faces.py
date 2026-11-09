@@ -22,7 +22,7 @@ def main():
         name=stamp+f'-large-face-{index}'
         command=[sys.executable,str(ROOT/'tools/run_edge.py'),'--source',str(query['path']),
             '--device','cpu','--classes','0','--person-tracking','--face-references',str(manifest),
-            '--face-stride','1','--face-model','buffalo_l','--project',str(PRIVATE),'--name',name]
+            '--face-stride','1','--face-model','buffalo_l','--face-legacy','--project',str(PRIVATE),'--name',name]
         run=subprocess.run(command,cwd=ROOT,capture_output=True,text=True,timeout=180)
         (PRIVATE/(name+'.txt')).write_text(run.stdout+run.stderr,encoding='utf-8')
         assert run.returncode==0,f'Face comparison failed; inspect {name}.txt'

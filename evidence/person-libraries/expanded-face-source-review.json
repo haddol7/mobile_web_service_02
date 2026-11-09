@@ -1,0 +1,31 @@
+{
+  "reviewed_utc": "2026-11-08T03:00:52.048931+00:00",
+  "review_type": "Visual inspection of representative source contact sheets and the result chart",
+  "reviewed_identity_rows": 18,
+  "reviewed_source_clip_previews": 48,
+  "all_frames_visually_reviewed": false,
+  "dataset_identity_labels_independently_verified": false,
+  "observations": [
+    "Reference and query previews vary in view angle, hair, facial hair, background and image quality.",
+    "The id00926 reference previews include a smaller background face; actual SDK diagnosis found two faces in all three enrollment images.",
+    "Some reference/query scenes, including id00866, have similar clothing and background; different video IDs do not prove independent original recordings.",
+    "The six unknown identities have blank reference cells by design."
+  ],
+  "independent_recording_sessions_proven": false,
+  "threshold_changed_after_review": false,
+  "images": [
+    {
+      "path": "evidence/private/face-validation/20261108T025200213110/source-review-1.png",
+      "sha256": "fd77b10ff27bf2aca1df9e57879363a74724f4df6e0125facfc2e84a0ee1878f"
+    },
+    {
+      "path": "evidence/private/face-validation/20261108T025200213110/source-review-2.png",
+      "sha256": "c43b57f625cd5b19159b7c5237a08d158ad28eb1af68ef8f00515ad56a78cb56"
+    },
+    {
+      "path": "evidence/private/face-validation/20261108T025200213110/source-review-3.png",
+      "sha256": "534fe07510f89e6f31f1c09e44eea146b0a3e01845df90b7c1614732f156bad4"
+    }
+  ],
+  "chart_visually_checked": true
+}

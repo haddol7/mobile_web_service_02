@@ -2,10 +2,10 @@
 <resources>
     <style name="PhotoBlogTheme" parent="android:style/Theme.Material.Light.NoActionBar">
         <item name="android:fontFamily">sans</item>
-        <item name="android:colorAccent">#466B50</item>
+        <item name="android:colorAccent">#176B71</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">#F5F2E9</item>
-        <item name="android:statusBarColor">#F5F2E9</item>
+        <item name="android:navigationBarColor">#F3F6F9</item>
+        <item name="android:statusBarColor">#F3F6F9</item>
         <item name="android:windowActionModeOverlay">true</item>
     </style>
 </resources>

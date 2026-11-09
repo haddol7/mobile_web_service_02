@@ -1,0 +1,36 @@
+{
+  "observations_path": "/detections/",
+  "production_verified": true,
+  "primary_tabs": [
+    "현황",
+    "관측 기록",
+    "인물 확인"
+  ],
+  "pass": true,
+  "questions_is_primary_tab": false,
+  "legacy_photos_path": "/photos/",
+  "web_unit_tests": 72,
+  "required_post_api_seven_fields_preserved": true,
+  "observations_source": "TrackingFrame",
+  "screenshot": {
+    "sha256": "8fe70172ccc25f60d5bf643b42c711e4971beefede11289a40aa0951dfa2a9a8",
+    "path": "evidence/private/ui-audit/navigation-production.png"
+  },
+  "django_tests": 189,
+  "release": "202611081455485c811d",
+  "device_sizes": [
+    {
+      "pass": true,
+      "size": "small",
+      "composer_flow_pass": true
+    },
+    {
+      "pass": true,
+      "size": "regular",
+      "composer_flow_pass": true
+    }
+  ],
+  "android_unit_tests": 40,
+  "verified_utc": "2026-11-08T15:01:46.1522952Z",
+  "legacy_photos_preserved": true
+}

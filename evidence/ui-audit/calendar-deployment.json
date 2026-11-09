@@ -1,0 +1,38 @@
+{
+  "pass": true,
+  "production_verified": true,
+  "release": "202611081651566fecdc",
+  "base_release": "20261108160518be71af",
+  "console_used": false,
+  "database_or_dependencies_changed": false,
+  "changed_files": [
+    "blog/history_api.py",
+    "blog/monitoring_presenter.py",
+    "blog/static/blog/history.css",
+    "blog/static/blog/history.mjs",
+    "blog/static/blog/people.css",
+    "blog/templates/blog/history.html",
+    "blog/templates/blog/person_detail.html",
+    "blog/tests/test_person_experience.py"
+  ],
+  "backup_verified": true,
+  "source_and_public_assets_verified": true,
+  "record_question_verified": true,
+  "actual_llm_call_in_this_step": false,
+  "verified_utc": "2026-11-08T16:53:38.755109+00:00",
+  "calendar_days": [
+    {
+      "date_key": "2026-11-09",
+      "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+      "session_count": 9,
+      "sample_count": 60
+    },
+    {
+      "date_key": "2026-11-08",
+      "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+      "session_count": 2,
+      "sample_count": 37
+    }
+  ],
+  "day_selection_verified": true
+}

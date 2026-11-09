@@ -1,0 +1,5 @@
+{% extends 'blog/base.html' %}
+{% block title %}인물 관측 시스템{% endblock %}
+{% block content %}
+<section class="operator-entry"><div><span class="entry-label">인물 관측 시스템</span><h1>발견된 얼굴에서<br>이력과 근거까지</h1><p>영상 속 얼굴 후보를 비교하고 여러 영상의 발견 이력을 조회합니다.</p><a class="button" href="{% url 'login' %}?next={% url 'dashboard' %}">운영자 로그인</a></div><ol><li><b>01</b><span>영상과 얼굴 분석</span></li><li><b>02</b><span>등록 얼굴과 후보 비교</span></li><li><b>03</b><span>발견 이력과 근거 조회</span></li></ol></section>
+{% endblock %}

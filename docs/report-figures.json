@@ -1,0 +1,114 @@
+[
+  {
+    "path": "evidence/screenshots/github-folder-structure.jpg",
+    "sha256": "74a79e0178c47a7fcc63fee8d9912778649216a4fa98f43bff53a5bb546f99c8"
+  },
+  {
+    "path": "evidence/yolo-pipeline/original-image/bus.jpg",
+    "sha256": "e049d99a84197ba72c65c878a02134c92947ad6befd37f7914bc093c3bd40448"
+  },
+  {
+    "path": "evidence/screenshots/changedetection-vscode.png",
+    "sha256": "2753af8a2c263449cf8191aa7871a11b33daed161fdd5dbea0ee56f300a9ca0d"
+  },
+  {
+    "path": "evidence/screenshots/changedetection-upload-vscode.png",
+    "sha256": "1caceb59a05ac806b8ef3936119b5697f2b66ffb2b12521f2cea6d63a9629d59"
+  },
+  {
+    "path": "evidence/screenshots/detect-hook-vscode.png",
+    "sha256": "bafe48c51d92751cc2d7d858f72294992dd6b3ad7063b15678ea2c82e7d0ed47"
+  },
+  {
+    "path": "evidence/screenshots/local-api-root.jpg",
+    "sha256": "1b65043a5ecbcf4fe4854137da7c49df865657832fece53363fcb9873f5238fd"
+  },
+  {
+    "path": "evidence/screenshots/local-api-posts.jpg",
+    "sha256": "5c3d016ccd13bf2765aea360827a7eb6765b81552eed772ca150e33c2f9d2191"
+  },
+  {
+    "path": "evidence/screenshots/local-list.jpg",
+    "sha256": "a67bc49601b2af09b20d0aac1bcb7c1c2de937c412527df63924574470ef4c9d"
+  },
+  {
+    "path": "evidence/screenshots/yolo-native-list.png",
+    "sha256": "dc8bbe7506e416e63c1af75c3ccbd1817ca192aed0415e252c6fd814da4c1228"
+  },
+  {
+    "path": "evidence/screenshots/yolo-native-detail.png",
+    "sha256": "fa4a8442ab7735176e16af1d1f84a4d6e0bc9400e3c73ae80eac8b57929a382f"
+  },
+  {
+    "path": "evidence/mobile-flow/yolo-mobile-web-list.png",
+    "sha256": "c6ff6f350fe3ca22112ea52dd87f0d9c5cf475b188c9ca15d5b9f16d3c07e1a7"
+  },
+  {
+    "path": "evidence/mobile-flow/yolo-mobile-web-detail.png",
+    "sha256": "fa7acdb3fbde800d1837b0ad44b7ae4f56c617879dda3c9923804275cce92daf"
+  },
+  {
+    "path": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+    "sha256": "c32a9cd9213a8a7f4d282a4d3782cebabc4b2b26b55a6a2c472c5245732f8168"
+  },
+  {
+    "path": "evidence/ui-audit/cloud/api-root-browser.png",
+    "sha256": "adb2fbab87f7d292ed720093417c1e1faeb969eb142b4e68bd0dd9315e2bcb61"
+  },
+  {
+    "path": "evidence/ui-audit/cloud/yolo-native-detail.png",
+    "sha256": "c87ccaa9737ee50ef51a300a78a9f9294e77328fbdb73730bd5b67051f6cea08"
+  },
+  {
+    "path": "evidence/private/report-fixes-20261109/production-post-list.jpg",
+    "sha256": "4a3405ad907edce846873f5483abaaf1d9db2595d312a6bb33b75137a20ee4ed"
+  },
+  {
+    "path": "evidence/private/report-fixes-20261109/production-post-detail.jpg",
+    "sha256": "7a6003f1acd2ed6e2e597c490a7dc2ebe982993230ac7847dc92e24586c19a80"
+  },
+  {
+    "path": "evidence/private/detection-boxes/production-list.jpg",
+    "sha256": "aadb740017fc6677d61f937fb5db05643aa4865071e7c94ef8b6c831d9be0759"
+  },
+  {
+    "path": "evidence/private/cctv-walking/people/production-people.jpg",
+    "sha256": "a15c5ad4c95199a218f1fb5281e32dd0c1e28fa4263078b5aa2fabade3a16c6d"
+  },
+  {
+    "path": "evidence/private/cctv-walking/people/production-person.jpg",
+    "sha256": "b0bca2316b64e5a2aba2c34d8fb11a6e93a6733de543078a849baa02a03fa486"
+  },
+  {
+    "path": "evidence/private/cctv-walking/people/production-comparison.jpg",
+    "sha256": "c51554430a40716755ba24f3e2b5e49e43d33295f974d10aaba37d1d099673e0"
+  },
+  {
+    "path": "evidence/private/cctv-walking/people/enrollment-review.jpg",
+    "sha256": "71177521c611fd4a7489dcbb0029f1525299a3b6c4a938fdd1dad05cfbe459a4"
+  },
+  {
+    "path": "evidence/person-libraries/face-improvement-results.png",
+    "sha256": "44eb0a435422aea2d318380f37908bc866620d37c923ae85d23367222ba233cf"
+  },
+  {
+    "path": "evidence/private/ui-audit/person-answer-production.png",
+    "sha256": "bc9d3038df203bedaa295db3cf8eb1e212da642fa699addc8d5836a2424ae534"
+  },
+  {
+    "path": "evidence/private/ui-audit/chat-production.png",
+    "sha256": "a5930b7a541979dc7d2ba4bd920dc23f7d71dd941328b6cad5f531e8ca019d8c"
+  },
+  {
+    "path": "evidence/private/ui-audit/20261108T214736631868/captures/ui-audit/native-primary-records.png",
+    "sha256": "f6cfcb32b95567beeb18be7b8ffb0946d496b5cd645ff2537724d208e4b2ba48"
+  },
+  {
+    "path": "evidence/private/ui-audit/20261108T221731926915/captures/ui-audit/web-history-detail.png",
+    "sha256": "bc820144b9ea86a09288826cf5f0a867e2fef8c3a18ddf6ecaa37263de178efc"
+  },
+  {
+    "path": "evidence/private/detection-boxes/production-annotated.jpg",
+    "sha256": "82fc186370db43e32b26f9d7a8429a6b9fc138bb9b5a8c0c615a08994ff60493"
+  }
+]

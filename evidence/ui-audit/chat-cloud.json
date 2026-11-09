@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "environment": "WSL against PythonAnywhere",
+  "production_verified": true,
+  "verified_utc": "2026-11-08T19:51:52.711436+00:00",
+  "persisted_turns": 2,
+  "restored_in_separate_session": true,
+  "request_replay_without_duplicate": true,
+  "owner_only": true,
+  "missing_chat_404": true,
+  "followup_uses_prior_evidence": true,
+  "conversation_hash": "74ec601cdeed66fe9c7a9a9b7fe5988b58525781981cc2cd51d0b79749375622",
+  "actual_embedding_api_calls": 0,
+  "actual_llm_api_calls": 0,
+  "scope": "Storage, owner authorization and cached retrieval; no live provider generation test"
+}

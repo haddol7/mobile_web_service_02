@@ -1,0 +1,35 @@
+{
+  "target_new_sources_per_person": 8,
+  "sources": {
+    "public-trump": [
+      "https://www.dvidshub.net/video/526302/president-trump-and-prime-minister-netanyahu-remarks",
+      "https://www.dvidshub.net/video/563342/president-trump-japan-departure-broll-highlights",
+      "https://www.dvidshub.net/video/733563/president-trump-remarks-media",
+      "https://www.dvidshub.net/video/742724/president-trump-will-address-nation",
+      "https://www.dvidshub.net/video/628029/president-trump-remarks-and-signing-ceremony",
+      "https://www.dvidshub.net/video/508029/swearing-secretary-state-rex-tillerson",
+      "https://www.dvidshub.net/video/632165/president-trump-delivers-remarks-interagency-task-force-monitor-and-combat-trafficking-persons-annual-meeting",
+      "https://www.dvidshub.net/video/759368/",
+      "https://www.dvidshub.net/video/769910/president-trump-delivers-remarks-protecting-americas-seniors",
+      "https://www.dvidshub.net/video/755099/president-trump-holds-press-conference",
+      "https://www.dvidshub.net/video/1023932/president-trump-delivers-remarks-united-nations-general-assembly",
+      "https://www.dvidshub.net/video/998714/president-trumps-remarks-shield-americas-summit-doral-florida",
+      "https://www.dvidshub.net/video/978011/president-trump-delivers-remarks-united-nations-general-assembly"
+    ],
+    "public-obama": [
+      "https://www.dvidshub.net/video/493194/arabic-president-obama-addresses-us-commitment-nato-white-house",
+      "https://www.dvidshub.net/video/362956/president-obama-global-health-security-agenda-summit",
+      "https://www.dvidshub.net/video/287224/president-obama-visits-boston",
+      "https://www.dvidshub.net/video/363795/remarks-president-obama-and-prime-minister-narendra-modi-india-after-bilateral-meeting",
+      "https://www.dvidshub.net/video/456872/president-obama-remarks-nuclear-security-summit",
+      "https://www.dvidshub.net/video/418069/president-obama-remarks-iran-nuclear-deal",
+      "https://www.dvidshub.net/video/413783/president-barack-obamas-statement-press",
+      "https://www.dvidshub.net/video/391729/president-obama-remarks-white-house-summit-countering-violent-extremism-arabic-audio",
+      "https://www.dvidshub.net/video/362296/president-obama-delivers-remarks-clinton-global-initiative",
+      "https://www.dvidshub.net/video/359270/president-obama-press-conference-nato-wales-summit",
+      "https://www.dvidshub.net/video/324601/president-obama-palais-des-beaux-arts",
+      "https://www.dvidshub.net/video/498508/president-obama-speaks-macdill",
+      "https://www.dvidshub.net/video/483992/president-obama-remarks-united-nations"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}AI 질문{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{% static 'blog/chat.css' %}?v=chat-1">{% endblock %}
+{% block content %}
+<section class="chat-shell" aria-label="관측 기록 대화">
+  <aside class="chat-sidebar" aria-label="대화 기록"><div class="chat-sidebar-heading"><strong>대화 기록</strong><button type="button" class="chat-new" data-new-chat>새 대화</button></div><div id="chat-list" class="chat-list"></div></aside>
+  <div class="chat-main">
+    <div class="chat-toolbar"><div><h1 id="chat-title">AI 질문</h1><button type="button" id="chat-scope-button" class="chat-scope-button">전체 기록</button></div><div class="chat-toolbar-actions"><button type="button" id="chat-history-button" class="chat-quiet">대화 기록</button><button type="button" class="chat-quiet" data-new-chat>새 대화</button></div></div>
+    <div id="chat-scroll" class="chat-scroll" role="region" aria-label="대화 내용" tabindex="0"><button type="button" id="chat-older" class="chat-quiet" hidden>이전 대화 더 보기</button><div id="chat-thread" class="chat-thread" aria-live="polite"></div></div>
+    <p id="chat-status" class="chat-status" role="status" aria-live="polite"></p>
+    <form id="chat-form" class="chat-composer"><label for="question" class="chat-sr-only">질문</label><div class="chat-input-row"><textarea id="question" name="question" rows="1" maxlength="400" placeholder="관측 기록에 질문하세요" enterkeyhint="send" required></textarea><button id="chat-send" type="submit" disabled>보내기</button></div><p>전송 시 검색과 AI 답변에 API 사용료가 발생할 수 있습니다.</p></form>
+  </div>
+</section>
+<dialog id="chat-history-dialog" class="chat-sheet" aria-labelledby="chat-history-title"><div class="chat-dialog-heading"><h2 id="chat-history-title">대화 기록</h2><button type="button" data-chat-close="chat-history-dialog">닫기</button></div><button type="button" class="chat-new" data-new-chat>새 대화</button><div id="chat-mobile-list" class="chat-list"></div></dialog>
+<dialog id="chat-scope-dialog" class="chat-sheet" aria-labelledby="chat-scope-title"><div class="chat-dialog-heading"><h2 id="chat-scope-title">검색 범위</h2><button type="button" data-chat-close="chat-scope-dialog">닫기</button></div><form id="chat-scope-form"><label>인물<select name="profile"><option value="">전체 인물</option></select></label><label>시간 기준<select name="date_basis"><option value="processed">분석일</option><option value="recorded">원본 촬영일</option></select></label><div class="chat-dates"><label>시작일<input type="date" name="start"></label><label>종료일<input type="date" name="end"></label></div><label>확인 상태<select name="review_state"><option value="confirmed">확인된 인물만</option><option value="candidates">미확인 후보 포함</option></select></label><p class="muted">촬영일을 모르는 자료는 분석일로 찾아볼 수 있습니다.</p><div class="chat-scope-actions"><button type="button" id="chat-clear-scope" class="secondary">전체 기록</button><button type="submit">적용</button></div></form></dialog>
+<dialog id="chat-evidence-dialog" class="chat-sheet" aria-label="답변 근거 사진"><div class="chat-dialog-heading"><h2 id="chat-evidence-title">근거 사진</h2><button type="button" data-chat-close="chat-evidence-dialog">닫기</button></div><img id="chat-evidence-image" alt="관측 기록의 근거 사진"><p id="chat-evidence-time" class="muted"></p><a id="chat-evidence-link" class="button" href="/">이 영상의 기록</a></dialog>
+{% csrf_token %}{{ history_config|json_script:'chat-config' }}
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'blog/chat.mjs' %}?v=chat-1"></script>{% endblock %}

@@ -1,0 +1,44 @@
+{
+  "existing_model_classes_unchanged": {
+    "Post": true,
+    "PhotoContent": true,
+    "PhotoTag": true,
+    "PhotoTextLine": true
+  },
+  "new_migration_operations": [
+    {
+      "operation": "CreateModel",
+      "name": "PersonProfile"
+    },
+    {
+      "operation": "CreateModel",
+      "name": "TrackingSession"
+    },
+    {
+      "operation": "CreateModel",
+      "name": "TrackingFrame"
+    },
+    {
+      "operation": "CreateModel",
+      "name": "PersonTrack"
+    },
+    {
+      "operation": "CreateModel",
+      "name": "PassageEvent"
+    },
+    {
+      "operation": "CreateModel",
+      "name": "PersonObservation"
+    },
+    {
+      "operation": "AddConstraint",
+      "model_name": "trackingframe"
+    },
+    {
+      "operation": "AddConstraint",
+      "model_name": "persontrack"
+    }
+  ],
+  "additive_only": true,
+  "pass": true
+}

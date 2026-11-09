@@ -1,0 +1,36 @@
+{
+  "pass": true,
+  "production_verified": true,
+  "release": "202611081909202100d8",
+  "base_release": "20261108160518be71af",
+  "console_used": false,
+  "database_or_dependencies_changed": false,
+  "changed_files": [
+    "blog/history_queries.py",
+    "blog/static/blog/history.mjs",
+    "blog/templates/blog/history.html",
+    "blog/tests/test_embeddings.py"
+  ],
+  "backup_verified": true,
+  "source_and_public_assets_verified": true,
+  "record_question_verified": true,
+  "actual_llm_call_in_this_step": false,
+  "verified_utc": "2026-11-08T19:09:55.856305+00:00",
+  "calendar_days": [
+    {
+      "date_key": "2026-11-09",
+      "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+      "session_count": 29,
+      "sample_count": 173
+    },
+    {
+      "date_key": "2026-11-08",
+      "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+      "session_count": 2,
+      "sample_count": 37
+    }
+  ],
+  "day_selection_verified": true,
+  "corpus_documents": 31,
+  "actual_embedding_api_calls": 0
+}

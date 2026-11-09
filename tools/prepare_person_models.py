@@ -14,7 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--model',choices=['buffalo_s','buffalo_l'],default='buffalo_s')
+    parser.add_argument('--model',choices=['buffalo_s','buffalo_l'],default='buffalo_l')
     args=parser.parse_args()
     if platform.system() != 'Linux' or not os.environ.get('WSL_DISTRO_NAME'):
         raise SystemExit('Run in the project WSL virtualenv.')

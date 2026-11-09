@@ -1,0 +1,2 @@
+@font-face{font-family:Pretendard;src:url('./PretendardVariable.woff2') format('woff2');font-style:normal;font-weight:100 900;font-display:swap}
+body,button,input,textarea,select{font-family:Pretendard,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;letter-spacing:-.018em}body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}button,input,textarea,select{font-size:inherit}h1,h2,h3,.brand{letter-spacing:-.035em}pre,code{font-family:ui-monospace,Consolas,monospace;letter-spacing:normal}

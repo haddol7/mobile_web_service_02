@@ -109,8 +109,8 @@ function initialize(){
     try{
       const response=await fetch(state.postId?`/api_root/Post/${state.postId}/`:'/api_root/Post/',{method:state.postId?'PATCH':'POST',credentials:'same-origin',redirect:'error',headers:{Accept:'application/json','X-CSRFToken':form.querySelector('[name=csrfmiddlewaretoken]').value},body:data});
       let result;try{result=await response.json();}catch(error){if(response.ok)throw Error('uncertain');result={detail:`서버 응답을 확인하지 못했어요. (${response.status})`};}
-      if(!response.ok){if(response.status===409){state.conflict=true;saveMessage('다른 곳에서 사진이나 내용을 수정했어요. 지금 입력은 유지했습니다. 최신 글을 확인한 뒤 수정 화면을 다시 열어주세요.','최신 사진글 보기',`/post/${state.postId}/`);}throw Object.assign(Error(result.detail||Object.values(result).flat(2).join(' ')),{http:response.status});}
-      state.committed=true;state.dirty=false;state.saving=false;busy(false);saveMessage('사진글이 저장되었습니다. 상세 조회가 실패해도 다시 게시하지 마세요.','저장한 사진글 열기',`/post/${result.id}/`);status('사진 게시 완료',{busy:false});window.location.assign(`/post/${result.id}/`);
+      if(!response.ok){if(response.status===409){state.conflict=true;saveMessage('다른 곳에서 사진이나 내용을 수정했어요. 지금 입력은 유지했습니다. 최신 글을 확인한 뒤 수정 화면을 다시 열어주세요.','최신 기록 보기',`/post/${state.postId}/`);}throw Object.assign(Error(result.detail||Object.values(result).flat(2).join(' ')),{http:response.status});}
+      state.committed=true;state.dirty=false;state.saving=false;busy(false);saveMessage('기록이 저장되었습니다. 상세 조회가 실패해도 다시 게시하지 마세요.','저장한 기록 열기',`/post/${result.id}/`);status('기록 등록 완료',{busy:false});window.location.assign(`/post/${result.id}/`);
     }catch(error){state.saving=false;busy(false);if(!error.http){state.uncertain=true;saveMessage('전송 결과를 확인하지 못했어요. 입력은 유지했고 자동 재전송을 멈췄습니다. 목록에서 게시 여부를 먼저 확인해주세요.','사진 목록에서 확인','/');status('게시 여부 확인이 필요해요.',{error:true});}else status(error.message,{error:true});regionControls();}
   }
   async function loadExisting(){

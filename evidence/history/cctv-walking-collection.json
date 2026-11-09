@@ -1,0 +1,103 @@
+{
+  "collected_utc": "2026-11-08T16:39:36.928766+00:00",
+  "environment": "WSL Ubuntu",
+  "clips": [
+    {
+      "id": "WalkByShop1front",
+      "dataset": "CAVIAR",
+      "url": "https://homepages.inf.ed.ac.uk/rbf/CAVIARDATA2/WalkByShop1front/WalkByShop1front.mpg",
+      "path": "evidence/private/cctv-walking/WalkByShop1front.mpg",
+      "sha256": "cf2138e7f69ad2700d025eaa39b683716792b4f972170faa7b9b1b99672858ee",
+      "bytes": 13627518,
+      "decoded_frames": 2360,
+      "container_frame_count": 26,
+      "fps": 25.0,
+      "size": [
+        384,
+        288
+      ],
+      "full_decode_pass": true,
+      "view": "frontal hallway"
+    },
+    {
+      "id": "WalkByShop1cor",
+      "dataset": "CAVIAR",
+      "url": "https://homepages.inf.ed.ac.uk/rbf/CAVIARDATA2/WalkByShop1cor/WalkByShop1cor.mpg",
+      "path": "evidence/private/cctv-walking/WalkByShop1cor.mpg",
+      "sha256": "8adc5aa3a54080fc389f47d5d44e6a326e592fd8843db645ab1d7d5af079183f",
+      "bytes": 13629643,
+      "decoded_frames": 2360,
+      "container_frame_count": 26,
+      "fps": 25.0,
+      "size": [
+        384,
+        288
+      ],
+      "full_decode_pass": true,
+      "view": "along corridor"
+    },
+    {
+      "id": "EnterExitCrossingPaths1front",
+      "dataset": "CAVIAR",
+      "url": "https://homepages.inf.ed.ac.uk/rbf/CAVIARDATA2/EnterExitCrossingPaths1front/EnterExitCrossingPaths1front.mpg",
+      "path": "evidence/private/cctv-walking/EnterExitCrossingPaths1front.mpg",
+      "sha256": "4ad6b51f756cf5c05df6017137bdb11a31bc320dd53de75aaa06a9dccf8ea7c9",
+      "bytes": 2260632,
+      "decoded_frames": 383,
+      "container_frame_count": 4,
+      "fps": 25.0,
+      "size": [
+        384,
+        288
+      ],
+      "full_decode_pass": true,
+      "view": "frontal hallway"
+    },
+    {
+      "id": "MOT17-09-SDP",
+      "dataset": "MOTChallenge",
+      "url": "https://motchallenge.net/sequenceVideos/MOT17-09-SDP-raw.mp4",
+      "path": "evidence/private/tracking-samples/MOT17-09-SDP/raw.mp4",
+      "sha256": "44472faa5643b173fa9b0d4837d3018cd1f5c4a3f13ab4bc9f865cf552022f9d",
+      "decoded_frames": 525,
+      "fps": 30.0,
+      "size": [
+        960,
+        540
+      ],
+      "full_decode_pass": true,
+      "reused_verified_video": true
+    },
+    {
+      "id": "MOT17-02-SDP",
+      "dataset": "MOTChallenge",
+      "url": "https://motchallenge.net/sequenceVideos/MOT17-02-SDP-raw.mp4",
+      "path": "evidence/private/tracking-samples/MOT17-02-SDP/raw.mp4",
+      "sha256": "d560bc50e1942d5c7335c937c8ac513aa87bb41ea51ae21fa02f661151d5a066",
+      "decoded_frames": 600,
+      "fps": 30.0,
+      "size": [
+        960,
+        540
+      ],
+      "full_decode_pass": true,
+      "reused_verified_video": true
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://homepages.inf.ed.ac.uk/rbf/CAVIARDATA1/",
+      "terms": "CC BY-SA; acknowledge EC CAVIAR project IST 2001 37540"
+    },
+    {
+      "url": "https://motchallenge.net/data/MOT17/",
+      "terms": "MOTChallenge academic/noncommercial terms; original sequence conditions apply"
+    }
+  ],
+  "raw_videos_in_git": false,
+  "epfl_official_ftp": {
+    "download_available": false,
+    "error_type": "HTTPError"
+  },
+  "pass": true
+}

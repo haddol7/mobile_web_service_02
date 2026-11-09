@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}사진 블로그{% endblock %} · Common 02</title>
+  <title>{% block title %}관제 현황{% endblock %} | 감시 시스템</title>
   <style>
     :root { color-scheme: light; --ink:#24372f; --paper:#f7f6ee; --accent:#276650; --line:#d8dfd2; }
     * { box-sizing:border-box; }
@@ -71,19 +71,23 @@
     @media(max-width:360px){.site-nav{gap:6px;padding:8px 10px}.site-nav .brand{font-size:18px}.site-nav .nav-post,.site-nav .nav-login{font-size:13px;padding:8px 10px}.site-nav .nav-signup{font-size:12px}}
   </style>
   {% block extra_head %}{% endblock %}
+  <link rel="stylesheet" href="{% static 'blog/ui.css' %}?v=monitor-1">
+  <link rel="stylesheet" href="{% static 'blog/monitoring.css' %}?v=workspace-1">
+  <link rel="stylesheet" href="{% static 'blog/people.css' %}?v=people-2">
+  <link rel="preload" href="{% static 'blog/PretendardVariable.woff2' %}" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{% static 'blog/fonts.css' %}?v=pretendard-1">
 </head>
-<body>
+<body data-page="{{ request.resolver_match.url_name }}">
   <header><nav class="site-nav" aria-label="주 메뉴">
-    <a class="brand" href="{% url 'post_list' %}">사진 블로그</a>
+    <a class="brand" href="{% url 'dashboard' %}"><span class="brand-mark" aria-hidden="true"></span>감시 시스템</a>
     {% if user.is_authenticated %}
-      {% if is_blog_owner %}<a class="button nav-post" href="{% url 'post_new' %}">사진 게시</a>{% endif %}
-      <details class="account-menu"><summary aria-label="계정 메뉴">계정 ▾</summary><div class="account-popover"><p>{{ user.username }}</p><form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="secondary" type="submit">로그아웃</button></form></div></details>
+      <details class="account-menu"><summary aria-label="계정 메뉴">계정</summary><div class="account-popover"><p>{{ user.username }}</p>{% if is_blog_owner %}<p><a href="{% url 'post_new' %}">사진 추가</a></p><p><a href="{% url 'post_list' %}">사진 보관함</a></p>{% endif %}<form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="secondary" type="submit">로그아웃</button></form></div></details>
     {% else %}
       <a class="button nav-login" href="{% url 'login' %}">로그인</a>
     {% endif %}
-  </nav></header>
+  </nav><div class="section-nav" role="navigation" aria-label="감시 시스템 메뉴"><a href="{% url 'dashboard' %}" {% if request.resolver_match.url_name == 'dashboard' or request.resolver_match.url_name == 'detections' or request.resolver_match.url_name == 'history' %}aria-current="page"{% endif %}>관측 기록</a>{% if is_blog_owner %}<a href="{% url 'people' %}" {% if request.resolver_match.url_name == 'people' or request.resolver_match.url_name == 'person_detail' %}aria-current="page"{% endif %}>인물 확인</a><a href="{% url 'questions' %}" {% if request.resolver_match.url_name == 'questions' %}aria-current="page"{% endif %}>AI 질문</a>{% endif %}</div></header>
   <main>{% block content %}{% endblock %}</main>
-  <footer>사진과 이야기를 함께 · 사진 블로그</footer>
+  <footer>감시 시스템 <span>YOLO 객체 검출과 관측 기록 조회</span></footer>
   {% block scripts %}{% endblock %}
 </body>
 </html>

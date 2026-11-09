@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-11-05T11:11:50.559188+00:00",
+  "checked_utc": "2026-11-08T12:55:53.169561+00:00",
   "read_only": true,
   "domain": "daejinha.pythonanywhere.com",
   "current_source": "/home/daejinha/common01-auto/releases/20261020144652d2d706/PhotoBlogServer",
@@ -7,8 +7,8 @@
   "comparisons": [
     {
       "path": "blog/models.py",
-      "identical": true,
-      "local_sha256": "8e346d1693ab2ce6b195cbdec87b31d9886f4307eb457a65cd7e55feb1526180",
+      "identical": false,
+      "local_sha256": "ea5af76ce11b5755d6ba88de69d1fcd28593d4f6135b8884a758f4c9f43052d6",
       "remote_sha256": "8e346d1693ab2ce6b195cbdec87b31d9886f4307eb457a65cd7e55feb1526180"
     },
     {
@@ -37,8 +37,8 @@
     },
     {
       "path": "blog/views.py",
-      "identical": true,
-      "local_sha256": "ed79c2f02b98744480031abc4e2b813d093776cc246c1c08804cf16f31feae69",
+      "identical": false,
+      "local_sha256": "76ab179b868f29b9b81111b2539abc158fb0effdcf58c9247b6fa6128c8ae311",
       "remote_sha256": "ed79c2f02b98744480031abc4e2b813d093776cc246c1c08804cf16f31feae69"
     },
     {
@@ -49,14 +49,14 @@
     },
     {
       "path": "blog/api_v1_urls.py",
-      "identical": true,
-      "local_sha256": "f092c6fb16c105a6f375a0e6a398d6b2e739a90bce021eb3681c640851de0fbf",
+      "identical": false,
+      "local_sha256": "9933cd3d756f4f7081c259b305ad571e6e206a77f611917830c735d7115cb42b",
       "remote_sha256": "f092c6fb16c105a6f375a0e6a398d6b2e739a90bce021eb3681c640851de0fbf"
     },
     {
       "path": "blog/urls.py",
-      "identical": true,
-      "local_sha256": "bf34b0f2b197478f0af7eefb331e628a4985d4389cb67833f953903ddc4e9c79",
+      "identical": false,
+      "local_sha256": "18ed98df2c762740508e1a1c852e43403cd97cc1070e04e650aa6d613158decc",
       "remote_sha256": "bf34b0f2b197478f0af7eefb331e628a4985d4389cb67833f953903ddc4e9c79"
     },
     {
@@ -96,13 +96,19 @@
       "remote_sha256": "228adefcf878cbfcdbe53b605f99b0bb8d192fa41c6745ab3a396e70c4ab42a8"
     },
     {
+      "path": "blog/migrations/0005_personprofile_trackingsession_trackingframe_and_more.py",
+      "identical": false,
+      "local_sha256": "4e33fcba04fcf6e529ca860889617f986cfb0747c0d2bd4237edbd9a6749303f",
+      "remote_sha256": null
+    },
+    {
       "path": "blog/migrations/__init__.py",
       "identical": true,
       "local_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "remote_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
-  "migrations_identical": true,
+  "migrations_identical": false,
   "requirements_identical": true,
   "proposed_storage": {
     "database": "/home/daejinha/common01-auto/shared/db.sqlite3",

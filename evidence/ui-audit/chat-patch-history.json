@@ -1,0 +1,54 @@
+[
+  {
+    "pass": true,
+    "production_verified": true,
+    "release": "20261108194952368451",
+    "base_release": "20261108160518be71af",
+    "console_used": false,
+    "database_or_dependencies_changed": false,
+    "changed_files": [
+      "blog/api_v1_urls.py",
+      "blog/chat_api.py",
+      "blog/chat_store.py",
+      "blog/history_api.py",
+      "blog/history_llm.py",
+      "blog/history_queries.py",
+      "blog/history_serializers.py",
+      "blog/static/blog/Pretendard-LICENSE.txt",
+      "blog/static/blog/PretendardVariable.woff2",
+      "blog/static/blog/chat-view.mjs",
+      "blog/static/blog/chat.css",
+      "blog/static/blog/chat.mjs",
+      "blog/static/blog/fonts.css",
+      "blog/templates/blog/base.html",
+      "blog/templates/blog/chat.html",
+      "blog/tests/test_chat.py",
+      "blog/tests/test_history_llm.py",
+      "blog/tests/test_monitoring.py",
+      "blog/views.py",
+      "photoblog/settings.py"
+    ],
+    "backup_verified": true,
+    "source_and_public_assets_verified": true,
+    "record_question_verified": true,
+    "actual_llm_call_in_this_step": false,
+    "verified_utc": "2026-11-08T19:51:29.026435+00:00",
+    "calendar_days": [
+      {
+        "date_key": "2026-11-09",
+        "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+        "session_count": 29,
+        "sample_count": 173
+      },
+      {
+        "date_key": "2026-11-08",
+        "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+        "session_count": 2,
+        "sample_count": 37
+      }
+    ],
+    "day_selection_verified": true,
+    "corpus_documents": 31,
+    "actual_embedding_api_calls": 0
+  }
+]

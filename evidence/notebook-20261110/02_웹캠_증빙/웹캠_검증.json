@@ -1,0 +1,32 @@
+{
+  "date_kst": "2026-11-10T01:40:01+09:00",
+  "host": "Windows x64 26200.8037",
+  "wsl": "WSL 3.0.3 / Ubuntu 24.04.2 LTS / 6.18.54.1-microsoft-standard-WSL2",
+  "python": "3.12.3",
+  "torch": "2.6.0+cpu",
+  "camera": "ACER HD User Facing",
+  "usb_vid_pid": "0408:403d",
+  "busid_on_test_laptop": "1-6",
+  "device": "/dev/video0",
+  "source": 0,
+  "format": "MJPG",
+  "dimensions": [
+    640,
+    480
+  ],
+  "launcher": "tools/run_edge.py --baseline --source 0 --device cpu --view-img --nosave --save-txt --save-conf",
+  "actual_helper_command": "OMP_NUM_THREADS=2 OPENBLAS_NUM_THREADS=2 WEBCAM_EVIDENCE_PREFER_OBJECTS=1 ~/.venvs/mobile_web_service_02/bin/python .local/laptop/webcam_mjpeg_capture.py",
+  "baseline_sha256": "ba0175be184bd03632590b3d71b059f2e2df21569392bb9c5e18ff76292f9e60",
+  "weights_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+  "selected_frame_index": 101,
+  "person_confidence": 0.708044,
+  "frames_with_label_files": 124,
+  "exit_code": 0,
+  "frame": "웹캠_실시간_검출.png",
+  "selected_frame_metadata": "선택_프레임_메타데이터.json",
+  "raw_labels": "선택_프레임_검출값.txt",
+  "log": "webcam-retake.log",
+  "windows_camera_started_after_detach": true,
+  "production_requests": 0,
+  "paid_api_calls": 0
+}

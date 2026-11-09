@@ -8,7 +8,7 @@ const evidence=path.join(common,'evidence/mobile-web');
 const hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 async function snapshot(){
   const result={};
-  for(const directory of ['web-tests','PhotoBlogServer/blog/static/blog/content','PhotoBlogServer/blog/static/blog/vendor/content']){
+  for(const directory of ['web-tests','PhotoBlogServer/blog/static/blog','PhotoBlogServer/blog/templates']){
     async function walk(location){for(const entry of await fs.readdir(location,{withFileTypes:true})){
       const full=path.join(location,entry.name);if(entry.isDirectory())await walk(full);
       else result[path.relative(common,full).replaceAll('\\','/')]=hash(await fs.readFile(full));
@@ -19,7 +19,7 @@ async function snapshot(){
 }
 await fs.mkdir(evidence,{recursive:true});
 const before=await snapshot(),started=new Date().toISOString();
-const run=spawnSync(process.execPath,['--test','--test-reporter=tap',path.join(common,'web-tests/content-rules.test.mjs')],{encoding:'utf8'});
+const run=spawnSync(process.execPath,['--test','--test-reporter=tap',path.join(common,'web-tests/content-rules.test.mjs'),path.join(common,'web-tests/history-view.test.mjs'),path.join(common,'web-tests/chat-view.test.mjs')],{encoding:'utf8'});
 await fs.writeFile(path.join(evidence,'unit-tests.txt'),run.stdout+run.stderr);
 const after=await snapshot(),stable=JSON.stringify(before)===JSON.stringify(after);
 const tests=Number(run.stdout.match(/^# tests (\d+)$/m)?.[1]||0);

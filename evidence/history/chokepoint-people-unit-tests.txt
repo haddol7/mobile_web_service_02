@@ -1,0 +1,9 @@
+test_both_eyes_are_required_and_background_face_has_no_label (test_chokepoint_identity.IdentityEvidenceTests.test_both_eyes_are_required_and_background_face_has_no_label) ... ok
+test_id_switch_wrong_candidate_and_single_annotation_cannot_confirm (test_chokepoint_identity.IdentityEvidenceTests.test_id_switch_wrong_candidate_and_single_annotation_cannot_confirm) ... ok
+test_repeated_concordant_annotations_can_confirm_matching_model_candidate (test_chokepoint_identity.IdentityEvidenceTests.test_repeated_concordant_annotations_can_confirm_matching_model_candidate) ... ok
+test_two_subjects_inside_one_box_are_ambiguous (test_chokepoint_identity.IdentityEvidenceTests.test_two_subjects_inside_one_box_are_ambiguous) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

@@ -1,0 +1,58 @@
+{
+  "verified_utc": "2026-11-08T19:11:05.2457916Z",
+  "implementation": "text embedding and title hybrid retrieval",
+  "model": "text-embedding-3-small",
+  "dimensions": 512,
+  "indexed_sessions": 31,
+  "seed_questions": 3,
+  "user_approved_embedding_requests": 1,
+  "actual_paid_embedding_requests": 1,
+  "actual_embedding_tokens": 4814,
+  "actual_paid_llm_requests": 0,
+  "additional_paid_requests_after_initial_batch": 0,
+  "production_verified": true,
+  "fixed_example_queries_passed": 3,
+  "fixed_example_queries_total": 3,
+  "initial_example_queries_passed": 2,
+  "general_accuracy_benchmark": false,
+  "django_tests": 231,
+  "real_http_tests": 15,
+  "web_unit_tests": 72,
+  "android_unit_tests": 40,
+  "device_sizes": [
+    {
+      "size": "small",
+      "pass": true,
+      "composer_flow_pass": true
+    },
+    {
+      "size": "regular",
+      "pass": true,
+      "composer_flow_pass": true
+    }
+  ],
+  "index_hash": "982da9520ebae42453609a762d212b01f7ac0b7b3ca93e68424037baa9a16a18",
+  "raw_vectors_in_git": false,
+  "schema_or_dependency_changes": false,
+  "images_accounts_posts_preserved": true,
+  "feature_within_existing_assessment_server_extension": true,
+  "report_docx_updated": false,
+  "pass": true,
+  "images_or_face_vectors_sent": false,
+  "explicit_user_approval_received": true,
+  "release": "202611081909202100d8",
+  "screenshots": [
+    {
+      "path": "evidence/private/ui-audit/embedding-options-production.png",
+      "sha256": "d3ceffe53fb7f229fb92119d5000448a54730eafc2f862c1982dbbc4ddb4da4b"
+    },
+    {
+      "path": "evidence/private/ui-audit/embedding-result-production.png",
+      "sha256": "f5d84568394ae99ace5d08a81cf8c5678390ed1e3bee29989aa6593f190dbc13"
+    }
+  ],
+  "production_browser_query": "비행기를 타러 떠나는 장면을 찾아줘",
+  "production_browser_source": "트럼프 / 2017-11-07 일본 출국",
+  "rank_verification_utc": "2026-11-09T04:06:17.161066+09:00",
+  "ranker_unchanged_after_case_verification": true
+}

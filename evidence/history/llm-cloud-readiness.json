@@ -1,0 +1,8 @@
+{
+  "checked_utc": "2026-11-08T10:49:38.129406+00:00",
+  "console": 48736170,
+  "cloud_deployed": false,
+  "production_llm_verified": false,
+  "console_ready": false,
+  "blocking_reason": "API POST failed: HTTP 412. Response body withheld."
+}

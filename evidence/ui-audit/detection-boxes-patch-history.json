@@ -1,0 +1,127 @@
+[
+  {
+    "pass": true,
+    "production_verified": true,
+    "release": "20261108221706250a07",
+    "base_release": "20261108160518be71af",
+    "console_used": false,
+    "database_or_dependencies_changed": false,
+    "changed_files": [
+      "blog/fonts/Pretendard-LICENSE.txt",
+      "blog/fonts/PretendardVariable.ttf",
+      "blog/history_annotations.py",
+      "blog/history_api.py",
+      "blog/history_queries.py",
+      "blog/static/blog/history.css",
+      "blog/templates/blog/history.html",
+      "blog/tests/test_history_annotations.py"
+    ],
+    "backup_verified": true,
+    "source_and_public_assets_verified": true,
+    "record_question_verified": true,
+    "actual_llm_call_in_this_step": false,
+    "verified_utc": "2026-11-08T22:18:04.690135+00:00",
+    "calendar_days": [
+      {
+        "date_key": "2026-11-09",
+        "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+        "session_count": 38,
+        "sample_count": 463
+      },
+      {
+        "date_key": "2026-11-08",
+        "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+        "session_count": 2,
+        "sample_count": 37
+      }
+    ],
+    "day_selection_verified": true,
+    "corpus_documents": 40,
+    "actual_embedding_api_calls": 0,
+    "annotation_boxes": 5,
+    "annotation_frame": "a8f83ab7b9d2b9e40afe7717bd12b27ce8e2bf5fb297683617ec78a5267796c6",
+    "annotated_image_sha256": "3dfdc41e9b7633c20e74224c357c1ee5e761b2291919708640c275495e26b48a",
+    "original_image_sha256": "e99637c78e0628f551798d050b9f535358fc2c23dd84fd340a2faff0aaef0cec",
+    "anonymous_image_denied": true,
+    "original_media_preserved": true
+  },
+  {
+    "pass": true,
+    "production_verified": true,
+    "release": "202611082220410c52f2",
+    "base_release": "20261108160518be71af",
+    "console_used": false,
+    "database_or_dependencies_changed": false,
+    "changed_files": [
+      "blog/history_annotations.py"
+    ],
+    "backup_verified": true,
+    "source_and_public_assets_verified": true,
+    "record_question_verified": true,
+    "actual_llm_call_in_this_step": false,
+    "verified_utc": "2026-11-08T22:21:12.901774+00:00",
+    "calendar_days": [
+      {
+        "date_key": "2026-11-09",
+        "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+        "session_count": 38,
+        "sample_count": 463
+      },
+      {
+        "date_key": "2026-11-08",
+        "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+        "session_count": 2,
+        "sample_count": 37
+      }
+    ],
+    "day_selection_verified": true,
+    "corpus_documents": 40,
+    "actual_embedding_api_calls": 0,
+    "annotation_boxes": 5,
+    "annotation_frame": "a8f83ab7b9d2b9e40afe7717bd12b27ce8e2bf5fb297683617ec78a5267796c6",
+    "annotated_image_sha256": "82fc186370db43e32b26f9d7a8429a6b9fc138bb9b5a8c0c615a08994ff60493",
+    "original_image_sha256": "e99637c78e0628f551798d050b9f535358fc2c23dd84fd340a2faff0aaef0cec",
+    "anonymous_image_denied": true,
+    "original_media_preserved": true
+  },
+  {
+    "pass": true,
+    "production_verified": true,
+    "release": "20261108222304c3b06f",
+    "base_release": "20261108160518be71af",
+    "console_used": false,
+    "database_or_dependencies_changed": false,
+    "changed_files": [
+      "blog/static/blog/history.mjs",
+      "blog/templates/blog/history.html"
+    ],
+    "backup_verified": true,
+    "source_and_public_assets_verified": true,
+    "record_question_verified": true,
+    "actual_llm_call_in_this_step": false,
+    "verified_utc": "2026-11-08T22:23:42.323082+00:00",
+    "calendar_days": [
+      {
+        "date_key": "2026-11-09",
+        "date_label": "2026\ub144 11\uc6d4 9\uc77c",
+        "session_count": 38,
+        "sample_count": 463
+      },
+      {
+        "date_key": "2026-11-08",
+        "date_label": "2026\ub144 11\uc6d4 8\uc77c",
+        "session_count": 2,
+        "sample_count": 37
+      }
+    ],
+    "day_selection_verified": true,
+    "corpus_documents": 40,
+    "actual_embedding_api_calls": 0,
+    "annotation_boxes": 5,
+    "annotation_frame": "a8f83ab7b9d2b9e40afe7717bd12b27ce8e2bf5fb297683617ec78a5267796c6",
+    "annotated_image_sha256": "82fc186370db43e32b26f9d7a8429a6b9fc138bb9b5a8c0c615a08994ff60493",
+    "original_image_sha256": "e99637c78e0628f551798d050b9f535358fc2c23dd84fd340a2faff0aaef0cec",
+    "anonymous_image_denied": true,
+    "original_media_preserved": true
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "review_date_kst": "2026-11-10",
+  "scope": "Review of supplied notebook execution artifacts; no new notebook execution or production requests",
+  "source_folder": "G:/내 드라이브/공통평가02_노트북작업_이어가기_20261110",
+  "file_integrity": {
+    "manifest": "SHA256SUMS.txt",
+    "files_checked": 18,
+    "matching_files": 18
+  },
+  "webcam": {
+    "environment": "Notebook WSL2 Ubuntu",
+    "camera": "Acer HD User Facing",
+    "device": "/dev/video0",
+    "source": 0,
+    "format": "MJPG",
+    "dimensions": [640, 480],
+    "baseline_sha256": "ba0175be184bd03632590b3d71b059f2e2df21569392bb9c5e18ff76292f9e60",
+    "baseline_matches_original_provenance": true,
+    "weights_sha256": "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee",
+    "weights_match_existing_trusted_release": true,
+    "capture_visually_inspected": true,
+    "displayed_person_confidence": 0.71,
+    "selected_frame_index": 101,
+    "label_files_reported": 124,
+    "helper_review": "Configures physical V4L2 camera MJPEG input, calls original display, saves the displayed frame, and stops the run; no detector source or detection results rewritten",
+    "assessed_webcam_evidence_sufficient": true
+  },
+  "notebook_logs_reviewed": {
+    "Django_tests_passed": 250,
+    "laptop_unit_tests_passed": 9,
+    "video_frames_processed": 240,
+    "manifest_files_verified": 615,
+    "gallery_profiles": 34,
+    "reference_images": 73,
+    "local_http_200_routes": ["/api_root/", "/api_root/Post/", "/photos/"]
+  },
+  "review_actions": {
+    "source_modified": false,
+    "report_modified": false,
+    "github_pushed": false,
+    "production_requests": 0,
+    "paid_api_calls": 0
+  },
+  "remaining_submission_work": [
+    "Embed the supplied webcam capture and matching explanation in the existing report, update assessment item 3, and render all pages",
+    "Commit and push the latest source and updated report to the separate assessment 02 repository, then verify the remote files"
+  ]
+}

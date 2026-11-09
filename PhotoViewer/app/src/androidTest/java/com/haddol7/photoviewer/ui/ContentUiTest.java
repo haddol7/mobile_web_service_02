@@ -85,7 +85,7 @@ public final class ContentUiTest extends ActivityInstrumentationTestCase2<MainAc
         activity=getActivity();await(()->contains(root(),"동기화 완료"),"초기 서버 동기화 실패");capture("content-start.png");
         Bundle args=((android.test.InstrumentationTestRunner)getInstrumentation()).getArguments();PhotoRepository owner=new PhotoRepository(args.getString("server","http://10.0.2.2:8000/"));owner.me();String user=args.getString("owner"),password=args.getString("password");assertNotNull("Provision isolated test owner",user);assertTrue(owner.login(user,password).canPublish);
         click("계정·설정");click("운영자 로그인");enter("사용자 이름",user);enter("비밀번호",password);click("로그인");await(()->find(root(),"비밀번호",true)==null&&contains(root(),"동기화 완료"),"새 계정 로그인 실패");
-        seedPhoto();click("사진 올리기");String title="후기-"+UUID.randomUUID().toString().substring(0,8);enter("제목",title);enter("사진 이야기","제목과 본문에는 가게 이름을 적지 않았습니다.");fixedEditor(true);click("사진 파일 선택");pickDocument();fixedEditor(false);capture("content-face-preview.png");
+        seedPhoto();click("계정·설정");click("사진 추가");String title="후기-"+UUID.randomUUID().toString().substring(0,8);enter("제목",title);enter("기록 설명","제목과 본문에는 가게 이름을 적지 않았습니다.");fixedEditor(true);click("사진 파일 선택");pickDocument();fixedEditor(false);capture("content-face-preview.png");
         click("게시 사본에 적용");await(()->contains(root(),"추천 테마:")||contains(root(),"분류 추천 실패")||contains(root(),"테마 확인 필요"),"공개 사본 내용 분석이 끝나지 않음");click("태그");fixedEditor(true);capture("content-tags.png");
         getInstrumentation().runOnMainSync(()->{Spinner spinner=(Spinner)nativeView(activity.getWindow().getDecorView(),"대표 테마");assertNotNull(spinner);spinner.setSelection(1);});enter("태그 추가","후기,라멘");click("추가");await(()->contains(root(),"✓ 후기"),"사용자 태그 추가 실패");click("✓ 후기");await(()->!contains(root(),"✓ 후기"),"태그 선택 해제 실패");enter("태그 추가","후기");click("추가");
         click("검색 문구");click("모두 포함");fixedEditor(true);capture("content-classification-ocr.png");
@@ -94,10 +94,10 @@ public final class ContentUiTest extends ActivityInstrumentationTestCase2<MainAc
         getInstrumentation().runOnMainSync(()->((android.view.inputmethod.InputMethodManager)activity.getSystemService(Context.INPUT_METHOD_SERVICE)).hideSoftInputFromWindow(activity.getWindow().getDecorView().getWindowToken(),0));
         click("확인 완료");Instrumentation.ActivityMonitor monitor=getInstrumentation().addMonitor(MainActivity.class.getName(),null,false);getInstrumentation().runOnMainSync(activity::recreate);MainActivity restored=(MainActivity)getInstrumentation().waitForMonitorWithTimeout(monitor,15000);getInstrumentation().removeMonitor(monitor);assertNotNull("작성 화면 재생성 실패",restored);activity=restored;await(()->find(root(),"제목",true)!=null,"작성 내용 복원 실패");assertEquals(title,find(root(),"제목",true).getText().toString());
         getInstrumentation().runOnMainSync(()->{ViewGroup host=activity.findViewById(android.R.id.content);assertTrue("재생성 뒤 화면 여백이 소실되었습니다.",host.getChildAt(0).getPaddingLeft()>=Math.round(18*activity.getResources().getDisplayMetrics().density));});
-        click("게시");await(()->contains(root(),"공개된 사진글"),"새 작성 화면의 실제 업로드 실패");capture("content-published.png");
+        click("게시");await(()->contains(root(),"사진 상세"),"새 작성 화면의 실제 업로드 실패");capture("content-published.png");
         PhotoPost posted=null;for(PhotoPost post:owner.getPosts())if(post.title.equals(title))posted=post;assertNotNull(posted);JSONObject metadata=owner.content(posted.id);assertEquals("food",metadata.getString("theme"));assertTrue(metadata.getJSONArray("lines").length()>0);
         assertTrue("실제 사진의 가게 글자를 OCR로 찾지 못했습니다.",owner.browse("바다라멘","food","후기",true,null).getJSONArray("results").length()>0);
-        click("검색·목록으로");enter("사진 속 간판·메뉴·책 제목 검색","바다라멘");await(()->contains(root(),"사진 속 글자:"),"사진 속 문구 검색 결과 표시 실패");capture("content-search-results.png");click("사진글 열기");await(()->contains(root(),"일치 위치:"),"일치 영역으로 이동할 행동이 없음");capture("content-match-highlight.png");
+        click("목록");enter("사진 속 문구 검색","바다라멘");await(()->contains(root(),"사진 속 글자:"),"사진 속 문구 검색 결과 표시 실패");capture("content-search-results.png");click("기록 열기");await(()->contains(root(),"일치 위치:"),"일치 영역으로 이동할 행동이 없음");capture("content-match-highlight.png");
         assertFalse("전체 문구 목록을 다시 노출했습니다.",contains(root(),"사진 속 문구 전체 보기"));
     }
 }

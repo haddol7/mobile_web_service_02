@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "runId": "20261105-101742-a779d940",
-  "generatedAtUtc": "2026-11-05T10:17:42.5239929Z",
+  "runId": "20261108-214315-a5ff755c",
+  "generatedAtUtc": "2026-11-08T21:43:15.2337419Z",
   "scope": "Windows Android build/device verification only; not PythonAnywhere deployment verification",
   "mode": "BuildOnly",
   "status": "passed",
@@ -13,9 +13,9 @@
     "Only current-run screenshot hashes in this JSON are verification evidence; older PNG files are not re-verified."
   ],
   "environment": {
-    "powershell": "7.6.5",
+    "powershell": "7.6.9",
     "os": "Microsoft Windows NT 10.0.26200.0",
-    "javaHome": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\android-studio\\jbr",
+    "javaHome": "C:/Users/1/AppData/Local/Programs/Android/android-studio/jbr",
     "sdkRoot": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\Sdk",
     "javaVersion": "25.0.3",
     "platforms": [
@@ -28,8 +28,8 @@
     "gradleVersion": "9.6.0"
   },
   "source": {
-    "sha256": "6e5c2c1e2b613678e435c93d0405ad9ae5806b141ff175977132c2e24fddce56",
-    "filesCount": 56,
+    "sha256": "604f9c61ffb37b99a29342df11718542a5addc4ba2fdcea1b9cc20af8454fe91",
+    "filesCount": 64,
     "files": [
       {
         "path": "app/build.gradle.kts",
@@ -108,23 +108,43 @@
       },
       {
         "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/CloudSyncTest.java",
-        "bytes": 3960,
-        "sha256": "8d380dc0644fe32f5281a2f1ce97556893f85087ea290bb293a7c6984d9d564c"
+        "bytes": 4193,
+        "sha256": "656d2e26c35ed0e8cf243b34f00905bfde4390c88c145754b86d88ad4265ba07"
       },
       {
         "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/ContentUiTest.java",
-        "bytes": 14825,
-        "sha256": "fee0d3ce9124bc76dd062f31bee07dece3b7cf953e082bd2be37844b326ce78e"
+        "bytes": 14800,
+        "sha256": "819da0b6836deeff26d078b9d778b1fab82f16935c07d51e4990db745d75742e"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/HistorySyncTest.java",
+        "bytes": 9964,
+        "sha256": "c937c04042edfd651caa3d3156d22811cf3abbac3d50d23aeff40488d5a0901e"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/UiAuditTest.java",
+        "bytes": 25519,
+        "sha256": "77164dc0fb6eecbaebee299aa45fb3c3e002ec8b834cac66c2120d6be595b192"
       },
       {
         "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/YoloSyncTest.java",
-        "bytes": 5067,
-        "sha256": "46b4704e7d40d6f1e973d4d456561639b33f204f74c080614b38f816776b0637"
+        "bytes": 5294,
+        "sha256": "92e0dd072f58051081806df0080a6bd2e36579154bed3a347fab2dae9aa5aff3"
       },
       {
         "path": "app/src/main/AndroidManifest.xml",
         "bytes": 982,
-        "sha256": "b714f9795e8052068cb6e50adb497a17f3136c0e2d029af2a5d2f704db3f1935"
+        "sha256": "2be990ea3e1d456836ff3376105455786ec2780cc0c1a2f22531f6df8e8dbfc3"
+      },
+      {
+        "path": "app/src/main/assets/fonts/LICENSE.txt",
+        "bytes": 4418,
+        "sha256": "d31ddd9f2bed32fd7e302a205cf2380ba0de6529152d239ef99cfb6f261bfc04"
+      },
+      {
+        "path": "app/src/main/assets/fonts/PretendardVariable.ttf",
+        "bytes": 6739336,
+        "sha256": "3090ccde0442bb347aa7685d9ba8b17436a60682df6e8f92a9a670de14056e22"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/content/ComposerState.java",
@@ -188,13 +208,13 @@
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/data/PhotoRepository.java",
-        "bytes": 17779,
-        "sha256": "78adfea57c8d27ea2a4abe93e61bd42e1e8609bb8b74d78e8225bbe643ef57ad"
+        "bytes": 20472,
+        "sha256": "47b4c89a8db45fc0e63e30141861003acb23901e7cd25952004cec33ff32b7ad"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/MainActivity.java",
-        "bytes": 56375,
-        "sha256": "c6fe97b854cbc34a5a5fd4e2155a3b9e95dbb1de4bf31e1a543abbf9ce99e0f2"
+        "bytes": 85379,
+        "sha256": "84f4b172d9a73b99f3d0128fecc311f344c05b1ea096ca8b450492e71bc2e1a0"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/model/PhotoPost.java",
@@ -207,9 +227,24 @@
         "sha256": "45364e91ef7330aca19b192b08f0bad37c9ff1bcb83b78f81a88c9df219329b1"
       },
       {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/ChatWorkspace.java",
+        "bytes": 16764,
+        "sha256": "56e1aae4a652c44dcc2d07b49609a7a2dbfb341cab157c5c997b4ad6b3ac31b3"
+      },
+      {
         "path": "app/src/main/java/com/haddol7/photoviewer/ui/ChipFlow.java",
         "bytes": 1290,
         "sha256": "860dbafb2912c4ee7cc8358c997798681da00b554229ca9f1bb97482d5070caf"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/HistoryPresentation.java",
+        "bytes": 2424,
+        "sha256": "4341578538d9dab3df7c96e1970e9c41942d04efba4f2e54d626500adf7b43b0"
+      },
+      {
+        "path": "app/src/main/java/com/haddol7/photoviewer/ui/MonitoringTime.java",
+        "bytes": 801,
+        "sha256": "f5e1650c08a6ba70fbd205a4fc3b9c11597e2b7c92ce8c0441c383d940b36b66"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/ui/RequestScope.java",
@@ -218,13 +253,13 @@
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/ui/UiKit.java",
-        "bytes": 3338,
-        "sha256": "d27f392d6071ddf908be44b5b236685538fb2f0c98711a4712de6d204ef8470c"
+        "bytes": 5065,
+        "sha256": "657098cbfa5f27e64b65007050f2879760bc23c316bed0f7865db9e2d83d30e5"
       },
       {
         "path": "app/src/main/res/drawable/ic_photo_blog.xml",
-        "bytes": 596,
-        "sha256": "8adde8393d02de09ee1df7dabea6911c90f75e174687a25c0a724da6c8d601d8"
+        "bytes": 544,
+        "sha256": "de36b780eb4af3b34200f30e7bf1a8c0f577dadac60de021f49e82065f60a9e0"
       },
       {
         "path": "app/src/main/res/values/strings.xml",
@@ -234,7 +269,7 @@
       {
         "path": "app/src/main/res/values/styles.xml",
         "bytes": 535,
-        "sha256": "2b5072a83719687bb8c1d11fedb83a51c45594ce2809e265149016dec7255e37"
+        "sha256": "4f03335e37137392ca436184c36e9e3b6ed61ea4245a7e30d1f02be579e39668"
       },
       {
         "path": "app/src/main/res/xml/data_extraction_rules.xml",
@@ -265,6 +300,11 @@
         "path": "app/src/test/java/com/haddol7/photoviewer/data/RepositoryPolicyTest.java",
         "bytes": 2083,
         "sha256": "e6ec5e04e0f0f9ab97ff21252e5f55e825d9052576e9cb09b3fffdb23764a6de"
+      },
+      {
+        "path": "app/src/test/java/com/haddol7/photoviewer/ui/MonitoringTimeTest.java",
+        "bytes": 644,
+        "sha256": "21af74a65e89e0e30a9ef50274168508140c31403c74e9b0d25bbcb0b136acd5"
       },
       {
         "path": "app/src/test/java/com/haddol7/photoviewer/ui/RequestScopeTest.java",
@@ -308,31 +348,31 @@
       },
       {
         "path": "tools/verify-android.ps1",
-        "bytes": 20793,
-        "sha256": "721e4c2557e82384bb8d1755eaa9737d45f516202b8862300978b4f5f2e99363"
+        "bytes": 21176,
+        "sha256": "cc4c90244c189d16013c77e14540924358c9a03a58da42e037fb401160fdf282"
       }
     ]
   },
   "sourceStable": true,
   "build": {
     "passed": true,
-    "gradleLog": "evidence/private/androidVerification/20261105-101742-a779d940/gradle.log",
+    "gradleLog": "evidence/private/androidVerification/20261108-214315-a5ff755c/gradle.log",
     "apks": [
       {
         "path": "PhotoViewer/app/build/outputs/apk/debug/app-debug.apk",
-        "bytes": 129803779,
-        "sha256": "c7bdd488d163e4ac9372abef98ca478212ceac6c9ab2bbcb3b24b87b35878649"
+        "bytes": 133372710,
+        "sha256": "9b1eadb26dd4318d598b84ded93480185b94b927928a4967915a9f7dc5cb2a45"
       },
       {
         "path": "PhotoViewer/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
-        "bytes": 6217740,
-        "sha256": "362e2055707189f975dff9b2bb3fc06c7f75fba15f98db2ddbc4f23922a01e41"
+        "bytes": 6241870,
+        "sha256": "5c84e5d2a8526ac9e2e160ce6ef75f6597b1172914c73a45fc3ca46cbf54ceac"
       }
     ]
   },
   "unitTests": {
     "passed": true,
-    "tests": 38,
+    "tests": 40,
     "failures": 0,
     "errors": 0,
     "skipped": 0,
@@ -366,6 +406,13 @@
         "skipped": 0
       },
       {
+        "name": "com.haddol7.photoviewer.ui.MonitoringTimeTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
         "name": "com.haddol7.photoviewer.ui.RequestScopeTest",
         "tests": 3,
         "failures": 0,
@@ -377,7 +424,7 @@
   "lint": {
     "passed": true,
     "errors": 0,
-    "warnings": 7,
+    "warnings": 9,
     "issues": [
       {
         "id": "OldTargetApi",
@@ -397,6 +444,14 @@
       },
       {
         "id": "UnusedResources",
+        "severity": "Warning"
+      },
+      {
+        "id": "ViewConstructor",
+        "severity": "Warning"
+      },
+      {
+        "id": "SetTextI18n",
         "severity": "Warning"
       },
       {

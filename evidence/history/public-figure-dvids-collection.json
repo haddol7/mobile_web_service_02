@@ -1,0 +1,68 @@
+{
+  "collected_utc": "2026-11-08T17:24:59.919292+00:00",
+  "environment": "WSL Ubuntu",
+  "clips": [
+    {
+      "id": "trump-ball",
+      "page": "https://www.dvidshub.net/video/506134/president-trump-talks-troops-afghanistan-sas-ball",
+      "url": "https://d34w7g4gy10iej.cloudfront.net/video/1701/DOD_104011786/DOD_104011786-1024x576-1769k.mp4",
+      "path": "evidence/private/public-figure-demo/trump-ball.mp4",
+      "sha256": "8ffb355e3660e7c831c73078b27d45854936c441e95fc865107ab17926273b3f",
+      "bytes": 78308605,
+      "frames": 9850,
+      "fps": 29.97002997002997,
+      "previews": [
+        "evidence/private/public-figure-demo/trump-ball-5.jpg",
+        "evidence/private/public-figure-demo/trump-ball-15.jpg",
+        "evidence/private/public-figure-demo/trump-ball-30.jpg",
+        "evidence/private/public-figure-demo/trump-ball-60.jpg",
+        "evidence/private/public-figure-demo/trump-ball-120.jpg"
+      ],
+      "full_decode_pass": true,
+      "license": "Public domain, DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright"
+    },
+    {
+      "id": "trump-arrival",
+      "page": "https://www.dvidshub.net/video/512302/president-trump-arriving-langley-air-force-base",
+      "url": "https://d34w7g4gy10iej.cloudfront.net/video/1703/DOD_104126521/DOD_104126521-1024x576-1769k.mp4",
+      "path": "evidence/private/public-figure-demo/trump-arrival.mp4",
+      "sha256": "6bfbcc5e3f5815885f45225aa1db276a79f6a0a1106c75989de13cc17d29298b",
+      "bytes": 114593730,
+      "frames": 14738,
+      "fps": 29.97002997002997,
+      "previews": [
+        "evidence/private/public-figure-demo/trump-arrival-5.jpg",
+        "evidence/private/public-figure-demo/trump-arrival-15.jpg",
+        "evidence/private/public-figure-demo/trump-arrival-30.jpg",
+        "evidence/private/public-figure-demo/trump-arrival-60.jpg",
+        "evidence/private/public-figure-demo/trump-arrival-120.jpg"
+      ],
+      "full_decode_pass": true,
+      "license": "Public domain, DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright"
+    },
+    {
+      "id": "obama-address",
+      "page": "https://www.dvidshub.net/video/358042/president-obama-remarks-ebola-outbreak",
+      "url": "https://d34w7g4gy10iej.cloudfront.net/video/1408/DOD_101919415/DOD_101919415-1024x576-1769k.mp4",
+      "path": "evidence/private/public-figure-demo/obama-address.mp4",
+      "sha256": "82b83d2610570c8f227d73e45c0837e64abd3e990e0bd989b15992fb37d5e0ad",
+      "bytes": 33912453,
+      "frames": 4365,
+      "fps": 29.97002997002997,
+      "previews": [
+        "evidence/private/public-figure-demo/obama-address-5.jpg",
+        "evidence/private/public-figure-demo/obama-address-15.jpg",
+        "evidence/private/public-figure-demo/obama-address-30.jpg",
+        "evidence/private/public-figure-demo/obama-address-60.jpg",
+        "evidence/private/public-figure-demo/obama-address-120.jpg"
+      ],
+      "full_decode_pass": true,
+      "license": "Public domain, DVIDS rights notice applies",
+      "license_url": "https://www.dvidshub.net/about/copyright"
+    }
+  ],
+  "pass": true,
+  "media_in_git": false
+}

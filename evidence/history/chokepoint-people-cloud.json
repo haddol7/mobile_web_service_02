@@ -1,0 +1,795 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T22:04:14.435039+00:00",
+  "environment": "WSL against PythonAnywhere",
+  "production_verified": true,
+  "reanalyzed_video_sources": 5,
+  "new_analysis_sessions": 5,
+  "newly_enrolled_profiles": 29,
+  "profiles": [
+    {
+      "key": "chokepoint-0001",
+      "name": "출입 인물 01",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0002",
+      "name": "출입 인물 02",
+      "source_count": 1,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 1,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0003",
+      "name": "출입 인물 03",
+      "source_count": 3,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0004",
+      "name": "출입 인물 04",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0005",
+      "name": "출입 인물 05",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0006",
+      "name": "출입 인물 06",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 5,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0007",
+      "name": "출입 인물 07",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0009",
+      "name": "출입 인물 09",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0010",
+      "name": "출입 인물 10",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0011",
+      "name": "출입 인물 11",
+      "source_count": 3,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 1,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0012",
+      "name": "출입 인물 12",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0013",
+      "name": "출입 인물 13",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0014",
+      "name": "출입 인물 14",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0015",
+      "name": "출입 인물 15",
+      "source_count": 3,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0016",
+      "name": "출입 인물 16",
+      "source_count": 4,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 1,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0017",
+      "name": "출입 인물 17",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0018",
+      "name": "출입 인물 18",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0019",
+      "name": "출입 인물 19",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0020",
+      "name": "출입 인물 20",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0021",
+      "name": "출입 인물 21",
+      "source_count": 3,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0022",
+      "name": "출입 인물 22",
+      "source_count": 3,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 0,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0023",
+      "name": "출입 인물 23",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 4,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0024",
+      "name": "출입 인물 24",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0025",
+      "name": "출입 인물 25",
+      "source_count": 5,
+      "confirmed_tracks": 3,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0026",
+      "name": "출입 인물 26",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0027",
+      "name": "출입 인물 27",
+      "source_count": 4,
+      "confirmed_tracks": 2,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0028",
+      "name": "출입 인물 28",
+      "source_count": 2,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0029",
+      "name": "출입 인물 29",
+      "source_count": 2,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 3,
+      "reference_available": true,
+      "active": true
+    },
+    {
+      "key": "chokepoint-0030",
+      "name": "출입 인물 30",
+      "source_count": 2,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 2,
+      "reference_available": true,
+      "active": true
+    }
+  ],
+  "new_dataset_track_confirmations": 61,
+  "selected_observation_images": 230,
+  "newly_created_images": 230,
+  "previous_facts": {
+    "observed_tracks": 171,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 270,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 35,
+    "detection_posts": 0,
+    "unknown_date_frames": 270
+  },
+  "current_facts": {
+    "observed_tracks": 324,
+    "pending_tracks": 85,
+    "confirmed_tracks": 64,
+    "sampled_frames": 500,
+    "passages": 6,
+    "profiles": 36,
+    "sessions": 40,
+    "detection_posts": 0,
+    "unknown_date_frames": 500
+  },
+  "cases": [
+    {
+      "camera": "P1E_S1_C1",
+      "session": "7b144e47840e5f75baff3d8c96bf561d",
+      "source_reference": "ChokePoint/P1E_S1_C1/first1200-available-frames",
+      "selected_frames": 28,
+      "candidate_profiles": [
+        "chokepoint-0003",
+        "chokepoint-0005",
+        "chokepoint-0013",
+        "chokepoint-0015",
+        "chokepoint-0016",
+        "chokepoint-0017",
+        "chokepoint-0019",
+        "chokepoint-0021",
+        "chokepoint-0022",
+        "chokepoint-0024",
+        "chokepoint-0025"
+      ],
+      "dataset_confirmations": [
+        {
+          "track_id": 2,
+          "profile": "chokepoint-0003",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 3,
+          "profile": "chokepoint-0005",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 4,
+          "profile": "chokepoint-0013",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 5,
+          "profile": "chokepoint-0015",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 6,
+          "profile": "chokepoint-0016",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 7,
+          "profile": "chokepoint-0017",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 8,
+          "profile": "chokepoint-0019",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 9,
+          "profile": "chokepoint-0021",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 10,
+          "profile": "chokepoint-0024",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 11,
+          "profile": "chokepoint-0025",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 13,
+          "profile": "chokepoint-0022",
+          "basis": "dataset"
+        }
+      ],
+      "crowd_has_no_groundtruth": false,
+      "cloud_samples": 28,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "7a0c739365e4984025175ed9e546d2885ff01c4efca085a5689cda9f14d1145a",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P1E_S2_C2",
+      "session": "10a7bd4c7e2f5d28ae75e7d64f2ba176",
+      "source_reference": "ChokePoint/P1E_S2_C2/available-frames",
+      "selected_frames": 56,
+      "candidate_profiles": [
+        "chokepoint-0001",
+        "chokepoint-0003",
+        "chokepoint-0004",
+        "chokepoint-0005",
+        "chokepoint-0006",
+        "chokepoint-0007",
+        "chokepoint-0009",
+        "chokepoint-0010",
+        "chokepoint-0011",
+        "chokepoint-0012",
+        "chokepoint-0013",
+        "chokepoint-0014",
+        "chokepoint-0015",
+        "chokepoint-0016",
+        "chokepoint-0017",
+        "chokepoint-0018",
+        "chokepoint-0019",
+        "chokepoint-0020",
+        "chokepoint-0021",
+        "chokepoint-0022",
+        "chokepoint-0023",
+        "chokepoint-0024",
+        "chokepoint-0025",
+        "chokepoint-0026",
+        "chokepoint-0027"
+      ],
+      "dataset_confirmations": [
+        {
+          "track_id": 2,
+          "profile": "chokepoint-0009",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 3,
+          "profile": "chokepoint-0003",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 4,
+          "profile": "chokepoint-0017",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 5,
+          "profile": "chokepoint-0005",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 6,
+          "profile": "chokepoint-0015",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 7,
+          "profile": "chokepoint-0024",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 8,
+          "profile": "chokepoint-0022",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 9,
+          "profile": "chokepoint-0019",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 10,
+          "profile": "chokepoint-0021",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 11,
+          "profile": "chokepoint-0025",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 12,
+          "profile": "chokepoint-0023",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 13,
+          "profile": "chokepoint-0026",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 14,
+          "profile": "chokepoint-0027",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 16,
+          "profile": "chokepoint-0016",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 17,
+          "profile": "chokepoint-0013",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 18,
+          "profile": "chokepoint-0020",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 19,
+          "profile": "chokepoint-0007",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 20,
+          "profile": "chokepoint-0010",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 21,
+          "profile": "chokepoint-0006",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 22,
+          "profile": "chokepoint-0011",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 23,
+          "profile": "chokepoint-0018",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 24,
+          "profile": "chokepoint-0001",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 25,
+          "profile": "chokepoint-0004",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 26,
+          "profile": "chokepoint-0012",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 27,
+          "profile": "chokepoint-0014",
+          "basis": "dataset"
+        }
+      ],
+      "crowd_has_no_groundtruth": false,
+      "cloud_samples": 56,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "b0e49128bbf21794d2c8137403a7da9eb73ecb3556d2a2b988fd733567b8e930",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P1L_S1_C1",
+      "session": "b3d38d42837f501cbaba722e613ab747",
+      "source_reference": "ChokePoint/P1L_S1_C1/available-frames",
+      "selected_frames": 59,
+      "candidate_profiles": [
+        "chokepoint-0001",
+        "chokepoint-0003",
+        "chokepoint-0004",
+        "chokepoint-0005",
+        "chokepoint-0006",
+        "chokepoint-0007",
+        "chokepoint-0009",
+        "chokepoint-0010",
+        "chokepoint-0011",
+        "chokepoint-0012",
+        "chokepoint-0013",
+        "chokepoint-0014",
+        "chokepoint-0015",
+        "chokepoint-0016",
+        "chokepoint-0017",
+        "chokepoint-0018",
+        "chokepoint-0019",
+        "chokepoint-0020",
+        "chokepoint-0021",
+        "chokepoint-0022",
+        "chokepoint-0023",
+        "chokepoint-0024",
+        "chokepoint-0025",
+        "chokepoint-0026",
+        "chokepoint-0027"
+      ],
+      "dataset_confirmations": [
+        {
+          "track_id": 1,
+          "profile": "chokepoint-0014",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 2,
+          "profile": "chokepoint-0020",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 3,
+          "profile": "chokepoint-0006",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 4,
+          "profile": "chokepoint-0011",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 5,
+          "profile": "chokepoint-0005",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 7,
+          "profile": "chokepoint-0027",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 8,
+          "profile": "chokepoint-0026",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 9,
+          "profile": "chokepoint-0018",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 10,
+          "profile": "chokepoint-0009",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 11,
+          "profile": "chokepoint-0021",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 12,
+          "profile": "chokepoint-0019",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 13,
+          "profile": "chokepoint-0007",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 14,
+          "profile": "chokepoint-0012",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 15,
+          "profile": "chokepoint-0015",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 16,
+          "profile": "chokepoint-0017",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 17,
+          "profile": "chokepoint-0016",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 18,
+          "profile": "chokepoint-0013",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 19,
+          "profile": "chokepoint-0004",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 20,
+          "profile": "chokepoint-0001",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 21,
+          "profile": "chokepoint-0003",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 22,
+          "profile": "chokepoint-0022",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 23,
+          "profile": "chokepoint-0010",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 24,
+          "profile": "chokepoint-0024",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 25,
+          "profile": "chokepoint-0025",
+          "basis": "dataset"
+        },
+        {
+          "track_id": 26,
+          "profile": "chokepoint-0023",
+          "basis": "dataset"
+        }
+      ],
+      "crowd_has_no_groundtruth": false,
+      "cloud_samples": 59,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "e98b1b5429720457f15d338d2de8fdd18863cafdefa69be526e6d8f6b01969ac",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P2E_S5_C2",
+      "session": "828afdd8a177594baebd62ff4ffe09a0",
+      "source_reference": "ChokePoint/P2E_S5_C2/available-frames",
+      "selected_frames": 42,
+      "candidate_profiles": [
+        "chokepoint-0001",
+        "chokepoint-0004",
+        "chokepoint-0005",
+        "chokepoint-0006",
+        "chokepoint-0007",
+        "chokepoint-0009",
+        "chokepoint-0010",
+        "chokepoint-0011",
+        "chokepoint-0012",
+        "chokepoint-0013",
+        "chokepoint-0014",
+        "chokepoint-0017",
+        "chokepoint-0018",
+        "chokepoint-0019",
+        "chokepoint-0020",
+        "chokepoint-0023",
+        "chokepoint-0024",
+        "chokepoint-0025",
+        "chokepoint-0026",
+        "chokepoint-0027",
+        "chokepoint-0028",
+        "chokepoint-0029",
+        "chokepoint-0030"
+      ],
+      "dataset_confirmations": [],
+      "crowd_has_no_groundtruth": true,
+      "cloud_samples": 42,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "a02236cf296d6aa97b8dc4325e4876a8796bae755ba0bcbf2af66f02100d0fe1",
+      "anonymous_image_denied": true
+    },
+    {
+      "camera": "P2L_S5_C2",
+      "session": "2f604e56273b56378a9bd223db7cc2cb",
+      "source_reference": "ChokePoint/P2L_S5_C2/available-frames",
+      "selected_frames": 45,
+      "candidate_profiles": [
+        "chokepoint-0001",
+        "chokepoint-0002",
+        "chokepoint-0004",
+        "chokepoint-0005",
+        "chokepoint-0006",
+        "chokepoint-0007",
+        "chokepoint-0009",
+        "chokepoint-0010",
+        "chokepoint-0011",
+        "chokepoint-0012",
+        "chokepoint-0013",
+        "chokepoint-0014",
+        "chokepoint-0016",
+        "chokepoint-0017",
+        "chokepoint-0018",
+        "chokepoint-0019",
+        "chokepoint-0020",
+        "chokepoint-0023",
+        "chokepoint-0024",
+        "chokepoint-0025",
+        "chokepoint-0026",
+        "chokepoint-0027",
+        "chokepoint-0028",
+        "chokepoint-0029",
+        "chokepoint-0030"
+      ],
+      "dataset_confirmations": [],
+      "crowd_has_no_groundtruth": true,
+      "cloud_samples": 45,
+      "question_db_counts_match": true,
+      "authenticated_image_sha256": "dec499416fe265a944c9b9dc4f5b57b555620ef7c69a0ced37de8acb7c17f466",
+      "anonymous_image_denied": true
+    }
+  ],
+  "existing_posts_preserved": true,
+  "existing_chats_preserved": true,
+  "duplicate_replay_created_new_frame": false,
+  "original_capture_dates_invented": false,
+  "model_candidates_automatically_confirmed": false,
+  "dataset_concordant_reviews_only": true,
+  "enrollment_portraits_authentication_checked": true,
+  "actual_embedding_api_calls": 0,
+  "actual_llm_api_calls": 0
+}

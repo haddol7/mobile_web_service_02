@@ -1,0 +1,40 @@
+{
+  "verified_utc": "2026-11-08T13:49:52.463167+00:00",
+  "environment": "PythonAnywhere production with WSL API client",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "release": "2026110813441496cb68",
+  "history_api_status": 200,
+  "history_records_present": false,
+  "persistent_history_storage_verified": true,
+  "llm_provider": "openai",
+  "llm_model": "gpt-4o-mini",
+  "actual_llm_generation_verified": true,
+  "llm_mode": "rag",
+  "question_status": 200,
+  "facts": {
+    "sampled_frames": 0,
+    "observed_tracks": 0,
+    "confirmed_tracks": 0,
+    "candidate_tracks": 0,
+    "confirmed_profiles": 0,
+    "passages": 0,
+    "direction_in": 0,
+    "direction_out": 0,
+    "unknown_date_frames": 0,
+    "dates": [],
+    "timezone": "Asia/Seoul"
+  },
+  "llm_text": "현재 기록에서 선 통과 사건은 0건입니다. 관련된 기록이 없습니다.",
+  "key_in_source_tree": false,
+  "production_verified": true,
+  "pass": true,
+  "compatible_release": "20261108140157857e4a",
+  "compatibility_checked_utc": "2026-11-08T14:08:49.548796+00:00",
+  "unchanged_runtime_modules": {
+    "blog/history_api.py": "099ddf30176da71089f5102cf32ab703dc28b06ea0cf305a21255b142b1980a2",
+    "blog/history_llm.py": "ef0ebea793813d7292c127fca0db7aae4a9399dc26f771f1fa775e678302b888",
+    "blog/history_queries.py": "157babeaaf619c4514954c8cb518d822d44d6b27d500dc966588d4b6f43d5994",
+    "photoblog/llm_config.py": "6d572d4467a0b92d4874dbcaa383cb48738a9407a2de87930a68c8ebb91d2307",
+    "photoblog/settings.py": "8d266854335a6e463d827c3bca448ab21000370b372c54ff7d8d7820297c40ff"
+  }
+}

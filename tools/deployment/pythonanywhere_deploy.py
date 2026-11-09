@@ -127,7 +127,7 @@ def verify_frontend():
         raise DeploymentError('Run tools/verify-mobile-web.mjs to refresh Windows web verification')
     actual = {}
     common = WORKSPACE
-    for directory in ('web-tests', 'PhotoBlogServer/blog/static/blog/content', 'PhotoBlogServer/blog/static/blog/vendor/content'):
+    for directory in ('web-tests', 'PhotoBlogServer/blog/static/blog', 'PhotoBlogServer/blog/templates'):
         for path in (common / directory).rglob('*'):
             if path.is_file():
                 actual[path.relative_to(common).as_posix()] = hashlib.sha256(path.read_bytes()).hexdigest()

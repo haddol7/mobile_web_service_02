@@ -1,0 +1,36 @@
+{
+  "verified_utc": "2026-11-08T10:24:25.836565+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "unit_test_command": [
+    "/home/daeha/.venvs/mobile_web_service_02/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-v"
+  ],
+  "unit_test_count": 30,
+  "unit_tests_pass": true,
+  "default_policy_applied": true,
+  "default_policy_sha256": "f6ba55d6598f515bb82cba0841aa5eb1767a11d995cb5df431258485bc54f69a",
+  "recognizer_sha256": "4c06341c33c2ca1f86781dab0e829f88ad5b64be9fba56e56bc9ebdefc619e43",
+  "baseline_detector_unchanged": true,
+  "actual_yolo_http_history_pipeline_pass": true,
+  "pipeline_frames": 78,
+  "pipeline_evidence": "evidence/history/verification.json",
+  "sparse_gallery_checks_pass": true,
+  "sparse_gallery_distinct_false_source_frames": 1,
+  "final_held_out_identity_count": 24,
+  "training_performed": false,
+  "automatic_confirmation_enabled": false,
+  "production_verified": false,
+  "pass": true,
+  "source_sha256": {
+    "YOLOv5/person_tracking.py": "ec6ae656e1eeaa411ef59fc0ed1b7ba3547a2a613e5ffc62c6ac1ec55445b70a",
+    "YOLOv5/face_features.py": "cb5aa16135e1dfcc9473b5ff848fc436aa74ed7a12becf33455cb6b1411a9d2b",
+    "YOLOv5/detect.py": "08a6578afced558f2039ac983c7fb6f47fe8198f812904784eb4ec5050cbaa6b",
+    "YOLOv5/history_sender.py": "3bfddcf6cb14ac592252d231e2e4f1fc32359a524f38f9c526fd4e32d5b60328",
+    "tools/verify_face_policy_checks.py": "b36ebad04022a59b797cbf1313267e8fa50d9f7e2dd87771e624003cad9d9d2b"
+  }
+}

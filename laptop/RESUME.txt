@@ -1,0 +1,9 @@
+공통평가 02 감시 시스템을 이 Windows 노트북에서 이어서 작업한다.
+mobile_web_service/AGENTS.md를 먼저 읽고 Windows 소스 트리를 WSL2 Ubuntu의 /mnt 경로로 실행한다. WSL 홈에 별도 소스 checkout이나 Windows Python 가상환경을 만들지 않는다.
+common02/laptop/START_HERE.md와 MANIFEST.json을 확인하고 Start-Laptop.ps1 -Action Verify를 실행한다.
+운영 서버는 https://daejinha.pythonanywhere.com/ 이며 기존 계정과 데이터는 유지한다. 비밀번호나 배포 API 토큰, OpenAI 키를 소스에서 찾거나 채팅에 노출하지 않는다.
+유료 임베딩 및 LLM 테스트는 매번 사용자 승인을 받은 뒤 실행한다. 자동 설치와 Verify, 로컬 Sample은 유료 API와 운영 서버 쓰기를 호출하지 않는다.
+2026년 11월 10일 Acer 노트북의 실제 /dev/video0를 원본 detect.py로 검증했다. 증빙은 evidence/notebook-20261110에 있다. 다른 새 노트북에서는 해당 카메라 장치를 별도로 확인한다. 저장 영상으로 웹캠 증빙을 대신하지 않는다.
+최신 보고서는 common02 루트의 모바일웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx다. 문서와 원격 반영의 현재 상태는 docs/assessment-requirements.json과 evidence/github-upload.json을 확인한다.
+관측 데이터는 운영 서버에서 조회한다. 40개 분석 실행과 관측 사진 500장, ChokePoint 등록 인물 29명 및 전체 비교 갤러리 34명이다. 후보와 운영자 확인 및 시연 정답 확인을 구분한다.
+패키지 내부 인물 등록 사진 경로는 상대 경로로 바꿨으므로 이전 PC의 /mnt/c/Users/1 경로를 다시 넣지 않는다.

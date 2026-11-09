@@ -1,0 +1,36 @@
+ChokePoint dataset licence
+Source: https://arma.sourceforge.net/chokepoint/#Licence
+Publisher: National ICT Australia Limited (NICTA)
+
+This dataset ('Licensed Material') is made available to the scientific community for non-commercial research purposes such as academic research, teaching, scientific publications or personal experimentation. Permission is granted by National ICT Australia Limited (NICTA) to you (the 'Licensee') to use, copy and distribute the Licensed Material in accordance with the following terms and conditions:
+
+1. Licensee must include a reference to NICTA and the following publication in any published work that makes use of the Licensed Material:
+Y. Wong, S. Chen, S. Mau, C. Sanderson, B.C. Lovell
+Patch-based Probabilistic Image Quality Assessment for Face Selection and Improved Video-based Face Recognition
+IEEE Biometrics Workshop, Computer Vision and Pattern Recognition (CVPR) Workshops, pages 81-88. IEEE, June 2011.
+DOI: 10.1109/CVPRW.2011.5981881
+
+2. If Licensee alters the content of the Licensed Material or creates any derivative work, Licensee must include in the altered Licensed Material or derivative work prominent notices to ensure that any recipients know that they are not receiving the original Licensed Material.
+
+3. Licensee may not use or distribute the Licensed Material or any derivative work for commercial purposes including but not limited to, licensing or selling the Licensed Material or using the Licensed Material for commercial gain.
+
+4. The Licensed Material is provided 'AS IS', without any express or implied warranties. NICTA does not accept any responsibility for errors or omissions in the Licensed Material.
+
+5. This original license notice must be retained in all copies or derivatives of the Licensed Material.
+
+6. All rights not expressly granted to the Licensee are reserved by NICTA.
+
+Project derivative notice
+The MP4 clips are reconstructions of available original JPEG frames at 30 fps.
+The first1200 clip uses the first 1200 available images, which include gaps in the original frame numbering.
+Replay seconds are positions in this reconstructed clip, not original capture times.
+Preview and uploaded observation images have been JPEG-compressed.
+Source images, raw clips, and derived clips are kept outside Git. Selected observations are accessible only to the authenticated project operator.
+
+Additional portal recordings
+P1E_S2_C2, P1L_S1_C1, P2E_S5_C2, and P2L_S5_C2 are reconstructed from all available original JPEG images for each selected camera.
+The image-to-replay-position mapping is retained beside each private derivative. Gaps in the original image numbering are not claimed to be continuous original capture time.
+Selected observations are time-spread demonstration scenes, preferring body-linked face detections when available. They are not a random accuracy sample. No real-world visit time or automatic identity confirmation is added.
+
+Enrollment still derivatives
+Official Neutral and Smile images from Still.tar.xz are used with their published dataset subject IDs. Reference portraits are resized and cropped from those still images. Names such as '출입 인물 01' are dataset aliases, not inferred real names. The original stills, local face galleries, and derived enrollment portraits remain private. Query video frames are separate from these enrollment stills.

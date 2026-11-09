@@ -1,0 +1,88 @@
+{
+  "verified_utc": "2026-11-08T15:52:58.773213+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "identities_enrolled": 3,
+  "unenrolled_identities": 2,
+  "original_query_video_ids": 8,
+  "frames_analyzed": 251,
+  "all_enrolled_reappeared_in_two_different_source_videos": true,
+  "capture_dates_known": false,
+  "source_media_redistributed_in_repository": false,
+  "model_training_performed": false,
+  "automatic_identity_confirmation": false,
+  "cases": [
+    {
+      "case": "A-1",
+      "source_video_id": "2nX9nDhXAmk",
+      "expected": "showcase-v2-a",
+      "frames_analyzed": 32,
+      "face_detections": 32,
+      "linked_face_detections": 30,
+      "correct_candidates": 32
+    },
+    {
+      "case": "A-2",
+      "source_video_id": "3su8tn9nwi4",
+      "expected": "showcase-v2-a",
+      "frames_analyzed": 27,
+      "face_detections": 27,
+      "linked_face_detections": 24,
+      "correct_candidates": 27
+    },
+    {
+      "case": "B-1",
+      "source_video_id": "4O_dJgzpy8A",
+      "expected": "showcase-v2-b",
+      "frames_analyzed": 26,
+      "face_detections": 26,
+      "linked_face_detections": 21,
+      "correct_candidates": 25
+    },
+    {
+      "case": "B-2",
+      "source_video_id": "51fapNu83z0",
+      "expected": "showcase-v2-b",
+      "frames_analyzed": 28,
+      "face_detections": 28,
+      "linked_face_detections": 26,
+      "correct_candidates": 28
+    },
+    {
+      "case": "C-1",
+      "source_video_id": "1EAgAgH4d04",
+      "expected": "showcase-v2-c",
+      "frames_analyzed": 52,
+      "face_detections": 52,
+      "linked_face_detections": 50,
+      "correct_candidates": 52
+    },
+    {
+      "case": "C-2",
+      "source_video_id": "2InJyjrkYro",
+      "expected": "showcase-v2-c",
+      "frames_analyzed": 32,
+      "face_detections": 32,
+      "linked_face_detections": 30,
+      "correct_candidates": 32
+    },
+    {
+      "case": "unknown-1",
+      "source_video_id": "0q4X8kPTlEY",
+      "expected": null,
+      "frames_analyzed": 25,
+      "face_detections": 25,
+      "linked_face_detections": 0,
+      "correct_candidates": 0
+    },
+    {
+      "case": "unknown-2",
+      "source_video_id": "3Rnk8eja3TU",
+      "expected": null,
+      "frames_analyzed": 29,
+      "face_detections": 29,
+      "linked_face_detections": 27,
+      "correct_candidates": 0
+    }
+  ],
+  "pass": true
+}

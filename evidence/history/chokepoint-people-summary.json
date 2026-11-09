@@ -1,0 +1,171 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T22:10:28.380463+00:00",
+  "new_profiles": 29,
+  "reference_stills": 58,
+  "gallery_profiles_in_actual_analysis": 34,
+  "profiles_with_multiple_sources_including_candidates": 28,
+  "reanalyzed_existing_video_sources": 5,
+  "new_original_video_sources": 0,
+  "frames_analyzed": 4343,
+  "face_detections_including_repeats": 1207,
+  "model_evaluation": [
+    {
+      "camera": "P1E_S1_C1",
+      "frames_analyzed": 600,
+      "face_detections": 84,
+      "scored_face_matches": 63,
+      "correct_candidates": 63,
+      "wrong_candidates": 0,
+      "unresolved_labeled_faces": 0,
+      "groundtruth_available": true,
+      "correctly_linked_unique_ids": 11
+    },
+    {
+      "camera": "P1E_S2_C2",
+      "frames_analyzed": 1184,
+      "face_detections": 130,
+      "scored_face_matches": 114,
+      "correct_candidates": 114,
+      "wrong_candidates": 0,
+      "unresolved_labeled_faces": 0,
+      "groundtruth_available": true,
+      "correctly_linked_unique_ids": 25
+    },
+    {
+      "camera": "P1L_S1_C1",
+      "frames_analyzed": 1779,
+      "face_detections": 303,
+      "scored_face_matches": 182,
+      "correct_candidates": 181,
+      "wrong_candidates": 0,
+      "unresolved_labeled_faces": 1,
+      "groundtruth_available": true,
+      "correctly_linked_unique_ids": 25
+    },
+    {
+      "camera": "P2E_S5_C2",
+      "frames_analyzed": 403,
+      "face_detections": 337,
+      "scored_face_matches": 0,
+      "correct_candidates": 0,
+      "wrong_candidates": 0,
+      "unresolved_labeled_faces": 0,
+      "groundtruth_available": false,
+      "correctly_linked_unique_ids": 0
+    },
+    {
+      "camera": "P2L_S5_C2",
+      "frames_analyzed": 377,
+      "face_detections": 353,
+      "scored_face_matches": 0,
+      "correct_candidates": 0,
+      "wrong_candidates": 0,
+      "unresolved_labeled_faces": 0,
+      "groundtruth_available": false,
+      "correctly_linked_unique_ids": 0
+    }
+  ],
+  "accuracy_scope": "Only uniquely eye-coordinate-matched detected faces in annotated normal clips; crowd unscored",
+  "dataset_concordant_track_reviews": 61,
+  "new_observation_images": 230,
+  "production_facts": {
+    "observed_tracks": 324,
+    "pending_tracks": 85,
+    "confirmed_tracks": 64,
+    "sampled_frames": 500,
+    "passages": 6,
+    "profiles": 36,
+    "sessions": 40,
+    "detection_posts": 0,
+    "unknown_date_frames": 500
+  },
+  "existing_posts_preserved": true,
+  "existing_chats_preserved": true,
+  "production_release": "20261108214913fe1503",
+  "production_people_and_comparison_visually_verified": true,
+  "embedding_documents": 40,
+  "previous_vectors_reused": 35,
+  "actual_embedding_api_calls": 1,
+  "actual_llm_api_calls": 0,
+  "embedding_usage": {
+    "prompt_tokens": 1681,
+    "total_tokens": 1681
+  },
+  "photos_or_face_features_sent_to_embedding_api": false,
+  "tests": {
+    "WSL_Django": 245,
+    "WSL_HTTP": 15,
+    "WSL_identity_unit": 4,
+    "Windows_Node": 76,
+    "Windows_Android": {
+      "passed": true,
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "suites": [
+        {
+          "name": "com.haddol7.photoviewer.content.ContentRulesTest",
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.haddol7.photoviewer.content.OcrPolicyTest",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.haddol7.photoviewer.data.MultipartBodyTest",
+          "tests": 4,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.haddol7.photoviewer.data.RepositoryPolicyTest",
+          "tests": 5,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.haddol7.photoviewer.ui.MonitoringTimeTest",
+          "tests": 2,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        },
+        {
+          "name": "com.haddol7.photoviewer.ui.RequestScopeTest",
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0
+        }
+      ]
+    },
+    "Android_UI_sizes": [
+      "small",
+      "regular"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "evidence/private/cctv-walking/people/production-people.jpg",
+      "sha256": "a15c5ad4c95199a218f1fb5281e32dd0c1e28fa4263078b5aa2fabade3a16c6d"
+    },
+    {
+      "path": "evidence/private/cctv-walking/people/production-person.jpg",
+      "sha256": "b0bca2316b64e5a2aba2c34d8fb11a6e93a6733de543078a849baa02a03fa486"
+    },
+    {
+      "path": "evidence/private/cctv-walking/people/production-comparison.jpg",
+      "sha256": "c51554430a40716755ba24f3e2b5e49e43d33295f974d10aaba37d1d099673e0"
+    }
+  ]
+}

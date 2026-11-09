@@ -1,0 +1,64 @@
+{
+  "verified_utc": "2026-11-08T17:57:04.250242+00:00",
+  "environment": "WSL against PythonAnywhere",
+  "origin": "https://daejinha.pythonanywhere.com",
+  "pass": true,
+  "production_verified": true,
+  "new_original_sources": 16,
+  "observation_images": 90,
+  "newly_created": 90,
+  "profiles": [
+    {
+      "key": "public-trump",
+      "name": "도널드 트럼프",
+      "source_count": 10,
+      "session_count": 10,
+      "sampled_frames": 56,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 10,
+      "reference_available": true,
+      "detail_url": "/people/public-trump/"
+    },
+    {
+      "key": "public-obama",
+      "name": "버락 오바마",
+      "source_count": 10,
+      "session_count": 10,
+      "sampled_frames": 57,
+      "confirmed_tracks": 0,
+      "candidate_tracks": 11,
+      "reference_available": true,
+      "detail_url": "/people/public-obama/"
+    }
+  ],
+  "previous_facts": {
+    "observed_tracks": 56,
+    "pending_tracks": 8,
+    "confirmed_tracks": 3,
+    "sampled_frames": 120,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 15,
+    "detection_posts": 0,
+    "unknown_date_frames": 120
+  },
+  "current_facts": {
+    "observed_tracks": 107,
+    "pending_tracks": 25,
+    "confirmed_tracks": 3,
+    "sampled_frames": 210,
+    "passages": 6,
+    "profiles": 7,
+    "sessions": 31,
+    "detection_posts": 0,
+    "unknown_date_frames": 210
+  },
+  "source_diverse_question_evidence_verified": true,
+  "existing_posts_preserved": true,
+  "duplicate_replay_created_new_frame": false,
+  "anonymous_new_image_access_denied": true,
+  "automatic_identity_confirmation": false,
+  "capture_times_invented": false,
+  "source_files_reuploaded_as_public_posts": false,
+  "llm_called": false
+}

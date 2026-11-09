@@ -1,13 +1,13 @@
 # 동일인 영상 시험 자료 조사
 
-2026년 11월 8일 Hugging Face 공개 API와 HDTF 제작자의 GitHub를 확인했다. 계정 로그인이나 신청서 제출 없이 샘플 영상 8개를 내려받았다. WSL Ubuntu의 프로젝트 가상환경에서 OpenCV로 총 1,235프레임을 끝까지 디코딩했고, 8개 영상의 첫 프레임도 직접 검토했다. 이 기록은 자료 확보와 입력 확인 결과이며 얼굴 비교 모델의 정확도 결과가 아니다.
+2026년 11월 8일 Hugging Face 공개 API와 HDTF 제작자의 GitHub를 확인했다. 계정 로그인이나 신청서 제출 없이 샘플 영상 8개를 내려받았다. WSL Ubuntu의 프로젝트 가상환경에서 OpenCV로 총 1,235프레임을 끝까지 디코딩했고, 8개 영상의 첫 프레임도 직접 검토했다. 아래는 자료 확보 기록이다. 이후 실제 비교 결과는 [라이브러리 적용 기록](person-libraries.md)의 얼굴 모델 비교 및 오바마 클립 시험에 정리했다.
 
 ## 우선 사용할 후보
 
 | 자료 | 실제 확인한 내용 | 활용 범위 |
 | --- | --- | --- |
 | [mortal9826/VoxCeleb2-test-data](https://huggingface.co/datasets/mortal9826/VoxCeleb2-test-data) | MP4 ZIP 안에 영상 36,237개와 인물 ID 118개가 있다. 인물 3명에 대해 서로 다른 원본 영상 ID 두 개씩, 총 6개 샘플을 받았다. | 서로 다른 원본 영상의 얼굴 비교를 시작할 후보 |
-| [saeed-5959/hdtf](https://huggingface.co/datasets/saeed-5959/hdtf) | `BarackObama_001.mp4`부터 `BarackObama_044.mp4`까지 44개 파일을 목록에서 확인했고, 첫 파일과 마지막 파일을 받았다. 두 샘플은 각각 512x512, 248프레임, 9.92초다. | 오바마 얼굴 영상의 입력과 처리 동작 확인 |
+| [saeed-5959/hdtf](https://huggingface.co/datasets/saeed-5959/hdtf) | `BarackObama_001.mp4`부터 `BarackObama_044.mp4`까지 44개 파일을 목록에서 확인했고, 첫 파일과 마지막 파일을 받았다. 두 샘플은 각각 512x512, 248프레임, 9.92초다. | 첫 클립 3장 등록과 마지막 클립 248프레임 전체의 실제 동일인 후보 비교에 사용 |
 | [MRzzm/HDTF](https://github.com/MRzzm/HDTF) | 제작자가 원본 YouTube URL과 구간, 얼굴 영역 및 처리 방법을 제공한다. README에는 CC BY 4.0을 명시한다. | 미러 파일의 원래 출처와 처리 방식 대조 |
 
 VoxCeleb2 샘플은 크기가 약 8.9GB인 ZIP 전체 대신 필요한 파일 구간만 읽었다. ZIP에서 전송받은 바이트는 5,508,471바이트이고, 선택한 6개 파일의 CRC 검사를 통과했다. 각 파일의 SHA256, 고정 저장소 리비전, 원본 영상 ID와 디코딩 결과를 로컬 검증 기록에 남겼다.

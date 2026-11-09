@@ -1,0 +1,239 @@
+{
+  "verified_utc": "2026-11-08T19:06:17.161066+00:00",
+  "production_verified": true,
+  "environment": "WSL against PythonAnywhere",
+  "index_documents": 31,
+  "pass": true,
+  "quality_scope": "three fixed metadata-retrieval questions, not an accuracy benchmark",
+  "paid_embedding_requests_for_build": 1,
+  "paid_api_requests_during_verification": 0,
+  "backup_verified": true,
+  "index_sha256": "982da9520ebae42453609a762d212b01f7ac0b7b3ca93e68424037baa9a16a18",
+  "cases": [
+    {
+      "id": "departure",
+      "question": "비행기를 타러 떠나는 장면을 찾아줘",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 1,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "8509a9d9-4456-5476-aa3b-c8e9ac6c33e0"
+        ],
+        "matches": [
+          {
+            "session_id": "8509a9d9-4456-5476-aa3b-c8e9ac6c33e0",
+            "similarity": 0.213029,
+            "title_match": 1.0,
+            "rank_score": 0.409772
+          }
+        ]
+      },
+      "sources": [
+        "트럼프 / 2017-11-07 일본 출국"
+      ],
+      "expected_source_retrieved": true,
+      "facts": {
+        "sampled_frames": 5,
+        "observed_tracks": 2,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 1,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 5,
+        "dates": [
+          "2026-11-09"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 1,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "425e4947fef3e93b2b57604cb73aaf277d5a3061a86bdaaff23a98ef6e560acf"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    },
+    {
+      "id": "press",
+      "question": "기자들에게 국정 현안을 설명하는 영상",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "a146746f-cf5d-5235-b503-776da23c41d4",
+          "0b31f7ad-62bf-52ba-ac8b-020af6d58a7a",
+          "b330ffc7-f0bc-50e8-a696-503b79373e40",
+          "4d38275f-2e1b-513b-a348-91dd22fa4051"
+        ],
+        "matches": [
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.435835,
+            "title_match": 1.0,
+            "rank_score": 0.576876
+          },
+          {
+            "session_id": "a146746f-cf5d-5235-b503-776da23c41d4",
+            "similarity": 0.407653,
+            "title_match": 1.0,
+            "rank_score": 0.55574
+          },
+          {
+            "session_id": "0b31f7ad-62bf-52ba-ac8b-020af6d58a7a",
+            "similarity": 0.401823,
+            "title_match": 1.0,
+            "rank_score": 0.551367
+          },
+          {
+            "session_id": "b330ffc7-f0bc-50e8-a696-503b79373e40",
+            "similarity": 0.392936,
+            "title_match": 1.0,
+            "rank_score": 0.544702
+          },
+          {
+            "session_id": "4d38275f-2e1b-513b-a348-91dd22fa4051",
+            "similarity": 0.466339,
+            "title_match": 0.0,
+            "rank_score": 0.349755
+          }
+        ]
+      },
+      "sources": [
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "오바마 / 2014-09-05 나토 기자회견",
+        "트럼프 / 2020-07-10 현장 브리핑",
+        "트럼프 / 2020-01-08 백악관 브리핑",
+        "트럼프 / 2018-10-11 정부 회의"
+      ],
+      "expected_source_retrieved": true,
+      "facts": {
+        "sampled_frames": 28,
+        "observed_tracks": 23,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 6,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 28,
+        "dates": [
+          "2026-11-09"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 5,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "f9ad67668223c1111ecd397facd80fa09d1212e4abb01d71e1f6e7ed91eda872",
+        "d5e6a74c53954de6ac52578309614a97f236ff59ccdbe2fa624e1cfa55d2975b",
+        "cbad230443988707282a18dccb4779c3ccbd8bdb301e5ae2395fbc136f1a6fa6",
+        "a54f47c5346ba65a45085c1b7e2da82a5c494013903869e0979c4c1980038d1d",
+        "fc228e36bc4c53ba15cd5a3ce490f7986df9b278f31f284820b9c4e460d9ce51"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    },
+    {
+      "id": "security",
+      "question": "여러 나라가 모여 안보 문제를 논의하는 영상",
+      "retrieval": {
+        "strategy": "semantic",
+        "status": "ranked",
+        "scope": "semantic_top_5",
+        "api_requests": 0,
+        "matched_sessions": 5,
+        "query_cache_hit": true,
+        "ranking": "embedding_title_hybrid_v2",
+        "session_ids": [
+          "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+          "16c8e6ea-cbc4-567f-868d-30a60b948300",
+          "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+          "900f997e-7f61-592d-8eef-c61ef70a5e50",
+          "a146746f-cf5d-5235-b503-776da23c41d4"
+        ],
+        "matches": [
+          {
+            "session_id": "7fed4c5b-529e-52a5-80a1-380b6b06efe2",
+            "similarity": 0.427647,
+            "title_match": 1.0,
+            "rank_score": 0.570735
+          },
+          {
+            "session_id": "16c8e6ea-cbc4-567f-868d-30a60b948300",
+            "similarity": 0.423003,
+            "title_match": 1.0,
+            "rank_score": 0.567252
+          },
+          {
+            "session_id": "95cca1cb-efb4-58ef-94f6-d05a5662721d",
+            "similarity": 0.445429,
+            "title_match": 0.5,
+            "rank_score": 0.459072
+          },
+          {
+            "session_id": "900f997e-7f61-592d-8eef-c61ef70a5e50",
+            "similarity": 0.412814,
+            "title_match": 0.5,
+            "rank_score": 0.434611
+          },
+          {
+            "session_id": "a146746f-cf5d-5235-b503-776da23c41d4",
+            "similarity": 0.369525,
+            "title_match": 0.5,
+            "rank_score": 0.402144
+          }
+        ]
+      },
+      "sources": [
+        "오바마 / 2014-09-26 보건안보 회의",
+        "오바마 / 2016-04-01 핵안보 정상회의",
+        "오바마 / 2015-02-19 국제회의 발언",
+        "오바마 / 2015-07-06 국방부 기자회견",
+        "오바마 / 2014-09-05 나토 기자회견"
+      ],
+      "expected_source_retrieved": true,
+      "facts": {
+        "sampled_frames": 29,
+        "observed_tracks": 18,
+        "confirmed_tracks": 0,
+        "candidate_tracks": 6,
+        "confirmed_profiles": 0,
+        "passages": 0,
+        "direction_in": 0,
+        "direction_out": 0,
+        "unknown_date_frames": 29,
+        "dates": [
+          "2026-11-09"
+        ],
+        "date_basis": "processed",
+        "timezone": "Asia/Seoul",
+        "source_count": 5,
+        "dataset_confirmed_tracks": 0
+      },
+      "evidence_ids": [
+        "c04900c1ec7d76946437dc8658cab8039953010f310c5baa7ab1bc7dfdd7da07",
+        "ddc7b7d1054525418618ed8e9321043afd890dd5fb9d9ea7e25a924139393c84",
+        "f7460a956bff8eccb1228e9514cfefed5542c086b13c65ea32efed40e23dbd12",
+        "f9ad67668223c1111ecd397facd80fa09d1212e4abb01d71e1f6e7ed91eda872",
+        "d5e6a74c53954de6ac52578309614a97f236ff59ccdbe2fa624e1cfa55d2975b"
+      ],
+      "api_requests_during_verification": 0,
+      "llm_generation_requests": 0
+    }
+  ]
+}

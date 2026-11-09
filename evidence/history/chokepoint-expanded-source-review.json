@@ -1,0 +1,43 @@
+{
+  "pass": true,
+  "panels": [
+    {
+      "camera": "P1E_S2_C2",
+      "analyzed_frame_index": 42,
+      "replay_seconds": 19.566666666666666,
+      "original_image": "00001197.jpg",
+      "face_linked_to_body": true,
+      "identity_confirmed": false,
+      "input_used_for_inference": false
+    },
+    {
+      "camera": "P1L_S1_C1",
+      "analyzed_frame_index": 25,
+      "replay_seconds": 16.633333333333333,
+      "original_image": "00000561.jpg",
+      "face_linked_to_body": true,
+      "identity_confirmed": false,
+      "input_used_for_inference": false
+    },
+    {
+      "camera": "P2E_S5_C2",
+      "analyzed_frame_index": 49,
+      "replay_seconds": 16.3,
+      "original_image": "00000525.jpg",
+      "face_linked_to_body": true,
+      "identity_confirmed": false,
+      "input_used_for_inference": false
+    },
+    {
+      "camera": "P2L_S5_C2",
+      "analyzed_frame_index": 55,
+      "replay_seconds": 18.3,
+      "original_image": "00001307.jpg",
+      "face_linked_to_body": true,
+      "identity_confirmed": false,
+      "input_used_for_inference": false
+    }
+  ],
+  "purpose": "visual QA of real model boxes; not an accuracy benchmark",
+  "path": "evidence/private/cctv-walking/expanded/source-review.jpg"
+}

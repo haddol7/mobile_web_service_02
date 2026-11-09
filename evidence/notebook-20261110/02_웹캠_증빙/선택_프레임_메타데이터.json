@@ -1,0 +1,16 @@
+{
+  "source": 0,
+  "device": "/dev/video0",
+  "camera_format": "MJPG",
+  "width": 640,
+  "height": 480,
+  "frame_index": 101,
+  "labels_file": "labels/0_101.txt",
+  "green_fraction": 0.0,
+  "max_confidence": 0.708044,
+  "class_ids": [
+    0,
+    39
+  ],
+  "capture": "Unmodified frame passed to the original YOLO display"
+}

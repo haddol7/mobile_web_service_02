@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 import runpy
+import tempfile
 from unittest.mock import patch
 
 from django.conf import settings
@@ -34,3 +35,16 @@ class ProductionConfigurationUnitTests(SimpleTestCase):
         with override_settings(DEBUG=False):
             config = runpy.run_path(str(Path(settings.BASE_DIR) / "photoblog" / "urls.py"))
         self.assertFalse(any("media" in str(pattern.pattern) for pattern in config["urlpatterns"]))
+
+    def test_history_media_follows_the_persistent_target_of_a_release_media_link(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);shared=root/"shared/media";shared.mkdir(parents=True)
+            release=root/"release";release.mkdir();(release/"media").symlink_to(shared,target_is_directory=True)
+            config=self.load_settings(DJANGO_MEDIA_ROOT=str(release/"media"))
+            self.assertEqual(config["HISTORY_MEDIA_ROOT"],root/"shared/private_tracking")
+
+    def test_history_media_can_be_explicitly_configured(self):
+        with tempfile.TemporaryDirectory() as directory:
+            destination=Path(directory)/"private-history"
+            config=self.load_settings(HISTORY_MEDIA_ROOT=str(destination))
+            self.assertEqual(config["HISTORY_MEDIA_ROOT"],destination)

@@ -18,6 +18,39 @@ from . import services
 from .ownership import require_blog_owner, can_manage_post
 
 
+def dashboard(request):
+    from .ownership import is_blog_owner
+    if is_blog_owner(request.user):
+        return history_page(request)
+    response = render(request, "blog/dashboard.html")
+    response["Cache-Control"] = "private, no-store"
+    return response
+
+
+@login_required
+def people_page(request):
+    from .monitoring import overview
+    require_blog_owner(request.user)
+    response = render(request, "blog/people.html", {"monitor": overview()})
+    response["Cache-Control"] = "private, no-store"
+    return response
+
+
+@login_required
+def person_detail(request,profile_key):
+    from .models import PersonProfile
+    from .monitoring_presenter import profile_payload
+    require_blog_owner(request.user)
+    response=render(request,"blog/person_detail.html",{"person":profile_payload(get_object_or_404(PersonProfile,pk=profile_key),with_timeline=True)})
+    response["Cache-Control"]="private, no-store"
+    return response
+
+
+@login_required
+def question_page(request):
+    return history_page(request, question_page=True)
+
+
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).select_related("author", "content").prefetch_related("content__tags")
     search = PhotoSearchForm(request.GET)
@@ -92,6 +125,21 @@ def post_delete(request, pk):
 
 def js_test(request):
     return render(request, "blog/js_test.html")
+
+
+@login_required
+def history_page(request, question_page=False):
+    from django.conf import settings
+    from .monitoring import overview
+    require_blog_owner(request.user)
+    context = {"question_page": question_page, "history_config": {
+        "question_page": question_page,
+        "llm_ready": bool(settings.HISTORY_LLM_API_KEY and settings.HISTORY_LLM_MODEL)}}
+    if not question_page:
+        context["monitor"] = overview()
+    response = render(request, "blog/chat.html" if question_page else "blog/history.html", context)
+    response["Cache-Control"] = "private, no-store"
+    return response
 
 
 def content_check(request):

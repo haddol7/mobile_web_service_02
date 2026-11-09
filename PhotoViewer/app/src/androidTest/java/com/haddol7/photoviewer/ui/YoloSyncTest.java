@@ -51,7 +51,7 @@ public final class YoloSyncTest extends ActivityInstrumentationTestCase2<MainAct
         for(PhotoPost post:api.getPosts())if(post.id==id)selected=post;
         assertNotNull("Expected YOLO post missing",selected);assertTrue(selected.title.startsWith("YOLO:"));
         assertEquals(expected,PhotoPipeline.sha256(api.downloadPhoto(selected.imageUrl)));
-        MainActivity activity=getActivity();PhotoPost post=selected;boolean[] ready={false};
+        MainActivity activity=getActivity();java.lang.reflect.Method listing=MainActivity.class.getDeclaredMethod("showList");listing.setAccessible(true);getInstrumentation().runOnMainSync(()->{try{listing.invoke(activity);}catch(Exception e){throw new RuntimeException(e);}});PhotoPost post=selected;boolean[] ready={false};
         long until=android.os.SystemClock.elapsedRealtime()+60000;
         while(android.os.SystemClock.elapsedRealtime()<until){
             getInstrumentation().runOnMainSync(()->{View decor=activity.getWindow().getDecorView();ready[0]=text(decor,"동기화 완료")!=null&&text(decor,post.title)!=null&&photos(decor)>0;});
@@ -61,7 +61,7 @@ public final class YoloSyncTest extends ActivityInstrumentationTestCase2<MainAct
         getInstrumentation().runOnMainSync(()->assertTrue(text(activity.getWindow().getDecorView(),post.title).performClick()));
         ready[0]=false;until=android.os.SystemClock.elapsedRealtime()+30000;
         while(android.os.SystemClock.elapsedRealtime()<until){
-            getInstrumentation().runOnMainSync(()->ready[0]=text(activity.getWindow().getDecorView(),"공개된 사진글")!=null&&text(activity.getWindow().getDecorView(),post.title)!=null);
+            getInstrumentation().runOnMainSync(()->ready[0]=text(activity.getWindow().getDecorView(),"사진 상세")!=null&&text(activity.getWindow().getDecorView(),post.title)!=null);
             if(ready[0])break;Thread.sleep(100);
         }
         assertTrue("YOLO photo detail did not open",ready[0]);capture(activity,"yolo-native-detail.png");

@@ -1,0 +1,20 @@
+{
+  "pass": true,
+  "production_verified": true,
+  "release": "20261108162103f0ca31",
+  "base_release": "20261108160518be71af",
+  "console_used": false,
+  "database_or_dependencies_changed": false,
+  "changed_files": [
+    "blog/history_llm.py",
+    "blog/static/blog/history.css",
+    "blog/static/blog/history.mjs",
+    "blog/templates/blog/history.html",
+    "blog/tests/test_history_llm.py"
+  ],
+  "backup_verified": true,
+  "source_and_public_assets_verified": true,
+  "record_question_verified": true,
+  "actual_llm_call_in_this_step": false,
+  "verified_utc": "2026-11-08T16:22:25.079164+00:00"
+}

@@ -1,0 +1,215 @@
+{
+  "collected_utc": "2026-11-08T02:50:23.074356+00:00",
+  "environment": "WSL Ubuntu",
+  "dataset": "mortal9826/VoxCeleb2-test-data",
+  "revision": "50ece5fc887f7ca39c41503534e70a3368386f5b",
+  "archive": "vox2_test_mp4.zip",
+  "source": "https://huggingface.co/datasets/mortal9826/VoxCeleb2-test-data",
+  "original_project": "https://www.robots.ox.ac.uk/~vgg/data/voxceleb/",
+  "selection_policy": "First 18 sorted identities with at least 3 source-video IDs and small clips, excluding all 3 earlier identities.",
+  "excluded_previous_identities": [
+    "id00017",
+    "id00061",
+    "id00081"
+  ],
+  "clip_count": 48,
+  "identity_count": 18,
+  "query_clip_count": 36,
+  "total_source_frames_decoded": 5752,
+  "archive_bytes_read": 11834498,
+  "full_archive_downloaded": false,
+  "login_required": false,
+  "training_performed": false,
+  "capture_dates_known": false,
+  "different_source_video_ids_verified": true,
+  "different_recording_sessions_proven": false,
+  "identity_matching_measured": false,
+  "source_video_groups": [
+    {
+      "identity": "id00154",
+      "enrolled": true,
+      "reference_sources": [
+        "0hjW3eTGAy8"
+      ],
+      "query_sources": [
+        "2pSNL5YdcoQ",
+        "6eX78POXvNg"
+      ]
+    },
+    {
+      "identity": "id00419",
+      "enrolled": true,
+      "reference_sources": [
+        "1zffAxBod_c"
+      ],
+      "query_sources": [
+        "3CulyFD9N_0",
+        "3U0abyjM2Po"
+      ]
+    },
+    {
+      "identity": "id00562",
+      "enrolled": true,
+      "reference_sources": [
+        "0Zh6t-f8MsY"
+      ],
+      "query_sources": [
+        "2KLM0Lact6A",
+        "2nC975mY-Z4"
+      ]
+    },
+    {
+      "identity": "id00812",
+      "enrolled": true,
+      "reference_sources": [
+        "1Xfgvdu7oDo"
+      ],
+      "query_sources": [
+        "1tr-i1_4O-A",
+        "3OYZYK9sbdA"
+      ]
+    },
+    {
+      "identity": "id00817",
+      "enrolled": true,
+      "reference_sources": [
+        "0GmSijZelGY"
+      ],
+      "query_sources": [
+        "0ZfPJikvUaM",
+        "0nSJZWxF9hs"
+      ]
+    },
+    {
+      "identity": "id00866",
+      "enrolled": true,
+      "reference_sources": [
+        "03SSllwNkGk"
+      ],
+      "query_sources": [
+        "0GQp_0K_YRg",
+        "0OxT7uyV-vU"
+      ]
+    },
+    {
+      "identity": "id00926",
+      "enrolled": true,
+      "reference_sources": [
+        "2Nd7f1yNQzE"
+      ],
+      "query_sources": [
+        "3nftnf4taAY",
+        "7vaWI83MpHU"
+      ]
+    },
+    {
+      "identity": "id01000",
+      "enrolled": true,
+      "reference_sources": [
+        "0lmrq0quo9M"
+      ],
+      "query_sources": [
+        "1jmivUh2rNU",
+        "7eYakM6qrTs"
+      ]
+    },
+    {
+      "identity": "id01041",
+      "enrolled": true,
+      "reference_sources": [
+        "1UYZqPpavtk"
+      ],
+      "query_sources": [
+        "20WFVqzJxmc",
+        "28aDivOj_-c"
+      ]
+    },
+    {
+      "identity": "id01066",
+      "enrolled": true,
+      "reference_sources": [
+        "0LlOcxxo1M0"
+      ],
+      "query_sources": [
+        "0n-7JunX4kg",
+        "14dx148N_Ds"
+      ]
+    },
+    {
+      "identity": "id01106",
+      "enrolled": true,
+      "reference_sources": [
+        "45TAeIEqhcU"
+      ],
+      "query_sources": [
+        "50-AnC4UUIA",
+        "6SFpvp42pMA"
+      ]
+    },
+    {
+      "identity": "id01224",
+      "enrolled": true,
+      "reference_sources": [
+        "0MbJ83_n8G0"
+      ],
+      "query_sources": [
+        "3UjkoPKmYZ4",
+        "3uM4W1Hcc4A"
+      ]
+    },
+    {
+      "identity": "id01228",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "2TIFacjgehY",
+        "3wAkCYQR3fQ"
+      ]
+    },
+    {
+      "identity": "id01298",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "2K5F6xG-Rbs",
+        "2e1qi_H9yX0"
+      ]
+    },
+    {
+      "identity": "id01333",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "02HOKnTjBlQ",
+        "15WwycPFKyA"
+      ]
+    },
+    {
+      "identity": "id01437",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "4lFDvxXzYWY",
+        "7fXvKZ9lbIw"
+      ]
+    },
+    {
+      "identity": "id01460",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "1e8Qp2-K5dQ",
+        "2vJlUcWI2DQ"
+      ]
+    },
+    {
+      "identity": "id01509",
+      "enrolled": false,
+      "reference_sources": [],
+      "query_sources": [
+        "1EJ082XnBFM",
+        "1y0aWmgYDtw"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "pass": true,
+  "verified_utc": "2026-11-08T20:16:03.777793+00:00",
+  "environment": "WSL Ubuntu",
+  "source": "https://zenodo.org/records/815657",
+  "new_recordings": 4,
+  "independent_camera_views_counted_as_recordings": false,
+  "total_archive_bytes": 1452192540,
+  "cases": [
+    {
+      "sequence": "P1E_S2",
+      "camera": "P1E_S2_C2",
+      "md5": "bc58ad9ef36ceb92da592cb092353d55",
+      "label": "출입구 1 / 입장 보행 / 구간 2",
+      "url": "https://zenodo.org/records/815657/files/P1E_S2.tar.xz?download=1",
+      "archive_bytes": 402244872,
+      "archive_sha256": "6693cc80e9fe6a32462c79cff7a11cd5fc0ffa363cb0711ac2e9c23379f0c2c1",
+      "official_md5_verified": true,
+      "video": "evidence/private/cctv-walking/expanded/P1E_S2_C2/P1E_S2_C2.mp4",
+      "video_sha256": "4d63a796fb462f772a0894f057185fc9b3fbde890d746d2c328c203a317407a2",
+      "frames": 2369,
+      "fps": 30,
+      "size": [
+        800,
+        600
+      ],
+      "full_decode_pass": true,
+      "capture_date_known": false,
+      "derivative_notice": "NICTA ChokePoint; Wong et al., CVPRW 2011. Reconstructed available JPEGs at 30 fps; replay times are not capture timestamps."
+    },
+    {
+      "sequence": "P1L_S1",
+      "camera": "P1L_S1_C1",
+      "md5": "5673a77c62b4e70d0f6871d1635df367",
+      "label": "출입구 1 / 퇴장 보행 / 구간 1",
+      "url": "https://zenodo.org/records/815657/files/P1L_S1.tar.xz?download=1",
+      "archive_bytes": 725701368,
+      "archive_sha256": "c747343c3ab93cc005f6b75c1184a433da758f49e5e413b01bb5919de31e2dfa",
+      "official_md5_verified": true,
+      "video": "evidence/private/cctv-walking/expanded/P1L_S1_C1/P1L_S1_C1.mp4",
+      "video_sha256": "bd6fe6d972481898409453a9dafeea9e7c3ff61df8bd3e000979e6a423bb8b3d",
+      "frames": 3558,
+      "fps": 30,
+      "size": [
+        800,
+        600
+      ],
+      "full_decode_pass": true,
+      "capture_date_known": false,
+      "derivative_notice": "NICTA ChokePoint; Wong et al., CVPRW 2011. Reconstructed available JPEGs at 30 fps; replay times are not capture timestamps."
+    },
+    {
+      "sequence": "P2E_S5",
+      "camera": "P2E_S5_C2",
+      "md5": "e6bca312e40ebebdfb709f2315eebf80",
+      "label": "출입구 2 / 혼잡 입장 / 구간 5",
+      "url": "https://zenodo.org/records/815657/files/P2E_S5.tar.xz?download=1",
+      "archive_bytes": 180516452,
+      "archive_sha256": "3adeea2eaa4c6f08b9f0579736bfd5b576eead5ea636b0fd5c1d6e0a36684353",
+      "official_md5_verified": true,
+      "video": "evidence/private/cctv-walking/expanded/P2E_S5_C2/P2E_S5_C2.mp4",
+      "video_sha256": "0fb9cd05970092df98657a866442104b9016a0b878c1b83d648d750c14612917",
+      "frames": 806,
+      "fps": 30,
+      "size": [
+        800,
+        600
+      ],
+      "full_decode_pass": true,
+      "ground_truth_available": false,
+      "capture_date_known": false,
+      "derivative_notice": "NICTA ChokePoint; Wong et al., CVPRW 2011. Reconstructed available JPEGs at 30 fps; replay times are not capture timestamps."
+    },
+    {
+      "sequence": "P2L_S5",
+      "camera": "P2L_S5_C2",
+      "md5": "14b28f3d83a75b62d3aa6ad5ee117843",
+      "label": "출입구 2 / 혼잡 퇴장 / 구간 5",
+      "url": "https://zenodo.org/records/815657/files/P2L_S5.tar.xz?download=1",
+      "archive_bytes": 143729848,
+      "archive_sha256": "00290d791ab7a005bb3372cb9cbf5073e63e0830d0b2969dd29b3ce51b8422a5",
+      "official_md5_verified": true,
+      "video": "evidence/private/cctv-walking/expanded/P2L_S5_C2/P2L_S5_C2.mp4",
+      "video_sha256": "b63586a28270cd2e8a160fadd02778934196ae9b73452e9779592c95efccbc0f",
+      "frames": 755,
+      "fps": 30,
+      "size": [
+        800,
+        600
+      ],
+      "full_decode_pass": true,
+      "ground_truth_available": false,
+      "capture_date_known": false,
+      "derivative_notice": "NICTA ChokePoint; Wong et al., CVPRW 2011. Reconstructed available JPEGs at 30 fps; replay times are not capture timestamps."
+    }
+  ],
+  "model_training_performed": false,
+  "actual_paid_api_calls": 0
+}

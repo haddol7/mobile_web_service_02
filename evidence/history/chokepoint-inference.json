@@ -1,0 +1,25 @@
+{
+  "verified_utc": "2026-11-08T16:50:17.875464+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "source": "ChokePoint/P1E_S1_C1",
+  "path": "evidence/private/cctv-walking/chokepoint/P1E_S1_C1-first1200.mp4",
+  "sha256": "fb79f5f18b5caf312bdd8276b8a8afa2ea46ffa0a0fd3f053ce2f29a1b25904e",
+  "original_frames_available": 2292,
+  "clip_original_start_index": 0,
+  "clip_original_frames": 1200,
+  "fps": 30,
+  "size": [
+    800,
+    600
+  ],
+  "frames_analyzed": 120,
+  "faces_detected": 84,
+  "linked_faces": 62,
+  "candidates": 0,
+  "log": "evidence/private/cctv-walking/chokepoint/inference/person-analysis/abcd5aca08a8c7fd.jsonl",
+  "capture_date_known": false,
+  "automatic_confirmation": false,
+  "outer_archive_checksum_verified": true,
+  "model_training_performed": false,
+  "pass": true
+}

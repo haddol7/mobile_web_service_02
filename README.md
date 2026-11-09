@@ -1,78 +1,74 @@
-# 공통평가 02 객체 검출 사진 블로그
-
-현재 보고서는 진행본이다. 웹캠 실측과 PythonAnywhere 검증을 마친 뒤 최종 확정한다.
-
-YOLOv5가 객체를 검출하면 Django 사진 블로그에 검출 사진을 등록하고 Android 앱에서 확인한다. 강의의 ChangeDetection 방식에 따라 이전 프레임에 없던 객체 종류가 나타날 때 전송한다. 같은 종류가 계속 보이는 동안에는 전송하지 않으며, 사라졌다가 다시 나타나면 새로 등록한다. 사람의 신원을 구별하거나 침입 여부를 별도로 판정하는 기능은 아니다.
+# 공통평가 02 감시 시스템
 
 컴퓨터공학과 하대진 2020105671
 
-제출 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. 공통평가 01 저장소와 분리했다.
+YOLOv5가 새 객체의 출현을 감지하면 Django 서버에 검출 사진을 저장하고 Android와 모바일 웹에서 조회한다. 사람 추적과 얼굴 후보 비교, 인물별 관측 이력 및 근거 기록 질문을 추가했다.
 
-## 구성
+- 운영 주소: https://daejinha.pythonanywhere.com/
+- 공통평가 02 전용 저장소: https://github.com/haddol7/mobile_web_service_02
+- 보고서: 루트의 `모바일웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx`
+- 평가 대응표: [요구사항과 증빙](docs/assessment-requirements.json)
+- 검증 기준일: 2026년 11월 10일
 
-- `PhotoBlogServer` Django 서버와 REST API
-- `PhotoViewer` Android 클라이언트
-- `YOLOv5` CPU에서 실행하는 Edge 클라이언트
-- `docs` 평가 원문에서 정리한 요구사항과 검증 현황
-- `evidence` 실제 테스트 결과와 화면 캡처
+## 구성과 기본 기능
 
-YOLOv5는 Ultralytics v7.0의 소스를 사용한다. 원본 커밋과 파일 해시는 `docs/upstream/provenance.json`에 기록했다. `YOLOv5/baseline/detect.py`는 수정하지 않은 원본이며 `YOLOv5/detect.py`는 Django 전송을 연결한 코드다. 원본의 GPL-3.0 라이선스는 `YOLOv5/LICENSE`에 있다. 모델은 공식 사전 학습 가중치를 사용하며 별도 학습은 하지 않는다.
+| 폴더 | 역할 |
+|---|---|
+| PhotoBlogServer | Django 서버, REST API, SQLite, 운영자 웹 |
+| PhotoViewer | Android 클라이언트 |
+| YOLOv5 | 원본 검출기, 객체 출현 비교, 사람 추적과 전송 |
+| docs | 평가 요구사항, 실행 설명과 자료 이용 조건 |
+| evidence | 실제 실행 결과와 캡처 |
+| laptop | 노트북용 실행 메뉴와 검사 |
 
-## 실행 환경
+공통평가 01과 별도 저장소이며 기본 Post API의 7개 필드와 Android 동기화를 유지한다. `YOLOv5/baseline/detect.py`는 변경하지 않은 Ultralytics v7.0 원본이다. 원본 커밋과 파일 해시는 docs/upstream/provenance.json에 있다.
 
-소스는 Windows에 두고 Django와 YOLO는 WSL Ubuntu에서 실행한다. 본 PC에는 `/home/daeha/.venvs/mobile_web_service_02` 환경을 구성했다. Android 빌드와 에뮬레이터 검증은 Windows에서 한다. Android 패키지 이름은 `com.haddol7.photoviewer.assessment02`이며 01 앱과 함께 설치할 수 있다.
+이전 프레임에 없던 객체 종류가 나타나면 320 x 240 JPEG와 검출 내용을 서버에 전송한다. 로컬 및 무료 PythonAnywhere 서버에서 API와 사진 목록을 확인하고 Android에서 같은 사진을 조회한다. 노트북의 실제 카메라 0번을 입력으로 원본 검출기를 실행한 증빙도 포함한다.
 
-WSL 의존성 준비 스크립트는 `bash tools/setup_edge.sh`다. Python 3.12 이상을 사용하고 Python 패키지는 전용 가상환경에 설치한다. OpenCV 실행에 필요한 WSL의 `libgl1`, `libglib2.0-0`은 본 PC에 준비했다.
+## 추가 기능
 
-## 검출과 서버 전송
+평가표의 추가 기능은 두 항목으로 구성했다.
 
-WSL에서 이 저장소로 이동한 뒤 실행한다.
+1. Edge Client의 인물 추적과 관측 기록 전송: Norfair 몸 추적, Supervision 통과 집계, InsightFace Buffalo L 얼굴 후보 비교, 중복 방지와 재전송.
+2. Server의 인물 이력과 근거 기록 질의: 날짜와 인물별 이력, 운영자 확인, 텍스트 임베딩 검색과 LLM 답변 및 대화 복원.
 
-```bash
-PY=$HOME/.venvs/mobile_web_service_02/bin/python
-$PY tools/run_edge.py --baseline --source 0 --device cpu
-$PY tools/run_edge.py --source 0 --device cpu --server http://127.0.0.1:8020
-```
+웹과 Android의 메뉴는 관측 기록, 인물 확인, AI 질문이다. 사진에는 몸과 얼굴 검출 박스, 추적 번호 및 후보와 확인 상태를 표시한다. 기존 사진 자료는 /photos/와 Post API에서 조회한다.
 
-서버 전송에는 비공개 환경변수 `YOLO_API_TOKEN` 또는 `YOLO_USERNAME`, `YOLO_PASSWORD`가 필요하다. 사용자 이름과 비밀번호를 사용할 때 `/api-token-auth/`에서 토큰을 받은 뒤 `/api_root/Post/`에 multipart JPEG를 등록한다. 이 서버의 인증 방식은 DRF Token이다. 비밀번호와 토큰은 코드, 명령 인자, 보고서, Git 저장소에 넣지 않는다. 원격 서버에는 HTTPS를 사용한다.
+11월 9일 운영 검증 기준 사진 500장과 분석 실행 40개를 저장했다. ChokePoint 공식 등록 사진 58장으로 29명을 등록했고 전체 비교 갤러리는 34명이다. 재분석 횟수와 원본 영상 수, 추적 수와 실제 사람 수를 구분한다. 얼굴 후보는 운영자 확인 전까지 확정하지 않는다.
 
-웹캠은 WSL에서 `/dev/video*` 장치로 확인되어야 한다. 현재 웹캠은 추후 연결 예정이며 정지 이미지 검증으로 웹캠 증빙을 대신하지 않는다.
+## 실행
+
+Windows에 하나의 소스 트리를 두고 Django와 Python 및 Edge 추론은 WSL2 Ubuntu에서 /mnt 경로로 실행한다. 가상환경은 Linux 홈의 ~/.venvs/mobile_web_service_02에 둔다. Android Studio, Gradle, Emulator와 ADB는 Windows에서 실행한다. 운영은 무료 PythonAnywhere, 모델 추론은 Edge CPU에서 수행한다.
+
+노트북 이전 ZIP을 사용한다면 [노트북 안내](laptop/START_HERE.md)를 따른다. laptop/START.cmd에서 설치, 검사, 영상 분석, 원본 웹캠 실행과 운영 전송을 선택한다. 운영 데이터는 기존 서버에서 조회한다.
+
+소스를 새로 받은 경우 WSL Ubuntu의 프로젝트 루트에서 `bash tools/setup_edge.sh`와 `bash tools/setup_person_analysis.sh`로 공식 가중치와 의존성을 준비한다. Python 3.12 이상 및 Python venv와 빌드 의존성이 필요하다. 가상환경의 Python으로 PhotoBlogServer/manage.py migrate를 실행하고 runserver 127.0.0.1:8020으로 서버를 연다. 로컬 운영자 계정은 createsuperuser --username daejinha로 만든다.
+
+원본 검출은 가상환경의 Python으로 `tools/run_edge.py --baseline --source YOLOv5/data/images/bus.jpg --device cpu`를 실행한다. 실제 카메라는 장치와 프레임을 확인한 뒤 --source 0 --view-img를 사용한다. 노트북의 MJPEG 입력 보조 스크립트와 원본 실행 로그는 evidence/notebook-20261110/02_웹캠_증빙에 있다.
+
+운영 전송에는 --server https://daejinha.pythonanywhere.com 옵션과 비공개 YOLO_API_TOKEN 또는 YOLO_USERNAME 및 YOLO_PASSWORD 환경변수를 사용한다. 이력 전송에는 --person-tracking --person-history를 추가한다. 라이브러리 실행과 등록 사진 구성은 docs/testing/person-libraries.md, 자료 이용 조건은 docs/testing/licenses에 정리했다.
 
 ## 검증
 
-```bash
-PY=$HOME/.venvs/mobile_web_service_02/bin/python
-(cd YOLOv5 && $PY -m unittest discover -s tests -p test_changedetection.py -v)
-$PY tools/verify_yolo_pipeline.py
-$PY tools/verify_video_flow.py
-$PY tools/check_environment.py
-(cd PhotoBlogServer && $PY tools/verify_content.py)
-```
+| 항목 | 실제 결과 |
+|---|---|
+| WSL Django | 250개 통과 |
+| 실제 HTTP 엔진 | 전체 중 15개를 별도 재실행 |
+| WSL Edge | 30개 통과 |
+| 웹 단위 | 76개 통과 |
+| Windows Android | JVM 40개, Lint 오류 0개 및 경고 9개 |
+| 실제 노트북 웹캠 | 카메라 0번, 640 x 480 MJPEG, person 0.71 |
+| 노트북 환경 | 파일 615개 및 등록 사진 34명 73장 읽기, Django 250개와 이전 도구 9개 통과 |
+| 운영 | 관측 사진 500장, 분석 실행 및 임베딩 문서 각각 40개 |
 
-`verify_yolo_pipeline.py`는 실제 모델로 버스 사진, 같은 사진, 빈 화면, 버스 사진을 순서대로 검출한다. 별도 검증 DB에 게시글 2개가 생기는지, 공개 API의 7개 필드가 유지되는지, 저장한 JPEG와 HTTP로 조회한 JPEG가 일치하는지 검사한다. 이 검증의 DB와 사진은 Git에서 제외한 `evidence/private/local`에 보관한다.
+HTTP 15개는 전체 Django 사례에 포함되므로 중복 합산하지 않는다. 노트북 WSL, 기존 PC의 WSL과 Android, PythonAnywhere 검증을 환경 및 날짜로 구분한다. [검증 현황](docs/verification-status.md)과 evidence의 실제 실행 기록에서 확인할 수 있다.
 
-Windows Android 검증은 `PhotoViewer/tools/verify-android.ps1`로 빌드, JVM 단위 테스트, Lint를 실행한다. `YoloSyncTest`는 특정 검출 게시글의 이미지 해시를 확인하고 실제 앱의 목록과 상세 화면을 캡처한다.
+얼굴 비교는 개발 인물과 겹치지 않는 24명과 원본 576프레임으로 검증했다. 원본 조건의 등록 인물 연결은 104/288에서 272/288로 증가했다. 변형 조건은 같은 프레임에서 파생했으며 모든 환경의 오류율 보장과 구분한다. 설정과 보류 기준은 보고서 B13에 있다.
 
-빌드 후 Windows에서 다음 명령으로 검증용 WSL 서버 실행, 앱 설치, 실제 게시글 조회와 이미지 해시 검사, 모바일 웹 캡처를 함께 수행한다. 작업이 끝나면 이 명령이 실행한 서버는 종료된다. Android 에뮬레이터가 실행 중이어야 하며 Chrome 최초 실행 동의는 사용자가 직접 완료해야 한다.
+## AI 질문과 보고서
 
-```powershell
-./tools/verify-mobile-flow.ps1 -CaptureWeb
-```
+인물과 날짜 조건을 적용한 뒤 text-embedding-3-small 512차원 벡터와 제목 일치로 관련 영상 최대 5개를 선택한다. 운영 LLM인 gpt-4o-mini는 집계와 근거 기록으로 설명을 작성한다. 질문과 답변은 운영자별로 저장한다.
 
-`verify_video_flow.py`는 30프레임의 실제 영상 입력에서 중복 전송 억제와 재등장 시 전송을 검증한다. 인증 실패 시 게시글이 추가되지 않고 사진이 로컬에 남는지도 검사한다. 임시 DB를 사용하므로 기존 검증 게시글이나 운영 게시글에 영향을 주지 않는다. 클라우드 검사 도구의 HTTP 등록과 기존 데이터 보존 절차도 이 임시 서버에서 확인하며 운영 검증으로 집계하지 않는다.
+사용자가 질문을 보내면 유료 검색 및 답변 생성이 연결될 수 있다. 자동 테스트는 모의 처리와 캐시를 사용한다. Codex의 유료 임베딩 및 LLM 테스트는 별도 승인을 받는다. 키는 비공개 설정에 두고 GitHub와 보고서에 포함하지 않는다. PythonAnywhere 배포 인증과 앱 로그인 인증은 별개다.
 
-`check_environment.py`는 WSL 전용 가상환경, CPU 연산, OpenCV, 공식 모델 파일 해시와 pip 의존성을 확인한다. 검증 기록은 각각 `evidence/video-flow`, `evidence/mobile-flow`, `evidence/environment`에 저장한다.
-
-추가 인물 추적과 기록 질의를 위한 공개 보행자 영상 7개와 공식 정답 자료를 수집했다. 수집 내역과 검증 방법은 [인물 추적 검증 준비](docs/testing/README.md)에 정리했다. 원본 영상은 로컬의 `evidence/private/tracking-samples`에 보관하며 Git과 운영 서버 업로드 대상에서 제외한다. 이 자료의 수집과 디코딩 확인을 새 추적 기능의 성능 검증으로 집계하지 않는다.
-
-`tools/verify_cloud_pipeline.py`는 지정된 PythonAnywhere API에 검출 사진을 등록하고 기존 게시글과 사진의 바이트가 유지되는지 확인하는 도구다. 사용자에게서 별도로 제공받은 앱 API 인증 설정만 사용한다. 비공개 WSL 홈의 `~/.config/mobile-web-service/common02/edge-auth.json`에 `base_url`, `username`, `token` 설정이 필요하며 현재는 이 설정이 없다. 설정 없이는 업로드를 시도하지 않는다. PythonAnywhere 배포 API 인증과 블로그의 게시글 등록 인증은 별개다.
-
-## 진행 현황
-
-YOLOv5에 Norfair 추적, Supervision 통과 집계와 InsightFace 얼굴 후보 비교 옵션을 적용했다. WSL에서 실제 보행자 영상 250프레임, 별도 원본 얼굴 영상 3개와 추적을 켠 로컬 Django 사진 등록을 확인했다. 얼굴 비교는 후보 단계이며 작은 표본의 모델 비교 결과와 영구 인물 이력 기능을 구분한다. 설치와 실행, 실제 수치 및 한계는 [라이브러리 적용 기록](docs/testing/person-libraries.md)에 정리했다.
-
-로컬 YOLO 추론과 Django 등록을 검증했다. Android 빌드와 단위 테스트 38개, Lint 오류 0개와 경고 7개를 확인했고 에뮬레이터에서 앱과 모바일 웹의 목록 및 상세 화면을 캡처했다. Django 테스트 148개와 Edge 단위 테스트 19개가 통과했다. HTTP 15개는 전체 148개 중 별도 엔진으로 재실행한 사례다. 실제 영상 30프레임에서도 첫 출현과 재등장에서만 총 2개가 등록됐고 인증 실패 처리도 확인했다. 웹캠 실측과 PythonAnywhere의 02 운영 확인은 남아 있다. 추가 기능의 Edge 단계에 추적, 통과 집계와 얼굴 후보 비교를 적용했으며 영구 인물 이력과 Android 이력 화면, 기록 질의는 후속 구현 범위다. 현재 Word 진행본은 11월 5일 기본 검증 기준이며 이후 자료와 실제 적용 결과는 docs/testing에 정리한다.
-
-PythonAnywhere 전환은 2026년 11월 5일 승인을 받았다. 현재 운영 서버의 핵심 API, 모델, 마이그레이션 16개 파일이 후보와 동일하다. 기존 DB와 미디어를 공유하고 별도 릴리스 및 백업을 만드는 방식이다. 현재는 콘솔 API의 HTTP 412 응답으로 배포 시작 전 단계에서 멈춰 있으며 기존 운영 소스가 유지되고 있다.
-
-코드와 실제 캡처, 현재 검증 내용이 담긴 Word 보고서를 이 저장소에 업로드했다. 보고서의 완료 여부는 확보한 증빙을 기준으로 작성했으며 웹캠과 02 클라우드 검증 항목은 후속 검증 대상으로 표시했다.
+Word에는 실제 캡처의 원본 바이트가 포함돼 있다. Git에서 제외된 작업용 그림은 문서용 Python 환경에서 tools/restore_report_figures.py로 복원할 수 있다. tools/build_report.py와 tools/audit_report.py는 원본 평가표 보존, 증빙 및 그림 해시를 검사한다. 문서 수정 후 Word 렌더링으로 전체 페이지를 검수한다.

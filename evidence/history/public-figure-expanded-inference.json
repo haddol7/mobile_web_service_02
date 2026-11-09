@@ -1,0 +1,1318 @@
+{
+  "verified_utc": "2026-11-08T17:55:16.856237+00:00",
+  "environment": "WSL Ubuntu CPU",
+  "cases": [
+    {
+      "source_id": "563342",
+      "original_sha256": "db88b139c9611a35e1f0453b69df0da94faed9c4f856700b285c49e4fb46d24a",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 60,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 120,
+          "face_count": 11,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 33.39,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 83.48,
+          "face_count": 5,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 166.95,
+          "face_count": 9,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 250.43,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 300.51,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 10,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 50,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 70,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 90,
+          "face_count": 4,
+          "target_hits": [
+            {
+              "bbox": [
+                525.436767578125,
+                119.27799987792969,
+                566.1406860351562,
+                172.46646118164062
+              ],
+              "detection_score": 0.8069425225257874,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.3530298173427582,
+              "margin": 0.24016685038805008,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 110,
+          "face_count": 8,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 130,
+          "face_count": 9,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 150,
+          "face_count": 7,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 170,
+          "face_count": 7,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 190,
+          "face_count": 2,
+          "target_hits": [
+            {
+              "bbox": [
+                681.6583862304688,
+                69.8651351928711,
+                722.9261474609375,
+                124.20820617675781
+              ],
+              "detection_score": 0.8012679815292358,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.39275026321411133,
+              "margin": 0.28853365033864975,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 210,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 230,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 270,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 290,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 310,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 330,
+          "face_count": 0,
+          "target_hits": []
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2017-11-07 일본 출국",
+      "source_reference": "DVIDS/563342",
+      "source_url": "https://www.dvidshub.net/video/563342/president-trump-japan-departure-broll-highlights",
+      "capture_day_as_published": "2017-11-07",
+      "path": "evidence/private/public-figure-expanded/clips/563342.mp4",
+      "sha256": "829d6ab693da6e8486d3d71481e9fa946754f8c31785d5bfa2c3eb3e2c985b6b",
+      "clip_frames": 240,
+      "original_start_seconds": 188,
+      "clip_seconds": 8,
+      "source_face_score": 0.39275026321411133,
+      "preview": "evidence/private/public-figure-expanded/563342-located.jpg",
+      "case": "dvids-563342",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/7847c4a5b2d170af.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 8,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "508029",
+      "original_sha256": "d148470857cc1b29ff89a19260466d3af5a65e1ef398eae03cc6b907a44c3e8c",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 4,
+          "target_hits": [
+            {
+              "bbox": [
+                559.7318115234375,
+                201.73419189453125,
+                589.2479858398438,
+                236.0768280029297
+              ],
+              "detection_score": 0.8242690563201904,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.3502044379711151,
+              "margin": 0.2111813873052597,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 3,
+          "target_hits": [
+            {
+              "bbox": [
+                870.2423706054688,
+                159.6190185546875,
+                929.7918701171875,
+                230.0589141845703
+              ],
+              "detection_score": 0.8626089692115784,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.6547115445137024,
+              "margin": 0.5391793996095657,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2017-02-01 취임 선서 행사",
+      "source_reference": "DVIDS/508029",
+      "source_url": "https://www.dvidshub.net/video/508029/swearing-secretary-state-rex-tillerson",
+      "capture_day_as_published": "2017-02-01",
+      "path": "evidence/private/public-figure-expanded/clips/508029.mp4",
+      "sha256": "8e2bb2c3b7df6252508143b1ebbe90fb0a1d023aef069894fe73b1164c7fbc3b",
+      "clip_frames": 240,
+      "original_start_seconds": 13,
+      "clip_seconds": 8,
+      "source_face_score": 0.6547115445137024,
+      "preview": "evidence/private/public-figure-expanded/508029-located.jpg",
+      "case": "dvids-508029",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/6d26b285633fb3fd.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 16,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "742724",
+      "original_sha256": "586375cf93b799d8be6eb37b43394e4ecac4aaff9159ba4a87b20c8051bac409",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                461.15386962890625,
+                97.73632049560547,
+                561.25927734375,
+                227.9942626953125
+              ],
+              "detection_score": 0.8803234100341797,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.7866544127464294,
+              "margin": 0.614750862121582,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2020-03-11 대국민 연설",
+      "source_reference": "DVIDS/742724",
+      "source_url": "https://www.dvidshub.net/video/742724/president-trump-will-address-nation",
+      "capture_day_as_published": "2020-03-11",
+      "path": "evidence/private/public-figure-expanded/clips/742724.mp4",
+      "sha256": "7337bc630b6e4925057af7086bd711b51eb3ffd40285628fdd5e4c6e132e97dd",
+      "clip_frames": 240,
+      "original_start_seconds": 3,
+      "clip_seconds": 8,
+      "source_face_score": 0.7866544127464294,
+      "preview": "evidence/private/public-figure-expanded/742724-located.jpg",
+      "case": "dvids-742724",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/e8c2e7c82bcb5912.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 16,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "733563",
+      "original_sha256": "a35e98732fcc3fca7cb092ff0b6578c6e6727b71527573cf5acd49d0d14c1bcb",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 6,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 5,
+          "target_hits": [
+            {
+              "bbox": [
+                486.2696838378906,
+                123.81855773925781,
+                584.3278198242188,
+                248.94046020507812
+              ],
+              "detection_score": 0.8622457981109619,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.7172251343727112,
+              "margin": 0.6003729403018951,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2020-01-08 백악관 브리핑",
+      "source_reference": "DVIDS/733563",
+      "source_url": "https://www.dvidshub.net/video/733563/president-trump-remarks-media",
+      "capture_day_as_published": "2020-01-08",
+      "path": "evidence/private/public-figure-expanded/clips/733563.mp4",
+      "sha256": "2dbf1f7136ee5eee6f2aa5ce7deb1a7ca71ee0408b844e5bc1dd853ffe90100e",
+      "clip_frames": 240,
+      "original_start_seconds": 13,
+      "clip_seconds": 8,
+      "source_face_score": 0.7172251343727112,
+      "preview": "evidence/private/public-figure-expanded/733563-located.jpg",
+      "case": "dvids-733563",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/52886be5110daaf1.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "632165",
+      "original_sha256": "33531041e1fc309705acf5873e082f6ab623740ea17063af45dc1ffc229ea63a",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 2,
+          "target_hits": [
+            {
+              "bbox": [
+                466.25244140625,
+                142.1736297607422,
+                514.7762451171875,
+                202.38424682617188
+              ],
+              "detection_score": 0.8440359830856323,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.5714632272720337,
+              "margin": 0.47964123636484146,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2018-10-11 정부 회의",
+      "source_reference": "DVIDS/632165",
+      "source_url": "https://www.dvidshub.net/video/632165/president-trump-delivers-remarks-interagency-task-force-monitor-and-combat-trafficking-persons-annual-meeting",
+      "capture_day_as_published": "2018-10-11",
+      "path": "evidence/private/public-figure-expanded/clips/632165.mp4",
+      "sha256": "80bdfae71ff2633ffa5475f614e74da94f0c32bdce71b96c5653ac131d15fde8",
+      "clip_frames": 240,
+      "original_start_seconds": 3,
+      "clip_seconds": 8,
+      "source_face_score": 0.5714632272720337,
+      "preview": "evidence/private/public-figure-expanded/632165-located.jpg",
+      "case": "dvids-632165",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/59f59c80de3dfc62.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 7,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "526302",
+      "original_sha256": "c751618637a2eae864573ec0eefa36fe5a6970e2bf29512c1e2ebf8cff7e4c08",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 2,
+          "target_hits": [
+            {
+              "bbox": [
+                244.2296142578125,
+                146.15267944335938,
+                308.24298095703125,
+                227.3715057373047
+              ],
+              "detection_score": 0.7611210346221924,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.6490649580955505,
+              "margin": 0.5234825313091278,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2017-05-22 이스라엘 회담",
+      "source_reference": "DVIDS/526302",
+      "source_url": "https://www.dvidshub.net/video/526302/president-trump-delivers-remarks-with-israeli-prime-minister-netanyahu",
+      "capture_day_as_published": "2017-05-22",
+      "path": "evidence/private/public-figure-expanded/clips/526302.mp4",
+      "sha256": "22597533840678e6385573d5b4e3781afed2a3d5376d4bb0db3516fac9ad7e22",
+      "clip_frames": 240,
+      "original_start_seconds": 28,
+      "clip_seconds": 8,
+      "source_face_score": 0.6490649580955505,
+      "preview": "evidence/private/public-figure-expanded/526302-located.jpg",
+      "case": "dvids-526302",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/810caf3d29cf00e3.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "628029",
+      "original_sha256": "f3498f00d70de6cf2610c70ff4341602e02059cac17f4a7b5547ea27a4d29403",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 2,
+          "target_hits": [
+            {
+              "bbox": [
+                489.84814453125,
+                113.88194274902344,
+                530.8787841796875,
+                176.49356079101562
+              ],
+              "detection_score": 0.7487717866897583,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.2947140336036682,
+              "margin": 0.17167064547538757,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                463.5392150878906,
+                71.800537109375,
+                569.0604858398438,
+                216.2726593017578
+              ],
+              "detection_score": 0.8435769081115723,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.7191736102104187,
+              "margin": 0.6207205206155777,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2018-09-21 서명 행사",
+      "source_reference": "DVIDS/628029",
+      "source_url": "https://www.dvidshub.net/video/628029/president-trump-remarks-and-signing-ceremony",
+      "capture_day_as_published": "2018-09-21",
+      "path": "evidence/private/public-figure-expanded/clips/628029.mp4",
+      "sha256": "029563a59c6d2ebe8039ba8e1f85afff59a3e39374f722e931b4c6715101efa5",
+      "clip_frames": 240,
+      "original_start_seconds": 28,
+      "clip_seconds": 8,
+      "source_face_score": 0.7191736102104187,
+      "preview": "evidence/private/public-figure-expanded/628029-located.jpg",
+      "case": "dvids-628029",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/4d325671f2b6f2cc.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "493194",
+      "original_sha256": "7f5ae888d8f75baf74dda1f2ca661efbd9186b194260467de0293dbb7f3d7fdd",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                379.6827087402344,
+                66.80706024169922,
+                485.6162414550781,
+                226.650390625
+              ],
+              "detection_score": 0.8593405485153198,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.7612637281417847,
+              "margin": 0.7091155424714088,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2016-11-14 백악관 발언",
+      "source_reference": "DVIDS/493194",
+      "source_url": "https://www.dvidshub.net/video/493194/arabic-president-obama-addresses-us-commitment-nato-white-house",
+      "capture_day_as_published": "2016-11-14",
+      "path": "evidence/private/public-figure-expanded/clips/493194.mp4",
+      "sha256": "513d780fe1c82ad130df411c39244d3993f91fa17b3f8a7c0a4f94ea680b646f",
+      "clip_frames": 240,
+      "original_start_seconds": 3,
+      "clip_seconds": 8,
+      "source_face_score": 0.7612637281417847,
+      "preview": "evidence/private/public-figure-expanded/493194-located.jpg",
+      "case": "dvids-493194",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/68d6fcb8745acb72.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "287224",
+      "original_sha256": "e94ce4edd265ce07f60bd4200b2aec8f1f3c4b371d4b66c23b157233af9cf01c",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 60,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 120,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 65.4,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 163.51,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 327.01,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 490.52,
+          "face_count": 7,
+          "target_hits": [
+            {
+              "bbox": [
+                251.0878143310547,
+                47.355194091796875,
+                289.8755798339844,
+                116.64976501464844
+              ],
+              "detection_score": 0.764777660369873,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.3310989439487457,
+              "margin": 0.26145006716251373,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 588.62,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 10,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 50,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 70,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 90,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 110,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 130,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 150,
+          "face_count": 3,
+          "target_hits": [
+            {
+              "bbox": [
+                176.75282287597656,
+                7.50078010559082,
+                228.27651977539062,
+                74.12996673583984
+              ],
+              "detection_score": 0.8794080018997192,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.5393004417419434,
+              "margin": 0.46302779018878937,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2013-04-18 보스턴 방문",
+      "source_reference": "DVIDS/287224",
+      "source_url": "https://www.dvidshub.net/video/287224/president-obama-visits-boston",
+      "capture_day_as_published": "2013-04-18",
+      "path": "evidence/private/public-figure-expanded/clips/287224.mp4",
+      "sha256": "b3eb4c897e6f7a4f6dc2fcd2dc4f42541918d35ed897bf40093eb3fcbc14db05",
+      "clip_frames": 240,
+      "original_start_seconds": 148,
+      "clip_seconds": 8,
+      "source_face_score": 0.5393004417419434,
+      "preview": "evidence/private/public-figure-expanded/287224-located.jpg",
+      "case": "dvids-287224",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/847377e8689ac50a.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 5,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "362956",
+      "original_sha256": "fd9090eacd80956bf07772f78467da37294d585cd926a6beaa0cc8e384365066",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                463.2743225097656,
+                52.07027053833008,
+                559.7323608398438,
+                202.7541046142578
+              ],
+              "detection_score": 0.8842244744300842,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.7006767988204956,
+              "margin": 0.6536256447434425,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2014-09-26 보건안보 회의",
+      "source_reference": "DVIDS/362956",
+      "source_url": "https://www.dvidshub.net/video/362956/president-obama-global-health-security-agenda-summit",
+      "capture_day_as_published": "2014-09-26",
+      "path": "evidence/private/public-figure-expanded/clips/362956.mp4",
+      "sha256": "eb5091aea8dc28398e45e95e901ccfc4842ee41308a634344995b4fec58e668f",
+      "clip_frames": 240,
+      "original_start_seconds": 28,
+      "clip_seconds": 8,
+      "source_face_score": 0.7006767988204956,
+      "preview": "evidence/private/public-figure-expanded/362956-located.jpg",
+      "case": "dvids-362956",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/2988f6ef627a8f5d.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "759368",
+      "original_sha256": "d3624bc5478fcc64a395d00c857737b20113363f5df00c0b083b0f81545c4983",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 10,
+          "target_hits": [
+            {
+              "bbox": [
+                463.3914489746094,
+                107.76936340332031,
+                511.01312255859375,
+                164.46469116210938
+              ],
+              "detection_score": 0.87409508228302,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.48105475306510925,
+              "margin": 0.3668780028820038,
+              "status": "candidate"
+            }
+          ]
+        },
+        {
+          "source_seconds": 60,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                451.575439453125,
+                84.01451873779297,
+                545.5173950195312,
+                204.6797637939453
+              ],
+              "detection_score": 0.8697952032089233,
+              "candidate_profile_id": "public-trump",
+              "similarity": 0.6253829002380371,
+              "margin": 0.5308241173624992,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-trump",
+      "name": "트럼프 / 2020-07-10 현장 브리핑",
+      "source_reference": "DVIDS/759368",
+      "source_url": "https://www.dvidshub.net/video/759368/president-trump-receives-briefing-southcom-enhanced-counternarcotics-operations",
+      "capture_day_as_published": "2020-07-10",
+      "path": "evidence/private/public-figure-expanded/clips/759368.mp4",
+      "sha256": "c2acfa74e8fa04b760481e08b9cdb5e80a03c669388bb21a735a4ddff8e62fc5",
+      "clip_frames": 240,
+      "original_start_seconds": 58,
+      "clip_seconds": 8,
+      "source_face_score": 0.6253829002380371,
+      "preview": "evidence/private/public-figure-expanded/759368-located.jpg",
+      "case": "dvids-759368",
+      "expected": "public-trump",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/9d421f06a3df7cb3.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 14,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "456872",
+      "original_sha256": "acdb4f9763ac959e08cf22421e45440313c929e6f87b5c0e017c3bf4d10cb502",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 60,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 120,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 61.75,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 154.36,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 308.73,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 463.09,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 555.71,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 10,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 50,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 70,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 90,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 110,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 130,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 150,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 170,
+          "face_count": 6,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 190,
+          "face_count": 5,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 210,
+          "face_count": 1,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 230,
+          "face_count": 5,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 250,
+          "face_count": 5,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 270,
+          "face_count": 11,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 290,
+          "face_count": 7,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 330,
+          "face_count": 7,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 350,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 370,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 390,
+          "face_count": 3,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 410,
+          "face_count": 5,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 430,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 450,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 470,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 490,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 510,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 530,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 550,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 570,
+          "face_count": 4,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 590,
+          "face_count": 5,
+          "target_hits": [
+            {
+              "bbox": [
+                186.37548828125,
+                129.00315856933594,
+                269.8340148925781,
+                246.820068359375
+              ],
+              "detection_score": 0.8921455144882202,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.6892528533935547,
+              "margin": 0.6496796794235706,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2016-04-01 핵안보 정상회의",
+      "source_reference": "DVIDS/456872",
+      "source_url": "https://www.dvidshub.net/video/456872/president-obama-remarks-nuclear-security-summit",
+      "capture_day_as_published": "2016-04-01",
+      "path": "evidence/private/public-figure-expanded/clips/456872.mp4",
+      "sha256": "b0c1e8c87ab84cb5a00183995224c766ae4cdef50b4c56a9d1ac356c15a40a01",
+      "clip_frames": 240,
+      "original_start_seconds": 588,
+      "clip_seconds": 8,
+      "source_face_score": 0.6892528533935547,
+      "preview": "evidence/private/public-figure-expanded/456872-located.jpg",
+      "case": "dvids-456872",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/4a6c8c536742e669.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "413783",
+      "original_sha256": "6d3c41e669e93cadeef38f860c388b5051e642fcc18a4afe9df8105b1a5c840b",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 6,
+          "target_hits": [
+            {
+              "bbox": [
+                507.1498107910156,
+                59.852256774902344,
+                536.122314453125,
+                101.33116149902344
+              ],
+              "detection_score": 0.8341014385223389,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.5342589616775513,
+              "margin": 0.4640036076307297,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2015-07-06 국방부 기자회견",
+      "source_reference": "DVIDS/413783",
+      "source_url": "https://www.dvidshub.net/video/413783/president-barack-obamas-statement-press",
+      "capture_day_as_published": "2015-07-06",
+      "path": "evidence/private/public-figure-expanded/clips/413783.mp4",
+      "sha256": "3fca89a623bd16954edc9e66625220465f096b0ea03283f9628a305e00bb9707",
+      "clip_frames": 240,
+      "original_start_seconds": 13,
+      "clip_seconds": 8,
+      "source_face_score": 0.5342589616775513,
+      "preview": "evidence/private/public-figure-expanded/413783-located.jpg",
+      "case": "dvids-413783",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/442c0321e90628d4.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 12,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "324601",
+      "original_sha256": "f2afef1334cd4a3d070e7449287ef7ee4af77d9fa09f5e674aac1272a21d4a3d",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 60,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 120,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 254.95,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 637.39,
+          "face_count": 0,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 1274.77,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                330.1745300292969,
+                49.837066650390625,
+                388.9012145996094,
+                133.14682006835938
+              ],
+              "detection_score": 0.8976669311523438,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.6608588099479675,
+              "margin": 0.6179733499884605,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2014-03-26 브뤼셀 연설",
+      "source_reference": "DVIDS/324601",
+      "source_url": "https://www.dvidshub.net/video/324601/president-obama-palais-des-beaux-arts",
+      "capture_day_as_published": "2014-03-26",
+      "path": "evidence/private/public-figure-expanded/clips/324601.mp4",
+      "sha256": "9cf5c704b597f8fa5a3bb966c34a2cf99df40ea0f615b7470869645da423f373",
+      "clip_frames": 240,
+      "original_start_seconds": 1272.77,
+      "clip_seconds": 8,
+      "source_face_score": 0.6608588099479675,
+      "preview": "evidence/private/public-figure-expanded/324601-located.jpg",
+      "case": "dvids-324601",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/74b4e1f4d9921c64.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "391729",
+      "original_sha256": "f266bb223769d7eb47d58f1a82abf2c603b5adf35a1c5191c421e926cbf39e4a",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 19,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 22,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 30,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                500.0902099609375,
+                104.9770278930664,
+                648.365478515625,
+                321.39251708984375
+              ],
+              "detection_score": 0.801932156085968,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.6992541551589966,
+              "margin": 0.6413804404437542,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2015-02-19 국제회의 발언",
+      "source_reference": "DVIDS/391729",
+      "source_url": "https://www.dvidshub.net/video/391729/president-obama-remarks-white-house-summit-countering-violent-extremism-arabic-audio",
+      "capture_day_as_published": "2015-02-19",
+      "path": "evidence/private/public-figure-expanded/clips/391729.mp4",
+      "sha256": "3275b78d230ccb3c9f07b2888402719f36d813884c476eb79a0745f39409c3ba",
+      "clip_frames": 240,
+      "original_start_seconds": 28,
+      "clip_seconds": 8,
+      "source_face_score": 0.6992541551589966,
+      "preview": "evidence/private/public-figure-expanded/391729-located.jpg",
+      "case": "dvids-391729",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/38fae19fa7902ab0.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    },
+    {
+      "source_id": "359270",
+      "original_sha256": "113460628917356c6d01ba5d3e7e95d00ab290c16f2a6064af7a9e75b911ef10",
+      "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+      "samples": [
+        {
+          "source_seconds": 5,
+          "face_count": 2,
+          "target_hits": []
+        },
+        {
+          "source_seconds": 15,
+          "face_count": 1,
+          "target_hits": [
+            {
+              "bbox": [
+                463.64361572265625,
+                62.4178466796875,
+                556.8775634765625,
+                204.3949432373047
+              ],
+              "detection_score": 0.880603551864624,
+              "candidate_profile_id": "public-obama",
+              "similarity": 0.7470629215240479,
+              "margin": 0.6842680722475052,
+              "status": "candidate"
+            }
+          ]
+        }
+      ],
+      "candidate_located": true,
+      "person": "public-obama",
+      "name": "오바마 / 2014-09-05 나토 기자회견",
+      "source_reference": "DVIDS/359270",
+      "source_url": "https://www.dvidshub.net/video/359270/president-obama-press-conference-nato-wales-summit",
+      "capture_day_as_published": "2014-09-05",
+      "path": "evidence/private/public-figure-expanded/clips/359270.mp4",
+      "sha256": "1d29d4898aa6cb57f1aac63f6a071669f6c46127dcf3127f79f90931bf4a11e8",
+      "clip_frames": 240,
+      "original_start_seconds": 13,
+      "clip_seconds": 8,
+      "source_face_score": 0.7470629215240479,
+      "preview": "evidence/private/public-figure-expanded/359270-located.jpg",
+      "case": "dvids-359270",
+      "expected": "public-obama",
+      "log": "evidence/private/public-figure-expanded/batch-inference/person-analysis/613e7afab7ddfc21.jsonl",
+      "frames_analyzed": 20,
+      "usable_candidate_frames": 18,
+      "other_profile_candidates": 0
+    }
+  ],
+  "gallery_sha256": "321a202d177e4c49465e326491fdd1960651c53c0cf17b857c8029adb6506845",
+  "profiles": [
+    {
+      "id": "showcase-v2-a",
+      "name": "인물 A"
+    },
+    {
+      "id": "showcase-v2-b",
+      "name": "인물 B"
+    },
+    {
+      "id": "showcase-v2-c",
+      "name": "인물 C"
+    },
+    {
+      "id": "public-trump",
+      "name": "도널드 트럼프"
+    },
+    {
+      "id": "public-obama",
+      "name": "버락 오바마"
+    }
+  ],
+  "automatic_confirmation": false,
+  "sampling_stride": 12,
+  "training_performed": false,
+  "pass": true
+}

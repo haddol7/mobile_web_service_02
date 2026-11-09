@@ -1,0 +1,8 @@
+
+com.haddol7.photoviewer.ui.HistorySyncTest:..
+Test results for InstrumentationTestRunner=..
+Time: 25.558
+
+OK (2 tests)
+
+

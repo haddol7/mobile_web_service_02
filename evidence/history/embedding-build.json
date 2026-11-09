@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "model": "text-embedding-3-small",
+  "dimensions": 512,
+  "documents": 31,
+  "changed_documents": 31,
+  "new_seed_questions": 3,
+  "api_requests_required": 1,
+  "input_utf8_bytes": 10538,
+  "images_or_face_vectors_sent": false,
+  "llm_generation_calls": 0,
+  "dry_run": false,
+  "actual_api_calls": 1,
+  "usage": {
+    "prompt_tokens": 4814,
+    "total_tokens": 4814
+  },
+  "created_at": "2026-11-08T18:59:15.495315+00:00",
+  "index_sha256": "982da9520ebae42453609a762d212b01f7ac0b7b3ca93e68424037baa9a16a18"
+}

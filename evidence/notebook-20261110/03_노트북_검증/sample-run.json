@@ -1,0 +1,9 @@
+{
+  "action": "sample",
+  "finished_utc": "2026-11-09T16:07:28.087912+00:00",
+  "elapsed_seconds": 86.1,
+  "exit_code": 0,
+  "actual_camera_input": false,
+  "baseline": false,
+  "paid_api_calls": 0
+}

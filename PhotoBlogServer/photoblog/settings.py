@@ -3,6 +3,7 @@ import os
 from pathlib import Path
 
 from django.core.exceptions import ImproperlyConfigured
+from photoblog.llm_config import load_llm_config
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = os.environ.get("DJANGO_DEBUG", "true").lower() in ("1", "true", "yes")
@@ -62,12 +63,22 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 BLOG_OWNER_USERNAME = os.environ.get("BLOG_OWNER_USERNAME", "daejinha")
 LOGIN_URL = "login"
-LOGIN_REDIRECT_URL = "post_list"
-LOGOUT_REDIRECT_URL = "post_list"
+LOGIN_REDIRECT_URL = "dashboard"
+LOGOUT_REDIRECT_URL = "dashboard"
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 MEDIA_URL = "/media/"
 MEDIA_ROOT = Path(os.environ.get("DJANGO_MEDIA_ROOT", BASE_DIR / "media"))
+HISTORY_MEDIA_ROOT = Path(os.environ.get("HISTORY_MEDIA_ROOT", MEDIA_ROOT.resolve().parent / "private_tracking"))
+# Optional remote generation. Retrieval and exact aggregates work without an API key.
+_history_llm = load_llm_config()
+HISTORY_LLM_PROVIDER = _history_llm["provider"]
+HISTORY_LLM_API_KEY = _history_llm["api_key"]
+HISTORY_LLM_MODEL = _history_llm["model"]
+HISTORY_EMBEDDING_API_KEY = os.environ.get("HISTORY_EMBEDDING_API_KEY", _history_llm["api_key"] if _history_llm["provider"] == "openai" else "")
+HISTORY_EMBEDDING_INDEX = Path(os.environ.get("HISTORY_EMBEDDING_INDEX", HISTORY_MEDIA_ROOT / ".semantic-index.json"))
+HISTORY_CHAT_ROOT = os.environ.get("HISTORY_CHAT_ROOT", "")
+del _history_llm
 # Limit text/form overhead separately from photo bytes. Photo validation enforces 5 MiB.
 DATA_UPLOAD_MAX_MEMORY_SIZE = 6 * 1024 * 1024
 FILE_UPLOAD_MAX_MEMORY_SIZE = 1024 * 1024
