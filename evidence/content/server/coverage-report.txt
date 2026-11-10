@@ -1,5 +1,5 @@
 ACTUAL WSL SUBPROCESS OUTPUT: coverage-report
-Run started UTC: 2026-11-09T19:51:58.384087+00:00
+Run started UTC: 2026-11-10T06:55:03.937596+00:00
 WSL: Ubuntu
 Working directory: /mnt/c/Users/1/mobile_web_service/common02/PhotoBlogServer
 Command: /home/daeha/.venvs/mobile_web_service_02/bin/python -m coverage report
@@ -11,8 +11,8 @@ blog/admin.py                     20      7      2      0  59.1%   13, 16, 19, 2
 blog/api_v1.py                    12      0      0      0 100.0%
 blog/api_v1_urls.py                6      0      0      0 100.0%
 blog/apps.py                       6      0      0      0 100.0%
-blog/auth_limits.py               69      6     12      1  91.4%   16->exit, 32-33, 50-51, 85-87
-blog/chat_api.py                  23      0      0      0 100.0%
+blog/auth_limits.py               71      6     14      1  91.8%   16->exit, 32-33, 52-53, 87-89
+blog/chat_api.py                  24      0      0      0 100.0%
 blog/chat_store.py               101      6     14      2  93.0%   48, 50->exit, 57-58, 98-99, 127
 blog/content_api.py              117      1     42      1  98.7%   114
 blog/content_queries.py           39      0     22      0 100.0%
@@ -20,8 +20,9 @@ blog/content_rules.py            118      2     58      2  97.7%   112, 117
 blog/content_services.py          64      2     16      2  95.0%   49, 82
 blog/file_cleanup.py              22      0      8      1  96.7%   10->exit
 blog/forms.py                     12      0      0      0 100.0%
+blog/history_access.py            21      0      6      0 100.0%
 blog/history_annotations.py       91      5     26      4  92.3%   32, 38-39, 63, 70->72, 85
-blog/history_api.py              238     27     46      5  88.7%   38, 41-42, 57, 61-69, 83, 98->exit, 100, 119-121, 159-160, 169->182, 192-193, 203-204, 212-213, 266
+blog/history_api.py              244     26     46      5  89.3%   39, 42-43, 70-78, 92, 107->exit, 109, 128-130, 168-169, 178->191, 201-202, 212-213, 221-222, 276
 blog/history_embeddings.py       231     12     74     13  91.8%   92, 138, 146->143, 164, 182, 185, 205, 217, 219, 223, 237, 239, 273
 blog/history_llm.py               72      1     30      1  98.0%   107
 blog/history_queries.py          131     17     64     13  83.6%   20-23, 25, 27, 29-30, 32, 36, 41, 63, 71, 73, 77, 162->164, 168, 173, 174->176
@@ -37,12 +38,12 @@ blog/serializers.py               18      0      2      0 100.0%
 blog/services.py                  80      2     28      5  93.5%   17->exit, 29->28, 47->49, 71, 96
 blog/urls.py                       6      0      0      0 100.0%
 blog/validators.py                32      1     10      1  95.2%   33
-blog/views.py                    139      4     22      4  95.0%   65, 104, 109, 121
+blog/views.py                    128      4     20      4  94.6%   55, 94, 99, 111
 photoblog/llm_config.py           23      0      6      0 100.0%
-photoblog/settings.py             65      0      8      0 100.0%
+photoblog/settings.py             66      0      8      0 100.0%
 photoblog/urls.py                  9      1      2      1  81.8%   17
 --------------------------------------------------------------------------
-TOTAL                           2305    112    600     73  93.5%
+TOTAL                           2325    111    606     73  93.6%
 
 4 empty files skipped.
 

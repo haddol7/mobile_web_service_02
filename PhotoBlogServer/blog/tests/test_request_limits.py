@@ -22,6 +22,7 @@ class IsolatedLimits:
         self.folder = tempfile.TemporaryDirectory()
         self.addCleanup(self.folder.cleanup)
         self.config = override_settings(SECURITY_STATE_ROOT=self.folder.name,
+            LOGIN_RATE_LIMIT_ENABLED=True,
             TRUST_PYTHONANYWHERE_REAL_IP=False, LOGIN_PAIR_FAILURE_LIMIT=5,
             LOGIN_IP_FAILURE_LIMIT=20, LOGIN_FAILURE_WINDOW_SECONDS=900,
             HISTORY_LLM_DAILY_LIMIT=3, HISTORY_EMBEDDING_DAILY_LIMIT=100)

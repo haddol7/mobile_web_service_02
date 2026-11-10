@@ -48,11 +48,11 @@ class ChatTests(TestCase):
         self.assertTrue((Path(self.folder.name)/".question-chats.sqlite3").is_file())
         self.transport.assert_not_called();self.llm_transport.assert_not_called()
 
-    def test_endpoints_are_owner_only_and_conversation_ids_do_not_cross_accounts(self):
-        for client,status in ((APIClient(),401),(self.api,200)):
+    def test_chat_access_is_public_but_conversations_do_not_cross_accounts(self):
+        for client,status in ((APIClient(),200),(self.api,200)):
             self.assertEqual(client.get("/api/v1/history/conversations/").status_code,status)
         self.api.force_authenticate(self.other)
-        self.assertEqual(self.api.get(f"/api/v1/history/conversations/{self.chat}/").status_code,403)
+        self.assertEqual(self.api.get(f"/api/v1/history/conversations/{self.chat}/").status_code,404)
         with self.assertRaises(NotFound):chat_store.read_chat(self.other.pk,self.chat)
         self.api.force_authenticate(self.owner)
         self.assertEqual(self.api.get(f"/api/v1/history/conversations/{uuid4()}/").status_code,404)

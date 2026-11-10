@@ -1,10 +1,38 @@
 {
-  "pass": false,
-  "production_verified": false,
-  "phase": "not_activated",
-  "release": "20261109193809d98402",
-  "failure_type": "DeploymentError",
-  "production_files_changed": false,
+  "pass": true,
+  "production_verified": true,
+  "release": "2026111006561965c3f7",
+  "changed_files": [
+    "blog/templates/blog/base.html"
+  ],
+  "backup_verified": true,
+  "original_media_preserved": true,
+  "console_used": false,
+  "django_schema_or_dependencies_changed": false,
   "paid_api_calls": 0,
-  "checked_utc": "2026-11-09T19:38:13.452819+00:00"
+  "usage": {
+    "day": "2026-11-10",
+    "timezone": "Asia/Seoul",
+    "resets_at": "2026-11-11T00:00:00+09:00",
+    "daily": {
+      "generation": {
+        "limit": 5,
+        "used": 0,
+        "remaining": 5
+      },
+      "embedding": {
+        "limit": 100,
+        "used": 0,
+        "remaining": 100
+      }
+    },
+    "login": {
+      "enabled": false,
+      "pair_failures": 5,
+      "ip_failures": 20,
+      "wait_seconds": 900,
+      "trusted_platform_ip": true
+    }
+  },
+  "verified_utc": "2026-11-10T06:57:52.450946+00:00"
 }

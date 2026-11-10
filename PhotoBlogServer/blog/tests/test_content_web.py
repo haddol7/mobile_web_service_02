@@ -31,7 +31,9 @@ class ContentWebTests(TemporaryMediaMixin, TestCase):
     def test_primary_web_navigation_is_monitoring_based(self):
         response=self.client.get("/")
         self.assertContains(response,"감시 시스템")
-        self.assertContains(response,"인물 관측 시스템")
+        self.assertContains(response,'id="history-grid"')
+        self.assertContains(response,">인물 확인</a>")
+        self.assertContains(response,">AI 질문</a>")
         self.assertContains(response,">관측 기록</a>")
         self.assertNotContains(response,"사진 블로그")
         self.assertNotContains(response,"사진관 마을")

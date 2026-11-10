@@ -1,7 +1,7 @@
 {
   "environment": "Windows bundled Node",
-  "started_utc": "2026-11-09T19:51:53.792Z",
-  "finished_utc": "2026-11-09T19:51:54.028Z",
+  "started_utc": "2026-11-10T06:55:14.354Z",
+  "finished_utc": "2026-11-10T06:55:14.602Z",
   "command": [
     "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1104-2876-0_26.1104.2876.0_x64__3k8sg7r9htsxt\\dependencies\\node\\bin\\node.exe",
     "--test",
@@ -48,7 +48,7 @@
     "PhotoBlogServer/blog/static/blog/person.mjs": "81f32d18eecbf2e6ff17eb8b59adf7cefad564f7047aafc74dd6fae6215e974e",
     "PhotoBlogServer/blog/static/blog/Pretendard-LICENSE.txt": "d31ddd9f2bed32fd7e302a205cf2380ba0de6529152d239ef99cfb6f261bfc04",
     "PhotoBlogServer/blog/static/blog/PretendardVariable.woff2": "9599f12fd42fc0bce1cd50b47a0c022e108d7aa64dd0d1bb0ed44f3282d900b4",
-    "PhotoBlogServer/blog/static/blog/ui.css": "182cf59aa329d37bd8f7b4873d5e8c0c306d2832088df76c01ddfdaee15f60e1",
+    "PhotoBlogServer/blog/static/blog/ui.css": "38edd113752b1d980402ea84801ca8d326bfd0a9ed5146c3ed974de79c0e22ba",
     "PhotoBlogServer/blog/static/blog/vendor/content/mediapipe/LICENSE": "8707eef0533987efc5b155d64761eeb6e20793f50b9bd1a68dad1cf4719d0ed8",
     "PhotoBlogServer/blog/static/blog/vendor/content/mediapipe/vision_bundle.mjs": "a84921e02321e582484c1f8126d344b5f33b791fa09c640a52e20ee8632068f1",
     "PhotoBlogServer/blog/static/blog/vendor/content/mediapipe/wasm/vision_wasm_internal.js": "6522286aa32dd93eff17c3da002b0649516f87abfec7a80b5bfe5c9625caa5f8",
@@ -74,7 +74,7 @@
     "PhotoBlogServer/blog/static/blog/vendor/content/tesseract/tesseract-core-simd-lstm.wasm.js": "c58b46a4c796c0b8afccf77591d5b875b6896b45d402bbce8caa6f5362447b38",
     "PhotoBlogServer/blog/static/blog/vendor/content/tesseract/tesseract.min.js": "000c27d9cd0def655f77b36c72a389c0ab13793aa31cb4d7aab56d09c0afbc7e",
     "PhotoBlogServer/blog/static/blog/vendor/content/tesseract/worker.min.js": "576b7df7e3393e137e51849357c9adb53fe7ac1bb69bfa06cf3d61520f182c6d",
-    "PhotoBlogServer/blog/templates/blog/base.html": "39d43f71602860400a1e4b29e5fc2c9a6bfe50404bf6923020db8cf15168a945",
+    "PhotoBlogServer/blog/templates/blog/base.html": "45158779de5744fd0f4bb892e2ecfff62225a04f34a040d492d8b43e1360025a",
     "PhotoBlogServer/blog/templates/blog/chat.html": "82ecbfec19ecbd687920a25b60b8cfe89ef8b5e98c3fd2bcb869512ba2e190c3",
     "PhotoBlogServer/blog/templates/blog/content_check.html": "34cf791cec72d70fc0050859982994027d0aeca00010e6e8f1f619713775ab4c",
     "PhotoBlogServer/blog/templates/blog/dashboard.html": "a12f1bf2b6adecac16bbe56f3be5733dcbc6618256a0856f2d2e23a280e2b8cc",

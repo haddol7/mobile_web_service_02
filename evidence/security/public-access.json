@@ -1,0 +1,21 @@
+{
+  "checked_utc": "2026-11-10T06:51:00.844750+00:00",
+  "anonymous": true,
+  "requests": 2,
+  "minimum_gap_seconds": 5,
+  "checks": [
+    {
+      "path": "/api/v1/history/frames/?limit=1",
+      "status": 200
+    },
+    {
+      "path": "/api/v1/history/images/dbb212a1d3e3162039f64035e639f5e19743383e8bebf6f362e2c097dcedd509/",
+      "status": 200,
+      "content_type": "image/jpeg",
+      "sha256": "5eab9b09ef8f5ff4a4657d906d61ddf2dcb34ed5a3acfb3fedc1268d4181fb09",
+      "bytes": 66008
+    }
+  ],
+  "paid_api_calls": 0,
+  "pass": true
+}

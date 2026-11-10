@@ -11,8 +11,8 @@
     {
       "finding": "운영 기본 검출 사진의 서버 브라우저 목록 및 상세 캡처가 보고서에 누락됨",
       "existing_captures": [
-        "evidence/ui-audit/cloud/mobile-web-list.png",
-        "evidence/ui-audit/cloud/mobile-web-detail.png"
+        "evidence/screenshots/basic-20261110/cloud-list.png",
+        "evidence/screenshots/basic-20261110/cloud-detail.png"
       ],
       "severity": "high",
       "physical_page": 16,
@@ -21,11 +21,10 @@
       "section": "B09",
       "status": "resolved",
       "physical_pages": [
-        14,
-        15,
-        16
+        17,
+        18
       ],
-      "resolution": "Current production browser list and post 8 detail captured and embedded as B09 3 and B09 4"
+      "resolution": "Actual Android Chrome production list and post 8 detail recaptured on November 10 with full address bar and embedded in B09."
     },
     {
       "finding": "얼굴 비교 개선 전후 결과는 있으나 개선 원인과 후보 결정 규칙 설명이 부족함",
@@ -36,8 +35,8 @@
       "section": "B13",
       "status": "resolved",
       "physical_pages": [
-        21,
-        22
+        23,
+        24
       ],
       "resolution": "Reference selection, aligned original and flipped features, person-level scoring, fixed thresholds and candidate-only status explained against source"
     },
@@ -47,22 +46,32 @@
       "finding": "운영 주소는 있으나 운영자 로그인 방법이나 평가용 접속 안내가 없음",
       "action": "평가자가 동작을 확인할 수 있는 접속 안내를 제출 자료에 추가할 것",
       "section": "접속 안내",
-      "status": "access_procedure_added",
+      "status": "resolved",
       "physical_pages": [
         2
       ],
-      "resolution": "Account name, login URL and observation, profile and question verification steps added",
+      "resolution": "Anonymous observation, face image and AI question access explicitly approved and deployed. Account or browser-session chat isolation verified. Evaluator instructions and server-wide five daily AI limit added on page 2.",
       "password_retrieved": false,
       "password_login_tested": false,
-      "credential_handling": "Old-report password lookup, login attempt and plaintext guide were blocked by automatic approval review; no credential was extracted or stored"
+      "credential_handling": "No password or API credential included. Operator writes remain authenticated."
     }
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb",
+  "report_sha256": "fc5df2f83ca31e9e0ed2b71cad8acdb99568da317c000080151021ceeb791226",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-09T19:47:03.198290+00:00",
-  "remaining_work": [],
-  "submission_ready": true,
-  "webcam_evidence_verified": true
+  "reviewed_utc": "2026-11-10T07:04:35.897476+00:00",
+  "remaining_work": [
+    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+  ],
+  "submission_ready": false,
+  "webcam_evidence_verified": true,
+  "basic_refresh": {
+    "browser_captures_replaced": 8,
+    "native_captures_refreshed": 2,
+    "public_access_deployed": true,
+    "generation_daily_limit": 5,
+    "login_attempt_limiter_enabled": false,
+    "evidence": "evidence/basic-verification-20261110/captures.json"
+  }
 }

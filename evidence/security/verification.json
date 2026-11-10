@@ -1,32 +1,33 @@
 {
-  "verified_utc": "2026-11-09T19:53:30.772240+00:00",
-  "scope": "Login protection and daily AI request limits",
+  "verified_utc": "2026-11-10T07:02:21.925432+00:00",
+  "scope": "Public observation and chat access, operator writes, login attempt limiter disabled, five daily AI attempts",
   "environment": "WSL Ubuntu",
   "local_verified": true,
-  "production_verified": false,
-  "django_tests": 277,
-  "added_cases": 27,
+  "production_verified": true,
+  "django_tests": 283,
+  "added_cases_since_250": 33,
   "http_engine_subset": 15,
   "web_tests": 76,
+  "new_public_access_cases": 6,
   "deployment_scope_tests": 3,
+  "native_device_tests": 1,
   "paid_api_calls": 0,
   "model_credentials_disabled_during_tests": true,
   "source_changed_during_validation": false,
+  "source_files_verified": 159,
   "login": {
-    "same_ip_account_failures": 5,
-    "same_ip_failures": 20,
-    "wait_seconds": 900
+    "enabled": false
   },
   "daily": {
-    "generation": 3,
+    "generation": 5,
     "embedding": 100,
-    "timezone": "Asia/Seoul",
-    "failed_attempts_counted": true,
-    "cache_hits_counted": false
+    "timezone": "Asia/Seoul"
   },
-  "source_files_verified": 157,
-  "django_schema_changed": false,
-  "dependencies_changed": false,
+  "guest_conversations_isolated": true,
+  "operator_writes_preserved": true,
   "deployment_record": "evidence/security/deployment.json",
-  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb"
+  "production_release": "2026111006561965c3f7",
+  "production_requests_minimum_gap_seconds": 5,
+  "django_schema_changed": false,
+  "dependencies_changed": false
 }

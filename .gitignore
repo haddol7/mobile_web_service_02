@@ -31,3 +31,6 @@ laptop/MANIFEST.json
 evidence/person-libraries/upload-flow/detected*/
 docs/reference/*.pdf
 ~$*
+# Personal course feedback and internal evaluation stay in the local workspace.
+docs/internal-assessment-20261110.md
+evidence/internal-review-20261110/

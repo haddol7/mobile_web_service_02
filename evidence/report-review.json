@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-09T19:53:25.851005+00:00",
-  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb",
+  "reviewed_utc": "2026-11-10T07:03:03.492077+00:00",
+  "report_sha256": "fc5df2f83ca31e9e0ed2b71cad8acdb99568da317c000080151021ceeb791226",
   "checks": [
     {
       "check": "source_requirement_columns_preserved",
@@ -111,11 +111,15 @@
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/screenshots/local-api-root.jpg",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-api-root.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/screenshots/local-api-posts.jpg",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-api-posts.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
       "pass": true
     },
     {
@@ -123,7 +127,11 @@
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/screenshots/local-list.jpg",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
       "pass": true
     },
     {
@@ -131,31 +139,23 @@
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/screenshots/yolo-native-list.png",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/android-native-list.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/screenshots/yolo-native-detail.png",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/android-native-detail.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/yolo-pipeline/android-sync.json",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-mobile-list.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/mobile-flow/verification.json",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-mobile-detail.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/mobile-flow/server-http.json",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/mobile-flow/yolo-mobile-web-list.png",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/mobile-flow/yolo-mobile-web-detail.png",
+      "check": "evidence_exists_evidence/basic-verification-20261110/android-native-sync.json",
       "pass": true
     },
     {
@@ -163,15 +163,11 @@
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/cloud/verification.json",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-api-root.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/ui-audit/deployment.json",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/ui-audit/cloud/api-root-browser.png",
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
       "pass": true
     },
     {
@@ -179,31 +175,15 @@
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/cloud/verification.json",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-list.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/ui-audit/cloud/verification.json",
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-detail.png",
       "pass": true
     },
     {
-      "check": "evidence_exists_evidence/ui-audit/cloud/mobile-web-list.png",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/ui-audit/cloud/mobile-web-detail.png",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/ui-audit/cloud/content-cloud-sync.png",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/private/report-fixes-20261109/production-post-list.jpg",
-      "pass": true
-    },
-    {
-      "check": "evidence_exists_evidence/private/report-fixes-20261109/production-post-detail.jpg",
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
       "pass": true
     },
     {
@@ -418,7 +398,7 @@
     "10"
   ],
   "unfinished_assessment_ids": [],
-  "submission_ready": true,
+  "submission_ready": false,
   "http_cases_are_subset_of_full_suite": true,
   "new_paid_api_calls_in_report_refresh": 0
 }

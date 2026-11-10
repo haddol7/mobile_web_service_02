@@ -167,7 +167,7 @@ class HistoryTests(TestCase):
         self.assertEqual(TrackingSession.objects.count(), 0)
         self.assertEqual(PersonProfile.objects.count(), 0)
 
-    def test_private_snapshot_and_api_require_configured_owner(self):
+    def test_snapshots_and_history_reads_are_public(self):
         response = self.send(packet(), image=True)
         self.assertEqual(response.status_code, 201)
         path = f'/api/v1/history/images/{response.json()["id"]}/'
@@ -176,11 +176,11 @@ class HistoryTests(TestCase):
         self.assertEqual(response["Content-Type"], "image/jpeg")
         self.assertEqual(response["Cache-Control"], "private, no-store")
         self.api.force_authenticate(None)
-        self.assertEqual(self.api.get(path).status_code, 401)
+        self.assertEqual(self.api.get(path).status_code, 200)
         self.api.force_authenticate(self.other)
         for endpoint in [path, "/api/v1/history/frames/", "/api/v1/history/profiles/"]:
-            self.assertEqual(self.api.get(endpoint).status_code, 403)
-        self.assertEqual(self.api.post("/api/v1/history/ask/", {"question": "몇 번?"}, format="json").status_code, 403)
+            self.assertEqual(self.api.get(endpoint).status_code, 200)
+        self.assertEqual(self.api.post("/api/v1/history/ask/", {"question": "몇 번?"}, format="json").status_code, 200)
 
     def test_frames_are_bounded_and_private(self):
         self.send(packet())
@@ -211,10 +211,10 @@ class HistoryTests(TestCase):
             self.assertEqual(self.api.post("/api/v1/history/ask/", {"question": question}, format="json").status_code, 400)
         self.assertEqual(self.api.get("/api/v1/history/frames/?start=2026-13-20").status_code, 400)
 
-    def test_owner_web_page_exists_without_publishing_history_publicly(self):
-        self.assertEqual(self.client.get("/history/").status_code, 302)
+    def test_history_web_page_is_public(self):
+        self.assertEqual(self.client.get("/history/").status_code, 200)
         self.client.force_login(self.other)
-        self.assertEqual(self.client.get("/history/").status_code, 403)
+        self.assertEqual(self.client.get("/history/").status_code, 200)
         self.client.force_login(self.owner)
         self.assertContains(self.client.get("/history/"), "기록에 질문하기")
 

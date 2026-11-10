@@ -81,6 +81,7 @@ HISTORY_EMBEDDING_INDEX = Path(os.environ.get("HISTORY_EMBEDDING_INDEX", HISTORY
 HISTORY_CHAT_ROOT = os.environ.get("HISTORY_CHAT_ROOT", "")
 SECURITY_STATE_ROOT = os.environ.get("SECURITY_STATE_ROOT", "")
 TRUST_PYTHONANYWHERE_REAL_IP = os.environ.get("DJANGO_TRUST_X_REAL_IP", "false").lower() == "true"
+LOGIN_RATE_LIMIT_ENABLED = False
 LOGIN_PAIR_FAILURE_LIMIT = 5
 LOGIN_IP_FAILURE_LIMIT = 20
 LOGIN_FAILURE_WINDOW_SECONDS = 15 * 60
@@ -93,7 +94,7 @@ def daily_limit(name, default):
     return int(value)
 
 
-HISTORY_LLM_DAILY_LIMIT = daily_limit("HISTORY_LLM_DAILY_LIMIT", 3)
+HISTORY_LLM_DAILY_LIMIT = daily_limit("HISTORY_LLM_DAILY_LIMIT", 5)
 HISTORY_EMBEDDING_DAILY_LIMIT = daily_limit("HISTORY_EMBEDDING_DAILY_LIMIT", 100)
 del _history_llm
 # Limit text/form overhead separately from photo bytes. Photo validation enforces 5 MiB.

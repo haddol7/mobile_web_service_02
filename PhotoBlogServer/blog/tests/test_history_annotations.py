@@ -62,7 +62,7 @@ class HistoryAnnotationTests(TestCase):
         track.save(update_fields=["confirmed", "reviewed_at"])
         self.assertEqual(self.rendered()[0].getpixel((120, 180)), (203, 213, 225))
 
-    def test_image_endpoint_is_private_and_does_not_overwrite_original(self):
+    def test_image_endpoint_is_public_and_does_not_overwrite_original(self):
         before = self.frame.image.read()
         self.frame.image.close()
         annotated = self.api.get(self.url + "?boxes=1")
@@ -72,9 +72,9 @@ class HistoryAnnotationTests(TestCase):
         self.assertNotEqual(annotated.content, before)
         raw = self.api.get(self.url)
         self.assertEqual(b"".join(raw.streaming_content), before)
-        self.assertEqual(APIClient().get(self.url + "?boxes=1").status_code, 401)
+        self.assertEqual(APIClient().get(self.url + "?boxes=1").status_code, 200)
         self.api.force_authenticate(self.other)
-        self.assertEqual(self.api.get(self.url + "?boxes=1").status_code, 403)
+        self.assertEqual(self.api.get(self.url + "?boxes=1").status_code, 200)
 
     def test_display_urls_have_boxes_but_registration_and_face_crops_do_not(self):
         row = self.api.get("/api/v1/history/sessions/?date_basis=processed").json()["results"][0]

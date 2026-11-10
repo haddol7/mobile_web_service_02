@@ -35,6 +35,8 @@ def client_ip(request):
 
 class LoginLimitMiddleware(MiddlewareMixin):
     def process_view(self, request, view_func, view_args, view_kwargs):
+        if not settings.LOGIN_RATE_LIMIT_ENABLED:
+            return None
         match = request.resolver_match
         if request.method != "POST" or not match or match.url_name not in ("login", "api_token_auth"):
             return None

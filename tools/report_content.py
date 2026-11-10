@@ -122,16 +122,16 @@ def build_appendix():
     text(doc, "서버와 Edge 검출기는 WSL Ubuntu에서, Android 빌드와 기기 검사는 Windows에서 수행했다. 운영 검증은 PythonAnywhere의 실제 응답과 화면을 기준으로 구분했다.")
     text(doc, "GitHub 저장소  https://github.com/haddol7/mobile_web_service_02", 9)
     section(doc, "운영 화면 접속과 확인 방법", False)
-    text(doc, "운영자 계정은 daejinha다. 아래 로그인 주소에서 사용자 이름과 계정 비밀번호를 입력하면 관측 기록으로 이동한다. 관측 사진과 인물 이력은 운영자 로그인 후 확인한다.")
+    text(doc, "운영 주소에서 로그인 없이 관측 기록, 인물 확인과 AI 질문을 이용할 수 있다. 운영자 계정은 daejinha이며 관측 등록, 인물 확인 저장과 자료 수정은 운영자 권한으로 처리한다.")
     text(doc, "로그인  https://daejinha.pythonanywhere.com/accounts/login/?next=/", 9)
-    text(doc, "운영 화면을 직접 확인하려면 평가자에게 계정 비밀번호를 비공개로 전달한다. 공개 저장소에는 비밀번호와 API 키를 포함하지 않는다.", 9)
+    text(doc, "평가자는 별도 계정 없이 관측 사진과 인물 이력 및 질문 화면을 확인할 수 있다. 대화 기록은 방문자별 브라우저 세션 또는 로그인 계정별로 분리한다. AI 답변 생성은 서버 전체 하루 5회이며 한국 시간 자정에 한도가 갱신된다.", 9)
     text(doc, "관측 기록에서 날짜와 인물을 선택하고 사진을 열어 검출 박스를 확인한다. 인물 확인에서는 등록 얼굴과 영상 속 얼굴 및 발견 이력을 비교한다. AI 질문에서는 인물과 기간을 선택한 뒤 질문을 보내 근거 사진이 포함된 답변과 대화 기록을 확인한다.")
     text(doc, "AI 질문의 보내기는 외부 유료 API를 사용한다. 기본 API는 /api_root/에서, YOLO 검출 사진의 기본 목록은 /photos/에서 확인할 수 있다.", 9)
 
     section(doc, "B01 제출 폴더 구조와 별도 저장소")
     text(doc, "공통평가 01과 분리된 저장소에 PhotoBlogServer, PhotoViewer, YOLOv5 폴더를 구성했다. PhotoBlogServer는 Django 서버, PhotoViewer는 Android 앱, YOLOv5는 Edge 검출기다. 수행 결과 보고서는 저장소 루트에 둔다.")
     figure(doc, "evidence/screenshots/github-folder-structure.jpg", 6.1, "그림 B01 공통평가 02 별도 저장소의 폴더 구성")
-    text(doc, "PhotoBlogServer의 모델 및 API와 PhotoViewer의 동기화 기능은 공통평가의 기본 연동 구조를 사용한다. 관측 기록과 등록 얼굴은 운영자 인증 후 조회하며, 소스와 모델 실행 환경을 분리했다.")
+    text(doc, "PhotoBlogServer의 모델 및 API와 PhotoViewer의 동기화 기능은 공통평가의 기본 연동 구조를 사용한다. 관측 기록과 등록 얼굴은 공개 조회하고 자료 변경과 검출 기록 등록에는 운영자 인증을 적용한다.")
 
     section(doc, "B02 원본 YOLOv5 실행 결과")
     text(doc, "Ultralytics YOLOv5 v7.0의 원본 detect.py를 별도 baseline 폴더에 보관하고 공식 파일의 SHA256을 대조했다. CPU로 bus.jpg를 실행한 결과 사람 4명과 버스 1대를 검출했다. 아래는 원본 검출기의 실제 결과 이미지다.")
@@ -152,13 +152,13 @@ def build_appendix():
     figure(doc, "evidence/screenshots/detect-hook-vscode.png", 6.1, "그림 B03 3 YOLOv5 추론 루프의 연결 위치")
 
     section(doc, "B04 로컬 서버 API 확인")
-    text(doc, "WSL 서버의 http://127.0.0.1:8020/api_root/ 에서 HTTP 200 응답을 확인했다. Post API는 id, author, title, text, created_date, published_date, image의 기본 7개 필드를 유지한다.")
-    figure(doc, "evidence/screenshots/local-api-root.jpg", 6.0, "그림 B04 1 로컬 API 루트의 브라우저 응답")
-    figure(doc, "evidence/screenshots/local-api-posts.jpg", 6.0, "그림 B04 2 검출 게시글의 JSON 응답")
+    text(doc, "2026년 11월 10일 WSL 서버를 Android Chrome의 http://localhost:8020/api_root/에서 열어 주소창과 HTTP 200 응답을 함께 확인했다. 에뮬레이터의 localhost는 ADB 포트 전달로 WSL 검증 서버에 연결했다. Post API는 id, author, title, text, created_date, published_date, image의 기본 7개 필드를 유지한다.")
+    figure(doc, "evidence/screenshots/basic-20261110/local-api-root.png", 6.0, "그림 B04 1 주소창이 포함된 실제 Android Chrome의 로컬 API 응답")
+    figure(doc, "evidence/screenshots/basic-20261110/local-api-posts.png", 6.0, "그림 B04 2 localhost 주소와 검출 게시글 JSON 응답")
 
     section(doc, "B05 로컬 검출 사진 등록 결과")
     text(doc, "로컬 서버에서 첫 출현과 재등장으로 등록된 검출 사진 2개를 조회했다. 전송 JPEG, 서버에 저장된 JPEG와 HTTP로 조회한 JPEG의 SHA256이 일치했다.")
-    figure(doc, "evidence/screenshots/local-list.jpg", 6.1, "그림 B05 로컬 기본 사진 목록에서 검출 결과 확인")
+    figure(doc, "evidence/screenshots/basic-20261110/local-list.png", 6.1, "그림 B05 주소창이 포함된 로컬 목록과 실제 검출 사진")
     section(doc, "B06 자동 검증 결과", False)
     data_table(doc, ["구분", "검증 결과", "환경"], [
         ["Django 전체", f"{server_tests}개 통과", "WSL Ubuntu"], ["실제 HTTP 엔진", "전체 중 15개 별도 재실행 통과", "WSL Ubuntu"],
@@ -166,14 +166,14 @@ def build_appendix():
         ["Android JVM", "40개 통과", "Windows"], ["Android Lint", "오류 0개, 경고 9개", "Windows"]], [1.3, 3.15, 1.45])
 
     section(doc, "B07 Android 기본 사진 동기화")
-    text(doc, "Android 02 앱에서 WSL 서버에 등록된 검출 사진을 조회했다. 같은 검출 사진의 SHA256을 대조하고 목록과 상세 화면을 캡처했다. 접속 주소는 http://10.0.2.2:8020/ 이다.")
-    pair(doc, ["evidence/screenshots/yolo-native-list.png", "evidence/screenshots/yolo-native-detail.png"],
+    text(doc, "11월 10일 실제 Android 02 앱에서 WSL 서버에 등록된 검출 사진을 조회했다. 기기 검사 1개가 통과했으며 같은 검출 사진의 SHA256을 대조하고 목록과 상세 화면을 캡처했다. 이 검사의 접속 주소는 http://10.0.2.2:36073/이다.")
+    pair(doc, ["evidence/screenshots/basic-20261110/android-native-list.png", "evidence/screenshots/basic-20261110/android-native-detail.png"],
          ["그림 B07 1 기본 사진 목록", "그림 B07 2 검출 사진 상세"], (2.6, 2.6))
     text(doc, "이 화면은 강의 기본 Post API 연동의 검증 화면이며 최신 감시 메뉴 화면은 B16에 정리했다.", 9)
 
     section(doc, "B07 Android 모바일 웹 확인")
     text(doc, "Android Chrome에서도 같은 검출 게시글의 목록과 상세를 확인했다. 실제 WSL 서버의 이미지 응답과 앱의 이미지 해시 검사 결과를 함께 보관했다.")
-    pair(doc, ["evidence/mobile-flow/yolo-mobile-web-list.png", "evidence/mobile-flow/yolo-mobile-web-detail.png"],
+    pair(doc, ["evidence/screenshots/basic-20261110/local-mobile-list.png", "evidence/screenshots/basic-20261110/local-mobile-detail.png"],
          ["그림 B07 3 로컬 모바일 웹 목록", "그림 B07 4 로컬 모바일 웹 상세"], (2.6, 2.6))
 
     section(doc, "B08 영상 입력과 전송 실패 처리")
@@ -198,9 +198,9 @@ def build_appendix():
 
     section(doc, "B09 PythonAnywhere API 응답")
     text(doc, "https://daejinha.pythonanywhere.com/api_root/ 에서 기본 API의 HTTP 200을 확인했다. 실제 YOLO 클라이언트가 운영 서버에 등록한 게시글과 사진을 Android 앱에서 다시 조회했다.")
-    figure(doc, "evidence/ui-audit/cloud/api-root-browser.png", 6.0,
-           "그림 B09 1 운영 API 응답 확대 화면 하단의 빈 영역만 생략", crop_bottom=.69)
-    text(doc, "GET /api_root/의 HTTP 200 OK와 JSON의 Post 링크에 전체 운영 도메인이 표시된다. 그림은 11월 8일 운영 검증 때 저장한 원본 캡처의 응답 부분을 확대해 배치했다.", 9)
+    figure(doc, "evidence/screenshots/basic-20261110/cloud-api-root.png", 6.0,
+           "그림 B09 1 실제 운영 도메인의 주소창과 HTTP 200 응답")
+    text(doc, "2026년 11월 10일 실제 Android Chrome에서 운영 API를 다시 열었다. 주소창의 운영 도메인과 GET /api_root/의 HTTP 200 OK 및 JSON의 Post 링크를 함께 확인할 수 있다.", 9)
 
     section(doc, "B09 PythonAnywhere Android 동기화")
     figure(doc, "evidence/ui-audit/cloud/yolo-native-detail.png", 2.5,
@@ -208,9 +208,9 @@ def build_appendix():
     text(doc, "운영 등록 과정에서 기존 게시글 3개와 사진 바이트를 보존했다. 새 YOLO 검출 게시글 id 8의 사진 해시를 운영 API와 Android에서 대조했다. 기본 연동 증빙은 11월 8일의 실제 운영 검사다.", 9)
 
     section(doc, "B09 PythonAnywhere 브라우저 목록과 검출 사진")
-    text(doc, "11월 9일 운영 서버의 기본 사진 보관함과 검출 게시글을 브라우저에서 다시 열었다. YOLO가 등록한 person, bus 게시글 id 8이 목록에 표시되며 상세 화면에서 검출 박스가 그려진 사진과 검출 내용을 확인할 수 있다.")
-    figure(doc, "evidence/private/report-fixes-20261109/production-post-list.jpg", 5.65, "그림 B09 3 운영 서버 /photos/의 기본 사진 목록")
-    figure(doc, "evidence/private/report-fixes-20261109/production-post-detail.jpg", 5.65, "그림 B09 4 운영 서버 /post/8/의 YOLO 검출 사진 상세")
+    text(doc, "11월 10일 운영 서버의 기본 사진 보관함과 검출 게시글을 실제 Android Chrome에서 열었다. YOLO가 등록한 person, bus 게시글 id 8이 목록에 표시되며 상세 화면에서 검출 박스가 그려진 사진과 검출 내용을 확인할 수 있다. 두 화면의 주소창으로 운영 도메인과 경로를 확인한다.")
+    figure(doc, "evidence/screenshots/basic-20261110/cloud-list.png", 6.0, "그림 B09 3 주소창이 포함된 운영 서버 /photos/ 목록")
+    figure(doc, "evidence/screenshots/basic-20261110/cloud-detail.png", 6.0, "그림 B09 4 운영 주소창과 /post/8/ 검출 사진 상세")
 
     section(doc, "B10 운영 관측 화면과 추가 기능 구성")
     text(doc, "추가 기능은 두 항목으로 구성했다. Edge Client는 인물 추적과 관측 기록을 전송하고, Server는 인물 이력을 관리하고 근거 기록 질문에 답한다. Android와 웹은 같은 서버 API로 이 결과를 조회한다.")
@@ -275,7 +275,7 @@ def build_appendix():
     text(doc, "LLM은 조회한 집계와 근거 기록으로 설명을 작성한다. 통과 건수와 실제 사람 수, 분석일과 원본 촬영일을 구분한다. 원본 촬영일이 없는 자료는 날짜 미상으로 저장한다.")
 
     section(doc, "B15 실제 AI 답변과 대화 기록")
-    text(doc, "운영 서버에서 실제 LLM이 두 영상의 근거 사진을 붙여 답변하는 것을 확인했다. 대화 기록은 운영자별로 저장하며 재접속 후 복원된다. 후속 질문은 앞서 선택된 근거를 이어받고 요청을 재전송해도 같은 대화가 중복 저장되지 않는다.")
+    text(doc, "운영 서버에서 실제 LLM이 두 영상의 근거 사진을 붙여 답변하는 것을 확인했다. 대화 기록은 계정 또는 방문자별로 저장하며 재접속 후 복원된다. 후속 질문은 앞서 선택된 근거를 이어받고 요청을 재전송해도 같은 대화가 중복 저장되지 않는다.")
     pair(doc, ["evidence/private/ui-audit/person-answer-production.png", "evidence/private/ui-audit/chat-production.png"],
          ["그림 B15 1 실제 운영 LLM 답변 검증 화면", "그림 B15 2 운영 대화 저장과 후속 질문 화면"], (2.3, 2.3))
     text(doc, "왼쪽은 실제 생성 검증 시점의 화면이며 오른쪽은 개편된 채팅 화면이다. 대화 저장 검증에는 캐시와 DB 조회를 사용했다. 실제 생성과 대화 복원 검증은 각각의 실행 기록으로 구분했다.", 9)
@@ -290,9 +290,9 @@ def build_appendix():
 
     section(doc, "B17 운영 사진의 검출 박스")
     text(doc, "사람 몸은 파란색과 추적 번호, 얼굴 후보는 주황색과 인물 이름 및 유사도, 확인된 얼굴은 초록색으로 표시한다. 저장된 원본 좌표를 게시 사진 크기에 맞춰 변환하며 얼굴과 이름표가 겹치는 면적이 작은 위치를 선택한다.")
-    figure(doc, "evidence/private/detection-boxes/production-annotated.jpg", 6.0, "그림 B17 실제 PythonAnywhere 비공개 관측 사진의 몸과 얼굴 후보 표시")
-    text(doc, "표시는 별도 이미지 응답으로 만들며 저장 원본은 유지한다. 등록 사진과 얼굴 비교용 잘라보기는 선명한 상태로 제공한다. 박스가 포함된 사진도 운영자 인증 후 열람한다.")
-    text(doc, "WSL 검사에서는 사진 축소 좌표, 경계 밖 좌표, 확인 및 미확인 색상, 원본 보존과 접근 권한을 확인했다. 운영 응답에서도 박스 이미지와 원본의 해시가 다르고 비인증 요청이 차단되는 것을 확인했다.")
+    figure(doc, "evidence/private/detection-boxes/production-annotated.jpg", 6.0, "그림 B17 실제 PythonAnywhere 관측 사진의 몸과 얼굴 후보 표시")
+    text(doc, "표시는 별도 이미지 응답으로 만들며 저장 원본은 유지한다. 등록 사진과 얼굴 비교용 잘라보기는 선명한 상태로 제공한다. 관측 사진과 검출 박스는 로그인 없이 열람할 수 있다.")
+    text(doc, "WSL 검사에서는 사진 축소 좌표, 경계 밖 좌표, 확인 및 미확인 색상, 원본 보존과 공개 조회를 확인했다. 인물 확인 저장과 자료 변경은 운영자 인증을 적용하며 다른 방문자의 대화 기록은 열람할 수 없다.")
 
     section(doc, "B18 실행 환경과 검증 근거")
     data_table(doc, ["항목", "결과", "evidence 하위 기록"], [
@@ -303,7 +303,7 @@ def build_appendix():
         ["운영 인물 등록", "29명 등록, 관측 사진 500장", "history/chokepoint-people-cloud.json"],
         ["운영 검색 색인", "문서 40개, 고정 예제 3개 확인", "history/chokepoint-people-embedding-cloud.json"],
         ["운영 대화 복원", "별도 접속에서 2개 질의 복원", "ui-audit/chat-cloud.json"],
-        ["운영 박스 표시", "원본 보존과 비인증 접근 차단", "ui-audit/detection-boxes-deployment.json"]], [1.05, 2.3, 2.55])
+        ["공개 조회와 운영 권한", "공개 조회, 방문자 대화 분리와 하루 5회", "security/deployment.json"]], [1.05, 2.3, 2.55])
     text(doc, f"HTTP 엔진의 15개 사례는 Django 전체 {server_tests}개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
     text(doc, "노트북 WSL에서도 환경 파일 615개와 등록 사진 34명 73장을 검사했다. 동봉 영상 240프레임, Django 250개 및 이전 도구 단위 테스트 9개를 확인했고 로컬 API와 사진 목록은 HTTP 200을 반환했다.", 9)
     text(doc, "검사 명령  서버 python PhotoBlogServer/tools/verify_security.py\nEdge는 YOLOv5에서 python -m unittest discover -s tests -v\n웹 node tools/verify-mobile-web.mjs, Android PhotoViewer/tools/verify-android.ps1", 9)

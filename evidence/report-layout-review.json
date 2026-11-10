@@ -1,127 +1,138 @@
 {
-  "report_sha256": "9d8391c41e7dcead2d32df0679e54e191cfff3c73038c9eccc307cd81f02a6fb",
-  "qa_directory": "evidence/private/security-20261110/render-2",
-  "pages": 27,
-  "renderer": "Bundled render_docx.py and Poppler with Microsoft Word PDF conversion",
+  "report_sha256": "fc5df2f83ca31e9e0ed2b71cad8acdb99568da317c000080151021ceeb791226",
+  "qa_directory": "evidence/private/basic-captures-20261110/render-4",
+  "pages": 29,
+  "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
   "template_requirement_columns_preserved": true,
   "opaque_template_parts_preserved": true,
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_visually_checked": true,
-  "review_method": "All 27 pages compared against the previously fully reviewed report render. Pages 9 and 27 changed and were visually inspected at original size; the other 25 page PNGs are byte-identical to that reviewed render. All 28 original embedded images and source template structures preserved.",
+  "review_method": "All 29 page contents inspected. Final pages 1, 2, 3, 8, 9, 12 and 26 viewed directly; the other 22 final PNGs are byte-identical to render-2 pages inspected in this review. Current local mobile web replaced the old blog UI. Browser URLs, HTTP 200, image content, captions, tables and pagination checked.",
   "page_hashes": [
     {
       "page": 1,
-      "sha256": "1320a237dd51fc8bc5314f44461a862613c88aef7dfcab41cde9ace79f26bee6"
+      "sha256": "572377333790d63ff547e3979c47b008e04d9ce3adee9637f7699c82bd14d86a"
     },
     {
       "page": 2,
-      "sha256": "eb11ede7b6c3fbadf0edb459d65abd26ee2c4e91b8faab7f854c2a0dbe9e4dd1"
+      "sha256": "e0f84549a4701e2a65270919753a03373fe56ae08dba514ef478f2739cd1ee6e"
     },
     {
       "page": 3,
-      "sha256": "dd55171bba74a0fd4baed3c9881af0b33b93cd3d8cc0be5af0b0fef402fba826"
+      "sha256": "7fcbdf7ccb45dc79f4fc798bc216a1627fe877711a2303a68bee211aaf0866b5"
     },
     {
       "page": 4,
-      "sha256": "dfcde94d63fc88301e4be812a7c5572033628df5b6fa6fdc2fbd9eff6e6a1dcb"
+      "sha256": "07b1aedc06f3682d7b3e2e23fc56ddb1efae6f6da2c49af1bae20e2862d262d4"
     },
     {
       "page": 5,
-      "sha256": "69f106dfe7ddac0c8461ef6d09c356d31f9daeabfe24b8d69f3f07b758a0d9ae"
+      "sha256": "371be8d334cdb6730268468f95f353b847a2f4aca13ef72cd3968c617e645522"
     },
     {
       "page": 6,
-      "sha256": "6fc4be66778b021dad48b282f98372cd9f93c57efcf2f1516358e64b5e6f96ac"
+      "sha256": "a43ccb6fbe48e177c0f05eceeb1c8a062fbc988328f3e0b97c43f86532add7fa"
     },
     {
       "page": 7,
-      "sha256": "ac080a32f3d245767a3306f07a82ed09ea7476626327ccde7682b5d7433fc834"
+      "sha256": "226e6488d47bc1ff4682f82d61bc09ee4090d32f39de8dde9979d57a3e2c7d80"
     },
     {
       "page": 8,
-      "sha256": "65bd401168f435d0ebd469a8537706a57a4f54b3715bb859f06d84498c30efac"
+      "sha256": "05a61d0b0635b3e50ccf047329f41614dce651f82f09b17c0d619e43ca72f55d"
     },
     {
       "page": 9,
-      "sha256": "d21855fcbec78b760046c3f643a7ca801f6ed689fd43bb91f2509c1305eea44b"
+      "sha256": "0f3178046701675bdd431036e9bce8e25cbba7ea40ebb58fc02832e464162c0a"
     },
     {
       "page": 10,
-      "sha256": "05fd1d26746986395bb58e0e581b215a95cf6c16eea11bef82c95ee674221a11"
+      "sha256": "fcc04414aeb92f933445944ef945adb0affecbab3d1917a01399b12e44bede75"
     },
     {
       "page": 11,
-      "sha256": "9894ba8bc8a4b5dbb39b8e79f6ac7412d98b04749cfbb8422427844bb88501fd"
+      "sha256": "38f0990937f49864dc54a4228a68d8dd6611564f4f1eac3f93e115a94e1f1d37"
     },
     {
       "page": 12,
-      "sha256": "4314a97d8441da762f26170d812fb622e978f7eda37810c887d86db66926acc1"
+      "sha256": "462c91e4cbffeea21fc440a84c2f1b9e63a96f2b1bf6cb756c15d7c55b0f9bce"
     },
     {
       "page": 13,
-      "sha256": "b3b154b03880dec8082f2c7b1f757fa846ca260a8ad2828f4c18086d25d58472"
+      "sha256": "ab9e8eae3713eb01f7367f6fd0cc589c6c20b7bd2f0e7c03fe4a99b0bd40b1d7"
     },
     {
       "page": 14,
-      "sha256": "ee0b5e188b3ba0d6fe2924d827b0f0b3ff0fe8388efa7444aa597c43a4141a42"
+      "sha256": "4f1659dea00560b06ad0f91a1a6b9c3de611f2e7957c8b3f837b8d047f723352"
     },
     {
       "page": 15,
-      "sha256": "4769f94ffbf881f1e4dcc85bacb646d14f0b0e1c3782998697d4dc26a146c15a"
+      "sha256": "508e64894dd366d226be348610c6d2b955d4bb3c7807277f096597a21681f104"
     },
     {
       "page": 16,
-      "sha256": "5ca88bf0bd89c5d40711eb986ff5fd825fb4f701b500f5b4e1a0776e6d4569f7"
+      "sha256": "7e39224dcb3921d1c75190b63d2d59095c0347267cf37e1249fd63e5d47b68ee"
     },
     {
       "page": 17,
-      "sha256": "1156071ed531c73b5caa03fb1ab2ff095e732e7863fa08fe9b24fd12b0ee54d0"
+      "sha256": "fe7ed955e33a50608c114ef299f02dbb07091b8b6374b5e2a90f40fd7541fbf8"
     },
     {
       "page": 18,
-      "sha256": "a720f8067873247c154b8da348beb88fc29f3e85ac121f2b1018ffbd160fa2ee"
+      "sha256": "0b5994af193a50174cfa132801e870a9fff40572d7e52766c6a03e22cba91a1a"
     },
     {
       "page": 19,
-      "sha256": "cad99614919fa430985752d43b204d227fd4321c514ed42755aa6e7c73843893"
+      "sha256": "4130c43b68b285d21b6e9ace78e6d296a12b2ef5175e596c07b7400431db9895"
     },
     {
       "page": 20,
-      "sha256": "5e5765939e432238495b21c6d119012517504ab40ca532fd0e23cdfb2dc34a3b"
+      "sha256": "a9a90fc5e736b0d8ca9e725f035db5c30535e83d59216122a1c50d5975f8fa0f"
     },
     {
       "page": 21,
-      "sha256": "9e85496165339b7efd04dc0ab3d2f2b323583ed5b220505ccc2db8a68e56cb00"
+      "sha256": "f7517d79785b40551d19d00b780f15fb45e8bb2d766943d3077406d7c2dd1205"
     },
     {
       "page": 22,
-      "sha256": "fa978be95b046e818c353e9fa3472ad702573668ce8f51e61d578b9d268d83fc"
+      "sha256": "e93f86e8a333e48f935d3544ee568e358d735aaaef89a0ce16ec5b7a4af1d1b1"
     },
     {
       "page": 23,
-      "sha256": "f030fa082401c7dc3c2bd60776a37ddd722c2f4d0a0331af779d0a1800c84055"
+      "sha256": "a1444de69e3366f4d283b8d8a3436a69396a6b63ae1495819685c5fb2b0d59bc"
     },
     {
       "page": 24,
-      "sha256": "1844402aca64b14fda21917e40e3d516bff23dcc11425a710e15791b3656ce0b"
+      "sha256": "47e8d72aaff80c28d49e5f8135737a0c80e4751761fbc9ec22e12e4d0737ecc8"
     },
     {
       "page": 25,
-      "sha256": "5923518b5af10db7d2a35504e6d850d444ce7d2c1743d5d881e90b38182c9711"
+      "sha256": "06fa835b5644a246fc5fc5d56386e29a5974eee1b8d9be559bb67328b65ebdbd"
     },
     {
       "page": 26,
-      "sha256": "c86484fa6c25b77f659def667d46e728ddb1bd77f40ace131418b389a79f0613"
+      "sha256": "3e0e35b5e1b88e0e25a1f7401f34fbf030cb326d9672105494895521157dcf27"
     },
     {
       "page": 27,
-      "sha256": "4e96101977bdd605c9ca0c1299d5844e24b3d96ffb24deb5b3a456eae180e2ed"
+      "sha256": "65f2012b061b90c0f3a386bae9426f5400c411dc6394fb3c2fac9c1c86bd374d"
+    },
+    {
+      "page": 28,
+      "sha256": "44aad1dfec29ae6121a3f784c61bb9aa83f2b257c2c1b5db2d53fcb9206bc167"
+    },
+    {
+      "page": 29,
+      "sha256": "24742783ae77b5d986de71c9109654e8e0e86a9be3773b28e90338dad7249312"
     }
   ],
   "embedded_figures": 28,
   "remaining_assessment_ids": [],
-  "submission_ready": true,
+  "submission_ready": false,
+  "remaining_quality_work": [
+    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+  ],
   "new_paid_api_calls": 0,
-  "verified_utc": "2026-11-09T19:47:03.198290+00:00"
+  "verified_utc": "2026-11-10T07:04:35.897476+00:00"
 }

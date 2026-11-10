@@ -1,0 +1,88 @@
+{
+  "verified_utc": "2026-11-10T07:02:21.925432+00:00",
+  "environment": "Windows Android Emulator API35 and WSL Ubuntu Django",
+  "browser_viewport": [
+    1920,
+    1440
+  ],
+  "phone_viewport": [
+    1080,
+    2400
+  ],
+  "native_viewport": [
+    1080,
+    2400
+  ],
+  "captures": [
+    {
+      "path": "evidence/screenshots/basic-20261110/local-api-root.png",
+      "url": "http://localhost:8020/api_root/",
+      "address_bar_text": "localhost:8020/api_root/",
+      "sha256": "bbeec36f6ffb21536bcfac6d919da2716c3aaa36a6aa236e6153a2eeb9c87550",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/local-api-posts.png",
+      "url": "http://localhost:8020/api_root/Post/",
+      "address_bar_text": "localhost:8020/api_root/Post/",
+      "sha256": "e3aaec3b0c1297694bc9b852bb9bb0619eb852b9a9021715f5619f38ea85e208",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/local-list.png",
+      "url": "http://localhost:8020/photos/",
+      "address_bar_text": "localhost:8020/photos/",
+      "sha256": "299bef7464957080a2cc4ad117e8bec34e6910fc261e7adc488b5da8e0fb49ff",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/cloud-api-root.png",
+      "url": "https://daejinha.pythonanywhere.com/api_root/",
+      "address_bar_text": "daejinha.pythonanywhere.com/api_root/",
+      "sha256": "0c74f80d87b47ae537c02ffb34bb87a6607b3dc8f75346edfb17e3f2d4c88d0e",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/cloud-list.png",
+      "url": "https://daejinha.pythonanywhere.com/photos/",
+      "address_bar_text": "daejinha.pythonanywhere.com/photos/",
+      "sha256": "c417e6f5811f25b48ff90f5e9fecb1bbe3fb2d34bd99e0e343bbfd2fadf2d17c",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/cloud-detail.png",
+      "url": "https://daejinha.pythonanywhere.com/post/8/",
+      "address_bar_text": "daejinha.pythonanywhere.com/post/8/",
+      "sha256": "d80561fcd16af8bf76dd22d808165496ef48f117b877ab4cadb390120fa432ab",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/local-mobile-list.png",
+      "url": "http://localhost:8020/photos/",
+      "address_bar_text": "localhost:8020/photos/",
+      "sha256": "88b714db6ee9e6cf5ed46e71a4ee0aaa42753d9c261b8f658ec1a560f520ae01",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-20261110/local-mobile-detail.png",
+      "url": "http://localhost:8020/post/2/",
+      "address_bar_text": "localhost:8020/post/2/",
+      "sha256": "28a4cc3962cbb2d2817d4e7d5093e5a0b84c4ae73132d34cfa114a522daf140c",
+      "capture_method": "Actual Android Emulator Chrome framebuffer via ADB screencap, no compositing or reencoding",
+      "visual_checked": true
+    }
+  ],
+  "browser_address_bar_captures": 8,
+  "missing_address_bar_captures_replaced": 5,
+  "additional_cloud_api_capture_refreshed": true,
+  "native_device_tests": 1,
+  "paid_api_calls": 0,
+  "pass": true
+}

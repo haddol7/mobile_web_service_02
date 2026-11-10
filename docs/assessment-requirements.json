@@ -68,8 +68,9 @@
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (localhost) (api_root)",
       "status": "complete",
       "evidence": [
-        "evidence/screenshots/local-api-root.jpg",
-        "evidence/screenshots/local-api-posts.jpg"
+        "evidence/screenshots/basic-20261110/local-api-root.png",
+        "evidence/screenshots/basic-20261110/local-api-posts.png",
+        "evidence/basic-verification-20261110/captures.json"
       ],
       "report_evidence": "B04\n로컬 API 200"
     },
@@ -79,7 +80,8 @@
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (localhost) (목록 및 이미지)",
       "status": "complete",
       "evidence": [
-        "evidence/screenshots/local-list.jpg"
+        "evidence/screenshots/basic-20261110/local-list.png",
+        "evidence/basic-verification-20261110/captures.json"
       ],
       "report_evidence": "B05\n검출 사진 2개"
     },
@@ -89,13 +91,11 @@
       "original": "제출 : YOLO에서 검출되고 서버로 전송된 이미지를 모바일에서 확인하는 화면 캡처 ",
       "status": "complete",
       "evidence": [
-        "evidence/screenshots/yolo-native-list.png",
-        "evidence/screenshots/yolo-native-detail.png",
-        "evidence/yolo-pipeline/android-sync.json",
-        "evidence/mobile-flow/verification.json",
-        "evidence/mobile-flow/server-http.json",
-        "evidence/mobile-flow/yolo-mobile-web-list.png",
-        "evidence/mobile-flow/yolo-mobile-web-detail.png"
+        "evidence/screenshots/basic-20261110/android-native-list.png",
+        "evidence/screenshots/basic-20261110/android-native-detail.png",
+        "evidence/screenshots/basic-20261110/local-mobile-list.png",
+        "evidence/screenshots/basic-20261110/local-mobile-detail.png",
+        "evidence/basic-verification-20261110/android-native-sync.json"
       ],
       "report_evidence": "B07\nAndroid 앱과\n모바일 웹"
     },
@@ -105,9 +105,8 @@
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (Pythonanywhere) (api_root)",
       "status": "complete",
       "evidence": [
-        "evidence/cloud/verification.json",
-        "evidence/ui-audit/deployment.json",
-        "evidence/ui-audit/cloud/api-root-browser.png"
+        "evidence/screenshots/basic-20261110/cloud-api-root.png",
+        "evidence/basic-verification-20261110/captures.json"
       ],
       "report_evidence": "B09\n운영 API 200"
     },
@@ -117,13 +116,9 @@
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (Pythonanywhere) (목록 및 이미지)",
       "status": "complete",
       "evidence": [
-        "evidence/cloud/verification.json",
-        "evidence/ui-audit/cloud/verification.json",
-        "evidence/ui-audit/cloud/mobile-web-list.png",
-        "evidence/ui-audit/cloud/mobile-web-detail.png",
-        "evidence/ui-audit/cloud/content-cloud-sync.png",
-        "evidence/private/report-fixes-20261109/production-post-list.jpg",
-        "evidence/private/report-fixes-20261109/production-post-detail.jpg"
+        "evidence/screenshots/basic-20261110/cloud-list.png",
+        "evidence/screenshots/basic-20261110/cloud-detail.png",
+        "evidence/basic-verification-20261110/captures.json"
       ],
       "report_evidence": "B09\n운영 브라우저\n목록과 검출 사진"
     },
@@ -174,24 +169,27 @@
     "user_approved_date": "2026-11-05",
     "source_switched": true,
     "last_attempt_result": "activated_and_verified",
-    "release": "20261108222304c3b06f",
-    "verified_date": "2026-11-09",
+    "release": "2026111006561965c3f7",
+    "verified_date": "2026-11-10",
     "preflight": "docs/deployment-preflight.json",
     "compatibility": "evidence/ui-audit/migration-compatibility.json",
-    "verification": "evidence/ui-audit/detection-boxes-deployment.json"
+    "verification": "evidence/security/deployment.json"
   },
   "report_state": {
-    "submission_ready": true,
-    "label": "최종 검증 완료",
+    "submission_ready": false,
+    "label": "기본문항 증빙 보완, 추가 기능 내부 평가 보완 진행",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
-    "remaining_work": []
+    "remaining_work": [
+      "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+    ]
   },
   "local_verification": {
     "runtime": "evidence/environment/wsl-runtime.json",
     "actual_video": "evidence/video-flow/verification.json",
     "native_and_mobile_web": "evidence/mobile-flow/verification.json",
-    "production_verified": false
+    "production_verified": true,
+    "production_verification": "evidence/security/public-access.json"
   },
   "ui_audit": {
     "verification": "evidence/ui-audit/summary.json",
@@ -222,5 +220,13 @@
       "status": "complete",
       "report_evidence": "B10 B13부터 B16\n운영 조회와 질문\nAndroid 확인"
     }
-  ]
+  ],
+  "access_policy": {
+    "anonymous_read": true,
+    "anonymous_questions": true,
+    "operator_only_writes": true,
+    "conversation_isolation": "account_or_browser_session",
+    "login_attempt_limiter_enabled": false,
+    "llm_daily_limit": 5
+  }
 }

@@ -10,6 +10,7 @@ from rest_framework.views import APIView
 
 from .models import PersonProfile, PersonTrack, TrackingFrame
 from .ownership import is_blog_owner
+from .history_access import ReadOrHistoryOwner, PublicQuestionPermission, conversation_owner
 from .history_serializers import PacketSerializer, StrictSerializer
 from .history_services import ingest, review_track
 from .history_queries import retrieve, ready_frames, filtered_frames, frame_payload, answer_records
@@ -46,13 +47,21 @@ class HistoryIngest(HistoryAPI):
         return Response({"id": frame.pk, "created": created}, status=201 if created else 200)
 
 
-class HistoryOverview(HistoryAPI):
+class PublicReadHistoryAPI(HistoryAPI):
+    permission_classes = [ReadOrHistoryOwner]
+
+
+class PublicQuestionAPI(HistoryAPI):
+    permission_classes = [PublicQuestionPermission]
+
+
+class HistoryOverview(PublicReadHistoryAPI):
     def get(self, request):
         from .monitoring import overview
         return Response(overview())
 
 
-class HistoryProfiles(HistoryAPI):
+class HistoryProfiles(PublicReadHistoryAPI):
     def get(self, request):
         return Response({"results": [{"key": p.key, "name": p.display_name}
                          for p in PersonProfile.objects.order_by("display_name", "key")[:100]]})
@@ -69,13 +78,13 @@ class HistoryProfiles(HistoryAPI):
         return Response({"key": profile.pk, "name": profile.display_name})
 
 
-class HistoryPerson(HistoryAPI):
+class HistoryPerson(PublicReadHistoryAPI):
     def get(self, request, profile_key):
         from .monitoring_presenter import profile_payload
         return Response(profile_payload(get_object_or_404(PersonProfile,pk=profile_key),with_timeline=True))
 
 
-class HistorySessions(HistoryAPI):
+class HistorySessions(PublicReadHistoryAPI):
     def get(self, request):
         from .monitoring_presenter import session_cards,daily_summary
         frames,_,interpretation=filtered_frames(request.query_params)
@@ -91,7 +100,7 @@ class HistorySessions(HistoryAPI):
                          "next_page":page+1 if len(cards)>12 else None,"interpretation":interpretation})
 
 
-class HistoryReference(HistoryAPI):
+class HistoryReference(PublicReadHistoryAPI):
     def get(self,request,profile_key):
         from rest_framework.exceptions import NotFound
         profile=get_object_or_404(PersonProfile,pk=profile_key)
@@ -122,7 +131,7 @@ class HistoryReference(HistoryAPI):
         return Response({"key":profile.pk,"reference_available":True})
 
 
-class HistoryFrames(HistoryAPI):
+class HistoryFrames(PublicReadHistoryAPI):
     def get(self, request):
         class Paging(serializers.Serializer):
             page = serializers.IntegerField(min_value=1, max_value=100000, default=1)
@@ -152,7 +161,7 @@ class TrackReview(HistoryAPI):
         return Response({"id": track.pk, "confirmed": track.confirmed_id, "revision": track.revision,"review_basis":track.review_basis})
 
 
-class HistoryImage(HistoryAPI):
+class HistoryImage(PublicReadHistoryAPI):
     def get(self, request, frame_id):
         frame = get_object_or_404(TrackingFrame, pk=frame_id)
         if not frame.image:
@@ -213,7 +222,7 @@ class HistoryUsage(HistoryAPI):
             return Response({"detail": "사용량을 확인하지 못했습니다. 잠시 후 다시 시도해주세요."}, status=503)
 
 
-class HistoryQuestion(HistoryAPI):
+class HistoryQuestion(PublicQuestionAPI):
     def post(self, request):
         class Question(StrictSerializer):
             question = serializers.CharField(max_length=400)
@@ -236,44 +245,45 @@ class HistoryQuestion(HistoryAPI):
         if data["cache_only"] and data["generate"]:
             raise ValidationError("캐시 검증 모드에서는 AI 설명을 생성하지 않습니다.")
         from . import chat_store
+        owner = conversation_owner(request)
         conversation_id = str(data.pop("conversation_id")) if "conversation_id" in data else None
         request_id = str(data.pop("request_id")) if "request_id" in data else None
         turn_id, messages = None, []
         chat_lock = None
         if conversation_id:
-            turn_id, replay = chat_store.reserve(request.user.pk, conversation_id, request_id, data["question"], data)
+            turn_id, replay = chat_store.reserve(owner, conversation_id, request_id, data["question"], data)
             if replay is not None:
                 return Response({**replay, "replayed": True})
         try:
             if conversation_id and (data["semantic"] or data["generate"]):
-                key = f"history-chat-{request.user.pk}"
+                key = f"history-chat-{owner}"
                 if not cache.add(key, True, 120):
                     raise Throttled(detail="이전 질문을 처리 중입니다. 대화 기록을 확인해주세요.", wait=5)
                 chat_lock = key
             if conversation_id:
-                messages, sessions = chat_store.previous_context(request.user.pk, conversation_id, turn_id)
+                messages, sessions = chat_store.previous_context(owner, conversation_id, turn_id)
                 if sessions and data["question"].lstrip().startswith(("그중", "그 중", "그 영상", "해당 영상", "방금", "거기")):
                     data["context_sessions"] = sessions
                     data["semantic"] = False
-            if data["semantic"] and not conversation_id and not cache.add(f"history-embedding-{request.user.pk}", True, 5):
+            if data["semantic"] and not conversation_id and not cache.add(f"history-embedding-{owner}", True, 5):
                 raise Throttled(wait=5)
             result = retrieve(data, data["question"])
             result.update(answer=answer_records(result), mode="records",
                           llm={"status": "not_requested", "text": None, "evidence_ids": []})
             semantic_ok = not data["semantic"] or result["retrieval"]["status"] in ("ranked", "no_match", "empty")
             if data["generate"] and semantic_ok:
-                if not conversation_id and not cache.add(f"history-llm-{request.user.pk}", True, 5):
+                if not conversation_id and not cache.add(f"history-llm-{owner}", True, 5):
                     raise Throttled(wait=5)
                 result["llm"] = generate(data["question"], {**result, "conversation_context": messages})
                 if result["llm"]["status"] == "generated":
                     result["mode"] = "rag"
             if conversation_id:
                 result["chat"] = {"conversation_id": conversation_id, "request_id": request_id, "turn_id": turn_id}
-                chat_store.finish(request.user.pk, conversation_id, turn_id, result)
+                chat_store.finish(owner, conversation_id, turn_id, result)
             return Response(result)
         except Exception:
             if conversation_id:
-                chat_store.finish(request.user.pk, conversation_id, turn_id)
+                chat_store.finish(owner, conversation_id, turn_id)
             raise
         finally:
             if chat_lock:

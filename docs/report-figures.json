@@ -20,52 +20,52 @@
     "sha256": "bafe48c51d92751cc2d7d858f72294992dd6b3ad7063b15678ea2c82e7d0ed47"
   },
   {
-    "path": "evidence/screenshots/local-api-root.jpg",
-    "sha256": "1b65043a5ecbcf4fe4854137da7c49df865657832fece53363fcb9873f5238fd"
+    "path": "evidence/screenshots/basic-20261110/local-api-root.png",
+    "sha256": "bbeec36f6ffb21536bcfac6d919da2716c3aaa36a6aa236e6153a2eeb9c87550"
   },
   {
-    "path": "evidence/screenshots/local-api-posts.jpg",
-    "sha256": "5c3d016ccd13bf2765aea360827a7eb6765b81552eed772ca150e33c2f9d2191"
+    "path": "evidence/screenshots/basic-20261110/local-api-posts.png",
+    "sha256": "e3aaec3b0c1297694bc9b852bb9bb0619eb852b9a9021715f5619f38ea85e208"
   },
   {
-    "path": "evidence/screenshots/local-list.jpg",
-    "sha256": "a67bc49601b2af09b20d0aac1bcb7c1c2de937c412527df63924574470ef4c9d"
+    "path": "evidence/screenshots/basic-20261110/local-list.png",
+    "sha256": "299bef7464957080a2cc4ad117e8bec34e6910fc261e7adc488b5da8e0fb49ff"
   },
   {
-    "path": "evidence/screenshots/yolo-native-list.png",
-    "sha256": "dc8bbe7506e416e63c1af75c3ccbd1817ca192aed0415e252c6fd814da4c1228"
+    "path": "evidence/screenshots/basic-20261110/android-native-list.png",
+    "sha256": "1325e48588d7443a198d2fd01974bb842e575fd2b3158b255124d8656401bb82"
   },
   {
-    "path": "evidence/screenshots/yolo-native-detail.png",
-    "sha256": "fa4a8442ab7735176e16af1d1f84a4d6e0bc9400e3c73ae80eac8b57929a382f"
+    "path": "evidence/screenshots/basic-20261110/android-native-detail.png",
+    "sha256": "c10996b739f593b101c37fc04ebd312c500d4c30c4d4ed61fc6d201d325c147a"
   },
   {
-    "path": "evidence/mobile-flow/yolo-mobile-web-list.png",
-    "sha256": "c6ff6f350fe3ca22112ea52dd87f0d9c5cf475b188c9ca15d5b9f16d3c07e1a7"
+    "path": "evidence/screenshots/basic-20261110/local-mobile-list.png",
+    "sha256": "88b714db6ee9e6cf5ed46e71a4ee0aaa42753d9c261b8f658ec1a560f520ae01"
   },
   {
-    "path": "evidence/mobile-flow/yolo-mobile-web-detail.png",
-    "sha256": "fa7acdb3fbde800d1837b0ad44b7ae4f56c617879dda3c9923804275cce92daf"
+    "path": "evidence/screenshots/basic-20261110/local-mobile-detail.png",
+    "sha256": "28a4cc3962cbb2d2817d4e7d5093e5a0b84c4ae73132d34cfa114a522daf140c"
   },
   {
     "path": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
     "sha256": "c32a9cd9213a8a7f4d282a4d3782cebabc4b2b26b55a6a2c472c5245732f8168"
   },
   {
-    "path": "evidence/ui-audit/cloud/api-root-browser.png",
-    "sha256": "adb2fbab87f7d292ed720093417c1e1faeb969eb142b4e68bd0dd9315e2bcb61"
+    "path": "evidence/screenshots/basic-20261110/cloud-api-root.png",
+    "sha256": "0c74f80d87b47ae537c02ffb34bb87a6607b3dc8f75346edfb17e3f2d4c88d0e"
   },
   {
     "path": "evidence/ui-audit/cloud/yolo-native-detail.png",
     "sha256": "c87ccaa9737ee50ef51a300a78a9f9294e77328fbdb73730bd5b67051f6cea08"
   },
   {
-    "path": "evidence/private/report-fixes-20261109/production-post-list.jpg",
-    "sha256": "4a3405ad907edce846873f5483abaaf1d9db2595d312a6bb33b75137a20ee4ed"
+    "path": "evidence/screenshots/basic-20261110/cloud-list.png",
+    "sha256": "c417e6f5811f25b48ff90f5e9fecb1bbe3fb2d34bd99e0e343bbfd2fadf2d17c"
   },
   {
-    "path": "evidence/private/report-fixes-20261109/production-post-detail.jpg",
-    "sha256": "7a6003f1acd2ed6e2e597c490a7dc2ebe982993230ac7847dc92e24586c19a80"
+    "path": "evidence/screenshots/basic-20261110/cloud-detail.png",
+    "sha256": "d80561fcd16af8bf76dd22d808165496ef48f117b877ab4cadb390120fa432ab"
   },
   {
     "path": "evidence/private/detection-boxes/production-list.jpg",

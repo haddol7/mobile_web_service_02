@@ -28,13 +28,13 @@ class MonitoringTests(TestCase):
         response = self.api.post("/api/v1/history/ingest/", value, format="json")
         self.assertEqual(response.status_code, 201)
 
-    def test_private_summary_and_pages_reject_anonymous_and_other_accounts(self):
+    def test_summary_and_pages_are_available_to_visitors_and_other_accounts(self):
         for path in ("/people/", "/history/", "/detections/", "/questions/"):
-            self.assertEqual(self.client.get(path).status_code, 302)
-        self.assertEqual(self.client.get("/api/v1/history/overview/").status_code, 401)
+            self.assertEqual(self.client.get(path).status_code, 200)
+        self.assertEqual(self.client.get("/api/v1/history/overview/").status_code, 200)
         self.client.force_login(self.other)
         for path in ("/people/", "/history/", "/detections/", "/questions/", "/api/v1/history/overview/"):
-            self.assertEqual(self.client.get(path).status_code, 403)
+            self.assertEqual(self.client.get(path).status_code, 200)
 
     def test_summary_distinguishes_candidates_confirmations_and_passages(self):
         self.send(packet(direction="in"))

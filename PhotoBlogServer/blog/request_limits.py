@@ -144,6 +144,6 @@ def usage_status():
             used = row["used"] if row else 0
             values[kind] = {"limit": limit, "used": used, "remaining": max(0, limit-used)}
     return {"day": day.isoformat(), "timezone": "Asia/Seoul", "resets_at": reset.isoformat(),
-            "daily": values, "login": {"pair_failures": settings.LOGIN_PAIR_FAILURE_LIMIT,
+            "daily": values, "login": {"enabled": settings.LOGIN_RATE_LIMIT_ENABLED, "pair_failures": settings.LOGIN_PAIR_FAILURE_LIMIT,
                 "ip_failures": settings.LOGIN_IP_FAILURE_LIMIT, "wait_seconds": settings.LOGIN_FAILURE_WINDOW_SECONDS,
                 "trusted_platform_ip": settings.TRUST_PYTHONANYWHERE_REAL_IP}}

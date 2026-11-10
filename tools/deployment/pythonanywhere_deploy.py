@@ -39,6 +39,16 @@ class DeploymentError(Exception):
     pass
 
 
+_next_request_at = 0.0
+
+
+def wait_request_slot():
+    """Space API and website verification requests to avoid bursts from this PC."""
+    global _next_request_at
+    time.sleep(max(0, _next_request_at - time.monotonic()))
+    _next_request_at = time.monotonic() + 5
+
+
 class API:
     def __init__(self, credentials):
         if credentials['host'] not in auth.HOSTS or not re.fullmatch(r'[A-Za-z0-9_]{1,30}', credentials['username']):
@@ -60,6 +70,7 @@ class API:
             headers['Content-Type'] = content_type
         request = urllib.request.Request(self.prefix + endpoint, data=data, headers=headers, method=method)
         try:
+            wait_request_slot()
             with self.opener.open(request, timeout=90) as response:
                 value = response.read(100 * 1024**2 + 1)
             if len(value) > 100 * 1024**2:

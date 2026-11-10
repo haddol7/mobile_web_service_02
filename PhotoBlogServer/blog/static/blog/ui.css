@@ -8,3 +8,4 @@ body .feed-intro h1{font-size:23px;margin:0 0 5px}.feed-intro>p{font-size:13px}.
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 @media(max-width:760px){.feed-intro>p{display:none}.feed-search{margin-top:10px}}
 body[data-page=login] .nav-login{display:none}
+body[data-can-manage="false"] #detail-confirm,body[data-can-manage="false"] #detail-rename,body[data-can-manage="false"] label:has(#detail-profile),body[data-can-manage="false"] [data-confirm]{display:none!important}

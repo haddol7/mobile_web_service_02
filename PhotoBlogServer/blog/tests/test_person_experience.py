@@ -25,14 +25,15 @@ class PersonExperienceTests(TestCase):
         response=self.api.post("/api/v1/history/ingest/",{"packet":json.dumps(data),"image":uploaded_photo()},format="multipart")
         self.assertEqual(response.status_code,201);return response.json()["id"]
 
-    def test_reference_portrait_is_owner_only_and_invalid_images_do_not_replace_it(self):
+    def test_reference_portrait_is_public_but_changes_remain_owner_only(self):
         self.send();url="/api/v1/history/references/person-a/"
         self.assertEqual(self.api.post(url,{"image":uploaded_photo()},format="multipart").status_code,200)
         reference=PersonProfile.objects.get().reference_image.name
         image=self.api.get(url);self.assertEqual(image.status_code,200)
         with Image.open(BytesIO(b"".join(image.streaming_content))) as decoded:self.assertEqual(decoded.format,"JPEG")
-        self.assertEqual(APIClient().get(url).status_code,401)
-        self.api.force_authenticate(self.other);self.assertEqual(self.api.get(url).status_code,403)
+        self.assertEqual(APIClient().get(url).status_code,200)
+        self.api.force_authenticate(self.other);self.assertEqual(self.api.get(url).status_code,200)
+        self.assertEqual(self.api.post(url,{"image":uploaded_photo()},format="multipart").status_code,403)
         self.api.force_authenticate(self.owner)
         self.assertEqual(self.api.post(url,{"image":"not an image"}).status_code,400)
         self.assertEqual(PersonProfile.objects.get().reference_image.name,reference)
