@@ -1,5 +1,5 @@
 {
-  "reviewed_utc": "2026-11-10T12:25:24.677805+00:00",
+  "reviewed_utc": "2026-11-10T12:32:29.036920+00:00",
   "report_sha256": "377b628c60d364679b6733653faf454128b40233db0779e9439487002088e3b0",
   "checks": [
     {
@@ -44,6 +44,10 @@
     },
     {
       "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/github-current-submission-20261110.json",
       "pass": true
     },
     {
@@ -375,6 +379,18 @@
       "pass": true
     },
     {
+      "check": "github_upload_verified",
+      "pass": true
+    },
+    {
+      "check": "github_report_hash_current",
+      "pass": true
+    },
+    {
+      "check": "github_report_commit_bytes",
+      "pass": true
+    },
+    {
       "check": "all_evidence_sections",
       "pass": true
     },
@@ -530,9 +546,9 @@
     "10"
   ],
   "unfinished_assessment_ids": [],
-  "submission_ready": false,
+  "submission_ready": true,
   "http_cases_are_subset_of_full_suite": true,
   "new_paid_api_calls_in_report_refresh": 0,
   "basic_figures_with_individual_explanations": 21,
-  "github_snapshot_verified": false
+  "github_snapshot_verified": true
 }

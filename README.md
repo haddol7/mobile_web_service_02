@@ -9,6 +9,7 @@ YOLOv5가 새 객체의 출현을 감지하면 Django 서버에 검출 사진을
 - 보고서: 루트의 `모바일웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx`
 - 평가 대응표: [요구사항과 증빙](docs/assessment-requirements.json)
 - 검증 기준일: 2026년 11월 10일
+- 원격 제출 검증: [현재 소스와 보고서 대조 기록](evidence/github-current-submission-20261110.json)
 
 ## 구성과 기본 기능
 

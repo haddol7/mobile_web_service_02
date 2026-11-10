@@ -54,7 +54,7 @@ def main(local_only=False):
     check("trusted_webcam_weights", camera["weights_sha256"] == "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee")
     check("notebook_full_tests", "Ran 250 tests" in (ROOT/"evidence/notebook-20261110/03_노트북_검증/startup-django-retest.log").read_text(encoding="utf-8"))
     if "2" not in unfinished and not local_only:
-        upload = record("evidence/github-final-report.json")
+        upload = record(requirements["report_state"].get("github_verification", "evidence/github-final-report.json"))
         check("github_upload_verified", upload.get("latest_source_and_report_verified") and upload.get("remote_head_matches_commit"))
         check("github_report_hash_current", upload.get("report_sha256") == digest(REPORT))
         committed_report = subprocess.check_output(["git", "show", upload["report_commit"] + ":" + REPORT.name], cwd=ROOT)

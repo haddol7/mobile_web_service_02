@@ -1,8 +1,8 @@
 # 공통평가 02 검증 현황
 
-2026년 11월 10일 기준. 평가 항목별 상태와 증빙은 docs/assessment-requirements.json에 있다. 이번 본인 촬영 보완본의 문서 검사는 evidence/private/report-expansion-20261110/local-report-review.json, 페이지 검수는 evidence/private/rag-improvement-20261110/final-review.json에 기록한다. 기존 공개 report-review 및 GitHub 검증 기록은 이전 제출 스냅샷이다.
+2026년 11월 10일 기준. 평가 항목과 제출 준비 상태는 docs/assessment-requirements.json에 있다. 최신 보고서 검사는 evidence/report-review.json, 56페이지 배치 검수는 evidence/report-layout-review.json, 실제 원격 파일 대조는 evidence/github-current-submission-20261110.json에 기록한다.
 
-기본 문항의 주소창 캡처와 공개 접근 및 하루 사용량 정책을 11월 10일 보완했다. 이후 본인 웹캠의 자동 등록, 운영 사진의 Android 네이티브 조회, 얼굴 후보 비교, 확인 상태 및 RAG 검색과 실제 생성 답변을 추가 검증했다. 사용자 요청으로 6번 GitHub 동기화는 제외했으므로 최신 소스와 보고서는 아직 제출 준비 완료로 판정하지 않는다. 추적 성능과 통과 사건의 일반 정답 평가는 기능 확인과 구분하며 추가 권고 사항으로 남긴다.
+기본 문항의 주소창 캡처와 공개 접근 및 하루 사용량 정책을 11월 10일 보완했다. 이후 본인 웹캠의 자동 등록, 운영 사진의 Android 네이티브 조회, 얼굴 후보 비교, 확인 상태 및 RAG 검색과 실제 생성 답변을 추가 검증했다. 최신 소스와 보고서의 GitHub 업로드 및 실제 원격 Word 파일 대조를 완료했다. 추적 성능과 통과 사건의 일반 정답 평가는 기능 확인과 구분하며 추가 권고 사항으로 남긴다.
 
 보고서는 공통평가 02 원본 기본 항목 1번부터 9번에 맞춰 사진별 설명을 보완했다. 기본 증빙 21장마다 실행 환경, 화면에서 확인할 값, 결과의 의미와 해당 항목을 개별 설명한다. 최종 소스의 VS Code 화면 4장을 다시 캡처하고 실제 전송 로그, Android 검사 및 웹캠 실행 기록 화면 3장을 더했다. 기존 실행 기록을 다시 연 사진은 새 실행 시험과 구분한다. 로컬 네 입력 시험, 별도 30프레임 영상, 실제 웹캠과 운영 전송의 결과도 나누어 연결했다. 대응표는 docs/basic-evidence-guide.json과 evidence/basic-verification-20261110/report-explanation.json에 있다.
 
@@ -47,6 +47,6 @@ Edge 인물 추적과 관측 기록 전송, Server 인물 이력과 근거 기�
 
 ## 제출
 
-필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json과 evidence/github-final-report.json은 이전에 검증한 커밋의 기록이다. 이번 본인 웹캠 보완본은 사용자 제외 범위인 6번에 따라 커밋 및 푸시하지 않았다. 최신 로컬 보고서를 이전 원격 보고서와 동일한 것으로 설명하지 않는다.
+필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json과 evidence/github-final-report.json은 이전에 검증한 커밋의 기록이다. 현재 웹캠 및 RAG 보완본은 3e5bc6c 커밋에서 원격 보고서를 내려받아 지문을 대조했다. 현재 제출 검증은 evidence/github-current-submission-20261110.json에 별도로 보관한다.
 
 RAG 회귀 보완에서는 날짜 전체 대조, 부정 조건 안내와 색인 실패 시 설명 조건 유지를 적용했다. 격리 DB 및 모의 제공자의 8개 사례, 실제 운영 API의 4개 조회가 통과했다. 추가 유료 호출은 0회다. 보고서 B33부터 B36과 evidence/history/rag-guard-improvement-20261110.json, rag-guard-cloud-20261110.json에 근거를 보관한다. 기존 독립 검토의 재현 결과는 보존하고 해결 대조는 evidence/private/independent-review-20261110/rag-resolution.json에 기록한다.

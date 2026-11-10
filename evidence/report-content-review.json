@@ -61,10 +61,8 @@
   "report_sha256": "377b628c60d364679b6733653faf454128b40233db0779e9439487002088e3b0",
   "format_and_integrity_pass": true,
   "reviewed_utc": "2026-11-10T12:19:10.683059+00:00",
-  "remaining_work": [
-    "최신 소스와 보고서 GitHub 반영 및 원격 대조"
-  ],
-  "submission_ready": false,
+  "remaining_work": [],
+  "submission_ready": true,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -119,5 +117,7 @@
       "B36"
     ],
     "general_accuracy_not_claimed": true
-  }
+  },
+  "github_verification": "evidence/github-current-submission-20261110.json",
+  "verified_report_commit": "3e5bc6c1a548f4eee245c5ad7dace0c956f7af9a"
 }

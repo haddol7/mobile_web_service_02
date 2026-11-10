@@ -27,10 +27,11 @@
       "evidence": [
         "evidence/screenshots/github-folder-structure.jpg",
         "evidence/github-upload.json",
-        "docs/basic-evidence-guide.json"
+        "docs/basic-evidence-guide.json",
+        "evidence/github-current-submission-20261110.json"
       ],
       "report_evidence": "B01\n별도 저장소\n소스와 보고서",
-      "verification_scope": "Existing submitted source/report snapshot; this local report revision is not yet committed or pushed."
+      "verification_scope": "Current application sources and report verified at 3e5bc6c1a548f4eee245c5ad7dace0c956f7af9a"
     },
     {
       "id": "3",
@@ -210,15 +211,15 @@
     "verification": "evidence/ui-audit/self-guards-deployment-20261110.json"
   },
   "report_state": {
-    "submission_ready": false,
-    "label": "제출용 소스와 보고서 원격 대조 준비",
+    "submission_ready": true,
+    "label": "제출용 소스와 보고서 원격 대조 완료",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
-    "remaining_work": [
-      "최신 소스와 보고서 GitHub 반영 및 원격 대조"
-    ],
-    "current_revision_github_synced": false,
-    "current_revision_scope": "Latest source, evidence and report publication requested by user on 2026-11-10"
+    "remaining_work": [],
+    "current_revision_github_synced": true,
+    "current_revision_scope": "Source, evidence and report submitted and verified on 2026-11-10",
+    "github_verification": "evidence/github-current-submission-20261110.json",
+    "verified_report_commit": "3e5bc6c1a548f4eee245c5ad7dace0c956f7af9a"
   },
   "local_verification": {
     "runtime": "evidence/environment/wsl-runtime.json",
