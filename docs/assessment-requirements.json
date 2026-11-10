@@ -31,7 +31,7 @@
         "evidence/github-current-submission-20261110.json"
       ],
       "report_evidence": "B01\n별도 저장소\n소스와 보고서",
-      "verification_scope": "Current application sources and report verified at 8e6205585bcab8b6705feeab0b5107999f9045e2"
+      "verification_scope": "Current application sources and report verified at efd052090dc86d6cdfad32ee876834605f38f810"
     },
     {
       "id": "3",
@@ -213,17 +213,15 @@
     "verification": "evidence/ui-audit/self-guards-deployment-20261110.json"
   },
   "report_state": {
-    "submission_ready": false,
-    "label": "최종 배포 답변 및 쪽수 안내 반영, 원격 대조 준비",
+    "submission_ready": true,
+    "label": "제출용 소스와 보고서 원격 대조 완료",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
-    "remaining_work": [
-      "최신 보고서 GitHub 반영 및 원격 파일 대조"
-    ],
-    "current_revision_github_synced": false,
+    "remaining_work": [],
+    "current_revision_github_synced": true,
     "current_revision_scope": "Source, evidence and report submitted and verified on 2026-11-10",
     "github_verification": "evidence/github-current-submission-20261110.json",
-    "verified_report_commit": "8e6205585bcab8b6705feeab0b5107999f9045e2",
+    "verified_report_commit": "efd052090dc86d6cdfad32ee876834605f38f810",
     "additional_function_scope_note": "Android 이력 및 채팅 UI 구현과 서버 처리 범위를 B10과 B16에 명시했다. 최대 두 항목의 채점상 산정 해석을 확정한 것은 아니다."
   },
   "local_verification": {

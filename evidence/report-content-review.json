@@ -61,10 +61,8 @@
   "report_sha256": "904de8c3efa643b3f15acc9588e97dbaf220e5cd47e5715bbef29c14f066db4b",
   "format_and_integrity_pass": true,
   "reviewed_utc": "2026-11-10T13:55:48.177785+00:00",
-  "remaining_work": [
-    "최신 보고서 GitHub 반영 및 원격 파일 대조"
-  ],
-  "submission_ready": false,
+  "remaining_work": [],
+  "submission_ready": true,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -173,5 +171,6 @@
     "page_guide_rows": 11,
     "page_map_bound_to_actual_render": true,
     "general_accuracy_not_claimed": true
-  }
+  },
+  "verified_report_commit": "efd052090dc86d6cdfad32ee876834605f38f810"
 }
