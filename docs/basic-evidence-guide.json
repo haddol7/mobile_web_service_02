@@ -31,7 +31,7 @@
       "assessment_ids": [
         "4"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+      "path": "evidence/screenshots/final-review-20261110/changedetection-state-vscode.png",
       "caption": "그림 B03 1 기본 항목 4의 객체 종류 상태 비교와 전송 조건",
       "explanation": [
         "사진의 current는 현재 프레임에서 각 객체 종류가 검출됐는지를 0과 1로 표현한 배열이다. previous는 같은 입력 스트림의 직전 상태다. appeared에는 현재 값이 1이고 이전 값이 0인 종류만 들어간다. appeared가 비어 있으면 등록 없이 반환하고 새 종류가 있으면 send를 호출한다.",
@@ -43,7 +43,7 @@
       "assessment_ids": [
         "4"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+      "path": "evidence/screenshots/final-review-20261110/changedetection-upload-vscode.png",
       "caption": "그림 B03 2 기본 항목 4의 JPEG 저장과 인증된 Post 요청",
       "explanation": [
         "사진의 send 함수는 검출 박스가 그려진 프레임을 날짜별 detected 폴더에 저장한다. cv2.resize가 전송 사진을 320 x 240으로 맞추고 cv2.imwrite가 JPEG를 만든다. 새로 등장한 클래스 이름으로 title과 text를 구성하며 text에는 검출 시각도 기록한다.",
@@ -56,7 +56,7 @@
       "assessment_ids": [
         "4"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+      "path": "evidence/screenshots/final-review-20261110/detect-classes-vscode.png",
       "caption": "그림 B03 3 기본 항목 4의 검출 클래스 배열과 박스 표시 연결",
       "explanation": [
         "사진은 최종 detect.py의 추론 결과 처리 부분이다. 프레임마다 detected_current를 모두 0으로 만들고 검출된 cls에 해당하는 칸을 1로 설정한다. 같은 종류가 여러 개 검출돼도 해당 칸은 1이므로 기본 전송에서는 종류의 출현 유무를 비교한다.",
@@ -68,7 +68,7 @@
       "assessment_ids": [
         "4"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+      "path": "evidence/screenshots/final-review-20261110/detect-upload-vscode.png",
       "caption": "그림 B03 4 기본 항목 4의 최종 추론 루프와 등록 결과 처리",
       "explanation": [
         "사진의 240번대 코드에서 changes.add에 클래스 이름, detected_current, 저장 위치와 표시 프레임 im0를 넘긴다. 등록에 성공한 반환값이 있을 때만 Django post와 게시글 번호를 로그로 출력한다. 실패 시에는 등록 성공을 출력하지 않고 로컬 파일 보존을 안내한다.",
@@ -118,7 +118,7 @@
         "4",
         "6"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+      "path": "evidence/screenshots/final-review-20261110/local-upload-log.png",
       "caption": "그림 B05 2 실제 WSL 검출과 게시글 등록의 저장 로그",
       "explanation": [
         "11월 5일 WSL에서 실행한 server-registration.txt를 VS Code로 열어 캡처한 보조 증빙이다. 로그에는 네 입력의 추론 결과와 Django post 1 registered 및 Django post 2 registered가 있다. 첫 bus 입력과 마지막 재등장 입력에서 등록되고, 중간의 같은 bus와 빈 화면에서는 추가 등록이 출력되지 않았다. 마지막 Exit code: 0은 정상 종료를 뜻한다.",
@@ -178,7 +178,7 @@
       "assessment_ids": [
         "7"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+      "path": "evidence/screenshots/final-review-20261110/android-sync-record.png",
       "caption": "그림 B07 5 실제 Android 기기의 서버와 사진 대조 결과",
       "explanation": [
         "이 사진은 11월 10일 실제 기기 검사가 저장한 android-native-sync.json을 VS Code로 열어 확인한 것이다. server는 10.0.2.2:36073, post_id는 2이고 image_sha256은 B05의 로컬 전송 JPEG와 같다. list_visible과 detail_visible이 모두 true라서 목록과 상세를 확인한 상태를 기록했다.",
@@ -202,11 +202,11 @@
       "assessment_ids": [
         "3"
       ],
-      "path": "evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
+      "path": "evidence/screenshots/final-review-20261110/webcam-record.png",
       "caption": "그림 B08 2 실제 카메라와 원본 검출기 실행의 저장 기록",
       "explanation": [
         "웹캠_검증.json을 VS Code로 연 보조 증빙이다. camera와 device는 실제 카메라 및 /dev/video0, source는 0이다. dimensions는 640과 480이며 launcher에 --baseline과 --source 0이 기록돼 있다. baseline_sha256과 weights_sha256은 원본 코드와 공식 가중치를 대조한 값이다.",
-        "selected_frame_index와 person_confidence는 앞 사진의 선택 프레임과 검출값에 대응하며 exit_code 0은 정상 종료를 뜻한다. 사진과 실행 기록을 함께 제시해 정지 이미지의 결과뿐 아니라 실제 카메라 입력으로 원본 검출기가 동작했음을 확인했다. 해당 기록은 11월 10일 노트북 실행 결과이고 이번 문서 작업에서는 그 원본 파일을 열어 캡처했다."
+        "selected_frame_index와 person_confidence는 앞 사진의 선택 프레임과 검출값에 대응하며 exit_code 0은 정상 종료를 뜻한다. 사진과 실행 기록으로 실제 카메라 입력의 원본 검출기 동작을 확인했다. 11월 10일 노트북 실행 결과의 원본 파일을 열어 캡처한 화면이다."
       ]
     },
     {

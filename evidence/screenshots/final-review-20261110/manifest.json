@@ -1,0 +1,69 @@
+{
+  "recorded_utc": "2026-11-10T13:27:25.649269+00:00",
+  "capture_method": "Native Microsoft VS Code window captured through @oai/sky; window zoom enlarged for readability",
+  "user_preview_approved": true,
+  "screenshots": [
+    {
+      "path": "evidence/screenshots/final-review-20261110/changedetection-state-vscode.png",
+      "sha256": "2101fcbaa969311de240cd6a6b836cc6e7f355fbd6388c630e37df0e85742e90",
+      "visible_source": "YOLOv5/changedetection.py",
+      "source_sha256": "f19b6e20b963e84e03e833fbdb6dc0388715aae70ab3dcb13497d5d77df0699c",
+      "source_content_unchanged": true,
+      "kind": "actual source in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/changedetection-upload-vscode.png",
+      "sha256": "3dc4c2aa45e9babcfd5ff0c8dd634f09e442ac621d32ff9cf6b677f5c02256e5",
+      "visible_source": "YOLOv5/changedetection.py",
+      "source_sha256": "f19b6e20b963e84e03e833fbdb6dc0388715aae70ab3dcb13497d5d77df0699c",
+      "source_content_unchanged": true,
+      "kind": "actual source in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/detect-classes-vscode.png",
+      "sha256": "0d6441f4d2c9552be1da374c664b44d48da115bf1e2f8679709cf636c0758c76",
+      "visible_source": "YOLOv5/detect.py",
+      "source_sha256": "1d8a09467e01564915e80051dd9046e4e0a0015cbc0ad730e6915630bfb67136",
+      "source_content_unchanged": true,
+      "kind": "actual source in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/detect-upload-vscode.png",
+      "sha256": "4eaa98ebab41877d696e93309abb11b61bbc471bcc144df210639f00bad5c726",
+      "visible_source": "YOLOv5/detect.py",
+      "source_sha256": "1d8a09467e01564915e80051dd9046e4e0a0015cbc0ad730e6915630bfb67136",
+      "source_content_unchanged": true,
+      "kind": "actual source in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/local-upload-log.png",
+      "sha256": "b3550ef7afc4eb31f25f21349e7e92cf067d194bb490ae4a39d02f70f3178094",
+      "visible_source": "evidence/yolo-pipeline/server-registration.txt",
+      "source_sha256": "c995dd541ff626efa78a44b41e06e1b40949a845837ceace143b3eedea41420d",
+      "source_content_unchanged": true,
+      "kind": "previous real execution record reopened in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/android-sync-record.png",
+      "sha256": "6b9858288c548be0724fd591fcf5ee83ae1b10f2f7de96922676b8f26674cfa2",
+      "visible_source": "evidence/basic-verification-20261110/android-native-sync.json",
+      "source_sha256": "c86e3607dff44c163ea1212161a76c45958cee7e746fd5cadd1e530b0108cf55",
+      "source_content_unchanged": true,
+      "kind": "previous real execution record reopened in VS Code"
+    },
+    {
+      "path": "evidence/screenshots/final-review-20261110/webcam-record.png",
+      "sha256": "d213a9ea5d80d17f994ad7b0f75d40648dd7b1b647a37fcd3cea6a5792914466",
+      "visible_source": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+      "source_sha256": "95f997f23ed69f9d1d5f197420c6bf8a6c95d9d2d3ffe85988a0523ba44f2467",
+      "source_content_unchanged": true,
+      "kind": "previous real execution record reopened in VS Code"
+    }
+  ],
+  "count": 7,
+  "original_files_and_previous_screenshots_preserved": true,
+  "screenshot_pixels_reencoded_or_generated": false,
+  "paid_api_calls": 0,
+  "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
+  "report_crop_note": "Word crops only lower unused viewport or fields outside the discussed excerpt; original screenshot bytes remain embedded unchanged."
+}

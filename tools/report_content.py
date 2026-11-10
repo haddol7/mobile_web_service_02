@@ -133,9 +133,10 @@ def build_appendix():
                           data_table=data_table, record=record, server_tests=server_tests)
 
     section(doc, "B10 운영 관측 화면과 추가 기능 구성")
-    text(doc, "추가 기능은 두 항목으로 구성했다. Edge Client는 인물 추적과 관측 기록을 전송하고, Server는 인물 이력을 관리하고 근거 기록 질문에 답한다. Android와 웹은 같은 서버 API로 이 결과를 조회한다.")
+    text(doc, "추가 기능의 처리 위치를 Edge Client의 인물 추적 및 관측 전송과 Server의 인물 이력 및 근거 기록 질의로 나눴다. 10-1은 몸 추적, 얼굴 후보 비교와 전송을, 10-2는 저장된 인물 이력 조회, 확인 상태 관리와 RAG 답변을 평가 대상으로 제시한다.")
+    text(doc, "Android에는 기본 검출 사진 조회 외에도 인물 이력과 채팅을 위한 화면 및 API 통신을 구현했다. 이 화면은 10-2의 서버 결과와 근거 사진을 확인하는 접속 경로이며, 얼굴 특징 비교나 임베딩 검색 및 답변 생성을 Android에서 별도로 수행하지 않는다. 서버의 처리 근거는 B13부터 B15, Android의 표시와 통신 구현은 B16에서 구분해 설명한다.", 9)
     pair(doc, ["evidence/private/detection-boxes/production-list.jpg", "evidence/private/cctv-walking/people/production-people.jpg"],
-         ["그림 B10 1 운영 관측 기록 500장과 분석 실행 40개", "그림 B10 2 등록된 출입 인물의 얼굴과 발견 이력"], (2.35, 2.35))
+         ["그림 B10 1 운영 관측 기록 500장과 분석 실행 40개", "그림 B10 2 등록된 출입 인물의 얼굴과 발견 이력"], (2.1, 2.1))
 
     section(doc, "B11 인물 등록과 영상별 발견 이력")
     text(doc, "ChokePoint 공식 등록 사진 58장으로 29명을 등록했다. 인물마다 중립 표정과 미소 사진 두 장을 사용하고 실제 이름 대신 데이터셋 ID에 맞춘 별칭을 부여했다. 기존 등록 인물을 포함한 비교 갤러리는 34명이다.")
@@ -207,6 +208,8 @@ def build_appendix():
                "evidence/private/ui-audit/20261108T221731926915/captures/ui-audit/web-history-detail.png"],
          ["그림 B16 1 검증 서버의 Android 네이티브 관측 목록", "그림 B16 2 작은 Android WebView의 검출 박스 상세"], (2.5, 2.3))
     text(doc, "네이티브 및 WebView는 같은 Django API를 사용한다. 두 화면 크기의 메뉴와 얼굴 확인 흐름을 검사했고 박스 표시 추가 후 작은 화면의 WebView 흐름을 다시 확인했다.", 9)
+    text(doc, "Android의 MainActivity와 ChatWorkspace는 인물 및 날짜 선택, 대화 전송과 저장된 응답 및 근거 사진 표시를 담당하고 PhotoRepository가 서버 API를 호출한다. 인물 이력의 집계, 확인 저장, 임베딩 검색과 LLM 답변은 Django에서 처리한다. 기본 Post 사진 조회는 B07과 B24 및 B25에서, 추가 이력 화면은 이 절에서 구분해 제시한다.", 9)
+    text(doc, "로그인 없는 공개 조회와 AI 질문은 운영 웹 주소에서 제공한다. Android의 인물 이력과 채팅 메뉴는 운영자 로그인 후 사용하며 웹의 공개 접속 범위와 구분한다.", 9)
 
     section(doc, "B17 운영 사진의 검출 박스")
     text(doc, "사람 몸은 파란색과 추적 번호, 얼굴 후보는 주황색과 인물 이름 및 유사도, 확인된 얼굴은 초록색으로 표시한다. 저장된 원본 좌표를 게시 사진 크기에 맞춰 변환하며 얼굴과 이름표가 겹치는 면적이 작은 위치를 선택한다.")
@@ -241,21 +244,21 @@ def build_appendix():
         paragraph.paragraph_format.space_after = Pt(2)
 
     section(doc, "B19 본인 웹캠의 인물 확인 결과")
-    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-confirmed-profile.png", 3.0,
-           "그림 B19 등록 얼굴과 발견 얼굴의 비교 및 운영자 확인 상태")
+    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-confirmed-profile.png", 2.9,
+           "그림 B19 개선 전 화면의 얼굴 대조와 확인 상태")
     text(doc, "웹캠을 연결해 YOLO로 실시간 사람 검출을 확인했다. 등록 얼굴과 새로 촬영한 얼굴을 비교한 화면이다. 후드 착용과 재진입 장면 모두 하대진 후보로 연결됐고 표시 유사도는 각각 0.87과 0.88이다.")
-    text(doc, "이 캡처 시점의 상단에는 운영자 확인 1개와 검토할 후보 3개가 구분돼 있다. 같은 인물로 확인 버튼으로 저장하면 해당 추적 번호에 연결된 사진들의 확인 상태가 함께 반영된다. 이후의 최종 확인 상태는 B30에서 확인할 수 있다.")
+    text(doc, "이 화면은 운영자 확인 1개와 후보 3개를 구분한 개선 전 캡처다. 같은 인물로 확인을 저장하면 해당 추적 번호의 사진에 확인 상태가 반영된다. 상단의 공개 영상 시연 표시는 B30에서 실시간 카메라로 바로잡았으며 최신 확인 상태도 B30에 제시했다. 촬영 자료와 후보 비교 결과는 같은 실제 웹캠 기록이다.")
     text(doc, "추가 기능 10-2의 인물 확인 저장과 얼굴 대조 증빙이다.\n확인 위치  https://daejinha.pythonanywhere.com/people/self-daejinha/", 9)
 
     section(doc, "B20 본인 촬영별 발견 이력")
-    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-session-history.png", 4.7,
-           "그림 B20 본인 웹캠의 세 촬영 실행과 연결된 발견 이력")
+    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-session-history.png", 4.6,
+           "그림 B20 개선 전 화면의 세 촬영 실행과 발견 이력")
     text(doc, "2026년 11월 10일 분석일 아래에 화면 이탈과 재진입, 모자 착용, 평소 모습의 세 촬영 실행이 구분돼 있다. 각 항목에서 장면 확인을 누르면 해당 실행에 연결된 사진과 추적 기록을 조회할 수 있다.")
     data_table(doc, ["촬영 실행", "조회 사진", "화면의 상태"], [
         ["본인 웹캠 화면 이탈과 재진입 확인", "3장", "얼굴 후보"],
         ["본인 모자 착용 웹캠 인식 확인", "2장", "얼굴 후보"],
         ["본인 평소 모습 웹캠 인식 확인", "2장", "확인됨"]], [3.1, .8, 2.0])
-    text(doc, "이 캡처는 평소 모습의 추적만 먼저 확인한 시점이다. 나머지 두 실행의 얼굴 후보도 이후 운영자가 확인했고 최신 상태는 B30에 제시했다. 사진 수는 선택한 인물과 연결돼 조회되는 기록 수다. 세 실행은 같은 사람을 별도로 촬영한 자료이며 실제 방문 횟수와 구분한다.")
+    text(doc, "평소 모습만 먼저 확인한 시점의 화면이며 나머지 두 실행도 이후 운영자가 확인했다. 값이 없는 영상 초 항목은 B30의 최종 실시간 카메라 화면에서 숨겼다. 사진 수는 선택한 인물의 조회 기록 수이며 세 실행은 같은 사람의 별도 촬영으로 실제 방문 횟수와 구분한다.")
     text(doc, "추가 기능 10-2의 촬영별 이력 조회와 확인 상태 반영을 보여주는 보완 증빙이다. 원본 증빙은 evidence/screenshots/self-confirmation-20261110에 보관했다.", 9)
     from report_self_sections import append_self_sections
     append_self_sections(doc, section=section, text=text, figure=figure, pair=pair, data_table=data_table, server_tests=server_tests)

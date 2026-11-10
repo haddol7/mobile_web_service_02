@@ -1,5 +1,5 @@
 {
-  "report_sha256": "377b628c60d364679b6733653faf454128b40233db0779e9439487002088e3b0",
+  "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
   "pages": 56,
   "embedded_figures": 53,
   "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
@@ -8,46 +8,41 @@
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_covered_by_visual_review": true,
-  "review_method": "Changed/new rendered PNGs inspected at original detail; byte-identical pages inherit prior visual review.",
+  "review_method": "All 56 predecessor pages directly inspected by independent reviewers; all 13 changed final pages directly inspected in follow-up; 43 final PNGs byte-identical to the reviewed predecessor. Final B10 placement inspected again after caption/footer spacing correction.",
   "current_revision_pages_inspected": [
-    1,
-    2,
-    4,
-    14,
-    38,
-    47,
-    51,
-    52,
-    53,
-    54,
-    55,
-    56
-  ],
-  "unchanged_pages_pixel_identical_to_prior_review": [
-    3,
     5,
     6,
     7,
     8,
     9,
+    13,
+    19,
+    22,
+    27,
+    28,
+    36,
+    39,
+    40
+  ],
+  "unchanged_pages_pixel_identical_to_prior_review": [
+    1,
+    2,
+    3,
+    4,
     10,
     11,
     12,
-    13,
+    14,
     15,
     16,
     17,
     18,
-    19,
     20,
     21,
-    22,
     23,
     24,
     25,
     26,
-    27,
-    28,
     29,
     30,
     31,
@@ -55,19 +50,24 @@
     33,
     34,
     35,
-    36,
     37,
-    39,
-    40,
+    38,
     41,
     42,
     43,
     44,
     45,
     46,
+    47,
     48,
     49,
-    50
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56
   ],
   "page_hashes": [
     {
@@ -88,23 +88,23 @@
     },
     {
       "page": 5,
-      "sha256": "1286d474c4e2e929dd2eb82b687fb75d6100105cda0769adb5cefd5c3ad5b5a4"
+      "sha256": "b80edc15852ba7238981ddb91b3bdf18dce9d8ee4cc1b122a428d56668816f59"
     },
     {
       "page": 6,
-      "sha256": "d24171281215c6d14b377a52923b680c8d0af32ecb3f31cef2ca14eae4c6d93e"
+      "sha256": "52abc6c10fc17a766bfad6a0b764b387d9fde25815d9a6fc6493870f8e318aa0"
     },
     {
       "page": 7,
-      "sha256": "da10f09d9ffd9c5a21765bd10e37700316e5b6dd5c66dba93436471af62fa62e"
+      "sha256": "10546cddd54250e97005eb07d6ed8ff18a16f1598d1ef98bfffadf46b5da5a1a"
     },
     {
       "page": 8,
-      "sha256": "4b3f4010222f335501f94ed88969b9542995205787ab1feadd3adc287384a753"
+      "sha256": "672dace53874b7999870cea31be31951cbb56669470772870caf909ccf4db7ec"
     },
     {
       "page": 9,
-      "sha256": "7d605d6bcb6dd97b0caae883553c72cd0de6e7ddd72f36b48f6df4f123c47f79"
+      "sha256": "4266c091ed387eddacb272797d99826e1bbc453f7851d6f9782b6562cf4ae5e5"
     },
     {
       "page": 10,
@@ -120,7 +120,7 @@
     },
     {
       "page": 13,
-      "sha256": "a4cddb0f857b3c8190dc6d522411497d393a4e85844d8e9294c1818b7e17dc3c"
+      "sha256": "f389d8b8903874b95c4bfb26f54a8ef4cd4285987d67a508613e33e1b9c06e98"
     },
     {
       "page": 14,
@@ -144,7 +144,7 @@
     },
     {
       "page": 19,
-      "sha256": "902df59f3e975af358c3287785c848117e27867bb359a7eb8fc41dc804cc610f"
+      "sha256": "d7c3822253b9c83b7326f98db443fea10272a19b7659b5090585582af5103f57"
     },
     {
       "page": 20,
@@ -156,7 +156,7 @@
     },
     {
       "page": 22,
-      "sha256": "a4ba7c57fc4a6cc4f4bbb4b3d5f989ade2252cf4cae5fd05885ecc3e8596894a"
+      "sha256": "f48d5c4174bb41837fcdd82d00e8b551cc9fb21ead5ad745564c0931eea192dd"
     },
     {
       "page": 23,
@@ -176,11 +176,11 @@
     },
     {
       "page": 27,
-      "sha256": "9b8cf5e8fc283706051c14c2865503db0788dbe3949951445846eb7056d8729a"
+      "sha256": "ab9f36a3f966ceea0ed49800edff54f5b862e58b089a84ac3c6c4f990cec21f1"
     },
     {
       "page": 28,
-      "sha256": "8307f13995055b2473b1f4942aa186286bc0416f59da05b37b2f1209e631fbc8"
+      "sha256": "68c98f16f8e9308c2a12bddab81ff06621c9746a88d1cdf816831614aa5dbe57"
     },
     {
       "page": 29,
@@ -212,7 +212,7 @@
     },
     {
       "page": 36,
-      "sha256": "adf1977152ec0b56319c2d5df47b1033dea7a923aac3b9e76e328011d36299b6"
+      "sha256": "119c3a89399d7349733723c0c7c314c7a16fd728e726a3ec80aa08e23eec8664"
     },
     {
       "page": 37,
@@ -224,11 +224,11 @@
     },
     {
       "page": 39,
-      "sha256": "dacb9694add0c380ed4c119cdc03536401fd885f37bbe6680d913096f755983e"
+      "sha256": "50f197ce99293f1121b8779c10e7af6eab0ba9540e32f71c6b765aa9d9fa43dc"
     },
     {
       "page": 40,
-      "sha256": "181b5892bba1308721b5cfe777fc8df3905e43cc079f021284f0401b0e247b81"
+      "sha256": "61cf5e61d898da3959ca493e20da9e21f26e401de18a27914f0d2c68dc1dd82e"
     },
     {
       "page": 41,
@@ -295,11 +295,12 @@
       "sha256": "835194e47593d8838bbf5f0f682ec00483d81e5e1d81429c03516a88ff79df8e"
     }
   ],
-  "verified_utc": "2026-11-10T12:19:10.683059+00:00",
+  "verified_utc": "2026-11-10T13:27:25.649269+00:00",
   "new_paid_api_calls": 0,
   "remaining_assessment_ids": [],
-  "submission_ready": true,
-  "remaining_work": [],
-  "github_verification": "evidence/github-current-submission-20261110.json",
-  "verified_report_commit": "3e5bc6c1a548f4eee245c5ad7dace0c956f7af9a"
+  "submission_ready": false,
+  "remaining_work": [
+    "Current report GitHub upload and byte verification"
+  ],
+  "github_verification": "evidence/github-current-submission-20261110.json"
 }

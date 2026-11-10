@@ -50,3 +50,7 @@ Edge 인물 추적과 관측 기록 전송, Server 인물 이력과 근거 기�
 필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json과 evidence/github-final-report.json은 이전에 검증한 커밋의 기록이다. 현재 웹캠 및 RAG 보완본은 3e5bc6c 커밋에서 원격 보고서를 내려받아 지문을 대조했다. 현재 제출 검증은 evidence/github-current-submission-20261110.json에 별도로 보관한다.
 
 RAG 회귀 보완에서는 날짜 전체 대조, 부정 조건 안내와 색인 실패 시 설명 조건 유지를 적용했다. 격리 DB 및 모의 제공자의 8개 사례, 실제 운영 API의 4개 조회가 통과했다. 추가 유료 호출은 0회다. 보고서 B33부터 B36과 evidence/history/rag-guard-improvement-20261110.json, rag-guard-cloud-20261110.json에 근거를 보관한다. 기존 독립 검토의 재현 결과는 보존하고 해결 대조는 evidence/private/independent-review-20261110/rag-resolution.json에 기록한다.
+
+## 제출 직전 보고서 검토 보완
+
+실제 VS Code의 글자를 확대한 캡처 7장을 사용자가 미리 확인하고 승인한 뒤 보고서에 반영했다. 기존 코드와 실행 원본 파일은 유지했다. B02 명령의 입력 경로를 data/images/bus.jpg로 수정하고 WSL에서 원본 YOLO로 사람 4명과 버스 1대를 검출해 정상 종료했다. B19와 B20은 개선 전 화면임을 명시하고 B30의 최종 표시와 연결했다. B10과 B16은 Android의 추가 UI 및 API 구현, 서버 처리와 공개 웹 접속의 범위를 구분한다. 최대 두 기능의 채점상 산정 해석을 별도로 확정한 것은 아니다. 보고서는 56쪽이며 변경된 13쪽을 직접 재검토하고 나머지 43쪽은 이전 전쪽 검토 이미지와 바이트가 같음을 확인했다. 이번 변경은 보고서와 작성 도구에 한정하며 새 유료 API 요청이나 운영 서버 변경은 없다.

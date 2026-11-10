@@ -6,6 +6,7 @@ BASIC_EVIDENCE = []
 def append_basic_sections(doc, *, text, section, figure, data_table, record, server_tests):
     BASIC_EVIDENCE.clear()
     current = "evidence/screenshots/basic-explained-20261110/"
+    enlarged = "evidence/screenshots/final-review-20261110/"
     browser = "evidence/screenshots/basic-20261110/"
 
     def proof(label, items, path, width, caption, paragraphs, crop_bottom=0):
@@ -44,31 +45,31 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
         "그림 B02 기본 항목 3의 원본 모델 정지 이미지 검출 결과", [
         "입력은 공식 예제 bus.jpg다. 사진의 빨간 박스와 person 라벨은 검출된 사람 네 명을, 초록 박스와 bus 라벨은 버스 한 대를 나타낸다. 라벨 옆 숫자는 해당 객체에 대한 모델의 신뢰 점수다. 여러 사진에 대한 전체 정확도와는 다른 값이다.",
         "원본 실행에서 객체가 검출되고 박스 및 클래스 이름이 표시되는 것을 확인했다. 원본 파일 확인과 정지 이미지 결과는 설치 및 모델 로딩의 근거이며, 강의 6쪽의 실제 카메라 0번 실행은 B08의 웹캠 사진과 실행 기록으로 함께 제시한다. 서버 전송용 변경 코드는 원본 보관본과 별도의 YOLOv5/detect.py에 구현했다."])
-    text(doc, "원본 검출 명령  python tools/run_edge.py --baseline --source YOLOv5/data/images/bus.jpg --device cpu\n원본 출처와 해시  docs/upstream/provenance.json\n실제 실행 결과  evidence/yolo-pipeline/verification.json", 9)
+    text(doc, "원본 검출 명령  python tools/run_edge.py --baseline --source data/images/bus.jpg --device cpu\n원본 출처와 해시  docs/upstream/provenance.json\n실제 실행 결과  evidence/yolo-pipeline/verification.json", 9)
 
     section(doc, "B03 객체 출현 비교 코드")
     text(doc, "기본 항목 4에 대응하는 실제 VS Code 화면이다. changedetection.py의 초기화와 add 함수가 클래스별 현재 검출 상태를 이전 상태와 비교한다. 코드 화면은 11월 10일 최종 작업 소스에서 다시 캡처했다.")
-    proof("B03 1", ["4"], current + "changedetection-state-vscode.jpg", 6.1,
+    proof("B03 1", ["4"], enlarged + "changedetection-state-vscode.png", 6.1,
         "그림 B03 1 기본 항목 4의 객체 종류 상태 비교와 전송 조건", [
         "사진의 current는 현재 프레임에서 각 객체 종류가 검출됐는지를 0과 1로 표현한 배열이다. previous는 같은 입력 스트림의 직전 상태다. appeared에는 현재 값이 1이고 이전 값이 0인 종류만 들어간다. appeared가 비어 있으면 등록 없이 반환하고 새 종류가 있으면 send를 호출한다.",
         "따라서 사람이 계속 보이는 장면을 매 프레임 등록하지 않는다. 객체가 사라진 프레임에서 상태가 0으로 바뀐 뒤 다시 나타나면 새 등록 대상이 된다. 강의의 과거 0과 현재 1의 변화 조건을 구현한 부분이며, 개별 인물의 동일성을 판단하는 동작은 추가 인물 추적 기능에서 처리한다."])
     text(doc, "객체 출현 조건의 실제 등록 결과는 B05 2의 네 입력 실행 로그에서 확인한다.", 9)
 
     section(doc, "B03 검출 사진 저장과 HTTP 등록")
-    proof("B03 2", ["4"], current + "changedetection-upload-vscode.jpg", 6.1,
+    proof("B03 2", ["4"], enlarged + "changedetection-upload-vscode.png", 6.1,
         "그림 B03 2 기본 항목 4의 JPEG 저장과 인증된 Post 요청", [
         "사진의 send 함수는 검출 박스가 그려진 프레임을 날짜별 detected 폴더에 저장한다. cv2.resize가 전송 사진을 320 x 240으로 맞추고 cv2.imwrite가 JPEG를 만든다. 새로 등장한 클래스 이름으로 title과 text를 구성하며 text에는 검출 시각도 기록한다.",
         "저장한 JPEG는 image 필드, 제목과 검출 설명은 일반 폼 필드로 묶어 /api_root/Post/에 multipart POST 요청으로 전송한다. 인증 헤더는 실제 Django 서버의 DRF Token 방식에 맞췄다. 인증값은 비공개 환경변수에서 전달받으며 제목과 사진을 서버에 등록하는 기본 기능은 강의 8쪽부터 10쪽의 흐름을 따른다.",
         "응답 코드가 201이고 응답 JSON에 정수 id가 있어야 등록 성공으로 반환한다. 실패한 요청의 사진 파일은 로컬에 남는다. 이 화면은 성공 여부를 검사하는 구현 코드이며 실제 실행 결과는 B05의 등록 로그와 로컬 조회 사진으로 연결한다. 서버의 작성자와 생성 및 게시 날짜는 서버에서 기록한다."])
 
     section(doc, "B03 검출 결과 배열과 표시 이미지")
-    proof("B03 3", ["4"], current + "detect-classes-vscode.jpg", 6.1,
+    proof("B03 3", ["4"], enlarged + "detect-classes-vscode.png", 6.1,
         "그림 B03 3 기본 항목 4의 검출 클래스 배열과 박스 표시 연결", [
         "사진은 최종 detect.py의 추론 결과 처리 부분이다. 프레임마다 detected_current를 모두 0으로 만들고 검출된 cls에 해당하는 칸을 1로 설정한다. 같은 종류가 여러 개 검출돼도 해당 칸은 1이므로 기본 전송에서는 종류의 출현 유무를 비교한다.",
         "검출 좌표는 원본 프레임 크기로 변환하고 클래스 이름과 점수로 박스를 표시한다. 이 표시 이미지가 다음 그림의 changes.add에 전달된다. 클래스 상태를 계산하는 부분과 전송할 이미지가 만들어지는 위치를 함께 확인할 수 있어, 검출 결과와 서버 등록 코드가 분리된 채 남아 있지 않음을 보여준다."])
 
     section(doc, "B03 최종 추론 루프의 서버 전송 연결")
-    proof("B03 4", ["4"], current + "detect-upload-vscode.jpg", 6.1,
+    proof("B03 4", ["4"], enlarged + "detect-upload-vscode.png", 6.1,
         "그림 B03 4 기본 항목 4의 최종 추론 루프와 등록 결과 처리", [
         "사진의 240번대 코드에서 changes.add에 클래스 이름, detected_current, 저장 위치와 표시 프레임 im0를 넘긴다. 등록에 성공한 반환값이 있을 때만 Django post와 게시글 번호를 로그로 출력한다. 실패 시에는 등록 성공을 출력하지 않고 로컬 파일 보존을 안내한다.",
         "주변의 person_tracking과 person_history 분기는 추가 인물 분석과 관측 이력 전송을 위한 코드다. 기본 Post 등록은 changes.add 경로로 유지한다. B03 1의 출현 비교와 B03 2의 저장 및 요청이 실제 추론 루프에서 호출되므로 기본 항목 4의 수정 코드가 실행 경로에 연결돼 있음을 확인했다."])
@@ -93,10 +94,10 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
         "같은 bus 사진이 두 건 있는 이유는 최초 등장과 사라진 뒤 재등장을 별도로 등록했기 때문이다. 같은 장면이 계속되는 두 번째 입력에서는 추가 등록하지 않았다. 두 사진의 전송 JPEG와 서버 저장 및 HTTP 조회 파일의 SHA256이 일치했다. 화면에서 보이는 등록일은 11월 5일이고 이 목록의 재조회와 캡처는 11월 10일이다. 기본 Post 자료는 사진 보관함에서 확인하며 추가 관측 기록의 집계와 구분한다."])
 
     section(doc, "B05 실제 추론과 등록 실행 로그")
-    proof("B05 2", ["4", "6"], current + "local-upload-log.jpg", 6.0,
+    proof("B05 2", ["4", "6"], enlarged + "local-upload-log.png", 6.0,
         "그림 B05 2 실제 WSL 검출과 게시글 등록의 저장 로그", [
         "11월 5일 WSL에서 실행한 server-registration.txt를 VS Code로 열어 캡처한 보조 증빙이다. 로그에는 네 입력의 추론 결과와 Django post 1 registered 및 Django post 2 registered가 있다. 첫 bus 입력과 마지막 재등장 입력에서 등록되고, 중간의 같은 bus와 빈 화면에서는 추가 등록이 출력되지 않았다. 마지막 Exit code: 0은 정상 종료를 뜻한다.",
-        "이 실행은 공식 정지 이미지와 빈 프레임을 순서대로 입력한 시험이다. B08의 별도 30프레임 영상 시험과 실행을 구분한다. 원래 등록 때의 임시 서버 포트와 재조회 서버의 포트는 다르지만 게시글 1과 2의 자료와 JPEG를 보존해 대조했다. 이 사진은 기존 실제 실행 로그를 보여주며 B04의 JSON, B05 1의 웹 이미지와 같은 등록 결과를 연결한다."], crop_bottom=.43)
+        "이 실행은 공식 정지 이미지와 빈 프레임을 순서대로 입력한 시험이다. B08의 별도 30프레임 영상 시험과 실행을 구분한다. 원래 등록 때의 임시 서버 포트와 재조회 서버의 포트는 다르지만 게시글 1과 2의 자료와 JPEG를 보존해 대조했다. 이 사진은 기존 실제 실행 로그를 보여주며 B04의 JSON, B05 1의 웹 이미지와 같은 등록 결과를 연결한다."], crop_bottom=.20)
     data_table(doc, ["순서", "입력 장면", "이전 상태와 현재 상태", "등록"], [
         ["1", "사람과 버스 등장", "없음에서 검출됨으로 변화", "1번 게시글"],
         ["2", "같은 장면 유지", "검출됨 상태 유지", "추가 등록 없음"],
@@ -138,10 +139,10 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
         "이 결과로 모바일 브라우저에서 서버에 전송된 사진과 설명을 모두 열람할 수 있음을 확인했다. 사진의 등록 시각은 원래 전송 시험의 시각이고 이 화면의 재조회일은 11월 10일이다. 네이티브 앱 두 장과 모바일 웹 두 장은 각각 같은 서버 자료의 목록 및 상세에 대응한다."])
 
     section(doc, "B07 Android 기기 검사 기록")
-    proof("B07 5", ["7"], current + "android-sync-record.jpg", 6.0,
+    proof("B07 5", ["7"], enlarged + "android-sync-record.png", 6.0,
         "그림 B07 5 실제 Android 기기의 서버와 사진 대조 결과", [
         "이 사진은 11월 10일 실제 기기 검사가 저장한 android-native-sync.json을 VS Code로 열어 확인한 것이다. server는 10.0.2.2:36073, post_id는 2이고 image_sha256은 B05의 로컬 전송 JPEG와 같다. list_visible과 detail_visible이 모두 true라서 목록과 상세를 확인한 상태를 기록했다.",
-        "실제 검사 코드는 서버 목록에서 해당 게시글을 찾고 사진을 내려받아 해시를 비교한 뒤 앱 화면이 준비됐는지 검사한다. 이 기기 검사 1개가 통과했으며 화면 캡처와 함께 결과를 보관했다. read_only는 이 조회 검사가 새 게시글을 등록하지 않고 저장된 자료를 확인했다는 실행 범위다."], crop_bottom=.56)
+        "실제 검사 코드는 서버 목록에서 해당 게시글을 찾고 사진을 내려받아 해시를 비교한 뒤 앱 화면이 준비됐는지 검사한다. 이 기기 검사 1개가 통과했으며 화면 캡처와 함께 결과를 보관했다. read_only는 이 조회 검사가 새 게시글을 등록하지 않고 저장된 자료를 확인했다는 실행 범위다."], crop_bottom=.55)
     text(doc, "기기 검사와 화면  evidence/basic-verification-20261110/android-native-sync.json 및 android-native-sync.txt\n검사 코드  PhotoViewer/app/src/androidTest/java/com/haddol7/photoviewer/ui/YoloSyncTest.java", 9)
 
     section(doc, "B08 영상 입력과 전송 실패 처리")
@@ -161,13 +162,13 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
         "카메라 입력을 MJPEG로 지정해 화면 형식에 맞췄고 보조 스크립트로 원본 검출기가 표시한 프레임을 저장했다. 원본 detect.py 파일은 공식 해시와 일치한다. WSL Ubuntu 24.04.2 LTS, Python 3.12.3과 PyTorch 2.6.0 CPU에서 실행했고 선택 프레임은 101번, 실제 사람 점수는 0.708044다. 검출값 파일 124개를 저장하고 정상 종료했다."])
 
     section(doc, "B08 웹캠 입력과 원본 실행의 검증 기록")
-    proof("B08 2", ["3"], current + "webcam-record.jpg", 6.0,
+    proof("B08 2", ["3"], enlarged + "webcam-record.png", 6.0,
         "그림 B08 2 실제 카메라와 원본 검출기 실행의 저장 기록", [
         "웹캠_검증.json을 VS Code로 연 보조 증빙이다. camera와 device는 실제 카메라 및 /dev/video0, source는 0이다. dimensions는 640과 480이며 launcher에 --baseline과 --source 0이 기록돼 있다. baseline_sha256과 weights_sha256은 원본 코드와 공식 가중치를 대조한 값이다.",
-        "selected_frame_index와 person_confidence는 앞 사진의 선택 프레임과 검출값에 대응하며 exit_code 0은 정상 종료를 뜻한다. 사진과 실행 기록을 함께 제시해 정지 이미지의 결과뿐 아니라 실제 카메라 입력으로 원본 검출기가 동작했음을 확인했다. 해당 기록은 11월 10일 노트북 실행 결과이고 이번 문서 작업에서는 그 원본 파일을 열어 캡처했다."], crop_bottom=.20)
+        "selected_frame_index와 person_confidence는 앞 사진의 선택 프레임과 검출값에 대응하며 exit_code 0은 정상 종료를 뜻한다. 사진과 실행 기록으로 실제 카메라 입력의 원본 검출기 동작을 확인했다. 11월 10일 노트북 실행 결과의 원본 파일을 열어 캡처한 화면이다."], crop_bottom=.16)
     text(doc, "당시 실제 실행 명령\n" + record("evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json")["actual_helper_command"], 9)
     text(doc, "보조 스크립트가 호출한 원본 실행기\npython tools/run_edge.py --baseline --source 0 --device cpu --view-img --nosave --save-txt --save-conf", 9)
-    text(doc, "저장소에서 재현할 때는 프로젝트 루트에서 같은 WSL 가상환경을 사용한다. 보조 스크립트의 공개 보관 경로는 evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py다. 위 명령의 .local/laptop 경로는 당시 실행 위치이며 보관본을 사용해 같은 카메라 설정을 재현할 수 있다.", 9)
+    text(doc, "명령의 .local/laptop은 당시 실행 위치다. 보조 스크립트 원본은 evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py에 보관했다.", 9)
 
     section(doc, "B09 PythonAnywhere API 응답")
     proof("B09 1", ["8"], browser + "cloud-api-root.png", 6.0,
