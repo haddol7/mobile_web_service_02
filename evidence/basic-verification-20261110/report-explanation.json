@@ -1,0 +1,234 @@
+{
+  "reviewed_utc": "2026-11-10T07:56:59.054474+00:00",
+  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "pages": 38,
+  "authority": "Assessment 02 original report items 1 through 9 and Ch08 pages 6, 8, 9, 10 and 12",
+  "assessment01_rubric_imported": false,
+  "figures": [
+    {
+      "label": "B01",
+      "requirement_ids": [
+        "1",
+        "2"
+      ],
+      "physical_page": 4,
+      "source": "evidence/screenshots/github-folder-structure.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "74a79e0178c47a7fcc63fee8d9912778649216a4fa98f43bff53a5bb546f99c8"
+    },
+    {
+      "label": "B02",
+      "requirement_ids": [
+        "3"
+      ],
+      "physical_page": 5,
+      "source": "evidence/yolo-pipeline/original-image/bus.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "e049d99a84197ba72c65c878a02134c92947ad6befd37f7914bc093c3bd40448"
+    },
+    {
+      "label": "B03 1",
+      "requirement_ids": [
+        "4"
+      ],
+      "physical_page": 6,
+      "source": "evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "1b4f7887764e08bc8699d71f47969c146f0d6576b38d1534d64c73ce8da8007e"
+    },
+    {
+      "label": "B03 2",
+      "requirement_ids": [
+        "4"
+      ],
+      "physical_page": 7,
+      "source": "evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+      "explanation_paragraphs": 3,
+      "source_sha256": "858ad80f9a7d0d35d722e1024e3442f148cd99e873b1830bc84c754d1b5ebb38"
+    },
+    {
+      "label": "B03 3",
+      "requirement_ids": [
+        "4"
+      ],
+      "physical_page": 8,
+      "source": "evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "be40af108de1078b0e7c196517a676347932b8c510625c4c8a7308b488c2540b"
+    },
+    {
+      "label": "B03 4",
+      "requirement_ids": [
+        "4"
+      ],
+      "physical_page": 9,
+      "source": "evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "d66f9e04eca3a815194ba2c05dd48b33474ec973bea40568226b6a50b2c5bed4"
+    },
+    {
+      "label": "B04 1",
+      "requirement_ids": [
+        "5"
+      ],
+      "physical_page": 10,
+      "source": "evidence/screenshots/basic-20261110/local-api-root.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "bbeec36f6ffb21536bcfac6d919da2716c3aaa36a6aa236e6153a2eeb9c87550"
+    },
+    {
+      "label": "B04 2",
+      "requirement_ids": [
+        "5",
+        "6"
+      ],
+      "physical_page": 11,
+      "source": "evidence/screenshots/basic-20261110/local-api-posts.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "e3aaec3b0c1297694bc9b852bb9bb0619eb852b9a9021715f5619f38ea85e208"
+    },
+    {
+      "label": "B05 1",
+      "requirement_ids": [
+        "6"
+      ],
+      "physical_page": 12,
+      "source": "evidence/screenshots/basic-20261110/local-list.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "299bef7464957080a2cc4ad117e8bec34e6910fc261e7adc488b5da8e0fb49ff"
+    },
+    {
+      "label": "B05 2",
+      "requirement_ids": [
+        "4",
+        "6"
+      ],
+      "physical_page": 13,
+      "source": "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "00d8c5423c18b869c826e12760004aa7033f9ac4d4ad0f2b72592b42f8709e04"
+    },
+    {
+      "label": "B07 1",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 15,
+      "source": "evidence/screenshots/basic-20261110/android-native-list.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "1325e48588d7443a198d2fd01974bb842e575fd2b3158b255124d8656401bb82"
+    },
+    {
+      "label": "B07 2",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 16,
+      "source": "evidence/screenshots/basic-20261110/android-native-detail.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "c10996b739f593b101c37fc04ebd312c500d4c30c4d4ed61fc6d201d325c147a"
+    },
+    {
+      "label": "B07 3",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 17,
+      "source": "evidence/screenshots/basic-20261110/local-mobile-list.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "88b714db6ee9e6cf5ed46e71a4ee0aaa42753d9c261b8f658ec1a560f520ae01"
+    },
+    {
+      "label": "B07 4",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 18,
+      "source": "evidence/screenshots/basic-20261110/local-mobile-detail.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "28a4cc3962cbb2d2817d4e7d5093e5a0b84c4ae73132d34cfa114a522daf140c"
+    },
+    {
+      "label": "B07 5",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 19,
+      "source": "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "dd5717a6b261535ce7431ca7926b1baa8740a8813804f47fd66cc57fc927244f"
+    },
+    {
+      "label": "B08 1",
+      "requirement_ids": [
+        "3"
+      ],
+      "physical_page": 21,
+      "source": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "c32a9cd9213a8a7f4d282a4d3782cebabc4b2b26b55a6a2c472c5245732f8168"
+    },
+    {
+      "label": "B08 2",
+      "requirement_ids": [
+        "3"
+      ],
+      "physical_page": 22,
+      "source": "evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
+      "explanation_paragraphs": 2,
+      "source_sha256": "31b4a4e5219b61a1c1c39ae9622dbc24745331ddd605dda854c260d84fc7e78d"
+    },
+    {
+      "label": "B09 1",
+      "requirement_ids": [
+        "8"
+      ],
+      "physical_page": 23,
+      "source": "evidence/screenshots/basic-20261110/cloud-api-root.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "0c74f80d87b47ae537c02ffb34bb87a6607b3dc8f75346edfb17e3f2d4c88d0e"
+    },
+    {
+      "label": "B09 2",
+      "requirement_ids": [
+        "7"
+      ],
+      "physical_page": 24,
+      "source": "evidence/ui-audit/cloud/yolo-native-detail.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "c87ccaa9737ee50ef51a300a78a9f9294e77328fbdb73730bd5b67051f6cea08"
+    },
+    {
+      "label": "B09 3",
+      "requirement_ids": [
+        "9"
+      ],
+      "physical_page": 25,
+      "source": "evidence/screenshots/basic-20261110/cloud-list.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "c417e6f5811f25b48ff90f5e9fecb1bbe3fb2d34bd99e0e343bbfd2fadf2d17c"
+    },
+    {
+      "label": "B09 4",
+      "requirement_ids": [
+        "9"
+      ],
+      "physical_page": 26,
+      "source": "evidence/screenshots/basic-20261110/cloud-detail.png",
+      "explanation_paragraphs": 2,
+      "source_sha256": "d80561fcd16af8bf76dd22d808165496ef48f117b877ab4cadb390120fa432ab"
+    }
+  ],
+  "all_basic_figures_have_individual_explanations": true,
+  "original_images_embedded_without_reencoding": true,
+  "capture_manifest": "evidence/basic-verification-20261110/report-expansion-captures.json",
+  "record_scope": "Documentation enhancement using current source and existing real execution evidence",
+  "existing_extensions_text_and_images_preserved": true,
+  "new_runtime_tests_during_document_edit": 0,
+  "production_requests": 0,
+  "paid_api_calls": 0,
+  "submission_ready": false,
+  "remaining_quality_work": [
+    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+  ]
+}

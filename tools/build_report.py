@@ -157,6 +157,13 @@ def main():
         for name,value in parts.items():archive.writestr(name,value)
     inventory=[{'path':name,'sha256':hashlib.sha256((ROOT/name).read_bytes()).hexdigest()} for name in FIGURES]
     (ROOT/'docs/report-figures.json').write_text(json.dumps(inventory,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    from report_basic_sections import BASIC_EVIDENCE
+    (ROOT/'docs/basic-evidence-guide.json').write_text(json.dumps({
+        'scope':'Common Assessment 02 original items 1 through 9',
+        'figures':BASIC_EVIDENCE,
+        'requirement_ids':sorted({item for figure in BASIC_EVIDENCE for item in figure['assessment_ids']},key=int),
+        'all_figures_have_individual_explanations':all(len(figure['explanation'])>=2 for figure in BASIC_EVIDENCE)
+    },ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({'output':str(OUT),'source_template_preserved':True,'opaque_parts_preserved':True,'section_geometry_preserved':True},ensure_ascii=False))
 
 if __name__=='__main__':main()

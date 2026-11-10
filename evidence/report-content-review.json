@@ -21,8 +21,8 @@
       "section": "B09",
       "status": "resolved",
       "physical_pages": [
-        17,
-        18
+        25,
+        26
       ],
       "resolution": "Actual Android Chrome production list and post 8 detail recaptured on November 10 with full address bar and embedded in B09."
     },
@@ -35,8 +35,8 @@
       "section": "B13",
       "status": "resolved",
       "physical_pages": [
-        23,
-        24
+        32,
+        33
       ],
       "resolution": "Reference selection, aligned original and flipped features, person-level scoring, fixed thresholds and candidate-only status explained against source"
     },
@@ -58,9 +58,9 @@
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "fc5df2f83ca31e9e0ed2b71cad8acdb99568da317c000080151021ceeb791226",
+  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-10T07:04:35.897476+00:00",
+  "reviewed_utc": "2026-11-10T07:56:59.054474+00:00",
   "remaining_work": [
     "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
   ],
@@ -73,5 +73,27 @@
     "generation_daily_limit": 5,
     "login_attempt_limiter_enabled": false,
     "evidence": "evidence/basic-verification-20261110/captures.json"
-  }
+  },
+  "basic_explanation_update": {
+    "original_rubric_items": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "individual_figures": 21,
+    "current_source_captures": 4,
+    "existing_execution_record_views_added": 3,
+    "records_are_not_new_runtime_tests": true,
+    "guide": "docs/basic-evidence-guide.json",
+    "evidence": "evidence/basic-verification-20261110/report-explanation.json",
+    "assessment01_rubric_imported": false,
+    "existing_extensions_preserved": true
+  },
+  "production_requests_during_explanation_update": 0
 }

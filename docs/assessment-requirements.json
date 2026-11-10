@@ -14,7 +14,8 @@
       "status": "complete",
       "evidence": [
         "evidence/screenshots/github-folder-structure.jpg",
-        "evidence/github-upload.json"
+        "evidence/github-upload.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B01\nGitHub 폴더 구조"
     },
@@ -25,7 +26,8 @@
       "status": "complete",
       "evidence": [
         "evidence/screenshots/github-folder-structure.jpg",
-        "evidence/github-upload.json"
+        "evidence/github-upload.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B01\n별도 저장소\n소스와 보고서"
     },
@@ -35,16 +37,19 @@
       "original": "강의 자료 [6페이지] \n\n제출 : 1. 변경 없는 기본 상태의 “detect.py”실행\n2. 화면 객체 인식 완료된 화면 캡처",
       "status": "complete",
       "evidence": [
+        "evidence/yolo-pipeline/original-image/bus.jpg",
+        "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+        "evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
         "evidence/yolo-pipeline/verification.json",
         "evidence/yolo-pipeline/original-image.txt",
         "evidence/video-flow/verification.json",
         "evidence/environment/wsl-runtime.json",
         "evidence/environment/windows-camera.json",
         "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
-        "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
         "evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py",
         "evidence/notebook-20261110/02_웹캠_증빙/webcam-retake.log",
-        "evidence/notebook-20261110/02_웹캠_증빙/선택_프레임_검출값.txt"
+        "evidence/notebook-20261110/02_웹캠_증빙/선택_프레임_검출값.txt",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B02 B08\n원본 검출과\n실시간 웹캠"
     },
@@ -54,11 +59,14 @@
       "original": "강의 자료 [8,9,10페이지] \n\n제출 : VSCODE 추가된 소스코드 화면 캡처",
       "status": "complete",
       "evidence": [
+        "evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+        "evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+        "evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+        "evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+        "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
         "YOLOv5/changedetection.py",
         "YOLOv5/detect.py",
-        "evidence/screenshots/changedetection-vscode.png",
-        "evidence/screenshots/changedetection-upload-vscode.png",
-        "evidence/screenshots/detect-hook-vscode.png"
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B03\n출현 비교와 전송\n추론 루프 연결"
     },
@@ -70,7 +78,8 @@
       "evidence": [
         "evidence/screenshots/basic-20261110/local-api-root.png",
         "evidence/screenshots/basic-20261110/local-api-posts.png",
-        "evidence/basic-verification-20261110/captures.json"
+        "evidence/basic-verification-20261110/captures.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B04\n로컬 API 200"
     },
@@ -80,8 +89,11 @@
       "original": "강의 자료 [12페이지] \n\n제출 : Server 브라우저 출력화면 (localhost) (목록 및 이미지)",
       "status": "complete",
       "evidence": [
+        "evidence/screenshots/basic-20261110/local-api-posts.png",
         "evidence/screenshots/basic-20261110/local-list.png",
-        "evidence/basic-verification-20261110/captures.json"
+        "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+        "evidence/basic-verification-20261110/captures.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B05\n검출 사진 2개"
     },
@@ -95,7 +107,10 @@
         "evidence/screenshots/basic-20261110/android-native-detail.png",
         "evidence/screenshots/basic-20261110/local-mobile-list.png",
         "evidence/screenshots/basic-20261110/local-mobile-detail.png",
-        "evidence/basic-verification-20261110/android-native-sync.json"
+        "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+        "evidence/ui-audit/cloud/yolo-native-detail.png",
+        "evidence/basic-verification-20261110/android-native-sync.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B07\nAndroid 앱과\n모바일 웹"
     },
@@ -106,7 +121,8 @@
       "status": "complete",
       "evidence": [
         "evidence/screenshots/basic-20261110/cloud-api-root.png",
-        "evidence/basic-verification-20261110/captures.json"
+        "evidence/basic-verification-20261110/captures.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B09\n운영 API 200"
     },
@@ -118,7 +134,8 @@
       "evidence": [
         "evidence/screenshots/basic-20261110/cloud-list.png",
         "evidence/screenshots/basic-20261110/cloud-detail.png",
-        "evidence/basic-verification-20261110/captures.json"
+        "evidence/basic-verification-20261110/captures.json",
+        "docs/basic-evidence-guide.json"
       ],
       "report_evidence": "B09\n운영 브라우저\n목록과 검출 사진"
     },
@@ -228,5 +245,12 @@
     "conversation_isolation": "account_or_browser_session",
     "login_attempt_limiter_enabled": false,
     "llm_daily_limit": 5
+  },
+  "basic_report_explanation": {
+    "guide": "docs/basic-evidence-guide.json",
+    "figures": 21,
+    "source_rubric": "Common Assessment 02 original report items 1 through 9",
+    "individual_explanations": true,
+    "new_captures": "evidence/basic-verification-20261110/report-expansion-captures.json"
   }
 }

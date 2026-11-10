@@ -1,5 +1,6 @@
 """Audit the refreshed report against original assessment slots and recorded evidence."""
 from datetime import date, datetime, timezone
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -23,7 +24,7 @@ def record(path):
     return json.loads((ROOT / path).read_text(encoding="utf-8-sig"))
 
 
-def main():
+def main(local_only=False):
     original, doc = Document(REFERENCE), Document(REPORT)
     requirements = record("docs/assessment-requirements.json")
     checks = []
@@ -52,7 +53,7 @@ def main():
     check("unchanged_detector_for_webcam", digest(ROOT/"YOLOv5/baseline/detect.py") == camera["baseline_sha256"])
     check("trusted_webcam_weights", camera["weights_sha256"] == "8b3b748c1e592ddd8868022e8732fde20025197328490623cc16c6f24d0782ee")
     check("notebook_full_tests", "Ran 250 tests" in (ROOT/"evidence/notebook-20261110/03_노트북_검증/startup-django-retest.log").read_text(encoding="utf-8"))
-    if "2" not in unfinished:
+    if "2" not in unfinished and not local_only:
         upload = record("evidence/github-final-report.json")
         check("github_upload_verified", upload.get("latest_source_and_report_verified") and upload.get("remote_head_matches_commit"))
         check("github_report_hash_current", upload.get("report_sha256") == digest(REPORT))
@@ -72,6 +73,15 @@ def main():
     check("cloud_photo_browser_evidence", all((ROOT/path).is_file() for path in (
         "evidence/screenshots/basic-20261110/cloud-list.png", "evidence/screenshots/basic-20261110/cloud-detail.png")))
     build_appendix()
+    from report_basic_sections import BASIC_EVIDENCE
+    guide = record("docs/basic-evidence-guide.json")
+    check("basic_guide_matches_source", guide["figures"] == BASIC_EVIDENCE)
+    check("original_basic_ids_covered", guide["requirement_ids"] == [str(i) for i in range(1,10)])
+    check("individual_photo_explanations", all(len(row["explanation"]) >= 2 and all(p in body for p in row["explanation"]) for row in BASIC_EVIDENCE))
+    captures = record("evidence/basic-verification-20261110/report-expansion-captures.json")
+    check("actual_current_VSCode_images", captures["new_source_screenshots"] == 4 and all(
+        digest(ROOT / row["path"]) == row["sha256"] and digest(ROOT / row["visible_source"]) == row["source_sha256"]
+        for row in captures["screenshots"]))
     check("webcam_capture_embedded", "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png" in FIGURES)
     check("cloud_photo_browser_images_in_report", all(path in FIGURES for path in (
         "evidence/screenshots/basic-20261110/cloud-list.png", "evidence/screenshots/basic-20261110/cloud-detail.png")))
@@ -110,10 +120,14 @@ def main():
         "checks": checks, "integrity_pass": all(c["pass"] for c in checks), "embedded_figures": len(images),
         "complete_assessment_ids": [r["id"] for r in requirements["requirements"] if r["status"] == "complete"],
         "unfinished_assessment_ids": unfinished, "submission_ready": not unfinished and requirements["report_state"]["submission_ready"],
-        "http_cases_are_subset_of_full_suite": True, "new_paid_api_calls_in_report_refresh": 0}
-    (ROOT/"evidence/report-review.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
+        "http_cases_are_subset_of_full_suite": True, "new_paid_api_calls_in_report_refresh": 0,
+        "basic_figures_with_individual_explanations": len(BASIC_EVIDENCE), "github_snapshot_verified": not local_only}
+    target = ROOT / ("evidence/private/report-expansion-20261110/local-report-review.json" if local_only else "evidence/report-review.json")
+    target.write_text(json.dumps(summary, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     print(json.dumps({key: value for key,value in summary.items() if key not in ("checks", "report_sha256")}))
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--local-only", action="store_true", help="Authoring audit only; leave the public audit and remote snapshot untouched")
+    main(local_only=parser.parse_args().local_only)

@@ -128,89 +128,9 @@ def build_appendix():
     text(doc, "관측 기록에서 날짜와 인물을 선택하고 사진을 열어 검출 박스를 확인한다. 인물 확인에서는 등록 얼굴과 영상 속 얼굴 및 발견 이력을 비교한다. AI 질문에서는 인물과 기간을 선택한 뒤 질문을 보내 근거 사진이 포함된 답변과 대화 기록을 확인한다.")
     text(doc, "AI 질문의 보내기는 외부 유료 API를 사용한다. 기본 API는 /api_root/에서, YOLO 검출 사진의 기본 목록은 /photos/에서 확인할 수 있다.", 9)
 
-    section(doc, "B01 제출 폴더 구조와 별도 저장소")
-    text(doc, "공통평가 01과 분리된 저장소에 PhotoBlogServer, PhotoViewer, YOLOv5 폴더를 구성했다. PhotoBlogServer는 Django 서버, PhotoViewer는 Android 앱, YOLOv5는 Edge 검출기다. 수행 결과 보고서는 저장소 루트에 둔다.")
-    figure(doc, "evidence/screenshots/github-folder-structure.jpg", 6.1, "그림 B01 공통평가 02 별도 저장소의 폴더 구성")
-    text(doc, "PhotoBlogServer의 모델 및 API와 PhotoViewer의 동기화 기능은 공통평가의 기본 연동 구조를 사용한다. 관측 기록과 등록 얼굴은 공개 조회하고 자료 변경과 검출 기록 등록에는 운영자 인증을 적용한다.")
-
-    section(doc, "B02 원본 YOLOv5 실행 결과")
-    text(doc, "Ultralytics YOLOv5 v7.0의 원본 detect.py를 별도 baseline 폴더에 보관하고 공식 파일의 SHA256을 대조했다. CPU로 bus.jpg를 실행한 결과 사람 4명과 버스 1대를 검출했다. 아래는 원본 검출기의 실제 결과 이미지다.")
-    figure(doc, "evidence/yolo-pipeline/original-image/bus.jpg", 3.9, "그림 B02 원본 검출기로 처리한 공식 bus.jpg")
-    text(doc, "가중치는 공식 사전 학습 모델을 사용한다. 원본 출처와 파일 해시는 docs/upstream/provenance.json, 실행 결과는 evidence/yolo-pipeline/verification.json에 기록했다.", 9)
-
-    section(doc, "B03 객체 출현 비교 코드")
-    text(doc, "ChangeDetection은 프레임별 객체 종류의 존재 여부를 비교한다. 이전에 없던 종류가 나타나면 전송 대상으로 판단하고 같은 장면이 이어지는 동안에는 추가 전송을 억제한다.")
-    figure(doc, "evidence/screenshots/changedetection-vscode.png", 6.1, "그림 B03 1 객체 출현 비교를 구현한 changedetection.py")
-    text(doc, "첫 검출, 같은 장면, 빈 화면, 재등장 순서의 실제 추론에서 첫 검출과 재등장에 각각 게시글 1개가 등록됐다.")
-
-    section(doc, "B03 검출 사진 저장과 HTTP 등록")
-    text(doc, "검출 상자를 표시한 사진을 320 x 240 JPEG로 저장하고 제목과 검출 내용을 multipart 요청으로 전송한다. 서버의 DRF Token 인증을 사용하며 전송에 실패한 사진은 로컬에 보관한다.")
-    figure(doc, "evidence/screenshots/changedetection-upload-vscode.png", 6.1, "그림 B03 2 검출 사진 저장과 Post API 등록 코드")
-
-    section(doc, "B03 추론 루프와 전송 연결")
-    text(doc, "YOLOv5 detect.py의 추론 루프에서 검출 결과를 ChangeDetection에 전달한다. 객체 종류의 출현 변화가 있는 프레임만 서버 전송으로 연결했다.")
-    figure(doc, "evidence/screenshots/detect-hook-vscode.png", 6.1, "그림 B03 3 YOLOv5 추론 루프의 연결 위치")
-
-    section(doc, "B04 로컬 서버 API 확인")
-    text(doc, "2026년 11월 10일 WSL 서버를 Android Chrome의 http://localhost:8020/api_root/에서 열어 주소창과 HTTP 200 응답을 함께 확인했다. 에뮬레이터의 localhost는 ADB 포트 전달로 WSL 검증 서버에 연결했다. Post API는 id, author, title, text, created_date, published_date, image의 기본 7개 필드를 유지한다.")
-    figure(doc, "evidence/screenshots/basic-20261110/local-api-root.png", 6.0, "그림 B04 1 주소창이 포함된 실제 Android Chrome의 로컬 API 응답")
-    figure(doc, "evidence/screenshots/basic-20261110/local-api-posts.png", 6.0, "그림 B04 2 localhost 주소와 검출 게시글 JSON 응답")
-
-    section(doc, "B05 로컬 검출 사진 등록 결과")
-    text(doc, "로컬 서버에서 첫 출현과 재등장으로 등록된 검출 사진 2개를 조회했다. 전송 JPEG, 서버에 저장된 JPEG와 HTTP로 조회한 JPEG의 SHA256이 일치했다.")
-    figure(doc, "evidence/screenshots/basic-20261110/local-list.png", 6.1, "그림 B05 주소창이 포함된 로컬 목록과 실제 검출 사진")
-    section(doc, "B06 자동 검증 결과", False)
-    data_table(doc, ["구분", "검증 결과", "환경"], [
-        ["Django 전체", f"{server_tests}개 통과", "WSL Ubuntu"], ["실제 HTTP 엔진", "전체 중 15개 별도 재실행 통과", "WSL Ubuntu"],
-        ["Edge 단위", "30개 통과", "WSL Ubuntu"], ["웹 단위", "76개 통과", "Windows Node"],
-        ["Android JVM", "40개 통과", "Windows"], ["Android Lint", "오류 0개, 경고 9개", "Windows"]], [1.3, 3.15, 1.45])
-
-    section(doc, "B07 Android 기본 사진 동기화")
-    text(doc, "11월 10일 실제 Android 02 앱에서 WSL 서버에 등록된 검출 사진을 조회했다. 기기 검사 1개가 통과했으며 같은 검출 사진의 SHA256을 대조하고 목록과 상세 화면을 캡처했다. 이 검사의 접속 주소는 http://10.0.2.2:36073/이다.")
-    pair(doc, ["evidence/screenshots/basic-20261110/android-native-list.png", "evidence/screenshots/basic-20261110/android-native-detail.png"],
-         ["그림 B07 1 기본 사진 목록", "그림 B07 2 검출 사진 상세"], (2.6, 2.6))
-    text(doc, "이 화면은 강의 기본 Post API 연동의 검증 화면이며 최신 감시 메뉴 화면은 B16에 정리했다.", 9)
-
-    section(doc, "B07 Android 모바일 웹 확인")
-    text(doc, "Android Chrome에서도 같은 검출 게시글의 목록과 상세를 확인했다. 실제 WSL 서버의 이미지 응답과 앱의 이미지 해시 검사 결과를 함께 보관했다.")
-    pair(doc, ["evidence/screenshots/basic-20261110/local-mobile-list.png", "evidence/screenshots/basic-20261110/local-mobile-detail.png"],
-         ["그림 B07 3 로컬 모바일 웹 목록", "그림 B07 4 로컬 모바일 웹 상세"], (2.6, 2.6))
-
-    section(doc, "B08 영상 입력과 전송 실패 처리")
-    text(doc, "공식 bus.jpg와 빈 프레임을 조합한 30프레임 영상을 초당 5프레임으로 실제 YOLOv5에 입력했다. 전송 대상은 기존 데이터와 분리한 WSL 검증 서버다.")
-    data_table(doc, ["입력 순서", "내용", "새 게시글"], [
-        ["처음 6프레임", "빈 화면", "0개"], ["다음 12프레임", "사람과 버스가 연속 등장", "첫 프레임의 1개"],
-        ["다음 6프레임", "빈 화면", "0개"], ["마지막 6프레임", "사람과 버스가 재등장", "1개"]], [1.35, 3.1, 1.45])
-    text(doc, "등록 사진은 총 2개이며 모두 320 x 240 JPEG였다. 잘못된 인증값을 사용한 요청은 거부됐고 기존 게시글 수가 유지됐다. 실패한 전송의 사진은 로컬에 보관돼 재시도할 수 있다.")
-    text(doc, "관측 이력 전송에서는 동일 패킷 재전송과 서버 저장 후 응답 유실을 재현했다. 재전송 시 같은 기록이 두 번 생성되지 않았으며 저장 대기 패킷은 전송 완료 후 비워졌다.")
-    text(doc, "전용 Python 가상환경에서 pip check, OpenCV 로딩과 PyTorch CPU 연산을 확인했다. WSL 소스와 Windows Android 프로젝트는 같은 작업 폴더를 사용한다.")
-    text(doc, "근거 기록  evidence/video-flow/verification.json, evidence/history/verification.json, evidence/environment/wsl-runtime.json", 9)
-
-    section(doc, "B08 원본 검출기의 실시간 웹캠 실행")
-    text(doc, "2026년 11월 10일 노트북의 Acer HD User Facing 웹캠을 USB/IP로 WSL2 Ubuntu에 연결했다. /dev/video0에서 실제 프레임이 읽히는 것을 확인한 뒤 수정하지 않은 YOLOv5 v7.0의 detect.py를 카메라 인덱스 0으로 실행했다. 원본 파일과 공식 가중치의 SHA256이 기록된 값과 일치했다.")
-    text(doc, "카메라 입력 형식을 MJPEG로 지정해 기본 YUYV 형식의 녹색 깨짐을 해결했다. 보조 스크립트는 입력 형식을 설정하고 원본 검출기가 화면에 표시한 프레임을 저장한다. 640 x 480 실시간 화면에서 사람 검출 상자와 person 0.71 라벨을 확인했다.")
-    figure(doc, "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png", 4.0, "그림 B08 1 실제 노트북 웹캠을 입력으로 실행한 원본 YOLOv5 사람 검출 화면")
-    text(doc, "WSL Ubuntu 24.04.2 LTS, Python 3.12.3과 PyTorch 2.6.0 CPU에서 실행했다. 선택한 추론 프레임은 101번이며 사람 점수는 0.708044다. 검출값 파일 124개를 저장하고 정상 종료했다. 녹화 영상의 분석 결과와 구분한 실제 카메라 실행이다.")
-    text(doc, "실제 실행 명령은 다음과 같다. 보조 스크립트 보관본은 evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py다.", 9)
-    text(doc, record("evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json")["actual_helper_command"], 9)
-    text(doc, "보조 스크립트가 호출한 원본 실행기  tools/run_edge.py --baseline --source 0 --device cpu --view-img --nosave --save-txt --save-conf", 9)
-    text(doc, "근거 기록  evidence/notebook-20261110/02_웹캠_증빙의 웹캠_검증.json, 선택_프레임_검출값.txt, webcam-retake.log", 9)
-
-    section(doc, "B09 PythonAnywhere API 응답")
-    text(doc, "https://daejinha.pythonanywhere.com/api_root/ 에서 기본 API의 HTTP 200을 확인했다. 실제 YOLO 클라이언트가 운영 서버에 등록한 게시글과 사진을 Android 앱에서 다시 조회했다.")
-    figure(doc, "evidence/screenshots/basic-20261110/cloud-api-root.png", 6.0,
-           "그림 B09 1 실제 운영 도메인의 주소창과 HTTP 200 응답")
-    text(doc, "2026년 11월 10일 실제 Android Chrome에서 운영 API를 다시 열었다. 주소창의 운영 도메인과 GET /api_root/의 HTTP 200 OK 및 JSON의 Post 링크를 함께 확인할 수 있다.", 9)
-
-    section(doc, "B09 PythonAnywhere Android 동기화")
-    figure(doc, "evidence/ui-audit/cloud/yolo-native-detail.png", 2.5,
-           "그림 B09 2 운영 검출 사진의 Android 상세")
-    text(doc, "운영 등록 과정에서 기존 게시글 3개와 사진 바이트를 보존했다. 새 YOLO 검출 게시글 id 8의 사진 해시를 운영 API와 Android에서 대조했다. 기본 연동 증빙은 11월 8일의 실제 운영 검사다.", 9)
-
-    section(doc, "B09 PythonAnywhere 브라우저 목록과 검출 사진")
-    text(doc, "11월 10일 운영 서버의 기본 사진 보관함과 검출 게시글을 실제 Android Chrome에서 열었다. YOLO가 등록한 person, bus 게시글 id 8이 목록에 표시되며 상세 화면에서 검출 박스가 그려진 사진과 검출 내용을 확인할 수 있다. 두 화면의 주소창으로 운영 도메인과 경로를 확인한다.")
-    figure(doc, "evidence/screenshots/basic-20261110/cloud-list.png", 6.0, "그림 B09 3 주소창이 포함된 운영 서버 /photos/ 목록")
-    figure(doc, "evidence/screenshots/basic-20261110/cloud-detail.png", 6.0, "그림 B09 4 운영 주소창과 /post/8/ 검출 사진 상세")
+    from report_basic_sections import append_basic_sections
+    append_basic_sections(doc, text=text, section=section, figure=figure,
+                          data_table=data_table, record=record, server_tests=server_tests)
 
     section(doc, "B10 운영 관측 화면과 추가 기능 구성")
     text(doc, "추가 기능은 두 항목으로 구성했다. Edge Client는 인물 추적과 관측 기록을 전송하고, Server는 인물 이력을 관리하고 근거 기록 질문에 답한다. Android와 웹은 같은 서버 API로 이 결과를 조회한다.")

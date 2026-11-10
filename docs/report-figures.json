@@ -8,16 +8,20 @@
     "sha256": "e049d99a84197ba72c65c878a02134c92947ad6befd37f7914bc093c3bd40448"
   },
   {
-    "path": "evidence/screenshots/changedetection-vscode.png",
-    "sha256": "2753af8a2c263449cf8191aa7871a11b33daed161fdd5dbea0ee56f300a9ca0d"
+    "path": "evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+    "sha256": "1b4f7887764e08bc8699d71f47969c146f0d6576b38d1534d64c73ce8da8007e"
   },
   {
-    "path": "evidence/screenshots/changedetection-upload-vscode.png",
-    "sha256": "1caceb59a05ac806b8ef3936119b5697f2b66ffb2b12521f2cea6d63a9629d59"
+    "path": "evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+    "sha256": "858ad80f9a7d0d35d722e1024e3442f148cd99e873b1830bc84c754d1b5ebb38"
   },
   {
-    "path": "evidence/screenshots/detect-hook-vscode.png",
-    "sha256": "bafe48c51d92751cc2d7d858f72294992dd6b3ad7063b15678ea2c82e7d0ed47"
+    "path": "evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+    "sha256": "be40af108de1078b0e7c196517a676347932b8c510625c4c8a7308b488c2540b"
+  },
+  {
+    "path": "evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+    "sha256": "d66f9e04eca3a815194ba2c05dd48b33474ec973bea40568226b6a50b2c5bed4"
   },
   {
     "path": "evidence/screenshots/basic-20261110/local-api-root.png",
@@ -30,6 +34,10 @@
   {
     "path": "evidence/screenshots/basic-20261110/local-list.png",
     "sha256": "299bef7464957080a2cc4ad117e8bec34e6910fc261e7adc488b5da8e0fb49ff"
+  },
+  {
+    "path": "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+    "sha256": "00d8c5423c18b869c826e12760004aa7033f9ac4d4ad0f2b72592b42f8709e04"
   },
   {
     "path": "evidence/screenshots/basic-20261110/android-native-list.png",
@@ -48,8 +56,16 @@
     "sha256": "28a4cc3962cbb2d2817d4e7d5093e5a0b84c4ae73132d34cfa114a522daf140c"
   },
   {
+    "path": "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+    "sha256": "dd5717a6b261535ce7431ca7926b1baa8740a8813804f47fd66cc57fc927244f"
+  },
+  {
     "path": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
     "sha256": "c32a9cd9213a8a7f4d282a4d3782cebabc4b2b26b55a6a2c472c5245732f8168"
+  },
+  {
+    "path": "evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
+    "sha256": "31b4a4e5219b61a1c1c39ae9622dbc24745331ddd605dda854c260d84fc7e78d"
   },
   {
     "path": "evidence/screenshots/basic-20261110/cloud-api-root.png",

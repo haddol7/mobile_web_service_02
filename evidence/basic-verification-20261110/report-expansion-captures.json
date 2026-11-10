@@ -1,0 +1,74 @@
+{
+  "recorded_utc": "2026-11-10T07:48:19.977726+00:00",
+  "captured_date_kst": "2026-11-10",
+  "screenshots": [
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+      "sha256": "1b4f7887764e08bc8699d71f47969c146f0d6576b38d1534d64c73ce8da8007e",
+      "visible_source": "YOLOv5/changedetection.py",
+      "source_sha256": "f19b6e20b963e84e03e833fbdb6dc0388715aae70ab3dcb13497d5d77df0699c",
+      "source_kind": "current_source",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+      "sha256": "858ad80f9a7d0d35d722e1024e3442f148cd99e873b1830bc84c754d1b5ebb38",
+      "visible_source": "YOLOv5/changedetection.py",
+      "source_sha256": "f19b6e20b963e84e03e833fbdb6dc0388715aae70ab3dcb13497d5d77df0699c",
+      "source_kind": "current_source",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+      "sha256": "be40af108de1078b0e7c196517a676347932b8c510625c4c8a7308b488c2540b",
+      "visible_source": "YOLOv5/detect.py",
+      "source_sha256": "1d8a09467e01564915e80051dd9046e4e0a0015cbc0ad730e6915630bfb67136",
+      "source_kind": "current_source",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+      "sha256": "d66f9e04eca3a815194ba2c05dd48b33474ec973bea40568226b6a50b2c5bed4",
+      "visible_source": "YOLOv5/detect.py",
+      "source_sha256": "1d8a09467e01564915e80051dd9046e4e0a0015cbc0ad730e6915630bfb67136",
+      "source_kind": "current_source",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+      "sha256": "00d8c5423c18b869c826e12760004aa7033f9ac4d4ad0f2b72592b42f8709e04",
+      "visible_source": "evidence/yolo-pipeline/server-registration.txt",
+      "source_sha256": "c995dd541ff626efa78a44b41e06e1b40949a845837ceace143b3eedea41420d",
+      "source_kind": "existing_actual_execution_record",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+      "sha256": "dd5717a6b261535ce7431ca7926b1baa8740a8813804f47fd66cc57fc927244f",
+      "visible_source": "evidence/basic-verification-20261110/android-native-sync.json",
+      "source_sha256": "c86e3607dff44c163ea1212161a76c45958cee7e746fd5cadd1e530b0108cf55",
+      "source_kind": "existing_actual_execution_record",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    },
+    {
+      "path": "evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
+      "sha256": "31b4a4e5219b61a1c1c39ae9622dbc24745331ddd605dda854c260d84fc7e78d",
+      "visible_source": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+      "source_sha256": "95f997f23ed69f9d1d5f197420c6bf8a6c95d9d2d3ffe85988a0523ba44f2467",
+      "source_kind": "existing_actual_execution_record",
+      "capture_method": "Original VS Code window screenshot via Windows Computer Use sky; original JPEG bytes retained",
+      "visual_checked": true
+    }
+  ],
+  "new_source_screenshots": 4,
+  "new_execution_record_screenshots": 3,
+  "records_are_not_new_runtime_tests": true,
+  "production_requests": 0,
+  "paid_api_calls": 0
+}
