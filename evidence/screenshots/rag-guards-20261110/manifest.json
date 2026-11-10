@@ -1,0 +1,64 @@
+{
+  "date_kst": "2026-11-10",
+  "figures": [
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/date-code.png",
+      "sha256": "a5c1dd0a2c754041fe3ce8c8c92e62e70f20d117a6834c991c8869c448994a71",
+      "visible_source": "PhotoBlogServer/blog/history_llm.py",
+      "source_sha256": "ee80487944edd19ef9a4156c719a62fc0046229b4edad9d125b03f1d61bdd89a",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/scope-code.png",
+      "sha256": "0f7541e750160f05a7924a91c781abe514f66010e66079974953e0b043fb5d08",
+      "visible_source": "PhotoBlogServer/blog/history_embeddings.py",
+      "source_sha256": "949d6125295eb3109dd585f05d8bd9de53537e8f763a2bfaf6b7b7d51a35c746",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/query-scope-code.png",
+      "sha256": "16d8d10dfc4de9bb42d2f5c6951ccaba1083c9c77aaf7558f775cdcf881e0b23",
+      "visible_source": "PhotoBlogServer/blog/history_queries.py",
+      "source_sha256": "0acea3f3d0b8ba566bdce4a4735f7b3089ab8c73c7a42ec658bd68b8c51e97af",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/tests-302.png",
+      "sha256": "bb669937efcc79b3e8947df4814cc9cca12d974515764169ce1508f1afc5efc6",
+      "visible_source": "evidence/content/server/tests-coverage.txt",
+      "source_sha256": "84376fd5c6c9269c86d42c52dbad32d2e0aecbd2f47e8db09112d506b5774e0b",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/guard-tests.png",
+      "sha256": "d4b98bef7e2af11320043ff2f5904de6f11bed3375a53f63f8006a7c02c1e0bc",
+      "visible_source": "evidence/private/rag-improvement-20261110/guard-verification.txt",
+      "source_sha256": "d4b70a78d5366d02b2bc7dbf898819713c17c44383b18a4f5563ec6793e72772",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/coverage.png",
+      "sha256": "c96f10740f94e05bf6ccd5a92b9c0e455b82dff30b472c55663ab924533c4263",
+      "visible_source": "PhotoBlogServer/htmlcov/index.html",
+      "source_sha256": "6e9aebff5110504761cd5de551f413af6f51b9a8e6b049e87188655746d29d50",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/rag-guards-20261110/cloud-result.png",
+      "sha256": "48417e49829fea1951a3dc5b1813b530a97ff030fb0d6fa45b593fdbee2c863b",
+      "visible_source": "evidence/history/rag-guard-cloud-20261110.json",
+      "source_sha256": "cd7a2dd4c3c9fc13f055f074603385891a9bd9d5c7ff37cea3398c2e8aab81c8",
+      "capture_type": "actual read-only browser view of code, test logs or saved production response",
+      "visually_reviewed": true
+    }
+  ],
+  "cloud_response_view": "Selected fields from the negative_condition response; full unmodified response remains in rag-guard-cloud-20261110.json.",
+  "additional_paid_provider_calls": 0,
+  "original_screenshot_bytes_preserved": true
+}

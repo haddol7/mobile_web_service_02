@@ -29,7 +29,8 @@
         "evidence/github-upload.json",
         "docs/basic-evidence-guide.json"
       ],
-      "report_evidence": "B01\n별도 저장소\n소스와 보고서"
+      "report_evidence": "B01\n별도 저장소\n소스와 보고서",
+      "verification_scope": "Existing submitted source/report snapshot; this local report revision is not yet committed or pushed."
     },
     {
       "id": "3",
@@ -66,9 +67,11 @@
         "evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
         "YOLOv5/changedetection.py",
         "YOLOv5/detect.py",
-        "docs/basic-evidence-guide.json"
+        "docs/basic-evidence-guide.json",
+        "evidence/screenshots/self-flow-20261110/webcam-log-vscode.png",
+        "evidence/screenshots/self-flow-20261110/automatic-registration.json"
       ],
-      "report_evidence": "B03\n출현 비교와 전송\n추론 루프 연결"
+      "report_evidence": "B03 B21\n출현 비교와 전송\n실제 자동 등록"
     },
     {
       "id": "5",
@@ -110,9 +113,13 @@
         "evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
         "evidence/ui-audit/cloud/yolo-native-detail.png",
         "evidence/basic-verification-20261110/android-native-sync.json",
-        "docs/basic-evidence-guide.json"
+        "docs/basic-evidence-guide.json",
+        "evidence/screenshots/self-native-20261110/verification.json",
+        "evidence/screenshots/self-native-20261110/native-list.png",
+        "evidence/screenshots/self-native-20261110/native-post-9.png",
+        "evidence/screenshots/self-native-20261110/native-post-14.png"
       ],
-      "report_evidence": "B07\nAndroid 앱과\n모바일 웹"
+      "report_evidence": "B07 B24 B25\nAndroid 앱과\n모바일 웹"
     },
     {
       "id": "8",
@@ -135,9 +142,11 @@
         "evidence/screenshots/basic-20261110/cloud-list.png",
         "evidence/screenshots/basic-20261110/cloud-detail.png",
         "evidence/basic-verification-20261110/captures.json",
-        "docs/basic-evidence-guide.json"
+        "docs/basic-evidence-guide.json",
+        "evidence/screenshots/self-flow-20261110/browser-auto-post-9.png",
+        "evidence/screenshots/self-flow-20261110/browser-reentry-post-14.png"
       ],
-      "report_evidence": "B09\n운영 브라우저\n목록과 검출 사진"
+      "report_evidence": "B09 B22\n운영 목록과\n자동 등록 사진"
     },
     {
       "id": "10",
@@ -153,9 +162,14 @@
         "evidence/history/chokepoint-people-cloud.json",
         "evidence/history/chokepoint-people-embedding-cloud.json",
         "evidence/ui-audit/detection-boxes-ui.json",
-        "evidence/ui-audit/detection-boxes-deployment.json"
+        "evidence/ui-audit/detection-boxes-deployment.json",
+        "evidence/history/self-rag-20261110.json",
+        "evidence/screenshots/self-flow-20261110/profile-live-final.png",
+        "evidence/screenshots/self-flow-20261110/rag-final-ai.png",
+        "evidence/history/rag-guard-improvement-20261110.json",
+        "evidence/history/rag-guard-cloud-20261110.json"
       ],
-      "report_evidence": "B10부터 B17\n추적과 전송\n이력과 AI 질의",
+      "report_evidence": "B10부터 B36\n추적과 관측 전송\n인물 이력과 RAG",
       "implementation_items": [
         {
           "role": "Edge Client",
@@ -175,31 +189,36 @@
   ],
   "constraints": {
     "camera_required_by_lecture": true,
-    "camera_connected": false,
+    "camera_connected": true,
     "extra_features_max": 2,
     "llm_feature_required": false,
     "training_required": false,
     "camera_verified_on_notebook": true,
-    "camera_verification": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json"
+    "camera_verification": "evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+    "camera_verified_on_this_pc": true,
+    "current_pc_camera_proof": "evidence/screenshots/self-flow-20261110/automatic-registration.json",
+    "camera_connected_basis": "Verified during actual November 10 webcam capture; not a continuous hardware-presence probe."
   },
   "deployment": {
     "user_approved_date": "2026-11-05",
     "source_switched": true,
     "last_attempt_result": "activated_and_verified",
-    "release": "2026111006561965c3f7",
+    "release": "20261110120957270ef6",
     "verified_date": "2026-11-10",
     "preflight": "docs/deployment-preflight.json",
     "compatibility": "evidence/ui-audit/migration-compatibility.json",
-    "verification": "evidence/security/deployment.json"
+    "verification": "evidence/ui-audit/self-guards-deployment-20261110.json"
   },
   "report_state": {
     "submission_ready": false,
-    "label": "기본문항 증빙 보완, 추가 기능 내부 평가 보완 진행",
+    "label": "제출용 소스와 보고서 원격 대조 준비",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
     "remaining_work": [
-      "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
-    ]
+      "최신 소스와 보고서 GitHub 반영 및 원격 대조"
+    ],
+    "current_revision_github_synced": false,
+    "current_revision_scope": "Latest source, evidence and report publication requested by user on 2026-11-10"
   },
   "local_verification": {
     "runtime": "evidence/environment/wsl-runtime.json",
@@ -227,7 +246,7 @@
       "name": "인물 추적과 관측 기록 전송",
       "description": "몸 추적, 얼굴 후보 비교, 선 통과 기록, 중복 방지와 재전송",
       "status": "complete",
-      "report_evidence": "B08 B11 B12 B17\n전송과 실제 분석\n등록과 검출 박스"
+      "report_evidence": "B08 B11 B12 B17\nB21부터 B25\n추적과 실제 자동 전송"
     },
     {
       "id": "10-2",
@@ -235,7 +254,7 @@
       "name": "인물 이력과 근거 기록 질의",
       "description": "날짜와 인물별 이력, 확인 상태, 의미 검색과 LLM 답변, 대화 복원",
       "status": "complete",
-      "report_evidence": "B10 B13부터 B16\n운영 조회와 질문\nAndroid 확인"
+      "report_evidence": "B10 B13부터 B16\nB19 B20 B26부터 B36\n이력과 RAG 회귀 보완"
     }
   ],
   "access_policy": {

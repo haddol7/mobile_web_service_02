@@ -24,6 +24,7 @@ dist/
 *.keystore
 *.log
 !evidence/notebook-20261110/**/*.log
+!evidence/screenshots/self-flow-20261110/webcam-execution.log
 .local/
 evidence/private/
 laptop/models/

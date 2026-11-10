@@ -1,0 +1,177 @@
+{
+  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "qa_directory": "evidence/private/report-expansion-20261110/render-3",
+  "pages": 38,
+  "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
+  "template_requirement_columns_preserved": true,
+  "opaque_template_parts_preserved": true,
+  "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
+  "layout_clean": true,
+  "all_pages_visually_checked": true,
+  "review_method": "All 38 final rendered PNGs viewed directly. Checked original rubric, visible URLs, screenshots, individual explanations, tables, captions, commands and page breaks. Corrected orphaned command text and split tables in earlier renders.",
+  "page_hashes": [
+    {
+      "page": 1,
+      "sha256": "1320a237dd51fc8bc5314f44461a862613c88aef7dfcab41cde9ace79f26bee6"
+    },
+    {
+      "page": 2,
+      "sha256": "a8a4d7f2147150c301a8721283e13f1448eb56610adf3ed4283d44a468a68805"
+    },
+    {
+      "page": 3,
+      "sha256": "0916facf12889ec9e2256310c3184e7bf797dd677636a2b28c1d125783e80333"
+    },
+    {
+      "page": 4,
+      "sha256": "2af988139810d4d8e2228ebc808bc5df8cee715698ec1a1171404d8e8254dcff"
+    },
+    {
+      "page": 5,
+      "sha256": "1286d474c4e2e929dd2eb82b687fb75d6100105cda0769adb5cefd5c3ad5b5a4"
+    },
+    {
+      "page": 6,
+      "sha256": "d24171281215c6d14b377a52923b680c8d0af32ecb3f31cef2ca14eae4c6d93e"
+    },
+    {
+      "page": 7,
+      "sha256": "da10f09d9ffd9c5a21765bd10e37700316e5b6dd5c66dba93436471af62fa62e"
+    },
+    {
+      "page": 8,
+      "sha256": "4b3f4010222f335501f94ed88969b9542995205787ab1feadd3adc287384a753"
+    },
+    {
+      "page": 9,
+      "sha256": "7d605d6bcb6dd97b0caae883553c72cd0de6e7ddd72f36b48f6df4f123c47f79"
+    },
+    {
+      "page": 10,
+      "sha256": "131be377536fa126e1f6f4cbdb1e7f987c740ba0b390c6feec6b06ff8c8869fe"
+    },
+    {
+      "page": 11,
+      "sha256": "e994588259c154f1d4491f95c66f7154f1ffcda2de3251263524e07b4bbd6214"
+    },
+    {
+      "page": 12,
+      "sha256": "bdfc937c9c16f401d2250cc829980d9a04b69303e69668931618af8c0a260681"
+    },
+    {
+      "page": 13,
+      "sha256": "3415bb37f8a4b78489189a33b8ed95cf5fb87d00e11946d8c6683a31130d3193"
+    },
+    {
+      "page": 14,
+      "sha256": "f2621b44c2a54884848a42cd3d38617dfcacca859011f3c5153a1719ec527d72"
+    },
+    {
+      "page": 15,
+      "sha256": "c9a651a3a8ba5c840534dbb808c6e9b00e40ad7406212b524f835c0372d9806a"
+    },
+    {
+      "page": 16,
+      "sha256": "a8e7b12c1ab473700158163c71fb1a96dc176f6051988999ed539d9de92e3e7a"
+    },
+    {
+      "page": 17,
+      "sha256": "aef0ff45bf4614943e1294576e78e043599f47f3b321d51912a387760b7fdd0b"
+    },
+    {
+      "page": 18,
+      "sha256": "b7b28c6fd4c0136514addb7d45a090af827bad595580f01860c4dc8437a9c0e5"
+    },
+    {
+      "page": 19,
+      "sha256": "da4d7d56ebfd364e3f277d19f8f8a2a10f5de42f54cfcfe9eb591496518a964b"
+    },
+    {
+      "page": 20,
+      "sha256": "44fa47b8a4296ca24bc23078f63c37850652c6091168492b2fb8b350ac308c45"
+    },
+    {
+      "page": 21,
+      "sha256": "52d6774437cc0324eacd3cdd6a491f91fe807c55b084c59d1217c5e3f9f09798"
+    },
+    {
+      "page": 22,
+      "sha256": "a4ba7c57fc4a6cc4f4bbb4b3d5f989ade2252cf4cae5fd05885ecc3e8596894a"
+    },
+    {
+      "page": 23,
+      "sha256": "7f3a517c728d68cc6f4bf98267045ed6154da655ce6d3438f8799b2bb8cbe714"
+    },
+    {
+      "page": 24,
+      "sha256": "0e552ff6986ff5c8f2ea0ea7d53c12d5bf200a82ddfa81b42403cf9f8ba5074e"
+    },
+    {
+      "page": 25,
+      "sha256": "38a1e74b139fea6ec6b2acd9d83c05e7c23937555b0458197376e2e4a2f6a27c"
+    },
+    {
+      "page": 26,
+      "sha256": "f38eb57984af1f139ec9bc588c0e2dac1db2e2a9fd55e0361723c8103d879b9a"
+    },
+    {
+      "page": 27,
+      "sha256": "9b8cf5e8fc283706051c14c2865503db0788dbe3949951445846eb7056d8729a"
+    },
+    {
+      "page": 28,
+      "sha256": "8307f13995055b2473b1f4942aa186286bc0416f59da05b37b2f1209e631fbc8"
+    },
+    {
+      "page": 29,
+      "sha256": "d5ddd97bd275f10b61fecbf6b51ff6f8ed82dc3e178a904f36c58e4343607045"
+    },
+    {
+      "page": 30,
+      "sha256": "8416e08614c45e5dac723f7ca7e9b422b34d078f0fcc2b51ccee92e6cb19f2cb"
+    },
+    {
+      "page": 31,
+      "sha256": "940b1fa342d732140fca51cd069d7dc3b6dbe5520a05aa3f2704173a2bd1d736"
+    },
+    {
+      "page": 32,
+      "sha256": "e993748802c02b68fc177b74da2005cbccfd7912959e6cdfc84e133aa74d9266"
+    },
+    {
+      "page": 33,
+      "sha256": "e04e5e64571a73769e0bb07cb586270cd9f4221abcb52032093213b7a92760cc"
+    },
+    {
+      "page": 34,
+      "sha256": "6cb5bb0d05f0b0356a151c1c240166ebbe5a9103f80fe888aab83ab6b9d1de8b"
+    },
+    {
+      "page": 35,
+      "sha256": "bb768cd492e31fad723a23e7578149c8e09d547d921f49e6f5ffbd98e0daf4ba"
+    },
+    {
+      "page": 36,
+      "sha256": "adf1977152ec0b56319c2d5df47b1033dea7a923aac3b9e76e328011d36299b6"
+    },
+    {
+      "page": 37,
+      "sha256": "a5004fd81816de3bc06f94a6ba54e36ac8597bb8224ad55f53fedcc3c6fd53a0"
+    },
+    {
+      "page": 38,
+      "sha256": "eafeb683e08e9be110a7f6008317b5a1fe81d0126887729467949751a6b6ec2c"
+    }
+  ],
+  "embedded_figures": 32,
+  "remaining_assessment_ids": [],
+  "submission_ready": false,
+  "remaining_quality_work": [
+    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+  ],
+  "new_paid_api_calls": 0,
+  "verified_utc": "2026-11-10T07:56:59.054474+00:00",
+  "basic_figures_with_individual_explanations": 21,
+  "existing_extensions_text_and_images_preserved": true,
+  "production_requests_during_explanation_update": 0
+}

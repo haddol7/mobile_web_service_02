@@ -53,6 +53,36 @@ def title_match(question, title):
     return max(lexical, concepts)
 
 
+def source_title_candidates(question, titles):
+    """Honor explicit recorded source descriptions; this does not inspect clothing in pixels."""
+    compact = re.sub(r"\s+", "", normalize_query(question).casefold())
+    groups = (("모자", "후드"), ("재진입", "재입장", "다시들어", "돌아온", "이탈후"),
+              ("평소", "평상", "기본모습"))
+    requested = [group for group in groups if any(term in compact for term in group)]
+    if not requested:
+        return set(titles), []
+    # Absence of a source label cannot establish that the person was not wearing something.
+    if re.search(r"(?:안|못)(?:쓴|썼|쓰|입|착용|한|했|들어|나온|보인)|않|"
+                 r"미착용|벗은|없는|없던|아닌|제외|빼고|빼줘|말고|(?:모자|후드)(?:를|을)?없", compact):
+        return set(), ["설명에 없는 부정 조건"]
+    selected = {key for key, title in titles.items()
+                if all(any(term in re.sub(r"\s+", "", title.casefold()) for term in group)
+                       for group in requested)}
+    return selected, [group[0] for group in requested]
+
+
+def source_condition_scope(question, frames):
+    """Apply deterministic description conditions even without a usable index."""
+    titles = {str(key): title for key, title in frames.order_by().values_list(
+        "session_id", "session__source_label").distinct()}
+    selected, conditions = source_title_candidates(question, titles)
+    if not conditions:
+        return frames, {}
+    details = {"metadata_conditions": conditions, "metadata_candidate_sessions": len(selected),
+               "condition_status": "needs_clarification" if conditions == ["설명에 없는 부정 조건"] else "applied"}
+    return frames.filter(session_id__in=selected), details
+
+
 class EmbeddingError(Exception):
     """Generic failure; provider payloads and credentials must not escape."""
     def __init__(self, message, *, attempted=False):
@@ -289,8 +319,14 @@ def rank(question, frames, *, allow_api=True):
         missing = [doc for doc in current if doc["id"] not in stored or stored[doc["id"]]["sha256"] != doc["sha256"]]
         if missing:
             return {**base, "status": "index_stale", "missing_documents": len(missing)}
-        query, cached = query_vector(question, allow_api=allow_api)
         titles = {doc["id"]: doc["text"].splitlines()[0].removeprefix("영상 설명: ") for doc in current}
+        ids, qualifiers = source_title_candidates(question, titles)
+        if qualifiers:
+            base["metadata_conditions"] = qualifiers
+            base["metadata_candidate_sessions"] = len(ids)
+        if not ids:
+            return {**base, "status": "no_match", "scope": "semantic_top_5", "session_ids": []}
+        query, cached = query_vector(question, allow_api=allow_api)
         scores = []
         for key in ids:
             cosine = sum(a*b for a, b in zip(query, stored[key]["vector"]))

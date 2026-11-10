@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "production_verified": true,
+  "release": "2026111010355785ec79",
+  "changed_files": [
+    "blog/monitoring.py"
+  ],
+  "first_profile": "self-daejinha",
+  "public_url": "https://daejinha.pythonanywhere.com/people/",
+  "profile_cards": 36,
+  "prior_first_profile_url": "/people/public-trump/",
+  "other_cards_order_preserved": true,
+  "backup_verified": true,
+  "database_or_media_modified": false,
+  "paid_api_calls": 0,
+  "request_minimum_interval_seconds": 5,
+  "wsl_django_check": "passed",
+  "wsl_monitoring_tests": {
+    "command": "python manage.py test blog.tests.test_monitoring --noinput",
+    "passed": 8
+  },
+  "verified_utc": "2026-11-10T10:36:56.640786+00:00"
+}

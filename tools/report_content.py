@@ -118,7 +118,7 @@ def build_appendix():
     doc = Document()
     section(doc, "구현 및 검증 결과", False)
     text(doc, "YOLOv5가 객체 출현을 감지하면 Django 서버에 사진을 등록하고 Android와 웹에서 확인하는 감시 시스템을 구현했다. 기존 객체 출현 비교와 Post API를 유지하고 사람 추적 및 얼굴 후보 비교, 인물별 이력과 근거 기록 질문을 추가했다.")
-    text(doc, "운영 주소는 https://daejinha.pythonanywhere.com/ 이다. 2026년 11월 9일 기준으로 관측 사진 500장과 분석 실행 40개를 저장했다. 출입 인물 29명의 등록 사진과 영상별 발견 이력을 조회할 수 있다.")
+    text(doc, "운영 주소는 https://daejinha.pythonanywhere.com/ 이다. 2026년 11월 9일 출입 영상 분석에서는 관측 사진 500장과 분석 실행 40개를 저장했다. 출입 인물 29명의 등록 사진과 영상별 발견 이력을 조회할 수 있다. 11월 10일에는 본인 웹캠 촬영 3건을 추가해 자동 등록과 얼굴 후보 및 운영자 확인을 검증했다.")
     text(doc, "서버와 Edge 검출기는 WSL Ubuntu에서, Android 빌드와 기기 검사는 Windows에서 수행했다. 운영 검증은 PythonAnywhere의 실제 응답과 화면을 기준으로 구분했다.")
     text(doc, "GitHub 저장소  https://github.com/haddol7/mobile_web_service_02", 9)
     section(doc, "운영 화면 접속과 확인 방법", False)
@@ -184,7 +184,7 @@ def build_appendix():
 
     section(doc, "B14 근거 기록 검색과 임베딩")
     text(doc, "인물과 날짜 조건으로 DB 기록을 먼저 제한한 뒤 영상 설명과 인물 및 날짜 메타데이터를 임베딩으로 비교한다. text-embedding-3-small의 512차원 벡터와 제목 일치를 함께 사용해 관련 영상 최대 5개를 선택한다. 검색된 기록의 집계와 근거 사진을 답변에 연결한다.")
-    text(doc, "현재 색인은 분석 실행 40개의 문서다. 최초 31개 문서와 고정 질문 3개, 추가 영상 문서 4개, 재분석 문서 5개를 세 차례 배치로 구성했다. 기존 벡터는 재사용하며 사진과 얼굴 특징은 텍스트 임베딩 입력과 구분해 보관한다.")
+    text(doc, "11월 9일의 색인은 분석 실행 40개의 문서다. 최초 31개 문서와 고정 질문 3개, 추가 영상 문서 4개, 재분석 문서 5개를 세 차례 배치로 구성했다. 11월 10일에는 본인 촬영 문서 3개를 추가해 43개가 됐다. 기존 벡터는 재사용하며 본인 기록의 색인 및 실제 답변은 B27과 B28에 제시했다.")
     protocol = record("docs/testing/embedding-protocol.json")
     cloud = record("evidence/history/chokepoint-people-embedding-cloud.json")
     questions = {row["id"]: row["question"] for row in protocol["queries"]}
@@ -220,8 +220,8 @@ def build_appendix():
         ["WSL Edge", "추적과 얼굴 및 전송 30개 통과", "history/report-edge-tests.txt"],
         ["웹", "단위 검사 76개 통과", "mobile-web/unit-verification.json"],
         ["Android", "JVM 40개, Lint 오류 0개", "content/android/verification.json"],
-        ["운영 인물 등록", "29명 등록, 관측 사진 500장", "history/chokepoint-people-cloud.json"],
-        ["운영 검색 색인", "문서 40개, 고정 예제 3개 확인", "history/chokepoint-people-embedding-cloud.json"],
+        ["출입 영상 등록", "11월 9일 29명, 사진 500장", "history/chokepoint-people-cloud.json"],
+        ["출입 영상 색인", "11월 9일 문서 40개, 예제 3개", "history/chokepoint-people-embedding-cloud.json"],
         ["운영 대화 복원", "별도 접속에서 2개 질의 복원", "ui-audit/chat-cloud.json"],
         ["공개 조회와 운영 권한", "공개 조회, 방문자 대화 분리와 하루 5회", "security/deployment.json"]], [1.05, 2.3, 2.55])
     text(doc, f"HTTP 엔진의 15개 사례는 Django 전체 {server_tests}개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
@@ -239,4 +239,26 @@ def build_appendix():
                  "모델과 자료의 이용 조건  docs/testing/licenses 및 docs/upstream"]:
         paragraph = text(doc, line, 9)
         paragraph.paragraph_format.space_after = Pt(2)
+
+    section(doc, "B19 본인 웹캠의 인물 확인 결과")
+    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-confirmed-profile.png", 3.0,
+           "그림 B19 등록 얼굴과 발견 얼굴의 비교 및 운영자 확인 상태")
+    text(doc, "웹캠을 연결해 YOLO로 실시간 사람 검출을 확인했다. 등록 얼굴과 새로 촬영한 얼굴을 비교한 화면이다. 후드 착용과 재진입 장면 모두 하대진 후보로 연결됐고 표시 유사도는 각각 0.87과 0.88이다.")
+    text(doc, "이 캡처 시점의 상단에는 운영자 확인 1개와 검토할 후보 3개가 구분돼 있다. 같은 인물로 확인 버튼으로 저장하면 해당 추적 번호에 연결된 사진들의 확인 상태가 함께 반영된다. 이후의 최종 확인 상태는 B30에서 확인할 수 있다.")
+    text(doc, "추가 기능 10-2의 인물 확인 저장과 얼굴 대조 증빙이다.\n확인 위치  https://daejinha.pythonanywhere.com/people/self-daejinha/", 9)
+
+    section(doc, "B20 본인 촬영별 발견 이력")
+    figure(doc, "evidence/screenshots/self-confirmation-20261110/user-session-history.png", 4.7,
+           "그림 B20 본인 웹캠의 세 촬영 실행과 연결된 발견 이력")
+    text(doc, "2026년 11월 10일 분석일 아래에 화면 이탈과 재진입, 모자 착용, 평소 모습의 세 촬영 실행이 구분돼 있다. 각 항목에서 장면 확인을 누르면 해당 실행에 연결된 사진과 추적 기록을 조회할 수 있다.")
+    data_table(doc, ["촬영 실행", "조회 사진", "화면의 상태"], [
+        ["본인 웹캠 화면 이탈과 재진입 확인", "3장", "얼굴 후보"],
+        ["본인 모자 착용 웹캠 인식 확인", "2장", "얼굴 후보"],
+        ["본인 평소 모습 웹캠 인식 확인", "2장", "확인됨"]], [3.1, .8, 2.0])
+    text(doc, "이 캡처는 평소 모습의 추적만 먼저 확인한 시점이다. 나머지 두 실행의 얼굴 후보도 이후 운영자가 확인했고 최신 상태는 B30에 제시했다. 사진 수는 선택한 인물과 연결돼 조회되는 기록 수다. 세 실행은 같은 사람을 별도로 촬영한 자료이며 실제 방문 횟수와 구분한다.")
+    text(doc, "추가 기능 10-2의 촬영별 이력 조회와 확인 상태 반영을 보여주는 보완 증빙이다. 원본 증빙은 evidence/screenshots/self-confirmation-20261110에 보관했다.", 9)
+    from report_self_sections import append_self_sections
+    append_self_sections(doc, section=section, text=text, figure=figure, pair=pair, data_table=data_table, server_tests=server_tests)
+    from report_rag_sections import append_rag_sections
+    append_rag_sections(doc, section=section, text=text, figure=figure, data_table=data_table, record=record)
     return doc

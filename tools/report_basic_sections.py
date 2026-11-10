@@ -35,8 +35,8 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
     proof("B01", ["1", "2"], "evidence/screenshots/github-folder-structure.jpg", 6.1,
         "그림 B01 기본 항목 1과 2에 대응하는 별도 저장소의 폴더 구성", [
         "사진의 저장소 이름은 mobile_web_service_02이고 브랜치는 main이다. 파일 목록에서 세 필수 폴더와 Word 보고서 항목을 확인할 수 있다. PhotoBlogServer는 Django API와 저장 및 웹 조회, PhotoViewer는 Android 클라이언트, YOLOv5는 Edge 검출과 전송을 담당한다. 실제 보고서 파일명은 모바일웹서비스 프로젝트 공통평가 02_수행 결과 보고서.docx다.",
-        "이 사진은 최초 업로드 당시의 루트 구성을 보여준다. 최종 제출본은 같은 저장소의 main 브랜치에서 확인하며 보고서도 루트에 둔다. 소스와 보고서를 push한 뒤 원격 커밋을 확인하고 실제 원격 Word 파일을 내려받아 로컬 검수본과 SHA256을 비교했다. SHA256은 파일 내용으로 계산하는 지문이며 두 값이 같으면 검수한 문서와 업로드한 문서의 바이트가 같다는 의미다."])
-    text(doc, "기본 항목 1은 사진의 폴더 구성과 실제 제출 트리로, 항목 2는 위 GitHub URL과 원격 파일 검증으로 확인했다. 최종 문서의 해시와 검증 대상 커밋은 evidence/github-final-report.json에 보관한다. 이 기록은 검증한 스냅샷을 가리키며 이후 검증 기록만 추가한 커밋과 구분한다.", 9)
+        "이 사진은 최초 업로드 당시의 루트 구성을 보여준다. 전용 저장소의 main 브랜치에 세 필수 폴더와 보고서를 함께 두었다. 해당 업로드 검증에서는 실제 원격 Word를 내려받아 당시 로컬 검수본과 SHA256을 비교했다. SHA256은 파일 내용으로 계산하는 지문이며 두 값이 같으면 두 문서의 바이트가 같다는 의미다."])
+    text(doc, "기본 항목 1은 폴더 구성, 항목 2는 전용 저장소 URL과 당시 업로드 기록으로 확인했다. evidence/github-final-report.json은 해당 커밋의 이전 보고서 검증을 보관한다. 현재 RAG 보완본의 검증 지문과 배치 결과는 별도의 로컬 검수 기록으로 구분한다.", 9)
 
     section(doc, "B02 원본 YOLOv5 실행 결과")
     text(doc, "기본 항목 3은 변경 없는 detect.py의 실행과 객체 인식 결과를 요구한다. Ultralytics YOLOv5 v7.0 원본을 YOLOv5/baseline/detect.py에 별도로 보관했다. 원본 출처는 공식 커밋 915bbf294bb74c859f0b41f1c23bc395014ea679이며 파일과 공식 yolov5s.pt 가중치의 SHA256을 대조한 뒤 실행했다.")

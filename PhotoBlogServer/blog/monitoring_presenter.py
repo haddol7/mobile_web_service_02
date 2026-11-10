@@ -65,6 +65,12 @@ def profile_payload(profile, with_timeline=False):
     confirmed=tracks.filter(confirmed=profile)
     candidates=tracks.filter(confirmed__isnull=True)
     sources={source_key(t.session) for t in tracks}
+    kinds={t.session.source_kind for t in tracks}
+    live_only=kinds=={"live"}
+    notice=("실시간 카메라 관측 / 분석일 기준" if live_only else
+            "카메라와 영상 관측 / 분석일 기준" if "live" in kinds else
+            "공개 영상 시연 / 분석일 기준" if tracks and all(t.session.configuration.get("purpose")=="demo" for t in tracks) else
+            "영상 관측 / 분석일 기준" if kinds else "등록 얼굴 / 관측 대기")
     frames=TrackingFrame.objects.filter(observations__track__in=tracks).distinct()
     latest=frames.order_by("-processed_at").first()
     earliest=frames.order_by("processed_at").first()
@@ -82,7 +88,8 @@ def profile_payload(profile, with_timeline=False):
           "portrait_url":reverse("history_reference",args=[profile.pk]) if profile.reference_image else portrait,
           "observation_url":portrait,
           "detail_url":reverse("person_detail",args=[profile.pk]),"active":bool(latest),
-          "status":"확인된 이력 있음" if confirmed.exists() else "얼굴 후보 검토 필요" if candidates.exists() else "관측 기록 없음"}
+          "status":"확인된 이력 있음" if confirmed.exists() else "얼굴 후보 검토 필요" if candidates.exists() else "관측 기록 없음",
+          "source_notice":notice,"source_summary":f"촬영 {len(sources)}건" if live_only else f"영상 {len(sources)}개"}
     observed=frames.exclude(observed_at=None).order_by("-observed_at").first()
     if observed: data["last_observed_at"]=observed.observed_at.isoformat()
     if with_timeline:

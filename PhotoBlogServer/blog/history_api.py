@@ -271,7 +271,7 @@ class HistoryQuestion(PublicQuestionAPI):
             result.update(answer=answer_records(result), mode="records",
                           llm={"status": "not_requested", "text": None, "evidence_ids": []})
             semantic_ok = not data["semantic"] or result["retrieval"]["status"] in ("ranked", "no_match", "empty")
-            if data["generate"] and semantic_ok:
+            if data["generate"] and semantic_ok and result["retrieval"].get("condition_status") != "needs_clarification":
                 if not conversation_id and not cache.add(f"history-llm-{owner}", True, 5):
                     raise Throttled(wait=5)
                 result["llm"] = generate(data["question"], {**result, "conversation_context": messages})

@@ -1,0 +1,35 @@
+{
+  "images_preserved_without_pixel_changes": true,
+  "scope": "supplementary operator identity review and per-session history evidence",
+  "images": [
+    {
+      "candidate_tracks_visible": 3,
+      "source_filename": "codex-clipboard-456fc90a-8a4d-4abb-bfe8-40b5ea9e493e.png",
+      "source_sessions_visible": 3,
+      "confirmed_tracks_visible": 1,
+      "sha256": "8efc885fac240ca5b32ea0f98b66658e28c9b30109ff3a9230830b07d75f6bcb",
+      "source": "user-provided screenshot",
+      "assessment_item": "10-2",
+      "path": "evidence/screenshots/self-confirmation-20261110/user-confirmed-profile.png",
+      "address_bar_visible": false,
+      "report_section": "B19"
+    },
+    {
+      "source_filename": "codex-clipboard-476758d5-f2d7-41f5-bf70-69439c793cc0.png",
+      "source_sessions_visible": 3,
+      "sha256": "7f46976805b6aea4834ec824bbbeaed479713ba7fd9becd785a323c73c6e7a9d",
+      "linked_frame_counts": [
+        3,
+        2,
+        2
+      ],
+      "source": "user-provided screenshot",
+      "assessment_item": "10-2",
+      "path": "evidence/screenshots/self-confirmation-20261110/user-session-history.png",
+      "address_bar_visible": false,
+      "report_section": "B20"
+    }
+  ],
+  "received_date": "2026-11-10",
+  "not_a_substitute_for_required_api_or_address_bar_captures": true
+}

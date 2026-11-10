@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "existing_posts_preserved": true,
+  "photos": [
+    {
+      "id": 12,
+      "title": "YOLO: person",
+      "image_sha256": "3c70b72771196eae000dc0169be281670daf56e9eb262ba88d4955eac7e99d6f",
+      "local_image": "yolo/baseline/detected/2026/11/10/101135-988c555a5cd945ca9783d90407da0320.jpg",
+      "detail_url": "https://daejinha.pythonanywhere.com/post/12/"
+    },
+    {
+      "id": 13,
+      "title": "YOLO: person",
+      "image_sha256": "ac891f70891c801bdcb958543a9e71f5dbf541972848b2f5baed3794b798e7df",
+      "local_image": "yolo/baseline/detected/2026/11/10/101217-5a60c0fe0fe04241bbb68a205425ab2c.jpg",
+      "detail_url": "https://daejinha.pythonanywhere.com/post/13/"
+    },
+    {
+      "id": 14,
+      "title": "YOLO: person",
+      "image_sha256": "3487bf4c5e8a3a6e166e77d0bb9cc60d0e1fa70aa6656b930559c2dc847e0947",
+      "local_image": "yolo/baseline/detected/2026/11/10/101226-9f075d0108664dfc835e9bb6beb0843c.jpg",
+      "detail_url": "https://daejinha.pythonanywhere.com/post/14/"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://daejinha.pythonanywhere.com/api_root/Post/",
+      "status": 200,
+      "started_utc": "2026-11-10T10:15:38.986748+00:00"
+    },
+    {
+      "url": "https://daejinha.pythonanywhere.com/media/images/2026/11/10/2b10a26dc8d34cbaa04078920102a773.jpg",
+      "status": 200,
+      "started_utc": "2026-11-10T10:15:44.265736+00:00"
+    },
+    {
+      "url": "https://daejinha.pythonanywhere.com/media/images/2026/11/10/f467e9f212304958af340badded48b7c.jpg",
+      "status": 200,
+      "started_utc": "2026-11-10T10:15:49.384044+00:00"
+    },
+    {
+      "url": "https://daejinha.pythonanywhere.com/media/images/2026/11/10/e8dba378fe0c47448767e5e2e1801a36.jpg",
+      "status": 200,
+      "started_utc": "2026-11-10T10:15:54.491732+00:00"
+    }
+  ],
+  "paid_api_calls": 0
+}

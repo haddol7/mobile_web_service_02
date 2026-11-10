@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "runId": "20261108-214315-a5ff755c",
-  "generatedAtUtc": "2026-11-08T21:43:15.2337419Z",
+  "runId": "20261110-113934-154f6464",
+  "generatedAtUtc": "2026-11-10T11:39:34.4077838Z",
   "scope": "Windows Android build/device verification only; not PythonAnywhere deployment verification",
   "mode": "BuildOnly",
   "status": "passed",
@@ -13,9 +13,9 @@
     "Only current-run screenshot hashes in this JSON are verification evidence; older PNG files are not re-verified."
   ],
   "environment": {
-    "powershell": "7.6.9",
+    "powershell": "5.1.26100.9711",
     "os": "Microsoft Windows NT 10.0.26200.0",
-    "javaHome": "C:/Users/1/AppData/Local/Programs/Android/android-studio/jbr",
+    "javaHome": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\android-studio\\jbr",
     "sdkRoot": "C:\\Users\\1\\AppData\\Local\\Programs\\Android\\Sdk",
     "javaVersion": "25.0.3",
     "platforms": [
@@ -28,8 +28,8 @@
     "gradleVersion": "9.6.0"
   },
   "source": {
-    "sha256": "604f9c61ffb37b99a29342df11718542a5addc4ba2fdcea1b9cc20af8454fe91",
-    "filesCount": 64,
+    "sha256": "40eaa4319687ff33e3e45ce625a730da23ec4858b99c92e999bb259c0fddb4f8",
+    "filesCount": 65,
     "files": [
       {
         "path": "app/build.gradle.kts",
@@ -67,14 +67,14 @@
         "sha256": "562520e264bcc9dc599be17fda6bde54cafad44a211668fdcf90128b10be55af"
       },
       {
-        "path": "app/src/androidTest/assets/ocr/grass-large.png",
-        "bytes": 3085788,
-        "sha256": "12a28a08d684b9283a8c6078d17d1a22699950052165e1c9d26191ab9bdb0b57"
-      },
-      {
         "path": "app/src/androidTest/assets/ocr/grass.png",
         "bytes": 436694,
         "sha256": "d51d6fee73461ad2f462c2565cb2268d3d69068c0848f71671fe72854b8a04fa"
+      },
+      {
+        "path": "app/src/androidTest/assets/ocr/grass-large.png",
+        "bytes": 3085788,
+        "sha256": "12a28a08d684b9283a8c6078d17d1a22699950052165e1c9d26191ab9bdb0b57"
       },
       {
         "path": "app/src/androidTest/assets/ocr/printed-page.png",
@@ -120,6 +120,11 @@
         "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/HistorySyncTest.java",
         "bytes": 9964,
         "sha256": "c937c04042edfd651caa3d3156d22811cf3abbac3d50d23aeff40488d5a0901e"
+      },
+      {
+        "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/SelfWebcamSyncTest.java",
+        "bytes": 6839,
+        "sha256": "78b01cf21a9d65d4ba3b1e19b12d5ad908fc0fe0fdd013948b9d7eb9ea7c2fa4"
       },
       {
         "path": "app/src/androidTest/java/com/haddol7/photoviewer/ui/UiAuditTest.java",
@@ -208,13 +213,13 @@
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/data/PhotoRepository.java",
-        "bytes": 20472,
-        "sha256": "47b4c89a8db45fc0e63e30141861003acb23901e7cd25952004cec33ff32b7ad"
+        "bytes": 20880,
+        "sha256": "d5bf5a2c47392b551cf540b88a338f7c3af1db0011c6a984ac2fd6d6556881b9"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/MainActivity.java",
-        "bytes": 85379,
-        "sha256": "84f4b172d9a73b99f3d0128fecc311f344c05b1ea096ca8b450492e71bc2e1a0"
+        "bytes": 85678,
+        "sha256": "ba52bb411ca29b3cd96414c1ec3cfcde6e435cabd9356538eaa7d591c1e0d4d2"
       },
       {
         "path": "app/src/main/java/com/haddol7/photoviewer/model/PhotoPost.java",
@@ -356,17 +361,17 @@
   "sourceStable": true,
   "build": {
     "passed": true,
-    "gradleLog": "evidence/private/androidVerification/20261108-214315-a5ff755c/gradle.log",
+    "gradleLog": "evidence/private/androidVerification/20261110-113934-154f6464/gradle.log",
     "apks": [
       {
         "path": "PhotoViewer/app/build/outputs/apk/debug/app-debug.apk",
         "bytes": 133372710,
-        "sha256": "9b1eadb26dd4318d598b84ded93480185b94b927928a4967915a9f7dc5cb2a45"
+        "sha256": "46717f21aab9916a6ed7754c6501aa890142ccd410f56af1d47453dbb21b194f"
       },
       {
         "path": "PhotoViewer/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk",
-        "bytes": 6241870,
-        "sha256": "5c84e5d2a8526ac9e2e160ce6ef75f6597b1172914c73a45fc3ca46cbf54ceac"
+        "bytes": 6245187,
+        "sha256": "62a200d686967f792d161d8768a5e0d2fe4d4d800972c1d91ee8670a071a6560"
       }
     ]
   },

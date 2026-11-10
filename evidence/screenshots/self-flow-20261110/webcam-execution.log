@@ -1,0 +1,170 @@
+YOLOv5 🚀 2026-11-5 Python-3.12.15 torch-2.6.0+cpu CPU
+
+Fusing layers... 
+YOLOv5s summary: 213 layers, 7225885 parameters, 0 gradients, 16.4 GFLOPs
+1/1: http://127.0.0.1:40511/stream...  Success (inf frames 480x640 at 25.00 FPS)
+
+REGISTERED_POST 9
+Django post 9 registered: person
+0: 640x480 1 person, 62.4ms
+0: 640x480 1 person, 62.4ms
+0: 640x480 1 person, 51.1ms
+0: 640x480 1 person, 53.5ms
+0: 640x480 1 person, 38.6ms
+0: 640x480 1 person, 45.1ms
+0: 640x480 1 person, 48.1ms
+0: 640x480 1 person, 49.1ms
+0: 640x480 1 person, 49.7ms
+0: 640x480 1 person, 51.4ms
+0: 640x480 1 person, 49.5ms
+0: 640x480 1 person, 44.9ms
+0: 640x480 1 person, 48.0ms
+0: 640x480 1 person, 47.1ms
+0: 640x480 1 person, 47.7ms
+0: 640x480 1 person, 51.0ms
+0: 640x480 1 person, 54.7ms
+0: 640x480 1 person, 52.1ms
+0: 640x480 1 person, 50.8ms
+0: 640x480 1 person, 50.0ms
+0: 640x480 1 person, 49.5ms
+0: 640x480 1 person, 43.6ms
+0: 640x480 1 person, 48.6ms
+0: 640x480 1 person, 47.3ms
+0: 640x480 1 person, 46.7ms
+0: 640x480 1 person, 45.2ms
+0: 640x480 1 person, 44.2ms
+0: 640x480 1 person, 43.8ms
+0: 640x480 1 person, 48.0ms
+0: 640x480 1 person, 46.3ms
+0: 640x480 1 person, 47.6ms
+0: 640x480 1 person, 40.7ms
+0: 640x480 1 person, 44.0ms
+0: 640x480 1 person, 51.5ms
+0: 640x480 1 person, 50.4ms
+0: 640x480 1 person, 46.8ms
+0: 640x480 1 person, 46.0ms
+0: 640x480 1 person, 49.5ms
+0: 640x480 1 person, 47.5ms
+0: 640x480 1 person, 48.3ms
+0: 640x480 1 person, 48.1ms
+0: 640x480 1 person, 43.6ms
+0: 640x480 1 person, 48.8ms
+0: 640x480 1 person, 49.1ms
+0: 640x480 1 person, 43.8ms
+0: 640x480 1 person, 49.6ms
+0: 640x480 1 person, 46.4ms
+0: 640x480 1 person, 47.1ms
+0: 640x480 1 person, 47.8ms
+0: 640x480 1 person, 51.4ms
+0: 640x480 1 person, 52.7ms
+0: 640x480 1 person, 47.1ms
+0: 640x480 1 person, 52.4ms
+0: 640x480 1 person, 48.3ms
+0: 640x480 1 person, 46.9ms
+0: 640x480 1 person, 51.8ms
+0: 640x480 1 person, 48.8ms
+0: 640x480 1 person, 53.5ms
+0: 640x480 1 person, 52.1ms
+0: 640x480 1 person, 50.3ms
+0: 640x480 1 person, 49.0ms
+0: 640x480 1 person, 49.8ms
+0: 640x480 1 person, 46.9ms
+0: 640x480 1 person, 49.6ms
+0: 640x480 1 person, 51.6ms
+0: 640x480 1 person, 54.9ms
+0: 640x480 1 person, 49.3ms
+0: 640x480 1 person, 50.7ms
+0: 640x480 1 person, 44.9ms
+0: 640x480 1 person, 46.8ms
+0: 640x480 1 person, 46.4ms
+0: 640x480 1 person, 48.8ms
+0: 640x480 1 person, 49.6ms
+0: 640x480 1 person, 55.6ms
+0: 640x480 1 person, 47.1ms
+0: 640x480 1 person, 51.6ms
+0: 640x480 1 person, 48.7ms
+0: 640x480 1 person, 45.5ms
+0: 640x480 1 person, 48.0ms
+0: 640x480 1 person, 47.1ms
+0: 640x480 1 person, 47.8ms
+0: 640x480 1 person, 53.5ms
+0: 640x480 1 person, 47.9ms
+0: 640x480 1 person, 45.2ms
+0: 640x480 1 person, 48.8ms
+0: 640x480 1 person, 48.2ms
+0: 640x480 1 person, 41.5ms
+0: 640x480 1 person, 43.2ms
+0: 640x480 1 person, 45.9ms
+0: 640x480 1 person, 44.9ms
+0: 640x480 1 person, 46.6ms
+0: 640x480 1 person, 51.7ms
+0: 640x480 1 person, 48.5ms
+0: 640x480 1 person, 46.0ms
+0: 640x480 1 person, 45.3ms
+0: 640x480 1 person, 48.4ms
+0: 640x480 1 person, 46.2ms
+[http @ 0x20eaf900] Stream ends prematurely at 1152261, should be 18446744073709551615
+WARNING ⚠️ Video stream unresponsive, please check your IP camera connection.
+0: 640x480 1 person, 45.6ms
+Speed: 0.4ms pre-process, 48.5ms inference, 0.6ms NMS per image at shape (1, 3, 640, 640)
+Results saved to [1m/mnt/c/Users/1/mobile_web_service/common02/.local/webcam-server-20261110/yolo/automatic-registration[0m
+98 labels saved to /mnt/c/Users/1/mobile_web_service/common02/.local/webcam-server-20261110/yolo/automatic-registration/labels
+{
+  "verified_utc": "2026-11-10T09:42:21.017574+00:00",
+  "environment": "WSL2 Ubuntu YOLO against PythonAnywhere",
+  "input_kind": "live webcam",
+  "camera": "e2eSoft iVCam",
+  "decoded_probe_frames": 12,
+  "unique_probe_frames": 12,
+  "automatic_posts": [
+    {
+      "post_id": 9,
+      "title": "YOLO: person",
+      "image_sha256": "65c4316956c9273fc36a71567a8c8c394d74a3256c62de6bea3d821db9506d0d",
+      "local_image": ".local/webcam-server-20261110/yolo/automatic-registration/detected/2026/11/10/094202-b8b62a9f2df64551800ffc811e3063e8.jpg",
+      "detail_url": "https://daejinha.pythonanywhere.com/post/9/",
+      "detail_status": 200,
+      "image_status": 200
+    }
+  ],
+  "existing_records_preserved": true,
+  "detector_returned_normally": true,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200,
+      "started_utc": "2026-11-10T09:41:55.843966+00:00"
+    },
+    {
+      "method": "POST",
+      "path": "/api_root/Post/",
+      "status": 201,
+      "started_utc": "2026-11-10T09:42:02.685635+00:00"
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "status": 200,
+      "started_utc": "2026-11-10T09:42:10.498319+00:00"
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/f56ded0c551b423fad3a7e73c1ae170d.jpg",
+      "status": 200,
+      "started_utc": "2026-11-10T09:42:15.598443+00:00"
+    },
+    {
+      "method": "GET",
+      "path": "/post/9/",
+      "status": 200,
+      "started_utc": "2026-11-10T09:42:20.698532+00:00"
+    }
+  ],
+  "minimum_request_spacing_seconds": 5.1,
+  "paid_api_calls": 0,
+  "browser_capture_verified": false,
+  "android_verified": false,
+  "report_updated": false,
+  "pass": true
+}

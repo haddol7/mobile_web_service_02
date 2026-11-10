@@ -24,7 +24,7 @@ def overview():
     ).order_by("display_name", "pk")[:100]
     from .monitoring_presenter import profile_payload,session_cards
     cards=[profile_payload(p) for p in profiles]
-    cards.sort(key=lambda p:(not p["active"],-p["source_count"],not p["reference_available"],p["name"]))
+    cards.sort(key=lambda p:(p["key"]!="self-daejinha",not p["active"],-p["source_count"],not p["reference_available"],p["name"]))
     scenes=session_cards(TrackingFrame.objects.all(),8)
     frames=[{k:v for k,v in s.items() if k!="frames"} for s in scenes[:4]]
     for frame in frames:

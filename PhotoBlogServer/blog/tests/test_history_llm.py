@@ -66,6 +66,39 @@ class HistoryLLMTests(SimpleTestCase):
             self.assertEqual(self.generated(self.response(answer))["status"],"unavailable")
         self.assertEqual(self.generated(self.response("영상의 2.5초 지점에서 관측되었습니다."))["status"],"generated")
 
+    def test_known_number_from_another_fact_cannot_be_used_as_passage_count(self):
+        self.retrieved["facts"].update(observed_tracks=23, passages=6, source_count=3, candidate_tracks=4)
+        for answer in ("선 통과는 23건입니다.", "추적 기록은 6개입니다.", "영상 출처는 4개입니다.", "얼굴 후보는 세 개입니다."):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.generated(self.response(answer))["status"], "unavailable")
+        for answer in ("추적 기록은 23개이고 선 통과는 6건입니다.", "영상 출처는 세 개입니다.", "3개의 영상에서 발견됐습니다.", "얼굴 후보는 4개입니다."):
+            with self.subTest(answer=answer):
+                self.assertEqual(self.generated(self.response(answer))["status"], "generated")
+
+    def test_more_specific_confirmed_track_label_is_not_treated_as_all_tracks(self):
+        self.retrieved["facts"].update(observed_tracks=4, confirmed_tracks=1, candidate_tracks=3)
+        self.assertEqual(self.generated(self.response("확인된 추적 기록은 4개입니다."))["status"], "unavailable")
+        self.assertEqual(self.generated(self.response("확인된 추적 기록은 1개이고 후보는 3개입니다."))["status"], "generated")
+
+    def test_visit_counts_and_unlabelled_counts_are_not_supported(self):
+        self.retrieved["facts"].update(observed_tracks=3, source_count=3)
+        for answer in ("방문 횟수는 3회입니다.", "세 번 방문했습니다.", "총 3개입니다."):
+            self.assertEqual(self.generated(self.response(answer))["status"], "unavailable")
+
+    def test_recorded_two_source_answer_is_rejected_after_headwear_scope_has_one_source(self):
+        self.retrieved["facts"].update(source_count=1,observed_tracks=1,dates=["2026-11-10"])
+        recorded=("하대진의 모자 착용 촬영은 두 개의 출처에서 확인되었습니다. "
+                  "첫 번째 출처는 '본인 모자 착용 웹캠 인식 확인'이며, "
+                  "두 번째 출처는 '본인 웹캠 화면 이탈과 재진입 확인'입니다.")
+        result=self.generated(self.response(recorded))
+        self.assertEqual(result["status"],"unavailable")
+        self.assertEqual(result["diagnostic"]["category"],"unsupported_count_or_date")
+
+    def test_processing_date_cannot_be_relabelled_as_recording_date(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-11-10"])
+        self.assertEqual(self.generated(self.response("촬영 날짜는 2026년 11월 10일입니다."))["status"], "unavailable")
+        self.assertEqual(self.generated(self.response("분석 날짜는 2026년 11월 10일입니다. 촬영일은 알 수 없습니다."))["status"], "generated")
+
     def test_internal_evidence_ids_stay_out_of_answer_prose(self):
         key="a"*64;self.retrieved["evidence"][0]["id"]=key
         self.assertEqual(self.generated(self.response("근거 ID는 "+key+"입니다.",ids=[key]))["status"],"unavailable")
@@ -80,11 +113,18 @@ class HistoryLLMTests(SimpleTestCase):
             with patch("blog.history_llm.urlopen", side_effect=HTTPError(
                     "https://api.openai.com/", status, "private provider message", None, None)):
                 result = generate("기록", self.retrieved)
-                self.assertEqual(result, {"status": "unavailable", "text": None, "evidence_ids": []})
+                self.assertEqual(result["status"], "unavailable")
+                self.assertIsNone(result["text"])
+                self.assertEqual(result["evidence_ids"], [])
+                self.assertEqual(result["diagnostic"]["category"], "provider_http")
+                self.assertEqual(result["diagnostic"]["http_status"], status)
+                self.assertNotIn("private provider message", json.dumps(result))
 
     def test_timeout_preserves_unavailable_contract(self):
         with patch("blog.history_llm.urlopen", side_effect=TimeoutError):
-            self.assertEqual(generate("기록", self.retrieved)["status"], "unavailable")
+            result = generate("기록", self.retrieved)
+            self.assertEqual(result["status"], "unavailable")
+            self.assertEqual(result["diagnostic"]["category"], "provider_connection")
 
     def test_malformed_oversized_or_secret_output_is_rejected(self):
         for raw in (b"not-json", b"x"*65537, b"{}", self.response("isolated-openai-test-key")):
@@ -105,6 +145,39 @@ class HistoryLLMTests(SimpleTestCase):
             self.assertEqual(generate("그다음은?",self.retrieved)["status"],"generated")
             payload=json.loads(json.loads(mocked.call_args.args[0].data)["messages"][1]["content"])
             self.assertEqual(payload["conversation"][0]["role"],"user")
+
+
+    def test_calendar_date_order_and_values_must_match_fact_dates(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-11-10"])
+        for answer in ("분석 날짜는 2026년 10월 11일입니다.",
+                       "분석 날짜는 2026-10-11입니다.", "분석 날짜는 10월 11일입니다."):
+            with self.subTest(answer=answer):
+                result = self.generated(self.response(answer))
+                self.assertEqual(result["status"], "unavailable")
+                self.assertEqual(result["diagnostic"]["category"], "unsupported_count_or_date")
+
+    def test_known_calendar_dates_accept_iso_korean_and_partial_formats(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-11-10"])
+        for label in ("2026년 11월 10일", "2026-11-10", "2026/11/10", "2026.11.10", "11월 10일"):
+            with self.subTest(label=label):
+                self.assertEqual(self.generated(self.response("분석 날짜는 " + label + "입니다."))["status"], "generated")
+
+    def test_calendar_date_is_not_authorized_by_other_context_numbers(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-11-10"])
+        self.retrieved["evidence"][0]["observed_at"] = "2026-11-11T00:00:00Z"
+        self.assertEqual(self.generated(self.response("분석 날짜는 2026년 11월 11일입니다."))["status"], "unavailable")
+
+    def test_invalid_calendar_day_and_date_without_known_facts_are_rejected(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-02-03"], observed_tracks=30)
+        self.assertEqual(self.generated(self.response("분석 날짜는 2026년 2월 30일입니다."))["status"], "unavailable")
+        self.retrieved["facts"]["dates"] = []
+        self.assertEqual(self.generated(self.response("분석 날짜는 2026년 2월 3일입니다."))["status"], "unavailable")
+
+    def test_partial_date_cannot_relabel_analysis_as_recording(self):
+        self.retrieved["facts"].update(date_basis="processed", dates=["2026-11-10"])
+        self.assertEqual(self.generated(self.response("촬영 날짜는 11월 10일입니다."))["status"], "unavailable")
+        self.retrieved["facts"]["date_basis"] = "recorded"
+        self.assertEqual(self.generated(self.response("촬영 날짜는 11월 10일입니다."))["status"], "generated")
 
 
 class HistoryLLMConfigurationTests(SimpleTestCase):

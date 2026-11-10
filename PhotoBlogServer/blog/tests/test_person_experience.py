@@ -46,7 +46,7 @@ class PersonExperienceTests(TestCase):
         self.assertTrue(data["portrait_url"])
         self.client.force_login(self.owner)
         html=self.client.get("/people/person-a/")
-        self.assertContains(html,"같은 인물로 확인");self.assertContains(html,"영상별 발견 이력")
+        self.assertContains(html,"같은 인물로 확인");self.assertContains(html,"발견 이력")
         self.assertContains(html,"이번 영상에서 발견된 얼굴")
 
     def test_dataset_review_is_restricted_and_distinguished_from_operator_review(self):
@@ -75,6 +75,32 @@ class PersonExperienceTests(TestCase):
         self.assertIn("분석 날짜",data["answer"])
         self.assertTrue(all(e["observed_at"] is None for e in data["evidence"]))
         self.assertEqual(len({e["session_id"] for e in data["evidence"]}),3)
+
+    def test_shooting_and_scene_questions_return_source_names(self):
+        for question, label in (("모자 착용 촬영을 찾아줘", "본인 모자 착용 촬영"),
+                                ("재진입 장면을 찾아줘", "본인 화면 이탈과 재진입 촬영")):
+            key=self.send(label)
+            session=TrackingFrame.objects.get(pk=key).session
+            session.source_label=label
+            session.save(update_fields=["source_label"])
+            data=self.api.post("/api/v1/history/ask/",{"question":question,"profile":"person-a","include_candidates":True,"date_basis":"processed"},format="json").json()
+            self.assertEqual(data["intent"],"sources")
+            self.assertTrue(data["answer"].startswith("조회 조건에 맞는 기록은 영상 출처"))
+            self.assertEqual(data["facts"]["source_count"],1)
+            self.assertEqual([source["label"] for source in data["sources"]],[label])
+
+    def test_live_profile_has_camera_labels_and_no_empty_video_position(self):
+        key=self.send();frame=TrackingFrame.objects.get(pk=key)
+        session=frame.session;session.source_kind="live";session.save(update_fields=["source_kind"])
+        data=self.api.get("/api/v1/history/people/person-a/").json()
+        self.assertEqual(data["source_summary"],"촬영 1건")
+        page=self.client.get("/people/person-a/")
+        self.assertContains(page,"실시간 카메라 관측 / 분석일 기준")
+        self.assertNotContains(page,"공개 영상 시연")
+        self.assertNotContains(page,"영상 초")
+        session.source_kind="video";session.save(update_fields=["source_kind"])
+        frame.video_seconds=0;frame.save(update_fields=["video_seconds"])
+        self.assertContains(self.client.get("/people/person-a/"),"영상 0.0초")
 
     def test_sessions_do_not_repeat_continuous_frames_as_separate_videos(self):
         self.send();first=TrackingFrame.objects.first()

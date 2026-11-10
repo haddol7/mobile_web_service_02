@@ -1,0 +1,498 @@
+{
+  "reviewed_utc": "2026-11-10T07:59:11.769659+00:00",
+  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "checks": [
+    {
+      "check": "source_requirement_columns_preserved",
+      "pass": true
+    },
+    {
+      "check": "assessor_grading_column_blank",
+      "pass": true
+    },
+    {
+      "check": "identity_and_date",
+      "pass": true
+    },
+    {
+      "check": "status_1",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/github-folder-structure.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/github-upload.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_2",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/github-folder-structure.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/github-upload.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_3",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/original-image/bus.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/웹캠_실시간_검출.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/webcam-record.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/yolo-pipeline/original-image.txt",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/video-flow/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/environment/wsl-runtime.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/environment/windows-camera.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/웹캠_검증.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/webcam_mjpeg_capture.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/webcam-retake.log",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/notebook-20261110/02_웹캠_증빙/선택_프레임_검출값.txt",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_4",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/changedetection-state-vscode.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/changedetection-upload-vscode.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/detect-classes-vscode.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/detect-upload-vscode.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_YOLOv5/changedetection.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_YOLOv5/detect.py",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_5",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-api-root.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-api-posts.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_6",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-api-posts.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/local-upload-log.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_7",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/android-native-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/android-native-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-mobile-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/local-mobile-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-explained-20261110/android-sync-record.jpg",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/cloud/yolo-native-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/android-native-sync.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_8",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-api-root.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_9",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/basic-20261110/cloud-detail.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/basic-verification-20261110/captures.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "status_10",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/llm-verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/person-experience.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/chat-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-summary.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/chokepoint-people-embedding-cloud.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/detection-boxes-ui.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/ui-audit/detection-boxes-deployment.json",
+      "pass": true
+    },
+    {
+      "check": "two_extensions",
+      "pass": true
+    },
+    {
+      "check": "extension_rows",
+      "pass": true
+    },
+    {
+      "check": "remaining_requirements_honest",
+      "pass": true
+    },
+    {
+      "check": "actual_notebook_webcam",
+      "pass": true
+    },
+    {
+      "check": "unchanged_detector_for_webcam",
+      "pass": true
+    },
+    {
+      "check": "trusted_webcam_weights",
+      "pass": true
+    },
+    {
+      "check": "notebook_full_tests",
+      "pass": true
+    },
+    {
+      "check": "github_upload_verified",
+      "pass": true
+    },
+    {
+      "check": "github_report_hash_current",
+      "pass": true
+    },
+    {
+      "check": "github_report_commit_bytes",
+      "pass": true
+    },
+    {
+      "check": "all_evidence_sections",
+      "pass": true
+    },
+    {
+      "check": "obsolete_progress_prose_removed",
+      "pass": true
+    },
+    {
+      "check": "authored_prose_symbols",
+      "pass": true
+    },
+    {
+      "check": "no_api_keys_in_text",
+      "pass": true
+    },
+    {
+      "check": "evaluator_access_procedure",
+      "pass": true
+    },
+    {
+      "check": "face_method_explained",
+      "pass": true
+    },
+    {
+      "check": "face_datasets_and_source_split_explained",
+      "pass": true
+    },
+    {
+      "check": "webcam_actual_command_disclosed",
+      "pass": true
+    },
+    {
+      "check": "retry_evidence_cross_reference",
+      "pass": true
+    },
+    {
+      "check": "process_approval_prose_removed",
+      "pass": true
+    },
+    {
+      "check": "cloud_photo_browser_evidence",
+      "pass": true
+    },
+    {
+      "check": "basic_guide_matches_source",
+      "pass": true
+    },
+    {
+      "check": "original_basic_ids_covered",
+      "pass": true
+    },
+    {
+      "check": "individual_photo_explanations",
+      "pass": true
+    },
+    {
+      "check": "actual_current_VSCode_images",
+      "pass": true
+    },
+    {
+      "check": "webcam_capture_embedded",
+      "pass": true
+    },
+    {
+      "check": "cloud_photo_browser_images_in_report",
+      "pass": true
+    },
+    {
+      "check": "all_figures_embedded_without_reencoding",
+      "pass": true
+    },
+    {
+      "check": "images_are_internal",
+      "pass": true
+    },
+    {
+      "check": "section_geometry_preserved",
+      "pass": true
+    },
+    {
+      "check": "opaque_template_parts_preserved",
+      "pass": true
+    },
+    {
+      "check": "actual_WSL_validation",
+      "pass": true
+    },
+    {
+      "check": "backend_hashes_current",
+      "pass": true
+    },
+    {
+      "check": "Django_full_suite",
+      "pass": true
+    },
+    {
+      "check": "HTTP_15_subset",
+      "pass": true
+    },
+    {
+      "check": "Edge_30",
+      "pass": true
+    },
+    {
+      "check": "Android_40",
+      "pass": true
+    },
+    {
+      "check": "lint_counts",
+      "pass": true
+    },
+    {
+      "check": "Android_sources_current",
+      "pass": true
+    },
+    {
+      "check": "web_76",
+      "pass": true
+    },
+    {
+      "check": "production_people",
+      "pass": true
+    },
+    {
+      "check": "production_embeddings",
+      "pass": true
+    },
+    {
+      "check": "actual_generation_proof",
+      "pass": true
+    },
+    {
+      "check": "production_chat_restore",
+      "pass": true
+    },
+    {
+      "check": "production_boxes",
+      "pass": true
+    }
+  ],
+  "integrity_pass": true,
+  "embedded_figures": 32,
+  "complete_assessment_ids": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10"
+  ],
+  "unfinished_assessment_ids": [],
+  "submission_ready": false,
+  "http_cases_are_subset_of_full_suite": true,
+  "new_paid_api_calls_in_report_refresh": 0,
+  "basic_figures_with_individual_explanations": 21,
+  "github_snapshot_verified": true
+}

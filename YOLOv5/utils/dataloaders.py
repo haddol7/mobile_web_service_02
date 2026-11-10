@@ -341,6 +341,7 @@ class LoadStreams:
     def __init__(self, sources='streams.txt', img_size=640, stride=32, auto=True, transforms=None, vid_stride=1):
         torch.backends.cudnn.benchmark = True  # faster for fixed-size inference
         self.mode = 'stream'
+        self.running = True
         self.img_size = img_size
         self.stride = stride
         self.vid_stride = vid_stride  # video frame-rate stride
@@ -348,6 +349,7 @@ class LoadStreams:
         n = len(sources)
         self.sources = [clean_str(x) for x in sources]  # clean source names for later
         self.imgs, self.fps, self.frames, self.threads = [None] * n, [0] * n, [0] * n, [None] * n
+        self.caps = []
         for i, s in enumerate(sources):  # index, source
             # Start thread to read frames from video stream
             st = f'{i + 1}/{n}: {s}... '
@@ -362,6 +364,7 @@ class LoadStreams:
                 assert not is_kaggle(), '--source 0 webcam unsupported on Kaggle. Rerun command in a local environment.'
             cap = cv2.VideoCapture(s)
             assert cap.isOpened(), f'{st}Failed to open {s}'
+            self.caps.append(cap)
             w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
             h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
             fps = cap.get(cv2.CAP_PROP_FPS)  # warning: may return 0 or nan
@@ -385,18 +388,33 @@ class LoadStreams:
     def update(self, i, cap, stream):
         # Read stream `i` frames in daemon thread
         n, f = 0, self.frames[i]  # frame number, frame array
-        while cap.isOpened() and n < f:
-            n += 1
-            cap.grab()  # .read() = .grab() followed by .retrieve()
-            if n % self.vid_stride == 0:
-                success, im = cap.retrieve()
-                if success:
-                    self.imgs[i] = im
-                else:
-                    LOGGER.warning('WARNING ⚠️ Video stream unresponsive, please check your IP camera connection.')
-                    self.imgs[i] = np.zeros_like(self.imgs[i])
-                    cap.open(stream)  # re-open stream if signal was lost
-            time.sleep(0.0)  # wait time
+        try:
+            while self.running and cap.isOpened() and n < f:
+                n += 1
+                cap.grab()  # .read() = .grab() followed by .retrieve()
+                if n % self.vid_stride == 0:
+                    success, im = cap.retrieve()
+                    if success:
+                        self.imgs[i] = im
+                    elif self.running:
+                        LOGGER.warning('WARNING ⚠️ Video stream unresponsive, please check your IP camera connection.')
+                        self.imgs[i] = np.zeros_like(self.imgs[i])
+                        cap.open(stream)  # re-open stream if signal was lost
+                time.sleep(0.0)  # wait time
+        finally:
+            cap.release()
+
+    def close(self):
+        # Finish readers before OpenCV's native objects are destroyed at exit.
+        self.running = False
+        for thread in self.threads:
+            if thread is not None and thread.is_alive():
+                thread.join(timeout=5)
+        for i, cap in enumerate(self.caps):
+            thread = self.threads[i]
+            if thread is None or not thread.is_alive():
+                cap.release()
+        cv2.destroyAllWindows()
 
     def __iter__(self):
         self.count = -1
@@ -405,7 +423,7 @@ class LoadStreams:
     def __next__(self):
         self.count += 1
         if not all(x.is_alive() for x in self.threads) or cv2.waitKey(1) == ord('q'):  # q to quit
-            cv2.destroyAllWindows()
+            self.close()
             raise StopIteration
 
         im0 = self.imgs.copy()

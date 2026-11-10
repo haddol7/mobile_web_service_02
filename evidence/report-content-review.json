@@ -58,11 +58,11 @@
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "report_sha256": "377b628c60d364679b6733653faf454128b40233db0779e9439487002088e3b0",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-10T07:56:59.054474+00:00",
+  "reviewed_utc": "2026-11-10T12:19:10.683059+00:00",
   "remaining_work": [
-    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+    "최신 소스와 보고서 GitHub 반영 및 원격 대조"
   ],
   "submission_ready": false,
   "webcam_evidence_verified": true,
@@ -95,5 +95,29 @@
     "assessment01_rubric_imported": false,
     "existing_extensions_preserved": true
   },
-  "production_requests_during_explanation_update": 0
+  "production_requests_during_explanation_update": 0,
+  "current_report": {
+    "pages": 56,
+    "embedded_images": 53,
+    "django_tests": 302
+  },
+  "rag_guard_update": {
+    "date_full_value_checked": true,
+    "negative_conditions_clarified": true,
+    "description_scope_preserved_without_index": true,
+    "mock_and_isolated_db_cases": 8,
+    "production_cache_only_checks": 4,
+    "additional_paid_calls": 0,
+    "evidence": [
+      "evidence/history/rag-guard-improvement-20261110.json",
+      "evidence/history/rag-guard-cloud-20261110.json"
+    ],
+    "report_sections": [
+      "B33",
+      "B34",
+      "B35",
+      "B36"
+    ],
+    "general_accuracy_not_claimed": true
+  }
 }

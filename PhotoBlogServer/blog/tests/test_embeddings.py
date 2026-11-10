@@ -214,11 +214,102 @@ class EmbeddingRetrievalTests(TestCase):
         self.assertEqual(result["retrieval"]["api_requests"], 0)
         self.transport.assert_not_called()
 
+    def test_explicit_headwear_description_excludes_reentry_even_when_vectors_are_identical(self):
+        for key,title in zip(self.ids,("본인 모자 착용 웹캠 인식 확인","본인 웹캠 화면 이탈과 재진입 확인","본인 평소 모습 웹캠 인식 확인")):
+            TrackingSession.objects.filter(pk=key).update(source_label=title)
+        embedding.atomic_json(embedding.index_path(),{**embedding.header(),"documents":[
+            {"id":d["id"],"sha256":d["sha256"],"vector":axis()} for d in embedding.documents()]})
+        questions=("모자 착용 촬영을 찾아줘","후드 촬영을 찾아줘")
+        embedding.atomic_json(embedding.cache_path(),{**embedding.header(),"queries":{embedding.query_key(q):axis() for q in questions}})
+        for question in questions:
+            result=retrieve({"semantic":True,"cache_only":True,"date_basis":"processed"},question)
+            self.assertEqual(result["facts"]["source_count"],1)
+            self.assertEqual([row["source"] for row in result["evidence"]],["본인 모자 착용 웹캠 인식 확인"])
+            self.assertEqual(result["retrieval"]["metadata_candidate_sessions"],1)
+        self.transport.assert_not_called()
+
+    def test_unrecorded_source_condition_does_not_spend_on_a_query_or_infer_clothing(self):
+        for question in ("모자 착용 촬영을 찾아줘","모자 안 쓴 촬영을 찾아줘"):
+            result=retrieve({"semantic":True,"date_basis":"processed"},question)
+            self.assertEqual(result["retrieval"]["status"],"no_match")
+            self.assertEqual(result["facts"]["sampled_frames"],0)
+        self.transport.assert_not_called()
+
     @override_settings(HISTORY_EMBEDDING_DAILY_LIMIT=0)
     def test_cached_search_still_works_at_zero_daily_quota(self):
         result = retrieve({"semantic": True, "date_basis": "processed"}, "비행기를 타러 떠나는 장면")
         self.assertEqual(result["retrieval"]["status"], "ranked")
         self.assertTrue(result["retrieval"]["query_cache_hit"])
+        self.transport.assert_not_called()
+
+    def configure_self_sources(self):
+        titles = ("본인 모자 착용 웹캠 인식 확인", "본인 웹캠 화면 이탈과 재진입 확인", "본인 평소 모습 웹캠 인식 확인")
+        for key, title in zip(self.ids, titles):
+            TrackingSession.objects.filter(pk=key).update(source_label=title)
+        self.write_index({"모자 착용 촬영을 찾아줘": 0})
+
+    def test_negative_and_exclusion_conditions_ask_for_clarification_without_paid_calls(self):
+        self.configure_self_sources()
+        for question in ("모자를 착용하지 않은 촬영을 찾아줘", "모자 쓴 촬영은 제외해줘",
+                         "후드를 안 쓴 촬영", "모자 없이 찍은 촬영", "재진입하지 않은 촬영", "모자 말고 평소 모습"):
+            for semantic in (False, True):
+                with self.subTest(question=question, semantic=semantic), patch("blog.history_api.generate") as llm:
+                    result = self.api.post("/api/v1/history/ask/", {"question": question,
+                        "semantic": semantic, "generate": True, "date_basis": "processed"}, format="json").json()
+                    self.assertEqual(result["facts"]["source_count"], 0)
+                    self.assertEqual(result["retrieval"]["condition_status"], "needs_clarification")
+                    self.assertIn("조건을 구체적으로", result["answer"])
+                    self.assertEqual(result["llm"]["status"], "not_requested")
+                    llm.assert_not_called()
+                    cache.clear()
+        self.transport.assert_not_called()
+
+    def test_positive_description_condition_is_kept_without_semantic_search(self):
+        self.configure_self_sources()
+        result = retrieve({"date_basis": "processed"}, "모자 착용 촬영을 찾아줘")
+        self.assertEqual(result["facts"]["source_count"], 1)
+        self.assertEqual(result["sources"][0]["label"], "본인 모자 착용 웹캠 인식 확인")
+        self.assertEqual(result["retrieval"]["condition_status"], "applied")
+        self.transport.assert_not_called()
+
+    def test_review_invalidates_index_but_preserves_description_condition(self):
+        self.configure_self_sources()
+        track = PersonTrack.objects.get(session_id=self.ids[0])
+        track.confirmed = track.candidate
+        track.save()
+        with patch("blog.history_api.generate") as llm:
+            result = self.api.post("/api/v1/history/ask/", {"question": "모자 착용 촬영을 찾아줘",
+                "semantic": True, "generate": True, "date_basis": "processed"}, format="json").json()
+        self.assertEqual(result["retrieval"]["status"], "index_stale")
+        self.assertEqual(result["facts"]["source_count"], 1)
+        self.assertEqual(result["sources"][0]["label"], "본인 모자 착용 웹캠 인식 확인")
+        self.assertIn("촬영 설명 조건을 유지", result["retrieval"]["message"])
+        llm.assert_not_called()
+        self.transport.assert_not_called()
+
+    def test_missing_or_corrupt_index_does_not_expand_description_results(self):
+        self.configure_self_sources()
+        for mode in ("missing", "corrupt"):
+            if mode == "missing":
+                embedding.index_path().unlink()
+            else:
+                embedding.index_path().write_text("invalid index")
+            with self.subTest(mode=mode), patch("blog.history_api.generate") as llm:
+                result = self.api.post("/api/v1/history/ask/", {"question": "모자 착용 촬영을 찾아줘",
+                    "semantic": True, "generate": True, "date_basis": "processed"}, format="json").json()
+                self.assertEqual(result["facts"]["source_count"], 1)
+                self.assertEqual(len(result["evidence"]), 1)
+                self.assertIn("촬영 설명 조건을 유지", result["retrieval"]["message"])
+                llm.assert_not_called()
+                cache.clear()
+        self.transport.assert_not_called()
+
+    def test_description_scope_still_obeys_date_and_person_filters(self):
+        self.configure_self_sources()
+        for scope in ({"start": "2026-11-08", "end": "2026-11-09"}, {"profile": "person-a"}):
+            result = retrieve({"semantic": True, "date_basis": "processed", **scope}, "모자 착용 촬영을 찾아줘")
+            self.assertEqual(result["facts"]["sampled_frames"], 0)
+            self.assertEqual(result["facts"]["source_count"], 0)
         self.transport.assert_not_called()
 
     @override_settings(HISTORY_EMBEDDING_DAILY_LIMIT=0)

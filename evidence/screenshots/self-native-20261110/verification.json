@@ -1,0 +1,133 @@
+{
+  "pass": true,
+  "server": "https://daejinha.pythonanywhere.com/",
+  "post_ids": [
+    9,
+    14
+  ],
+  "real_server_read_only": true,
+  "image_hashes_match_transmitted_webcam_photos": true,
+  "native_list_and_details_rendered": true,
+  "minimum_request_spacing_ms": 5203,
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "started_elapsed_ms": 15740575
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/f56ded0c551b423fad3a7e73c1ae170d.jpg",
+      "started_elapsed_ms": 15749966
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/e8dba378fe0c47448767e5e2e1801a36.jpg",
+      "started_elapsed_ms": 15755266
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/auth/me/",
+      "started_elapsed_ms": 15805661
+    },
+    {
+      "method": "GET",
+      "path": "/api_root/Post/",
+      "started_elapsed_ms": 15810971
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/post-contents/",
+      "started_elapsed_ms": 15816213
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/f467e9f212304958af340badded48b7c.jpg",
+      "started_elapsed_ms": 15821502
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/e8dba378fe0c47448767e5e2e1801a36.jpg",
+      "started_elapsed_ms": 15826874
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/2b10a26dc8d34cbaa04078920102a773.jpg",
+      "started_elapsed_ms": 15832232
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/ec24a959e07247f892c97581d6782991.jpg",
+      "started_elapsed_ms": 15837450
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/2d63bbb8fac249f18f937d1bef060761.jpg",
+      "started_elapsed_ms": 15842666
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/f56ded0c551b423fad3a7e73c1ae170d.jpg",
+      "started_elapsed_ms": 15847873
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/08/994ec4fe3f7e4c708450bd3ac06ee303.jpg",
+      "started_elapsed_ms": 15853099
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/10/20/e5a7026115f84697956fd4365a70f36d.jpg",
+      "started_elapsed_ms": 15858357
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/10/20/99d04330d7504abdaeadd90af496bfee.jpg",
+      "started_elapsed_ms": 15863751
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/10/20/e491f123ba5642bba9f98ef1590921c7.jpg",
+      "started_elapsed_ms": 15890280
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/posts/9/content/",
+      "started_elapsed_ms": 15927603
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/f56ded0c551b423fad3a7e73c1ae170d.jpg",
+      "started_elapsed_ms": 15932806
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/posts/14/content/",
+      "started_elapsed_ms": 15938015
+    },
+    {
+      "method": "GET",
+      "path": "/media/images/2026/11/10/e8dba378fe0c47448767e5e2e1801a36.jpg",
+      "started_elapsed_ms": 15943228
+    }
+  ],
+  "paid_api_calls": 0,
+  "jvm_tests": 40,
+  "jvm_failures": 0,
+  "lint_errors": 0,
+  "screenshots_visually_reviewed": true,
+  "screenshots": [
+    {
+      "path": "evidence/screenshots/self-native-20261110/native-list.png",
+      "sha256": "502202dafb674cac59ab6352e57eb1b337d7621ac9f541fb2201b09348579c7e"
+    },
+    {
+      "path": "evidence/screenshots/self-native-20261110/native-post-14.png",
+      "sha256": "ac2a74ba1f49b3780c214ed706d3d135ae191e0358b38514741e4fc6fc8bfbea"
+    },
+    {
+      "path": "evidence/screenshots/self-native-20261110/native-post-9.png",
+      "sha256": "aad665ee3988d6a296f711d5d841e672b6c7dd4399f9d8318d3568df76e105bf"
+    }
+  ]
+}

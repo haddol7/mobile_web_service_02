@@ -1,0 +1,109 @@
+{
+  "captured_date_kst": "2026-11-10",
+  "screenshots": [
+    {
+      "path": "evidence/screenshots/self-flow-20261110/answer-count-check-vscode.png",
+      "sha256": "e1f977a06614ac759d2f4e362a6c6e0d11d2d3ec5cc5a3029f82c811194ea457",
+      "kind": "original UI screenshot",
+      "environment": "Windows VS Code viewing actual WSL source or saved execution log",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/browser-auto-post-9.png",
+      "sha256": "12352fac3d58cd9a3f9f292ab2033992ffbc0670eb2913df25afa9731fe51c4d",
+      "kind": "original UI screenshot",
+      "environment": "PythonAnywhere actual deployed page",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/browser-reentry-post-14.png",
+      "sha256": "182668cead5436281fc6774f77e4f7ae2e2edfaca15e5604e62dd0ffb6ca6b55",
+      "kind": "original UI screenshot",
+      "environment": "PythonAnywhere actual deployed page",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/check-shirt-input.jpg",
+      "sha256": "cc2d070c33b423f750f822db79d03740982439a4017df0c55787cde63b9f3254",
+      "kind": "independent capture frame",
+      "environment": "actual webcam input to WSL Edge",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/hood-input.jpg",
+      "sha256": "5264c0e6f146c260e0e244c1aa962fb0d1258cf16ada49c91fb9977bbeb89a4e",
+      "kind": "independent capture frame",
+      "environment": "actual webcam input to WSL Edge",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/profile-live-final.png",
+      "sha256": "e3e73ea09a334c7cbe736a31c74b223c8e2fe296e4af5d3ae47091dc419ec5f6",
+      "kind": "original UI screenshot",
+      "environment": "PythonAnywhere actual deployed page",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/rag-db-fallback.png",
+      "sha256": "2be97dea9463f0be30680002eeac633178dbbb494366c3655c4a1d515aa27b3b",
+      "kind": "original UI screenshot",
+      "environment": "PythonAnywhere actual deployed page",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/rag-final-ai.png",
+      "sha256": "780cdae0994c1c39a36740426d799038055e959e15992a4011de4c1bfe5857e4",
+      "kind": "original UI screenshot",
+      "environment": "PythonAnywhere actual deployed page",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/rag-source-filter-code.png",
+      "sha256": "71e11a22ac39f62614f025d362944d6d63f732970e996683de5837e2d711200f",
+      "kind": "original UI screenshot",
+      "environment": "read-only loopback browser viewing actual WSL logs or Coverage HTML",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/webcam-log-vscode.png",
+      "sha256": "35d911b7cde50514e891bb4e9a74dc3dd8d09774c26b8d3e66757a5bb483578f",
+      "kind": "original UI screenshot",
+      "environment": "Windows VS Code viewing actual WSL source or saved execution log",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/wsl-coverage-browser.png",
+      "sha256": "d925b93a5d6f8c095d18b7f2e5b7404611b766faa24739bd1eb827b69949aec0",
+      "kind": "original UI screenshot",
+      "environment": "read-only loopback browser viewing actual WSL logs or Coverage HTML",
+      "visually_reviewed": true
+    },
+    {
+      "path": "evidence/screenshots/self-flow-20261110/wsl-tests-292-browser.png",
+      "sha256": "460103e946f13ed569ebbfcfa0675b10d838d122e1a92124d6699dbdd3e74956",
+      "kind": "original UI screenshot",
+      "environment": "read-only loopback browser viewing actual WSL logs or Coverage HTML",
+      "visually_reviewed": true
+    }
+  ],
+  "original_bytes_preserved": true,
+  "docx_display_crop": {
+    "rag-final-ai.png": {
+      "bottom_fraction": 0.45,
+      "purpose": "answer and evidence area; lower blank space/input omitted"
+    },
+    "rag-db-fallback.png": {
+      "bottom_fraction": 0.42,
+      "purpose": "first fallback response and three evidence photos only"
+    },
+    "profile-live-final.png": {
+      "bottom_fraction": 0.1,
+      "purpose": "blank bottom viewport only"
+    }
+  },
+  "native_screenshots": "evidence/screenshots/self-native-20261110/verification.json",
+  "paid_calls_for_this_work": {
+    "embedding": 1,
+    "generation_attempts": 4
+  }
+}

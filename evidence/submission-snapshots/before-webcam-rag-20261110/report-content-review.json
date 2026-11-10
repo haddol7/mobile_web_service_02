@@ -1,0 +1,99 @@
+{
+  "strengths": [
+    "원본 요구사항 칼럼 보존",
+    "추가 기능 두 항목으로 구분",
+    "수치와 실제 실행 기록 일치",
+    "HTTP 사례 중복 합산 방지",
+    "얼굴 검증 표본 범위와 보류 구분",
+    "원본 이미지 삽입과 페이지 배치 확인"
+  ],
+  "findings": [
+    {
+      "finding": "운영 기본 검출 사진의 서버 브라우저 목록 및 상세 캡처가 보고서에 누락됨",
+      "existing_captures": [
+        "evidence/screenshots/basic-20261110/cloud-list.png",
+        "evidence/screenshots/basic-20261110/cloud-detail.png"
+      ],
+      "severity": "high",
+      "physical_page": 16,
+      "id": "R01",
+      "action": "보관된 브라우저 캡처를 삽입해 평가표 9번과 직접 대응시킬 것",
+      "section": "B09",
+      "status": "resolved",
+      "physical_pages": [
+        25,
+        26
+      ],
+      "resolution": "Actual Android Chrome production list and post 8 detail recaptured on November 10 with full address bar and embedded in B09."
+    },
+    {
+      "finding": "얼굴 비교 개선 전후 결과는 있으나 개선 원인과 후보 결정 규칙 설명이 부족함",
+      "severity": "medium",
+      "physical_page": 21,
+      "id": "R02",
+      "action": "등록 얼굴 선택과 특징 비교 및 후보 보류 기준을 짧게 설명할 것",
+      "section": "B13",
+      "status": "resolved",
+      "physical_pages": [
+        32,
+        33
+      ],
+      "resolution": "Reference selection, aligned original and flipped features, person-level scoring, fixed thresholds and candidate-only status explained against source"
+    },
+    {
+      "severity": "medium",
+      "id": "R03",
+      "finding": "운영 주소는 있으나 운영자 로그인 방법이나 평가용 접속 안내가 없음",
+      "action": "평가자가 동작을 확인할 수 있는 접속 안내를 제출 자료에 추가할 것",
+      "section": "접속 안내",
+      "status": "resolved",
+      "physical_pages": [
+        2
+      ],
+      "resolution": "Anonymous observation, face image and AI question access explicitly approved and deployed. Account or browser-session chat isolation verified. Evaluator instructions and server-wide five daily AI limit added on page 2.",
+      "password_retrieved": false,
+      "password_login_tested": false,
+      "credential_handling": "No password or API credential included. Operator writes remain authenticated."
+    }
+  ],
+  "new_paid_api_calls": 0,
+  "report_modified": true,
+  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "format_and_integrity_pass": true,
+  "reviewed_utc": "2026-11-10T07:56:59.054474+00:00",
+  "remaining_work": [
+    "추가 기능 추적과 통과 정확도, 의미 검색 색인 갱신과 답변 검증 보완"
+  ],
+  "submission_ready": false,
+  "webcam_evidence_verified": true,
+  "basic_refresh": {
+    "browser_captures_replaced": 8,
+    "native_captures_refreshed": 2,
+    "public_access_deployed": true,
+    "generation_daily_limit": 5,
+    "login_attempt_limiter_enabled": false,
+    "evidence": "evidence/basic-verification-20261110/captures.json"
+  },
+  "basic_explanation_update": {
+    "original_rubric_items": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "individual_figures": 21,
+    "current_source_captures": 4,
+    "existing_execution_record_views_added": 3,
+    "records_are_not_new_runtime_tests": true,
+    "guide": "docs/basic-evidence-guide.json",
+    "evidence": "evidence/basic-verification-20261110/report-explanation.json",
+    "assessment01_rubric_imported": false,
+    "existing_extensions_preserved": true
+  },
+  "production_requests_during_explanation_update": 0
+}

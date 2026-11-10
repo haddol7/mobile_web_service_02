@@ -1,0 +1,398 @@
+{
+  "environment": "WSL Ubuntu project virtualenv",
+  "scope": "mock provider and isolated Django test database",
+  "real_provider_calls": 0,
+  "production_requests": 0,
+  "failures": 0,
+  "checks": [
+    {
+      "case": "negative_condition",
+      "question": "모자를 착용하지 않은 촬영을 찾아줘",
+      "actual": {
+        "facts": {
+          "sampled_frames": 0,
+          "observed_tracks": 0,
+          "confirmed_tracks": 0,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 0,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 0,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": null,
+          "include_candidates": false,
+          "date_basis": "processed"
+        },
+        "evidence": [],
+        "sources": [],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "no_match",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "session_ids": [],
+          "metadata_conditions": [
+            "설명에 없는 부정 조건"
+          ],
+          "metadata_candidate_sessions": 0,
+          "condition_status": "needs_clarification"
+        },
+        "intent": "sources",
+        "answer": "부정 또는 제외 조건은 촬영 설명만으로 확정할 수 없습니다. 모자 착용이나 재진입 등 확인하려는 촬영 조건을 구체적으로 알려주세요.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "negative_condition",
+      "question": "모자 쓴 촬영은 제외해줘",
+      "actual": {
+        "facts": {
+          "sampled_frames": 0,
+          "observed_tracks": 0,
+          "confirmed_tracks": 0,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 0,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 0,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": null,
+          "include_candidates": false,
+          "date_basis": "processed"
+        },
+        "evidence": [],
+        "sources": [],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "no_match",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "session_ids": [],
+          "metadata_conditions": [
+            "설명에 없는 부정 조건"
+          ],
+          "metadata_candidate_sessions": 0,
+          "condition_status": "needs_clarification"
+        },
+        "intent": "sources",
+        "answer": "부정 또는 제외 조건은 촬영 설명만으로 확정할 수 없습니다. 모자 착용이나 재진입 등 확인하려는 촬영 조건을 구체적으로 알려주세요.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "index_stale_after_review",
+      "question": "모자 착용 촬영을 찾아줘",
+      "actual": {
+        "facts": {
+          "sampled_frames": 1,
+          "observed_tracks": 1,
+          "confirmed_tracks": 1,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 1,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 1,
+          "dates": [
+            "2026-11-07"
+          ],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 1,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": null,
+          "include_candidates": false,
+          "date_basis": "processed"
+        },
+        "evidence": [
+          {
+            "id": "a6125ad4366e4193ec54072e37e9257f7b9dc60dd3856f3fc54295a58a6a995c",
+            "session_id": "b82c36f0-d887-4ef6-8216-458905afff37",
+            "source": "본인 모자 착용 웹캠 인식 확인",
+            "source_kind": "video",
+            "frame_index": 1,
+            "video_seconds": 0.0,
+            "observed_at": null,
+            "processed_at": "2026-11-07T01:00:00+00:00",
+            "purpose": "recording",
+            "source_reference": null,
+            "unassigned_face_count": 0,
+            "time_basis": "unknown_recording_date",
+            "image_url": null,
+            "post_url": null,
+            "tracks": [
+              {
+                "id": 1,
+                "track_id": 1,
+                "bbox": [
+                  0.0,
+                  0.0,
+                  100.0,
+                  100.0
+                ],
+                "candidate": "person-a",
+                "similarity": 0.8,
+                "confirmed": "person-a",
+                "reviewed": false,
+                "revision": 1,
+                "review_basis": "",
+                "face_url": "/api/v1/history/images/a6125ad4366e4193ec54072e37e9257f7b9dc60dd3856f3fc54295a58a6a995c/?track=1"
+              }
+            ],
+            "passages": [],
+            "sample_count": 1,
+            "analysis_label": "11.07 10:00",
+            "date_key": "2026-11-07",
+            "date_label": "2026년 11월 7일",
+            "date_basis": "processed",
+            "group_time": "2026-11-07T01:00:00+00:00"
+          }
+        ],
+        "sources": [
+          {
+            "session_id": "b82c36f0-d887-4ef6-8216-458905afff37",
+            "label": "본인 모자 착용 웹캠 인식 확인",
+            "reference": null,
+            "sampled_frames": 1
+          }
+        ],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "index_stale",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "missing_documents": 1,
+          "metadata_conditions": [
+            "모자"
+          ],
+          "metadata_candidate_sessions": 1,
+          "condition_status": "applied",
+          "message": "의미 검색을 사용할 수 없어 촬영 설명 조건을 유지한 DB 기록을 표시했습니다."
+        },
+        "intent": "sources",
+        "answer": "조회 조건에 맞는 기록은 영상 출처 1개에 있습니다. 영상: 본인 모자 착용 웹캠 인식 확인. 발견된 영상 출처는 1개입니다. 방향 1은 0건, 방향 2는 0건입니다. 확인된 인물 프로필은 1개입니다. 분석 날짜는 2026-11-07에 있습니다. 촬영 날짜가 없는 확인 사진 1개는 날짜를 확정하지 않았습니다. 추적 번호는 영상 실행마다 달라질 수 있으며 통과 건수는 방문 횟수나 서로 다른 사람 수와 같지 않습니다.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "index_missing",
+      "question": "모자 착용 촬영을 찾아줘",
+      "actual": {
+        "facts": {
+          "sampled_frames": 1,
+          "observed_tracks": 1,
+          "confirmed_tracks": 1,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 1,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 1,
+          "dates": [
+            "2026-11-07"
+          ],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 1,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": null,
+          "include_candidates": false,
+          "date_basis": "processed"
+        },
+        "evidence": [
+          {
+            "id": "a6125ad4366e4193ec54072e37e9257f7b9dc60dd3856f3fc54295a58a6a995c",
+            "session_id": "b82c36f0-d887-4ef6-8216-458905afff37",
+            "source": "본인 모자 착용 웹캠 인식 확인",
+            "source_kind": "video",
+            "frame_index": 1,
+            "video_seconds": 0.0,
+            "observed_at": null,
+            "processed_at": "2026-11-07T01:00:00+00:00",
+            "purpose": "recording",
+            "source_reference": null,
+            "unassigned_face_count": 0,
+            "time_basis": "unknown_recording_date",
+            "image_url": null,
+            "post_url": null,
+            "tracks": [
+              {
+                "id": 1,
+                "track_id": 1,
+                "bbox": [
+                  0.0,
+                  0.0,
+                  100.0,
+                  100.0
+                ],
+                "candidate": "person-a",
+                "similarity": 0.8,
+                "confirmed": "person-a",
+                "reviewed": false,
+                "revision": 1,
+                "review_basis": "",
+                "face_url": "/api/v1/history/images/a6125ad4366e4193ec54072e37e9257f7b9dc60dd3856f3fc54295a58a6a995c/?track=1"
+              }
+            ],
+            "passages": [],
+            "sample_count": 1,
+            "analysis_label": "11.07 10:00",
+            "date_key": "2026-11-07",
+            "date_label": "2026년 11월 7일",
+            "date_basis": "processed",
+            "group_time": "2026-11-07T01:00:00+00:00"
+          }
+        ],
+        "sources": [
+          {
+            "session_id": "b82c36f0-d887-4ef6-8216-458905afff37",
+            "label": "본인 모자 착용 웹캠 인식 확인",
+            "reference": null,
+            "sampled_frames": 1
+          }
+        ],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "index_missing",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "metadata_conditions": [
+            "모자"
+          ],
+          "metadata_candidate_sessions": 1,
+          "condition_status": "applied",
+          "message": "의미 검색을 사용할 수 없어 촬영 설명 조건을 유지한 DB 기록을 표시했습니다."
+        },
+        "intent": "sources",
+        "answer": "조회 조건에 맞는 기록은 영상 출처 1개에 있습니다. 영상: 본인 모자 착용 웹캠 인식 확인. 발견된 영상 출처는 1개입니다. 방향 1은 0건, 방향 2는 0건입니다. 확인된 인물 프로필은 1개입니다. 분석 날짜는 2026-11-07에 있습니다. 촬영 날짜가 없는 확인 사진 1개는 날짜를 확정하지 않았습니다. 추적 번호는 영상 실행마다 달라질 수 있으며 통과 건수는 방문 횟수나 서로 다른 사람 수와 같지 않습니다.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "correct_date",
+      "facts_dates": [
+        "2026-11-10"
+      ],
+      "mock_provider_answer": "분석 날짜는 2026년 11월 10일입니다.",
+      "expected": "generated",
+      "actual": {
+        "status": "generated",
+        "text": "분석 날짜는 2026년 11월 10일입니다.",
+        "evidence_ids": [
+          "frame-a"
+        ]
+      },
+      "pass": true
+    },
+    {
+      "case": "swapped_month_day",
+      "facts_dates": [
+        "2026-11-10"
+      ],
+      "mock_provider_answer": "분석 날짜는 2026년 10월 11일입니다.",
+      "expected": "unavailable",
+      "actual": {
+        "status": "unavailable",
+        "text": null,
+        "evidence_ids": [],
+        "diagnostic": {
+          "category": "unsupported_count_or_date",
+          "elapsed_ms": 4
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "partial_swapped_date",
+      "facts_dates": [
+        "2026-11-10"
+      ],
+      "mock_provider_answer": "분석 날짜는 10월 11일입니다.",
+      "expected": "unavailable",
+      "actual": {
+        "status": "unavailable",
+        "text": null,
+        "evidence_ids": [],
+        "diagnostic": {
+          "category": "unsupported_count_or_date",
+          "elapsed_ms": 4
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "recording_date_relabelled",
+      "facts_dates": [
+        "2026-11-10"
+      ],
+      "mock_provider_answer": "촬영 날짜는 11월 10일입니다.",
+      "expected": "unavailable",
+      "actual": {
+        "status": "unavailable",
+        "text": null,
+        "evidence_ids": [],
+        "diagnostic": {
+          "category": "unsupported_count_or_date",
+          "elapsed_ms": 4
+        }
+      },
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "limitations": "Regression of supported date and metadata expressions; not a paid model accuracy benchmark."
+}

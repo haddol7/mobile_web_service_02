@@ -115,12 +115,18 @@ def ready_frames(frames):
 
 def retrieve(params, question=""):
     frames, tracks, interpretation = filtered_frames(params, question)
-    retrieval = {"strategy": "structured", "status": "not_requested", "api_requests": 0}
+    from .history_embeddings import source_condition_scope
+    frames, conditions = source_condition_scope(question, frames)
+    retrieval = {"strategy": "structured", "status": "not_requested", "api_requests": 0, **conditions}
     if params.get("semantic") is True:
         from .history_embeddings import rank
-        retrieval = rank(question, frames, allow_api=params.get("cache_only") is not True)
+        retrieval = {**rank(question, frames, allow_api=params.get("cache_only") is not True), **conditions}
+        if conditions and (retrieval["status"] == "empty" or conditions.get("condition_status") == "needs_clarification"):
+            retrieval["status"] = "no_match"
         if retrieval["status"] in ("ranked", "no_match", "empty"):
             frames = frames.filter(session_id__in=retrieval["session_ids"])
+        elif conditions:
+            retrieval["message"] = "의미 검색을 사용할 수 없어 촬영 설명 조건을 유지한 DB 기록을 표시했습니다."
     observed = tracks.filter(observations__frame__in=frames).distinct()
     events = PassageEvent.objects.filter(frame__in=frames, track__in=tracks)
     counts = events.aggregate(total=Count("id"), direction_in=Count("id", filter=Q(direction="in")),
@@ -151,10 +157,12 @@ def retrieve(params, question=""):
     sources=[{"session_id":row["session_id"],"label":row["source"],"reference":row["source_reference"],"sampled_frames":row["sample_count"]} for row in grouped]
     return {"facts": facts, "interpretation": interpretation, "evidence": evidence,"sources":sources,
             "retrieval": retrieval,
-            "intent":"sources" if any(word in question for word in ("영상","출처","어디")) else "summary"}
+            "intent":"sources" if any(word in question for word in ("영상","촬영","장면","출처","어디")) else "summary"}
 
 
 def answer_records(result):
+    if result.get("retrieval", {}).get("condition_status") == "needs_clarification":
+        return "부정 또는 제외 조건은 촬영 설명만으로 확정할 수 없습니다. 모자 착용이나 재진입 등 확인하려는 촬영 조건을 구체적으로 알려주세요."
     f = result["facts"]
     if not f["sampled_frames"]:
         return "조건에 맞는 기록이 없습니다. 기록이 없다는 결과만으로 실제로 아무도 오지 않았다고 판단할 수는 없습니다."

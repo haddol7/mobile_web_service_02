@@ -126,5 +126,89 @@
   {
     "path": "evidence/private/detection-boxes/production-annotated.jpg",
     "sha256": "82fc186370db43e32b26f9d7a8429a6b9fc138bb9b5a8c0c615a08994ff60493"
+  },
+  {
+    "path": "evidence/screenshots/self-confirmation-20261110/user-confirmed-profile.png",
+    "sha256": "8efc885fac240ca5b32ea0f98b66658e28c9b30109ff3a9230830b07d75f6bcb"
+  },
+  {
+    "path": "evidence/screenshots/self-confirmation-20261110/user-session-history.png",
+    "sha256": "7f46976805b6aea4834ec824bbbeaed479713ba7fd9becd785a323c73c6e7a9d"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/webcam-log-vscode.png",
+    "sha256": "35d911b7cde50514e891bb4e9a74dc3dd8d09774c26b8d3e66757a5bb483578f"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/browser-auto-post-9.png",
+    "sha256": "12352fac3d58cd9a3f9f292ab2033992ffbc0670eb2913df25afa9731fe51c4d"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/browser-reentry-post-14.png",
+    "sha256": "182668cead5436281fc6774f77e4f7ae2e2edfaca15e5604e62dd0ffb6ca6b55"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/check-shirt-input.jpg",
+    "sha256": "cc2d070c33b423f750f822db79d03740982439a4017df0c55787cde63b9f3254"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/hood-input.jpg",
+    "sha256": "5264c0e6f146c260e0e244c1aa962fb0d1258cf16ada49c91fb9977bbeb89a4e"
+  },
+  {
+    "path": "evidence/screenshots/self-native-20261110/native-post-9.png",
+    "sha256": "aad665ee3988d6a296f711d5d841e672b6c7dd4399f9d8318d3568df76e105bf"
+  },
+  {
+    "path": "evidence/screenshots/self-native-20261110/native-post-14.png",
+    "sha256": "ac2a74ba1f49b3780c214ed706d3d135ae191e0358b38514741e4fc6fc8bfbea"
+  },
+  {
+    "path": "evidence/screenshots/self-native-20261110/native-list.png",
+    "sha256": "502202dafb674cac59ab6352e57eb1b337d7621ac9f541fb2201b09348579c7e"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/answer-count-check-vscode.png",
+    "sha256": "e1f977a06614ac759d2f4e362a6c6e0d11d2d3ec5cc5a3029f82c811194ea457"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/scope-code.png",
+    "sha256": "0f7541e750160f05a7924a91c781abe514f66010e66079974953e0b043fb5d08"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/rag-final-ai.png",
+    "sha256": "780cdae0994c1c39a36740426d799038055e959e15992a4011de4c1bfe5857e4"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/rag-db-fallback.png",
+    "sha256": "2be97dea9463f0be30680002eeac633178dbbb494366c3655c4a1d515aa27b3b"
+  },
+  {
+    "path": "evidence/screenshots/self-flow-20261110/profile-live-final.png",
+    "sha256": "e3e73ea09a334c7cbe736a31c74b223c8e2fe296e4af5d3ae47091dc419ec5f6"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/tests-302.png",
+    "sha256": "bb669937efcc79b3e8947df4814cc9cca12d974515764169ce1508f1afc5efc6"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/coverage.png",
+    "sha256": "c96f10740f94e05bf6ccd5a92b9c0e455b82dff30b472c55663ab924533c4263"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/date-code.png",
+    "sha256": "a5c1dd0a2c754041fe3ce8c8c92e62e70f20d117a6834c991c8869c448994a71"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/query-scope-code.png",
+    "sha256": "16d8d10dfc4de9bb42d2f5c6951ccaba1083c9c77aaf7558f775cdcf881e0b23"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/guard-tests.png",
+    "sha256": "d4b98bef7e2af11320043ff2f5904de6f11bed3375a53f63f8006a7c02c1e0bc"
+  },
+  {
+    "path": "evidence/screenshots/rag-guards-20261110/cloud-result.png",
+    "sha256": "48417e49829fea1951a3dc5b1813b530a97ff030fb0d6fa45b593fdbee2c863b"
   }
 ]

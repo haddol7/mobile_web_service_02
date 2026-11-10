@@ -1,0 +1,18 @@
+{
+  "release": "20261110110005f480ad",
+  "parent_release": "2026111010355785ec79",
+  "base_release": "20261108160518be71af",
+  "backup": "/home/daejinha/.config/mobile-web-service/common02/self-answer-backup-20261110110005f480ad.zip",
+  "changed_files": [
+    "blog/history_llm.py",
+    "blog/tests/test_history_llm.py"
+  ],
+  "phase": "verified",
+  "verified_utc": "2026-11-10T11:01:13.061222+00:00",
+  "pass": true,
+  "production_verified": true,
+  "source_hashes_verified": true,
+  "database_or_media_modified": false,
+  "paid_api_calls": 0,
+  "minimum_request_interval_seconds": 5
+}

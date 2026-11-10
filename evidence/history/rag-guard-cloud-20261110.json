@@ -1,0 +1,373 @@
+{
+  "environment": "actual PythonAnywhere HTTPS API",
+  "verified_utc": "2026-11-10T12:13:09.928676+00:00",
+  "checks": [
+    {
+      "case": "cached_positive",
+      "request": {
+        "question": "하대진의 모자 착용 촬영을 찾아줘.",
+        "profile": "self-daejinha",
+        "include_candidates": true,
+        "date_basis": "processed",
+        "semantic": true,
+        "cache_only": true,
+        "generate": false
+      },
+      "expected_source_count": 1,
+      "response": {
+        "facts": {
+          "sampled_frames": 2,
+          "observed_tracks": 1,
+          "confirmed_tracks": 1,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 1,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [
+            "2026-11-10"
+          ],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 1,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": "self-daejinha",
+          "include_candidates": true,
+          "date_basis": "processed"
+        },
+        "evidence": [
+          {
+            "id": "a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee",
+            "session_id": "50a4d40c-01bc-47db-8125-d38aa02d478d",
+            "source": "본인 모자 착용 웹캠 인식 확인",
+            "source_kind": "live",
+            "frame_index": 17,
+            "video_seconds": null,
+            "observed_at": "2026-11-10T10:03:30.773366+00:00",
+            "processed_at": "2026-11-10T10:03:31.148067+00:00",
+            "purpose": "recording",
+            "source_reference": null,
+            "unassigned_face_count": 0,
+            "time_basis": "live_received",
+            "image_url": "/api/v1/history/images/a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee/?boxes=1",
+            "post_url": null,
+            "tracks": [
+              {
+                "id": 326,
+                "track_id": 1,
+                "bbox": [
+                  -0.1044967845082283,
+                  254.87954711914062,
+                  479.42718505859375,
+                  637.8984985351562
+                ],
+                "candidate": "self-daejinha",
+                "similarity": 0.8723975419998169,
+                "confirmed": "self-daejinha",
+                "reviewed": true,
+                "revision": 2,
+                "review_basis": "operator",
+                "face_url": "/api/v1/history/images/a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee/?track=326"
+              }
+            ],
+            "passages": [],
+            "sample_count": 2,
+            "analysis_label": "11.10 19:03",
+            "date_key": "2026-11-10",
+            "date_label": "2026년 11월 10일",
+            "date_basis": "processed",
+            "group_time": "2026-11-10T10:03:31.148067+00:00"
+          }
+        ],
+        "sources": [
+          {
+            "session_id": "50a4d40c-01bc-47db-8125-d38aa02d478d",
+            "label": "본인 모자 착용 웹캠 인식 확인",
+            "reference": null,
+            "sampled_frames": 2
+          }
+        ],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "ranked",
+          "scope": "semantic_top_5",
+          "api_requests": 0,
+          "matched_sessions": 1,
+          "metadata_conditions": [
+            "모자"
+          ],
+          "metadata_candidate_sessions": 1,
+          "query_cache_hit": true,
+          "ranking": "embedding_title_hybrid_v2",
+          "session_ids": [
+            "50a4d40c-01bc-47db-8125-d38aa02d478d"
+          ],
+          "matches": [
+            {
+              "session_id": "50a4d40c-01bc-47db-8125-d38aa02d478d",
+              "similarity": 0.505843,
+              "title_match": 0.285714,
+              "rank_score": 0.450811
+            }
+          ],
+          "condition_status": "applied"
+        },
+        "intent": "sources",
+        "answer": "조회 조건에 맞는 기록은 영상 출처 1개에 있습니다. 영상: 본인 모자 착용 웹캠 인식 확인. 발견된 영상 출처는 1개입니다. 방향 1은 0건, 방향 2는 0건입니다. 확인된 인물 프로필은 1개입니다. 분석 날짜는 2026-11-10에 있습니다. 추적 번호는 영상 실행마다 달라질 수 있으며 통과 건수는 방문 횟수나 서로 다른 사람 수와 같지 않습니다. 의미 검색으로 선택된 최대 5개 영상의 기록 기준입니다.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "negative_condition",
+      "request": {
+        "question": "모자를 착용하지 않은 촬영을 찾아줘",
+        "profile": "self-daejinha",
+        "include_candidates": true,
+        "date_basis": "processed",
+        "semantic": true,
+        "cache_only": true,
+        "generate": false
+      },
+      "expected_source_count": 0,
+      "response": {
+        "facts": {
+          "sampled_frames": 0,
+          "observed_tracks": 0,
+          "confirmed_tracks": 0,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 0,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 0,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": "self-daejinha",
+          "include_candidates": true,
+          "date_basis": "processed"
+        },
+        "evidence": [],
+        "sources": [],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "no_match",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "session_ids": [],
+          "metadata_conditions": [
+            "설명에 없는 부정 조건"
+          ],
+          "metadata_candidate_sessions": 0,
+          "condition_status": "needs_clarification"
+        },
+        "intent": "sources",
+        "answer": "부정 또는 제외 조건은 촬영 설명만으로 확정할 수 없습니다. 모자 착용이나 재진입 등 확인하려는 촬영 조건을 구체적으로 알려주세요.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "exclusion_condition",
+      "request": {
+        "question": "모자 쓴 촬영은 제외해줘",
+        "profile": "self-daejinha",
+        "include_candidates": true,
+        "date_basis": "processed",
+        "semantic": true,
+        "cache_only": true,
+        "generate": false
+      },
+      "expected_source_count": 0,
+      "response": {
+        "facts": {
+          "sampled_frames": 0,
+          "observed_tracks": 0,
+          "confirmed_tracks": 0,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 0,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 0,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": "self-daejinha",
+          "include_candidates": true,
+          "date_basis": "processed"
+        },
+        "evidence": [],
+        "sources": [],
+        "retrieval": {
+          "strategy": "semantic",
+          "status": "no_match",
+          "scope": "condition_filtered",
+          "api_requests": 0,
+          "matched_sessions": 0,
+          "session_ids": [],
+          "metadata_conditions": [
+            "설명에 없는 부정 조건"
+          ],
+          "metadata_candidate_sessions": 0,
+          "condition_status": "needs_clarification"
+        },
+        "intent": "sources",
+        "answer": "부정 또는 제외 조건은 촬영 설명만으로 확정할 수 없습니다. 모자 착용이나 재진입 등 확인하려는 촬영 조건을 구체적으로 알려주세요.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    },
+    {
+      "case": "structured_description",
+      "request": {
+        "question": "하대진의 모자 착용 촬영을 찾아줘.",
+        "profile": "self-daejinha",
+        "include_candidates": true,
+        "date_basis": "processed",
+        "semantic": false,
+        "cache_only": true,
+        "generate": false
+      },
+      "expected_source_count": 1,
+      "response": {
+        "facts": {
+          "sampled_frames": 2,
+          "observed_tracks": 1,
+          "confirmed_tracks": 1,
+          "candidate_tracks": 0,
+          "confirmed_profiles": 1,
+          "passages": 0,
+          "direction_in": 0,
+          "direction_out": 0,
+          "unknown_date_frames": 0,
+          "dates": [
+            "2026-11-10"
+          ],
+          "date_basis": "processed",
+          "timezone": "Asia/Seoul",
+          "source_count": 1,
+          "dataset_confirmed_tracks": 0
+        },
+        "interpretation": {
+          "start": null,
+          "end": null,
+          "profile": "self-daejinha",
+          "include_candidates": true,
+          "date_basis": "processed"
+        },
+        "evidence": [
+          {
+            "id": "a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee",
+            "session_id": "50a4d40c-01bc-47db-8125-d38aa02d478d",
+            "source": "본인 모자 착용 웹캠 인식 확인",
+            "source_kind": "live",
+            "frame_index": 17,
+            "video_seconds": null,
+            "observed_at": "2026-11-10T10:03:30.773366+00:00",
+            "processed_at": "2026-11-10T10:03:31.148067+00:00",
+            "purpose": "recording",
+            "source_reference": null,
+            "unassigned_face_count": 0,
+            "time_basis": "live_received",
+            "image_url": "/api/v1/history/images/a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee/?boxes=1",
+            "post_url": null,
+            "tracks": [
+              {
+                "id": 326,
+                "track_id": 1,
+                "bbox": [
+                  -0.1044967845082283,
+                  254.87954711914062,
+                  479.42718505859375,
+                  637.8984985351562
+                ],
+                "candidate": "self-daejinha",
+                "similarity": 0.8723975419998169,
+                "confirmed": "self-daejinha",
+                "reviewed": true,
+                "revision": 2,
+                "review_basis": "operator",
+                "face_url": "/api/v1/history/images/a664ac39b7daf1b64c7780486d454500ee8d962e7215912ba5aa8143fcb05fee/?track=326"
+              }
+            ],
+            "passages": [],
+            "sample_count": 2,
+            "analysis_label": "11.10 19:03",
+            "date_key": "2026-11-10",
+            "date_label": "2026년 11월 10일",
+            "date_basis": "processed",
+            "group_time": "2026-11-10T10:03:31.148067+00:00"
+          }
+        ],
+        "sources": [
+          {
+            "session_id": "50a4d40c-01bc-47db-8125-d38aa02d478d",
+            "label": "본인 모자 착용 웹캠 인식 확인",
+            "reference": null,
+            "sampled_frames": 2
+          }
+        ],
+        "retrieval": {
+          "strategy": "structured",
+          "status": "not_requested",
+          "api_requests": 0,
+          "metadata_conditions": [
+            "모자"
+          ],
+          "metadata_candidate_sessions": 1,
+          "condition_status": "applied"
+        },
+        "intent": "sources",
+        "answer": "조회 조건에 맞는 기록은 영상 출처 1개에 있습니다. 영상: 본인 모자 착용 웹캠 인식 확인. 발견된 영상 출처는 1개입니다. 방향 1은 0건, 방향 2는 0건입니다. 확인된 인물 프로필은 1개입니다. 분석 날짜는 2026-11-10에 있습니다. 추적 번호는 영상 실행마다 달라질 수 있으며 통과 건수는 방문 횟수나 서로 다른 사람 수와 같지 않습니다.",
+        "mode": "records",
+        "llm": {
+          "status": "not_requested",
+          "text": null,
+          "evidence_ids": []
+        }
+      },
+      "pass": true
+    }
+  ],
+  "pass": true,
+  "additional_embedding_calls": 0,
+  "additional_generation_calls": 0,
+  "conversation_or_observation_writes": false,
+  "request_spacing_seconds": 6,
+  "index_or_review_changes_on_production": false
+}

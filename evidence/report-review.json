@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-10T07:59:11.769659+00:00",
-  "report_sha256": "5d13b593d976be2e345e801d98bc3f59c469ca568d8af55e6ba5b3f6fe5ec740",
+  "reviewed_utc": "2026-11-10T12:25:24.677805+00:00",
+  "report_sha256": "377b628c60d364679b6733653faf454128b40233db0779e9439487002088e3b0",
   "checks": [
     {
       "check": "source_requirement_columns_preserved",
@@ -139,6 +139,14 @@
       "pass": true
     },
     {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/webcam-log-vscode.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/automatic-registration.json",
+      "pass": true
+    },
+    {
       "check": "status_5",
       "pass": true
     },
@@ -219,6 +227,22 @@
       "pass": true
     },
     {
+      "check": "evidence_exists_evidence/screenshots/self-native-20261110/verification.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-native-20261110/native-list.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-native-20261110/native-post-9.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-native-20261110/native-post-14.png",
+      "pass": true
+    },
+    {
       "check": "status_8",
       "pass": true
     },
@@ -252,6 +276,14 @@
     },
     {
       "check": "evidence_exists_docs/basic-evidence-guide.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/browser-auto-post-9.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/browser-reentry-post-14.png",
       "pass": true
     },
     {
@@ -295,6 +327,26 @@
       "pass": true
     },
     {
+      "check": "evidence_exists_evidence/history/self-rag-20261110.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/profile-live-final.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/screenshots/self-flow-20261110/rag-final-ai.png",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/rag-guard-improvement-20261110.json",
+      "pass": true
+    },
+    {
+      "check": "evidence_exists_evidence/history/rag-guard-cloud-20261110.json",
+      "pass": true
+    },
+    {
       "check": "two_extensions",
       "pass": true
     },
@@ -320,18 +372,6 @@
     },
     {
       "check": "notebook_full_tests",
-      "pass": true
-    },
-    {
-      "check": "github_upload_verified",
-      "pass": true
-    },
-    {
-      "check": "github_report_hash_current",
-      "pass": true
-    },
-    {
-      "check": "github_report_commit_bytes",
       "pass": true
     },
     {
@@ -476,7 +516,7 @@
     }
   ],
   "integrity_pass": true,
-  "embedded_figures": 32,
+  "embedded_figures": 53,
   "complete_assessment_ids": [
     "1",
     "2",
@@ -494,5 +534,5 @@
   "http_cases_are_subset_of_full_suite": true,
   "new_paid_api_calls_in_report_refresh": 0,
   "basic_figures_with_individual_explanations": 21,
-  "github_snapshot_verified": true
+  "github_snapshot_verified": false
 }

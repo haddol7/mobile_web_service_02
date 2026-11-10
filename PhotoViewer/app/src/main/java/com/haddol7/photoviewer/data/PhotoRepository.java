@@ -25,10 +25,15 @@ public final class PhotoRepository {
     private static final int MAX_JSON_BYTES = 8 * 1024 * 1024;
     private final URI base;
     private final String origin;
+    public interface RequestGate { void beforeRequest(String method, URI uri) throws IOException; }
+    private final RequestGate requestGate;
     private final CookieManager cookies = new CookieManager(null, CookiePolicy.ACCEPT_ORIGINAL_SERVER);
     private volatile String csrfToken;
 
     public PhotoRepository(String baseUrl) {
+        this(baseUrl, null);
+    }
+    public PhotoRepository(String baseUrl, RequestGate gate) {
         URI parsed;
         try { parsed = URI.create(baseUrl.trim()); }
         catch (RuntimeException error) { throw new IllegalArgumentException("서버 URL이 올바르지 않습니다."); }
@@ -38,6 +43,7 @@ public final class PhotoRepository {
             throw new IllegalArgumentException("http(s)://서버주소/ 형식으로 입력하세요.");
         origin = parsed.getScheme().toLowerCase(Locale.ROOT) + "://" + parsed.getRawAuthority();
         base = URI.create(origin + "/");
+        requestGate = gate;
     }
     public String getBaseUrl() { return base.toString(); }
     public void clearSession() {
@@ -216,8 +222,10 @@ public final class PhotoRepository {
     private static int port(URI uri) { return uri.getPort() >= 0 ? uri.getPort() : ("https".equalsIgnoreCase(uri.getScheme()) ? 443 : 80); }
     private Response execute(String method, URI uri, byte[] body, String type, boolean csrf, boolean withCookies, int limit) throws IOException {
         if (withCookies) requireSameOrigin(uri);
+        if (requestGate != null) requestGate.beforeRequest(method, uri);
         HttpURLConnection connection = (HttpURLConnection) uri.toURL().openConnection();
-        connection.setConnectTimeout(10000); connection.setReadTimeout(15000);
+        connection.setConnectTimeout(10000);
+        connection.setReadTimeout(uri.getPath().endsWith("/history/ask/") ? 35000 : 15000);
         connection.setInstanceFollowRedirects(false); connection.setUseCaches(false);
         try {
             connection.setRequestMethod(method);

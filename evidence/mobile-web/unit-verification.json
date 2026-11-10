@@ -1,7 +1,7 @@
 {
   "environment": "Windows bundled Node",
-  "started_utc": "2026-11-10T06:55:14.354Z",
-  "finished_utc": "2026-11-10T06:55:14.602Z",
+  "started_utc": "2026-11-10T11:15:23.902Z",
+  "finished_utc": "2026-11-10T11:15:24.176Z",
   "command": [
     "C:\\Program Files\\WindowsApps\\OpenAI.CodexPrimaryRuntime.v26-1104-2876-0_26.1104.2876.0_x64__3k8sg7r9htsxt\\dependencies\\node\\bin\\node.exe",
     "--test",
@@ -80,8 +80,8 @@
     "PhotoBlogServer/blog/templates/blog/dashboard.html": "a12f1bf2b6adecac16bbe56f3be5733dcbc6618256a0856f2d2e23a280e2b8cc",
     "PhotoBlogServer/blog/templates/blog/history.html": "9a6a22bfbe067a377d12891609a8aa27e107f71ab8436a3fdbebfc7f392e7379",
     "PhotoBlogServer/blog/templates/blog/js_test.html": "fdcf9a6826d84c7c129a19f8970b9119258a58fdeb112002f18ff9a247bd3bb8",
-    "PhotoBlogServer/blog/templates/blog/people.html": "7ef331e2dbecb7993ff1d072935c9d22f3650f2e04451ac79357b17d2515d11e",
-    "PhotoBlogServer/blog/templates/blog/person_detail.html": "f202b65b959e9b4ae77784dff987a64a262a0834adfec33804e52d77bc8cbbfc",
+    "PhotoBlogServer/blog/templates/blog/people.html": "7eb8d098d258cd4d8b018fb4275833499e25f1ae405c6d342cbc6b03f0aeb762",
+    "PhotoBlogServer/blog/templates/blog/person_detail.html": "792433f2f14ac42a9ab0b1fee5b029ddc2259115f56163caeb0056a25cab79e6",
     "PhotoBlogServer/blog/templates/blog/post_detail.html": "76094f23d3f3f499dfefd8b79ba153b1116a501deeffc96631da9f21dccdadc8",
     "PhotoBlogServer/blog/templates/blog/post_edit.html": "78838c0c438b670ebea97bd133be95c80d5f33fc48cf97779bfb1780892c178d",
     "PhotoBlogServer/blog/templates/blog/post_list.html": "cd7075224c0acd77f8be0accb0c599ae4417f561548cbd364a58d209b8c3a9d3",
