@@ -53,4 +53,23 @@ def append_rag_sections(doc, *, section, text, figure, data_table, record):
         ["모자 쓴 촬영은 제외", "조건 확인", "0", "구체적 조건 안내"],
         ["하대진의 모자 착용 촬영", "DB 조건 조회", "1", "해당 촬영만 반환"]], [2.8, 1.0, .65, 1.45])
     text(doc, "수정한 소스를 PythonAnywhere에 반영한 뒤 HTTPS API에서 확인했다. 네 요청 모두 cache_only=true와 generate=false로 보냈다. 저장된 벡터를 재사용하거나 DB 조건으로 조회했고 반환된 api_requests는 모두 0이었다. 요청은 6초 이상 간격으로 보냈다.")
-    text(doc, "이 화면은 운영 API의 실제 응답을 저장해 로컬 읽기 전용 브라우저로 연 검토 자료다. 운영에서 새 LLM 답변을 생성한 화면과 구분하며 실제 생성 예시는 B28에 있다. 조건 변경과 색인 누락에 대한 검증은 B35의 격리 DB 사례다.\n운영 응답 원본  evidence/history/rag-guard-cloud-20261110.json", 9)
+    text(doc, "이 화면은 운영 API의 실제 응답을 저장해 로컬 읽기 전용 브라우저로 연 검토 자료다. 새 LLM 답변 생성과 구분하며 기존 생성 예시는 B28, 최종 배포 후의 추가 생성은 B37에 있다. 조건 변경과 색인 누락에 대한 검증은 B35의 격리 DB 사례다.\n운영 응답 원본  evidence/history/rag-guard-cloud-20261110.json", 9)
+
+    proof = record("evidence/history/final-release-generation-20261110.json")
+    assert proof["pass"] and proof["generation_http_attempts"] == 1
+    assert proof["new_embedding_api_requests"] == 0
+    section(doc, "B37 최종 배포본의 실제 AI 답변")
+    text(doc, "최종 RAG 배포본의 운영 코드 네 파일을 검증 소스와 대조한 뒤 하대진의 모자 착용 촬영을 질문했다. 아래는 실제 새 답변을 저장한 운영 대화 화면이다.")
+    figure(doc, "evidence/screenshots/final-release-rag-20261110/actual-generated-answer.png", 6.1,
+           "그림 B37 최종 RAG 배포본에서 실제 생성한 답변과 근거 사진")
+    text(doc, "실제 답변  " + proof["response"]["llm"]["text"], 9.5)
+    data_table(doc, ["확인 항목", "실제 결과"], [
+        ["답변 상태", "generated, 실제 제공자 응답"],
+        ["출처와 날짜", "모자 착용 촬영 1건, 2026년 11월 10일"],
+        ["인용과 표시 사진", "선택한 출처의 대표 사진 1장과 인용 ID 일치"],
+        ["임베딩 API", "저장된 질문 벡터 재사용, 신규 호출 0회"],
+        ["추가 생성", "1회, 일일 사용량 4회에서 5회"],
+        ["대화 저장", "새 대화에 질문과 답변 한 건 저장, 재조회 일치"]], [1.35, 4.55])
+    text(doc, "모자 촬영의 관측 사진 두 장 중 대표 근거 한 장을 표시한 결과이며 사람 수나 방문 횟수를 뜻하지 않는다. 답변의 날짜, 출처, 확인 인물과 인용 사진을 반환 기록 및 실제 화면과 대조했다. 이 한 질문의 검증으로 일반 답변 정확도를 보장하지 않는다.", 9)
+    reference = text(doc, "최종 운영 패치  " + proof["active_release_after"]["release"] + "\n원본 요청과 응답  evidence/history/final-release-generation-20261110.json", 9)
+    reference.paragraph_format.keep_together = True

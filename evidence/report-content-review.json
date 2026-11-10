@@ -56,13 +56,15 @@
       "credential_handling": "No password or API credential included. Operator writes remain authenticated."
     }
   ],
-  "new_paid_api_calls": 0,
+  "new_paid_api_calls": 1,
   "report_modified": true,
-  "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
+  "report_sha256": "904de8c3efa643b3f15acc9588e97dbaf220e5cd47e5715bbef29c14f066db4b",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-10T13:27:25.649269+00:00",
-  "remaining_work": [],
-  "submission_ready": true,
+  "reviewed_utc": "2026-11-10T13:55:48.177785+00:00",
+  "remaining_work": [
+    "최신 보고서 GitHub 반영 및 원격 파일 대조"
+  ],
+  "submission_ready": false,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -95,8 +97,8 @@
   },
   "production_requests_during_explanation_update": 0,
   "current_report": {
-    "pages": 56,
-    "embedded_images": 53,
+    "pages": 57,
+    "embedded_images": 54,
     "django_tests": 302
   },
   "rag_guard_update": {
@@ -149,5 +151,27 @@
       "B16"
     ]
   },
-  "verified_report_commit": "8e6205585bcab8b6705feeab0b5107999f9045e2"
+  "new_embedding_api_calls": 0,
+  "final_release_update": {
+    "evidence": "evidence/history/final-release-generation-20261110.json",
+    "report_section": "B37",
+    "actual_provider_status": "generated",
+    "actual_source_hashes_matched": 4,
+    "generation_attempts": 1,
+    "new_embedding_requests": 0,
+    "daily_generation_usage_before": 4,
+    "daily_generation_usage_after": 5,
+    "stored_turns": 1,
+    "source_count": 1,
+    "sampled_observations": 2,
+    "representative_photo_count": 1,
+    "evidence_photo_http_status": 200,
+    "browser_photo_src_matches_evidence": true,
+    "application_sources_changed": false,
+    "full_backend_or_Android_tests_rerun": false,
+    "new_deployment_performed": false,
+    "page_guide_rows": 11,
+    "page_map_bound_to_actual_render": true,
+    "general_accuracy_not_claimed": true
+  }
 }

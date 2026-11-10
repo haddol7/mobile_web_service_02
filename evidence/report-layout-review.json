@@ -1,48 +1,49 @@
 {
-  "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
-  "pages": 56,
-  "embedded_figures": 53,
+  "report_sha256": "904de8c3efa643b3f15acc9588e97dbaf220e5cd47e5715bbef29c14f066db4b",
+  "pages": 57,
+  "embedded_figures": 54,
   "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
   "template_requirement_columns_preserved": true,
   "opaque_template_parts_preserved": true,
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_covered_by_visual_review": true,
-  "review_method": "All 56 predecessor pages directly inspected by independent reviewers; all 13 changed final pages directly inspected in follow-up; 43 final PNGs byte-identical to the reviewed predecessor. Final B10 placement inspected again after caption/footer spacing correction.",
+  "review_method": "Previously reviewed 56-page report preserved as reference. Existing reviewers directly inspected all eight changed pages and the new page in a non-blind follow-up. The other 48 page PNGs are byte-identical to the previously reviewed report.",
   "current_revision_pages_inspected": [
-    5,
-    6,
-    7,
-    8,
-    9,
-    13,
-    19,
-    22,
-    27,
-    28,
-    36,
-    39,
-    40
-  ],
-  "unchanged_pages_pixel_identical_to_prior_review": [
     1,
     2,
     3,
+    7,
+    27,
+    38,
+    49,
+    56,
+    57
+  ],
+  "unchanged_pages_pixel_identical_to_prior_review": [
     4,
+    5,
+    6,
+    8,
+    9,
     10,
     11,
     12,
+    13,
     14,
     15,
     16,
     17,
     18,
+    19,
     20,
     21,
+    22,
     23,
     24,
     25,
     26,
+    28,
     29,
     30,
     31,
@@ -50,8 +51,10 @@
     33,
     34,
     35,
+    36,
     37,
-    38,
+    39,
+    40,
     41,
     42,
     43,
@@ -60,27 +63,25 @@
     46,
     47,
     48,
-    49,
     50,
     51,
     52,
     53,
     54,
-    55,
-    56
+    55
   ],
   "page_hashes": [
     {
       "page": 1,
-      "sha256": "1621bcea00763074d1254c6e654e2f6bbc38c2533809bfa74ef748d7478eff85"
+      "sha256": "d9e08e69ddd16ca5efa6c6a755c5c22f61cec43920cc23da9a3c8dfc1a7a680f"
     },
     {
       "page": 2,
-      "sha256": "bf95fcc7e0c04beeccd975a189561521c5f8d9f2bd61afb7ba616f68da051fff"
+      "sha256": "b5877914896a332076d8d30c8950074d5de9b5a7f6b517c412c4589febe0e314"
     },
     {
       "page": 3,
-      "sha256": "0916facf12889ec9e2256310c3184e7bf797dd677636a2b28c1d125783e80333"
+      "sha256": "5507f65779dccefb1ed93167fa876b71d8a6c39a824c6eaba870ca1a74609df8"
     },
     {
       "page": 4,
@@ -96,7 +97,7 @@
     },
     {
       "page": 7,
-      "sha256": "10546cddd54250e97005eb07d6ed8ff18a16f1598d1ef98bfffadf46b5da5a1a"
+      "sha256": "f2c93d6ae616555bb6064bd9fab92c91003e7b6bca3229ab2127670b1342890b"
     },
     {
       "page": 8,
@@ -176,7 +177,7 @@
     },
     {
       "page": 27,
-      "sha256": "ab9f36a3f966ceea0ed49800edff54f5b862e58b089a84ac3c6c4f990cec21f1"
+      "sha256": "9b8cf5e8fc283706051c14c2865503db0788dbe3949951445846eb7056d8729a"
     },
     {
       "page": 28,
@@ -220,7 +221,7 @@
     },
     {
       "page": 38,
-      "sha256": "ca7f200b620403303c5889f72ba1a3c05386e9548d21d48697438ad64bde24b7"
+      "sha256": "07ff05eb7f3ca7ac0a9235d47a33c0e293b9f7f9dd24042ba74983757b9db78a"
     },
     {
       "page": 39,
@@ -264,7 +265,7 @@
     },
     {
       "page": 49,
-      "sha256": "8b27ff3c15ac60fea7280ef301ccd2a2eb7fa194c1a791f9e2ef72accdbf3ab5"
+      "sha256": "751150c908cd3710a04c7713d65d1fc6bdd4711e30c8e373facf56cc4b454af1"
     },
     {
       "page": 50,
@@ -292,14 +293,22 @@
     },
     {
       "page": 56,
-      "sha256": "835194e47593d8838bbf5f0f682ec00483d81e5e1d81429c03516a88ff79df8e"
+      "sha256": "d82237c2dcfbf3fbc41c663866f46ee6feefcd4cbbf36d4e7851978e15e61906"
+    },
+    {
+      "page": 57,
+      "sha256": "62a29e4918a8c6395f1a7d1df7a8b2f42cbcadd19d6fd017a352c20229190c04"
     }
   ],
-  "verified_utc": "2026-11-10T13:27:25.649269+00:00",
-  "new_paid_api_calls": 0,
+  "verified_utc": "2026-11-10T13:55:48.177785+00:00",
+  "new_paid_api_calls": 1,
   "remaining_assessment_ids": [],
-  "submission_ready": true,
-  "remaining_work": [],
+  "submission_ready": false,
+  "remaining_work": [
+    "Current report GitHub upload and byte verification"
+  ],
   "github_verification": "evidence/github-current-submission-20261110.json",
-  "verified_report_commit": "8e6205585bcab8b6705feeab0b5107999f9045e2"
+  "new_embedding_api_calls": 0,
+  "page_guide_rows": 11,
+  "printed_page_map": "docs/report-page-map.json"
 }

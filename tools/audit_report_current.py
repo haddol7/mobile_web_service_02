@@ -60,6 +60,23 @@ def main(local_only=False):
         committed_report = subprocess.check_output(["git", "show", upload["report_commit"] + ":" + REPORT.name], cwd=ROOT)
         check("github_report_commit_bytes", hashlib.sha256(committed_report).hexdigest() == digest(REPORT))
     body = "\n".join(p.text for p in doc.paragraphs)
+    from report_page_map import section_location
+    page_map = record("docs/report-page-map.json")
+    check("page_map_bound_to_current_report", page_map["report_sha256"] == digest(REPORT))
+    check("page_map_all_sections", set(page_map["sections"]) == {f"B{i:02d}" for i in range(1,38)})
+    page_index = next(table for table in doc.tables if table.cell(0,0).text == "평가 항목")
+    check("page_index_all_assessment_rows", [row.cells[0].text for row in page_index.rows[1:]] == [str(i) for i in range(1,10)] + ["10-1","10-2"])
+    check("printed_page_basis_explained", "문서 하단에 인쇄된 번호" in body)
+    check("page_index_basic_code_location", page_index.cell(4,2).text == section_location(["B03"]))
+    check("page_index_cloud_image_location", page_index.cell(9,2).text == section_location(["B09"], "B09 3-4", select=lambda pages: pages[-2:]))
+    check("page_index_final_RAG_location", "B37" in page_map["sections"] and section_location([f"B{i:02d}" for i in [13,14,15,16,*range(26,38)]], "B13-16, B26-37") == page_index.cell(11,2).text)
+    final_generation = record("evidence/history/final-release-generation-20261110.json")
+    check("final_release_actual_generation", final_generation["pass"] and final_generation["response"]["llm"]["status"] == "generated" and final_generation["response"]["mode"] == "rag")
+    check("one_generation_no_new_embedding", final_generation["generation_http_attempts"] == 1 and final_generation["generation_usage_delta"] == 1 and final_generation["new_embedding_api_requests"] == 0)
+    check("final_generation_same_deployed_code", final_generation["active_release_after"]["release"] == requirements["deployment"]["release"] and all(digest(ROOT/"PhotoBlogServer"/path) == value for path,value in final_generation["active_release_before"]["source_sha256"].items()))
+    check("actual_generation_displayed", final_generation["response"]["llm"]["text"] in body)
+    photo = final_generation["photo_verification"]
+    check("final_generation_browser_photo", photo["http_status"] == 200 and photo["browser_image_src_matches_returned_evidence"] and digest(ROOT/photo["capture_path"]) == photo["capture_sha256"])
     check("all_evidence_sections", all(any(p.text.startswith(f"B{i:02d} ") for p in doc.paragraphs) for i in range(1,19)))
     check("obsolete_progress_prose_removed", not any(s in body for s in ("진행본", "02 전환 대기", "기본 검증 후", "148개", "38개", "경고 7개")))
     check("authored_prose_symbols", not any(s in body for s in ("·", "→", "←", "⇒", "↔", "—")))
@@ -119,8 +136,10 @@ def main(local_only=False):
     summary = {"reviewed_utc": datetime.now(timezone.utc).isoformat(), "report_sha256": digest(REPORT),
         "checks": checks, "integrity_pass": all(c["pass"] for c in checks), "embedded_figures": len(images),
         "complete_assessment_ids": [r["id"] for r in requirements["requirements"] if r["status"] == "complete"],
-        "unfinished_assessment_ids": unfinished, "submission_ready": not unfinished and requirements["report_state"]["submission_ready"],
-        "http_cases_are_subset_of_full_suite": True, "new_paid_api_calls_in_report_refresh": 0,
+        "unfinished_assessment_ids": unfinished, "submission_ready": not local_only and not unfinished and requirements["report_state"]["submission_ready"],
+        "http_cases_are_subset_of_full_suite": True,
+        "new_paid_api_calls_in_report_refresh": final_generation["generation_usage_delta"],
+        "new_embedding_api_calls_in_report_refresh": final_generation["new_embedding_api_requests"],
         "basic_figures_with_individual_explanations": len(BASIC_EVIDENCE), "github_snapshot_verified": not local_only}
     target = ROOT / ("evidence/private/report-expansion-20261110/local-report-review.json" if local_only else "evidence/report-review.json")
     target.write_text(json.dumps(summary, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

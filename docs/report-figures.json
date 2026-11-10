@@ -210,5 +210,9 @@
   {
     "path": "evidence/screenshots/rag-guards-20261110/cloud-result.png",
     "sha256": "48417e49829fea1951a3dc5b1813b530a97ff030fb0d6fa45b593fdbee2c863b"
+  },
+  {
+    "path": "evidence/screenshots/final-release-rag-20261110/actual-generated-answer.png",
+    "sha256": "0c59772c2b444a2dc39dc07b80dd29742d5662b070bfeaf3773661e9c4c6a642"
   }
 ]

@@ -4,6 +4,7 @@ BASIC_EVIDENCE = []
 
 
 def append_basic_sections(doc, *, text, section, figure, data_table, record, server_tests):
+    from report_page_map import section_location as location
     BASIC_EVIDENCE.clear()
     current = "evidence/screenshots/basic-explained-20261110/"
     enlarged = "evidence/screenshots/final-review-20261110/"
@@ -16,20 +17,23 @@ def append_basic_sections(doc, *, text, section, figure, data_table, record, ser
         BASIC_EVIDENCE.append({"label": label, "assessment_ids": items, "path": path,
             "caption": caption, "explanation": paragraphs})
 
-    section(doc, "기본 기능의 구현과 확인 순서")
+    section(doc, "구현 순서와 평가 항목별 증빙 위치")
     text(doc, "기본 기능은 Edge에서 검출한 사진을 Django에 등록하고 서버와 모바일에서 같은 결과를 확인하는 과정이다. Edge PC의 YOLOv5가 카메라나 영상의 객체를 검출한다. 직전 프레임에 없던 객체 종류가 나타나면 검출 박스를 그린 사진을 JPEG로 저장하고 인증된 Post API 요청으로 서버에 전송한다. Django는 사진과 제목 및 검출 내용을 저장하고 Android와 브라우저에 제공한다.")
     text(doc, "무료 PythonAnywhere는 API, 데이터 저장과 웹 조회를 담당한다. YOLOv5 추론은 WSL Ubuntu의 Edge PC에서 수행한다. 기본 전송의 판단 단위는 사람 수나 개인의 신원이 아니라 객체 종류의 출현 변화다. 사람 추적과 얼굴 후보 비교는 뒤의 추가 기능에서 설명한다.")
-    data_table(doc, ["기본 항목", "확인할 구현과 실제 결과", "대응 증빙"], [
-        ["1", "필수 세 폴더와 보고서를 별도 저장소 루트에 배치", "B01"],
-        ["2", "공통평가 02 전용 GitHub URL과 제출 파일 업로드", "B01 및 원격 검증 기록"],
-        ["3", "변경 없는 원본 detect.py와 실제 카메라 검출", "B02, B08 1과 2"],
-        ["4", "객체 출현 비교, 사진 저장과 API 전송의 VS Code 화면", "B03 1부터 4"],
-        ["5", "로컬 API 루트 및 등록 게시글 JSON 응답", "B04 1과 2"],
-        ["6", "로컬 브라우저의 등록 사진 목록과 이미지", "B05 1과 2"],
-        ["7", "전송된 같은 사진의 Android 및 모바일 웹 표시", "B07 1부터 5, B09 2"],
-        ["8", "PythonAnywhere 운영 도메인의 API 응답", "B09 1"],
-        ["9", "운영 브라우저의 등록 사진 목록과 상세 이미지", "B09 3과 4"]], [.75, 3.75, 1.4])
-    text(doc, "증빙의 B번호는 본문과 그림을 찾기 위한 번호다. 평가표의 기본 항목 번호는 각 사진 설명에 따로 표시했다. 로컬 등록 시험, 영상 입력 시험과 운영 등록은 각각의 실행으로 기록했고 사진의 파일 동일성도 같은 실행의 서버와 클라이언트 사이에서 확인했다.")
+    text(doc, "표의 쪽수는 문서 하단에 인쇄된 번호를 기준으로 한다. B번호는 본문의 증빙 구역이며 기본 항목 번호는 각 그림 설명에 표시했다.", 9)
+    data_table(doc, ["평가 항목", "확인할 구현과 실제 결과", "증빙 및 쪽수"], [
+        ["1", "필수 세 폴더와 보고서를 별도 저장소 루트에 배치", location(["B01"])],
+        ["2", "공통평가 02 전용 GitHub URL과 제출 파일 업로드", location(["B01"])],
+        ["3", "변경 없는 원본 detect.py와 실제 카메라 검출", location(["B02", "B08"])],
+        ["4", "객체 출현 비교, 사진 저장과 API 전송의 VS Code 화면", location(["B03"])],
+        ["5", "로컬 API 루트 및 등록 게시글 JSON 응답", location(["B04"])],
+        ["6", "로컬 브라우저의 등록 사진 목록과 이미지", location(["B05"])],
+        ["7", "전송된 같은 사진의 Android 및 모바일 웹 표시", location(["B07", "B24", "B25"], "B07, B24-25")],
+        ["8", "PythonAnywhere 운영 도메인의 API 응답", location(["B09"], "B09 1", select=lambda pages: pages[:1])],
+        ["9", "운영 브라우저의 등록 사진 목록과 상세 이미지", location(["B09"], "B09 3-4", select=lambda pages: pages[-2:])],
+        ["10-1", "Edge 인물 추적과 실제 웹캠 관측 전송", location(["B11", "B12", "B21", "B22", "B23", "B24", "B25"], "B11-12, B21-25")],
+        ["10-2", "서버 이력, RAG와 최종 배포본의 실제 답변", location([f"B{i:02d}" for i in [13,14,15,16,*range(26,38)]], "B13-16, B26-37")]], [.75, 3.3, 1.85])
+    text(doc, "로컬 등록 시험, 영상 입력 시험과 운영 등록은 각각의 실행으로 기록했다. 사진의 파일 동일성도 같은 실행의 서버와 클라이언트 사이에서 확인했다.")
 
     section(doc, "B01 제출 폴더 구조와 별도 저장소")
     text(doc, "기본 항목 1은 PhotoBlogServer, PhotoViewer, YOLOv5와 수행 결과 보고서의 루트 배치를 요구한다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이며 공통평가 01의 middle_project 저장소와 분리했다.")
