@@ -303,12 +303,11 @@
   "verified_utc": "2026-11-10T14:13:00.282889+00:00",
   "new_paid_api_calls": 0,
   "remaining_assessment_ids": [],
-  "submission_ready": false,
-  "remaining_work": [
-    "Current report GitHub upload and byte verification"
-  ],
+  "submission_ready": true,
+  "remaining_work": [],
   "github_verification": "evidence/github-current-submission-20261110.json",
   "new_embedding_api_calls": 0,
   "page_guide_rows": 11,
-  "printed_page_map": "docs/report-page-map.json"
+  "printed_page_map": "docs/report-page-map.json",
+  "verified_report_commit": "dbb62d2ab17a838bc0e8f2c905e9bffa6d0b105a"
 }
