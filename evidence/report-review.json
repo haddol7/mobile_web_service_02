@@ -1,6 +1,6 @@
 {
-  "reviewed_utc": "2026-11-10T14:13:43.147261+00:00",
-  "report_sha256": "472dae1834713644d0af437fe0743cc8390f5f4e42509897218889b7778e2fa1",
+  "reviewed_utc": "2026-11-10T14:38:20.669094+00:00",
+  "report_sha256": "e0d54f776bd106e317d7599da1aa25a613f208daf36b2d783834eb1ea8070d4a",
   "checks": [
     {
       "check": "source_requirement_columns_preserved",
@@ -387,18 +387,6 @@
       "pass": true
     },
     {
-      "check": "github_upload_verified",
-      "pass": true
-    },
-    {
-      "check": "github_report_hash_current",
-      "pass": true
-    },
-    {
-      "check": "github_report_commit_bytes",
-      "pass": true
-    },
-    {
       "check": "page_map_bound_to_current_report",
       "pass": true
     },
@@ -610,12 +598,13 @@
     "10"
   ],
   "unfinished_assessment_ids": [],
-  "submission_ready": true,
+  "submission_ready": false,
   "http_cases_are_subset_of_full_suite": true,
   "new_paid_api_calls_in_report_refresh": 1,
   "new_embedding_api_calls_in_report_refresh": 0,
   "paid_api_calls_during_quota_change": 0,
   "current_daily_generation_limit": 10,
   "basic_figures_with_individual_explanations": 21,
-  "github_snapshot_verified": true
+  "github_snapshot_verified": false,
+  "paid_api_calls_during_feature_name_edit": 0
 }

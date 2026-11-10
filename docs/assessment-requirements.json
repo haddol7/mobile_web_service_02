@@ -213,16 +213,17 @@
     "verification": "evidence/security/generation-limit-10-20261110.json"
   },
   "report_state": {
-    "submission_ready": true,
-    "label": "제출용 소스와 보고서 원격 대조 완료",
+    "submission_ready": false,
+    "label": "합의한 추가 기능명 반영 및 원격 대조 준비",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
-    "remaining_work": [],
-    "current_revision_github_synced": true,
+    "remaining_work": [
+      "최신 보고서 원격 대조"
+    ],
+    "current_revision_github_synced": false,
     "current_revision_scope": "Source, evidence and report submitted and verified on 2026-11-10",
     "github_verification": "evidence/github-current-submission-20261110.json",
-    "additional_function_scope_note": "Android 이력 및 채팅 UI 구현과 서버 처리 범위를 B10과 B16에 명시했다. 최대 두 항목의 채점상 산정 해석을 확정한 것은 아니다.",
-    "verified_report_commit": "dbb62d2ab17a838bc0e8f2c905e9bffa6d0b105a"
+    "additional_function_scope_note": "Android 이력 및 채팅 UI 구현과 서버 처리 범위를 B10과 B16에 명시했다. 최대 두 항목의 채점상 산정 해석을 확정한 것은 아니다."
   },
   "local_verification": {
     "runtime": "evidence/environment/wsl-runtime.json",
@@ -247,7 +248,7 @@
     {
       "id": "10-1",
       "role": "Edge Client",
-      "name": "인물 추적과 관측 기록 전송",
+      "name": "인물 추적과 얼굴 임베딩 비교",
       "description": "몸 추적, 얼굴 후보 비교, 선 통과 기록, 중복 방지와 재전송",
       "status": "complete",
       "report_evidence": "B08 B11 B12 B17\nB21부터 B25\n추적과 실제 자동 전송"
@@ -255,7 +256,7 @@
     {
       "id": "10-2",
       "role": "Server",
-      "name": "인물 이력과 근거 기록 질의",
+      "name": "RAG 기반 기록 검색과 LLM 답변",
       "description": "날짜와 인물별 이력, 확인 상태, 의미 검색과 LLM 답변, 대화 복원",
       "status": "complete",
       "report_evidence": "B10 B13부터 B16\nB19 B20 B26부터 B37\n이력과 최종 RAG 검증"

@@ -1,5 +1,5 @@
 {
-  "report_sha256": "472dae1834713644d0af437fe0743cc8390f5f4e42509897218889b7778e2fa1",
+  "report_sha256": "e0d54f776bd106e317d7599da1aa25a613f208daf36b2d783834eb1ea8070d4a",
   "pages": 57,
   "embedded_figures": 54,
   "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
@@ -8,11 +8,9 @@
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_covered_by_visual_review": true,
-  "review_method": "Three changed policy pages directly visually inspected by the primary agent; the other 54 final page PNGs are byte-identical to the previously reviewed report. No new independent review is claimed.",
+  "review_method": "The preceding 57-page report was independently reviewed by three fresh agents. The one changed front-table page was directly inspected in this edit; all other 56 page PNGs are byte-identical to that reviewed report.",
   "current_revision_pages_inspected": [
-    2,
-    38,
-    49
+    2
   ],
   "unchanged_pages_pixel_identical_to_prior_review": [
     1,
@@ -51,6 +49,7 @@
     35,
     36,
     37,
+    38,
     39,
     40,
     41,
@@ -61,6 +60,7 @@
     46,
     47,
     48,
+    49,
     50,
     51,
     52,
@@ -77,7 +77,7 @@
     },
     {
       "page": 2,
-      "sha256": "4c680af2f3b42d62e4a29aae366e7eba040665162086167f782a34b9d5a43bd9"
+      "sha256": "d985bbcd176142cc0c017e51cad1dcf72476d907451e912314944f8f6d795f34"
     },
     {
       "page": 3,
@@ -300,14 +300,15 @@
       "sha256": "62a29e4918a8c6395f1a7d1df7a8b2f42cbcadd19d6fd017a352c20229190c04"
     }
   ],
-  "verified_utc": "2026-11-10T14:13:00.282889+00:00",
+  "verified_utc": "2026-11-10T14:39:05.316255+00:00",
   "new_paid_api_calls": 0,
   "remaining_assessment_ids": [],
-  "submission_ready": true,
-  "remaining_work": [],
+  "submission_ready": false,
+  "remaining_work": [
+    "Current report GitHub upload and byte verification"
+  ],
   "github_verification": "evidence/github-current-submission-20261110.json",
   "new_embedding_api_calls": 0,
   "page_guide_rows": 11,
-  "printed_page_map": "docs/report-page-map.json",
-  "verified_report_commit": "dbb62d2ab17a838bc0e8f2c905e9bffa6d0b105a"
+  "printed_page_map": "docs/report-page-map.json"
 }

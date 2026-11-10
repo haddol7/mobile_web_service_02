@@ -58,11 +58,13 @@
   ],
   "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "472dae1834713644d0af437fe0743cc8390f5f4e42509897218889b7778e2fa1",
+  "report_sha256": "e0d54f776bd106e317d7599da1aa25a613f208daf36b2d783834eb1ea8070d4a",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-10T14:13:00.282889+00:00",
-  "remaining_work": [],
-  "submission_ready": true,
+  "reviewed_utc": "2026-11-10T14:39:05.316255+00:00",
+  "remaining_work": [
+    "최신 보고서 원격 대조"
+  ],
+  "submission_ready": false,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -191,5 +193,15 @@
     "new_paid_model_calls": 0,
     "same_RAG_sources_as_prior_actual_generation": true
   },
-  "verified_report_commit": "dbb62d2ab17a838bc0e8f2c905e9bffa6d0b105a"
+  "feature_name_update": {
+    "names": {
+      "10-1": "인물 추적과 얼굴 임베딩 비교",
+      "10-2": "RAG 기반 기록 검색과 LLM 답변"
+    },
+    "only_two_front_table_names_changed": true,
+    "other_docx_parts_preserved": true,
+    "implementation_changed": false,
+    "new_tests_or_model_calls": 0,
+    "prior_review_issues_resolved_by_this_name_edit": false
+  }
 }
