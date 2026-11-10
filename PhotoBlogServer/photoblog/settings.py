@@ -94,7 +94,7 @@ def daily_limit(name, default):
     return int(value)
 
 
-HISTORY_LLM_DAILY_LIMIT = daily_limit("HISTORY_LLM_DAILY_LIMIT", 5)
+HISTORY_LLM_DAILY_LIMIT = daily_limit("HISTORY_LLM_DAILY_LIMIT", 10)
 HISTORY_EMBEDDING_DAILY_LIMIT = daily_limit("HISTORY_EMBEDDING_DAILY_LIMIT", 100)
 del _history_llm
 # Limit text/form overhead separately from photo bytes. Photo validation enforces 5 MiB.

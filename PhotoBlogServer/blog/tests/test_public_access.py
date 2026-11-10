@@ -60,21 +60,21 @@ class PublicAccessTests(TestCase):
         self.assertEqual(client.post(url, {}, format="json", HTTP_X_CSRFTOKEN=token).status_code, 201)
 
     @override_settings(HISTORY_LLM_PROVIDER="openai", HISTORY_LLM_MODEL="test-model",
-                       HISTORY_LLM_API_KEY="isolated-test-key", HISTORY_LLM_DAILY_LIMIT=5)
-    def test_five_generation_calls_are_shared_across_visitors_and_the_sixth_is_blocked(self):
+                       HISTORY_LLM_API_KEY="isolated-test-key", HISTORY_LLM_DAILY_LIMIT=10)
+    def test_ten_generation_calls_are_shared_across_visitors_and_the_eleventh_is_blocked(self):
         raw = json.dumps({"choices": [{"finish_reason": "stop", "message": {"content":
             json.dumps({"answer": "조건에 맞는 기록이 없습니다.", "evidence_ids": []})}}]}).encode()
         with patch("blog.history_llm.urlopen") as transport:
             transport.return_value.__enter__.return_value.read.return_value = raw
             statuses = []
-            for _ in range(6):
+            for _ in range(11):
                 client = APIClient()
                 result = client.post("/api/v1/history/ask/", {"question": "기록이 있어?",
                     "generate": True}, format="json")
                 self.assertEqual(result.status_code, 200)
                 statuses.append(result.json()["llm"]["status"])
-            self.assertEqual(statuses, ["generated"] * 5 + ["daily_limit"])
-            self.assertEqual(transport.call_count, 5)
+            self.assertEqual(statuses, ["generated"] * 10 + ["daily_limit"])
+            self.assertEqual(transport.call_count, 10)
 
     def test_login_attempt_limiter_is_disabled_by_default(self):
         self.assertFalse(settings.LOGIN_RATE_LIMIT_ENABLED)

@@ -206,22 +206,23 @@
     "user_approved_date": "2026-11-05",
     "source_switched": true,
     "last_attempt_result": "activated_and_verified",
-    "release": "20261110120957270ef6",
+    "release": "20261110140734797130",
     "verified_date": "2026-11-10",
     "preflight": "docs/deployment-preflight.json",
     "compatibility": "evidence/ui-audit/migration-compatibility.json",
-    "verification": "evidence/ui-audit/self-guards-deployment-20261110.json"
+    "verification": "evidence/security/generation-limit-10-20261110.json"
   },
   "report_state": {
-    "submission_ready": true,
-    "label": "제출용 소스와 보고서 원격 대조 완료",
+    "submission_ready": false,
+    "label": "10회 정책과 오늘 카운터 초기화 반영, 최신 보고서 원격 대조 준비",
     "updated_date": "2026-11-10",
     "unfinished_requirement_ids": [],
-    "remaining_work": [],
-    "current_revision_github_synced": true,
+    "remaining_work": [
+      "최신 보고서 원격 대조"
+    ],
+    "current_revision_github_synced": false,
     "current_revision_scope": "Source, evidence and report submitted and verified on 2026-11-10",
     "github_verification": "evidence/github-current-submission-20261110.json",
-    "verified_report_commit": "efd052090dc86d6cdfad32ee876834605f38f810",
     "additional_function_scope_note": "Android 이력 및 채팅 UI 구현과 서버 처리 범위를 B10과 B16에 명시했다. 최대 두 항목의 채점상 산정 해석을 확정한 것은 아니다."
   },
   "local_verification": {
@@ -267,7 +268,7 @@
     "operator_only_writes": true,
     "conversation_isolation": "account_or_browser_session",
     "login_attempt_limiter_enabled": false,
-    "llm_daily_limit": 5
+    "llm_daily_limit": 10
   },
   "basic_report_explanation": {
     "guide": "docs/basic-evidence-guide.json",

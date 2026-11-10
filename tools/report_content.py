@@ -124,7 +124,7 @@ def build_appendix():
     section(doc, "운영 화면 접속과 확인 방법", False)
     text(doc, "운영 주소에서 로그인 없이 관측 기록, 인물 확인과 AI 질문을 이용할 수 있다. 운영자 계정은 daejinha이며 관측 등록, 인물 확인 저장과 자료 수정은 운영자 권한으로 처리한다.")
     text(doc, "로그인  https://daejinha.pythonanywhere.com/accounts/login/?next=/", 9)
-    text(doc, "평가자는 별도 계정 없이 관측 사진과 인물 이력 및 질문 화면을 확인할 수 있다. 대화 기록은 방문자별 브라우저 세션 또는 로그인 계정별로 분리한다. AI 답변 생성은 서버 전체 하루 5회이며 한국 시간 자정에 한도가 갱신된다.", 9)
+    text(doc, "평가자는 별도 계정 없이 관측 사진과 인물 이력 및 질문 화면을 확인할 수 있다. 대화 기록은 방문자별 브라우저 세션 또는 로그인 계정별로 분리한다. AI 답변 생성은 서버 전체 하루 10회이며 한국 시간 자정에 한도가 갱신된다.", 9)
     text(doc, "관측 기록에서 날짜와 인물을 선택하고 사진을 열어 검출 박스를 확인한다. 인물 확인에서는 등록 얼굴과 영상 속 얼굴 및 발견 이력을 비교한다. AI 질문에서는 인물과 기간을 선택한 뒤 질문을 보내 근거 사진이 포함된 답변과 대화 기록을 확인한다.")
     text(doc, "AI 질문의 보내기는 외부 유료 API를 사용한다. 기본 API는 /api_root/에서, YOLO 검출 사진의 기본 목록은 /photos/에서 확인할 수 있다.", 9)
 
@@ -226,7 +226,7 @@ def build_appendix():
         ["출입 영상 등록", "11월 9일 29명, 사진 500장", "history/chokepoint-people-cloud.json"],
         ["출입 영상 색인", "11월 9일 문서 40개, 예제 3개", "history/chokepoint-people-embedding-cloud.json"],
         ["운영 대화 복원", "별도 접속에서 2개 질의 복원", "ui-audit/chat-cloud.json"],
-        ["공개 조회와 운영 권한", "공개 조회, 방문자 대화 분리와 하루 5회", "security/deployment.json"]], [1.05, 2.3, 2.55])
+        ["공개 조회와 운영 권한", "공개 조회, 방문자 대화 분리와 하루 10회", "security/generation-limit-10-20261110.json"]], [1.05, 2.3, 2.55])
     text(doc, f"HTTP 엔진의 15개 사례는 Django 전체 {server_tests}개에 포함된 사례를 별도 HTTP 엔진으로 재실행한 결과다. 테스트 수를 합산해 전체 사례 수로 계산하지 않는다.")
     text(doc, "노트북 WSL에서도 환경 파일 615개와 등록 사진 34명 73장을 검사했다. 동봉 영상 240프레임, Django 250개 및 이전 도구 단위 테스트 9개를 확인했고 로컬 API와 사진 목록은 HTTP 200을 반환했다.", 9)
     text(doc, "검사 명령  서버 python PhotoBlogServer/tools/verify_security.py\nEdge는 YOLOv5에서 python -m unittest discover -s tests -v\n웹 node tools/verify-mobile-web.mjs, Android PhotoViewer/tools/verify-android.ps1", 9)

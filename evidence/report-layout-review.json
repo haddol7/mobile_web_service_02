@@ -1,5 +1,5 @@
 {
-  "report_sha256": "904de8c3efa643b3f15acc9588e97dbaf220e5cd47e5715bbef29c14f066db4b",
+  "report_sha256": "472dae1834713644d0af437fe0743cc8390f5f4e42509897218889b7778e2fa1",
   "pages": 57,
   "embedded_figures": 54,
   "renderer": "Microsoft Word PDF export with bundled render_docx.py and Poppler",
@@ -8,22 +8,19 @@
   "source_template_sha256": "f65f8108bf2cf9d0be60e81a1c0f29f3e1598cdcf58ec9230503dab4bc46043a",
   "layout_clean": true,
   "all_pages_covered_by_visual_review": true,
-  "review_method": "Previously reviewed 56-page report preserved as reference. Existing reviewers directly inspected all eight changed pages and the new page in a non-blind follow-up. The other 48 page PNGs are byte-identical to the previously reviewed report.",
+  "review_method": "Three changed policy pages directly visually inspected by the primary agent; the other 54 final page PNGs are byte-identical to the previously reviewed report. No new independent review is claimed.",
   "current_revision_pages_inspected": [
-    1,
     2,
-    3,
-    7,
-    27,
     38,
-    49,
-    56,
-    57
+    49
   ],
   "unchanged_pages_pixel_identical_to_prior_review": [
+    1,
+    3,
     4,
     5,
     6,
+    7,
     8,
     9,
     10,
@@ -43,6 +40,7 @@
     24,
     25,
     26,
+    27,
     28,
     29,
     30,
@@ -68,7 +66,9 @@
     52,
     53,
     54,
-    55
+    55,
+    56,
+    57
   ],
   "page_hashes": [
     {
@@ -77,7 +77,7 @@
     },
     {
       "page": 2,
-      "sha256": "b5877914896a332076d8d30c8950074d5de9b5a7f6b517c412c4589febe0e314"
+      "sha256": "4c680af2f3b42d62e4a29aae366e7eba040665162086167f782a34b9d5a43bd9"
     },
     {
       "page": 3,
@@ -221,7 +221,7 @@
     },
     {
       "page": 38,
-      "sha256": "07ff05eb7f3ca7ac0a9235d47a33c0e293b9f7f9dd24042ba74983757b9db78a"
+      "sha256": "7bcc6e007373fd3e4a4f580ce2a114b09a9da2a7b2c83a3623f1095e53df8bad"
     },
     {
       "page": 39,
@@ -265,7 +265,7 @@
     },
     {
       "page": 49,
-      "sha256": "751150c908cd3710a04c7713d65d1fc6bdd4711e30c8e373facf56cc4b454af1"
+      "sha256": "a46c05c70157d46708add5debc519f0b9f9f12fe17943ccb14282669a305cc3e"
     },
     {
       "page": 50,
@@ -300,14 +300,15 @@
       "sha256": "62a29e4918a8c6395f1a7d1df7a8b2f42cbcadd19d6fd017a352c20229190c04"
     }
   ],
-  "verified_utc": "2026-11-10T13:55:48.177785+00:00",
-  "new_paid_api_calls": 1,
+  "verified_utc": "2026-11-10T14:13:00.282889+00:00",
+  "new_paid_api_calls": 0,
   "remaining_assessment_ids": [],
-  "submission_ready": true,
-  "remaining_work": [],
+  "submission_ready": false,
+  "remaining_work": [
+    "Current report GitHub upload and byte verification"
+  ],
   "github_verification": "evidence/github-current-submission-20261110.json",
   "new_embedding_api_calls": 0,
   "page_guide_rows": 11,
-  "printed_page_map": "docs/report-page-map.json",
-  "verified_report_commit": "efd052090dc86d6cdfad32ee876834605f38f810"
+  "printed_page_map": "docs/report-page-map.json"
 }

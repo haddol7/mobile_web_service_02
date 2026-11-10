@@ -73,7 +73,7 @@ def main(local_only=False):
     final_generation = record("evidence/history/final-release-generation-20261110.json")
     check("final_release_actual_generation", final_generation["pass"] and final_generation["response"]["llm"]["status"] == "generated" and final_generation["response"]["mode"] == "rag")
     check("one_generation_no_new_embedding", final_generation["generation_http_attempts"] == 1 and final_generation["generation_usage_delta"] == 1 and final_generation["new_embedding_api_requests"] == 0)
-    check("final_generation_same_deployed_code", final_generation["active_release_after"]["release"] == requirements["deployment"]["release"] and all(digest(ROOT/"PhotoBlogServer"/path) == value for path,value in final_generation["active_release_before"]["source_sha256"].items()))
+    check("recorded_generation_matches_current_rag_sources", all(digest(ROOT/"PhotoBlogServer"/path) == value for path,value in final_generation["active_release_before"]["source_sha256"].items()))
     check("actual_generation_displayed", final_generation["response"]["llm"]["text"] in body)
     photo = final_generation["photo_verification"]
     check("final_generation_browser_photo", photo["http_status"] == 200 and photo["browser_image_src_matches_returned_evidence"] and digest(ROOT/photo["capture_path"]) == photo["capture_sha256"])
@@ -81,7 +81,10 @@ def main(local_only=False):
     check("obsolete_progress_prose_removed", not any(s in body for s in ("진행본", "02 전환 대기", "기본 검증 후", "148개", "38개", "경고 7개")))
     check("authored_prose_symbols", not any(s in body for s in ("·", "→", "←", "⇒", "↔", "—")))
     check("no_api_keys_in_text", not re.search(r"sk-[A-Za-z0-9_-]{16,}|Authorization:\s*(Token|Bearer)\s+[A-Za-z0-9]{20,}", body))
-    check("evaluator_access_procedure", all(s in body for s in ("로그인 없이", "별도 계정 없이", "하루 5회", "방문자별", "운영 화면 접속과 확인 방법")))
+    check("evaluator_access_procedure", all(s in body for s in ("로그인 없이", "별도 계정 없이", f"하루 {requirements['access_policy']['llm_daily_limit']}회", "방문자별", "운영 화면 접속과 확인 방법")))
+    quota = record("evidence/security/generation-limit-10-20261110.json")
+    check("ten_call_policy_and_reset_verified_in_production", quota["pass"] and quota["release"] == requirements["deployment"]["release"] and quota["usage_after"]["daily"]["generation"] == {"limit":10,"used":0,"remaining":10})
+    check("quota_change_preserved_other_usage_and_avoided_paid_calls", quota["usage_before"]["daily"]["embedding"] == quota["usage_after"]["daily"]["embedding"] and quota["reset"]["other_usage_rows_preserved"] and quota["temporary_bootstrap_removed"] and quota["paid_api_calls"] == 0)
     check("face_method_explained", all(s in body for s in ("다섯 기준점", "112 x 112", "4배", "최고 점수", "자동 확정은 하지 않는다", "개발 인물 18명", "개별 변경의 기여도")))
     check("face_datasets_and_source_split_explained", all(s in body for s in ("ChokePoint 출입 시연과 별개", "VoxCeleb2 공개 미러", "원본 영상 ID 단위로 분리", "mortal9826/VoxCeleb2-test-data", "PUBLIC_FIGURE_EXPANSION.md")))
     check("webcam_actual_command_disclosed", camera["actual_helper_command"] in body)
@@ -140,6 +143,8 @@ def main(local_only=False):
         "http_cases_are_subset_of_full_suite": True,
         "new_paid_api_calls_in_report_refresh": final_generation["generation_usage_delta"],
         "new_embedding_api_calls_in_report_refresh": final_generation["new_embedding_api_requests"],
+        "paid_api_calls_during_quota_change": quota["paid_api_calls"],
+        "current_daily_generation_limit": requirements["access_policy"]["llm_daily_limit"],
         "basic_figures_with_individual_explanations": len(BASIC_EVIDENCE), "github_snapshot_verified": not local_only}
     target = ROOT / ("evidence/private/report-expansion-20261110/local-report-review.json" if local_only else "evidence/report-review.json")
     target.write_text(json.dumps(summary, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")

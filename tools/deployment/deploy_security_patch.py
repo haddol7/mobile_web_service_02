@@ -65,7 +65,7 @@ def verify_remote(api, active, release, new):
     assert response.status_code == 200
     usage = response.json()
     assert usage["timezone"] == "Asia/Seoul" and usage["login"]["trusted_platform_ip"] is True
-    assert usage["daily"]["generation"]["limit"] == 5 and usage["daily"]["embedding"]["limit"] == 100
+    assert usage["daily"]["generation"]["limit"] == 10 and usage["daily"]["embedding"]["limit"] == 100
     assert usage["login"]["enabled"] is False
     assert usage["login"]["pair_failures"] == 5 and usage["login"]["ip_failures"] == 20
     anonymous = public_get(origin+"/api/v1/history/usage/", timeout=(5,20), allow_redirects=False)

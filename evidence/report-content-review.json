@@ -56,13 +56,15 @@
       "credential_handling": "No password or API credential included. Operator writes remain authenticated."
     }
   ],
-  "new_paid_api_calls": 1,
+  "new_paid_api_calls": 0,
   "report_modified": true,
-  "report_sha256": "904de8c3efa643b3f15acc9588e97dbaf220e5cd47e5715bbef29c14f066db4b",
+  "report_sha256": "472dae1834713644d0af437fe0743cc8390f5f4e42509897218889b7778e2fa1",
   "format_and_integrity_pass": true,
-  "reviewed_utc": "2026-11-10T13:55:48.177785+00:00",
-  "remaining_work": [],
-  "submission_ready": true,
+  "reviewed_utc": "2026-11-10T14:13:00.282889+00:00",
+  "remaining_work": [
+    "최신 보고서 원격 대조"
+  ],
+  "submission_ready": false,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -172,5 +174,23 @@
     "page_map_bound_to_actual_render": true,
     "general_accuracy_not_claimed": true
   },
-  "verified_report_commit": "efd052090dc86d6cdfad32ee876834605f38f810"
+  "quota_update": {
+    "daily_generation_limit": 10,
+    "used_before_reset": 5,
+    "used_after_reset": 0,
+    "remaining_after_reset": 10,
+    "only_today_generation_reset": true,
+    "embedding_and_historical_usage_preserved": true,
+    "conversations_and_observations_preserved": true,
+    "provider_billing_reset": false,
+    "WSL_full_tests_rerun": 302,
+    "HTTP_subset_rerun": 15,
+    "public_visitors_mocked": 11,
+    "outbound_generations_mocked": 10,
+    "eleventh_call_blocked": true,
+    "isolated_reset_idempotency_passed": true,
+    "production_verification": "evidence/security/generation-limit-10-20261110.json",
+    "new_paid_model_calls": 0,
+    "same_RAG_sources_as_prior_actual_generation": true
+  }
 }
