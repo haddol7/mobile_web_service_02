@@ -1,5 +1,5 @@
 {
-  "reviewed_utc": "2026-11-10T07:03:03.492077+00:00",
+  "reviewed_utc": "2026-11-10T07:08:12.754431+00:00",
   "report_sha256": "fc5df2f83ca31e9e0ed2b71cad8acdb99568da317c000080151021ceeb791226",
   "checks": [
     {
@@ -256,6 +256,14 @@
     },
     {
       "check": "github_upload_verified",
+      "pass": true
+    },
+    {
+      "check": "github_report_hash_current",
+      "pass": true
+    },
+    {
+      "check": "github_report_commit_bytes",
       "pass": true
     },
     {
