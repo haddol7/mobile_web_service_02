@@ -61,10 +61,8 @@
   "report_sha256": "e0d54f776bd106e317d7599da1aa25a613f208daf36b2d783834eb1ea8070d4a",
   "format_and_integrity_pass": true,
   "reviewed_utc": "2026-11-10T14:39:05.316255+00:00",
-  "remaining_work": [
-    "최신 보고서 원격 대조"
-  ],
-  "submission_ready": false,
+  "remaining_work": [],
+  "submission_ready": true,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -203,5 +201,6 @@
     "implementation_changed": false,
     "new_tests_or_model_calls": 0,
     "prior_review_issues_resolved_by_this_name_edit": false
-  }
+  },
+  "verified_report_commit": "9f054b1d97505db855ff8f0ac6c96d220711729c"
 }
