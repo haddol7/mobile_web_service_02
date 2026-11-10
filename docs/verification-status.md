@@ -47,7 +47,7 @@ Edge 인물 추적과 관측 기록 전송, Server 인물 이력과 근거 기�
 
 ## 제출
 
-필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json과 evidence/github-final-report.json은 이전에 검증한 커밋의 기록이다. 현재 웹캠 및 RAG 보완본은 3e5bc6c 커밋에서 원격 보고서를 내려받아 지문을 대조했다. 현재 제출 검증은 evidence/github-current-submission-20261110.json에 별도로 보관한다.
+필수 폴더는 PhotoBlogServer, PhotoViewer, YOLOv5이며 보고서는 루트에 둔다. 공통평가 02 전용 저장소는 https://github.com/haddol7/mobile_web_service_02 이다. evidence/github-upload.json과 evidence/github-final-report.json은 이전에 검증한 커밋의 기록이다. 승인된 확대 캡처 7장과 피드백을 반영한 8e62055 커밋의 원격 Word를 내려받아 현재 56쪽 검수본과 지문을 대조했다. 실제 제출본의 검증은 evidence/github-current-submission-20261110.json에 보관한다.
 
 RAG 회귀 보완에서는 날짜 전체 대조, 부정 조건 안내와 색인 실패 시 설명 조건 유지를 적용했다. 격리 DB 및 모의 제공자의 8개 사례, 실제 운영 API의 4개 조회가 통과했다. 추가 유료 호출은 0회다. 보고서 B33부터 B36과 evidence/history/rag-guard-improvement-20261110.json, rag-guard-cloud-20261110.json에 근거를 보관한다. 기존 독립 검토의 재현 결과는 보존하고 해결 대조는 evidence/private/independent-review-20261110/rag-resolution.json에 기록한다.
 

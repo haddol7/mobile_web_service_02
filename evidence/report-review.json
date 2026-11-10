@@ -1,5 +1,5 @@
 {
-  "reviewed_utc": "2026-11-10T13:27:27.608210+00:00",
+  "reviewed_utc": "2026-11-10T13:28:49.184241+00:00",
   "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
   "checks": [
     {
@@ -379,6 +379,18 @@
       "pass": true
     },
     {
+      "check": "github_upload_verified",
+      "pass": true
+    },
+    {
+      "check": "github_report_hash_current",
+      "pass": true
+    },
+    {
+      "check": "github_report_commit_bytes",
+      "pass": true
+    },
+    {
       "check": "all_evidence_sections",
       "pass": true
     },
@@ -534,9 +546,9 @@
     "10"
   ],
   "unfinished_assessment_ids": [],
-  "submission_ready": false,
+  "submission_ready": true,
   "http_cases_are_subset_of_full_suite": true,
   "new_paid_api_calls_in_report_refresh": 0,
   "basic_figures_with_individual_explanations": 21,
-  "github_snapshot_verified": false
+  "github_snapshot_verified": true
 }

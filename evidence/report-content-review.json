@@ -61,10 +61,8 @@
   "report_sha256": "b5ee319da8611b245ef2d0beeeb4ce3a16d184e812892f3cdd21046012e2056e",
   "format_and_integrity_pass": true,
   "reviewed_utc": "2026-11-10T13:27:25.649269+00:00",
-  "remaining_work": [
-    "최신 보고서 GitHub 반영 및 원격 파일 대조"
-  ],
-  "submission_ready": false,
+  "remaining_work": [],
+  "submission_ready": true,
   "webcam_evidence_verified": true,
   "basic_refresh": {
     "browser_captures_replaced": 8,
@@ -150,5 +148,6 @@
       "B10",
       "B16"
     ]
-  }
+  },
+  "verified_report_commit": "8e6205585bcab8b6705feeab0b5107999f9045e2"
 }
